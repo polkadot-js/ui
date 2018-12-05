@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "@polkadot/keyring": "^0.33.7",
-    "@polkadot/types": "^0.32.21",
+    "@polkadot/types": "^0.32.23",
     "store": "^2.0.12"
   }
 }
