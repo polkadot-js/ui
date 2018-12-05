@@ -13,21 +13,21 @@ import Identicon from '@polkadot/ui-identicon';
 
 ...
 render () {
-	// address is an ss58-encoded address or publicKey (hex string or Uint8Array)
-	const { address } = this.props;
-	// size is a number, indicating the size (in pixels, 64 as default)
+  // address is an ss58-encoded address or publicKey (hex string or Uint8Array)
+  const { address } = this.props;
+  // size (optional) is a number, indicating the size (in pixels, 64 as default)
   const size = 32;
   // theme (optional), depicts the type of icon, either 'polkadot' or 'substrate' (default)
   const theme = 'polkadot';
 
-	return (
-		<Identicon
-			className='my-class'
-			value={address}
-			size={size}
+  // standard className & style props are also available
+  return (
+    <Identicon
+      value={address}
+      size={size}
       theme={theme}
-		/>
-	);
+    />
+  );
 }
 ...
 ```
