@@ -15,35 +15,38 @@ type Props = {
   }
 };
 
-const KPAddress = styled.div`
-  display: inline-block;
-  flex: 1;
-  font-family: monospace;
-  margin-left: 1rem;
-  opacity: 0.5;
-  overflow: hidden;
-  text-align: right;
-  text-overflow: ellipsis;
-`;
-const KPIcon = styled(IdentityIcon)`
-  position: absolute;
-  top: -9px;
-  left: 0;
-`;
-const KPName = styled.div`
-  display: inline-block;
-  flex: 1 0;
-  margin-left: 3rem;
-  overflow: hidden;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-`;
-const KPWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   position: relative;
   white-space: nowrap;
+
+  .address {
+    display: inline-block;
+    flex: 1;
+    font-family: monospace;
+    margin-left: 1rem;
+    opacity: 0.5;
+    overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+  }
+
+  .icon {
+    position: absolute;
+    top: -9px;
+    left: 0;
+  }
+
+  .name {
+    display: inline-block;
+    flex: 1 0;
+    margin-left: 3rem;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+  }
 `;
 
 export default class KeyPair extends React.PureComponent<Props> {
@@ -51,22 +54,22 @@ export default class KeyPair extends React.PureComponent<Props> {
     const { address, className, name, style } = this.props;
 
     return (
-      <KPWrapper
+      <Wrapper
         className={['ui--KeyPair', className].join(' ')}
         style={style}
       >
-        <KPIcon
-          className='ui--KeyPair-icon'
+        <IdentityIcon
+          className='icon'
           size={32}
           value={address}
         />
-        <KPName className='ui--KeyPair-name'>
+        <div className='name'>
           {name}
-        </KPName>
-        <KPAddress className='ui--KeyPair-address'>
+        </div>
+        <div className='address'>
           {address}
-        </KPAddress>
-      </KPWrapper>
+        </div>
+      </Wrapper>
     );
   }
 }
