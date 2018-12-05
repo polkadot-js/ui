@@ -2,9 +2,8 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import './KeyPair.css';
-
 import React from 'react';
+import styled from 'styled-components';
 import IdentityIcon from '@polkadot/ui-identicon/index';
 
 type Props = {
@@ -16,27 +15,58 @@ type Props = {
   }
 };
 
+const KPAddress = styled.div`
+  display: inline-block;
+  flex: 1;
+  font-family: monospace;
+  margin-left: 1rem;
+  opacity: 0.5;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+`;
+const KPIcon = styled(IdentityIcon)`
+  position: absolute;
+  top: -9px;
+  left: 0;
+`;
+const KPName = styled.div`
+  display: inline-block;
+  flex: 1 0;
+  margin-left: 3rem;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+`;
+const KPWrapper = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: relative;
+  white-space: nowrap;
+`;
+
 export default class KeyPair extends React.PureComponent<Props> {
   render () {
     const { address, className, name, style } = this.props;
 
     return (
-      <div
+      <KPWrapper
         className={['ui--KeyPair', className].join(' ')}
         style={style}
       >
-        <IdentityIcon
+        <KPIcon
           className='ui--KeyPair-icon'
           size={32}
           value={address}
         />
-        <div className='ui--KeyPair-name'>
+        <KPName className='ui--KeyPair-name'>
           {name}
-        </div>
-        <div className='ui--KeyPair-address'>
+        </KPName>
+        <KPAddress className='ui--KeyPair-address'>
           {address}
-        </div>
-      </div>
+        </KPAddress>
+      </KPWrapper>
     );
   }
 }
