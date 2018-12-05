@@ -1425,7 +1425,7 @@
   resolved "https://registry.yarnpkg.com/@polkadot/ts/-/ts-0.1.40.tgz#d5e8af7e37a3382165d387c2cddf5930879a4c45"
   integrity sha512-OKPToc6z4NnO+i6tNh0GewhFzQZFchn87Iv1IB1AXEqhzN3kRHlYWbnJh+iQ73C0zTwrx7BxmhMyv9pnEJScHQ==
 
-"@polkadot/types@^0.32.21":
+"@polkadot/types@^0.32.23":
   version "0.32.23"
   resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.32.23.tgz#415ece266fcb16e08cc4e40df2994f05fabb8998"
   integrity sha512-vFK1hmdlDoeXgjnqrzgUL7KeSerFXItvVGGsqdpuGteiYgPGteigrU/3PC4eiMO1yH/6/lhJdDNwbyAsZlphMw==
