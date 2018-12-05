@@ -5,10 +5,9 @@
 import { Prefix } from '@polkadot/keyring/address/types';
 import { IdentityProps as Props } from './types';
 
-import './IdentityIcon.css';
-
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import styled from 'styled-components';
 import { decodeAddress, encodeAddress } from '@polkadot/keyring';
 import settings from '@polkadot/ui-settings/index';
 import { isHex, isU8a } from '@polkadot/util';
@@ -26,6 +25,35 @@ const Components: { [index: string]: React.ComponentType<any> } = {
   'polkadot': Polkadot,
   'substrate': Substrate
 };
+const Wrapper = styled.div`
+  cursor: copy;
+  display: inline-block;
+  line-height: 0;
+
+  .container {
+    position: relative;
+
+    > div,
+    > svg {
+      position: relative;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 5px 2px #e0e0e0;
+      content: '';
+    }
+
+    &.highlight:before {
+      box-shadow: 0 0 5px 2px red;
+    }
+  }
+`;
 
 export default class IdentityIcon extends React.PureComponent<Props, State> {
   state: State = {
@@ -66,16 +94,17 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
       ? Empty
       : Components[theme] || Substrate;
     const wrapped = (
-      <div
-        className={['ui--IdentityIcon', isHighlight ? 'highlight' : '', className].join(' ')}
+      <Wrapper
+        className={['ui--IdentityIcon', className].join(' ')}
         key={address || ''}
         style={style}
       >
         <Component
+          className={isHighlight ? 'highlight' : ''}
           size={size}
           value={address || ''}
         />
-      </div>
+      </Wrapper>
     );
 
     if (!address) {
