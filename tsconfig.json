@@ -1,0 +1,15 @@
+{
+  "extends": "./node_modules/@polkadot/dev/config/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@polkadot/ui-identicon/*": [ "packages/ui-identicon/src/*" ],
+      "@polkadot/ui-keyring/*": [ "packages/ui-keyring/src/*" ],
+      "@polkadot/ui-settings/*": [ "packages/ui-settings/src/*" ]
+    },
+    "typeRoots": [
+      "./node_modules/@polkadot/ts",
+      "./node_modules/@types"
+    ]
+  }
+}

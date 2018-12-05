@@ -1,0 +1,3 @@
+{
+  "extends": "@polkadot/dev-react/config/tslint"
+}
