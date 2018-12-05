@@ -25,7 +25,7 @@ const Components: { [index: string]: React.ComponentType<any> } = {
   'polkadot': Polkadot,
   'substrate': Substrate
 };
-const IconWrapper = styled.div`
+const Wrapper = styled.div`
   cursor: copy;
   display: inline-block;
   line-height: 0;
@@ -94,7 +94,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
       ? Empty
       : Components[theme] || Substrate;
     const wrapped = (
-      <IconWrapper
+      <Wrapper
         className={['ui--IdentityIcon', className].join(' ')}
         key={address || ''}
         style={style}
@@ -104,7 +104,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
           size={size}
           value={address || ''}
         />
-      </IconWrapper>
+      </Wrapper>
     );
 
     if (!address) {
