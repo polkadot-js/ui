@@ -5,26 +5,20 @@
 import './KeyPair.css';
 
 import React from 'react';
-import { AccountId } from '@polkadot/types';
-import IdentityIcon from '@polkadot/ui-app/IdentityIcon';
-import { withMulti, withObservable } from '@polkadot/ui-react-rx/with/index';
+import IdentityIcon from '@polkadot/ui-identicon/index';
 
 type Props = {
   address: string,
   className?: string,
   name: string,
-  sessionValidators?: Array<AccountId>,
   style?: {
     [index: string]: string
   }
 };
 
-class KeyPair extends React.PureComponent<Props> {
+export default class KeyPair extends React.PureComponent<Props> {
   render () {
-    const { address, className, name, sessionValidators = [], style } = this.props;
-    const isValidator = sessionValidators.find((validator) =>
-      validator.toString() === address
-    );
+    const { address, className, name, style } = this.props;
 
     return (
       <div
@@ -33,7 +27,6 @@ class KeyPair extends React.PureComponent<Props> {
       >
         <IdentityIcon
           className='ui--KeyPair-icon'
-          isHighlight={!!isValidator}
           size={32}
           value={address}
         />
@@ -47,8 +40,3 @@ class KeyPair extends React.PureComponent<Props> {
     );
   }
 }
-
-export default withMulti(
-  KeyPair,
-  withObservable('sessionValidators')
-);
