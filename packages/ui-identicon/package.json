@@ -16,7 +16,9 @@
     "@types/color": "^3.0.0",
     "@types/react-copy-to-clipboard": "^4.2.6",
     "color": "^3.0.0",
-    "react-copy-to-clipboard": "^5.0.1",
+    "react-copy-to-clipboard": "^5.0.1"
+  },
+  "devDependencies": {
     "xmlserializer": "^0.6.1"
   }
 }
