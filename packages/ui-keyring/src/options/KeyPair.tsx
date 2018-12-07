@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   position: relative;
   white-space: nowrap;
 
-  .address {
+  > .address {
     display: inline-block;
     flex: 1;
     font-family: monospace;
@@ -33,13 +33,13 @@ const Wrapper = styled.div`
     text-overflow: ellipsis;
   }
 
-  .icon {
+  > .icon {
     position: absolute;
     top: -9px;
     left: 0;
   }
 
-  .name {
+  > .name {
     display: inline-block;
     flex: 1 0;
     margin-left: 3rem;
