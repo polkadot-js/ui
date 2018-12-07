@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   display: inline-block;
   line-height: 0;
 
-  .container {
+  > .container {
     position: relative;
 
     > div,
