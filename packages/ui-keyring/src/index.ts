@@ -4,7 +4,7 @@
 
 import { Prefix } from '@polkadot/keyring/address/types';
 import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
-import { AccountSubject, AddressSubject, SingleAddress } from './observable/types';
+import { AddressSubject, SingleAddress } from './observable/types';
 import { KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringStruct } from './types';
 
 import store from 'store';
@@ -22,7 +22,7 @@ import keyringOption from './options';
 // Chain determination occurs outside of Keyring. Loading `keyring.loadAll()` is triggered
 // from the API after the chain is received
 class Keyring implements KeyringStruct {
-  private _accounts: AccountSubject;
+  private _accounts: AddressSubject;
   private _addresses: AddressSubject;
   private _keyring?: BaseKeyringInstance;
   private _prefix: Prefix;
@@ -81,9 +81,7 @@ class Keyring implements KeyringStruct {
 
   private addTimestamp (pair: KeyringPair): void {
     if (!pair.getMeta().whenCreated) {
-      pair.setMeta({
-        whenCreated: Date.now()
-      });
+      pair.setMeta({  whenCreated: Date.now() });
     }
   }
 
@@ -147,12 +145,8 @@ class Keyring implements KeyringStruct {
 
     return Object
       .keys(available)
-      .map((address) =>
-        this.getAddress(address, 'account')
-      )
-      .filter((account) =>
-        env.isDevelopment() || account.getMeta().isTesting !== true
-      );
+      .map((address) => this.getAddress(address, 'account'))
+      .filter((account) => env.isDevelopment() || account.getMeta().isTesting !== true);
   }
 
   getAddress (_address: string | Uint8Array, type: 'account' | 'address' = 'address'): KeyringAddress {
@@ -181,9 +175,7 @@ class Keyring implements KeyringStruct {
 
     return Object
       .keys(available)
-      .map((address) =>
-        this.getAddress(address)
-      );
+      .map((address) => this.getAddress(address));
   }
 
   getPair (address: string | Uint8Array): KeyringPair {

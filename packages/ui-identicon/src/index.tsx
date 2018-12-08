@@ -87,13 +87,28 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { className, isHighlight = false, size = DEFAULT_SIZE, style, theme = settings.uiTheme } = this.props;
     const { address } = this.state;
+    const wrapped = this.getWrapped(address);
 
+    return !address
+      ? wrapped
+      : (
+        <CopyToClipboard
+          onCopy={this.onCopy}
+          text={address}
+        >
+          {wrapped}
+        </CopyToClipboard>
+      );
+  }
+
+  private getWrapped (address?: string | null) {
+    const { className, isHighlight = false, size = DEFAULT_SIZE, style, theme = settings.uiTheme } = this.props;
     const Component = !address
       ? Empty
       : Components[theme] || Substrate;
-    const wrapped = (
+
+    return (
       <Wrapper
         className={['ui--IdentityIcon', className].join(' ')}
         key={address || ''}
@@ -105,19 +120,6 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
           value={address || ''}
         />
       </Wrapper>
-    );
-
-    if (!address) {
-      return wrapped;
-    }
-
-    return (
-      <CopyToClipboard
-        onCopy={this.onCopy}
-        text={address}
-      >
-        {wrapped}
-      </CopyToClipboard>
     );
   }
 

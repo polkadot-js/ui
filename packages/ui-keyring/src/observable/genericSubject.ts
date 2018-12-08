@@ -11,26 +11,27 @@ import store from 'store';
 import createOptionItem from '../options/item';
 import development from './development';
 
+function callNext (current: SubjectInfo, subject: BehaviorSubject<any>, withTest: boolean) {
+  const isDevMode = development.isDevelopment();
+
+  subject.next(
+    Object.keys(current).reduce((filtered, key) => {
+      const { json: { meta: { isTesting = false } = {} } = {} } = current[key];
+
+      if (!withTest || isDevMode || isTesting !== true) {
+        filtered[key] = current[key];
+      }
+
+      return filtered;
+    }, {} as SubjectInfo)
+  );
+}
+
 export default function genericSubject (keyCreator: (address: string) => string, withTest: boolean = false): AddressSubject {
   let current: SubjectInfo = {};
   const subject = new BehaviorSubject({});
-  const next = (): void => {
-    const isDevMode = development.isDevelopment();
-
-    subject.next(
-      Object
-        .keys(current)
-        .reduce((filtered, key) => {
-          const { json: { meta: { isTesting = false } = {} } = {} } = current[key];
-
-          if (!withTest || isDevMode || isTesting !== true) {
-            filtered[key] = current[key];
-          }
-
-          return filtered;
-        }, {} as SubjectInfo)
-    );
-  };
+  const next = (): void =>
+    callNext(current, subject, withTest);
 
   development.subject.subscribe(next);
 

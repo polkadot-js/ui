@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
-import { AccountSubject, AddressSubject, SingleAddress } from './observable/types';
+import { AddressSubject, SingleAddress } from './observable/types';
 
 export type KeyringJson$Meta = {
   isRecent?: boolean,
@@ -28,7 +28,7 @@ export type KeyringAddress = {
 };
 
 export interface KeyringStruct {
-  readonly accounts: AccountSubject;
+  readonly accounts: AddressSubject;
   readonly addresses: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
 
