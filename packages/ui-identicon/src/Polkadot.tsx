@@ -49,9 +49,8 @@ const schema: { [index: string]: Scheme } = {
 export default class Identicon extends React.PureComponent<Props> {
   render () {
     const { className, size, style, value } = this.props;
-    const { r, ro2, r3o4, ro4, rroot3o2, rroot3o4 } = this.getRotation();
+    const xy = this.getCircleXY();
     const colors = this.getColors();
-    let i = 0;
 
     return (
       <div
@@ -65,29 +64,53 @@ export default class Identicon extends React.PureComponent<Props> {
           height={size}
           viewBox='0 0 64 64'
         >
-          <circle cx={s / 2} cy={s / 2} r={s / 2} fill='#eee'/>
-          <circle cx={c} cy={c - r} r={z} fill={colors[i++]}/>
-          <circle cx={c} cy={c - ro2} r={z} fill={colors[i++]}/>
-          <circle cx={c - rroot3o4} cy={c - r3o4} r={z} fill={colors[i++]}/>
-          <circle cx={c - rroot3o2} cy={c - ro2} r={z} fill={colors[i++]}/>
-          <circle cx={c - rroot3o4} cy={c - ro4} r={z} fill={colors[i++]}/>
-          <circle cx={c - rroot3o2} cy={c} r={z} fill={colors[i++]}/>
-          <circle cx={c - rroot3o2} cy={c + ro2} r={z} fill={colors[i++]}/>
-          <circle cx={c - rroot3o4} cy={c + ro4} r={z} fill={colors[i++]}/>
-          <circle cx={c - rroot3o4} cy={c + r3o4} r={z} fill={colors[i++]}/>
-          <circle cx={c} cy={c + r} r={z} fill={colors[i++]}/>
-          <circle cx={c} cy={c + ro2} r={z} fill={colors[i++]}/>
-          <circle cx={c + rroot3o4} cy={c + r3o4} r={z} fill={colors[i++]}/>
-          <circle cx={c + rroot3o2} cy={c + ro2} r={z} fill={colors[i++]}/>
-          <circle cx={c + rroot3o4} cy={c + ro4} r={z} fill={colors[i++]}/>
-          <circle cx={c + rroot3o2} cy={c} r={z} fill={colors[i++]}/>
-          <circle cx={c + rroot3o2} cy={c - ro2} r={z} fill={colors[i++]}/>
-          <circle cx={c + rroot3o4} cy={c - ro4} r={z} fill={colors[i++]}/>
-          <circle cx={c + rroot3o4} cy={c - r3o4} r={z} fill={colors[i++]}/>
-          <circle cx={c} cy={c} r={z} fill={colors[i++]}/>
+          {this.renderCircle(s / 2, s / 2, s / 2, '#eee', -1)}
+          {
+            xy.map(([x, y], index) =>
+              this.renderCircle(x, y, z, colors[index], index)
+            )
+          }
         </svg>
       </div>
     );
+  }
+
+  private renderCircle (cx: number, cy: number, r: number, fill: string, key: number) {
+    return (
+      <circle
+        key={key}
+        cx={cx}
+        cy={cy}
+        r={r}
+        fill={fill}
+      />
+    );
+  }
+
+  private getCircleXY () {
+    const { r, ro2, r3o4, ro4, rroot3o2, rroot3o4 } = this.getRotation();
+
+    return [
+      [c, c - r],
+      [c, c - ro2],
+      [c - rroot3o4, c - r3o4],
+      [c - rroot3o2, c - ro2],
+      [c - rroot3o4, c - ro4],
+      [c - rroot3o2, c],
+      [c - rroot3o2, c + ro2],
+      [c - rroot3o4, c + ro4],
+      [c - rroot3o4, c + r3o4],
+      [c, c + r],
+      [c, c + ro2],
+      [c + rroot3o4, c + r3o4],
+      [c + rroot3o2, c + ro2],
+      [c + rroot3o4, c + ro4],
+      [c + rroot3o2, c],
+      [c + rroot3o2, c - ro2],
+      [c + rroot3o4, c - ro4],
+      [c + rroot3o4, c - r3o4],
+      [c, c]
+    ];
   }
 
   private getRotation () {
