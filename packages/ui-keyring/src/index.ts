@@ -112,6 +112,15 @@ class Keyring extends Base implements KeyringStruct {
       .map((address) => this.getAddress(address));
   }
 
+  private rewriteKey (json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string) {
+    if (hexAddr.substr(0, 2) === '0x') {
+      return;
+    }
+
+    store.remove(key);
+    store.set(creator(hexAddr), json);
+  }
+
   private loadAccount (json: KeyringJson, key: string) {
     if (!json.meta.isTesting && (json as KeyringPair$Json).encoded) {
       const pair = this.keyring.addFromJson(json as KeyringPair$Json);
@@ -121,10 +130,7 @@ class Keyring extends Base implements KeyringStruct {
 
     const [, hexAddr] = key.split(':');
 
-    if (hexAddr.substr(0, 2) !== '0x') {
-      store.remove(key);
-      store.set(accountKey(hexAddr), json);
-    }
+    this.rewriteKey(json, key, hexAddr, accountKey);
   }
 
   private loadAddress (json: KeyringJson, key: string) {
@@ -136,11 +142,7 @@ class Keyring extends Base implements KeyringStruct {
     const [, hexAddr] = key.split(':');
 
     this.addresses.add(address, json);
-
-    if (hexAddr.substr(0, 2) !== '0x') {
-      store.remove(key);
-      store.set(addressKey(hexAddr), json);
-    }
+    this.rewriteKey(json, key, hexAddr, addressKey);
   }
 
   loadAll (): void {

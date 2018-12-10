@@ -35,17 +35,13 @@ class KeyringOption implements KeyringOptionInstance {
       this.addAccounts(keyring, options);
       this.addAddresses(keyring, options);
 
-      options.address = ([] as KeyringSectionOptions).concat(
-        options.address.length ? [ this.createOptionHeader('Addresses') ] : [],
-        options.address,
-        options.recent.length ? [ this.createOptionHeader('Recent') ] : [],
-        options.recent
+      options.address = this.linkItems(
+        { header: 'Addresses', options: options.address },
+        { header: 'Recent', options: options.recent }
       );
-      options.account = ([] as KeyringSectionOptions).concat(
-        options.account.length ? [ this.createOptionHeader('Accounts') ] : [],
-        options.account,
-        options.testing.length ? [ this.createOptionHeader('Development') ] : [],
-        options.testing
+      options.account = this.linkItems(
+        { header: 'Accounts', options: options.account },
+        { header: 'Development', options: options.testing }
       );
 
       options.all = ([] as KeyringSectionOptions).concat(
@@ -57,6 +53,17 @@ class KeyringOption implements KeyringOptionInstance {
     });
 
     hasCalledInitOptions = true;
+  }
+
+  private linkItems (...items: Array<{ header: string, options: KeyringSectionOptions }>) {
+    return items.reduce((result, { header, options }) => {
+      return result.concat(
+        options.length
+          ? [this.createOptionHeader(header)]
+          : [],
+        options
+      );
+    }, [] as KeyringSectionOptions);
   }
 
   private addAccounts (keyring: KeyringStruct, options: KeyringOptions): void {
