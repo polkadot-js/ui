@@ -35,14 +35,14 @@ class KeyringOption implements KeyringOptionInstance {
       this.addAccounts(keyring, options);
       this.addAddresses(keyring, options);
 
-      options.address = this.linkItems(
-        { header: 'Addresses', options: options.address },
-        { header: 'Recent', options: options.recent }
-      );
-      options.account = this.linkItems(
-        { header: 'Accounts', options: options.account },
-        { header: 'Development', options: options.testing }
-      );
+      options.address = this.linkItems({
+        'Addresses': options.address,
+        'Recent': options.recent
+      });
+      options.account = this.linkItems({
+        'Accounts': options.account,
+        'Development': options.testing
+      });
 
       options.all = ([] as KeyringSectionOptions).concat(
         options.account,
