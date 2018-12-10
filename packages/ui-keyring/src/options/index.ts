@@ -55,8 +55,10 @@ class KeyringOption implements KeyringOptionInstance {
     hasCalledInitOptions = true;
   }
 
-  private linkItems (...items: Array<{ header: string, options: KeyringSectionOptions }>) {
-    return items.reduce((result, { header, options }) => {
+  private linkItems (items: { [index: string]: KeyringSectionOptions }) {
+    return Object.keys(items).reduce((result, header) => {
+      const options = items[header];
+
       return result.concat(
         options.length
           ? [this.createOptionHeader(header)]
