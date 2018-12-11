@@ -1441,10 +1441,10 @@
   resolved "https://registry.yarnpkg.com/@polkadot/ts/-/ts-0.1.43.tgz#e59d86cf6bed833010315c5b301bfea6c05fd4a8"
   integrity sha512-B7mSH+yrc7PBHMWUfpTFAK0OLgOesWlzkhse0/O8Itu2Rf6YrixEnhUYKEDp7mDO3h2SlBwn6BfVkvY4qvtwgg==
 
-"@polkadot/types@^0.33.11":
-  version "0.33.11"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.33.11.tgz#3a93492ac75e117d623c98bb1bf5b63de5b8d220"
-  integrity sha512-I98fHh+iMhEcoD78mBzBblBiFgSN7rOrcmEqzo5G9PY5FI7I+Kb+K+NNK/XG3UHzZk8szr2WSu5rZGTgEpN02g==
+"@polkadot/types@^0.33.12":
+  version "0.33.12"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.33.12.tgz#647c526eeab29805d74e0ab1424bcf5d2d14606f"
+  integrity sha512-uiQb54yjVnHpTBc7ARo2ll301s6hFeGybh3Nh3s7knA695IX05ridsdwV1BCj3xsdp7SvjHEt6whqwcJRE3lDg==
   dependencies:
     "@babel/runtime" "^7.2.0"
     "@polkadot/keyring" "^0.33.13"
