@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@polkadot/ui-assets/*": [ "packages/ui-assets/src/*" ],
       "@polkadot/ui-identicon/*": [ "packages/ui-identicon/src/*" ],
       "@polkadot/ui-keyring/*": [ "packages/ui-keyring/src/*" ],
       "@polkadot/ui-settings/*": [ "packages/ui-settings/src/*" ]

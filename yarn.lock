@@ -1344,15 +1344,15 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@polkadot/dev-react@^0.22.11":
-  version "0.22.11"
-  resolved "https://registry.yarnpkg.com/@polkadot/dev-react/-/dev-react-0.22.11.tgz#fff2416805eb9abcacc34beaa305c984dc26e7f0"
-  integrity sha512-opjCg2+HzZZjjwGWR9E3wdA2OjcxIsz72qi4KzDTGmWkHuF8rcggS22qaCAAwDmh62/ZMMlawLzLBV+pjePXcA==
+"@polkadot/dev-react@^0.22.12":
+  version "0.22.12"
+  resolved "https://registry.yarnpkg.com/@polkadot/dev-react/-/dev-react-0.22.12.tgz#2b885f8524f3bbe02dce53d6073ab9d5c33dc2e7"
+  integrity sha512-hOnNbbWqdiMA33/IQvd53oTfvSP651HC/nhV6qko0WbXwayHnNtfhcpVxZ6SAMOgpcHOhL2QU9BOf2Wl/m1tCA==
   dependencies:
     "@babel/core" "^7.2.0"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/preset-react" "^7.0.0"
-    "@polkadot/dev" "^0.22.11"
+    "@polkadot/dev" "^0.22.12"
     "@types/react" "^16.7.13"
     "@types/react-dom" "^16.0.11"
     "@types/styled-components" "^4.1.2"
@@ -1383,10 +1383,10 @@
     webpack-serve "^2.0.3"
     worker-loader "^2.0.0"
 
-"@polkadot/dev@^0.22.11":
-  version "0.22.11"
-  resolved "https://registry.yarnpkg.com/@polkadot/dev/-/dev-0.22.11.tgz#fcacaba21cb7f72490ad67e228171ce6cf5903f7"
-  integrity sha512-xYyAknjwqNZqDpxNgbH137R5m3jACQjnJi7/rz3uR8GFW107rFb7sGTtvtX3TYaS7CP69Eiy+mCRCE+3bdKHsw==
+"@polkadot/dev@^0.22.12":
+  version "0.22.12"
+  resolved "https://registry.yarnpkg.com/@polkadot/dev/-/dev-0.22.12.tgz#f0eaf211efb3d6b70869dab63a022858a110de85"
+  integrity sha512-dF4LJHrDOLbn7AqBm2ZL8o9YqUsm0+00OED8XCI0n2jy7jvMd37PwPn3gib0Ip7xwSZiikJbHvNkvmyGUUZjpw==
   dependencies:
     "@babel/cli" "^7.2.0"
     "@babel/core" "^7.2.0"
