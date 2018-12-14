@@ -1,7 +1,7 @@
 {
-  "name": "@polkadot/ui-settings",
+  "name": "@polkadot/ui-assets",
   "version": "0.23.0",
-  "description": "Manages app settings",
+  "description": "Static assets shared accross projects",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [
@@ -9,8 +9,6 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.2.0",
-    "@types/store": "^2.0.1",
-    "store": "^2.0.12"
+    "@babel/runtime": "^7.2.0"
   }
 }
