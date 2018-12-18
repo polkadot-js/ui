@@ -32,7 +32,7 @@ const CHAINS: ChainsInfo = [
 ];
 
 const ENDPOINTS: Options = [
-  { text: 'Charred Cherry (hosted by Parity)', value: 'wss://polkadot-rpc.polkadot.io/' },
+  { text: 'Charred Cherry (hosted by Parity)', value: 'wss://substrate-rpc.parity.io/' },
   { disabled: true, text: 'Polkadot PoC-3 (hosted by Parity)', value: 'wss://polkadot-rpc.polkadot.io/' },
   { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
 ];
