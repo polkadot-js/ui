@@ -16,7 +16,7 @@ class Settings implements SettingsStruct {
   constructor () {
     const settings = store.get('settings') || {};
 
-    // FIXME Here we have the defaults for BBQ, swap to Polkadot as soon as poc-3 is there
+    // FIXME Here we have the defaults for Charred Cherry, swap to Polkadot as soon as poc-3 is there
     // FIXME WS_URL first, then substrate-rpc
     this._apiUrl = settings.apiUrl || ENDPOINTS[0].value || process.env.WS_URL;
     this._i18nLang = settings.i18nLang || LANGUAGES[0].value;

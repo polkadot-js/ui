@@ -22,11 +22,17 @@ const CHAINS: ChainsInfo = [
     chainId: 68,
     decimals: 15,
     unit: 'BBQ'
+  },
+  {
+    name: 'Charred Cherry',
+    chainId: 68,
+    decimals: 15,
+    unit: 'CHR'
   }
 ];
 
 const ENDPOINTS: Options = [
-  { text: 'BBQ Birch (hosted by Parity)', value: 'wss://substrate-rpc.parity.io/' },
+  { text: 'Charred Cherry (hosted by Parity)', value: 'wss://polkadot-rpc.polkadot.io/' },
   { disabled: true, text: 'Polkadot PoC-3 (hosted by Parity)', value: 'wss://polkadot-rpc.polkadot.io/' },
   { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
 ];
