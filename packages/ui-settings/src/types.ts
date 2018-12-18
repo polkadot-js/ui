@@ -4,9 +4,9 @@
 
 export type ChainsInfo = Array<{
   name: string,
-  chainId: number,
   decimals: number,
-  unit: string
+  networkId: number,
+  tokenSymbol: string
 }>;
 
 export type Options = Array<{

@@ -7,27 +7,21 @@ import { ChainsInfo, Options } from './types';
 const CHAINS: ChainsInfo = [
   {
     name: 'Development',
-    chainId: 0,
     decimals: 0,
-    unit: 'Unit'
+    networkId: 0,
+    tokenSymbol: 'Unit'
   },
   {
     name: 'Local Testnet',
-    chainId: 0,
     decimals: 0,
-    unit: 'Unit'
-  },
-  {
-    name: 'BBQ Birch',
-    chainId: 68,
-    decimals: 15,
-    unit: 'BBQ'
+    networkId: 0,
+    tokenSymbol: 'Unit'
   },
   {
     name: 'Charred Cherry',
-    chainId: 68,
     decimals: 15,
-    unit: 'CHR'
+    networkId: 68,
+    tokenSymbol: 'CHR'
   }
 ];
 
