@@ -4,8 +4,8 @@
 
 export type ChainsInfo = Array<{
   name: string,
-  decimals: number,
   networkId: number,
+  tokenDecimals: number,
   tokenSymbol: string
 }>;
 

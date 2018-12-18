@@ -7,20 +7,20 @@ import { ChainsInfo, Options } from './types';
 const CHAINS: ChainsInfo = [
   {
     name: 'Development',
-    decimals: 0,
     networkId: 0,
+    tokenDecimals: 0,
     tokenSymbol: 'Unit'
   },
   {
     name: 'Local Testnet',
-    decimals: 0,
     networkId: 0,
+    tokenDecimals: 0,
     tokenSymbol: 'Unit'
   },
   {
     name: 'Charred Cherry',
-    decimals: 15,
     networkId: 68,
+    tokenDecimals: 15,
     tokenSymbol: 'CHR'
   }
 ];
