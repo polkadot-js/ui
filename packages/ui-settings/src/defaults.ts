@@ -7,27 +7,27 @@ import { ChainsInfo, Options } from './types';
 const CHAINS: ChainsInfo = [
   {
     name: 'Development',
-    chainId: 0,
-    decimals: 0,
-    unit: 'Unit'
+    networkId: 0,
+    tokenDecimals: 0,
+    tokenSymbol: 'Unit'
   },
   {
     name: 'Local Testnet',
-    chainId: 0,
-    decimals: 0,
-    unit: 'Unit'
+    networkId: 0,
+    tokenDecimals: 0,
+    tokenSymbol: 'Unit'
   },
   {
-    name: 'BBQ Birch',
-    chainId: 68,
-    decimals: 15,
-    unit: 'BBQ'
+    name: 'Charred Cherry',
+    networkId: 68,
+    tokenDecimals: 15,
+    tokenSymbol: 'CHR'
   }
 ];
 
 const ENDPOINTS: Options = [
-  { text: 'BBQ Birch (hosted by Parity)', value: 'wss://substrate-rpc.parity.io/' },
-  { disabled: true, text: 'Polkadot PoC-3 (hosted by Parity)', value: 'wss://polkadot-rpc.polkadot.io/' },
+  { text: 'Charred Cherry (Substrate, hosted by Parity)', value: 'wss://substrate-rpc.parity.io/' },
+  { disabled: true, text: 'Alexander (Polkadot, hosted by Parity)', value: 'wss://polkadot-rpc.polkadot.io/' },
   { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
 ];
 
