@@ -47,8 +47,8 @@ const UIMODES: Options = [
 ];
 
 const UITHEMES: Options = [
-  { value: 'substrate', text: 'Substrate' },
-  { value: 'polkadot', text: 'Polkadot' }
+  { value: 'polkadot', text: 'Polkadot' },
+  { value: 'substrate', text: 'Substrate' }
 ];
 
 export {
