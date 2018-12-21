@@ -22,12 +22,18 @@ const CHAINS: ChainsInfo = [
     networkId: 68,
     tokenDecimals: 15,
     tokenSymbol: 'CHR'
+  },
+  {
+    name: 'Alexander',
+    networkId: 3,
+    tokenDecimals: 15,
+    tokenSymbol: 'DOT'
   }
 ];
 
 const ENDPOINTS: Options = [
+  { text: 'Alexander (Polkadot, hosted by Parity)', value: 'wss://poc3-rpc.polkadot.io/' },
   { text: 'Charred Cherry (Substrate, hosted by Parity)', value: 'wss://substrate-rpc.parity.io/' },
-  { disabled: true, text: 'Alexander (Polkadot, hosted by Parity)', value: 'wss://polkadot-rpc.polkadot.io/' },
   { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
 ];
 
