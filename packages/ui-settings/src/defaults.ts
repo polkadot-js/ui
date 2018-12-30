@@ -7,13 +7,13 @@ import { ChainsInfo, Options } from './types';
 const CHAINS: ChainsInfo = [
   {
     name: 'Development',
-    networkId: 0,
+    networkId: 42,
     tokenDecimals: 0,
     tokenSymbol: 'Unit'
   },
   {
     name: 'Local Testnet',
-    networkId: 0,
+    networkId: 42,
     tokenDecimals: 0,
     tokenSymbol: 'Unit'
   },
