@@ -1359,15 +1359,15 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@polkadot/dev-react@^0.23.6":
-  version "0.23.6"
-  resolved "https://registry.yarnpkg.com/@polkadot/dev-react/-/dev-react-0.23.6.tgz#84c58689455e6624342febbe8588659fcff51753"
-  integrity sha512-Whc5vaRVA7tpCIuifnIsUUBZIdxZXx6Reunny0ZZ0BwylOX8QeHgqKPF4RW1cndMjjMlKv/dP8XGst7d8avWfg==
+"@polkadot/dev-react@^0.23.7":
+  version "0.23.7"
+  resolved "https://registry.yarnpkg.com/@polkadot/dev-react/-/dev-react-0.23.7.tgz#59c0b23e208c2fc10a007994ff3ca4b805f9673f"
+  integrity sha512-8fUdnv7vwPaTZSMKYZ9pYDAZl5g6mnl+GcT81EpMtBfVhPi2ZimzhMqQwQQ+lS4gMs6Jcmnk0Ajfg87EIFzdBA==
   dependencies:
     "@babel/core" "^7.2.2"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/preset-react" "^7.0.0"
-    "@polkadot/dev" "^0.23.6"
+    "@polkadot/dev" "^0.23.7"
     "@types/react" "^16.7.18"
     "@types/react-dom" "^16.0.11"
     "@types/styled-components" "^4.1.4"
@@ -1395,10 +1395,10 @@
     webpack-serve "^2.0.3"
     worker-loader "^2.0.0"
 
-"@polkadot/dev@^0.23.6":
-  version "0.23.6"
-  resolved "https://registry.yarnpkg.com/@polkadot/dev/-/dev-0.23.6.tgz#20067425bfa66d0e35e32286be1aa127b522a440"
-  integrity sha512-yeb+yhz9/CbKMdimPR3Q7Gtlft+3FZnhtfl4y1FC02APgzArgX/RQ+o/Aju/wVgl1Eh2lZWS8TQkdtJux+H4mA==
+"@polkadot/dev@^0.23.7":
+  version "0.23.7"
+  resolved "https://registry.yarnpkg.com/@polkadot/dev/-/dev-0.23.7.tgz#4a32050214fe13e7fdaa5aa1cc9fd0ccd310211b"
+  integrity sha512-6US2N28NBSfUt67zEZn+5CJ6DCFcklGqwHEykN6Xr+S9HsX+en9oK4NTzfgewjNP9FlKLjDjl7EwIJgIOERmwA==
   dependencies:
     "@babel/cli" "^7.2.3"
     "@babel/core" "^7.2.2"
@@ -1431,43 +1431,43 @@
     tslint "^5.12.0"
     tslint-config-standard "^8.0.1"
     typedoc "^0.13.0"
-    typedoc-plugin-markdown "^1.1.19"
-    typedoc-plugin-no-inherit "^1.0.2"
+    typedoc-plugin-markdown "^1.1.20"
+    typedoc-plugin-no-inherit "^1.1.1"
     typescript "^3.2.2"
 
-"@polkadot/keyring@^0.33.29":
-  version "0.33.29"
-  resolved "https://registry.yarnpkg.com/@polkadot/keyring/-/keyring-0.33.29.tgz#28c1ec4eef6daa1dfa4a5f449c680c0f581f36f0"
-  integrity sha512-50ZVed1Qx3Lx1biv28ShefCn7kI6Ol6qN8EE2DaU+r/ThLV/K4L7OoU6I+BMNH+RFXHT/DDr9dG7fxz3EUOPVA==
+"@polkadot/keyring@^0.33.30":
+  version "0.33.30"
+  resolved "https://registry.yarnpkg.com/@polkadot/keyring/-/keyring-0.33.30.tgz#54cb6baec7db16366989381601cd58f2b5f9b851"
+  integrity sha512-qE6X9Nhp0reXBSPz5PGPlT78KchJXdfUuAE/yJIOyM2s5WGOWCHCMzQEJmL7S9F70w76EFxazczJCmNe+ZhPGA==
   dependencies:
     "@babel/runtime" "^7.2.0"
-    "@polkadot/util" "^0.33.29"
-    "@polkadot/util-crypto" "^0.33.29"
+    "@polkadot/util" "^0.33.30"
+    "@polkadot/util-crypto" "^0.33.30"
     "@types/bs58" "^4.0.0"
     bs58 "^4.0.1"
 
-"@polkadot/ts@^0.1.46":
-  version "0.1.46"
-  resolved "https://registry.yarnpkg.com/@polkadot/ts/-/ts-0.1.46.tgz#3c2015dbb0e0481f14f4b3b4f73bacb642f28da8"
-  integrity sha512-lA0ACnAzL6QlGZjDNz5GYKAhpES8Sky8RMVRwbH/TKAEBYIj95cmEx2gNW5CcHQOvzow39q1OvkuiiGgnRnRRA==
+"@polkadot/ts@^0.1.47":
+  version "0.1.47"
+  resolved "https://registry.yarnpkg.com/@polkadot/ts/-/ts-0.1.47.tgz#89a7e44ce3274feb446e8102f16499ec6a5b5720"
+  integrity sha512-UE8Wru0BOk+h0RiDAxo1P5dpk9mZyK1VIJiKKM2vfzQqMCPfKnSuQXXXkNzJ/4dqjRJ6ilYwFkzXQwemJWF0+w==
 
-"@polkadot/types@^0.37.1":
-  version "0.37.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.37.1.tgz#19a5e4f49d568e42da46a097ab10e085c2ec94a8"
-  integrity sha512-qGkiEsUy1m644PpmV+VRvWcq3frs8Vn674ueth8Cohgmor8ZV4uXbM0kxkrtfQO+al3ftPyJ8dal+8NaryFr3g==
+"@polkadot/types@^0.37.2":
+  version "0.37.2"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.37.2.tgz#4aaa8a0d64c2cf3847c9c12d8f8de2719bf8a489"
+  integrity sha512-33/nmA8jJ+eIUCa7KxLb34nEMrvTu2VsO2MPXLEWF3/VuRTK26ylMvdNxxzvJla/7ibgnulryTabi92GLPz1Ug==
   dependencies:
     "@babel/runtime" "^7.2.0"
-    "@polkadot/keyring" "^0.33.29"
-    "@polkadot/util" "^0.33.29"
+    "@polkadot/keyring" "^0.33.30"
+    "@polkadot/util" "^0.33.30"
     core-js "^2.6.1"
 
-"@polkadot/util-crypto@^0.33.29":
-  version "0.33.29"
-  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-0.33.29.tgz#6471a72fb6cdb329993736191345a72881b5e43a"
-  integrity sha512-JX5ZAKriLvKCj3rA4Al5azzCYcAma6Ojw+qBAjHTwh3vHylrwJq4QiKh9xmJY6qsl4ZGaEkcz+zlbSPKPCAp7Q==
+"@polkadot/util-crypto@^0.33.30":
+  version "0.33.30"
+  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-0.33.30.tgz#e164d6cc274e9031b6e51bbe674fc32a3845a6bd"
+  integrity sha512-epaEyZlVjAvOS2GwiIzgKcD+/09GaNeWcb7+N+Cpr3y8SV2cTFe0r4FHip93Aioj/pB+QzMiYuJbM2gYxKxMvQ==
   dependencies:
     "@babel/runtime" "^7.2.0"
-    "@polkadot/util" "^0.33.29"
+    "@polkadot/util" "^0.33.30"
     "@types/bip39" "^2.4.1"
     bip39 "^2.5.0"
     blakejs "^1.1.0"
@@ -1475,10 +1475,10 @@
     tweetnacl "^1.0.0"
     xxhashjs "^0.2.2"
 
-"@polkadot/util@^0.33.29":
-  version "0.33.29"
-  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-0.33.29.tgz#a6121df01cacd1f1603667576fb4acd499889e00"
-  integrity sha512-f+cm3gCQd2quRXgPV1pbpi9HdAzi6580owkmocoRqLXk2uwE/DkSv5vWQr0PQMxqsfnvRcms67DE2hj+k7FbBg==
+"@polkadot/util@^0.33.30":
+  version "0.33.30"
+  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-0.33.30.tgz#a25ca56ac5b5979ec199d51c35593153162b7ea0"
+  integrity sha512-193F3ZlFdCWn6hrnICy2NJmsVhi7VsxC1C2RXOfddfxgJa9/5+xtgPiobFD/6sL7IOhLF6vINlDYcoFNKdsw9w==
   dependencies:
     "@babel/runtime" "^7.2.0"
     "@types/bn.js" "^4.11.3"
@@ -11607,17 +11607,17 @@ typedoc-default-themes@^0.5.0:
   resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.5.0.tgz#6dc2433e78ed8bea8e887a3acde2f31785bd6227"
   integrity sha1-bcJDPnjti+qOiHo6zeLzF4W9Yic=
 
-typedoc-plugin-markdown@^1.1.19:
+typedoc-plugin-markdown@^1.1.20:
   version "1.1.20"
   resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-1.1.20.tgz#a3eb91994f3f8b67d5df4d938653982bf2b85209"
   integrity sha512-2rDLrzb0Wb0w0+iQ7LEGWccvRvluHTfPzj+wiggUaOYq3WaUfjA2KVFlAOECIuPiLoMiVgwSAp2YOLCYNp1C5A==
   dependencies:
     turndown "^5.0.1"
 
-typedoc-plugin-no-inherit@^1.0.2:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-no-inherit/-/typedoc-plugin-no-inherit-1.1.0.tgz#735ac343bfe25ba7d230aa9490fc37020677dc91"
-  integrity sha512-FOFA3fydaN3IxrLG4uKWzoDRT5BrFIxAI3VemoBWxRk7XL4zKL7XAy/wGEUZ89onYFY8VPJpfle3ZJJm1j/bAg==
+typedoc-plugin-no-inherit@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-no-inherit/-/typedoc-plugin-no-inherit-1.1.1.tgz#ee2c5e53de50c4c34f26342a880d7a01cf76f61a"
+  integrity sha512-+yZWgh8Nh7wL6gxDMrdx2pPGigG8U9iklSiHQyxOdNb8r+EyR/q9KssdFCiPCyFZEcCviU+4a7wuD8ZOGyXrWA==
 
 typedoc@^0.13.0:
   version "0.13.0"
