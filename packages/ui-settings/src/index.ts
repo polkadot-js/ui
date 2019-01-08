@@ -16,10 +16,10 @@ class Settings implements SettingsStruct {
   constructor () {
     const settings = store.get('settings') || {};
 
-    this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINTS[0].value;
+    this._apiUrl = process.env.WS_URL || settings.apiUrl || ENDPOINTS[0].value;
     this._i18nLang = settings.i18nLang || LANGUAGES[0].value;
-    this._uiMode = settings.uiMode || process.env.UI_MODE || UIMODES[0].value;
-    this._uiTheme = settings.uiTheme || process.env.UI_THEME || UITHEMES[0].value;
+    this._uiMode = process.env.UI_MODE || settings.uiMode || UIMODES[0].value;
+    this._uiTheme = process.env.UI_THEME || settings.uiTheme || UITHEMES[0].value;
   }
 
   get apiUrl (): string {
