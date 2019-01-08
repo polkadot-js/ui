@@ -19,7 +19,7 @@ const CHAINS: ChainsInfo = [
   },
   {
     name: 'Charred Cherry',
-    networkId: 68,
+    networkId: 42,
     tokenDecimals: 15,
     tokenSymbol: 'CHR'
   },
