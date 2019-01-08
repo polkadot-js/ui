@@ -25,7 +25,7 @@ const CHAINS: ChainsInfo = [
   },
   {
     name: 'Alexander',
-    networkId: 3,
+    networkId: 42,
     tokenDecimals: 15,
     tokenSymbol: 'DOT'
   }
