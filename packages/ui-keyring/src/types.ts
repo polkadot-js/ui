@@ -35,6 +35,7 @@ export interface KeyringStruct {
   addAccountPair: (pair: KeyringPair, password: string) => KeyringPair;
   backupAccount: (pair: KeyringPair, password: string) => KeyringPair$Json;
   createAccount: (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
+  createAccountExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountMnemonic: (seed: string, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
   encryptAccount: (pair: KeyringPair, password: string) => void;
   forgetAccount: (address: string) => void;

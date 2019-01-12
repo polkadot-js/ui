@@ -44,6 +44,14 @@ class Keyring extends Base implements KeyringStruct {
     return pair;
   }
 
+  createAccountExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): KeyringPair {
+    const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true });
+
+    this.saveAccount(pair);
+
+    return pair;
+  }
+
   createAccountMnemonic (seed: string, password?: string, meta: KeyringPair$Meta = {}): KeyringPair {
     const pair = this.keyring.addFromMnemonic(seed, meta);
 
