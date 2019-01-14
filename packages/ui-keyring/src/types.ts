@@ -4,6 +4,7 @@
 
 import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
 import { AddressSubject, SingleAddress } from './observable/types';
+import { string } from 'prop-types';
 
 export type KeyringJson$Meta = {
   isRecent?: boolean,
@@ -37,6 +38,8 @@ export interface KeyringStruct {
   createAccount: (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountMnemonic: (seed: string, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
+  decodeAddress: (key: string | Uint8Array) => Uint8Array;
+  encodeAddress: (key: string | Uint8Array) => string;
   encryptAccount: (pair: KeyringPair, password: string) => void;
   forgetAccount: (address: string) => void;
   forgetAddress: (address: string) => void;
