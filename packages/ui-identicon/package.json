@@ -22,8 +22,8 @@
     "react": "*"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^0.33.34",
-    "@polkadot/util-crypto": "^0.33.34",
+    "@polkadot/keyring": "^0.33.35",
+    "@polkadot/util-crypto": "^0.33.35",
     "xmlserializer": "^0.6.1"
   }
 }
