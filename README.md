@@ -20,4 +20,4 @@ The following libraries are currently available
 - [ui-assets](packages/ui-assets/) Static assets, images and others, shared accross projects
 - [ui-identicon](packages/ui-identicon/) Identity icon generator with address as input
 - [ui-keyring](packages/ui-keyring/) A browser-specific wrapper around the base [@polkadot/util-keyring](https://github.com/polkadot-js/util/) library
-- [ui-settings](packages/ui-settings/) A browser local stiorage wrapper for app settings & configuration
+- [ui-settings](packages/ui-settings/) A browser local storage wrapper for app settings & configuration
