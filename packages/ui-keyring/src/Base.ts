@@ -7,7 +7,7 @@ import { KeyringInstance, KeyringPair, KeyringOptions } from '@polkadot/keyring/
 import { AddressSubject } from './observable/types';
 
 import testKeyring from '@polkadot/keyring/testing';
-import { isString } from '@polkadot/util';
+import { isBoolean, isString } from '@polkadot/util';
 
 import accounts from './observable/accounts';
 import addresses from './observable/addresses';
@@ -50,6 +50,30 @@ export default class Base {
     return this.keyring.encodeAddress(key);
   }
 
+  getPair (address: string | Uint8Array): KeyringPair {
+    return this.keyring.getPair(address);
+  }
+
+  getPairs (): Array<KeyringPair> {
+    return this.keyring.getPairs().filter((pair: KeyringPair) =>
+      env.isDevelopment() || pair.getMeta().isTesting !== true
+    );
+  }
+
+  isAvailable (_address: Uint8Array | string): boolean {
+    const accountsValue = this.accounts.subject.getValue();
+    const addressesValue = this.addresses.subject.getValue();
+    const address = isString(_address)
+      ? _address
+      : this.encodeAddress(_address);
+
+    return !accountsValue[address] && !addressesValue[address];
+  }
+
+  isPassValid (password: string): boolean {
+    return password.length > 0 && password.length <= MAX_PASS_LEN;
+  }
+
   setAddressPrefix (prefix: number): void {
     this._prefix = prefix as Prefix;
   }
@@ -58,8 +82,12 @@ export default class Base {
     env.set(isDevelopment);
   }
 
-  protected initKeyring (options: KeyringOptions): void {
+  protected initKeyring (options: KeyringOptions & { isDevelopment?: boolean }): void {
     const keyring = testKeyring({ addressPrefix: this._prefix, ...options });
+
+    if (isBoolean(options.isDevelopment)) {
+      this.setDevMode(options.isDevelopment);
+    }
 
     this._keyring = keyring;
 
@@ -83,29 +111,5 @@ export default class Base {
     if (!pair.getMeta().whenCreated) {
       pair.setMeta({  whenCreated: Date.now() });
     }
-  }
-
-  isAvailable (_address: Uint8Array | string): boolean {
-    const accountsValue = this.accounts.subject.getValue();
-    const addressesValue = this.addresses.subject.getValue();
-    const address = isString(_address)
-      ? _address
-      : this.encodeAddress(_address);
-
-    return !accountsValue[address] && !addressesValue[address];
-  }
-
-  isPassValid (password: string): boolean {
-    return password.length > 0 && password.length <= MAX_PASS_LEN;
-  }
-
-  getPair (address: string | Uint8Array): KeyringPair {
-    return this.keyring.getPair(address);
-  }
-
-  getPairs (): Array<KeyringPair> {
-    return this.keyring.getPairs().filter((pair: KeyringPair) =>
-      env.isDevelopment() || pair.getMeta().isTesting !== true
-    );
   }
 }

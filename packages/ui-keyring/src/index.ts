@@ -45,7 +45,7 @@ class Keyring extends Base implements KeyringStruct {
   }
 
   createAccountExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): KeyringPair {
-    const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true });
+    const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
 
     this.saveAccount(pair);
 
@@ -169,9 +169,9 @@ class Keyring extends Base implements KeyringStruct {
 
   restoreAccount (json: KeyringPair$Json, password: string): KeyringPair {
     const pair = createPair(
+      this.keyring.type,
       {
-        publicKey: this.decodeAddress(json.address),
-        secretKey: new Uint8Array()
+        publicKey: this.decodeAddress(json.address)
       },
       json.meta,
       hexToU8a(json.encoded)
