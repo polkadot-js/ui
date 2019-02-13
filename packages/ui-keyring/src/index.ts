@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
+import { KeyringPair, KeyringPair$Meta, KeyringPair$Json, PairType } from '@polkadot/keyring/types';
 import { SingleAddress } from './observable/types';
 import { KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringStruct } from './types';
 
@@ -16,7 +16,7 @@ import { accountKey, addressKey, accountRegex, addressRegex } from './defaults';
 import keyringOption from './options';
 
 // No accounts (or test accounts) should be loaded until after the chain determination.
-// Chain determination occurs outside of Keyring. Loading `keyring.loadAll()` is triggered
+// Chain determination occurs outside of Keyring. Loading `keyring.loadAll(type: 'ed25519' | 'sr25519')` is triggered
 // from the API after the chain is received
 class Keyring extends Base implements KeyringStruct {
   addAccountPair (pair: KeyringPair, password: string): KeyringPair {
@@ -153,8 +153,8 @@ class Keyring extends Base implements KeyringStruct {
     this.rewriteKey(json, key, hexAddr, addressKey);
   }
 
-  loadAll (): void {
-    super.initKeyring();
+  loadAll (type: PairType): void {
+    super.initKeyring(type);
 
     store.each((json: KeyringJson, key: string) => {
       if (accountRegex.test(key)) {
