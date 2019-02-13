@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { Prefix } from '@polkadot/keyring/address/types';
-import { KeyringInstance, KeyringPair, PairType } from '@polkadot/keyring/types';
+import { KeyringInstance, KeyringPair, KeyringOptions } from '@polkadot/keyring/types';
 import { AddressSubject } from './observable/types';
 
 import testKeyring from '@polkadot/keyring/testing';
@@ -18,13 +18,12 @@ export default class Base {
   private _accounts: AddressSubject;
   private _addresses: AddressSubject;
   private _keyring?: KeyringInstance;
-  private _prefix: Prefix;
+  private _prefix?: Prefix;
 
   constructor () {
     this._accounts = accounts;
     this._addresses = addresses;
     this._keyring = undefined;
-    this._prefix = 42;
   }
 
   get accounts () {
@@ -59,10 +58,8 @@ export default class Base {
     env.set(isDevelopment);
   }
 
-  protected initKeyring (type: PairType): void {
-    const keyring = testKeyring(type);
-
-    keyring.setAddressPrefix(this._prefix);
+  protected initKeyring (options: KeyringOptions): void {
+    const keyring = testKeyring({ addressPrefix: this._prefix, ...options });
 
     this._keyring = keyring;
 
