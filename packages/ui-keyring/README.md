@@ -28,18 +28,70 @@ render () {
   keyring.saveAddress(address, { ...meta });
 }
 ```
-### Observables
+## Observables
+### Option 1: Declarative subscribe/unsubscribe w/ react-with-observable (recommended 'React' way)
 ```
-import React from 'react';
 import accountObservable from '@polkadot/ui-keyring/observable/accounts';
+import { SingleAddress, SubjectInfo } from '@polkadot/ui-keyring/observable/types';
+import React from 'react';
+import { Subscribe } from 'react-with-observable';
+import { map } from 'rxjs/operators';
 
-class MyReactComponent extends React.Component {
+class MyReactComponent extends React.PureComponent {
+  render () {
+    <Subscribe>
+      {accountObservable.subject.pipe(
+        map((allAccounts: SubjectInfo) =>
+          !allAccounts
+            ? this.renderEmpty()
+            : Object.values(allAccounts).map((account: SingleAddress) =>
+                // Your component goes here
+                console.log(account.json.address)
+            )
+        ))}
+    </Subscribe>
+  }
+
+  renderEmpty () {
+    return (
+      <div> no accounts to display ... </div>
+    );
+  }
+}
+
+```
+
+### Option 2: Imperative subscribe/unsubscribe
+```
+import accountObservable from '@polkadot/ui-keyring/observable/accounts';
+import { SingleAddress, SubjectInfo } from '@polkadot/ui-keyring/observable/types';
+import React from 'react';
+import { Subscription } from 'rxjs';
+
+type State = {
+  allAccounts?: SubjectInfo,
+  subscriptions?: [Subscription]
+}
+
+class MyReactComponent extends React.PureComponent<State> {
   componentDidMount () {
-    accountObservable.subscribe((observedAccounts) => {
+    const accountSubscription = accountObservable.subject.subscribe((observedAccounts) => {
       this.setState({
         accounts: observedAccounts
       });
     })
+
+    this.setState({
+      subscriptions: [accountSubscription]
+    });
+  }
+
+  componentWillUnmount () {
+    const { subscriptions } = this.state;
+
+    for (s in subscriptions) {
+      s.subject.unsubscribe();
+    }
   }
 
   render () {
@@ -48,7 +100,7 @@ class MyReactComponent extends React.Component {
     return (
       <h1>All Accounts</h1>
       {
-        Object.keys(accounts).map(address => {
+        Object.keys(accounts).map((address: SingleAddress) => {
           return <p> {address} </p>;
         })
       }
