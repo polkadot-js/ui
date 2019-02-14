@@ -16,13 +16,13 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^0.34.4",
-    "@polkadot/types": "^0.43.0",
-    "@polkadot/util": "^0.34.4"
+    "@polkadot/keyring": "^0.34.6",
+    "@polkadot/types": "^0.43.1",
+    "@polkadot/util": "^0.34.6"
   },
   "peerDependencies": {
     "@polkadot/keyring": ">=0.34.3",
-    "@polkadot/types": "*",
+    "@polkadot/types": ">=0.43.1",
     "@polkadot/util": "*"
   }
 }
