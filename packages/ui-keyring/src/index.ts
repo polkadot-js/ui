@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
+import { KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions } from '@polkadot/keyring/types';
 import { SingleAddress } from './observable/types';
 import { KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringStruct } from './types';
 
@@ -16,7 +16,7 @@ import { accountKey, addressKey, accountRegex, addressRegex } from './defaults';
 import keyringOption from './options';
 
 // No accounts (or test accounts) should be loaded until after the chain determination.
-// Chain determination occurs outside of Keyring. Loading `keyring.loadAll()` is triggered
+// Chain determination occurs outside of Keyring. Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
 class Keyring extends Base implements KeyringStruct {
   addAccountPair (pair: KeyringPair, password: string): KeyringPair {
@@ -45,7 +45,7 @@ class Keyring extends Base implements KeyringStruct {
   }
 
   createAccountExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): KeyringPair {
-    const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true });
+    const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
 
     this.saveAccount(pair);
 
@@ -153,8 +153,8 @@ class Keyring extends Base implements KeyringStruct {
     this.rewriteKey(json, key, hexAddr, addressKey);
   }
 
-  loadAll (): void {
-    super.initKeyring();
+  loadAll (options: KeyringOptions): void {
+    super.initKeyring(options);
 
     store.each((json: KeyringJson, key: string) => {
       if (accountRegex.test(key)) {
@@ -169,9 +169,9 @@ class Keyring extends Base implements KeyringStruct {
 
   restoreAccount (json: KeyringPair$Json, password: string): KeyringPair {
     const pair = createPair(
+      this.keyring.type,
       {
-        publicKey: this.decodeAddress(json.address),
-        secretKey: new Uint8Array()
+        publicKey: this.decodeAddress(json.address)
       },
       json.meta,
       hexToU8a(json.encoded)
