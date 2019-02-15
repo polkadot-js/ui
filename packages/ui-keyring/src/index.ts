@@ -2,9 +2,9 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions } from '@polkadot/keyring/types';
+import { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
 import { SingleAddress } from './observable/types';
-import { KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringStruct } from './types';
+import { KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import store from 'store';
 import createPair from '@polkadot/keyring/pair';
