@@ -1,3 +1,3 @@
-# @polkadot/ui-assets
+# @polkadot/ui-util
 
-Static assets including images shared across projects
+Various utility and formatting functions
