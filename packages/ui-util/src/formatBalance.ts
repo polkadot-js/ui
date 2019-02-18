@@ -19,7 +19,7 @@ interface BalanceFormatter {
   findSi (type: string): SiDef;
   getDefaults (): Defaults;
   getOptions (decimals?: number): Array<SiDef>;
-  setDefaults (defaults: Defaults): void;
+  setDefaults (defaults: Partial<Defaults>): void;
 }
 
 const DEFAULT_DECIMALS = 0;
