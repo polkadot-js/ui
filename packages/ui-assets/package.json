@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-assets",
-  "version": "0.26.4",
+  "version": "0.26.5",
   "description": "Static assets shared accross projects",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
