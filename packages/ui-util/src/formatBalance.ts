@@ -9,8 +9,8 @@ import { SI, SI_MID, SiDef, calcSi, findSi } from './si';
 import formatDecimal from './formatDecimal';
 
 type Defaults = {
-  decimals?: number,
-  unit?: string
+  decimals: number,
+  unit: string
 };
 
 interface BalanceFormatter {
@@ -76,7 +76,7 @@ formatBalance.getOptions = (decimals: number = defaultDecimals): Array<SiDef> =>
 };
 
 // Sets the default decimals to use for formatting (ui-wide)
-formatBalance.setDefaults = ({ decimals, unit }: Defaults): void => {
+formatBalance.setDefaults = ({ decimals, unit }: Partial<Defaults>): void => {
   defaultDecimals = isUndefined(decimals) ? defaultDecimals : decimals;
   defaultUnit = isUndefined(unit) ? defaultUnit : unit;
 
