@@ -1,0 +1,20 @@
+{
+  "name": "@polkadot/ui-util",
+  "version": "0.26.3",
+  "description": "Utility functions (non-React) that aid in display, formats and determination",
+  "main": "index.js",
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "maintainers": [
+    "Jaco Greeff <jacogr@gmail.com>"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@babel/runtime": "^7.3.1"
+  },
+  "devDependencies": {
+    "@polkadot/types": "^0.43.10"
+  },
+  "peerDependencies": {
+    "@polkadot/types": "*"
+  }
+}
