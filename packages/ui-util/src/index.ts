@@ -7,3 +7,4 @@ export { default as formatDecimal } from './formatDecimal';
 export { default as formatElapsed } from './formatElapsed';
 export { default as formatNumber } from './formatNumber';
 export { default as isTestChain } from './isTestChain';
+export { calcSi, findSi } from './si';

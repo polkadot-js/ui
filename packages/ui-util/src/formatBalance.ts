@@ -5,13 +5,8 @@
 import BN from 'bn.js';
 import { isUndefined } from '@polkadot/util';
 
+import { SI, SI_MID, SiDef, calcSi, findSi } from './si';
 import formatDecimal from './formatDecimal';
-
-type SiDef = {
-  power: number,
-  text: string,
-  value: string
-};
 
 type Defaults = {
   decimals?: number,
@@ -20,42 +15,18 @@ type Defaults = {
 
 interface BalanceFormatter {
   (input?: number | string | BN, withSi?: boolean, decimals?: number): string;
+  calcSi (text: string, decimals: number): SiDef;
   findSi (type: string): SiDef;
   getDefaults (): Defaults;
   getOptions (decimals?: number): Array<SiDef>;
   setDefaults (defaults: Defaults): void;
 }
 
-const SI_MID = 8;
 const DEFAULT_DECIMALS = 0;
-const DEFAULT_UNIT = 'Unit';
+const DEFAULT_UNIT = SI[SI_MID].text;
 
 let defaultDecimals = DEFAULT_DECIMALS;
 let defaultUnit = DEFAULT_UNIT;
-
-const SI: Array<SiDef> = [
-  { power: -24, value: 'y', text: 'yocto' },
-  { power: -21, value: 'z', text: 'zepto' },
-  { power: -18, value: 'a', text: 'atto' },
-  { power: -15, value: 'f', text: 'femto' },
-  { power: -12, value: 'p', text: 'pico' },
-  { power: -9, value: 'n', text: 'nano' },
-  { power: -6, value: 'µ', text: 'micro' },
-  { power: -3, value: 'm', text: 'milli' },
-  { power: 0, value: '-', text: defaultUnit }, // position 8
-  { power: 3, value: 'k', text: 'Kilo' },
-  { power: 6, value: 'M', text: 'Mega' },
-  { power: 9, value: 'G', text: 'Giga' },
-  { power: 12, value: 'T', text: 'Tera' },
-  { power: 15, value: 'P', text: 'Peta' },
-  { power: 18, value: 'E', text: 'Exa' },
-  { power: 21, value: 'Z', text: 'Zeta' },
-  { power: 24, value: 'Y', text: 'Yotta' }
-];
-
-export function calcSi (text: string, decimals: number = defaultDecimals): SiDef {
-  return SI[(SI_MID - 1) + Math.ceil((text.length - decimals) / 3)] || SI[SI.length - 1];
-}
 
 // Formats a string/number with <prefix>.<postfix><type> notation
 function _formatBalance (input?: number | string | BN, withSi: boolean = true, decimals: number = defaultDecimals): string {
@@ -85,10 +56,8 @@ function _formatBalance (input?: number | string | BN, withSi: boolean = true, d
 
 const formatBalance = _formatBalance as BalanceFormatter;
 
-// Given a SI type (e.g. k, m, Y) find the SI definition
-formatBalance.findSi = (type: string): SiDef => {
-  return SI.find(({ value }) => value === type) || SI[SI_MID];
-};
+formatBalance.calcSi = calcSi;
+formatBalance.findSi = findSi;
 
 formatBalance.getDefaults = (): Defaults => {
   return {
