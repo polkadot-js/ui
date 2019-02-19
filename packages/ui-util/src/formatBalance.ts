@@ -15,7 +15,7 @@ type Defaults = {
 
 interface BalanceFormatter {
   (input?: number | string | BN, withSi?: boolean, decimals?: number): string;
-  calcSi (text: string, decimals: number): SiDef;
+  calcSi (text: string, decimals?: number): SiDef;
   findSi (type: string): SiDef;
   getDefaults (): Defaults;
   getOptions (decimals?: number): Array<SiDef>;
@@ -56,7 +56,8 @@ function _formatBalance (input?: number | string | BN, withSi: boolean = true, d
 
 const formatBalance = _formatBalance as BalanceFormatter;
 
-formatBalance.calcSi = calcSi;
+formatBalance.calcSi = (text: string, decimals: number = defaultDecimals): SiDef =>
+  calcSi(text, decimals);
 formatBalance.findSi = findSi;
 
 formatBalance.getDefaults = (): Defaults => {
