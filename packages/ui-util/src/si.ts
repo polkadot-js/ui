@@ -36,5 +36,12 @@ export function calcSi (text: string, decimals: number): SiDef {
 
 // Given a SI type (e.g. k, m, Y) find the SI definition
 export function findSi (type: string): SiDef {
-  return SI.find(({ value }) => value === type) || SI[SI_MID];
+  // use a loop here, better RN support (which doesn't have [].find)
+  for (let i = 0; i < SI.length; i++) {
+    if (SI[i].value === type) {
+      return SI[i];
+    }
+  }
+
+  return SI[SI_MID];
 }
