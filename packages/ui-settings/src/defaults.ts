@@ -2,16 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { ChainsInfo, Options } from './types';
-
-const CHAINS: ChainsInfo = [
-  // {
-  //   name: 'Development',
-  //   networkId: 42,
-  //   tokenDecimals: 0,
-  //   tokenSymbol: 'Unit'
-  // }
-];
+import { Options } from './types';
 
 const ENDPOINTS: Options = [
   { text: 'Alexander (Polkadot, hosted by Parity)', value: 'wss://poc3-rpc.polkadot.io/' },
@@ -34,7 +25,6 @@ const UITHEMES: Options = [
 ];
 
 export {
-  CHAINS,
   ENDPOINTS,
   LANGUAGES,
   UIMODES,

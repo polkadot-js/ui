@@ -4,8 +4,8 @@
 
 import store from 'store';
 
-import { CHAINS, ENDPOINTS, LANGUAGES, UIMODES, UITHEMES } from './defaults';
-import { ChainsInfo, Options, SettingsStruct } from './types';
+import { ENDPOINTS, LANGUAGES, UIMODES, UITHEMES } from './defaults';
+import { Options, SettingsStruct } from './types';
 
 class Settings implements SettingsStruct {
   private _apiUrl: string;
@@ -36,10 +36,6 @@ class Settings implements SettingsStruct {
 
   get uiTheme (): string {
     return this._uiTheme;
-  }
-
-  get availableChains (): ChainsInfo {
-    return CHAINS;
   }
 
   get availableNodes (): Options {
