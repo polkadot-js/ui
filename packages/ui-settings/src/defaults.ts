@@ -5,35 +5,17 @@
 import { ChainsInfo, Options } from './types';
 
 const CHAINS: ChainsInfo = [
-  {
-    name: 'Development',
-    networkId: 42,
-    tokenDecimals: 0,
-    tokenSymbol: 'Unit'
-  },
-  {
-    name: 'Local Testnet',
-    networkId: 42,
-    tokenDecimals: 0,
-    tokenSymbol: 'Unit'
-  },
-  {
-    name: 'Charred Cherry',
-    networkId: 42,
-    tokenDecimals: 15,
-    tokenSymbol: 'CHR'
-  },
-  {
-    name: 'Alexander',
-    networkId: 42,
-    tokenDecimals: 15,
-    tokenSymbol: 'DOT'
-  }
+  // {
+  //   name: 'Development',
+  //   networkId: 42,
+  //   tokenDecimals: 0,
+  //   tokenSymbol: 'Unit'
+  // }
 ];
 
 const ENDPOINTS: Options = [
   { text: 'Alexander (Polkadot, hosted by Parity)', value: 'wss://poc3-rpc.polkadot.io/' },
-  { text: 'Charred Cherry (Substrate, hosted by Parity)', value: 'wss://substrate-rpc.parity.io/' },
+  { text: 'Dried Danta (Substrate, hosted by Parity)', value: 'wss://substrate-rpc.parity.io/' },
   { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
 ];
 
