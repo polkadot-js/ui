@@ -12,9 +12,9 @@ import { decodeAddress, encodeAddress } from '@polkadot/keyring';
 import settings from '@polkadot/ui-settings/index';
 import { isHex, isU8a } from '@polkadot/util';
 
-import Empty from './Empty';
-import Polkadot from './Polkadot';
-import Substrate from './Substrate';
+import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
+
+const Fallback = Beachball;
 
 type State = {
   address?: string | null
@@ -22,8 +22,10 @@ type State = {
 
 const DEFAULT_SIZE = 64;
 const Components: { [index: string]: React.ComponentType<any> } = {
+  'beachball': Beachball,
+  'jdenticon': Jdenticon,
   'polkadot': Polkadot,
-  'substrate': Substrate
+  'substrate': Jdenticon
 };
 const Wrapper = styled.div`
   cursor: copy;
@@ -106,11 +108,11 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
     const { className, isHighlight = false, size = DEFAULT_SIZE, style, theme = settings.uiTheme } = this.props;
     const Component = !address
       ? Empty
-      : Components[theme] || Substrate;
+      : Components[theme] || Fallback;
 
     return (
       <Wrapper
-        className={['ui--IdentityIcon', className].join(' ')}
+        className={`ui--IdentityIcon ${className}`}
         key={address || ''}
         style={style}
       >

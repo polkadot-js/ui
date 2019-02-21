@@ -16,7 +16,7 @@
 //   - Move constants to file-level
 //   - Overall it is now just a static component, expecting an address as an input value
 
-import { Props as BaseProps } from './types';
+import { Props as BaseProps } from '../types';
 
 import React from 'react';
 import { decodeAddress } from '@polkadot/keyring';
