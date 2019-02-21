@@ -21,6 +21,6 @@ export type IdentityProps = BaseProps & {
   onCopy?: (value: string) => void,
   prefix?: Prefix,
   size?: number,
-  theme?: string,
+  theme?: 'beachball' | 'jdenticon' | 'polkadot' | 'substrate',
   value?: string | Uint8Array | null
 };

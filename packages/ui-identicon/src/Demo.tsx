@@ -3,6 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { encodeAddress } from '@polkadot/keyring';
 import { randomAsU8a } from '@polkadot/util-crypto';
 
@@ -12,7 +13,7 @@ export default class Demo extends React.PureComponent {
   render () {
     const identities: Array<string> = [];
 
-    while (identities.length !== 10) {
+    while (identities.length !== 50) {
       identities.push(
         encodeAddress(randomAsU8a(32))
       );
@@ -21,9 +22,17 @@ export default class Demo extends React.PureComponent {
     return identities.map((value) => (
       <IdentityIcon
         key={value.toString()}
+        theme='jdenticon'
         value={value}
       />
     ));
   }
-
 }
+
+const rootElement = document.getElementById('demo');
+
+if (!rootElement) {
+  throw new Error(`Unable to find element with id 'demo'`);
+}
+
+ReactDOM.render(<Demo />, rootElement);

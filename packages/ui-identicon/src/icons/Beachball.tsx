@@ -2,13 +2,13 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { Props } from './types';
+import { Props } from '../types';
 
 import React from 'react';
 
-import identicon from './beachball';
+import identicon from '../beachball/index';
 
-export default class Substrate extends React.PureComponent<Props> {
+export default class Beachball extends React.PureComponent<Props> {
   render () {
     const { className, style } = this.props;
 

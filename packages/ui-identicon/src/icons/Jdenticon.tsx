@@ -2,25 +2,23 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { Props } from './types';
+import { Props } from '../types';
 
 import React from 'react';
+import jdenticon from 'jdenticon';
 
-export default class Empty extends React.PureComponent<Props> {
+export default class Jdenticon extends React.PureComponent<Props> {
   render () {
-    const { className, size, style } = this.props;
+    const { className, size, style, value } = this.props;
 
     return (
       <div
         className={`container ${className}`}
         style={style}
-      >
-        <svg
-          height={size}
-          viewBox='0 0 64 64'
-          width={size}
-        />
-      </div>
+        dangerouslySetInnerHTML={ {
+          __html: jdenticon.toSvg(value, size)
+        } }
+      />
     );
   }
 }

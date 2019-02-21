@@ -1,3 +1,7 @@
+# 0.28.1
+
+Default Substrate icon is Jdenticon
+
 # 0.27.1
 
 Replace Charred Cherry with Dried Danta, remove old decimals and token name configs
