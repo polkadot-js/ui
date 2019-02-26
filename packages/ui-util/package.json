@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-util",
-  "version": "0.28.2",
+  "version": "0.28.3",
   "description": "Utility functions (non-React) that aid in display, formats and determination",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
