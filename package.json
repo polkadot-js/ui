@@ -15,7 +15,7 @@
     "typescript": "^3.3.3333"
   },
   "scripts": {
-    "build": "polkadot-dev-build-ts",
+    "build": "polkadot-dev-build-ts && polkadot-dev-build-docs",
     "check": "tslint --project . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
     "postinstall": "polkadot-dev-yarn-only",

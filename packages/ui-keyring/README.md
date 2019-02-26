@@ -4,10 +4,12 @@ A wrapper extending the base @polkadot/keyring interface for usage in the browse
 Key management of user accounts including generation and retrieval of keyring pairs from a variety of input combinations.
 
 ## Usage Examples
+
 All module methods are exposed through a single default export.
 
 ### Regular
-```
+
+```js
 import keyring from @polkadot/ui-keyring
 
 render () {
@@ -28,9 +30,12 @@ render () {
   keyring.saveAddress(address, { ...meta });
 }
 ```
+
 ## Observables
-### Option 1: Declarative subscribe/unsubscribe w/ react-with-observable (recommended 'React' way)
-```
+
+Option 1: Declarative subscribe/unsubscribe w/ react-with-observable (recommended 'React' way)
+
+```js
 import accountObservable from '@polkadot/ui-keyring/observable/accounts';
 import { SingleAddress, SubjectInfo } from '@polkadot/ui-keyring/observable/types';
 import React from 'react';
@@ -61,8 +66,9 @@ class MyReactComponent extends React.PureComponent {
 
 ```
 
-### Option 2: Imperative subscribe/unsubscribe
-```
+Option 2: Imperative subscribe/unsubscribe
+
+```js
 import accountObservable from '@polkadot/ui-keyring/observable/accounts';
 import { SingleAddress, SubjectInfo } from '@polkadot/ui-keyring/observable/types';
 import React from 'react';
@@ -110,6 +116,7 @@ class MyReactComponent extends React.PureComponent<State> {
 ```
 
 ## FAQ
+
 - Difference between Keyring Accounts and Addresses?
   - From the perspective of the keyring, it saves a particular user's unlocked identities as an account, a la keyring.saveAccount(pair, password). So with these accounts you are able to send and sign transactions.
   - To save addresses without unlocking them (i.e. because a user might want to have easy access to addresses they frequently transact with), use keyring.saveAddress(address, meta)
@@ -121,10 +128,9 @@ class MyReactComponent extends React.PureComponent<State> {
 **If you have any unanswered/undocumented questions, please raise an issue [here](https://github.com/polkadot-js/ui/issues).**
 
 
-
 ## Users
+
 Keyring is core to many polkadot/substrate apps.
 
 * [polkadot-js/apps](https://github.com/polkadot-js/apps)
-* [polkadot-js/api](https://github.com/polkadot-js/api)
 * [paritytech/substrate-light-ui](https://github.com/paritytech/substrate-light-ui)
