@@ -2,11 +2,13 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import { ColorGen } from './types';
+
 import newSeeder from './seeder';
 import newColors from './colors';
 
 describe('colors', () => {
-  let colors;
+  let colors: ColorGen;
 
   beforeEach(() => {
     colors = newColors(newSeeder());

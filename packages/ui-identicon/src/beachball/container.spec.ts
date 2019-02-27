@@ -7,7 +7,7 @@ import container from './container';
 describe('container', () => {
   it('applies default styles', () => {
     expect(
-      container(100).style._values
+      (container(100).style as any)._values
     ).toMatchObject({
       'background': 'white',
       'border-radius': '50px',
@@ -22,7 +22,7 @@ describe('container', () => {
 
   it('overrides with supplied styles', () => {
     expect(
-      container(50, 'black', '', { display: 'block' }).style._values
+      (container(50, 'black', '', { display: 'block' }).style as any)._values
     ).toMatchObject({
       'background': 'black',
       'border-radius': '25px',
