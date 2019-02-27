@@ -17,7 +17,7 @@ render () {
   const { address } = this.props;
   // size (optional) is a number, indicating the size (in pixels, 64 as default)
   const size = 32;
-  // theme (optional), depicts the type of icon, either 'polkadot' or 'substrate' (default)
+  // theme (optional), depicts the type of icon, either 'polkadot', 'substrate' (default), 'beachball' or 'jdenticon'
   const theme = 'polkadot';
 
   // standard className & style props are also available
