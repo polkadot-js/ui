@@ -9,7 +9,7 @@ import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 import { decodeAddress, encodeAddress } from '@polkadot/keyring';
-import settings from '@polkadot/ui-settings/Settings';
+import settings from '@polkadot/ui-settings/index';
 import { isHex, isU8a } from '@polkadot/util';
 
 import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
