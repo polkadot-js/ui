@@ -4,7 +4,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import IdentityIcon from '@polkadot/ui-identicon/Identicon';
+import IdentityIcon from '@polkadot/ui-identicon/index';
 
 type Props = {
   address: string,
