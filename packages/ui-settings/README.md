@@ -2,9 +2,11 @@
 
 Manages app settings including endpoints, themes and prefixes
 
-### Usage Example
+## Usage Examples
+
 User preferences are set as a settings object in the browser's local storage.
-```
+
+```js
 import settings from '@polkadot/ui-settings';
 
 render () {
@@ -30,7 +32,9 @@ render () {
 }
 ```
 
-### Used by
+## Used by
+
 Apps that currently use the settings package
-* [polkadot-js/apps]('https://www.github.com/polkadot-js/apps')
+
+* [polkadot-js/apps](https://www.github.com/polkadot-js/apps)
 * [paritytech/substrate-light-ui](https://github.com/paritytech/substrate-light-ui)

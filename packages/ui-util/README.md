@@ -18,6 +18,6 @@ formatBalance('12345'); // 12.345z DOT
 ## calcSi
 
 ```js
-// calculates the SI unit applucable
+// calculates the SI unit applicable
 formatBalance.calcSi('12345'); // { power: 3, value: 'k', text: 'Kilo' }
 ```

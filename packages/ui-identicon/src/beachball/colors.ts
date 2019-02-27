@@ -3,15 +3,11 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { Seeder } from './types';
+import { ColorGen, Seeder } from './types';
 
 import Color from 'color';
 
 import { COLORS } from './defaults';
-
-type ColorGen = {
-  (alpha?: number): string
-};
 
 const WOBBLE = 30;
 
