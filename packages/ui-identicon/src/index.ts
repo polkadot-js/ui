@@ -3,5 +3,6 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { default as Identicon } from './Identicon';
+export * from './icons';
 
 export default Identicon;
