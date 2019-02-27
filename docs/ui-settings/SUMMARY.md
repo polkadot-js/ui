@@ -1,0 +1,5 @@
+* [&quot;Settings&quot;](modules/_settings_.md)
+  * [Settings](classes/_settings_.settings.md)
+* [&quot;defaults&quot;](modules/_defaults_.md)
+* [&quot;types&quot;](modules/_types_.md)
+  * [SettingsStruct](interfaces/_types_.settingsstruct.md)
