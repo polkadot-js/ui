@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import { encodeAddress } from '@polkadot/keyring';
 import { randomAsU8a } from '@polkadot/util-crypto';
 
-import IdentityIcon from './Identicon';
+import IdentityIcon from './index';
 
 export default class Demo extends React.PureComponent {
   render () {
