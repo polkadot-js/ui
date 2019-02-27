@@ -2,7 +2,7 @@
 
 Manages app settings including endpoints, themes and prefixes
 
-### Usage Example
+## Usage Examples
 
 User preferences are set as a settings object in the browser's local storage.
 
@@ -32,7 +32,7 @@ render () {
 }
 ```
 
-### Used by
+## Used by
 
 Apps that currently use the settings package
 

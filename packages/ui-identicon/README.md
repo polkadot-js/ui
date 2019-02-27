@@ -2,7 +2,7 @@
 
 A generic identity icon that can render icons based on the theme, be it Substrate or Polkadot
 
-## Usage
+## Usage Examples
 
 To install the component, do `yarn add @polkadot/ui-identicon`
 
@@ -17,7 +17,8 @@ render () {
   const { address } = this.props;
   // size (optional) is a number, indicating the size (in pixels, 64 as default)
   const size = 32;
-  // theme (optional), depicts the type of icon, either 'polkadot', 'substrate' (default), 'beachball' or 'jdenticon'
+  // theme (optional), depicts the type of icon, one of
+  // 'polkadot', 'substrate' (default), 'beachball' or 'jdenticon'
   const theme = 'polkadot';
 
   // standard className & style props are also available
