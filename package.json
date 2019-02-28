@@ -18,15 +18,16 @@
     "build": "polkadot-dev-build-ts && polkadot-dev-build-docs",
     "check": "tslint --project . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
+    "demo:identicon": "webpack-serve --config packages/ui-identicon/webpack.config.js --content packages/ui-identicon --port 3000",
     "postinstall": "polkadot-dev-yarn-only",
-    "test": "jest --coverage",
-    "demo:identicon": "webpack-serve --config packages/ui-identicon/webpack.config.js --content packages/ui-identicon --port 3000"
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/runtime": "^7.3.4",
-    "@polkadot/dev-react": "^0.25.7",
-    "@polkadot/ts": "^0.1.53",
-    "empty": "^0.10.1"
+    "@polkadot/dev-react": "^0.25.11",
+    "@polkadot/ts": "^0.1.54",
+    "empty": "^0.10.1",
+    "gh-pages": "^2.0.1"
   }
 }
