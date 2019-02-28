@@ -23,7 +23,7 @@
 
 **Ƭ KeyringAddress**: *`object`*
 
-*Defined in [types.ts:27](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-keyring/src/types.ts#L27)*
+*Defined in [types.ts:27](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-keyring/src/types.ts#L27)*
 
 #### Type declaration
 
@@ -34,7 +34,7 @@ ___
 
 **Ƭ KeyringJson**: *`object`*
 
-*Defined in [types.ts:22](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-keyring/src/types.ts#L22)*
+*Defined in [types.ts:22](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-keyring/src/types.ts#L22)*
 
 #### Type declaration
 
@@ -45,7 +45,7 @@ ___
 
 **Ƭ KeyringJson$Meta**: *`object`*
 
-*Defined in [types.ts:12](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-keyring/src/types.ts#L12)*
+*Defined in [types.ts:12](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-keyring/src/types.ts#L12)*
 
 #### Type declaration
 
@@ -58,7 +58,7 @@ ___
 
 **Ƭ KeyringOptions**: *`KeyringOptionsBase` & `object`*
 
-*Defined in [types.ts:8](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-keyring/src/types.ts#L8)*
+*Defined in [types.ts:8](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-keyring/src/types.ts#L8)*
 
 ___
 

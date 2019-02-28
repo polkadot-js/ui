@@ -8,7 +8,7 @@
 
 **Ƭ SiDef**: *`object`*
 
-*Defined in [si.ts:5](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-util/src/si.ts#L5)*
+*Defined in [si.ts:5](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-util/src/si.ts#L5)*
 
 #### Type declaration
 
@@ -40,7 +40,7 @@ ___
   { power: 24, value: 'Y', text: 'Yotta' }
 ]
 
-*Defined in [si.ts:13](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-util/src/si.ts#L13)*
+*Defined in [si.ts:13](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-util/src/si.ts#L13)*
 
 ___
 <a id="si_mid"></a>
@@ -49,7 +49,7 @@ ___
 
 **● SI_MID**: *`8`* = 8
 
-*Defined in [si.ts:11](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-util/src/si.ts#L11)*
+*Defined in [si.ts:11](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-util/src/si.ts#L11)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 ▸ **calcSi**(text: *`string`*, decimals: *`number`*): [SiDef](_si_.md#sidef)
 
-*Defined in [si.ts:33](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-util/src/si.ts#L33)*
+*Defined in [si.ts:33](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-util/src/si.ts#L33)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **findSi**(type: *`string`*): [SiDef](_si_.md#sidef)
 
-*Defined in [si.ts:38](https://github.com/polkadot-js/ui/blob/28b991d/packages/ui-util/src/si.ts#L38)*
+*Defined in [si.ts:38](https://github.com/polkadot-js/ui/blob/0dbdc7e/packages/ui-util/src/si.ts#L38)*
 
 **Parameters:**
 
