@@ -4,7 +4,8 @@
 
 import { Options } from './types';
 
-const isSubstrateHosted = window.location.host.indexOf('parity.io') !== -1;
+// matches https://polkadot.js.org & https://poc-3.polkadot.io
+const isPolkadot = window.location.host.indexOf('polkadot') !== -1;
 
 const WSS_POLKADOT = 'wss://poc3-rpc.polkadot.io/';
 const WSS_SUBSTRATE = 'wss://substrate-rpc.parity.io/';
@@ -30,15 +31,15 @@ const UITHEMES: Options = [
   { value: 'substrate', text: 'Substrate' }
 ];
 
-const ENDPOINT_DEFAULT = isSubstrateHosted
-  ? WSS_SUBSTRATE
-  : WSS_POLKADOT;
+const ENDPOINT_DEFAULT = isPolkadot
+  ? WSS_POLKADOT
+  : WSS_SUBSTRATE;
 
-const UITHEME_DEFAULT = isSubstrateHosted
-  ? 'substrate'
-  : 'polkadot';
+const UITHEME_DEFAULT = isPolkadot
+  ? 'polkadot'
+  : 'substrate';
 
-const UIMODE_DEFAULT = isSubstrateHosted && window.location.host.indexOf('-light') !== -1
+const UIMODE_DEFAULT = !isPolkadot && window.location.host.indexOf('ui-light') !== -1
   ? 'light'
   : 'full';
 
