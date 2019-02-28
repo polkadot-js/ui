@@ -9,7 +9,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.3.1",
+    "@babel/runtime": "^7.3.4",
     "@polkadot/ui-settings": "^0.28.4",
     "@types/color": "^3.0.0",
     "@types/react-copy-to-clipboard": "^4.2.6",
@@ -23,8 +23,8 @@
     "react": "*"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^0.34.28",
-    "@polkadot/util-crypto": "^0.34.28",
+    "@polkadot/keyring": "^0.34.33",
+    "@polkadot/util-crypto": "^0.34.33",
     "xmlserializer": "^0.6.1"
   }
 }
