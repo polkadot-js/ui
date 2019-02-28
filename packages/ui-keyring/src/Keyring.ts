@@ -138,7 +138,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     const [, hexAddr] = key.split(':');
 
-    this.rewriteKey(json, key, hexAddr, accountKey);
+    this.rewriteKey(json, key, hexAddr.trim(), accountKey);
   }
 
   private loadAddress (json: KeyringJson, key: string) {
