@@ -1,6 +1,6 @@
 # Polkadot Javascript UI libraries
 
-This is a collection of UI (Rwact) libraries, utlities and classes that allows for easier use of the Polkadot JS infrstaructure inside your apps.
+This is a collection of UI (React) libraries, utlities and classes that allows for easier use of the Polkadot JS infrstaructure inside your apps.
 
 ## The Polkadot Project
 
