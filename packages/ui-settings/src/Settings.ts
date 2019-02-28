@@ -4,7 +4,7 @@
 
 import store from 'store';
 
-import { ENDPOINTS, LANGUAGES, UIMODES, UITHEMES } from './defaults';
+import { ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Options, SettingsStruct } from './types';
 
 export class Settings implements SettingsStruct {
@@ -16,10 +16,10 @@ export class Settings implements SettingsStruct {
   constructor () {
     const settings = store.get('settings') || {};
 
-    this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINTS[0].value;
-    this._i18nLang = settings.i18nLang || LANGUAGES[0].value;
-    this._uiMode = settings.uiMode || process.env.UI_MODE || UIMODES[0].value;
-    this._uiTheme = settings.uiTheme || process.env.UI_THEME || UITHEMES[0].value;
+    this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
+    this._i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
+    this._uiMode = settings.uiMode || process.env.UI_MODE || UIMODE_DEFAULT;
+    this._uiTheme = settings.uiTheme || process.env.UI_THEME || UITHEME_DEFAULT;
   }
 
   get apiUrl (): string {

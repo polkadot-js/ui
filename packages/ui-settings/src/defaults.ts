@@ -4,14 +4,20 @@
 
 import { Options } from './types';
 
+const isSubstrateHosted = window.location.host.indexOf('parity.io') !== -1;
+
+const WSS_POLKADOT = 'wss://poc3-rpc.polkadot.io/';
+const WSS_SUBSTRATE = 'wss://substrate-rpc.parity.io/';
+const LANGUAGE_DEFAULT = 'default';
+
 const ENDPOINTS: Options = [
-  { text: 'Alexander (Polkadot, hosted by Parity)', value: 'wss://poc3-rpc.polkadot.io/' },
-  { text: 'Dried Danta (Substrate, hosted by Parity)', value: 'wss://substrate-rpc.parity.io/' },
+  { text: 'Alexander (Polkadot, hosted by Parity)', value: WSS_POLKADOT },
+  { text: 'Dried Danta (Substrate, hosted by Parity)', value: WSS_SUBSTRATE },
   { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
 ];
 
 const LANGUAGES: Options = [
-  { value: 'default', text: 'Default browser language (auto-detect)' }
+  { value: LANGUAGE_DEFAULT, text: 'Default browser language (auto-detect)' }
 ];
 
 const UIMODES: Options = [
@@ -24,9 +30,25 @@ const UITHEMES: Options = [
   { value: 'substrate', text: 'Substrate' }
 ];
 
+const ENDPOINT_DEFAULT = isSubstrateHosted
+  ? WSS_SUBSTRATE
+  : WSS_POLKADOT;
+
+const UITHEME_DEFAULT = isSubstrateHosted
+  ? 'substrate'
+  : 'polkadot';
+
+const UIMODE_DEFAULT = isSubstrateHosted && window.location.host.indexOf('-light') !== -1
+  ? 'light'
+  : 'full';
+
 export {
+  ENDPOINT_DEFAULT,
   ENDPOINTS,
+  LANGUAGE_DEFAULT,
   LANGUAGES,
+  UIMODE_DEFAULT,
   UIMODES,
+  UITHEME_DEFAULT,
   UITHEMES
 };
