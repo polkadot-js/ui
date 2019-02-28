@@ -18,8 +18,8 @@ export class Settings implements SettingsStruct {
 
     this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
     this._i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
-    this._uiMode = settings.uiMode || process.env.UI_MODE || UIMODE_DEFAULT;
-    this._uiTheme = settings.uiTheme || process.env.UI_THEME || UITHEME_DEFAULT;
+    this._uiMode = settings.uiMode || UIMODE_DEFAULT;
+    this._uiTheme = settings.uiTheme || UITHEME_DEFAULT;
   }
 
   get apiUrl (): string {
