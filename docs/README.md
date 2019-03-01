@@ -6,22 +6,22 @@ tagline:
 # actionText: Repository Overview
 # actionLink: /REPOS.md
 features:
-- title: Identitycon
-  details: A flexible identity incon generator supporting a number of display styles based on theme.
+- title: Identicon
+  details: A flexible identity icon generator supporting a number of display styles based on theme.
 - title: Keyring
-  details: An extension to the base keyring that allows for additions such as storage and addresses.
+  details: An extension to the base keyring that allows for additions such as browser storage.
 - title: Utilities
-  details: Utilities for formatting and working with settings inwside any browser-based application.
+  details: Utilities for formatting and working with settings inside any browser-based application.
 
 footer: Apache-2 Licensed | Copyright © 2017-2019 polkadot-js authors and contributors
 ---
 
 ## Welcome
 
-This is a collection of UI (React) libraries, utlities and classes that allows for easier use of the Polkadot JS infratructure inside your apps.
+This is a collection of UI (React) libraries, utlities and classes that allows for easier use of the Polkadot JS infrastructure inside your apps.
 
 ::: tip Examples
-In a rush and just want examples? [Jump right in](ui-identicon/README.md) and get a handle the l;ibraries in your projects.
+In a rush and just want examples? [Jump right in](ui-identicon/README.md) and get a handle the libraries in your projects.
 :::
 
 ## Available packages
