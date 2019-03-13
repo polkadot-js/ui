@@ -84,7 +84,7 @@ export default class Base {
   }
 
   protected initKeyring (options: KeyringOptions): void {
-    const keyring = testKeyring({ addressPrefix: this._prefix, ...options });
+    const keyring = testKeyring({ addressPrefix: this._prefix, ...options }, true);
 
     if (isBoolean(options.isDevelopment)) {
       this.setDevMode(options.isDevelopment);
