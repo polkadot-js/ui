@@ -16,9 +16,9 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^0.34.36",
-    "@polkadot/types": "^0.45.21",
-    "@polkadot/util": "^0.34.36"
+    "@polkadot/keyring": "^0.36.1",
+    "@polkadot/types": "^0.46.11",
+    "@polkadot/util": "^0.36.1"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
