@@ -1,3 +1,7 @@
+# 0.29.1
+
+Swap to using a dev HDKD keyring (only available on latest substrate master, only affects nodes running with --dev, normal operation unaffected)
+
 # 0.28.1
 
 Default Substrate icon is Jdenticon
