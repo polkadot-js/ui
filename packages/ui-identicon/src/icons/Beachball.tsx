@@ -6,7 +6,7 @@ import { Props } from '../types';
 
 import React from 'react';
 
-import identicon from '../beachball/index';
+import identicon from '../beachball';
 
 export default class Beachball extends React.PureComponent<Props> {
   render () {

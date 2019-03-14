@@ -7,7 +7,7 @@ import { encodeAddress } from '@polkadot/keyring';
 import { isNull } from '@polkadot/util';
 import { randomAsU8a } from '@polkadot/util-crypto';
 
-import identicon from './index';
+import identicon from '.';
 
 const element = document.getElementById('demo');
 
