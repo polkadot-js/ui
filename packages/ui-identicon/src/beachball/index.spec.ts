@@ -4,7 +4,7 @@
 
 import xmlserializer from 'xmlserializer';
 
-import identicon from './index';
+import identicon from '.';
 
 describe('identicon', () => {
   it('generates a basic [0,..,0] identicon', () => {

@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.3.4"
   },
   "devDependencies": {
-    "@polkadot/types": "^0.46.11"
+    "@polkadot/types": "^0.46.12"
   },
   "peerDependencies": {
     "@polkadot/types": "*"
