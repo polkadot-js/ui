@@ -1,3 +1,8 @@
+# 0.31.1
+
+- Allow for latest keyring with sr25519 derived support
+- When using dev mode, it assumes the substrate node has sr25519 derived keys
+
 # 0.30.1
 
 - Swap to publishing -beta.x on merge (non-breaking testing)
