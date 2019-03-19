@@ -4,7 +4,7 @@
 
 import store from 'store';
 
-import { ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Options, SettingsStruct } from './types';
 
 export class Settings implements SettingsStruct {
@@ -40,6 +40,10 @@ export class Settings implements SettingsStruct {
 
   get availableNodes (): Options {
     return ENDPOINTS;
+  }
+
+  get availableCryptos (): Options {
+    return CRYPTOS;
   }
 
   get availableLanguages (): Options {
