@@ -32,6 +32,11 @@ export type KeyringAddress = {
   getMeta: () => KeyringJson$Meta
 };
 
+export type CreateResult = {
+  json: KeyringPair$Json,
+  pair: KeyringPair
+};
+
 export interface KeyringStruct {
   readonly accounts: AddressSubject;
   readonly addresses: AddressSubject;
@@ -42,8 +47,8 @@ export interface KeyringStruct {
   createAccount: (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountMnemonic: (seed: string, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
-  createExternal: (publicKey: Uint8Array, meta: KeyringPair$Meta) => KeyringPair;
-  createUri: (path: string, password: string, meta: KeyringPair$Meta, type: KeypairType) => KeyringPair;
+  createExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => CreateResult;
+  createUri: (suri: string, password?: string, meta?: KeyringPair$Meta, type?: KeypairType) => CreateResult;
   decodeAddress: (key: string | Uint8Array) => Uint8Array;
   encodeAddress: (key: string | Uint8Array) => string;
   encryptAccount: (pair: KeyringPair, password: string) => void;
@@ -59,9 +64,9 @@ export interface KeyringStruct {
   isPassValid: (password: string) => boolean;
   loadAll: (options: KeyringOptions) => void;
   restoreAccount: (json: KeyringPair$Json, password: string) => KeyringPair;
-  saveAccount: (pair: KeyringPair, password?: string) => void;
+  saveAccount: (pair: KeyringPair, password?: string) => KeyringPair$Json;
   saveAccountMeta: (pair: KeyringPair, meta: KeyringPair$Meta) => void;
-  saveAddress: (address: string, meta: KeyringPair$Meta) => void;
+  saveAddress: (address: string, meta: KeyringPair$Meta) => KeyringPair$Json;
   saveRecent: (address: string) => SingleAddress;
   setDevMode: (isDevelopment: boolean) => void;
 }

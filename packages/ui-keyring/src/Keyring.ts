@@ -5,11 +5,11 @@
 import { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
 import { KeypairType } from '@polkadot/util-crypto/types';
 import { SingleAddress } from './observable/types';
-import { KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
+import { CreateResult, KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import store from 'store';
 import createPair from '@polkadot/keyring/pair';
-import { hexToU8a, isHex, isString } from '@polkadot/util';
+import { hexToU8a, isHex, isString, u8aToHex } from '@polkadot/util';
 
 import env from './observable/development';
 import Base from './Base';
@@ -37,46 +37,42 @@ export class Keyring extends Base implements KeyringStruct {
     return pair.toJson(password);
   }
 
-  createAccount (seed: Uint8Array, password?: string, meta: KeyringPair$Meta = {}): KeyringPair {
+  createAccount (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta): KeyringPair {
     console.warn('createAccount deprecated, use createUri instead');
 
-    const pair = this.keyring.addFromSeed(seed, meta);
-
-    this.saveAccount(pair, password);
-
-    return pair;
+    return this.createUri(u8aToHex(seed), password, meta).pair;
   }
 
-  createAccountExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): KeyringPair {
+  createAccountExternal (publicKey: Uint8Array, meta?: KeyringPair$Meta): KeyringPair {
     console.warn('createAccountExternal deprecated, use createUri instead');
 
-    return this.createExternal(publicKey, meta);
+    return this.createExternal(publicKey, meta).pair;
   }
 
-  createAccountMnemonic (seed: string, password?: string, meta: KeyringPair$Meta = {}): KeyringPair {
+  createAccountMnemonic (seed: string, password?: string, meta?: KeyringPair$Meta): KeyringPair {
     console.warn('createAccountMnemonic deprecated, use createUri instead');
 
-    const pair = this.keyring.addFromMnemonic(seed, meta);
-
-    this.saveAccount(pair, password);
-
-    return pair;
+    return this.createUri(seed, password, meta).pair;
   }
 
-  createExternal (publicKey: Uint8Array, meta: KeyringPair$Meta): KeyringPair {
+  createExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
     const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
+    const json = this.saveAccount(pair);
 
-    this.saveAccount(pair);
-
-    return pair;
+    return {
+      json,
+      pair
+    };
   }
 
-  createUri (suri: string, password: string, meta: KeyringPair$Meta, type: KeypairType): KeyringPair {
+  createUri (suri: string, password?: string, meta: KeyringPair$Meta = {}, type?: KeypairType): CreateResult {
     const pair = this.keyring.addFromUri(suri, meta, type);
+    const json = this.saveAccount(pair, password);
 
-    this.saveAccount(pair, password);
-
-    return pair;
+    return {
+      json,
+      pair
+    };
   }
 
   encryptAccount (pair: KeyringPair, password: string): void {
@@ -204,13 +200,15 @@ export class Keyring extends Base implements KeyringStruct {
     return pair;
   }
 
-  saveAccount (pair: KeyringPair, password?: string): void {
+  saveAccount (pair: KeyringPair, password?: string): KeyringPair$Json {
     this.addTimestamp(pair);
 
     const json = pair.toJson(password);
 
     this.keyring.addFromJson(json);
     this.accounts.add(json.address, json);
+
+    return json;
   }
 
   saveAccountMeta (pair: KeyringPair, meta: KeyringPair$Meta): void {
@@ -223,7 +221,7 @@ export class Keyring extends Base implements KeyringStruct {
     this.accounts.add(json.address, json);
   }
 
-  saveAddress (address: string, meta: KeyringPair$Meta): void {
+  saveAddress (address: string, meta: KeyringPair$Meta): KeyringPair$Json {
     const available = this.addresses.subject.getValue();
 
     const json = (available[address] && available[address].json) || {
@@ -241,6 +239,8 @@ export class Keyring extends Base implements KeyringStruct {
     delete json.meta.isRecent;
 
     this.addresses.add(address, json);
+
+    return json as KeyringPair$Json;
   }
 
   saveRecent (address: string): SingleAddress {
