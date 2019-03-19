@@ -6,8 +6,6 @@
 [![maintainability](https://img.shields.io/codeclimate/maintainability/polkadot-js/ui.svg?style=flat-square)](https://codeclimate.com/github/polkadot-js/ui/maintainability)
 [![coverage](https://img.shields.io/coveralls/polkadot-js/ui.svg?style=flat-square)](https://coveralls.io/github/polkadot-js/ui?branch=master)
 [![greenkeeper](https://img.shields.io/badge/greenkeeper-enabled-brightgreen.svg?style=flat-square)](https://greenkeeper.io/)
-[![dependency](https://img.shields.io/david/polkadot-js/ui-identicon.svg?style=flat-square)](https://david-dm.org/polkadot-js/ui-identicon)
-[![devDependency](https://img.shields.io/david/dev/polkadot-js/ui-identicon.svg?style=flat-square)](https://david-dm.org/polkadot-js/ui-identicon#info=devDependencies)
 
 # @polkadot/ui
 
