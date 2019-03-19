@@ -3,6 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
+import { KeypairType } from '@polkadot/util-crypto/types';
 import { AddressSubject, SingleAddress } from './observable/types';
 
 export type KeyringOptions = KeyringOptionsBase & {
@@ -41,6 +42,8 @@ export interface KeyringStruct {
   createAccount: (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountMnemonic: (seed: string, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
+  createExternal: (publicKey: Uint8Array, meta: KeyringPair$Meta) => KeyringPair;
+  createUri: (path: string, password: string, meta: KeyringPair$Meta, type: KeypairType) => KeyringPair;
   decodeAddress: (key: string | Uint8Array) => Uint8Array;
   encodeAddress: (key: string | Uint8Array) => string;
   encryptAccount: (pair: KeyringPair, password: string) => void;

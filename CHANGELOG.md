@@ -1,3 +1,9 @@
+# 0.32.1
+
+- Add createUri to create an account from a path uri
+- Add createExternal as an alias for createAccountExternal
+- Deprecate createAccount, createAccountExternal and createAccountMnemonic
+
 # 0.31.1
 
 - Allow for latest keyring with sr25519 derived support

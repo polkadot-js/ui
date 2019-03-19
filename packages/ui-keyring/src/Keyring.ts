@@ -3,6 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
+import { KeypairType } from '@polkadot/util-crypto/types';
 import { SingleAddress } from './observable/types';
 import { KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
@@ -37,6 +38,8 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   createAccount (seed: Uint8Array, password?: string, meta: KeyringPair$Meta = {}): KeyringPair {
+    console.warn('createAccount deprecated, use createUri instead');
+
     const pair = this.keyring.addFromSeed(seed, meta);
 
     this.saveAccount(pair, password);
@@ -45,6 +48,22 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   createAccountExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): KeyringPair {
+    console.warn('createAccountExternal deprecated, use createUri instead');
+
+    return this.createExternal(publicKey, meta);
+  }
+
+  createAccountMnemonic (seed: string, password?: string, meta: KeyringPair$Meta = {}): KeyringPair {
+    console.warn('createAccountMnemonic deprecated, use createUri instead');
+
+    const pair = this.keyring.addFromMnemonic(seed, meta);
+
+    this.saveAccount(pair, password);
+
+    return pair;
+  }
+
+  createExternal (publicKey: Uint8Array, meta: KeyringPair$Meta): KeyringPair {
     const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
 
     this.saveAccount(pair);
@@ -52,8 +71,8 @@ export class Keyring extends Base implements KeyringStruct {
     return pair;
   }
 
-  createAccountMnemonic (seed: string, password?: string, meta: KeyringPair$Meta = {}): KeyringPair {
-    const pair = this.keyring.addFromMnemonic(seed, meta);
+  createUri (suri: string, password: string, meta: KeyringPair$Meta, type: KeypairType): KeyringPair {
+    const pair = this.keyring.addFromUri(suri, meta, type);
 
     this.saveAccount(pair, password);
 
