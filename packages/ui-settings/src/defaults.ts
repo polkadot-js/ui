@@ -11,6 +11,11 @@ const WSS_POLKADOT = 'wss://poc3-rpc.polkadot.io/';
 const WSS_SUBSTRATE = 'wss://substrate-rpc.parity.io/';
 const LANGUAGE_DEFAULT = 'default';
 
+const CRYPTOS: Options = [
+  { text: 'Edwards (ed25519)', value: 'ed25519' },
+  { text: 'Schnorrkel (sr25519)', value: 'sr25519' }
+];
+
 const ENDPOINTS: Options = [
   { text: 'Alexander (Polkadot, hosted by Parity)', value: WSS_POLKADOT },
   { text: 'Dried Danta (Substrate, hosted by Parity)', value: WSS_SUBSTRATE },
@@ -44,6 +49,7 @@ const UIMODE_DEFAULT = !isPolkadot && window.location.host.indexOf('ui-light') !
   : 'full';
 
 export {
+  CRYPTOS,
   ENDPOINT_DEFAULT,
   ENDPOINTS,
   LANGUAGE_DEFAULT,
