@@ -2,10 +2,12 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import { isUndefined } from '@polkadot/util';
+
 import { Options } from './types';
 
 // matches https://polkadot.js.org & https://poc-3.polkadot.io
-const isPolkadot = (typeof window !== 'undefined') && window.location.host.indexOf('polkadot') !== -1;
+const isPolkadot = isUndefined(window) && window.location.host.indexOf('polkadot') !== -1;
 
 const WSS_POLKADOT = 'wss://poc3-rpc.polkadot.io/';
 const WSS_SUBSTRATE = 'wss://substrate-rpc.parity.io/';
@@ -44,7 +46,7 @@ const UITHEME_DEFAULT = isPolkadot
   ? 'polkadot'
   : 'substrate';
 
-const UIMODE_DEFAULT = !isPolkadot && (typeof window !== 'undefined') && window.location.host.indexOf('ui-light') !== -1
+const UIMODE_DEFAULT = !isPolkadot && isUndefined(window) && window.location.host.indexOf('ui-light') !== -1
   ? 'light'
   : 'full';
 
