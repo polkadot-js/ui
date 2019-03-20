@@ -3,6 +3,7 @@
 - Add createUri to create an account from a path uri
 - Add createExternal as an alias for createAccountExternal
 - Deprecate createAccount, createAccountExternal and createAccountMnemonic
+- Fix styled-component dependencies when used in a non-@polkadot project
 
 # 0.31.1
 
