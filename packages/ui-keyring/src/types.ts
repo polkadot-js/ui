@@ -42,13 +42,14 @@ export interface KeyringStruct {
   readonly addresses: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
 
-  addAccountPair: (pair: KeyringPair, password: string) => KeyringPair;
+  addExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => CreateResult;
+  addPair: (pair: KeyringPair, password: string) => CreateResult;
+  addUri: (suri: string, password?: string, meta?: KeyringPair$Meta, type?: KeypairType) => CreateResult;
   backupAccount: (pair: KeyringPair, password: string) => KeyringPair$Json;
   createAccount: (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => KeyringPair;
   createAccountMnemonic: (seed: string, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
-  createExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => CreateResult;
-  createUri: (suri: string, password?: string, meta?: KeyringPair$Meta, type?: KeypairType) => CreateResult;
+  createFromUri (suri: string, meta?: KeyringPair$Meta, type?: KeypairType): KeyringPair;
   decodeAddress: (key: string | Uint8Array) => Uint8Array;
   encodeAddress: (key: string | Uint8Array) => string;
   encryptAccount: (pair: KeyringPair, password: string) => void;

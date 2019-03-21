@@ -20,11 +20,34 @@ import keyringOption from './options';
 // Chain determination occurs outside of Keyring. Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
 export class Keyring extends Base implements KeyringStruct {
-  addAccountPair (pair: KeyringPair, password: string): KeyringPair {
-    this.keyring.addPair(pair);
-    this.saveAccount(pair, password);
+  addExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
+    const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
+    const json = this.saveAccount(pair);
 
-    return pair;
+    return {
+      json,
+      pair
+    };
+  }
+
+  addPair (pair: KeyringPair, password: string): CreateResult {
+    this.keyring.addPair(pair);
+    const json = this.saveAccount(pair, password);
+
+    return {
+      json,
+      pair
+    };
+  }
+
+  addUri (suri: string, password?: string, meta: KeyringPair$Meta = {}, type?: KeypairType): CreateResult {
+    const pair = this.keyring.addFromUri(suri, meta, type);
+    const json = this.saveAccount(pair, password);
+
+    return {
+      json,
+      pair
+    };
   }
 
   backupAccount (pair: KeyringPair, password: string): KeyringPair$Json {
@@ -38,41 +61,25 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   createAccount (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta): KeyringPair {
-    console.warn('createAccount deprecated, use createUri instead');
+    console.warn('createAccount deprecated, use addUri instead');
 
-    return this.createUri(u8aToHex(seed), password, meta).pair;
+    return this.addUri(u8aToHex(seed), password, meta).pair;
   }
 
   createAccountExternal (publicKey: Uint8Array, meta?: KeyringPair$Meta): KeyringPair {
-    console.warn('createAccountExternal deprecated, use createUri instead');
+    console.warn('createAccountExternal deprecated, use addExternal instead');
 
-    return this.createExternal(publicKey, meta).pair;
+    return this.addExternal(publicKey, meta).pair;
   }
 
   createAccountMnemonic (seed: string, password?: string, meta?: KeyringPair$Meta): KeyringPair {
     console.warn('createAccountMnemonic deprecated, use createUri instead');
 
-    return this.createUri(seed, password, meta).pair;
+    return this.addUri(seed, password, meta).pair;
   }
 
-  createExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
-    const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
-    const json = this.saveAccount(pair);
-
-    return {
-      json,
-      pair
-    };
-  }
-
-  createUri (suri: string, password?: string, meta: KeyringPair$Meta = {}, type?: KeypairType): CreateResult {
-    const pair = this.keyring.addFromUri(suri, meta, type);
-    const json = this.saveAccount(pair, password);
-
-    return {
-      json,
-      pair
-    };
+  createFromUri (suri: string, meta: KeyringPair$Meta = {}, type?: KeypairType): KeyringPair {
+    return this.keyring.createFromUri(suri, meta, type);
   }
 
   encryptAccount (pair: KeyringPair, password: string): void {
@@ -194,7 +201,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     // unlock, save account and then lock (locking cleans secretKey, so needs to be last)
     pair.decodePkcs8(password);
-    this.addAccountPair(pair, password);
+    this.addPair(pair, password);
     pair.lock();
 
     return pair;

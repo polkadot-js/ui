@@ -1,3 +1,9 @@
+# 0.33.1
+
+- Rename createUri and createExternal to addExternal and addUr
+- Rename addAccountPair to addPair
+- Add additional createFromUri function to create pair, but not add it
+
 # 0.32.1
 
 - Add createUri to create an account from a path uri
