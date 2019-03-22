@@ -20,7 +20,7 @@ import { Props as BaseProps } from '../types';
 
 import React from 'react';
 import { decodeAddress } from '@polkadot/keyring';
-import blake2b from '@polkadot/util-crypto/blake2/blake2b/asU8a';
+import { blake2AsU8a } from '@polkadot/util-crypto';
 
 type Props = BaseProps & {
   sixPoint?: boolean
@@ -35,7 +35,7 @@ const s = 64;
 const c = s / 2;
 const z = s / 64 * 5;
 
-const zero = blake2b(new Uint8Array(32));
+const zero = blake2AsU8a(new Uint8Array(32));
 const schema: { [index: string]: Scheme } = {
   target: { freq: 1, colors: [0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 1] },
   cube: { freq: 20, colors: [0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 5] },
@@ -130,7 +130,7 @@ export default class Identicon extends React.PureComponent<Props> {
   private getColors () {
     const { value } = this.props;
     const total = Object.keys(schema).map(k => schema[k].freq).reduce((a, b) => a + b);
-    const id = Array.from(blake2b(decodeAddress(value))).map((x, i) => (x + 256 - zero[i]) % 256);
+    const id = Array.from(blake2AsU8a(decodeAddress(value))).map((x, i) => (x + 256 - zero[i]) % 256);
     const d = Math.floor((id[30] + id[31] * 256) % total);
     const rot = (id[28] % 6) * 3;
     const sat = (Math.floor(id[29] * 70 / 256 + 26) % 80) + 30;
