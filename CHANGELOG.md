@@ -1,8 +1,9 @@
 # 0.33.1
 
-- Rename createUri and createExternal to addExternal and addUr
+- Rename createUri and createExternal to addExternal and addUri
 - Rename addAccountPair to addPair
 - Add additional createFromUri function to create pair, but not add it
+- Latest api, util & util-crypto (this with WASM and JS fallbacks)
 
 # 0.32.1
 
