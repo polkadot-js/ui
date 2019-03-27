@@ -1,3 +1,7 @@
+# 0.34.1
+
+- Fix for blake2 in Polkadot identicon generation
+
 # 0.33.1
 
 - Rename createUri and createExternal to addExternal and addUri
