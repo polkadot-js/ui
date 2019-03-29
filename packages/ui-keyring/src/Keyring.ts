@@ -153,7 +153,8 @@ export class Keyring extends Base implements KeyringStruct {
 
   private loadAccount (json: KeyringJson, key: string) {
     if (!json.meta.isTesting && (json as KeyringPair$Json).encoded) {
-      const pair = this.keyring.addFromJson(json as KeyringPair$Json);
+      // FIXME Just for the transition period (ignoreChecksum)
+      const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
 
       this.accounts.add(pair.address(), json);
     }
@@ -167,7 +168,8 @@ export class Keyring extends Base implements KeyringStruct {
     const address = this.encodeAddress(
       isHex(json.address)
         ? hexToU8a(json.address)
-        : this.decodeAddress(json.address)
+        // FIXME Just for the transition period (ignoreChecksum)
+        : this.decodeAddress(json.address, true)
     );
     const [, hexAddr] = key.split(':');
 
@@ -193,7 +195,8 @@ export class Keyring extends Base implements KeyringStruct {
     const pair = createPair(
       this.keyring.type,
       {
-        publicKey: this.decodeAddress(json.address)
+        // FIXME Just for the transition period (ignoreChecksum)
+        publicKey: this.decodeAddress(json.address, true)
       },
       json.meta,
       hexToU8a(json.encoded)
