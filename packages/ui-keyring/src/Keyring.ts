@@ -195,7 +195,8 @@ export class Keyring extends Base implements KeyringStruct {
     const pair = createPair(
       this.keyring.type,
       {
-        publicKey: this.decodeAddress(json.address)
+        // FIXME Just for the transition period (ignoreChecksum)
+        publicKey: this.decodeAddress(json.address, true)
       },
       json.meta,
       hexToU8a(json.encoded)
