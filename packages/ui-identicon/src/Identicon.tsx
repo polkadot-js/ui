@@ -74,7 +74,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
         ? encodeAddress(value, prefix)
         : value;
 
-      decodeAddress(address as string, prefix);
+      decodeAddress(address as string, false, prefix);
 
       return address === prevState.address
         ? null
