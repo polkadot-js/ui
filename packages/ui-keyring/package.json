@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-keyring",
-  "version": "0.35.1",
+  "version": "0.36.0",
   "main": "index.js",
   "repository": "https://github.com/polkadot-js/apps.git",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -17,9 +17,9 @@
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^0.43.1",
-    "@polkadot/types": "^0.53.1",
-    "@polkadot/util": "^0.43.1"
+    "@polkadot/keyring": "^0.75.1",
+    "@polkadot/types": "^0.75.1",
+    "@polkadot/util": "^0.75.1"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",

@@ -1,3 +1,7 @@
+# 0.35.1
+
+- @polkadot/util & @polkadot/api 0.75.1
+
 # 0.34.1
 
 - Fix for blake2 in Polkadot identicon generation
