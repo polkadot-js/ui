@@ -43,8 +43,8 @@ export default class Base {
     throw new Error(`Keyring should be initialised via 'loadAll' before use`);
   }
 
-  decodeAddress (key: string | Uint8Array): Uint8Array {
-    return this.keyring.decodeAddress(key);
+  decodeAddress (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array {
+    return this.keyring.decodeAddress(key, ignoreChecksum);
   }
 
   encodeAddress (key: string | Uint8Array): string {
