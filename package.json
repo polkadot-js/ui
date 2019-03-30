@@ -12,20 +12,21 @@
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0",
     "rxjs": "^6.4.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.4.1"
   },
   "scripts": {
     "build": "polkadot-dev-build-ts && polkadot-dev-build-docs",
-    "check": "tslint --project . && tsc --noEmit --pretty",
+    "check": "yarn lint",
+    "lint": "tslint --project . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
     "demo:identicon": "webpack-serve --config packages/ui-identicon/webpack.config.js --content packages/ui-identicon --port 3000",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "jest --coverage"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/runtime": "^7.3.4",
-    "@polkadot/dev-react": "^0.28.1",
+    "@babel/core": "^7.4.0",
+    "@babel/runtime": "^7.4.2",
+    "@polkadot/dev-react": "^0.29.0-beta.1",
     "@polkadot/ts": "^0.1.56",
     "empty": "^0.10.1",
     "gh-pages": "^2.0.1"
