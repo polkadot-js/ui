@@ -5,6 +5,7 @@
 import { Options } from './types';
 
 // matches https://polkadot.js.org & https://poc-3.polkadot.io
+ // tslint:disable-next-line
 const isPolkadot = typeof window !== 'undefined' && window.location.host.indexOf('polkadot') !== -1;
 
 const WSS_POLKADOT = 'wss://poc3-rpc.polkadot.io/';
@@ -44,6 +45,7 @@ const UITHEME_DEFAULT = isPolkadot
   ? 'polkadot'
   : 'substrate';
 
+// tslint:disable-next-line
 const UIMODE_DEFAULT = !isPolkadot && typeof window !== 'undefined' && window.location.host.indexOf('ui-light') !== -1
   ? 'light'
   : 'full';
