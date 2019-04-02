@@ -2,9 +2,6 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-export { default as formatBalance } from './formatBalance';
-export { default as formatDecimal } from './formatDecimal';
-export { default as formatElapsed } from './formatElapsed';
-export { default as formatNumber } from './formatNumber';
-export { default as isTestChain } from './isTestChain';
-export { calcSi, findSi } from './si';
+console.warn('@polkadot/ui-util has been incorporated into @polkadot/util (with the same export names)');
+
+export { formatBalance, formatDecimal, formatElapsed, formatNumber, calcSi, findSi, isTestChain } from '@polkadot/util';
