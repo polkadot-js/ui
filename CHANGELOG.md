@@ -1,3 +1,12 @@
+# 0.37.1
+
+- Add Emberic Elm (Dried Danta discontinued)
+- @polkadot/util & @polkadot/api 0.75.1
+
+# 0.36.1
+
+- Small fixes, latest @polkadot/wasm-* packages
+
 # 0.35.1
 
 - @polkadot/util & @polkadot/api 0.75.1

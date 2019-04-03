@@ -19,7 +19,7 @@ const CRYPTOS: Options = [
 
 const ENDPOINTS: Options = [
   { text: 'Alexander (Polkadot, hosted by Parity)', value: WSS_POLKADOT },
-  { text: 'Dried Danta (Substrate, hosted by Parity)', value: WSS_SUBSTRATE },
+  { text: 'Emberic Elm (Substrate, hosted by Parity)', value: WSS_SUBSTRATE },
   { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
 ];
 
