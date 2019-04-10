@@ -9,7 +9,7 @@
 
 # @polkadot/ui
 
-Basic browser components for creating apps using the polkadot{.js} libraries
+Basic browser and React components for creating apps using the polkadot{.js} libraries
 
 ## overview
 
