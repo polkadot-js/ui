@@ -1,7 +1,7 @@
 module.exports = {
   base: '/ui/',
   title: 'polkadot-js/ui',
-  description: 'UI utilities, libraries and React components in use accross @polkadot projects',
+  description: 'UI utilities, libraries and React components in use across @polkadot projects',
   markdown: {
     lineNumbers: true
   },
