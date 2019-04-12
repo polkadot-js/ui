@@ -168,7 +168,8 @@ export class Keyring extends Base implements KeyringStruct {
 
   private loadAddress (json: KeyringJson, key: string) {
     const { isRecent, whenCreated = 0 } = json.meta;
-    if (isRecent && Date.now() - whenCreated > RECENT_EXPIRY) {
+
+    if (isRecent && (Date.now() - whenCreated) > RECENT_EXPIRY) {
       store.remove(key);
       return;
     }

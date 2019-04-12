@@ -16,24 +16,22 @@ let hasCalledInitOptions = false;
 const sortByName = (a: SingleAddress, b: SingleAddress) => {
   const valueA = a.option.name;
   const valueB = b.option.name;
-  if (valueA < valueB) {
-    return -1;
-  }
-  if (valueA > valueB) {
-    return 1;
-  }
-  return 0;
+
+  return valueA.localeCompare(valueB);
 };
 
 const sortByCreated = (a: SingleAddress, b: SingleAddress) => {
   const valueA = a.json.meta.whenCreated || 0;
   const valueB = b.json.meta.whenCreated || 0;
+
   if (valueA < valueB) {
     return 1;
   }
+
   if (valueA > valueB) {
     return -1;
   }
+
   return 0;
 };
 
@@ -109,6 +107,7 @@ class KeyringOption implements KeyringOptionInstance {
 
   private addAddresses (keyring: KeyringStruct, options: KeyringOptions): void {
     const available = keyring.addresses.subject.getValue();
+
     Object
       .values(available)
       .filter(({ json }: SingleAddress) => {
