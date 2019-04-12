@@ -16,6 +16,8 @@ import Base from './Base';
 import { accountKey, addressKey, accountRegex, addressRegex } from './defaults';
 import keyringOption from './options';
 
+const RECENT_EXPIRY = 24 * 60 * 60;
+
 // No accounts (or test accounts) should be loaded until after the chain determination.
 // Chain determination occurs outside of Keyring. Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
@@ -165,6 +167,12 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   private loadAddress (json: KeyringJson, key: string) {
+    const { isRecent, whenCreated = 0 } = json.meta;
+    if (isRecent && Date.now() - whenCreated > RECENT_EXPIRY) {
+      store.remove(key);
+      return;
+    }
+
     const address = this.encodeAddress(
       isHex(json.address)
         ? hexToU8a(json.address)
