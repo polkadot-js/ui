@@ -13,6 +13,28 @@ import observableAll from '../observable';
 
 let hasCalledInitOptions = false;
 
+const sortByName = (a: SingleAddress, b: SingleAddress) => {
+  const valueA = a.option.name;
+  const valueB = b.option.name;
+
+  return valueA.localeCompare(valueB);
+};
+
+const sortByCreated = (a: SingleAddress, b: SingleAddress) => {
+  const valueA = a.json.meta.whenCreated || 0;
+  const valueB = b.json.meta.whenCreated || 0;
+
+  if (valueA < valueB) {
+    return 1;
+  }
+
+  if (valueA > valueB) {
+    return -1;
+  }
+
+  return 0;
+};
+
 class KeyringOption implements KeyringOptionInstance {
   optionsSubject: BehaviorSubject<KeyringOptions> = new BehaviorSubject(this.emptyOptions());
 
@@ -29,7 +51,7 @@ class KeyringOption implements KeyringOptionInstance {
   init (keyring: KeyringStruct): void {
     assert(!hasCalledInitOptions, 'Unable to initialise options more than once');
 
-    observableAll.subscribe((value) => {
+    observableAll.subscribe(() => {
       const options = this.emptyOptions();
 
       this.addAccounts(keyring, options);
@@ -72,10 +94,8 @@ class KeyringOption implements KeyringOptionInstance {
     const available = keyring.accounts.subject.getValue();
 
     Object
-      .keys(available)
-      .map((address) =>
-        available[address]
-      )
+      .values(available)
+      .sort(sortByName)
       .forEach(({ json: { meta: { isTesting = false } }, option }: SingleAddress) => {
         if (!isTesting) {
           options.account.push(option);
@@ -89,16 +109,23 @@ class KeyringOption implements KeyringOptionInstance {
     const available = keyring.addresses.subject.getValue();
 
     Object
-      .keys(available)
-      .map((address) =>
-        available[address]
-      )
-      .forEach(({ json: { meta: { isRecent = false } }, option }: SingleAddress) => {
-        if (isRecent) {
-          options.recent.push(option);
-        } else {
-          options.address.push(option);
-        }
+      .values(available)
+      .filter(({ json }: SingleAddress) => {
+        return json.meta.isRecent;
+      })
+      .sort(sortByCreated)
+      .forEach(({ option }: SingleAddress) => {
+        options.recent.push(option);
+      });
+
+    Object
+      .values(available)
+      .filter(({ json }: SingleAddress) => {
+        return !json.meta.isRecent;
+      })
+      .sort(sortByName)
+      .forEach(({ option }: SingleAddress) => {
+        options.address.push(option);
       });
   }
 
