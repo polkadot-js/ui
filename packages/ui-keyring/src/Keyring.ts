@@ -201,7 +201,7 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   restoreAccount (json: KeyringPair$Json, password: string): KeyringPair {
-    const type = json.encoding.content[1];
+    const type = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
     const pair = createPair(
       type,
       {
