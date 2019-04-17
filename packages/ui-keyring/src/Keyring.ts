@@ -201,8 +201,9 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   restoreAccount (json: KeyringPair$Json, password: string): KeyringPair {
+    const type = json.encoding.content[1];
     const pair = createPair(
-      this.keyring.type,
+      type,
       {
         // FIXME Just for the transition period (ignoreChecksum)
         publicKey: this.decodeAddress(json.address, true)
