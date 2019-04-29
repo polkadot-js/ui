@@ -10,14 +10,15 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 import { decodeAddress, encodeAddress } from '@polkadot/keyring';
 import settings from '@polkadot/ui-settings';
-import { isHex, isU8a } from '@polkadot/util';
+import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 
 import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
 
 const Fallback = Beachball;
 
 type State = {
-  address?: string | null
+  address: string,
+  publicKey: string
 };
 
 const DEFAULT_SIZE = 64;
@@ -59,7 +60,8 @@ const Wrapper = styled.div`
 
 export default class IdentityIcon extends React.PureComponent<Props, State> {
   state: State = {
-    address: null
+    address: '',
+    publicKey: '0x'
   };
 
   private static prefix?: Prefix = undefined;
@@ -72,25 +74,26 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
     try {
       const address = isU8a(value) || isHex(value)
         ? encodeAddress(value, prefix)
-        : value;
-
-      decodeAddress(address as string, false, prefix);
+        : (value || '');
+      const publicKey = u8aToHex(decodeAddress(address, false, prefix));
 
       return address === prevState.address
         ? null
-        : { address };
+        : {
+          address,
+          publicKey
+        };
     } catch (error) {
-      // swallow,invalid address or input
+      return {
+        address: '',
+        publicKey: '0x'
+      };
     }
-
-    return {
-      address: null
-    };
   }
 
   render () {
     const { address } = this.state;
-    const wrapped = this.getWrapped(address);
+    const wrapped = this.getWrapped(this.state);
 
     return !address
       ? wrapped
@@ -104,7 +107,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
       );
   }
 
-  private getWrapped (address?: string | null) {
+  private getWrapped ({ address, publicKey }: State) {
     const { className, isHighlight = false, size = DEFAULT_SIZE, style, theme = settings.uiTheme } = this.props;
     const Component = !address
       ? Empty
@@ -113,13 +116,14 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
     return (
       <Wrapper
         className={`ui--IdentityIcon ${className}`}
-        key={address || ''}
+        key={address}
         style={style}
       >
         <Component
+          address={address}
           className={isHighlight ? 'highlight' : ''}
+          publicKey={publicKey}
           size={size}
-          value={address || ''}
         />
       </Wrapper>
     );

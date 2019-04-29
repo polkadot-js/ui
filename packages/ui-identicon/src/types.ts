@@ -12,8 +12,9 @@ export type BaseProps = {
 };
 
 export type Props = BaseProps & {
-  size: number,
-  value: string
+  address: string,
+  publicKey: string,
+  size: number
 };
 
 export type IdentityProps = BaseProps & {

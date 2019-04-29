@@ -9,14 +9,14 @@ import jdenticon from 'jdenticon';
 
 export default class Jdenticon extends React.PureComponent<Props> {
   render () {
-    const { className, size, style, value } = this.props;
+    const { className, publicKey, size, style } = this.props;
 
     return (
       <div
         className={`container ${className}`}
         style={style}
         dangerouslySetInnerHTML={ {
-          __html: jdenticon.toSvg(value, size)
+          __html: jdenticon.toSvg(publicKey.substr(2), size)
         } }
       />
     );

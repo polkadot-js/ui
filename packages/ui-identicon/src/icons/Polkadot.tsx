@@ -51,7 +51,7 @@ const schema: { [index: string]: Scheme } = {
 
 export default class Identicon extends React.PureComponent<Props> {
   render () {
-    const { className, size, style, value } = this.props;
+    const { address, className, size, style } = this.props;
     const xy = this.getCircleXY();
     const colors = this.getColors();
 
@@ -61,8 +61,8 @@ export default class Identicon extends React.PureComponent<Props> {
         style={style}
       >
         <svg
-          id={value}
-          name={value}
+          id={address}
+          name={address}
           width={size}
           height={size}
           viewBox='0 0 64 64'
@@ -131,9 +131,9 @@ export default class Identicon extends React.PureComponent<Props> {
   }
 
   private getColors () {
-    const { value } = this.props;
+    const { address } = this.props;
     const total = Object.keys(schema).map(k => schema[k].freq).reduce((a, b) => a + b);
-    const id = Array.from(blake2(decodeAddress(value))).map((x, i) => (x + 256 - zero[i]) % 256);
+    const id = Array.from(blake2(decodeAddress(address))).map((x, i) => (x + 256 - zero[i]) % 256);
     const d = Math.floor((id[30] + id[31] * 256) % total);
     const rot = (id[28] % 6) * 3;
     const sat = (Math.floor(id[29] * 70 / 256 + 26) % 80) + 30;

@@ -1,3 +1,9 @@
+# 0.38.1
+
+- Sorting of keyring addresses
+- Fix JSON import defaults
+- Display icons using publicKey (not the encoded address)
+
 # 0.37.1
 
 - Add Emberic Elm (Dried Danta discontinued)
