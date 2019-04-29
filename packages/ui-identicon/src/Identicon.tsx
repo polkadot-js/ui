@@ -10,7 +10,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 import { decodeAddress, encodeAddress } from '@polkadot/keyring';
 import settings from '@polkadot/ui-settings';
-import { isHex, isU8a } from '@polkadot/util';
+import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 
 import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
 
@@ -18,7 +18,7 @@ const Fallback = Beachball;
 
 type State = {
   address: string,
-  publicKey: Uint8Array
+  publicKey: string
 };
 
 const DEFAULT_SIZE = 64;
@@ -61,7 +61,7 @@ const Wrapper = styled.div`
 export default class IdentityIcon extends React.PureComponent<Props, State> {
   state: State = {
     address: '',
-    publicKey: new Uint8Array([])
+    publicKey: '0x'
   };
 
   private static prefix?: Prefix = undefined;
@@ -75,7 +75,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
       const address = isU8a(value) || isHex(value)
         ? encodeAddress(value, prefix)
         : (value || '');
-      const publicKey = decodeAddress(address, false, prefix);
+      const publicKey = u8aToHex(decodeAddress(address, false, prefix));
 
       return address === prevState.address
         ? null
@@ -86,7 +86,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
     } catch (error) {
       return {
         address: '',
-        publicKey: new Uint8Array([])
+        publicKey: '0x'
       };
     }
   }

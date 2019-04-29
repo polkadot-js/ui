@@ -13,7 +13,7 @@ export type BaseProps = {
 
 export type Props = BaseProps & {
   address: string,
-  publicKey: Uint8Array,
+  publicKey: string,
   size: number
 };
 

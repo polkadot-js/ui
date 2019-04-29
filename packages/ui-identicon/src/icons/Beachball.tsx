@@ -22,11 +22,11 @@ export default class Beachball extends React.PureComponent<Props> {
   }
 
   private appendIcon = (node: Element | null): void => {
-    const { size, publicKey } = this.props;
+    const { address, size } = this.props;
 
     if (node) {
       node.appendChild(
-        identicon(publicKey, size)
+        identicon(address, size)
       );
     }
   }

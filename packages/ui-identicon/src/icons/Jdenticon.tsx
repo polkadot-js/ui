@@ -16,7 +16,7 @@ export default class Jdenticon extends React.PureComponent<Props> {
         className={`container ${className}`}
         style={style}
         dangerouslySetInnerHTML={ {
-          __html: jdenticon.toSvg(publicKey as any, size)
+          __html: jdenticon.toSvg(publicKey.substr(2), size)
         } }
       />
     );

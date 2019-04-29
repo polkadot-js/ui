@@ -19,6 +19,7 @@
 import { Props as BaseProps } from '../types';
 
 import React from 'react';
+import { decodeAddress } from '@polkadot/keyring';
 import { blake2AsU8a } from '@polkadot/util-crypto';
 
 type Props = BaseProps & {
@@ -130,9 +131,9 @@ export default class Identicon extends React.PureComponent<Props> {
   }
 
   private getColors () {
-    const { publicKey } = this.props;
+    const { address } = this.props;
     const total = Object.keys(schema).map(k => schema[k].freq).reduce((a, b) => a + b);
-    const id = Array.from(blake2(publicKey)).map((x, i) => (x + 256 - zero[i]) % 256);
+    const id = Array.from(blake2(decodeAddress(address))).map((x, i) => (x + 256 - zero[i]) % 256);
     const d = Math.floor((id[30] + id[31] * 256) % total);
     const rot = (id[28] % 6) * 3;
     const sat = (Math.floor(id[29] * 70 / 256 + 26) % 80) + 30;
