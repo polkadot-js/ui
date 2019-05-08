@@ -1,8 +1,10 @@
 # 0.38.1
 
 - Sorting of keyring addresses
-- Fix JSON import defaults
+- Fix JSON import defaults (previously detection was not working for old accounts)
 - Display icons using publicKey (not the encoded address)
+- Ensure only a single instance of ui-keyring is loaded
+- Adjust short address option display (keyring options)
 
 # 0.37.1
 
