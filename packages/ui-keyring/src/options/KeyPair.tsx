@@ -9,6 +9,7 @@ import IdentityIcon from '@polkadot/ui-identicon';
 type Props = {
   address: string,
   className?: string,
+  isUppercase: boolean,
   name: string,
   style?: {
     [index: string]: string
@@ -44,14 +45,17 @@ const Wrapper = styled.div`
     flex: 1 0;
     margin-left: 3rem;
     overflow: hidden;
-    text-transform: uppercase;
     text-overflow: ellipsis;
+
+    &.uppercase {
+      text-transform: uppercase;
+    }
   }
 `;
 
 export default class KeyPair extends React.PureComponent<Props> {
   render () {
-    const { address, className, name, style } = this.props;
+    const { address, className, isUppercase, name, style } = this.props;
 
     return (
       <Wrapper
@@ -63,7 +67,7 @@ export default class KeyPair extends React.PureComponent<Props> {
           size={32}
           value={address}
         />
-        <div className='name'>
+        <div className={`name ${isUppercase ? 'uppercase' : 'normalcase'}`}>
           {name}
         </div>
         <div className='address'>
