@@ -41,7 +41,7 @@ export default function genericSubject (keyCreator: (address: string) => string,
 
       current[address] = {
         json,
-        option: createOptionItem(address, json.meta.name)
+        option: createOptionItem(address, json.meta.name, !json.meta.isRecent)
       };
 
       store.set(keyCreator(address), json);
