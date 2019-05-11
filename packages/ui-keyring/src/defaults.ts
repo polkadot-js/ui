@@ -11,7 +11,8 @@ const MAX_PASS_LEN = 32;
 
 function toHex (address: string): string {
   return u8aToHex(
-    decodeAddress(address)
+    // When saving pre-checksum changes, ensure that we can decode
+    decodeAddress(address, true)
   );
 }
 
