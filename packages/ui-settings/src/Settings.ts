@@ -4,12 +4,13 @@
 
 import store from 'store';
 
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Options, SettingsStruct } from './types';
 
 export class Settings implements SettingsStruct {
   private _apiUrl: string;
   private _i18nLang: string;
+  private _locking: string;
   private _uiMode: string;
   private _uiTheme: string;
 
@@ -18,6 +19,7 @@ export class Settings implements SettingsStruct {
 
     this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
     this._i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
+    this._locking = settings.locking || LOCKING_DEFAULT;
     this._uiMode = settings.uiMode || UIMODE_DEFAULT;
     this._uiTheme = settings.uiTheme || UITHEME_DEFAULT;
   }
@@ -28,6 +30,10 @@ export class Settings implements SettingsStruct {
 
   get i18nLang (): string {
     return this._i18nLang;
+  }
+
+  get locking (): string {
+    return this._locking;
   }
 
   get uiMode (): string {
@@ -50,6 +56,10 @@ export class Settings implements SettingsStruct {
     return LANGUAGES;
   }
 
+  get availableLocking (): Options {
+    return LOCKING;
+  }
+
   get availableUIModes (): Options {
     return UIMODES;
   }
@@ -62,6 +72,7 @@ export class Settings implements SettingsStruct {
     return {
       apiUrl: this._apiUrl,
       i18nLang: this._i18nLang,
+      locking: this._locking,
       uiMode: this._uiMode,
       uiTheme: this._uiTheme
     };
@@ -70,6 +81,7 @@ export class Settings implements SettingsStruct {
   set (settings: Partial<SettingsStruct>): void {
     this._apiUrl = settings.apiUrl || this._apiUrl;
     this._i18nLang = settings.i18nLang || this._i18nLang;
+    this._locking = settings.locking || this._locking;
     this._uiMode = settings.uiMode || this._uiMode;
     this._uiTheme = settings.uiTheme || this._uiTheme;
 
