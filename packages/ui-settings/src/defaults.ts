@@ -4,13 +4,14 @@
 
 import { Options } from './types';
 
-// matches https://polkadot.js.org & https://poc-3.polkadot.io
- // tslint:disable-next-line
+// matches https://polkadot.js.org & https://*.polkadot.io
+// tslint:disable-next-line
 const isPolkadot = typeof window !== 'undefined' && window.location.host.indexOf('polkadot') !== -1;
 
 const WSS_POLKADOT = 'wss://poc3-rpc.polkadot.io/';
 const WSS_SUBSTRATE = 'wss://substrate-rpc.parity.io/';
 const LANGUAGE_DEFAULT = 'default';
+const LOCKING_DEFAULT = 'session';
 
 const CRYPTOS: Options = [
   { text: 'Edwards (ed25519)', value: 'ed25519' },
@@ -24,7 +25,12 @@ const ENDPOINTS: Options = [
 ];
 
 const LANGUAGES: Options = [
-  { value: LANGUAGE_DEFAULT, text: 'Default browser language (auto-detect)' }
+  { text: 'Default browser language (auto-detect)', value: LANGUAGE_DEFAULT }
+];
+
+const LOCKING: Options = [
+  { text: 'Once per session', value: 'session' },
+  { text: 'On each transaction', value: 'tx' }
 ];
 
 const UIMODES: Options = [
@@ -56,6 +62,8 @@ export {
   ENDPOINTS,
   LANGUAGE_DEFAULT,
   LANGUAGES,
+  LOCKING_DEFAULT,
+  LOCKING,
   UIMODE_DEFAULT,
   UIMODES,
   UITHEME_DEFAULT,

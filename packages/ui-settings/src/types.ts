@@ -11,6 +11,7 @@ export type Options = Array<{
 export interface SettingsStruct {
   apiUrl: string;
   i18nLang: string;
+  locking: string;
   uiMode: string;
   uiTheme: string;
 }
