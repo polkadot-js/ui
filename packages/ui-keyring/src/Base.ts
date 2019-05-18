@@ -105,7 +105,7 @@ export default class Base {
       .forEach((pair: KeyringPair) => {
         const address = pair.address();
 
-        this.accounts.add(address, {
+        this.accounts.add(this._store, address, {
           address,
           meta: pair.getMeta()
         });

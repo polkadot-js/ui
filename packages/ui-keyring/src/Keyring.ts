@@ -89,16 +89,16 @@ export class Keyring extends Base implements KeyringStruct {
     json.meta.whenEdited = Date.now();
 
     this.keyring.addFromJson(json);
-    this.accounts.add(json.address, json);
+    this.accounts.add(this._store, json.address, json);
   }
 
   forgetAccount (address: string): void {
     this.keyring.removePair(address);
-    this.accounts.remove(address);
+    this.accounts.remove(this._store, address);
   }
 
   forgetAddress (address: string): void {
-    this.addresses.remove(address);
+    this.addresses.remove(this._store, address);
   }
 
   getAccount (address: string | Uint8Array): KeyringAddress {
@@ -157,7 +157,7 @@ export class Keyring extends Base implements KeyringStruct {
       // FIXME Just for the transition period (ignoreChecksum)
       const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
 
-      this.accounts.add(pair.address(), json);
+      this.accounts.add(this._store, pair.address(), json);
     }
 
     const [, hexAddr] = key.split(':');
@@ -181,7 +181,7 @@ export class Keyring extends Base implements KeyringStruct {
     );
     const [, hexAddr] = key.split(':');
 
-    this.addresses.add(address, json);
+    this.addresses.add(this._store, address, json);
     this.rewriteKey(json, key, hexAddr, addressKey);
   }
 
@@ -225,7 +225,7 @@ export class Keyring extends Base implements KeyringStruct {
     const json = pair.toJson(password);
 
     this.keyring.addFromJson(json);
-    this.accounts.add(json.address, json);
+    this.accounts.add(this._store, json.address, json);
 
     return json;
   }
@@ -237,7 +237,7 @@ export class Keyring extends Base implements KeyringStruct {
       pair.setMeta(meta);
       json.meta = pair.getMeta();
 
-      this.accounts.add(json.address, json);
+      this.accounts.add(this._store, json.address, json);
     });
   }
 
@@ -258,7 +258,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     delete json.meta.isRecent;
 
-    this.addresses.add(address, json);
+    this.addresses.add(this._store, address, json);
 
     return json as KeyringPair$Json;
   }
@@ -275,7 +275,7 @@ export class Keyring extends Base implements KeyringStruct {
         }
       };
 
-      this.addresses.add(address, (json as KeyringJson));
+      this.addresses.add(this._store, address, (json as KeyringJson));
     }
 
     return this.addresses.subject.getValue()[address];

@@ -2,11 +2,10 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { BehaviorSubject } from 'rxjs';
 import { SubjectInfo, AddressSubject, SingleAddress } from './types';
-import { KeyringJson } from '../types';
+import { KeyringJson, KeyringStore } from '../types';
 
-import store from 'store';
+import { BehaviorSubject } from 'rxjs';
 
 import createOptionItem from '../options/item';
 import development from './development';
@@ -36,7 +35,7 @@ export default function genericSubject (keyCreator: (address: string) => string,
   development.subject.subscribe(next);
 
   return {
-    add: (address: string, json: KeyringJson): SingleAddress => {
+    add: (store: KeyringStore, address: string, json: KeyringJson): SingleAddress => {
       current = { ...current };
 
       current[address] = {
@@ -49,7 +48,7 @@ export default function genericSubject (keyCreator: (address: string) => string,
 
       return current[address];
     },
-    remove: (address: string) => {
+    remove: (store: KeyringStore, address: string) => {
       current = { ...current };
 
       delete current[address];
