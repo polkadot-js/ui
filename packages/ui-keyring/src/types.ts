@@ -6,8 +6,16 @@ import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, 
 import { KeypairType } from '@polkadot/util-crypto/types';
 import { AddressSubject, SingleAddress } from './observable/types';
 
+export interface KeyringStore {
+  all: (cb: (key: string, value: any) => void) => void;
+  get: (key: string, cb: (value: any) => void) => void;
+  remove: (key: string, cb?: () => void) => void;
+  set: (key: string, value: any, cb?: () => void) => void;
+}
+
 export type KeyringOptions = KeyringOptionsBase & {
-  isDevelopment?: boolean
+  isDevelopment?: boolean,
+  store?: KeyringStore
 };
 
 export type KeyringJson$Meta = {
