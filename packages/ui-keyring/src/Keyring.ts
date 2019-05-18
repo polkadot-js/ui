@@ -7,7 +7,6 @@ import { KeypairType } from '@polkadot/util-crypto/types';
 import { SingleAddress } from './observable/types';
 import { CreateResult, KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
-import store from 'store';
 import createPair from '@polkadot/keyring/pair';
 import { hexToU8a, isHex, isString, u8aToHex } from '@polkadot/util';
 
@@ -149,8 +148,8 @@ export class Keyring extends Base implements KeyringStruct {
       return;
     }
 
-    store.remove(key);
-    store.set(creator(hexAddr), json);
+    this._store.remove(key);
+    this._store.set(creator(hexAddr), json);
   }
 
   private loadAccount (json: KeyringJson, key: string) {
@@ -170,7 +169,7 @@ export class Keyring extends Base implements KeyringStruct {
     const { isRecent, whenCreated = 0 } = json.meta;
 
     if (isRecent && (Date.now() - whenCreated) > RECENT_EXPIRY) {
-      store.remove(key);
+      this._store.remove(key);
       return;
     }
 
@@ -189,7 +188,7 @@ export class Keyring extends Base implements KeyringStruct {
   loadAll (options: KeyringOptions): void {
     super.initKeyring(options);
 
-    store.each((json: KeyringJson, key: string) => {
+    this._store.all((key: string, json: KeyringJson) => {
       if (accountRegex.test(key)) {
         this.loadAccount(json, key);
       } else if (addressRegex.test(key)) {
@@ -233,12 +232,13 @@ export class Keyring extends Base implements KeyringStruct {
 
   saveAccountMeta (pair: KeyringPair, meta: KeyringPair$Meta): void {
     const address = pair.address();
-    const json = store.get(accountKey(address));
 
-    pair.setMeta(meta);
-    json.meta = pair.getMeta();
+    this._store.get(accountKey(address), (json: KeyringJson) => {
+      pair.setMeta(meta);
+      json.meta = pair.getMeta();
 
-    this.accounts.add(json.address, json);
+      this.accounts.add(json.address, json);
+    });
   }
 
   saveAddress (address: string, meta: KeyringPair$Meta): KeyringPair$Json {

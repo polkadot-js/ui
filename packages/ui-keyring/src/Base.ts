@@ -5,7 +5,7 @@
 import { Prefix } from '@polkadot/keyring/address/types';
 import { KeyringInstance, KeyringPair } from '@polkadot/keyring/types';
 import { AddressSubject } from './observable/types';
-import { KeyringOptions } from './types';
+import { KeyringOptions, KeyringStore } from './types';
 
 import testKeyring from '@polkadot/keyring/testing';
 import { isBoolean, isString } from '@polkadot/util';
@@ -13,6 +13,7 @@ import { isBoolean, isString } from '@polkadot/util';
 import accounts from './observable/accounts';
 import addresses from './observable/addresses';
 import env from './observable/development';
+import LocalStorageStore from './stores/LocalStorage';
 import { MAX_PASS_LEN } from './defaults';
 
 export default class Base {
@@ -20,11 +21,13 @@ export default class Base {
   private _addresses: AddressSubject;
   private _keyring?: KeyringInstance;
   private _prefix?: Prefix;
+  protected _store: KeyringStore;
 
   constructor () {
     this._accounts = accounts;
     this._addresses = addresses;
     this._keyring = undefined;
+    this._store = null as any;
   }
 
   get accounts () {
@@ -91,6 +94,7 @@ export default class Base {
     }
 
     this._keyring = keyring;
+    this._store = options.store || new LocalStorageStore();
 
     this.addAccountPairs();
   }
