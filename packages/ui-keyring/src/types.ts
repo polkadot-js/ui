@@ -19,6 +19,7 @@ export type KeyringOptions = KeyringOptionsBase & {
 };
 
 export type KeyringJson$Meta = {
+  isInjected?: boolean,
   isRecent?: boolean,
   isTesting?: boolean,
   name?: string,
