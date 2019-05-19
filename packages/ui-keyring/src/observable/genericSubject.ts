@@ -43,7 +43,12 @@ export default function genericSubject (keyCreator: (address: string) => string,
         option: createOptionItem(address, json.meta.name, !json.meta.isRecent)
       };
 
-      store.set(keyCreator(address), json);
+      const isDevMode = development.isDevelopment();
+
+      if (!json.meta.isInjected && (!json.meta.isTesting || isDevMode)) {
+        store.set(keyCreator(address), json);
+      }
+
       next();
 
       return current[address];
