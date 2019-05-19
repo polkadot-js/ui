@@ -185,12 +185,12 @@ export class Keyring extends Base implements KeyringStruct {
     this.rewriteKey(json, key, hexAddr, addressKey);
   }
 
-  private loadInjected (address: string, name: string) {
+  private loadInjected (address: string, meta: KeyringJson$Meta) {
     const json = {
       address,
       meta: {
-        isInjected: true,
-        name
+        ...meta,
+        isInjected: true
       }
     };
     const pair = this.keyring.addFromAddress(address, json.meta);
@@ -198,7 +198,7 @@ export class Keyring extends Base implements KeyringStruct {
     this.accounts.add(this._store, pair.address(), json);
   }
 
-  loadAll (options: KeyringOptions, injected: Array<{ address: string, name: string }> = []): void {
+  loadAll (options: KeyringOptions, injected: Array<{ address: string, meta: KeyringJson$Meta }> = []): void {
     super.initKeyring(options);
 
     this._store.all((key: string, json: KeyringJson) => {
@@ -209,8 +209,8 @@ export class Keyring extends Base implements KeyringStruct {
       }
     });
 
-    injected.forEach(({ address, name }) =>
-      this.loadInjected(address, name)
+    injected.forEach(({ address, meta }) =>
+      this.loadInjected(address, meta)
     );
 
     keyringOption.init(this);
