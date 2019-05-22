@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-util",
-  "version": "0.39.0-beta.6",
+  "version": "0.39.0",
   "description": "Utility functions (non-React) that aid in display, formats and determination",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.4.5"
   },
   "devDependencies": {
-    "@polkadot/types": "^0.79.0-beta.34"
+    "@polkadot/types": "^0.79.1"
   },
   "peerDependencies": {
     "@polkadot/types": "*"
