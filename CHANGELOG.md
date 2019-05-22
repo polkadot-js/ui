@@ -1,3 +1,8 @@
+# 0.39.1
+
+- Allow for externally injected accounts
+- @polkadot/util 0.91.1 & @polkadot/api 0.79.1
+
 # 0.38.1
 
 - Sorting of keyring addresses
