@@ -89,7 +89,7 @@ export class Keyring extends Base implements KeyringStruct {
     json.meta.whenEdited = Date.now();
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, json.address, json);
+    this.accounts.add(this._store, pair.address(), json);
   }
 
   forgetAccount (address: string): void {
@@ -242,7 +242,7 @@ export class Keyring extends Base implements KeyringStruct {
     const json = pair.toJson(password);
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, json.address, json);
+    this.accounts.add(this._store, pair.address(), json);
 
     return json;
   }
@@ -254,7 +254,7 @@ export class Keyring extends Base implements KeyringStruct {
       pair.setMeta(meta);
       json.meta = pair.getMeta();
 
-      this.accounts.add(this._store, json.address, json);
+      this.accounts.add(this._store, address, json);
     });
   }
 
