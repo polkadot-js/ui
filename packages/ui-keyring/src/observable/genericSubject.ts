@@ -39,7 +39,10 @@ export default function genericSubject (keyCreator: (address: string) => string,
       current = { ...current };
 
       current[address] = {
-        json,
+        json: {
+          ...json,
+          address
+        },
         option: createOptionItem(address, json.meta.name, !json.meta.isRecent)
       };
 
