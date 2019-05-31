@@ -12,7 +12,7 @@ import { hexToU8a, isHex, isString, u8aToHex } from '@polkadot/util';
 
 import env from './observable/development';
 import Base from './Base';
-import { accountKey, addressKey, accountRegex, addressRegex } from './defaults';
+import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
 import keyringOption from './options';
 
 const RECENT_EXPIRY = 24 * 60 * 60;
@@ -101,6 +101,10 @@ export class Keyring extends Base implements KeyringStruct {
     this.addresses.remove(this._store, address);
   }
 
+  forgetContract (address: string): void {
+    this.contracts.remove(this._store, address);
+  }
+
   getAccount (address: string | Uint8Array): KeyringAddress {
     return this.getAddress(address, 'account');
   }
@@ -114,14 +118,21 @@ export class Keyring extends Base implements KeyringStruct {
       .filter((account) => env.isDevelopment() || account.getMeta().isTesting !== true);
   }
 
-  getAddress (_address: string | Uint8Array, type: 'account' | 'address' = 'address'): KeyringAddress {
+  getAddress (_address: string | Uint8Array, type: 'account' | 'address' | 'contract' = 'address'): KeyringAddress {
     const address = isString(_address)
       ? _address
       : this.encodeAddress(_address);
     const publicKey = this.decodeAddress(address);
-    const subject = type === 'account'
-      ? this.accounts.subject
-      : this.addresses.subject;
+    const subject = (() => {
+      switch (type) {
+        case 'account':
+          return this.accounts.subject;
+        case 'address':
+          return this.addresses.subject;
+        case 'contract':
+          return this.contracts.subject;
+      }
+    })();
 
     return {
       address: (): string =>
@@ -141,6 +152,14 @@ export class Keyring extends Base implements KeyringStruct {
     return Object
       .keys(available)
       .map((address) => this.getAddress(address));
+  }
+
+  getContracts (): Array<KeyringAddress> {
+    const available = this.contracts.subject.getValue();
+
+    return Object
+      .keys(available)
+      .map((address) => this.getAddress(address, 'contract'));
   }
 
   private rewriteKey (json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string) {
@@ -185,6 +204,19 @@ export class Keyring extends Base implements KeyringStruct {
     this.rewriteKey(json, key, hexAddr, addressKey);
   }
 
+  private loadContract (json: KeyringJson, key: string) {
+    const address = this.encodeAddress(
+      isHex(json.address)
+        ? hexToU8a(json.address)
+        // FIXME Just for the transition period (ignoreChecksum)
+        : this.decodeAddress(json.address, true)
+    );
+    const [, hexAddr] = key.split(':');
+
+    this.contracts.add(this._store, address, json);
+    this.rewriteKey(json, key, hexAddr, contractKey);
+  }
+
   private loadInjected (address: string, meta: KeyringJson$Meta) {
     const json = {
       address,
@@ -206,6 +238,8 @@ export class Keyring extends Base implements KeyringStruct {
         this.loadAccount(json, key);
       } else if (addressRegex.test(key)) {
         this.loadAddress(json, key);
+      } else if (contractRegex.test(key)) {
+        this.loadContract(json, key);
       }
     });
 
@@ -276,6 +310,29 @@ export class Keyring extends Base implements KeyringStruct {
     delete json.meta.isRecent;
 
     this.addresses.add(this._store, address, json);
+
+    return json as KeyringPair$Json;
+  }
+
+  saveContract (address: string, meta: KeyringPair$Meta): KeyringPair$Json {
+    const available = this.addresses.subject.getValue();
+
+    const json = (available[address] && available[address].json) || {
+      address,
+      meta: {
+        isContract: true,
+        isRecent: void 0,
+        whenCreated: Date.now()
+      }
+    };
+
+    Object.keys(meta).forEach((key) => {
+      json.meta[key] = meta[key];
+    });
+
+    delete json.meta.isRecent;
+
+    this.contracts.add(this._store, address, json);
 
     return json as KeyringPair$Json;
   }

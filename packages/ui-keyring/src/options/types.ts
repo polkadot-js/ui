@@ -20,6 +20,7 @@ export type KeyringOptions = {
   account: KeyringSectionOptions,
   address: KeyringSectionOptions,
   all: KeyringSectionOptions,
+  contract: KeyringSectionOptions,
   recent: KeyringSectionOptions,
   testing: KeyringSectionOptions
 };

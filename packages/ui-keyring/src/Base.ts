@@ -12,6 +12,7 @@ import { isBoolean, isString } from '@polkadot/util';
 
 import accounts from './observable/accounts';
 import addresses from './observable/addresses';
+import contracts from './observable/contracts';
 import env from './observable/development';
 import LocalStorageStore from './stores/LocalStorage';
 import { MAX_PASS_LEN } from './defaults';
@@ -19,6 +20,7 @@ import { MAX_PASS_LEN } from './defaults';
 export default class Base {
   private _accounts: AddressSubject;
   private _addresses: AddressSubject;
+  private _contracts: AddressSubject;
   private _keyring?: KeyringInstance;
   private _prefix?: Prefix;
   protected _store: KeyringStore;
@@ -26,6 +28,7 @@ export default class Base {
   constructor () {
     this._accounts = accounts;
     this._addresses = addresses;
+    this._contracts = contracts;
     this._keyring = undefined;
     this._store = null as any;
   }
@@ -36,6 +39,10 @@ export default class Base {
 
   get addresses () {
     return this._addresses;
+  }
+
+  get contracts () {
+    return this._contracts;
   }
 
   get keyring (): KeyringInstance {
@@ -67,11 +74,12 @@ export default class Base {
   isAvailable (_address: Uint8Array | string): boolean {
     const accountsValue = this.accounts.subject.getValue();
     const addressesValue = this.addresses.subject.getValue();
+    const contractsValue = this.contracts.subject.getValue();
     const address = isString(_address)
       ? _address
       : this.encodeAddress(_address);
 
-    return !accountsValue[address] && !addressesValue[address];
+    return !accountsValue[address] && !addressesValue[address] && !contractsValue[address];
   }
 
   isPassValid (password: string): boolean {
