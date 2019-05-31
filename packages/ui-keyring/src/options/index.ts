@@ -56,6 +56,7 @@ class KeyringOption implements KeyringOptionInstance {
 
       this.addAccounts(keyring, options);
       this.addAddresses(keyring, options);
+      this.addContracts(keyring, options);
 
       options.address = this.linkItems({
         'Addresses': options.address,
@@ -64,6 +65,9 @@ class KeyringOption implements KeyringOptionInstance {
       options.account = this.linkItems({
         'Accounts': options.account,
         'Development': options.testing
+      });
+      options.contract = this.linkItems({
+        'Contracts': options.contract
       });
 
       options.all = ([] as KeyringSectionOptions).concat(
@@ -129,10 +133,25 @@ class KeyringOption implements KeyringOptionInstance {
       });
   }
 
+  private addContracts (keyring: KeyringStruct, options: KeyringOptions): void {
+    const available = keyring.contracts.subject.getValue();
+
+    Object
+      .values(available)
+      .filter(({ json }: SingleAddress) => {
+        return !json.meta.isRecent;
+      })
+      .sort(sortByName)
+      .forEach(({ option }: SingleAddress) => {
+        options.contract.push(option);
+      });
+  }
+
   private emptyOptions (): KeyringOptions {
     return {
       account: [],
       address: [],
+      contract: [],
       all: [],
       recent: [],
       testing: []

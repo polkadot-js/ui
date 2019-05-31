@@ -19,6 +19,7 @@ export type KeyringOptions = KeyringOptionsBase & {
 };
 
 export type KeyringJson$Meta = {
+  isContract?: boolean,
   isInjected?: boolean,
   isRecent?: boolean,
   isTesting?: boolean,
@@ -49,6 +50,7 @@ export type CreateResult = {
 export interface KeyringStruct {
   readonly accounts: AddressSubject;
   readonly addresses: AddressSubject;
+  readonly contracts: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
 
   addExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => CreateResult;
@@ -64,10 +66,12 @@ export interface KeyringStruct {
   encryptAccount: (pair: KeyringPair, password: string) => void;
   forgetAccount: (address: string) => void;
   forgetAddress: (address: string) => void;
+  forgetContract: (address: string) => void;
   getAccount: (address: string | Uint8Array) => KeyringAddress;
   getAccounts: () => Array<KeyringAddress>;
   getAddress: (address: string | Uint8Array) => KeyringAddress;
   getAddresses: () => Array<KeyringAddress>;
+  getContracts: () => Array<KeyringAddress>;
   getPair: (address: string | Uint8Array) => KeyringPair;
   getPairs: () => Array<KeyringPair>;
   isAvailable: (address: string | Uint8Array) => boolean;
@@ -77,6 +81,7 @@ export interface KeyringStruct {
   saveAccount: (pair: KeyringPair, password?: string) => KeyringPair$Json;
   saveAccountMeta: (pair: KeyringPair, meta: KeyringPair$Meta) => void;
   saveAddress: (address: string, meta: KeyringPair$Meta) => KeyringPair$Json;
+  saveContract: (address: string, meta: KeyringPair$Meta) => KeyringPair$Json;
   saveRecent: (address: string) => SingleAddress;
   setDevMode: (isDevelopment: boolean) => void;
 }

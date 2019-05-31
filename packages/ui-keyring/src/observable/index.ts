@@ -7,13 +7,16 @@ import { map } from 'rxjs/operators';
 
 import accounts from './accounts';
 import addresses from './addresses';
+import contracts from './contracts';
 
 export default combineLatest(
   accounts.subject,
-  addresses.subject
+  addresses.subject,
+  contracts.subject
 ).pipe(
   map(([accounts, addresses]) => ({
     accounts,
-    addresses
+    addresses,
+    contracts
   }))
 );
