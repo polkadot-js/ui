@@ -6,6 +6,11 @@ import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, 
 import { KeypairType } from '@polkadot/util-crypto/types';
 import { AddressSubject, SingleAddress } from './observable/types';
 
+export type ContractMeta = {
+  abi: string,
+  genesisHash: string
+};
+
 export interface KeyringStore {
   all: (cb: (key: string, value: any) => void) => void;
   get: (key: string, cb: (value: any) => void) => void;
@@ -14,11 +19,14 @@ export interface KeyringStore {
 }
 
 export type KeyringOptions = KeyringOptionsBase & {
+  filter?: (json: KeyringJson) => boolean,
+  genesisHash: string,
   isDevelopment?: boolean,
   store?: KeyringStore
 };
 
 export type KeyringJson$Meta = {
+  contractMeta?: ContractMeta,
   isContract?: boolean,
   isInjected?: boolean,
   isRecent?: boolean,
@@ -52,6 +60,7 @@ export interface KeyringStruct {
   readonly addresses: AddressSubject;
   readonly contracts: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
+  readonly genesisHash: string;
 
   addExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => CreateResult;
   addPair: (pair: KeyringPair, password: string) => CreateResult;
@@ -71,7 +80,8 @@ export interface KeyringStruct {
   getAccounts: () => Array<KeyringAddress>;
   getAddress: (address: string | Uint8Array) => KeyringAddress;
   getAddresses: () => Array<KeyringAddress>;
-  getContracts: () => Array<KeyringAddress>;
+  getContract: (address: string | Uint8Array) => KeyringAddress;
+  getContracts: (genesisHash: string) => Array<KeyringAddress>;
   getPair: (address: string | Uint8Array) => KeyringPair;
   getPairs: () => Array<KeyringPair>;
   isAvailable: (address: string | Uint8Array) => boolean;
