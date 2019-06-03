@@ -14,7 +14,7 @@ export default combineLatest(
   addresses.subject,
   contracts.subject
 ).pipe(
-  map(([accounts, addresses]) => ({
+  map(([accounts, addresses, contracts]) => ({
     accounts,
     addresses,
     contracts

@@ -23,6 +23,7 @@ export default class Base {
   private _contracts: AddressSubject;
   private _keyring?: KeyringInstance;
   private _prefix?: Prefix;
+  protected _genesisHash: string = '';
   protected _store: KeyringStore;
 
   constructor () {
@@ -51,6 +52,10 @@ export default class Base {
     }
 
     throw new Error(`Keyring should be initialised via 'loadAll' before use`);
+  }
+
+  get genesisHash () {
+    return this._genesisHash;
   }
 
   decodeAddress (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array {
@@ -102,6 +107,7 @@ export default class Base {
     }
 
     this._keyring = keyring;
+    this._genesisHash = options.genesisHash;
     this._store = options.store || new LocalStorageStore();
 
     this.addAccountPairs();

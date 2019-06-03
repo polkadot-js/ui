@@ -154,12 +154,20 @@ export class Keyring extends Base implements KeyringStruct {
       .map((address) => this.getAddress(address));
   }
 
+  getContract (address: string | Uint8Array): KeyringAddress {
+    return this.getAddress(address, 'contract');
+  }
+
   getContracts (): Array<KeyringAddress> {
     const available = this.contracts.subject.getValue();
 
     return Object
-      .keys(available)
-      .map((address) => this.getAddress(address, 'contract'));
+      .entries(available)
+      .filter(([, data]) => {
+        const { json: { meta: { contractMeta } } } = data;
+        return contractMeta && contractMeta.genesisHash === this.genesisHash;
+      })
+      .map(([address]) => this.getContract(address));
   }
 
   private rewriteKey (json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string) {
@@ -234,12 +242,19 @@ export class Keyring extends Base implements KeyringStruct {
     super.initKeyring(options);
 
     this._store.all((key: string, json: KeyringJson) => {
-      if (accountRegex.test(key)) {
-        this.loadAccount(json, key);
-      } else if (addressRegex.test(key)) {
-        this.loadAddress(json, key);
-      } else if (contractRegex.test(key)) {
-        this.loadContract(json, key);
+      if (options.filter ? options.filter(json) : true) {
+        if (accountRegex.test(key)) {
+          this.loadAccount(json, key);
+        } else if (addressRegex.test(key)) {
+          this.loadAddress(json, key);
+        } else if (contractRegex.test(key)) {
+          if (
+            json.meta.contractMeta &&
+            this.genesisHash === json.meta.contractMeta.genesisHash
+          ) {
+            this.loadContract(json, key);
+          }
+        }
       }
     });
 
@@ -315,12 +330,11 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   saveContract (address: string, meta: KeyringPair$Meta): KeyringPair$Json {
-    const available = this.addresses.subject.getValue();
+    const available = this.contracts.subject.getValue();
 
     const json = (available[address] && available[address].json) || {
       address,
       meta: {
-        isContract: true,
         isRecent: void 0,
         whenCreated: Date.now()
       }
