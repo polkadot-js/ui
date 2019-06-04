@@ -1,3 +1,7 @@
+# 0.40.1
+
+- Address encoding changes, use encoded address instead of supplied
+
 # 0.39.1
 
 - Allow for externally injected accounts
