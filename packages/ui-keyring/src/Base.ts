@@ -107,7 +107,7 @@ export default class Base {
     }
 
     this._keyring = keyring;
-    this._genesisHash = options.genesisHash;
+    this._genesisHash = options.genesisHash.toHex();
     this._store = options.store || new LocalStorageStore();
 
     this.addAccountPairs();

@@ -75,6 +75,12 @@ class KeyringOption implements KeyringOptionInstance {
         options.address
       );
 
+      options.allPlus = ([] as KeyringSectionOptions).concat(
+        options.account,
+        options.address,
+        options.contract
+      );
+
       this.optionsSubject.next(options);
     });
 
@@ -138,9 +144,6 @@ class KeyringOption implements KeyringOptionInstance {
 
     Object
       .values(available)
-      .filter(({ json }: SingleAddress) => {
-        return !json.meta.isRecent;
-      })
       .sort(sortByName)
       .forEach(({ option }: SingleAddress) => {
         options.contract.push(option);
@@ -153,6 +156,7 @@ class KeyringOption implements KeyringOptionInstance {
       address: [],
       contract: [],
       all: [],
+      allPlus: [],
       recent: [],
       testing: []
     };
