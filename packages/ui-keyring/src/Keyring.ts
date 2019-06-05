@@ -304,7 +304,7 @@ export class Keyring extends Base implements KeyringStruct {
     });
   }
 
-  saveAddress (address: string, meta: KeyringPair$Meta): KeyringPair$Json {
+  saveAddress (address: string, meta: KeyringPair$Meta, type: 'address' | 'contract' = 'address'): KeyringPair$Json {
     const available = this.addresses.subject.getValue();
 
     const json = (available[address] && available[address].json) || {
@@ -321,31 +321,22 @@ export class Keyring extends Base implements KeyringStruct {
 
     delete json.meta.isRecent;
 
-    this.addresses.add(this._store, address, json);
+    const key = (() => {
+      switch (type) {
+        case 'contract':
+          return 'contracts';
+        default:
+          return 'addresses';
+      }
+    })();
+
+    this[key].add(this._store, address, json);
 
     return json as KeyringPair$Json;
   }
 
   saveContract (address: string, meta: KeyringPair$Meta): KeyringPair$Json {
-    const available = this.contracts.subject.getValue();
-
-    const json = (available[address] && available[address].json) || {
-      address,
-      meta: {
-        isRecent: void 0,
-        whenCreated: Date.now()
-      }
-    };
-
-    Object.keys(meta).forEach((key) => {
-      json.meta[key] = meta[key];
-    });
-
-    delete json.meta.isRecent;
-
-    this.contracts.add(this._store, address, json);
-
-    return json as KeyringPair$Json;
+    return this.saveAddress(address, meta, 'contract');
   }
 
   saveRecent (address: string): SingleAddress {
