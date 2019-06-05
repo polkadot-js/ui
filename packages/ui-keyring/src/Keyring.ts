@@ -164,8 +164,8 @@ export class Keyring extends Base implements KeyringStruct {
     return Object
       .entries(available)
       .filter(([, data]) => {
-        const { json: { meta: { contractMeta } } } = data;
-        return contractMeta && contractMeta.genesisHash === this.genesisHash;
+        const { json: { meta: { contract } } } = data;
+        return contract && contract.genesisHash === this.genesisHash;
       })
       .map(([address]) => this.getContract(address));
   }
@@ -214,10 +214,7 @@ export class Keyring extends Base implements KeyringStruct {
 
   private loadContract (json: KeyringJson, key: string) {
     const address = this.encodeAddress(
-      isHex(json.address)
-        ? hexToU8a(json.address)
-        // FIXME Just for the transition period (ignoreChecksum)
-        : this.decodeAddress(json.address, true)
+      this.decodeAddress(json.address)
     );
     const [, hexAddr] = key.split(':');
 
@@ -249,8 +246,8 @@ export class Keyring extends Base implements KeyringStruct {
           this.loadAddress(json, key);
         } else if (contractRegex.test(key)) {
           if (
-            json.meta.contractMeta &&
-            this.genesisHash === json.meta.contractMeta.genesisHash
+            json.meta.contract &&
+            this.genesisHash === json.meta.contract.genesisHash
           ) {
             this.loadContract(json, key);
           }
