@@ -26,11 +26,11 @@ const addressKey = (address: string): string =>
 const contractKey = (address: string): string =>
   `${CONTRACT_PREFIX}${toHex(address)}`;
 
-const accountRegex = new RegExp(`^${ACCOUNT_PREFIX}`, '');
+const accountRegex = new RegExp(`^${ACCOUNT_PREFIX}0x[0-9a-f]*`, '');
 
-const addressRegex = new RegExp(`^${ADDRESS_PREFIX}`, '');
+const addressRegex = new RegExp(`^${ADDRESS_PREFIX}0x[0-9a-f]*`, '');
 
-const contractRegex = new RegExp(`^${CONTRACT_PREFIX}:0x[0-9a-f]*`, '');
+const contractRegex = new RegExp(`^${CONTRACT_PREFIX}0x[0-9a-f]*`, '');
 
 export {
   accountKey,
