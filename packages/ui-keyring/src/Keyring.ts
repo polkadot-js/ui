@@ -329,15 +329,6 @@ export class Keyring extends Base implements KeyringStruct {
 
     delete json.meta.isRecent;
 
-    // const key = (() => {
-    //   switch (type) {
-    //     case 'contract':
-    //       return 'contracts';
-    //     default:
-    //       return 'addresses';
-    //   }
-    // })();
-
     this[type].add(this._store, address, json);
 
     return json as KeyringPair$Json;

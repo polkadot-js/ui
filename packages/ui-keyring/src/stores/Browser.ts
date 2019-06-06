@@ -6,7 +6,7 @@ import { KeyringStore } from '../types';
 
 import store from 'store';
 
-export default class Store implements KeyringStore {
+export default class BrowserStore implements KeyringStore {
   all (cb: (key: string, value: any) => void): void {
     store.each((value: any, key: string) =>
       cb(key, value)
