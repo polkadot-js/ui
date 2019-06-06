@@ -9,7 +9,7 @@ import { AddressSubject, SingleAddress } from './observable/types';
 
 export type ContractMeta = {
   abi: string,
-  genesisHash: string
+  genesisHash?: string
 };
 
 export interface KeyringStore {
@@ -21,7 +21,7 @@ export interface KeyringStore {
 
 export type KeyringOptions = KeyringOptionsBase & {
   filter?: (json: KeyringJson) => boolean,
-  genesisHash: Hash,
+  genesisHash?: Hash,
   isDevelopment?: boolean,
   store?: KeyringStore
 };
@@ -60,7 +60,7 @@ export interface KeyringStruct {
   readonly addresses: AddressSubject;
   readonly contracts: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
-  readonly genesisHash: string;
+  readonly genesisHash?: string;
 
   addExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => CreateResult;
   addPair: (pair: KeyringPair, password: string) => CreateResult;
@@ -81,7 +81,7 @@ export interface KeyringStruct {
   getAddress: (address: string | Uint8Array) => KeyringAddress;
   getAddresses: () => Array<KeyringAddress>;
   getContract: (address: string | Uint8Array) => KeyringAddress;
-  getContracts: (genesisHash: string) => Array<KeyringAddress>;
+  getContracts: (genesisHash?: string) => Array<KeyringAddress>;
   getPair: (address: string | Uint8Array) => KeyringPair;
   getPairs: () => Array<KeyringPair>;
   isAvailable: (address: string | Uint8Array) => boolean;

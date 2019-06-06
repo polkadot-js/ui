@@ -246,7 +246,8 @@ export class Keyring extends Base implements KeyringStruct {
           this.loadAddress(json, key);
         } else if (contractRegex.test(key)) {
           if (
-            json.meta.contract &&
+            json.meta && json.meta.contract &&
+            this.genesisHash &&
             this.genesisHash === json.meta.contract.genesisHash
           ) {
             this.loadContract(json, key);

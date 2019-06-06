@@ -23,7 +23,7 @@ export default class Base {
   private _contracts: AddressSubject;
   private _keyring?: KeyringInstance;
   private _prefix?: Prefix;
-  protected _genesisHash: string = '';
+  protected _genesisHash?: string;
   protected _store: KeyringStore;
 
   constructor () {
@@ -107,7 +107,7 @@ export default class Base {
     }
 
     this._keyring = keyring;
-    this._genesisHash = options.genesisHash.toHex();
+    this._genesisHash = options.genesisHash && options.genesisHash.toHex();
     this._store = options.store || new LocalStorageStore();
 
     this.addAccountPairs();
