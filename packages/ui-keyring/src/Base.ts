@@ -13,7 +13,7 @@ import { isBoolean, isString } from '@polkadot/util';
 import accounts from './observable/accounts';
 import addresses from './observable/addresses';
 import env from './observable/development';
-import LocalStorageStore from './stores/LocalStorage';
+import { BrowserStore } from './stores';
 import { MAX_PASS_LEN } from './defaults';
 
 export default class Base {
@@ -94,7 +94,7 @@ export default class Base {
     }
 
     this._keyring = keyring;
-    this._store = options.store || new LocalStorageStore();
+    this._store = options.store || new BrowserStore();
 
     this.addAccountPairs();
   }
