@@ -30,7 +30,7 @@ const accountRegex = new RegExp(`^${ACCOUNT_PREFIX}`, '');
 
 const addressRegex = new RegExp(`^${ADDRESS_PREFIX}`, '');
 
-const contractRegex = new RegExp(`^${CONTRACT_PREFIX}\d`, '');
+const contractRegex = new RegExp(`^${CONTRACT_PREFIX}:0x[0-9a-f]*`, '');
 
 export {
   accountKey,
