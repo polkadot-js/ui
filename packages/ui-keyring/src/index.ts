@@ -5,6 +5,7 @@
 import { assertSingletonPackage } from '@polkadot/util';
 
 import keyring, { Keyring } from './Keyring';
+export * from './stores';
 
 assertSingletonPackage('@polkadot/ui-keyring');
 

@@ -14,7 +14,7 @@ import accounts from './observable/accounts';
 import addresses from './observable/addresses';
 import contracts from './observable/contracts';
 import env from './observable/development';
-import LocalStorageStore from './stores/LocalStorage';
+import { BrowserStore } from './stores';
 import { MAX_PASS_LEN } from './defaults';
 
 export default class Base {
@@ -108,7 +108,7 @@ export default class Base {
 
     this._keyring = keyring;
     this._genesisHash = options.genesisHash && options.genesisHash.toHex();
-    this._store = options.store || new LocalStorageStore();
+    this._store = options.store || new BrowserStore();
 
     this.addAccountPairs();
   }
