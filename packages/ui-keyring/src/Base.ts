@@ -46,10 +46,6 @@ export default class Base {
     return this._contract;
   }
 
-  get contracts () {
-    return this._contracts;
-  }
-
   get keyring (): KeyringInstance {
     if (this._keyring) {
       return this._keyring;
