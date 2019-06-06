@@ -12,6 +12,7 @@ import { isBoolean, isString } from '@polkadot/util';
 
 import accounts from './observable/accounts';
 import addresses from './observable/addresses';
+import contracts from './observable/contracts';
 import env from './observable/development';
 import LocalStorageStore from './stores/LocalStorage';
 import { MAX_PASS_LEN } from './defaults';
@@ -19,13 +20,16 @@ import { MAX_PASS_LEN } from './defaults';
 export default class Base {
   private _accounts: AddressSubject;
   private _addresses: AddressSubject;
+  private _contracts: AddressSubject;
   private _keyring?: KeyringInstance;
   private _prefix?: Prefix;
+  protected _genesisHash?: string;
   protected _store: KeyringStore;
 
   constructor () {
     this._accounts = accounts;
     this._addresses = addresses;
+    this._contracts = contracts;
     this._keyring = undefined;
     this._store = null as any;
   }
@@ -38,12 +42,20 @@ export default class Base {
     return this._addresses;
   }
 
+  get contracts () {
+    return this._contracts;
+  }
+
   get keyring (): KeyringInstance {
     if (this._keyring) {
       return this._keyring;
     }
 
     throw new Error(`Keyring should be initialised via 'loadAll' before use`);
+  }
+
+  get genesisHash () {
+    return this._genesisHash;
   }
 
   decodeAddress (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array {
@@ -67,11 +79,12 @@ export default class Base {
   isAvailable (_address: Uint8Array | string): boolean {
     const accountsValue = this.accounts.subject.getValue();
     const addressesValue = this.addresses.subject.getValue();
+    const contractsValue = this.contracts.subject.getValue();
     const address = isString(_address)
       ? _address
       : this.encodeAddress(_address);
 
-    return !accountsValue[address] && !addressesValue[address];
+    return !accountsValue[address] && !addressesValue[address] && !contractsValue[address];
   }
 
   isPassValid (password: string): boolean {
@@ -94,6 +107,7 @@ export default class Base {
     }
 
     this._keyring = keyring;
+    this._genesisHash = options.genesisHash && options.genesisHash.toHex();
     this._store = options.store || new LocalStorageStore();
 
     this.addAccountPairs();

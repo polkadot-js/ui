@@ -2,9 +2,15 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import { Hash } from '@polkadot/types';
 import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
 import { KeypairType } from '@polkadot/util-crypto/types';
 import { AddressSubject, SingleAddress } from './observable/types';
+
+export type ContractMeta = {
+  abi: string,
+  genesisHash?: string
+};
 
 export interface KeyringStore {
   all: (cb: (key: string, value: any) => void) => void;
@@ -14,11 +20,14 @@ export interface KeyringStore {
 }
 
 export type KeyringOptions = KeyringOptionsBase & {
+  filter?: (json: KeyringJson) => boolean,
+  genesisHash?: Hash,
   isDevelopment?: boolean,
   store?: KeyringStore
 };
 
 export type KeyringJson$Meta = {
+  contract?: ContractMeta,
   isInjected?: boolean,
   isRecent?: boolean,
   isTesting?: boolean,
@@ -49,7 +58,9 @@ export type CreateResult = {
 export interface KeyringStruct {
   readonly accounts: AddressSubject;
   readonly addresses: AddressSubject;
+  readonly contracts: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
+  readonly genesisHash?: string;
 
   addExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => CreateResult;
   addPair: (pair: KeyringPair, password: string) => CreateResult;
@@ -64,10 +75,13 @@ export interface KeyringStruct {
   encryptAccount: (pair: KeyringPair, password: string) => void;
   forgetAccount: (address: string) => void;
   forgetAddress: (address: string) => void;
+  forgetContract: (address: string) => void;
   getAccount: (address: string | Uint8Array) => KeyringAddress;
   getAccounts: () => Array<KeyringAddress>;
   getAddress: (address: string | Uint8Array) => KeyringAddress;
   getAddresses: () => Array<KeyringAddress>;
+  getContract: (address: string | Uint8Array) => KeyringAddress;
+  getContracts: (genesisHash?: string) => Array<KeyringAddress>;
   getPair: (address: string | Uint8Array) => KeyringPair;
   getPairs: () => Array<KeyringPair>;
   isAvailable: (address: string | Uint8Array) => boolean;
@@ -77,6 +91,7 @@ export interface KeyringStruct {
   saveAccount: (pair: KeyringPair, password?: string) => KeyringPair$Json;
   saveAccountMeta: (pair: KeyringPair, meta: KeyringPair$Meta) => void;
   saveAddress: (address: string, meta: KeyringPair$Meta) => KeyringPair$Json;
+  saveContract: (address: string, meta: KeyringPair$Meta) => KeyringPair$Json;
   saveRecent: (address: string) => SingleAddress;
   setDevMode: (isDevelopment: boolean) => void;
 }
