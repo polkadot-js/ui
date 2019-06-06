@@ -42,7 +42,7 @@ export default class FileStore implements KeyringStore {
   }
 
   private _getPath (key: string): string {
-    return path.join(this._path, `${key}.json`);
+    return path.join(this._path, key);
   }
 
   private _readKey (key: string): any {
