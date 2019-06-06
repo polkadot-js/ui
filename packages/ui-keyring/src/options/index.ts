@@ -101,7 +101,7 @@ class KeyringOption implements KeyringOptionInstance {
   }
 
   private addAccounts (keyring: KeyringStruct, options: KeyringOptions): void {
-    const available = keyring.accounts.subject.getValue();
+    const available = keyring.account.subject.getValue();
 
     Object
       .values(available)
@@ -116,7 +116,7 @@ class KeyringOption implements KeyringOptionInstance {
   }
 
   private addAddresses (keyring: KeyringStruct, options: KeyringOptions): void {
-    const available = keyring.addresses.subject.getValue();
+    const available = keyring.address.subject.getValue();
 
     Object
       .values(available)
@@ -140,7 +140,7 @@ class KeyringOption implements KeyringOptionInstance {
   }
 
   private addContracts (keyring: KeyringStruct, options: KeyringOptions): void {
-    const available = keyring.contracts.subject.getValue();
+    const available = keyring.contract.subject.getValue();
 
     Object
       .values(available)

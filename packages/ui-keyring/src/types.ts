@@ -50,15 +50,19 @@ export type KeyringAddress = {
   getMeta: () => KeyringJson$Meta
 };
 
+export type KeyringAddressType = 'address' | 'contract';
+
+export type KeyringItemType = 'account' | KeyringAddressType;
+
 export type CreateResult = {
   json: KeyringPair$Json,
   pair: KeyringPair
 };
 
 export interface KeyringStruct {
-  readonly accounts: AddressSubject;
-  readonly addresses: AddressSubject;
-  readonly contracts: AddressSubject;
+  readonly account: AddressSubject;
+  readonly address: AddressSubject;
+  readonly contract: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
   readonly genesisHash?: string;
 
@@ -78,7 +82,7 @@ export interface KeyringStruct {
   forgetContract: (address: string) => void;
   getAccount: (address: string | Uint8Array) => KeyringAddress;
   getAccounts: () => Array<KeyringAddress>;
-  getAddress: (address: string | Uint8Array) => KeyringAddress;
+  getAddress: (address: string | Uint8Array, type: KeyringItemType | null) => KeyringAddress;
   getAddresses: () => Array<KeyringAddress>;
   getContract: (address: string | Uint8Array) => KeyringAddress;
   getContracts: (genesisHash?: string) => Array<KeyringAddress>;
