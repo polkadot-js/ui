@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "@types/store": "^2.0.2",
+    "extensionizer": "^1.0.1",
     "store": "^2.0.12",
     "styled-components": "^4.2.0"
   },
