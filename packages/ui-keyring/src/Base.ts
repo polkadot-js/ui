@@ -18,32 +18,32 @@ import { BrowserStore } from './stores';
 import { MAX_PASS_LEN } from './defaults';
 
 export default class Base {
-  private _account: AddressSubject;
-  private _address: AddressSubject;
-  private _contract: AddressSubject;
+  private _accounts: AddressSubject;
+  private _addresses: AddressSubject;
+  private _contracts: AddressSubject;
   private _keyring?: KeyringInstance;
   private _prefix?: Prefix;
   protected _genesisHash?: string;
   protected _store: KeyringStore;
 
   constructor () {
-    this._account = accounts;
-    this._address = addresses;
-    this._contract = contracts;
+    this._accounts = accounts;
+    this._addresses = addresses;
+    this._contracts = contracts;
     this._keyring = undefined;
     this._store = null as any;
   }
 
-  get account () {
-    return this._account;
+  get accounts () {
+    return this._accounts;
   }
 
-  get address () {
-    return this._address;
+  get addresses () {
+    return this._addresses;
   }
 
-  get contract () {
-    return this._contract;
+  get contracts () {
+    return this._contracts;
   }
 
   get keyring (): KeyringInstance {
@@ -77,9 +77,9 @@ export default class Base {
   }
 
   isAvailable (_address: Uint8Array | string): boolean {
-    const accountsValue = this.account.subject.getValue();
-    const addressesValue = this.address.subject.getValue();
-    const contractsValue = this.contract.subject.getValue();
+    const accountsValue = this.accounts.subject.getValue();
+    const addressesValue = this.addresses.subject.getValue();
+    const contractsValue = this.contracts.subject.getValue();
     const address = isString(_address)
       ? _address
       : this.encodeAddress(_address);
@@ -119,7 +119,7 @@ export default class Base {
       .forEach((pair: KeyringPair) => {
         const address = pair.address();
 
-        this.account.add(this._store, address, {
+        this.accounts.add(this._store, address, {
           address,
           meta: pair.getMeta()
         });

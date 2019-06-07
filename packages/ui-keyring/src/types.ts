@@ -60,9 +60,9 @@ export type CreateResult = {
 };
 
 export interface KeyringStruct {
-  readonly account: AddressSubject;
-  readonly address: AddressSubject;
-  readonly contract: AddressSubject;
+  readonly accounts: AddressSubject;
+  readonly addresses: AddressSubject;
+  readonly contracts: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
   readonly genesisHash?: string;
 
