@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { KeyringStruct } from '../types';
+import { KeyringItemType, KeyringStruct } from '../types';
 
 export type KeyringSectionOption = {
   className?: string,
@@ -17,13 +17,7 @@ export type KeyringSectionOption = {
 export type KeyringSectionOptions = Array<KeyringSectionOption>;
 
 export type KeyringOptions = {
-  account: KeyringSectionOptions,
-  address: KeyringSectionOptions,
-  all: KeyringSectionOptions,
-  allPlus: KeyringSectionOptions,
-  contract: KeyringSectionOptions,
-  recent: KeyringSectionOptions,
-  testing: KeyringSectionOptions
+  [type in KeyringItemType | 'all' | 'allPlus' | 'recent' | 'testing']: KeyringSectionOptions
 };
 
 export type KeyringOption$Type = keyof KeyringOptions;

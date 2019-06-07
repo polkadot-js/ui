@@ -5,7 +5,7 @@
 import { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
 import { KeypairType } from '@polkadot/util-crypto/types';
 import { SingleAddress } from './observable/types';
-import { CreateResult, KeyringAddress, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
+import { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import createPair from '@polkadot/keyring/pair';
 import { hexToU8a, isHex, isString, u8aToHex } from '@polkadot/util';
@@ -21,6 +21,12 @@ const RECENT_EXPIRY = 24 * 60 * 60;
 // Chain determination occurs outside of Keyring. Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
 export class Keyring extends Base implements KeyringStruct {
+  stores = {
+    address: () => this.addresses,
+    contract: () => this.contracts,
+    account: () => this.accounts
+  };
+
   addExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
     const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
     const json = this.saveAccount(pair);
@@ -118,21 +124,28 @@ export class Keyring extends Base implements KeyringStruct {
       .filter((account) => env.isDevelopment() || account.getMeta().isTesting !== true);
   }
 
-  getAddress (_address: string | Uint8Array, type: 'account' | 'address' | 'contract' = 'address'): KeyringAddress {
+  getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress {
     const address = isString(_address)
       ? _address
       : this.encodeAddress(_address);
     const publicKey = this.decodeAddress(address);
     const subject = (() => {
-      switch (type) {
-        case 'account':
-          return this.accounts.subject;
-        case 'address':
-          return this.addresses.subject;
-        case 'contract':
-          return this.contracts.subject;
+      if (type && this.stores[type]) {
+        return this.stores[type]().subject;
       }
+
+      let subject;
+      Object.values(this.stores).forEach((store) => {
+        if (store && store().subject.getValue()[address]) {
+          subject = store().subject;
+        }
+      });
+      return subject;
     })();
+
+    if (!subject) {
+      throw new Error('Address not found');
+    }
 
     return {
       address: (): string =>
@@ -305,7 +318,7 @@ export class Keyring extends Base implements KeyringStruct {
     });
   }
 
-  saveAddress (address: string, meta: KeyringPair$Meta, type: 'address' | 'contract' = 'address'): KeyringPair$Json {
+  saveAddress (address: string, meta: KeyringPair$Meta, type: KeyringAddressType = 'address'): KeyringPair$Json {
     const available = this.addresses.subject.getValue();
 
     const json = (available[address] && available[address].json) || {
@@ -322,16 +335,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     delete json.meta.isRecent;
 
-    const key = (() => {
-      switch (type) {
-        case 'contract':
-          return 'contracts';
-        default:
-          return 'addresses';
-      }
-    })();
-
-    this[key].add(this._store, address, json);
+    this.stores[type]().add(this._store, address, json);
 
     return json as KeyringPair$Json;
   }
