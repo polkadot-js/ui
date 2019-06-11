@@ -44,10 +44,9 @@ export type KeyringJson = {
 };
 
 export type KeyringAddress = {
-  address: () => string,
-  isValid: () => boolean,
-  publicKey: () => Uint8Array,
-  getMeta: () => KeyringJson$Meta
+  address: string,
+  publicKey: Uint8Array,
+  meta: KeyringJson$Meta
 };
 
 export type KeyringAddressType = 'address' | 'contract';

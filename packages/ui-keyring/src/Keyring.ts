@@ -121,41 +121,27 @@ export class Keyring extends Base implements KeyringStruct {
     return Object
       .keys(available)
       .map((address) => this.getAddress(address, 'account'))
-      .filter((account) => env.isDevelopment() || account.getMeta().isTesting !== true);
+      .filter((account) => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
-  getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress {
+  getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress | undefined {
     const address = isString(_address)
       ? _address
       : this.encodeAddress(_address);
     const publicKey = this.decodeAddress(address);
-    const subject = (() => {
-      if (type && this.stores[type]) {
-        return this.stores[type]().subject;
-      }
 
-      let subject;
-      Object.values(this.stores).forEach((store) => {
-        if (store && store().subject.getValue()[address]) {
-          subject = store().subject;
-        }
-      });
-      return subject;
-    })();
+    const stores = type
+      ? [this.stores[type]]
+      : Object.values(this.stores);
 
-    if (!subject) {
-      throw new Error('Address not found');
-    }
+    const info = stores.reduce<SingleAddress | undefined>((info, store) =>
+      (store().subject.getValue()[address] || info),
+      undefined);
 
-    return {
-      address: (): string =>
-        address,
-      isValid: (): boolean =>
-        !!subject.getValue()[address],
-      publicKey: (): Uint8Array =>
-        publicKey,
-      getMeta: (): KeyringJson$Meta =>
-        subject.getValue()[address].json.meta
+    return info && {
+      address,
+      publicKey,
+      meta: info.json.meta
     };
   }
 
