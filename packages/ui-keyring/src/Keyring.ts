@@ -58,7 +58,7 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   backupAccount (pair: KeyringPair, password: string): KeyringPair$Json {
-    if (!pair.isLocked()) {
+    if (!pair.isLocked) {
       pair.lock();
     }
 
@@ -95,7 +95,7 @@ export class Keyring extends Base implements KeyringStruct {
     json.meta.whenEdited = Date.now();
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address(), json);
+    this.accounts.add(this._store, pair.address, json);
   }
 
   forgetAccount (address: string): void {
@@ -183,7 +183,7 @@ export class Keyring extends Base implements KeyringStruct {
       // FIXME Just for the transition period (ignoreChecksum)
       const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
 
-      this.accounts.add(this._store, pair.address(), json);
+      this.accounts.add(this._store, pair.address, json);
     }
 
     const [, hexAddr] = key.split(':');
@@ -231,7 +231,7 @@ export class Keyring extends Base implements KeyringStruct {
     };
     const pair = this.keyring.addFromAddress(address, json.meta);
 
-    this.accounts.add(this._store, pair.address(), json);
+    this.accounts.add(this._store, pair.address, json);
   }
 
   loadAll (options: KeyringOptions, injected: Array<{ address: string, meta: KeyringJson$Meta }> = []): void {
@@ -288,17 +288,17 @@ export class Keyring extends Base implements KeyringStruct {
     const json = pair.toJson(password);
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address(), json);
+    this.accounts.add(this._store, pair.address, json);
 
     return json;
   }
 
   saveAccountMeta (pair: KeyringPair, meta: KeyringPair$Meta): void {
-    const address = pair.address();
+    const { address } = pair;
 
     this._store.get(accountKey(address), (json: KeyringJson) => {
       pair.setMeta(meta);
-      json.meta = pair.getMeta();
+      json.meta = pair.meta;
 
       this.accounts.add(this._store, address, json);
     });

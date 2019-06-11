@@ -72,7 +72,7 @@ export default class Base {
 
   getPairs (): Array<KeyringPair> {
     return this.keyring.getPairs().filter((pair: KeyringPair) =>
-      env.isDevelopment() || pair.getMeta().isTesting !== true
+      env.isDevelopment() || pair.meta.isTesting !== true
     );
   }
 
@@ -117,17 +117,17 @@ export default class Base {
     this.keyring
       .getPairs()
       .forEach((pair: KeyringPair) => {
-        const address = pair.address();
+        const { address } = pair;
 
         this.accounts.add(this._store, address, {
           address,
-          meta: pair.getMeta()
+          meta: pair.meta
         });
       });
   }
 
   protected addTimestamp (pair: KeyringPair): void {
-    if (!pair.getMeta().whenCreated) {
+    if (!pair.meta.whenCreated) {
       pair.setMeta({  whenCreated: Date.now() });
     }
   }
