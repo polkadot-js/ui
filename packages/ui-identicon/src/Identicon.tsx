@@ -8,9 +8,9 @@ import { IdentityProps as Props } from './types';
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
-import { decodeAddress, encodeAddress } from '@polkadot/keyring';
 import settings from '@polkadot/ui-settings';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
+import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
 import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
 
