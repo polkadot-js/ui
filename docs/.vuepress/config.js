@@ -25,7 +25,6 @@ module.exports = {
       ['/ui-identicon/', '@polkadot/ui-identicon'],
       ['/ui-keyring/', '@polkadot/ui-keyring'],
       ['/ui-settings/', '@polkadot/ui-settings'],
-      ['/ui-util/', '@polkadot/ui-util'],
       '/CONTRIBUTING.md'
     ]
   }
