@@ -3,9 +3,8 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { encodeAddress } from '@polkadot/keyring';
 import { isNull } from '@polkadot/util';
-import { randomAsU8a } from '@polkadot/util-crypto';
+import { encodeAddress, randomAsU8a } from '@polkadot/util-crypto';
 
 import identicon from '.';
 

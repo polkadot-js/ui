@@ -2,15 +2,15 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { Prefix } from '@polkadot/keyring/address/types';
+import { Prefix } from '@polkadot/util-crypto/address/types';
 import { IdentityProps as Props } from './types';
 
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
-import { decodeAddress, encodeAddress } from '@polkadot/keyring';
 import settings from '@polkadot/ui-settings';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
+import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
 import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
 
