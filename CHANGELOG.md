@@ -1,3 +1,9 @@
+# 0.41.1
+
+- Add support for the saving of contracts to the keyring
+- Use the injection of stores, providing an additional `ExtensionStore` for saving to Chrome/FF extensions (in addition to the standard localStorage saving)
+- Remove (previously deprecated), `@polkadot/ui-util`, all these functions have been incorporated in `@polkadot/util`
+
 # 0.40.1
 
 - Address encoding changes, use encoded address instead of supplied

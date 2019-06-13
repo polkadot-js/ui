@@ -19,8 +19,7 @@
 import { Props as BaseProps } from '../types';
 
 import React from 'react';
-import { decodeAddress } from '@polkadot/keyring';
-import { blake2AsU8a } from '@polkadot/util-crypto';
+import { blake2AsU8a, decodeAddress } from '@polkadot/util-crypto';
 
 type Props = BaseProps & {
   sixPoint?: boolean
