@@ -8,7 +8,7 @@ import { SingleAddress } from './observable/types';
 import { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import createPair from '@polkadot/keyring/pair';
-import { hexToU8a, isHex, isString, u8aToHex } from '@polkadot/util';
+import { hexToU8a, isHex, isString } from '@polkadot/util';
 
 import env from './observable/development';
 import Base from './Base';
@@ -58,31 +58,13 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   backupAccount (pair: KeyringPair, password: string): KeyringPair$Json {
-    if (!pair.isLocked()) {
+    if (!pair.isLocked) {
       pair.lock();
     }
 
     pair.decodePkcs8(password);
 
     return pair.toJson(password);
-  }
-
-  createAccount (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta): KeyringPair {
-    console.warn('createAccount deprecated, use addUri instead');
-
-    return this.addUri(u8aToHex(seed), password, meta).pair;
-  }
-
-  createAccountExternal (publicKey: Uint8Array, meta?: KeyringPair$Meta): KeyringPair {
-    console.warn('createAccountExternal deprecated, use addExternal instead');
-
-    return this.addExternal(publicKey, meta).pair;
-  }
-
-  createAccountMnemonic (seed: string, password?: string, meta?: KeyringPair$Meta): KeyringPair {
-    console.warn('createAccountMnemonic deprecated, use createUri instead');
-
-    return this.addUri(seed, password, meta).pair;
   }
 
   createFromUri (suri: string, meta: KeyringPair$Meta = {}, type?: KeypairType): KeyringPair {
@@ -95,7 +77,7 @@ export class Keyring extends Base implements KeyringStruct {
     json.meta.whenEdited = Date.now();
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address(), json);
+    this.accounts.add(this._store, pair.address, json);
   }
 
   forgetAccount (address: string): void {
@@ -121,10 +103,11 @@ export class Keyring extends Base implements KeyringStruct {
     return Object
       .keys(available)
       .map((address) => this.getAddress(address, 'account'))
-      .filter((account) => env.isDevelopment() || account.getMeta().isTesting !== true);
+      .filter((account) => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
   getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress {
+    const encodeAddress = this.encodeAddress;
     const address = isString(_address)
       ? _address
       : this.encodeAddress(_address);
@@ -148,14 +131,19 @@ export class Keyring extends Base implements KeyringStruct {
     }
 
     return {
-      address: (): string =>
-        address,
-      isValid: (): boolean =>
-        !!subject.getValue()[address],
-      publicKey: (): Uint8Array =>
-        publicKey,
-      getMeta: (): KeyringJson$Meta =>
-        subject.getValue()[address].json.meta
+      get address (): string {
+        return encodeAddress(publicKey);
+      },
+      get isValid (): boolean {
+        return !!(subject && subject.getValue()[address]);
+      },
+      get publicKey (): Uint8Array {
+        return publicKey;
+      },
+      get meta (): KeyringJson$Meta {
+        // This is actually non-applicable, i.e. here we will have a subject
+        return subject ? subject.getValue()[address].json.meta : {};
+      }
     };
   }
 
@@ -197,7 +185,7 @@ export class Keyring extends Base implements KeyringStruct {
       // FIXME Just for the transition period (ignoreChecksum)
       const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
 
-      this.accounts.add(this._store, pair.address(), json);
+      this.accounts.add(this._store, pair.address, json);
     }
 
     const [, hexAddr] = key.split(':');
@@ -245,7 +233,7 @@ export class Keyring extends Base implements KeyringStruct {
     };
     const pair = this.keyring.addFromAddress(address, json.meta);
 
-    this.accounts.add(this._store, pair.address(), json);
+    this.accounts.add(this._store, pair.address, json);
   }
 
   loadAll (options: KeyringOptions, injected: Array<{ address: string, meta: KeyringJson$Meta }> = []): void {
@@ -302,17 +290,17 @@ export class Keyring extends Base implements KeyringStruct {
     const json = pair.toJson(password);
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address(), json);
+    this.accounts.add(this._store, pair.address, json);
 
     return json;
   }
 
   saveAccountMeta (pair: KeyringPair, meta: KeyringPair$Meta): void {
-    const address = pair.address();
+    const address = pair.address;
 
     this._store.get(accountKey(address), (json: KeyringJson) => {
       pair.setMeta(meta);
-      json.meta = pair.getMeta();
+      json.meta = pair.meta;
 
       this.accounts.add(this._store, address, json);
     });
