@@ -93,7 +93,7 @@ export class Keyring extends Base implements KeyringStruct {
     this.contracts.remove(this._store, address);
   }
 
-  getAccount (address: string | Uint8Array): KeyringAddress {
+  getAccount (address: string | Uint8Array): KeyringAddress | undefined {
     return this.getAddress(address, 'account');
   }
 
@@ -102,7 +102,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     return Object
       .keys(available)
-      .map((address) => this.getAddress(address, 'account'))
+      .map((address) => this.getAddress(address, 'account') as KeyringAddress)
       .filter((account) => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
@@ -132,10 +132,10 @@ export class Keyring extends Base implements KeyringStruct {
 
     return Object
       .keys(available)
-      .map((address) => this.getAddress(address));
+      .map((address) => this.getAddress(address) as KeyringAddress);
   }
 
-  getContract (address: string | Uint8Array): KeyringAddress {
+  getContract (address: string | Uint8Array): KeyringAddress | undefined {
     return this.getAddress(address, 'contract');
   }
 
@@ -148,7 +148,7 @@ export class Keyring extends Base implements KeyringStruct {
         const { json: { meta: { contract } } } = data;
         return contract && contract.genesisHash === this.genesisHash;
       })
-      .map(([address]) => this.getContract(address));
+      .map(([address]) => this.getContract(address) as KeyringAddress);
   }
 
   private rewriteKey (json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string) {

@@ -76,11 +76,11 @@ export interface KeyringStruct {
   forgetAccount: (address: string) => void;
   forgetAddress: (address: string) => void;
   forgetContract: (address: string) => void;
-  getAccount: (address: string | Uint8Array) => KeyringAddress;
+  getAccount: (address: string | Uint8Array) => KeyringAddress | undefined;
   getAccounts: () => Array<KeyringAddress>;
-  getAddress: (address: string | Uint8Array, type: KeyringItemType | null) => KeyringAddress;
+  getAddress: (address: string | Uint8Array, type: KeyringItemType | null) => KeyringAddress | undefined;
   getAddresses: () => Array<KeyringAddress>;
-  getContract: (address: string | Uint8Array) => KeyringAddress;
+  getContract: (address: string | Uint8Array) => KeyringAddress | undefined;
   getContracts: (genesisHash?: string) => Array<KeyringAddress>;
   getPair: (address: string | Uint8Array) => KeyringPair;
   getPairs: () => Array<KeyringPair>;
