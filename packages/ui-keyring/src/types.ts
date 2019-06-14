@@ -44,9 +44,9 @@ export type KeyringJson = {
 };
 
 export type KeyringAddress = {
-  address: string,
-  publicKey: Uint8Array,
-  meta: KeyringJson$Meta
+  readonly address: string,
+  readonly meta: KeyringJson$Meta,
+  readonly publicKey: Uint8Array
 };
 
 export type KeyringAddressType = 'address' | 'contract';
@@ -69,9 +69,6 @@ export interface KeyringStruct {
   addPair: (pair: KeyringPair, password: string) => CreateResult;
   addUri: (suri: string, password?: string, meta?: KeyringPair$Meta, type?: KeypairType) => CreateResult;
   backupAccount: (pair: KeyringPair, password: string) => KeyringPair$Json;
-  createAccount: (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
-  createAccountExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => KeyringPair;
-  createAccountMnemonic: (seed: string, password?: string, meta?: KeyringPair$Meta) => KeyringPair;
   createFromUri (suri: string, meta?: KeyringPair$Meta, type?: KeypairType): KeyringPair;
   decodeAddress: (key: string | Uint8Array) => Uint8Array;
   encodeAddress: (key: string | Uint8Array) => string;

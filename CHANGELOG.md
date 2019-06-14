@@ -1,7 +1,12 @@
 # 0.41.1
 
+- Adapt interface to cater for new `@polkadot/keyring`, where pairs -
+  - expose `address` getter instead of `address()`
+  - expose `publicKey` getter instead of `publicKey()`
+  - expose `meta` getter instead of `getMeta()`
 - Add support for the saving of contracts to the keyring
 - Use the injection of stores, providing an additional `ExtensionStore` for saving to Chrome/FF extensions (in addition to the standard localStorage saving)
+- Remove previously deprecated kering functions, `createAccount`, `createAccountExternal` & `createAccountMnemonic`
 - Remove (previously deprecated), `@polkadot/ui-util`, all these functions have been incorporated in `@polkadot/util`
 
 # 0.40.1

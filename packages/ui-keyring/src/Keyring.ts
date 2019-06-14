@@ -8,7 +8,7 @@ import { SingleAddress } from './observable/types';
 import { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import createPair from '@polkadot/keyring/pair';
-import { hexToU8a, isHex, isString, u8aToHex } from '@polkadot/util';
+import { hexToU8a, isHex, isString } from '@polkadot/util';
 
 import env from './observable/development';
 import Base from './Base';
@@ -67,24 +67,6 @@ export class Keyring extends Base implements KeyringStruct {
     return pair.toJson(password);
   }
 
-  createAccount (seed: Uint8Array, password?: string, meta?: KeyringPair$Meta): KeyringPair {
-    console.warn('createAccount deprecated, use addUri instead');
-
-    return this.addUri(u8aToHex(seed), password, meta).pair;
-  }
-
-  createAccountExternal (publicKey: Uint8Array, meta?: KeyringPair$Meta): KeyringPair {
-    console.warn('createAccountExternal deprecated, use addExternal instead');
-
-    return this.addExternal(publicKey, meta).pair;
-  }
-
-  createAccountMnemonic (seed: string, password?: string, meta?: KeyringPair$Meta): KeyringPair {
-    console.warn('createAccountMnemonic deprecated, use createUri instead');
-
-    return this.addUri(seed, password, meta).pair;
-  }
-
   createFromUri (suri: string, meta: KeyringPair$Meta = {}, type?: KeypairType): KeyringPair {
     return this.keyring.createFromUri(suri, meta, type);
   }
@@ -134,8 +116,8 @@ export class Keyring extends Base implements KeyringStruct {
       ? [this.stores[type]]
       : Object.values(this.stores);
 
-    const info = stores.reduce<SingleAddress | undefined>((info, store) =>
-      (store().subject.getValue()[address] || info),
+    const info = stores.reduce<SingleAddress | undefined>((lastInfo, store) =>
+      (store().subject.getValue()[address] || lastInfo),
       undefined);
 
     return info && {
@@ -294,7 +276,7 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   saveAccountMeta (pair: KeyringPair, meta: KeyringPair$Meta): void {
-    const { address } = pair;
+    const address = pair.address;
 
     this._store.get(accountKey(address), (json: KeyringJson) => {
       pair.setMeta(meta);

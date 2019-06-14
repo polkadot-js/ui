@@ -58,11 +58,11 @@ export default class Base {
     return this._genesisHash;
   }
 
-  decodeAddress (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array {
+  decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array => {
     return this.keyring.decodeAddress(key, ignoreChecksum);
   }
 
-  encodeAddress (key: string | Uint8Array): string {
+  encodeAddress = (key: string | Uint8Array): string => {
     return this.keyring.encodeAddress(key);
   }
 
@@ -116,19 +116,14 @@ export default class Base {
   protected addAccountPairs (): void {
     this.keyring
       .getPairs()
-      .forEach((pair: KeyringPair) => {
-        const { address } = pair;
-
-        this.accounts.add(this._store, address, {
-          address,
-          meta: pair.meta
-        });
+      .forEach(({ address, meta }: KeyringPair) => {
+        this.accounts.add(this._store, address, { address, meta });
       });
   }
 
   protected addTimestamp (pair: KeyringPair): void {
     if (!pair.meta.whenCreated) {
-      pair.setMeta({  whenCreated: Date.now() });
+      pair.setMeta({ whenCreated: Date.now() });
     }
   }
 }
