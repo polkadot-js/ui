@@ -93,7 +93,7 @@ export class Keyring extends Base implements KeyringStruct {
     this.contracts.remove(this._store, address);
   }
 
-  getAccount (address: string | Uint8Array): KeyringAddress {
+  getAccount (address: string | Uint8Array): KeyringAddress | undefined {
     return this.getAddress(address, 'account');
   }
 
@@ -102,48 +102,28 @@ export class Keyring extends Base implements KeyringStruct {
 
     return Object
       .keys(available)
-      .map((address) => this.getAddress(address, 'account'))
+      .map((address) => this.getAddress(address, 'account') as KeyringAddress)
       .filter((account) => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
-  getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress {
-    const encodeAddress = this.encodeAddress;
+  getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress | undefined {
     const address = isString(_address)
       ? _address
       : this.encodeAddress(_address);
     const publicKey = this.decodeAddress(address);
-    const subject = (() => {
-      if (type && this.stores[type]) {
-        return this.stores[type]().subject;
-      }
 
-      let subject;
-      Object.values(this.stores).forEach((store) => {
-        if (store && store().subject.getValue()[address]) {
-          subject = store().subject;
-        }
-      });
-      return subject;
-    })();
+    const stores = type
+      ? [this.stores[type]]
+      : Object.values(this.stores);
 
-    if (!subject) {
-      throw new Error('Address not found');
-    }
+    const info = stores.reduce<SingleAddress | undefined>((lastInfo, store) =>
+      (store().subject.getValue()[address] || lastInfo),
+      undefined);
 
-    return {
-      get address (): string {
-        return encodeAddress(publicKey);
-      },
-      get isValid (): boolean {
-        return !!(subject && subject.getValue()[address]);
-      },
-      get publicKey (): Uint8Array {
-        return publicKey;
-      },
-      get meta (): KeyringJson$Meta {
-        // This is actually non-applicable, i.e. here we will have a subject
-        return subject ? subject.getValue()[address].json.meta : {};
-      }
+    return info && {
+      address,
+      publicKey,
+      meta: info.json.meta
     };
   }
 
@@ -152,10 +132,10 @@ export class Keyring extends Base implements KeyringStruct {
 
     return Object
       .keys(available)
-      .map((address) => this.getAddress(address));
+      .map((address) => this.getAddress(address) as KeyringAddress);
   }
 
-  getContract (address: string | Uint8Array): KeyringAddress {
+  getContract (address: string | Uint8Array): KeyringAddress | undefined {
     return this.getAddress(address, 'contract');
   }
 
@@ -168,7 +148,7 @@ export class Keyring extends Base implements KeyringStruct {
         const { json: { meta: { contract } } } = data;
         return contract && contract.genesisHash === this.genesisHash;
       })
-      .map(([address]) => this.getContract(address));
+      .map(([address]) => this.getContract(address) as KeyringAddress);
   }
 
   private rewriteKey (json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string) {

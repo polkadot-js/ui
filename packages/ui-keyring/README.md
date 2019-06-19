@@ -20,8 +20,8 @@ render () {
   const pair = keyring.getPair(address);
 
   // ask questions about that particular keyring pair
-  const isLocked = pair.isLocked();
-  const meta = pair.getMeta();
+  const isLocked = pair.isLocked;
+  const meta = pair.meta;
 
   // save account from pair
   keyring.saveAccount(pair, password);

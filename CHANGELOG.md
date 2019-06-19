@@ -4,6 +4,7 @@
   - expose `address` getter instead of `address()`
   - expose `publicKey` getter instead of `publicKey()`
   - expose `meta` getter instead of `getMeta()`
+- The functions `getAccount` `getAddress` `getContract` in `@polkadot/ui-keyring` now return either undefined or an object with the above properties.
 - Add support for the saving of contracts to the keyring
 - Use the injection of stores, providing an additional `ExtensionStore` for saving to Chrome/FF extensions (in addition to the standard localStorage saving)
 - Remove previously deprecated kering functions, `createAccount`, `createAccountExternal` & `createAccountMnemonic`
