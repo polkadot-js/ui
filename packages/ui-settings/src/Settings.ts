@@ -14,7 +14,7 @@ export class Settings implements SettingsStruct {
   private _uiMode: string;
   private _uiTheme: string;
 
-  constructor () {
+  public constructor () {
     const settings = store.get('settings') || {};
 
     this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
@@ -24,51 +24,51 @@ export class Settings implements SettingsStruct {
     this._uiTheme = settings.uiTheme || UITHEME_DEFAULT;
   }
 
-  get apiUrl (): string {
+  public get apiUrl (): string {
     return this._apiUrl;
   }
 
-  get i18nLang (): string {
+  public get i18nLang (): string {
     return this._i18nLang;
   }
 
-  get locking (): string {
+  public get locking (): string {
     return this._locking;
   }
 
-  get uiMode (): string {
+  public get uiMode (): string {
     return this._uiMode;
   }
 
-  get uiTheme (): string {
+  public get uiTheme (): string {
     return this._uiTheme;
   }
 
-  get availableNodes (): Options {
+  public get availableNodes (): Options {
     return ENDPOINTS;
   }
 
-  get availableCryptos (): Options {
+  public get availableCryptos (): Options {
     return CRYPTOS;
   }
 
-  get availableLanguages (): Options {
+  public get availableLanguages (): Options {
     return LANGUAGES;
   }
 
-  get availableLocking (): Options {
+  public get availableLocking (): Options {
     return LOCKING;
   }
 
-  get availableUIModes (): Options {
+  public get availableUIModes (): Options {
     return UIMODES;
   }
 
-  get availableUIThemes (): Options {
+  public get availableUIThemes (): Options {
     return UITHEMES;
   }
 
-  get (): SettingsStruct {
+  public get (): SettingsStruct {
     return {
       apiUrl: this._apiUrl,
       i18nLang: this._i18nLang,
@@ -78,7 +78,7 @@ export class Settings implements SettingsStruct {
     };
   }
 
-  set (settings: Partial<SettingsStruct>): void {
+  public set (settings: Partial<SettingsStruct>): void {
     this._apiUrl = settings.apiUrl || this._apiUrl;
     this._i18nLang = settings.i18nLang || this._i18nLang;
     this._locking = settings.locking || this._locking;

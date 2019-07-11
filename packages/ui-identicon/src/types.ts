@@ -4,24 +4,25 @@
 
 import { Prefix } from '@polkadot/util-crypto/address/types';
 
-export type BaseProps = {
-  className?: string,
+export interface BaseProps {
+  className?: string;
   style?: {
-    [index: string]: any
-  }
-};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [index: string]: any;
+  };
+}
 
-export type Props = BaseProps & {
-  address: string,
-  publicKey: string,
-  size: number
-};
+export interface Props extends BaseProps {
+  address: string;
+  publicKey: string;
+  size: number;
+}
 
-export type IdentityProps = BaseProps & {
-  isHighlight?: boolean,
-  onCopy?: (value: string) => void,
-  prefix?: Prefix,
-  size?: number,
-  theme?: 'beachball' | 'jdenticon' | 'polkadot' | 'substrate',
-  value?: string | Uint8Array | null
-};
+export interface IdentityProps extends BaseProps {
+  isHighlight?: boolean;
+  onCopy?: (value: string) => void;
+  prefix?: Prefix;
+  size?: number;
+  theme?: 'beachball' | 'jdenticon' | 'polkadot' | 'substrate';
+  value?: string | Uint8Array | null;
+}
