@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { Prefix } from '@polkadot/util-crypto/address/types';
-import { IdentityProps as Props } from './types';
+import { IdentityProps as Props, Props as ComponentProps } from './types';
 
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -22,8 +22,7 @@ interface State {
 }
 
 const DEFAULT_SIZE = 64;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Components: { [index: string]: React.ComponentType<any> } = {
+const Components: { [index: string]: React.ComponentType<ComponentProps> } = {
   'beachball': Beachball,
   'jdenticon': Jdenticon,
   'polkadot': Polkadot,
