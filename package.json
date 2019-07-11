@@ -15,7 +15,7 @@
   "scripts": {
     "build": "polkadot-dev-build-ts && polkadot-dev-build-docs",
     "check": "yarn lint",
-    "lint": "tslint --project . && tsc --noEmit --pretty",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
     "demo:identicon": "webpack-serve --config packages/ui-identicon/webpack.config.js --content packages/ui-identicon --port 3000",
     "postinstall": "polkadot-dev-yarn-only",
