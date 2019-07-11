@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 import createOptionItem from '../options/item';
 import development from './development';
 
-function callNext (current: SubjectInfo, subject: BehaviorSubject<any>, withTest: boolean): void {
+function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, withTest: boolean): void {
   const isDevMode = development.isDevelopment();
   const filtered: SubjectInfo = {};
 

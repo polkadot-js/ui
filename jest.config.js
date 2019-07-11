@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const config = require('@polkadot/dev-react/config/jest');
 
 module.exports = Object.assign({}, config, {
