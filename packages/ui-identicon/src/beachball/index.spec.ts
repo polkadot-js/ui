@@ -6,8 +6,8 @@ import xmlserializer from 'xmlserializer';
 
 import identicon from '.';
 
-describe('identicon', () => {
-  it('generates a basic [0,..,0] identicon', () => {
+describe('identicon', (): void => {
+  it('generates a basic [0,..,0] identicon', (): void => {
     expect(
       xmlserializer.serializeToString(
         identicon(new Uint8Array(32))
@@ -17,7 +17,7 @@ describe('identicon', () => {
     );
   });
 
-  it('allows overrides', () => {
+  it('allows overrides', (): void => {
     expect(
       xmlserializer.serializeToString(
         identicon(new Uint8Array(32), 100, 'testClass', { display: 'block' })

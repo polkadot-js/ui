@@ -4,14 +4,15 @@
 
 import keyringOptionInstance from '.';
 
-describe('KeyringOption', () => {
-  it('should not allow initOptions to be called more than once', () => {
+describe('KeyringOption', (): void => {
+  it('should not allow initOptions to be called more than once', (): void => {
     const state = {};
+
     // first call
     keyringOptionInstance.init(state as any);
 
     // second call
-    expect(() => {
+    expect((): void => {
       keyringOptionInstance.init(state as any);
     }).toThrowError('Unable to initialise options more than once');
   });

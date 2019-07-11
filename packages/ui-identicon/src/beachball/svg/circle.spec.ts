@@ -6,8 +6,8 @@ import xmlserializer from 'xmlserializer';
 
 import circle from './circle';
 
-describe('circle', () => {
-  it('creates a basic SVG circle element', () => {
+describe('circle', (): void => {
+  it('creates a basic SVG circle element', (): void => {
     expect(
       xmlserializer.serializeToString(
         circle(123, 12, 34)

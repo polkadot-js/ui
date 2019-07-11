@@ -7,7 +7,7 @@ import { Props } from '../types';
 import React from 'react';
 
 export default class Empty extends React.PureComponent<Props> {
-  render () {
+  public render (): React.ReactNode {
     const { className, size, style } = this.props;
 
     return (

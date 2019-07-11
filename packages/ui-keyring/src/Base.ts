@@ -24,29 +24,28 @@ export default class Base {
   private _keyring?: KeyringInstance;
   private _prefix?: Prefix;
   protected _genesisHash?: string;
-  protected _store: KeyringStore;
+  protected _store!: KeyringStore;
 
-  constructor () {
+  public constructor () {
     this._accounts = accounts;
     this._addresses = addresses;
     this._contracts = contracts;
     this._keyring = undefined;
-    this._store = null as any;
   }
 
-  get accounts () {
+  public get accounts (): AddressSubject {
     return this._accounts;
   }
 
-  get addresses () {
+  public get addresses (): AddressSubject {
     return this._addresses;
   }
 
-  get contracts () {
+  public get contracts (): AddressSubject {
     return this._contracts;
   }
 
-  get keyring (): KeyringInstance {
+  public get keyring (): KeyringInstance {
     if (this._keyring) {
       return this._keyring;
     }
@@ -54,29 +53,29 @@ export default class Base {
     throw new Error(`Keyring should be initialised via 'loadAll' before use`);
   }
 
-  get genesisHash () {
+  public get genesisHash (): string | undefined {
     return this._genesisHash;
   }
 
-  decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array => {
+  public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array => {
     return this.keyring.decodeAddress(key, ignoreChecksum);
   }
 
-  encodeAddress = (key: string | Uint8Array): string => {
+  public encodeAddress = (key: string | Uint8Array): string => {
     return this.keyring.encodeAddress(key);
   }
 
-  getPair (address: string | Uint8Array): KeyringPair {
+  public getPair (address: string | Uint8Array): KeyringPair {
     return this.keyring.getPair(address);
   }
 
-  getPairs (): Array<KeyringPair> {
-    return this.keyring.getPairs().filter((pair: KeyringPair) =>
+  public getPairs (): KeyringPair[] {
+    return this.keyring.getPairs().filter((pair: KeyringPair): boolean =>
       env.isDevelopment() || pair.meta.isTesting !== true
     );
   }
 
-  isAvailable (_address: Uint8Array | string): boolean {
+  public isAvailable (_address: Uint8Array | string): boolean {
     const accountsValue = this.accounts.subject.getValue();
     const addressesValue = this.addresses.subject.getValue();
     const contractsValue = this.contracts.subject.getValue();
@@ -87,15 +86,15 @@ export default class Base {
     return !accountsValue[address] && !addressesValue[address] && !contractsValue[address];
   }
 
-  isPassValid (password: string): boolean {
+  public isPassValid (password: string): boolean {
     return password.length > 0 && password.length <= MAX_PASS_LEN;
   }
 
-  setAddressPrefix (prefix: number): void {
+  public setAddressPrefix (prefix: number): void {
     this._prefix = prefix as Prefix;
   }
 
-  setDevMode (isDevelopment: boolean): void {
+  public setDevMode (isDevelopment: boolean): void {
     env.set(isDevelopment);
   }
 
@@ -116,7 +115,7 @@ export default class Base {
   protected addAccountPairs (): void {
     this.keyring
       .getPairs()
-      .forEach(({ address, meta }: KeyringPair) => {
+      .forEach(({ address, meta }: KeyringPair): void => {
         this.accounts.add(this._store, address, { address, meta });
       });
   }

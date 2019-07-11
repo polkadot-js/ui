@@ -4,6 +4,6 @@
 
 export type Seeder = () => number;
 
-export type ColorGen = {
-  (alpha?: number): string
-};
+export interface ColorGen {
+  (alpha?: number): string;
+}

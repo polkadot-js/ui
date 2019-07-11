@@ -10,20 +10,19 @@ import { BehaviorSubject } from 'rxjs';
 import createOptionItem from '../options/item';
 import development from './development';
 
-function callNext (current: SubjectInfo, subject: BehaviorSubject<any>, withTest: boolean) {
+function callNext (current: SubjectInfo, subject: BehaviorSubject<any>, withTest: boolean): void {
   const isDevMode = development.isDevelopment();
+  const filtered: SubjectInfo = {};
 
-  subject.next(
-    Object.keys(current).reduce((filtered, key) => {
-      const { json: { meta: { isTesting = false } = {} } = {} } = current[key];
+  Object.keys(current).forEach((key): void => {
+    const { json: { meta: { isTesting = false } = {} } = {} } = current[key];
 
-      if (!withTest || isDevMode || isTesting !== true) {
-        filtered[key] = current[key];
-      }
+    if (!withTest || isDevMode || isTesting !== true) {
+      filtered[key] = current[key];
+    }
+  });
 
-      return filtered;
-    }, {} as SubjectInfo)
-  );
+  subject.next(filtered);
 }
 
 export default function genericSubject (keyCreator: (address: string) => string, withTest: boolean = false): AddressSubject {
@@ -56,7 +55,7 @@ export default function genericSubject (keyCreator: (address: string) => string,
 
       return current[address];
     },
-    remove: (store: KeyringStore, address: string) => {
+    remove: (store: KeyringStore, address: string): void => {
       current = { ...current };
 
       delete current[address];

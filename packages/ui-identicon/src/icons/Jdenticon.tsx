@@ -8,7 +8,7 @@ import React from 'react';
 import jdenticon from 'jdenticon';
 
 export default class Jdenticon extends React.PureComponent<Props> {
-  render () {
+  public render (): React.ReactNode {
     const { className, publicKey, size, style } = this.props;
 
     return (

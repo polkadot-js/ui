@@ -6,8 +6,8 @@ import xmlserializer from 'xmlserializer';
 
 import svg from './svg';
 
-describe('svg', () => {
-  it('creates a basic SVG element', () => {
+describe('svg', (): void => {
+  it('creates a basic SVG element', (): void => {
     expect(
       xmlserializer.serializeToString(
         svg('rect')

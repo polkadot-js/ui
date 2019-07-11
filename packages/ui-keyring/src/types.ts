@@ -7,56 +7,58 @@ import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, 
 import { KeypairType } from '@polkadot/util-crypto/types';
 import { AddressSubject, SingleAddress } from './observable/types';
 
-export type ContractMeta = {
-  abi: string,
-  genesisHash?: string
-};
-
-export interface KeyringStore {
-  all: (cb: (key: string, value: any) => void) => void;
-  get: (key: string, cb: (value: any) => void) => void;
-  remove: (key: string, cb?: () => void) => void;
-  set: (key: string, value: any, cb?: () => void) => void;
+export interface ContractMeta {
+  abi: string;
+  genesisHash?: string;
 }
 
-export type KeyringOptions = KeyringOptionsBase & {
-  filter?: (json: KeyringJson) => boolean,
-  genesisHash?: Hash,
-  isDevelopment?: boolean,
-  store?: KeyringStore
-};
+export interface KeyringStore {
+  all: (cb: (key: string, value: KeyringJson) => void) => void;
+  get: (key: string, cb: (value: KeyringJson) => void) => void;
+  remove: (key: string, cb?: () => void) => void;
+  set: (key: string, value: KeyringJson, cb?: () => void) => void;
+}
 
-export type KeyringJson$Meta = {
-  contract?: ContractMeta,
-  isInjected?: boolean,
-  isRecent?: boolean,
-  isTesting?: boolean,
-  name?: string,
-  whenCreated?: number,
-  whenEdited?: number,
-  whenUsed?: number,
-  [index: string]: any
-};
+export interface KeyringOptions extends KeyringOptionsBase {
+  filter?: (json: KeyringJson) => boolean;
+  genesisHash?: Hash;
+  isDevelopment?: boolean;
+  store?: KeyringStore;
+}
 
-export type KeyringJson = {
-  address: string,
-  meta: KeyringJson$Meta
-};
+// eslint-disable-next-line @typescript-eslint/class-name-casing
+export interface KeyringJson$Meta {
+  contract?: ContractMeta;
+  isInjected?: boolean;
+  isRecent?: boolean;
+  isTesting?: boolean;
+  name?: string;
+  whenCreated?: number;
+  whenEdited?: number;
+  whenUsed?: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [index: string]: any;
+}
 
-export type KeyringAddress = {
-  readonly address: string,
-  readonly meta: KeyringJson$Meta,
-  readonly publicKey: Uint8Array
-};
+export interface KeyringJson {
+  address: string;
+  meta: KeyringJson$Meta;
+}
+
+export interface KeyringAddress {
+  readonly address: string;
+  readonly meta: KeyringJson$Meta;
+  readonly publicKey: Uint8Array;
+}
 
 export type KeyringAddressType = 'address' | 'contract';
 
 export type KeyringItemType = 'account' | KeyringAddressType;
 
-export type CreateResult = {
-  json: KeyringPair$Json,
-  pair: KeyringPair
-};
+export interface CreateResult {
+  json: KeyringPair$Json;
+  pair: KeyringPair;
+}
 
 export interface KeyringStruct {
   readonly accounts: AddressSubject;
@@ -77,13 +79,13 @@ export interface KeyringStruct {
   forgetAddress: (address: string) => void;
   forgetContract: (address: string) => void;
   getAccount: (address: string | Uint8Array) => KeyringAddress | undefined;
-  getAccounts: () => Array<KeyringAddress>;
+  getAccounts: () => KeyringAddress[];
   getAddress: (address: string | Uint8Array, type: KeyringItemType | null) => KeyringAddress | undefined;
-  getAddresses: () => Array<KeyringAddress>;
+  getAddresses: () => KeyringAddress[];
   getContract: (address: string | Uint8Array) => KeyringAddress | undefined;
-  getContracts: (genesisHash?: string) => Array<KeyringAddress>;
+  getContracts: (genesisHash?: string) => KeyringAddress[];
   getPair: (address: string | Uint8Array) => KeyringPair;
-  getPairs: () => Array<KeyringPair>;
+  getPairs: () => KeyringPair[];
   isAvailable: (address: string | Uint8Array) => boolean;
   isPassValid: (password: string) => boolean;
   loadAll: (options: KeyringOptions) => void;

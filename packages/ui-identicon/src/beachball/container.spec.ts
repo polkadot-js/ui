@@ -4,9 +4,10 @@
 
 import container from './container';
 
-describe('container', () => {
-  it('applies default styles', () => {
+describe('container', (): void => {
+  it('applies default styles', (): void => {
     expect(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (container(100).style as any)._values
     ).toMatchObject({
       'background': 'white',
@@ -20,8 +21,9 @@ describe('container', () => {
     });
   });
 
-  it('overrides with supplied styles', () => {
+  it('overrides with supplied styles', (): void => {
     expect(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (container(50, 'black', '', { display: 'block' }).style as any)._values
     ).toMatchObject({
       'background': 'black',
@@ -35,7 +37,7 @@ describe('container', () => {
     });
   });
 
-  it('applies the specified className', () => {
+  it('applies the specified className', (): void => {
     expect(
       container(100, 'blue', 'testClass').className
     ).toEqual('testClass');

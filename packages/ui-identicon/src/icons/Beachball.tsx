@@ -9,7 +9,7 @@ import React from 'react';
 import identicon from '../beachball';
 
 export default class Beachball extends React.PureComponent<Props> {
-  render () {
+  public render (): React.ReactNode {
     const { className, style } = this.props;
 
     return (
