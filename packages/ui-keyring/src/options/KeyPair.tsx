@@ -11,9 +11,7 @@ interface Props {
   className?: string;
   isUppercase: boolean;
   name: string;
-  style?: {
-    [index: string]: string;
-  };
+  style?: Record<string, string>;
 }
 
 const Wrapper = styled.div`

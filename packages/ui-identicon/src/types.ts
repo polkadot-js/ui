@@ -6,10 +6,8 @@ import { Prefix } from '@polkadot/util-crypto/address/types';
 
 export interface BaseProps {
   className?: string;
-  style?: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [index: string]: any;
-  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  style?: Record<string, any>;
 }
 
 export interface Props extends BaseProps {
