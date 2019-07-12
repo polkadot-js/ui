@@ -161,7 +161,7 @@ export default class Identicon extends React.PureComponent<Props> {
     let cum = 0;
     const ks = Object.keys(schema);
 
-    for (let i in ks) {
+    for (const i in ks) {
       cum += schema[ks[i]].freq;
 
       if (d < cum) {

@@ -59,15 +59,15 @@ class KeyringOption implements KeyringOptionInstance {
       this.addContracts(keyring, options);
 
       options.address = this.linkItems({
-        'Addresses': options.address,
-        'Recent': options.recent
+        Addresses: options.address,
+        Recent: options.recent
       });
       options.account = this.linkItems({
-        'Accounts': options.account,
-        'Development': options.testing
+        Accounts: options.account,
+        Development: options.testing
       });
       options.contract = this.linkItems({
-        'Contracts': options.contract
+        Contracts: options.contract
       });
 
       options.all = ([] as KeyringSectionOptions).concat(

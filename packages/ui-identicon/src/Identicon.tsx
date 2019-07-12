@@ -23,10 +23,10 @@ interface State {
 
 const DEFAULT_SIZE = 64;
 const Components: { [index: string]: React.ComponentType<ComponentProps> } = {
-  'beachball': Beachball,
-  'jdenticon': Jdenticon,
-  'polkadot': Polkadot,
-  'substrate': Jdenticon
+  beachball: Beachball,
+  jdenticon: Jdenticon,
+  polkadot: Polkadot,
+  substrate: Jdenticon
 };
 const Wrapper = styled.div`
   cursor: copy;

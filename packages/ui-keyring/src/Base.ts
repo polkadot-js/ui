@@ -19,11 +19,17 @@ import { MAX_PASS_LEN } from './defaults';
 
 export default class Base {
   private _accounts: AddressSubject;
+
   private _addresses: AddressSubject;
+
   private _contracts: AddressSubject;
+
   private _keyring?: KeyringInstance;
+
   private _prefix?: Prefix;
+
   protected _genesisHash?: string;
+
   protected _store!: KeyringStore;
 
   public constructor () {
