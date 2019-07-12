@@ -6,15 +6,13 @@ import React from 'react';
 import styled from 'styled-components';
 import IdentityIcon from '@polkadot/ui-identicon';
 
-type Props = {
-  address: string,
-  className?: string,
-  isUppercase: boolean,
-  name: string,
-  style?: {
-    [index: string]: string
-  }
-};
+interface Props {
+  address: string;
+  className?: string;
+  isUppercase: boolean;
+  name: string;
+  style?: Record<string, string>;
+}
 
 const Wrapper = styled.div`
   display: flex;
@@ -54,7 +52,7 @@ const Wrapper = styled.div`
 `;
 
 export default class KeyPair extends React.PureComponent<Props> {
-  render () {
+  public render (): React.ReactNode {
     const { address, className, isUppercase, name, style } = this.props;
 
     return (

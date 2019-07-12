@@ -21,16 +21,16 @@ import { Props as BaseProps } from '../types';
 import React from 'react';
 import { blake2AsU8a, decodeAddress } from '@polkadot/util-crypto';
 
-type Props = BaseProps & {
-  sixPoint?: boolean
-};
+interface Props extends BaseProps {
+  sixPoint?: boolean;
+}
 
-type Scheme = {
-  freq: number,
-  colors: Array<number>
-};
+interface Scheme {
+  freq: number;
+  colors: number[];
+}
 
-const blake2 = (value: Uint8Array) =>
+const blake2 = (value: Uint8Array): Uint8Array =>
   blake2AsU8a(value, 512);
 
 const s = 64;
@@ -49,7 +49,7 @@ const schema: { [index: string]: Scheme } = {
 };
 
 export default class Identicon extends React.PureComponent<Props> {
-  render () {
+  public render (): React.ReactNode {
     const { address, className, size, style } = this.props;
     const xy = this.getCircleXY();
     const colors = this.getColors();
@@ -68,7 +68,7 @@ export default class Identicon extends React.PureComponent<Props> {
         >
           {this.renderCircle(s / 2, s / 2, s / 2, '#eee', -1)}
           {
-            xy.map(([x, y], index) =>
+            xy.map(([x, y], index): React.ReactNode =>
               this.renderCircle(x, y, z, colors[index], index)
             )
           }
@@ -77,7 +77,7 @@ export default class Identicon extends React.PureComponent<Props> {
     );
   }
 
-  private renderCircle (cx: number, cy: number, r: number, fill: string, key: number) {
+  private renderCircle (cx: number, cy: number, r: number, fill: string, key: number): React.ReactNode {
     return (
       <circle
         key={key}
@@ -89,7 +89,7 @@ export default class Identicon extends React.PureComponent<Props> {
     );
   }
 
-  private getCircleXY () {
+  private getCircleXY (): [number, number][] {
     const { r, ro2, r3o4, ro4, rroot3o2, rroot3o4 } = this.getRotation();
 
     return [
@@ -115,7 +115,7 @@ export default class Identicon extends React.PureComponent<Props> {
     ];
   }
 
-  private getRotation () {
+  private getRotation (): { r: number; ro2: number; r3o4: number; ro4: number; rroot3o2: number; rroot3o4: number } {
     const { sixPoint = false } = this.props;
     const r = sixPoint
       ? (s / 2 / 8 * 5)
@@ -129,15 +129,15 @@ export default class Identicon extends React.PureComponent<Props> {
     return { r, ro2, r3o4, ro4, rroot3o2, rroot3o4 };
   }
 
-  private getColors () {
+  private getColors (): string[] {
     const { address } = this.props;
-    const total = Object.keys(schema).map(k => schema[k].freq).reduce((a, b) => a + b);
-    const id = Array.from(blake2(decodeAddress(address))).map((x, i) => (x + 256 - zero[i]) % 256);
+    const total = Object.keys(schema).map((k): number => schema[k].freq).reduce((a, b): number => a + b);
+    const id = Array.from(blake2(decodeAddress(address))).map((x, i): number => (x + 256 - zero[i]) % 256);
     const d = Math.floor((id[30] + id[31] * 256) % total);
     const rot = (id[28] % 6) * 3;
     const sat = (Math.floor(id[29] * 70 / 256 + 26) % 80) + 30;
     const scheme = this.findScheme(d);
-    const palette = Array.from(id).map((x, i) => {
+    const palette = Array.from(id).map((x, i): string => {
       const b = (x + i % 28 * 58) % 256;
 
       if (b === 0) {
@@ -152,7 +152,7 @@ export default class Identicon extends React.PureComponent<Props> {
       return `hsl(${h}, ${sat}%, ${l}%)`;
     });
 
-    return scheme.colors.map((_, i) =>
+    return scheme.colors.map((_, i): string =>
       palette[scheme.colors[i < 18 ? (i + rot) % 18 : 18]]
     );
   }
@@ -161,7 +161,7 @@ export default class Identicon extends React.PureComponent<Props> {
     let cum = 0;
     const ks = Object.keys(schema);
 
-    for (let i in ks) {
+    for (const i in ks) {
       cum += schema[ks[i]].freq;
 
       if (d < cum) {

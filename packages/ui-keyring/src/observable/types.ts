@@ -6,17 +6,17 @@ import { BehaviorSubject } from 'rxjs';
 import { KeyringSectionOption } from '../options/types';
 import { KeyringJson, KeyringStore } from '../types';
 
-export type SingleAddress = {
-  json: KeyringJson,
-  option: KeyringSectionOption
-};
+export interface SingleAddress {
+  json: KeyringJson;
+  option: KeyringSectionOption;
+}
 
-export type SubjectInfo = {
-  [index: string]: SingleAddress
-};
+export interface SubjectInfo {
+  [index: string]: SingleAddress;
+}
 
-export type AddressSubject = {
-  add: (store: KeyringStore, address: string, json: KeyringJson) => SingleAddress,
-  remove: (store: KeyringStore, address: string) => void,
-  subject: BehaviorSubject<SubjectInfo>
-};
+export interface AddressSubject {
+  add: (store: KeyringStore, address: string, json: KeyringJson) => SingleAddress;
+  remove: (store: KeyringStore, address: string) => void;
+  subject: BehaviorSubject<SubjectInfo>;
+}

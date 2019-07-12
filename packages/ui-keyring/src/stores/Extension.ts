@@ -2,9 +2,12 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { KeyringStore } from '../types';
+import { KeyringStore, KeyringJson } from '../types';
 
 import extension from 'extensionizer';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type StoreValue = Record<string, any>;
 
 const lastError = (type: string): void => {
   const error = extension.runtime.lastError;
@@ -15,33 +18,34 @@ const lastError = (type: string): void => {
 };
 
 export default class ExtensionStore implements KeyringStore {
-  all (cb: (key: string, value: any) => void): void {
-    extension.storage.local.get(null, (result: { [index: string]: any }) => {
+  public all (cb: (key: string, value: KeyringJson) => void): void {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    extension.storage.local.get(null, (result: StoreValue): void => {
       lastError('all');
 
-      Object.entries(result).forEach(([key, value]) =>
-        cb(key, value)
-      );
+      Object.entries(result).forEach(([key, value]): void => {
+        cb(key, value);
+      });
     });
   }
 
-  get (key: string, cb: (value: any) => void): void {
-    extension.storage.local.get([key], (result: { [index: string]: any }) => {
+  public get (key: string, cb: (value: KeyringJson) => void): void {
+    extension.storage.local.get([key], (result: StoreValue): void => {
       lastError('get');
 
       cb(result[key]);
     });
   }
 
-  remove (key: string, cb?: () => void): void {
-    extension.storage.local.remove(key, () => {
+  public remove (key: string, cb?: () => void): void {
+    extension.storage.local.remove(key, (): void => {
       lastError('remove');
 
       cb && cb();
     });
   }
 
-  set (key: string, value: any, cb?: () => void): void {
+  public set (key: string, value: KeyringJson, cb?: () => void): void {
     // shortcut, don't save testing accounts in extension storage
     if (key.indexOf('account:') === 0 && value.meta && value.meta.isTesting) {
       cb && cb();
@@ -49,7 +53,7 @@ export default class ExtensionStore implements KeyringStore {
       return;
     }
 
-    extension.storage.local.set({ [key]: value }, () => {
+    extension.storage.local.set({ [key]: value }, (): void => {
       lastError('set');
 
       cb && cb();

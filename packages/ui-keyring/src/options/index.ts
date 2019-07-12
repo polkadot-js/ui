@@ -13,14 +13,14 @@ import observableAll from '../observable';
 
 let hasCalledInitOptions = false;
 
-const sortByName = (a: SingleAddress, b: SingleAddress) => {
+const sortByName = (a: SingleAddress, b: SingleAddress): number => {
   const valueA = a.option.name;
   const valueB = b.option.name;
 
   return valueA.localeCompare(valueB);
 };
 
-const sortByCreated = (a: SingleAddress, b: SingleAddress) => {
+const sortByCreated = (a: SingleAddress, b: SingleAddress): number => {
   const valueA = a.json.meta.whenCreated || 0;
   const valueB = b.json.meta.whenCreated || 0;
 
@@ -36,9 +36,9 @@ const sortByCreated = (a: SingleAddress, b: SingleAddress) => {
 };
 
 class KeyringOption implements KeyringOptionInstance {
-  optionsSubject: BehaviorSubject<KeyringOptions> = new BehaviorSubject(this.emptyOptions());
+  public readonly optionsSubject: BehaviorSubject<KeyringOptions> = new BehaviorSubject(this.emptyOptions());
 
-  createOptionHeader (name: string): KeyringSectionOption {
+  public createOptionHeader (name: string): KeyringSectionOption {
     return {
       className: 'header disabled',
       name,
@@ -48,10 +48,10 @@ class KeyringOption implements KeyringOptionInstance {
     };
   }
 
-  init (keyring: KeyringStruct): void {
+  public init (keyring: KeyringStruct): void {
     assert(!hasCalledInitOptions, 'Unable to initialise options more than once');
 
-    observableAll.subscribe(() => {
+    observableAll.subscribe((): void => {
       const options = this.emptyOptions();
 
       this.addAccounts(keyring, options);
@@ -59,15 +59,15 @@ class KeyringOption implements KeyringOptionInstance {
       this.addContracts(keyring, options);
 
       options.address = this.linkItems({
-        'Addresses': options.address,
-        'Recent': options.recent
+        Addresses: options.address,
+        Recent: options.recent
       });
       options.account = this.linkItems({
-        'Accounts': options.account,
-        'Development': options.testing
+        Accounts: options.account,
+        Development: options.testing
       });
       options.contract = this.linkItems({
-        'Contracts': options.contract
+        Contracts: options.contract
       });
 
       options.all = ([] as KeyringSectionOptions).concat(
@@ -87,8 +87,8 @@ class KeyringOption implements KeyringOptionInstance {
     hasCalledInitOptions = true;
   }
 
-  private linkItems (items: { [index: string]: KeyringSectionOptions }) {
-    return Object.keys(items).reduce((result, header) => {
+  private linkItems (items: { [index: string]: KeyringSectionOptions }): KeyringSectionOptions {
+    return Object.keys(items).reduce((result, header): KeyringSectionOptions => {
       const options = items[header];
 
       return result.concat(
@@ -106,7 +106,7 @@ class KeyringOption implements KeyringOptionInstance {
     Object
       .values(available)
       .sort(sortByName)
-      .forEach(({ json: { meta: { isTesting = false } }, option }: SingleAddress) => {
+      .forEach(({ json: { meta: { isTesting = false } }, option }: SingleAddress): void => {
         if (!isTesting) {
           options.account.push(option);
         } else {
@@ -120,21 +120,17 @@ class KeyringOption implements KeyringOptionInstance {
 
     Object
       .values(available)
-      .filter(({ json }: SingleAddress) => {
-        return json.meta.isRecent;
-      })
+      .filter(({ json }: SingleAddress): boolean => !!json.meta.isRecent)
       .sort(sortByCreated)
-      .forEach(({ option }: SingleAddress) => {
+      .forEach(({ option }: SingleAddress): void => {
         options.recent.push(option);
       });
 
     Object
       .values(available)
-      .filter(({ json }: SingleAddress) => {
-        return !json.meta.isRecent;
-      })
+      .filter(({ json }: SingleAddress): boolean => !json.meta.isRecent)
       .sort(sortByName)
-      .forEach(({ option }: SingleAddress) => {
+      .forEach(({ option }: SingleAddress): void => {
         options.address.push(option);
       });
   }
@@ -145,7 +141,7 @@ class KeyringOption implements KeyringOptionInstance {
     Object
       .values(available)
       .sort(sortByName)
-      .forEach(({ option }: SingleAddress) => {
+      .forEach(({ option }: SingleAddress): void => {
         options.contract.push(option);
       });
   }

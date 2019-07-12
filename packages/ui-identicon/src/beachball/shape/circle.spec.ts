@@ -7,8 +7,8 @@ import xmlserializer from 'xmlserializer';
 import seeder from '../seeder';
 import circle from './circle';
 
-describe('circle', () => {
-  it('creates a circle shape', () => {
+describe('circle', (): void => {
+  it('creates a circle shape', (): void => {
     expect(
       xmlserializer.serializeToString(
         circle(seeder(), 'blue', 50, 2)

@@ -4,17 +4,19 @@
 
 import { KeyringItemType, KeyringStruct } from '../types';
 
-export type KeyringSectionOption = {
-  className?: string,
-  disabled?: boolean,
-  content?: any | string, // node?
-  key: string | null,
-  name: string,
-  text: any | string, // node?
-  value: string | null
-};
+import React from 'react';
 
-export type KeyringSectionOptions = Array<KeyringSectionOption>;
+export interface KeyringSectionOption {
+  className?: string;
+  disabled?: boolean;
+  content?: React.ReactNode;
+  key: string | null;
+  name: string;
+  text: React.ReactNode;
+  value: string | null;
+}
+
+export type KeyringSectionOptions = KeyringSectionOption[];
 
 export type KeyringOptions = {
   [type in KeyringItemType | 'all' | 'allPlus' | 'recent' | 'testing']: KeyringSectionOptions

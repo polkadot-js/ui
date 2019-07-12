@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { Prefix } from '@polkadot/util-crypto/address/types';
-import { IdentityProps as Props } from './types';
+import { IdentityProps as Props, Props as ComponentProps } from './types';
 
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -16,17 +16,17 @@ import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
 
 const Fallback = Beachball;
 
-type State = {
-  address: string,
-  publicKey: string
-};
+interface State {
+  address: string;
+  publicKey: string;
+}
 
 const DEFAULT_SIZE = 64;
-const Components: { [index: string]: React.ComponentType<any> } = {
-  'beachball': Beachball,
-  'jdenticon': Jdenticon,
-  'polkadot': Polkadot,
-  'substrate': Jdenticon
+const Components: { [index: string]: React.ComponentType<ComponentProps> } = {
+  beachball: Beachball,
+  jdenticon: Jdenticon,
+  polkadot: Polkadot,
+  substrate: Jdenticon
 };
 const Wrapper = styled.div`
   cursor: copy;
@@ -59,18 +59,18 @@ const Wrapper = styled.div`
 `;
 
 export default class IdentityIcon extends React.PureComponent<Props, State> {
-  state: State = {
+  public state: State = {
     address: '',
     publicKey: '0x'
   };
 
   private static prefix?: Prefix = undefined;
 
-  static setDefaultPrefix (prefix: Prefix) {
+  public static setDefaultPrefix (prefix: Prefix): void {
     IdentityIcon.prefix = prefix;
   }
 
-  static getDerivedStateFromProps ({ prefix = IdentityIcon.prefix, value }: Props, prevState: State): State | null {
+  public static getDerivedStateFromProps ({ prefix = IdentityIcon.prefix, value }: Props, prevState: State): State | null {
     try {
       const address = isU8a(value) || isHex(value)
         ? encodeAddress(value, prefix)
@@ -91,7 +91,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
     }
   }
 
-  render () {
+  public render (): React.ReactNode {
     const { address } = this.state;
     const wrapped = this.getWrapped(this.state);
 
@@ -107,7 +107,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
       );
   }
 
-  private getWrapped ({ address, publicKey }: State) {
+  private getWrapped ({ address, publicKey }: State): React.ReactNode {
     const { className, isHighlight = false, size = DEFAULT_SIZE, style, theme = settings.uiTheme } = this.props;
     const Component = !address
       ? Empty

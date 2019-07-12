@@ -7,14 +7,14 @@ import { ColorGen } from './types';
 import newSeeder from './seeder';
 import newColors from './colors';
 
-describe('colors', () => {
+describe('colors', (): void => {
   let colors: ColorGen;
 
-  beforeEach(() => {
+  beforeEach((): void => {
     colors = newColors(newSeeder());
   });
 
-  it('generates using default alpha', () => {
+  it('generates using default alpha', (): void => {
     expect(
       colors()
     ).toEqual(
@@ -23,7 +23,7 @@ describe('colors', () => {
     );
   });
 
-  it('applies specified alpha', () => {
+  it('applies specified alpha', (): void => {
     expect(
       colors(0.5)
     ).toEqual(
@@ -32,7 +32,7 @@ describe('colors', () => {
     );
   });
 
-  it('rolates colors', () => {
+  it('rolates colors', (): void => {
     colors();
 
     expect(
@@ -40,7 +40,7 @@ describe('colors', () => {
     ).not.toEqual('hsla(166.70000000000005, 98.6%, 27.6%, 0.9)');
   });
 
-  it('works in edge conditions (0xff)', () => {
+  it('works in edge conditions (0xff)', (): void => {
     const u8a = new Uint8Array(32);
 
     u8a.fill(255);

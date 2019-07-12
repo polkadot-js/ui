@@ -15,7 +15,7 @@ export default function seeder (_seed: string | Uint8Array = new Uint8Array(32))
 
   let index = (seed[Math.floor(seed.length / 2)] % seed.length) - 1;
 
-  const next = () => {
+  const next = (): number => {
     index += 1;
 
     if (index === seed.length) {

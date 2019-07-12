@@ -19,8 +19,8 @@ export default function container (diameter: number, background: string = 'white
   element.className = className;
   element.style.background = background;
 
-  Object.keys(style).forEach((key: any) => {
-    element.style[key] = style[key];
+  Object.keys(style).forEach((key: unknown): void => {
+    element.style[key as number] = style[key as number];
   });
 
   return element;
