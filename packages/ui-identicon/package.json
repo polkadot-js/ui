@@ -14,7 +14,7 @@
     "@types/color": "^3.0.0",
     "@types/react-copy-to-clipboard": "^4.2.6",
     "color": "^3.1.2",
-    "jdenticon": "^2.1.1",
+    "jdenticon": "2.1.1",
     "react-copy-to-clipboard": "^5.0.1",
     "styled-components": "^4.3.1"
   },
@@ -24,8 +24,8 @@
     "react": "*"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^0.94.0-beta.10",
-    "@polkadot/util-crypto": "^0.94.0-beta.10",
+    "@polkadot/keyring": "^0.94.0-beta.11",
+    "@polkadot/util-crypto": "^0.94.0-beta.11",
     "xmlserializer": "^0.6.1"
   }
 }
