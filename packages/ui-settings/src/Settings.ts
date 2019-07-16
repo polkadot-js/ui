@@ -5,7 +5,7 @@
 import store from 'store';
 import { isUndefined } from '@polkadot/util';
 
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES, PREFIX_DEFAULT } from './defaults';
+import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Options, SettingsStruct } from './types';
 
 export class Settings implements SettingsStruct {
@@ -70,6 +70,10 @@ export class Settings implements SettingsStruct {
 
   public get availableLocking (): Options {
     return LOCKING;
+  }
+
+  public get availablePrefixes (): Options {
+    return PREFIXES;
   }
 
   public get availableUIModes (): Options {
