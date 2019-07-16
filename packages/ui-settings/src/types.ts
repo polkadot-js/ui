@@ -5,13 +5,14 @@
 export type Options = {
   disabled?: boolean;
   text: string;
-  value: string;
+  value: string | number;
 }[]
 
 export interface SettingsStruct {
   apiUrl: string;
   i18nLang: string;
   locking: string;
+  prefix: number;
   uiMode: string;
   uiTheme: string;
 }

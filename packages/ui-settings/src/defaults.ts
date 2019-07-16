@@ -47,6 +47,13 @@ const LOCKING: Options = [
   { text: 'On each transaction', value: 'tx' }
 ];
 
+const PREFIXES: Options = [
+  { text: 'Default for the connected node', value: -1 },
+  { text: 'Substrate (development)', value: 42 },
+  { text: 'Kusama (canary)', value: 2 },
+  { text: 'Polkadot (live)', value: 0 }
+];
+
 const UIMODES: Options = [
   { value: 'full', text: 'Fully featured' },
   { value: 'light', text: 'Basic features only' }
@@ -60,6 +67,8 @@ const UITHEMES: Options = [
 const ENDPOINT_DEFAULT = isPolkadot
   ? WSS_NODES.parity.nodes.alex
   : WSS_NODES.parity.nodes.elm;
+
+const PREFIX_DEFAULT = -1;
 
 const UITHEME_DEFAULT = isPolkadot
   ? 'polkadot'
@@ -78,6 +87,8 @@ export {
   LANGUAGES,
   LOCKING_DEFAULT,
   LOCKING,
+  PREFIX_DEFAULT,
+  PREFIXES,
   UIMODE_DEFAULT,
   UIMODES,
   UITHEME_DEFAULT,
