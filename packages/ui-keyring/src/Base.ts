@@ -14,7 +14,7 @@ import accounts from './observable/accounts';
 import addresses from './observable/addresses';
 import contracts from './observable/contracts';
 import env from './observable/development';
-import { BrowserStore } from './stores';
+import BrowserStore from './stores/Browser'; // direct import (skip index with all)
 import { MAX_PASS_LEN } from './defaults';
 
 export default class Base {
