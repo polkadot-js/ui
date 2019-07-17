@@ -1,3 +1,7 @@
+# 0.42.x
+
+- For `ui-keyring` the stores are now not exported from the index, imports should be changed to either `ui-keyring/stores` or explicitly to `ui-keyring/stores/Extension`
+
 # 0.41.1
 
 - Adapt interface to cater for new `@polkadot/keyring`, where pairs -
