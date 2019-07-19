@@ -17,7 +17,7 @@ const WSS_NODES = {
     }
   },
   unfra: {
-    hosted: 'hosted by UNfrastructure',
+    hosted: 'hosted by Centrality UNfrastructure',
     nodes: {
       alex: 'wss://alex.unfrastructure.io/public/ws'
     }
