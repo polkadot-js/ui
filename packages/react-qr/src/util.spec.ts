@@ -51,15 +51,15 @@ describe('util', (): void => {
     it('encodes frames properly', (): void => {
       expect(
         createFrames(
-          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', '0x123456')
+          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', '0x12345678')
         ).map((str): string => u8aToHex(encodeString(str)))
       ).toEqual([
         '0x' +
         '00' + // multipart
         '0001' + // length
         '0000' + // index
-        '530100' + // payload info
-        'f4cd755672a8f9542ca9da4fbf2182e79135d94304002e6a09ffc96fef6e6c4c' + // publciKey
+        '530100' + // payload info, substrate + sr25519 + signtx
+        'f4cd755672a8f9542ca9da4fbf2182e79135d94304002e6a09ffc96fef6e6c4c' + // publicKey
         '12345678' // data
       ]);
     });
