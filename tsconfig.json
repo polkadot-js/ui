@@ -3,6 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@polkadot/react-qr": [ "packages/react-qr/src" ],
+      "@polkadot/react-qr/*": [ "packages/react-qr/src/*" ],
       "@polkadot/ui-assets": [ "packages/ui-assets/src" ],
       "@polkadot/ui-assets/*": [ "packages/ui-assets/src/*" ],
       "@polkadot/ui-identicon": [ "packages/ui-identicon/src" ],
