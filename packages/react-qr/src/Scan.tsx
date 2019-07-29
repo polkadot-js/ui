@@ -8,7 +8,7 @@ import React from 'react';
 import Reader from 'react-qr-reader';
 import styled from 'styled-components';
 
-import { createSize } from './constants';
+import { createImgSize } from './util';
 
 interface Props extends BaseProps {
   delay?: number;
@@ -29,7 +29,7 @@ class Scan extends React.PureComponent<Props> {
     return (
       <div
         className={className}
-        style={createSize(size)}
+        style={createImgSize(size)}
       >
         <Reader
           className='ui--qr-Scan'

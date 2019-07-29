@@ -7,11 +7,9 @@ import { BaseProps } from './types';
 import React from 'react';
 import qrcode from 'qrcode-generator';
 import styled from 'styled-components';
-import { u8aConcat } from '@polkadot/util';
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
-import { createSize } from './constants';
-import { encodeNumber, decodeString } from './util';
+import { createFrames, createImgSize, decodeString } from './util';
 
 interface Props extends BaseProps {
   size?: number;
@@ -28,8 +26,6 @@ interface State {
 }
 
 const FRAME_DELAY = 2100;
-const FRAME_SIZE = 1716;
-const MULTIPART = new Uint8Array([0]);
 
 function getDataUrl (value: string): string {
   const qr = qrcode(0, 'M');
@@ -38,26 +34,6 @@ function getDataUrl (value: string): string {
   qr.make();
 
   return qr.createDataURL(16, 0);
-}
-
-function createFrames (input: Uint8Array): string[] {
-  const frames = [];
-  let idx = 0;
-
-  while (idx < input.length) {
-    frames.push(input.subarray(idx, idx + FRAME_SIZE));
-
-    idx += FRAME_SIZE;
-  }
-
-  return frames.map((frame, index: number): string =>
-    decodeString(u8aConcat(
-      MULTIPART,
-      encodeNumber(frames.length),
-      encodeNumber(index),
-      frame
-    ))
-  );
 }
 
 class Display extends React.PureComponent<Props, State> {
@@ -113,7 +89,7 @@ class Display extends React.PureComponent<Props, State> {
     return (
       <div
         className={className}
-        style={createSize(size)}
+        style={createImgSize(size)}
       >
         <div
           className='ui--qr-Display'
