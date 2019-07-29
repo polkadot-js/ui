@@ -19,7 +19,8 @@
     "clean": "polkadot-dev-clean-build",
     "demo:identicon": "webpack-serve --config packages/ui-identicon/webpack.config.js --content packages/ui-identicon --port 3000",
     "postinstall": "polkadot-dev-yarn-only",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:one": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

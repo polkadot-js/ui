@@ -5,9 +5,9 @@
 import { BaseProps } from './types';
 
 import React from 'react';
-import { u8aConcat } from '@polkadot/util';
-import { decodeAddress, xxhashAsHex } from '@polkadot/util-crypto';
+import { xxhashAsHex } from '@polkadot/util-crypto';
 
+import { createSignPayload } from './util';
 import QrDisplay from './Display';
 
 interface Props extends BaseProps {
@@ -20,10 +20,6 @@ interface State {
   dataHash: string | null;
 }
 
-const SUBSTRATE = new Uint8Array([0x53]);
-const CRYPTO_SR25519 = new Uint8Array([0x01]);
-const SIGN_TX = new Uint8Array([0x00]);
-
 export default class DisplayPayload extends React.PureComponent<Props, State> {
   public state: State = {
     data: null,
@@ -31,13 +27,7 @@ export default class DisplayPayload extends React.PureComponent<Props, State> {
   };
 
   public static getDerivedStateFromProps ({ address, payload }: Props, prevState: State): State | null {
-    const data = u8aConcat(
-      SUBSTRATE,
-      CRYPTO_SR25519,
-      SIGN_TX,
-      decodeAddress(address),
-      payload
-    );
+    const data = createSignPayload(address, payload);
     const dataHash = xxhashAsHex(data);
 
     if (dataHash === prevState.dataHash) {
