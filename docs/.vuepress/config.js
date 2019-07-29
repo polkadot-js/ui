@@ -22,7 +22,8 @@ module.exports = {
     ],
     search: false,
     sidebar: [
-      ['/ui-identicon/', '@polkadot/ui-identicon'],
+      ['/react-identicon/', '@polkadot/react-identicon'],
+      ['/react-qr/', '@polkadot/react-qr'],
       ['/ui-keyring/', '@polkadot/ui-keyring'],
       ['/ui-settings/', '@polkadot/ui-settings'],
       '/CONTRIBUTING.md'
