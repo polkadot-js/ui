@@ -3,12 +3,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@polkadot/react-identicon": [ "packages/react-identicon/src" ],
+      "@polkadot/react-identicon/*": [ "packages/react-identicon/src/*" ],
       "@polkadot/react-qr": [ "packages/react-qr/src" ],
       "@polkadot/react-qr/*": [ "packages/react-qr/src/*" ],
       "@polkadot/ui-assets": [ "packages/ui-assets/src" ],
       "@polkadot/ui-assets/*": [ "packages/ui-assets/src/*" ],
-      "@polkadot/ui-identicon": [ "packages/ui-identicon/src" ],
-      "@polkadot/ui-identicon/*": [ "packages/ui-identicon/src/*" ],
       "@polkadot/ui-keyring": [ "packages/ui-keyring/src" ],
       "@polkadot/ui-keyring/*": [ "packages/ui-keyring/src/*" ],
       "@polkadot/ui-settings": [ "packages/ui-settings/src" ],
