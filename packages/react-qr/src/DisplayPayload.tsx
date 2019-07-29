@@ -30,7 +30,7 @@ export default class DisplayPayload extends React.PureComponent<Props, State> {
     dataHash: null
   };
 
-  public getDerivedStateFromProps ({ address, payload }: Props, prevState: State): State | null {
+  public static getDerivedStateFromProps ({ address, payload }: Props, prevState: State): State | null {
     const data = u8aConcat(
       SUBSTRATE,
       CRYPTO_SR25519,

@@ -1,5 +1,7 @@
 # 0.42.x
 
+- The `@polkadot/react-qr` package has been added to display/scan QR codes
+- The `@polkadot/ui-identicon` package has been renamed to `@polkadot/react-identicon`
 - For `@polkadot/ui-keyring` the stores are now not exported from the index, imports should be changed to either `ui-keyring/stores` or explicitly to `ui-keyring/stores/Extension`
 - `@polkadot/ui-settings` has UNfrastructure added as an RPC provider for Alex
 - `@polkadot/ui-settings` exposes a dropdown with address prefix options

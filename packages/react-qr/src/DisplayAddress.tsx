@@ -29,7 +29,7 @@ export default class DisplayExtrinsic extends React.PureComponent<Props, State> 
     dataHash: null
   };
 
-  public getDerivedStateFromProps ({ address }: Props, prevState: State): State | null {
+  public static getDerivedStateFromProps ({ address }: Props, prevState: State): State | null {
     const data = u8aConcat(
       PREFIX,
       encodeString(address)

@@ -23,7 +23,7 @@ interface State {
   frames: string[];
   frameIdx: number;
   image: string | null;
-  timerId: NodeJS.Timeout | null;
+  timerId: number | null;
   valueHash: string | null;
 }
 
@@ -90,7 +90,7 @@ class Display extends React.PureComponent<Props, State> {
 
   public componentDidMount (): void {
     this.setState({
-      timerId: setInterval(this.nextFrame, FRAME_DELAY)
+      timerId: window.setInterval(this.nextFrame, FRAME_DELAY)
     });
   }
 
