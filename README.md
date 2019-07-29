@@ -15,7 +15,8 @@ Basic browser and React components for creating apps using the polkadot{.js} lib
 
 The following libraries are currently available
 
+- [react-identicon](packages/react-identicon/) Identity icon generator with address as input
+- [react-qr](packages/react-qr/) QR code generator/reader for [uos](https://github.com/maciejhirsz/uos) (Substrate/Polkadot only)
 - [ui-assets](packages/ui-assets/) Static assets, images and others, shared accross projects
-- [ui-identicon](packages/ui-identicon/) Identity icon generator with address as input
 - [ui-keyring](packages/ui-keyring/) A browser-specific wrapper around the base [@polkadot/util-keyring](https://github.com/polkadot-js/util/) library
 - [ui-settings](packages/ui-settings/) A browser local storage wrapper for app settings & configuration
