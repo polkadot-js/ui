@@ -47,9 +47,9 @@ export default class DisplayExtrinsic extends React.PureComponent<Props, State> 
     return (
       <QrDisplay
         className={className}
+        skipEncoding={true}
         style={style}
         value={data}
-
       />
     );
   }

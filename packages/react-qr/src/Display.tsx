@@ -13,8 +13,8 @@ import { createFrames, createImgSize, decodeString } from './util';
 
 interface Props extends BaseProps {
   size?: number;
+  skipEncoding?: boolean;
   value: Uint8Array;
-  withMulti?: boolean;
 }
 
 interface State {
@@ -45,16 +45,16 @@ class Display extends React.PureComponent<Props, State> {
     valueHash: null
   };
 
-  public static getDerivedStateFromProps ({ value, withMulti = true }: Props, prevState: State): Pick<State, never> | null {
+  public static getDerivedStateFromProps ({ value, skipEncoding = false }: Props, prevState: State): Pick<State, never> | null {
     const valueHash = xxhashAsHex(value);
 
     if (valueHash === prevState.valueHash) {
       return null;
     }
 
-    const frames: string[] = withMulti
-      ? createFrames(value)
-      : [decodeString(value)];
+    const frames: string[] = skipEncoding
+      ? [decodeString(value)]
+      : createFrames(value);
 
     return {
       frames,
