@@ -78,7 +78,7 @@ describe('util', (): void => {
       expect(
         createFrames(
           createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', '0x12345678')
-        ).map((str): string => u8aToHex(encodeString(str)))
+        ).map((u8a): string => u8aToHex(u8a))
       ).toEqual([
         '0x' +
         '00' + // multipart
