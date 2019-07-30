@@ -46,7 +46,7 @@ export function createSignPayload (address: string, payload: string | Uint8Array
   );
 }
 
-export function createFrames (input: Uint8Array): string[] {
+export function createFrames (input: Uint8Array): Uint8Array[] {
   const frames = [];
   let idx = 0;
 
@@ -56,13 +56,13 @@ export function createFrames (input: Uint8Array): string[] {
     idx += FRAME_SIZE;
   }
 
-  return frames.map((frame, index: number): string =>
-    decodeString(u8aConcat(
+  return frames.map((frame, index: number): Uint8Array =>
+    u8aConcat(
       MULTIPART,
       encodeNumber(frames.length),
       encodeNumber(index),
       frame
-    ))
+    )
   );
 }
 

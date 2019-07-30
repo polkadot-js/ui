@@ -5,11 +5,11 @@
 import { BaseProps } from './types';
 
 import React from 'react';
-import qrcode from 'qrcode-generator';
 import styled from 'styled-components';
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
-import { createFrames, createImgSize, decodeString } from './util';
+import qrcode from './qrcode';
+import { createFrames, createImgSize } from './util';
 
 interface Props extends BaseProps {
   size?: number;
@@ -18,7 +18,7 @@ interface Props extends BaseProps {
 }
 
 interface State {
-  frames: string[];
+  frames: Uint8Array[];
   frameIdx: number;
   image: string | null;
   timerId: number | null;
@@ -27,9 +27,12 @@ interface State {
 
 const FRAME_DELAY = 2100;
 
-function getDataUrl (value: string): string {
+function getDataUrl (value: Uint8Array): string {
   const qr = qrcode(0, 'M');
 
+  // HACK See out qrcode stringToBytes override as used internally. This
+  // will only work for the case where we actuall pass `Bytes` in here
+  // @ts-ignore
   qr.addData(value, 'Byte');
   qr.make();
 
@@ -52,10 +55,11 @@ class Display extends React.PureComponent<Props, State> {
       return null;
     }
 
-    const frames: string[] = skipEncoding
-      ? [decodeString(value)]
+    const frames: Uint8Array[] = skipEncoding
+      ? [value]
       : createFrames(value);
 
+    // encode on demand
     return {
       frames,
       frameIdx: 0,
@@ -112,6 +116,9 @@ class Display extends React.PureComponent<Props, State> {
       ? 0
       : frameIdx + 1;
 
+    // only encode the frames on demand, not above as part of the
+    // state derivation - in the case of large payloads, this should
+    // be slightly more responsive on initial load
     this.setState({
       frameIdx: nextIdx,
       image: getDataUrl(frames[nextIdx])
