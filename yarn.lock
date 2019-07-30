@@ -1964,10 +1964,10 @@
   dependencies:
     "@types/chrome" "^0.0.86"
 
-"@polkadot/types@^0.90.0-beta.6":
-  version "0.90.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.90.0-beta.6.tgz#f3b7467de160cf5a84470fbef7a9e6870f0e2839"
-  integrity sha512-TNTN8uTglKbOsOlNfcur3vP3C5jfR2h8rl+42k+PZnzQP3080kmdYbslIScAhc9duTG0qdDskO/x91Sgxns8Mg==
+"@polkadot/types@^0.90.0-beta.8":
+  version "0.90.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.90.0-beta.8.tgz#18388d9a2d23d1264917251075475afa9ce07841"
+  integrity sha512-74EfKjEbRFAy1ODoxVwuOMRKfi+CyWp/u1+EEW8ce6/ApXiVPYVfRWpBkTlsbKys9t/6U6Hq1xO5TW65tyYaUQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@polkadot/util" "^0.95.0-beta.3"
