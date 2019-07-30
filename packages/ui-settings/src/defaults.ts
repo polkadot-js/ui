@@ -13,7 +13,7 @@ const WSS_NODES = {
     hosted: 'hosted by Parity',
     nodes: {
       alex: 'wss://poc3-rpc.polkadot.io/',
-      elm: 'wss://substrate-rpc.parity.io/'
+      fir: 'wss://substrate-rpc.parity.io/'
     }
   },
   unfra: {
@@ -34,7 +34,7 @@ const CRYPTOS: Options = [
 const ENDPOINTS: Options = [
   { text: `Alexander (Polkadot, ${WSS_NODES.parity.hosted})`, value: WSS_NODES.parity.nodes.alex },
   { text: `Alexander (Polkadot, ${WSS_NODES.unfra.hosted})`, value: WSS_NODES.unfra.nodes.alex },
-  { text: `Emberic Elm (Substrate, ${WSS_NODES.parity.hosted})`, value: WSS_NODES.parity.nodes.elm },
+  { text: `Flaming Fir (Substrate, ${WSS_NODES.parity.hosted})`, value: WSS_NODES.parity.nodes.fir },
   { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
 ];
 
@@ -66,7 +66,7 @@ const UITHEMES: Options = [
 
 const ENDPOINT_DEFAULT = isPolkadot
   ? WSS_NODES.parity.nodes.alex
-  : WSS_NODES.parity.nodes.elm;
+  : WSS_NODES.parity.nodes.fir;
 
 const PREFIX_DEFAULT = -1;
 
