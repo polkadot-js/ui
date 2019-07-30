@@ -2,11 +2,36 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { u8aToHex, u8aToString } from '@polkadot/util';
+import { u8aConcat, u8aToHex, u8aToString } from '@polkadot/util';
 
-import { createAddressPayload, createSignPayload, createFrames, encodeNumber, encodeString } from './util';
+import { createAddressPayload, createSignPayload, createFrames, decodeString, encodeNumber, encodeString } from './util';
+import { randomAsU8a } from '@polkadot/util-crypto';
 
 describe('util', (): void => {
+  describe('Uint8Array <-> string', (): void => {
+    let u8a: Uint8Array;
+    let str: string;
+
+    beforeEach((): void => {
+      u8a = new Uint8Array(256);
+
+      for (let i = 0; i < 256; i++) {
+        u8a[i] = i;
+      }
+
+      u8a = u8aConcat(u8a, randomAsU8a(4096));
+      str = decodeString(u8a);
+    });
+
+    it('decodes into string', (): void => {
+      expect(str).toHaveLength(u8a.length);
+    });
+
+    it('have encode <-> decode', (): void => {
+      expect(encodeString(str)).toEqual(u8a);
+    });
+  });
+
   describe('encodeNumber', (): void => {
     it('encodes 1 correctly', (): void => {
       expect(
@@ -20,6 +45,7 @@ describe('util', (): void => {
       ).toEqual(new Uint8Array([1, 1]));
     });
   });
+
   describe('createAddressPayload', (): void => {
     it('encodes an address properly', (): void => {
       expect(
