@@ -7,7 +7,7 @@ import { Props as BaseProps } from '../types';
 import React from 'react';
 import { View } from 'react-native';
 import Svg, { Circle as SvgCircle } from 'react-native-svg';
-import generateIcon, { Circle } from '@polkadot/ui-shared/polkadotIcon';
+import generateIcon, { Circle as CircleType } from '@polkadot/ui-shared/polkadotIcon';
 
 interface Props extends BaseProps {
   sixPoint?: boolean;
@@ -15,18 +15,15 @@ interface Props extends BaseProps {
 
 export default class Identicon extends React.PureComponent<Props> {
   public render (): React.ReactNode {
-    const { address, className, sixPoint, size, style } = this.props;
+    const { address, sixPoint, size } = this.props;
 
     return (
-      <View
-        className={`container ${className}`}
-        style={style}
-      >
+      <View>
         <Svg
+          height={size}
           id={address}
           name={address}
           width={size}
-          height={size}
           viewBox='0 0 64 64'
         >
           {generateIcon(address, sixPoint).map(this.renderCircle)}
@@ -35,7 +32,7 @@ export default class Identicon extends React.PureComponent<Props> {
     );
   }
 
-  private renderCircle = ({ cx, cy, r, fill }: Circle, key: number): React.ReactNode => {
+  private renderCircle = ({ cx, cy, r, fill }: CircleType, key: number): React.ReactNode => {
     return (
       <SvgCircle
         key={key}

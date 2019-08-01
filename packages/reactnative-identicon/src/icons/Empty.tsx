@@ -5,22 +5,21 @@
 import { Props } from '../types';
 
 import React from 'react';
+import { View } from 'react-native';
+import Svg from 'react-native-svg';
 
 export default class Empty extends React.PureComponent<Props> {
   public render (): React.ReactNode {
-    const { className, size, style } = this.props;
+    const { size } = this.props;
 
     return (
-      <div
-        className={`container ${className}`}
-        style={style}
-      >
-        <svg
+      <View>
+        <Svg
           height={size}
           viewBox='0 0 64 64'
           width={size}
         />
-      </div>
+      </View>
     );
   }
 }
