@@ -12,7 +12,9 @@
       "@polkadot/ui-keyring": [ "packages/ui-keyring/src" ],
       "@polkadot/ui-keyring/*": [ "packages/ui-keyring/src/*" ],
       "@polkadot/ui-settings": [ "packages/ui-settings/src" ],
-      "@polkadot/ui-settings/*": [ "packages/ui-settings/src/*" ]
+      "@polkadot/ui-settings/*": [ "packages/ui-settings/src/*" ],
+      "@polkadot/ui-shared": [ "packages/ui-shared/src" ],
+      "@polkadot/ui-shared/*": [ "packages/ui-shared/src/*" ]
     },
     "typeRoots": [
       "./node_modules/@polkadot/ts",

@@ -12,7 +12,9 @@ function copy_folder () {
 
 yarn polkadot-dev-build-ts
 
+copy_folder "react-identicon"
+copy_folder "react-qr"
 copy_folder "ui-assets"
-copy_folder "ui-identicon"
 copy_folder "ui-keyring"
 copy_folder "ui-settings"
+copy_folder "ui-shared"
