@@ -7,6 +7,8 @@
       "@polkadot/react-identicon/*": [ "packages/react-identicon/src/*" ],
       "@polkadot/react-qr": [ "packages/react-qr/src" ],
       "@polkadot/react-qr/*": [ "packages/react-qr/src/*" ],
+      "@polkadot/reactnative-identicon": [ "packages/reactnative-identicon/src" ],
+      "@polkadot/reactnative-identicon/*": [ "packages/reactnative-identicon/src/*" ],
       "@polkadot/ui-assets": [ "packages/ui-assets/src" ],
       "@polkadot/ui-assets/*": [ "packages/ui-assets/src/*" ],
       "@polkadot/ui-keyring": [ "packages/ui-keyring/src" ],
