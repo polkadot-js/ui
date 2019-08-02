@@ -20,10 +20,10 @@ export default class Empty extends React.PureComponent<Props> {
           width={size}
         >
           <Circle
-            cx={size/2}
-            cy={size/2}
-            r={size/2}
-            fill="#eee"
+            cx='32'
+            cy='32'
+            r='32'
+            fill='#eee'
           />
         </Svg>
       </View>
