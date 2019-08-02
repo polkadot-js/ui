@@ -6,7 +6,7 @@ import { Props } from '../types';
 
 import React from 'react';
 import { View } from 'react-native';
-import Svg from 'react-native-svg';
+import Svg, { Circle } from 'react-native-svg';
 
 export default class Empty extends React.PureComponent<Props> {
   public render (): React.ReactNode {
@@ -18,7 +18,14 @@ export default class Empty extends React.PureComponent<Props> {
           height={size}
           viewBox='0 0 64 64'
           width={size}
-        />
+        >
+          <Circle
+            cx={size/2}
+            cy={size/2}
+            r={size/2}
+            fill="#eee"
+          />
+        </Svg>
       </View>
     );
   }
