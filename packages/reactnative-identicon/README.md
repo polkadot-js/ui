@@ -1,6 +1,6 @@
 # @polkadot/reactnative-identicon
 
-A generic identity icon that can render icons based on the theme, be it Substrate or Polkadot
+A generic identity icon that can render icons based on an address.
 
 ## Usage Examples
 
