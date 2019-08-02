@@ -22,7 +22,6 @@ export default class Identicon extends React.PureComponent<Props> {
         <Svg
           height={size}
           id={address}
-          name={address}
           width={size}
           viewBox='0 0 64 64'
         >
