@@ -9,7 +9,7 @@ To install the component, do `yarn add @polkadot/reactnative-identicon`
 Inside a React component, you can now render any account with the associated icon -
 
 ```javascript
-import { Polkadot } from '@polkadot/reactnative-identicon';
+import Identicon from '@polkadot/reactnative-identicon';
 
 ...
 render () {
@@ -20,7 +20,7 @@ render () {
 
   // standard className & style props are also available
   return (
-    <Polkadot
+    <Identicon
       value={address}
       size={size}
     />
