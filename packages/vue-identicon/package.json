@@ -7,9 +7,6 @@
     "Jaco Greeff <jacogr@gmail.com>"
   ],
   "license": "Apache-2.0",
-  "scripts": {
-    "serve": "vue-cli-service serve ./src/test.js"
-  },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "@polkadot/ui-shared": "^0.42.0-beta.27"
