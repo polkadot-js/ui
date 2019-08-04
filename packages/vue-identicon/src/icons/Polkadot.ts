@@ -11,12 +11,15 @@ interface Data {
 
 const viewBox = '0 0 64 64';
 
+/**
+ * @description The Polkadot default identicon
+ */
 export default Vue.extend({
-  template: '<div v-html="svgHtml" />',
+  template: `<div v-html="svgHtml" />`,
   props: ['address', 'size'],
   data: function (): Data {
     return {
-      svgHtml: `<svg viewBox='${viewBox}' />`
+      svgHtml: `<svg viewBox="${viewBox}" />`
     };
   },
   created: function (): void {

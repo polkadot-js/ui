@@ -20,8 +20,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/src'),
-      vue: 'vue/dist/vue.js'
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/src')
     },
     extensions: ['.js', '.ts']
   },

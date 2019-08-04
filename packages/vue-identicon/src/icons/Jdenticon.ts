@@ -9,12 +9,15 @@ interface Data {
   svgHtml: string;
 }
 
+/**
+ * @description The substrate default via Jdenticon
+ */
 export default Vue.extend({
-  template: '<div v-html="svgHtml" />',
+  template: `<div v-html="svgHtml" />`,
   props: ['publicKey', 'size'],
   data: function (): Data {
     return {
-      svgHtml: `<svg viewBox='0 0 64 64' />`
+      svgHtml: `<svg viewBox="0 0 64 64" />`
     };
   },
   created: function (): void {

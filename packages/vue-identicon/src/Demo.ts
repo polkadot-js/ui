@@ -11,28 +11,14 @@ interface Data {
   size: number;
 }
 
-const template = `
-  <div id="demo">
-    <Identicon
-      :value="address"
-      :size="size"
-      :theme="'polkadot'"
-    />
-    <Identicon
-      :value="address"
-      :size="size"
-      :theme="'substrate'"
-    />
-    <Identicon
-      :value="address"
-      :size="size"
-      :theme="'empty'"
-    />
-  </div>
-`;
-
 const Demo = Vue.extend({
-  template,
+  template: `
+    <div id="demo">
+      <Identicon :size="size" :theme="'polkadot'" :value="address" />
+      <Identicon :size="size" :theme="'substrate'" :value="address" />
+      <Identicon :size="size" :theme="'empty'" />
+    </div>
+  `,
   name: 'Demo',
   data: function (): Data {
     return {

@@ -7,9 +7,7 @@ import { isHex, isU8a, isUndefined, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
 // TODO Add Beachball, the creation logic of that should move to ui-shared
-import Empty from './icons/Empty';
-import Jdenticon from './icons/Jdenticon';
-import Polkadot from './icons/Polkadot';
+import { Empty, Jdenticon, Polkadot } from './icons';
 
 interface Data {
   address: string;
@@ -20,28 +18,27 @@ interface Data {
 
 const DEFAULT_SIZE = 64;
 
-// FIXME These nested divs are not correct, would like a different way
-// here so we don't create a div wrapped for the div wrapper of the icon
-const template = `
-  <div v-if="type === 'empty' || address === ''">
-    <Empty :size="iconSize" />
-  </div>
-  <div v-else-if="type === 'polkadot'">
-    <Polkadot
-      :address="address"
-      :size="iconSize"
-    />
-  </div>
-  <div v-else>
-    <Jdenticon
-      :publicKey="publicKey"
-      :size="iconSize"
-    />
-  </div>
-`;
-
+/**
+ * @description The main Identicon component, taking a number of properties
+ * @example
+ * ```html
+ * <Identicon :size="128" :theme="polkadot" address="..." />
+ * ```
+ */
 export default Vue.extend({
-  template,
+  // FIXME These nested divs are not correct, would like a different way
+  // here so we don't create a div wrapped for the div wrapper of the icon
+  template: `
+    <div v-if="type === 'empty' || address === ''">
+      <Empty :size="iconSize" />
+    </div>
+    <div v-else-if="type === 'polkadot'">
+      <Polkadot :address="address" :size="iconSize" />
+    </div>
+    <div v-else>
+      <Jdenticon :publicKey="publicKey" :size="iconSize" />
+    </div>
+  `,
   props: ['prefix', 'size', 'theme', 'value'],
   components: {
     Empty,

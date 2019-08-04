@@ -4,22 +4,14 @@
 
 import Vue from 'vue';
 
-const template = `
-  <svg
-    :height="size"
-    :width="size"
-    viewBox='0 0 64 64'
-  >
-    <circle
-      cx='32'
-      cy='32'
-      r='32'
-      fill='#eee'
-    />
-  </svg>
-`;
-
+/**
+ * @description An empty identicon
+ */
 export default Vue.extend({
-  template,
-  props: ['publicKey', 'size']
+  template: `
+    <svg :height="size" :width="size" viewBox="0 0 64 64">
+      <circle cx="50%" cy="50%" fill="#eee" r="50%" />
+    </svg>
+  `,
+  props: ['size']
 });
