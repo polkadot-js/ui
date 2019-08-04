@@ -13,11 +13,13 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "build": "polkadot-dev-build-ts && polkadot-dev-build-docs",
+    "build": "polkadot-dev-build-ts && yarn build:copy-vue && polkadot-dev-build-docs",
+    "build:copy-vue": "echo \"Copy vue-identicon/*.vue\" && cd packages/vue-identicon/src && cp -Rf *.vue icons ../build",
     "check": "yarn lint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
-    "demo:identicon": "webpack-serve --config packages/ui-identicon/webpack.config.js --content packages/ui-identicon --port 3000",
+    "demo:identicon:react": "webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 3000",
+    "demo:identicon:vue": "webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 3000",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "jest --coverage",
     "test:one": "jest"
@@ -29,5 +31,8 @@
     "@polkadot/ts": "^0.1.63",
     "empty": "^0.10.1",
     "gh-pages": "^2.1.0"
+  },
+  "dependencies": {
+    "webpack-serve": "^3.1.1"
   }
 }

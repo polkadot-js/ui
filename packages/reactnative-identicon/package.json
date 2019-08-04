@@ -14,14 +14,10 @@
     "react-native-svg": "^9.5.3"
   },
   "peerDependencies": {
-    "@polkadot/keyring": "*",
-    "@polkadot/util-crypto": "*",
     "react": "*",
     "react-native": "*"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^1.0.1",
-    "@polkadot/util-crypto": "^1.0.1",
     "react-native": "^0.60.4"
   }
 }
