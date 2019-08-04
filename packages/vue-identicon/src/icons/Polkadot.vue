@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     createSvgHtml: function () {
-      console.error('address', this.address);
       const circles = generateIcon(this.address).map(({ cx, cy, fill, r }) =>
         `<circle cx=${cx} cy=${cy} fill="${fill}" r=${r} />`
       ).join('');
