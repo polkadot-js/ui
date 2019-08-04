@@ -31,7 +31,6 @@ This repository split up into a number of internal packages, namely -
 - [identicon](react-identicon/README.md) Display of identity icons based on theme
 - [keyring](ui-keyring/README.md) A keyring with browser-specific extensions
 - [settings](ui-settings/README.md) Setting management and defaults
-- [util](ui-util/README.md) UI-specific utility functions
 
 ## The Polkadot Project
 

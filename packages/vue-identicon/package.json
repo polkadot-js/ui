@@ -6,6 +6,7 @@
   "maintainers": [
     "Jaco Greeff <jacogr@gmail.com>"
   ],
+  "main": "index.js",
   "license": "Apache-2.0",
   "dependencies": {
     "@polkadot/ui-shared": "^0.42.0-beta.27",
@@ -15,7 +16,6 @@
     "vue": "*"
   },
   "devDependencies": {
-    "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10"
   }

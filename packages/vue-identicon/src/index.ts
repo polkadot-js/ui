@@ -2,10 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import Vue from 'vue';
+// TODO We are not using any TypeScript in this generation - expect  it to
+// change and align with the rest of the polkadot-js family
 
-import Demo from './Demo.vue';
-
-new Vue({
-  render: (h) => h(Demo)
-}).$mount('#demo');
+import './stub';
