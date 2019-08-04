@@ -67,7 +67,7 @@ export default {
         this.publicKey = u8aToHex(decodeAddress(this.address, false, this.prefix));
         this.type = this.theme;
       } catch (error) {
-        this.type = '';
+        this.address = '';
       }
     }
   }
