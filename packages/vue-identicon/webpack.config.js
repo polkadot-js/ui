@@ -15,7 +15,7 @@ module.exports = {
   entry: './src/demo.js',
   mode: ENV,
   output: {
-    path: path.join(__dirname, 'build),
+    path: path.join(__dirname, 'build'),
     filename: './demo.js'
   },
   resolve: {
