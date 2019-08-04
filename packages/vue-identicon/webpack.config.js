@@ -12,7 +12,7 @@ const isProd = ENV === 'production';
 module.exports = {
   context: __dirname,
   devtool: isProd ? 'source-map' : 'cheap-eval-source-map',
-  entry: './src/demo.js',
+  entry: './src/Demo.ts',
   mode: ENV,
   output: {
     path: path.join(__dirname, 'build'),
@@ -20,7 +20,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/src')
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/src'),
+      vue: 'vue/dist/vue.js'
     },
     extensions: ['.js', '.ts']
   },

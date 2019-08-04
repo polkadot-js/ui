@@ -13,8 +13,7 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "build": "polkadot-dev-build-ts && yarn build:copy-vue && polkadot-dev-build-docs",
-    "build:copy-vue": "echo \"Copy vue-identicon/*.vue\" && cd packages/vue-identicon/src && cp -Rf *.vue icons ../build",
+    "build": "polkadot-dev-build-ts && polkadot-dev-build-docs",
     "check": "yarn lint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
