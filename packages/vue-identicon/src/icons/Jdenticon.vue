@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     createSvgHtml: function () {
-      console.error('publicKey', this.publicKey);
       this.svgHtml = jdenticon.toSvg(this.publicKey.substr(2), this.size);
     },
   }
