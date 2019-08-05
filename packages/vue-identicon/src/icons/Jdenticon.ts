@@ -12,7 +12,7 @@ interface Data {
 /**
  * @description The substrate default via Jdenticon
  */
-export default Vue.extend({
+export const Jdenticon = Vue.extend({
   template: `<div v-html="svgHtml" />`,
   props: ['publicKey', 'size'],
   data: function (): Data {

@@ -9,17 +9,15 @@ interface Data {
   svgHtml: string;
 }
 
-const viewBox = '0 0 64 64';
-
 /**
  * @description The Polkadot default identicon
  */
-export default Vue.extend({
+export const Polkadot = Vue.extend({
   template: `<div v-html="svgHtml" />`,
   props: ['address', 'size'],
   data: function (): Data {
     return {
-      svgHtml: `<svg viewBox="${viewBox}" />`
+      svgHtml: `<svg viewBox="0 0 64 64" />`
     };
   },
   created: function (): void {
@@ -31,7 +29,7 @@ export default Vue.extend({
         `<circle cx=${cx} cy=${cy} fill="${fill}" r=${r} />`
       ).join('');
 
-      this.svgHtml = `<svg height=${this.size} viewBox='${viewBox}' width=${this.size}>${circles}</svg>`;
+      this.svgHtml = `<svg height=${this.size} viewBox='0 0 64 64' width=${this.size}>${circles}</svg>`;
     }
   }
 });

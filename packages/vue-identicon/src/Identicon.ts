@@ -22,7 +22,7 @@ const DEFAULT_SIZE = 64;
  * @description The main Identicon component, taking a number of properties
  * @example
  * ```html
- * <Identicon :size="128" :theme="polkadot" address="..." />
+ * <Identicon :size="128" :theme="polkadot" :value="..." />
  * ```
  */
 export default Vue.extend({
