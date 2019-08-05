@@ -13,7 +13,8 @@ const WSS_NODES = {
     hosted: 'hosted by Parity',
     nodes: {
       alex: 'wss://poc3-rpc.polkadot.io/',
-      fir: 'wss://substrate-rpc.parity.io/'
+      fir: 'wss://substrate-rpc.parity.io/',
+      kusama: 'wss://kusama-rpc.polkadot.io/'
     }
   },
   unfra: {
@@ -32,10 +33,26 @@ const CRYPTOS: Options = [
 ];
 
 const ENDPOINTS: Options = [
-  { text: `Alexander (Polkadot, ${WSS_NODES.parity.hosted})`, value: WSS_NODES.parity.nodes.alex },
-  { text: `Alexander (Polkadot, ${WSS_NODES.unfra.hosted})`, value: WSS_NODES.unfra.nodes.alex },
-  { text: `Flaming Fir (Substrate, ${WSS_NODES.parity.hosted})`, value: WSS_NODES.parity.nodes.fir },
-  { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
+  {
+    text: `Kusama (Polkadot Canary, ${WSS_NODES.parity.hosted})`,
+    value: WSS_NODES.parity.nodes.kusama
+  },
+  {
+    text: `Alexander (Polkadot Test, ${WSS_NODES.parity.hosted})`,
+    value: WSS_NODES.parity.nodes.alex
+  },
+  {
+    text: `Alexander (Polkadot Test, ${WSS_NODES.unfra.hosted})`,
+    value: WSS_NODES.unfra.nodes.alex
+  },
+  {
+    text: `Flaming Fir (Substrate Test, ${WSS_NODES.parity.hosted})`,
+    value: WSS_NODES.parity.nodes.fir
+  },
+  {
+    text: 'Local Node (127.0.0.1:9944)',
+    value: 'ws://127.0.0.1:9944/'
+  }
 ];
 
 const LANGUAGES: Options = [
@@ -65,7 +82,7 @@ const UITHEMES: Options = [
 ];
 
 const ENDPOINT_DEFAULT = isPolkadot
-  ? WSS_NODES.parity.nodes.alex
+  ? WSS_NODES.parity.nodes.kusama
   : WSS_NODES.parity.nodes.fir;
 
 const PREFIX_DEFAULT = -1;
