@@ -19,13 +19,14 @@ interface Data {
 const DEFAULT_SIZE = 64;
 
 /**
+ * @name Identicon
  * @description The main Identicon component, taking a number of properties
  * @example
  * ```html
  * <Identicon :size="128" :theme="polkadot" :value="..." />
  * ```
  */
-export default Vue.extend({
+export const Identicon = Vue.extend({
   // FIXME These nested divs are not correct, would like a different way
   // here so we don't create a div wrapped for the div wrapper of the icon
   template: `

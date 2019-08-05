@@ -10,6 +10,7 @@ interface Data {
 }
 
 /**
+ * @name Jdenticon
  * @description The substrate default via Jdenticon
  */
 export const Jdenticon = Vue.extend({

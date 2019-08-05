@@ -5,6 +5,7 @@
 import Vue from 'vue';
 
 /**
+ * @name Empty
  * @description An empty identicon
  */
 export const Empty = Vue.extend({

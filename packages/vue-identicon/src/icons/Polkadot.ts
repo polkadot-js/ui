@@ -10,6 +10,7 @@ interface Data {
 }
 
 /**
+ * @name Polkadot
  * @description The Polkadot default identicon
  */
 export const Polkadot = Vue.extend({

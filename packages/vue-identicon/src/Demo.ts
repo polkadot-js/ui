@@ -11,6 +11,10 @@ interface Data {
   size: number;
 }
 
+/**
+ * @name Demo
+ * @description Demo component
+ */
 const Demo = Vue.extend({
   template: `
     <div id="demo">
