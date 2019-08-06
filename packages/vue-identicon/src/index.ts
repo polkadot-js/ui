@@ -1,8 +1,7 @@
-// Copyright 2017-2019 @polkadot/reactnative-identicon authors & contributors
+// Copyright 2017-2019 @polkadot/vue-identicon authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import Identicon from './Identicon';
-export * from './icons';
+import { Identicon } from './Identicon';
 
 export default Identicon;

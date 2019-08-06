@@ -16,7 +16,9 @@
       "@polkadot/ui-settings": [ "packages/ui-settings/src" ],
       "@polkadot/ui-settings/*": [ "packages/ui-settings/src/*" ],
       "@polkadot/ui-shared": [ "packages/ui-shared/src" ],
-      "@polkadot/ui-shared/*": [ "packages/ui-shared/src/*" ]
+      "@polkadot/ui-shared/*": [ "packages/ui-shared/src/*" ],
+      "@polkadot/vue-identicon": [ "packages/vue-identicon/src" ],
+      "@polkadot/vue-identicon/*": [ "packages/vue-identicon/src/*" ]
     },
     "typeRoots": [
       "./node_modules/@polkadot/ts",

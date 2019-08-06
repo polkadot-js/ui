@@ -15,5 +15,8 @@
   },
   "peerDependencies": {
     "@polkadot/util-crypto": "*"
+  },
+  "devDependencies": {
+    "@polkadot/util-crypto": "^1.0.1"
   }
 }

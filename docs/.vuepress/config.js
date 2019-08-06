@@ -24,8 +24,11 @@ module.exports = {
     sidebar: [
       ['/react-identicon/', '@polkadot/react-identicon'],
       ['/react-qr/', '@polkadot/react-qr'],
+      ['/reactnative-identicon/', '@polkadot/reactnative-identicon'],
       ['/ui-keyring/', '@polkadot/ui-keyring'],
       ['/ui-settings/', '@polkadot/ui-settings'],
+      ['/ui-shared/', '@polkadot/ui-shared'],
+      ['/vue-identicon/', '@polkadot/vue-identicon'],
       '/CONTRIBUTING.md'
     ]
   }
