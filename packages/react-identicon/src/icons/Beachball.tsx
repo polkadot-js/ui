@@ -5,8 +5,7 @@
 import { Props } from '../types';
 
 import React from 'react';
-
-import identicon from '../beachball';
+import generate from '@polkadot/ui-shared/beachballIcon';
 
 export default class Beachball extends React.PureComponent<Props> {
   public render (): React.ReactNode {
@@ -26,7 +25,7 @@ export default class Beachball extends React.PureComponent<Props> {
 
     if (node) {
       node.appendChild(
-        identicon(address, size)
+        generate(address, size)
       );
     }
   }

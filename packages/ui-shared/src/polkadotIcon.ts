@@ -1,5 +1,5 @@
 // Copyright 2018 Paritytech via paritytech/oo7/polkadot-identicon
-// Copyright 2018 @polkadot/react-identicon authors & contributors
+// Copyright 2018 @polkadot/ui-shared authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
@@ -131,6 +131,9 @@ function getColors (address: string): string[] {
   );
 }
 
+/**
+ * @description Generate a array of the circles that make up an indenticon
+ */
 export default function generate (address: string, isSixPoint: boolean = false): Circle[] {
   const colors = getColors(address);
 

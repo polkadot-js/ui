@@ -1,0 +1,19 @@
+{
+  "name": "@polkadot/vue-identicon",
+  "version": "0.42.0-beta.29",
+  "description": "Renders an SVG picture representing an address",
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "maintainers": [
+    "Jaco Greeff <jacogr@gmail.com>"
+  ],
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "@polkadot/ui-shared": "^0.42.0-beta.29",
+    "jdenticon": "2.2.0"
+  },
+  "peerDependencies": {
+    "vue": "*"
+  }
+}

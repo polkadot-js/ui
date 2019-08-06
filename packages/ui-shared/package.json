@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-shared",
-  "version": "0.42.0-beta.28",
+  "version": "0.42.0-beta.29",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -15,5 +15,8 @@
   },
   "peerDependencies": {
     "@polkadot/util-crypto": "*"
+  },
+  "devDependencies": {
+    "@polkadot/util-crypto": "^1.0.1"
   }
 }
