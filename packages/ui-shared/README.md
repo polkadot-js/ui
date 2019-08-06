@@ -1,3 +1,3 @@
-# @polkadot/ui-assets
+# @polkadot/ui-shared
 
-Static assets including images shared across projects
+Shared logic for various logic, i.e. for identicon generation

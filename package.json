@@ -1,5 +1,5 @@
 {
-  "version": "0.42.0-beta.27",
+  "version": "0.42.0-beta.29",
   "private": true,
   "engines": {
     "yarn": "^1.10.1"
@@ -17,7 +17,8 @@
     "check": "yarn lint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
-    "demo:identicon": "webpack-serve --config packages/ui-identicon/webpack.config.js --content packages/ui-identicon --port 3000",
+    "demo:identicon:react": "webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 3000",
+    "demo:identicon:vue": "webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 3000",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "jest --coverage",
     "test:one": "jest"
@@ -27,7 +28,9 @@
     "@babel/runtime": "^7.5.5",
     "@polkadot/dev-react": "^0.30.0-beta.24",
     "@polkadot/ts": "^0.1.63",
+    "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
-    "gh-pages": "^2.1.0"
+    "gh-pages": "2.0.1",
+    "webpack-serve": "^3.1.1"
   }
 }
