@@ -30,6 +30,7 @@
     "@polkadot/ts": "^0.1.63",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
-    "gh-pages": "2.0.1"
+    "gh-pages": "2.0.1",
+    "webpack-serve": "^3.1.1"
   }
 }

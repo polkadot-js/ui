@@ -20,6 +20,7 @@ const Demo = Vue.extend({
     <div id="demo">
       <Identicon :size="size" :theme="'polkadot'" :value="address" />
       <Identicon :size="size" :theme="'substrate'" :value="address" />
+      <Identicon :size="size" :theme="'beachball'" :value="address" />
       <Identicon :size="size" :theme="'empty'" />
     </div>
   `,

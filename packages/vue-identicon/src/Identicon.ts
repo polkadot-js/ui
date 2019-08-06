@@ -6,14 +6,13 @@ import Vue from 'vue';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
-// TODO Add Beachball, the creation logic of that should move to ui-shared
-import { Empty, Jdenticon, Polkadot } from './icons';
+import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
 
 interface Data {
   address: string;
   iconSize: number;
   publicKey: string;
-  type: 'empty' | 'jdenticon' | 'polkadot' | 'substrate';
+  type: 'beachball' | 'empty' | 'jdenticon' | 'polkadot' | 'substrate';
 }
 
 const DEFAULT_SIZE = 64;
@@ -33,6 +32,9 @@ export const Identicon = Vue.extend({
     <div v-if="type === 'empty' || address === ''">
       <Empty :size="iconSize" />
     </div>
+    <div v-else-if="type === 'beachball'">
+      <Beachball :address="address" :size="iconSize" />
+    </div>
     <div v-else-if="type === 'polkadot'">
       <Polkadot :address="address" :size="iconSize" />
     </div>
@@ -42,6 +44,7 @@ export const Identicon = Vue.extend({
   `,
   props: ['prefix', 'size', 'theme', 'value'],
   components: {
+    Beachball,
     Empty,
     Jdenticon,
     Polkadot

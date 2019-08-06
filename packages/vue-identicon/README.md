@@ -11,8 +11,9 @@ Inside a Vue component, you can now render any account with the associated icon,
 - `value` - the address you wish to display
 - `size` (optional, defaults to `64`) - the size in pixels
 - `theme` (optional, defaults to `substrate`) - the theme to use, one of
-  - `polkadot`,
+  - `polkadot` or
   - `substrate` (equivalent to `jdenticon`) or
+  - `beachball` or
   - `empty` (displaying nothing)
 
 ```

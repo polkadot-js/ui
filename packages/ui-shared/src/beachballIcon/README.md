@@ -1,4 +1,4 @@
-# @polkadot/react-identicon/beachball
+# @polkadot/ui-shared/beachball
 
 Adapted from [Jazzicon](https://github.com/danfinlay/jazzicon) by Dan Finlay with the following changes -
 
@@ -16,4 +16,4 @@ Adapted from [Jazzicon](https://github.com/danfinlay/jazzicon) by Dan Finlay wit
 
 Also see [src/demo.js](src/demo.js) for a randomly generated example.
 
-![demo](https://raw.githubusercontent.com/polkadot-js/ui/master/packages/react-identicon/demo.png)
+![demo](https://raw.githubusercontent.com/polkadot-js/ui/master/packages/ui-shared/demo.png)
