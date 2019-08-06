@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import Vue from 'vue';
-import { isHex, isU8a, isUndefined, u8aToHex } from '@polkadot/util';
+import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
 // TODO Add Beachball, the creation logic of that should move to ui-shared
@@ -63,8 +63,8 @@ export const Identicon = Vue.extend({
 
       try {
         this.address = isU8a(this.value) || isHex(this.value)
-          ? encodeAddress(this.value as string, isUndefined(this.prefix) ? 42 : this.prefix)
-          : (this.value || '');
+          ? encodeAddress(this.value as string, this.prefix)
+          : this.value;
         this.publicKey = u8aToHex(decodeAddress(this.address, false, this.prefix));
         this.type = this.theme;
       } catch (error) {
