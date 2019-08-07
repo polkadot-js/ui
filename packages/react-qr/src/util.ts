@@ -5,7 +5,7 @@
 import { u8aConcat, u8aToU8a } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
-import { ADDRESS_PREFIX, CMD_SIGN_TX, CRYPTO_SR25519, DEFAULT_IMG_SIZE, FRAME_SIZE, SUBSTRATE_ID } from './constants';
+import { ADDRESS_PREFIX, CRYPTO_SR25519, DEFAULT_IMG_SIZE, FRAME_SIZE, SUBSTRATE_ID } from './constants';
 
 const MULTIPART = new Uint8Array([0]);
 
@@ -36,11 +36,11 @@ export function createAddressPayload (address: string): Uint8Array {
   );
 }
 
-export function createSignPayload (address: string, payload: string | Uint8Array): Uint8Array {
+export function createSignPayload (address: string, cmd: Uint8Array, payload: string | Uint8Array): Uint8Array {
   return u8aConcat(
     SUBSTRATE_ID,
     CRYPTO_SR25519,
-    CMD_SIGN_TX,
+    cmd,
     decodeAddress(address),
     u8aToU8a(payload)
   );

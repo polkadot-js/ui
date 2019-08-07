@@ -12,6 +12,7 @@ import QrDisplay from './Display';
 
 interface Props extends BaseProps {
   address: string;
+  cmd: Uint8Array;
   payload: Uint8Array;
 }
 
@@ -26,8 +27,8 @@ export default class DisplayPayload extends React.PureComponent<Props, State> {
     dataHash: null
   };
 
-  public static getDerivedStateFromProps ({ address, payload }: Props, prevState: State): State | null {
-    const data = createSignPayload(address, payload);
+  public static getDerivedStateFromProps ({ address, cmd, payload }: Props, prevState: State): State | null {
+    const data = createSignPayload(address, cmd, payload);
     const dataHash = xxhashAsHex(data);
 
     if (dataHash === prevState.dataHash) {
