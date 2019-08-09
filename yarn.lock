@@ -2002,15 +2002,15 @@
     universal-user-agent "^3.0.0"
     url-template "^2.0.8"
 
-"@polkadot/dev-react@^0.30.0-beta.24":
-  version "0.30.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@polkadot/dev-react/-/dev-react-0.30.0-beta.24.tgz#224ddf06831e21cc4b4f2a02908794c73e81589e"
-  integrity sha512-ErECAj0ufeIy7dRIUboyiHIJ65BsSR2eEHuXFXGdUTUzNRYLayzpWvLs2IVKhuiCnZ/NTajgQ9d4Zw4yrsX3hA==
+"@polkadot/dev-react@^0.30.0-beta.26":
+  version "0.30.0-beta.26"
+  resolved "https://registry.yarnpkg.com/@polkadot/dev-react/-/dev-react-0.30.0-beta.26.tgz#f32d221d2a060647ede09c942f0fdda97f9d543d"
+  integrity sha512-YO04B0RZixc73/zT8pnp5b4RxytHhGcGe7o33vmE75Yx5sTUO+rVoSs56X8ccz3AO65U9T3WI/Z6iCYW72kxuQ==
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/preset-react" "^7.0.0"
-    "@polkadot/dev" "^0.30.0-beta.24"
+    "@polkadot/dev" "^0.30.0-beta.26"
     "@types/react" "^16.8.24"
     "@types/react-dom" "^16.8.5"
     "@types/styled-components" "4.1.8"
@@ -2018,7 +2018,7 @@
     babel-plugin-styled-components "^1.10.6"
     browserslist "^4.6.6"
     copy-webpack-plugin "^5.0.4"
-    css-loader "^3.1.0"
+    css-loader "^3.2.0"
     enzyme "^3.10.0"
     enzyme-adapter-react-16 "^1.14.0"
     eslint-plugin-react "^7.14.3"
@@ -2029,7 +2029,7 @@
     react "^16.8.6"
     react-dom "^16.8.6"
     react-hot-loader "^4.12.10"
-    style-loader "^0.23.0"
+    style-loader "^1.0.0"
     styled-components "^4.3.2"
     thread-loader "^2.1.2"
     tslint "^5.18.0"
@@ -2040,10 +2040,10 @@
     webpack-plugin-serve "^0.12.0"
     worker-loader "^2.0.0"
 
-"@polkadot/dev@^0.30.0-beta.24":
-  version "0.30.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@polkadot/dev/-/dev-0.30.0-beta.24.tgz#b007707551dafabfcd6f77faf14a73106a9afc96"
-  integrity sha512-jbty6uUL+UHLHS8hwSSUp+G6BYyPAYU2SJdBy1KFexuaeMcEQ0n7J8EmgJ6TPegYAs8rmk3jX2xxwct/mUKuTQ==
+"@polkadot/dev@^0.30.0-beta.26":
+  version "0.30.0-beta.26"
+  resolved "https://registry.yarnpkg.com/@polkadot/dev/-/dev-0.30.0-beta.26.tgz#2291b61711f9ae5ab147fca4a6739a55322ce5ef"
+  integrity sha512-nYAjzZ4SbZOc4tvh9sKDWyWogZC3ORmApFoiV2H5JdUB1zt6EvcqmEOMb1RhrAJggYQqijF+FhmOG78A+9yaqQ==
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
@@ -2056,7 +2056,7 @@
     "@babel/preset-typescript" "^7.3.3"
     "@babel/register" "^7.5.5"
     "@babel/runtime" "^7.5.5"
-    "@types/jest" "^24.0.16"
+    "@types/jest" "^24.0.17"
     "@types/node" "^12.6.9"
     "@typescript-eslint/eslint-plugin" "^1.13.0"
     "@typescript-eslint/parser" "^1.13.0"
@@ -2082,19 +2082,19 @@
     tslint "^5.18.0"
     tslint-config-standard "^8.0.1"
     typedoc "^0.15.0"
-    typedoc-plugin-markdown "^2.1.0"
+    typedoc-plugin-markdown "^2.1.1"
     typedoc-plugin-no-inherit "^1.1.9"
     typescript "^3.5.3"
     vuepress "^1.0.3"
 
-"@polkadot/keyring@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/keyring/-/keyring-1.0.1.tgz#64a9a7da08fdffc76fe39512e4fe9a37175b9e3c"
-  integrity sha512-RsqwJ3Y90ckAbvvfgFPzkz4FBS/XL9YqQSmM9j4zOeK/O7yxu9BlIdwmvNdhR5y8WZ5+mSaIu+6o0z8WJ/GRBQ==
+"@polkadot/keyring@^1.1.0-beta.2":
+  version "1.1.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@polkadot/keyring/-/keyring-1.1.0-beta.2.tgz#c41c6d16bf26f76d7554ddcf86530f19ae51d132"
+  integrity sha512-F5P/ePCuarg70ppvZHbua6z3JoVhMobWJ/Kpbqs02O6ycFlflsxYRxpjnnBPEI1wQWL5TABjL9hQMozyHtYWSw==
   dependencies:
     "@babel/runtime" "^7.5.5"
-    "@polkadot/util" "^1.0.1"
-    "@polkadot/util-crypto" "^1.0.1"
+    "@polkadot/util" "^1.1.0-beta.2"
+    "@polkadot/util-crypto" "^1.1.0-beta.2"
 
 "@polkadot/ts@^0.1.63":
   version "0.1.63"
@@ -2103,24 +2103,24 @@
   dependencies:
     "@types/chrome" "^0.0.86"
 
-"@polkadot/types@^0.90.0-beta.22":
-  version "0.90.0-beta.22"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.90.0-beta.22.tgz#a73278af48b0cf70f4b5124ace128e2f4a0f4681"
-  integrity sha512-lwITJyGweigRAP9U5FlWvaFO9dxqGxPoCg0dHYpHtcRC65zX0QnYPgTMUZbg7mtDchRGxXf17Ew+pZ+sSQq9Ug==
+"@polkadot/types@^0.90.0-beta.33":
+  version "0.90.0-beta.33"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.90.0-beta.33.tgz#f92b8de0ecfcc88ac8ba0d9b3c26a6eb1ef6164c"
+  integrity sha512-wHBBfgH3W7uduBkPb0vg1Bcfx1ox31GgOFxv/KGNlfwxRH3wtMsdc9TcK4w17v5KO+w4RaGJPf1R7k/QLLaunw==
   dependencies:
     "@babel/runtime" "^7.5.5"
-    "@polkadot/util" "^1.0.1"
-    "@polkadot/util-crypto" "^1.0.1"
+    "@polkadot/util" "^1.1.0-beta.2"
+    "@polkadot/util-crypto" "^1.1.0-beta.2"
     "@types/memoizee" "^0.4.2"
     memoizee "^0.4.14"
 
-"@polkadot/util-crypto@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-1.0.1.tgz#090bd6810ecc84dcb78ecd6cc816112fbebb88b1"
-  integrity sha512-zH/s0V1fQruGm7vqFrwPS0sB1dR7lu5/U6L5hGYvr+rCabLpoy6+ps0smdIpywizN7JhGuvBPpyoCBbgqkslEw==
+"@polkadot/util-crypto@^1.1.0-beta.2":
+  version "1.1.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-1.1.0-beta.2.tgz#55e862bbdf2f459d81c0c7a0c879106240d563f0"
+  integrity sha512-NvRolMyV6H9QPLhsW3+gxWLIgzYGLzLRyMIc5YYUCV8GsP8Lftkcr7egQheKrgU9oUdLj1TCoB6Xz3O9O7eCWw==
   dependencies:
     "@babel/runtime" "^7.5.5"
-    "@polkadot/util" "^1.0.1"
+    "@polkadot/util" "^1.1.0-beta.2"
     "@polkadot/wasm-crypto" "^0.13.1"
     "@types/bip39" "^2.4.2"
     "@types/bs58" "^4.0.0"
@@ -2136,10 +2136,10 @@
     tweetnacl "^1.0.1"
     xxhashjs "^0.2.2"
 
-"@polkadot/util@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-1.0.1.tgz#24d1f191452083a77ec3c8985bf8bb31fc7f20b0"
-  integrity sha512-kMvhbOTdYoQ2WUvs7kJW4/nC3uZvkAxSEqGqoVpDBbanrBbWlPg9ewPiXcOq7Rh5dAyx2aVjtfjWdC1htNlJIA==
+"@polkadot/util@^1.1.0-beta.2":
+  version "1.1.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-1.1.0-beta.2.tgz#f93e2bd89b1f7726652b22460f6a60ac9fc18594"
+  integrity sha512-fErsbObu/qdP+hKPJffyK6EjXgoEkQS5CJYaKCYpoK9MWINKiAz2jtE55+F0OK+GGMtsGokQ1gpUgTJAKS0Ebg==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@types/bn.js" "^4.11.5"
@@ -2368,7 +2368,7 @@
   resolved "https://registry.yarnpkg.com/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
   integrity sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
 
-"@types/jest@^24.0.16":
+"@types/jest@^24.0.17":
   version "24.0.17"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.17.tgz#b66ea026efb746eb5db1356ee28518aaff7af416"
   integrity sha512-1cy3xkOAfSYn78dsBWy4M3h/QF/HeWPchNFDjysVtp3GHeTdSmtluNnELfCmfNRRHo0OWEcpf+NsEJQvwQfdqQ==
@@ -4971,10 +4971,10 @@ css-loader@^2.1.1:
     postcss-value-parser "^3.3.0"
     schema-utils "^1.0.0"
 
-css-loader@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.1.0.tgz#6f008b993b8ce812e6bab57f3cbfdc7a7cf28685"
-  integrity sha512-MuL8WsF/KSrHCBCYaozBKlx+r7vIfUaDTEreo7wR7Vv3J6N0z6fqWjRk3e/6wjneitXN1r/Y9FTK1psYNOBdJQ==
+css-loader@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.2.0.tgz#bb570d89c194f763627fcf1f80059c6832d009b2"
+  integrity sha512-QTF3Ud5H7DaZotgdcJjGMvyDj5F3Pn1j/sC6VBEOVp94cbwqyIBdcs/quzj4MC1BKQSrTpQznegH/5giYbhnCQ==
   dependencies:
     camelcase "^5.3.1"
     cssesc "^3.0.0"
@@ -12956,6 +12956,14 @@ schema-utils@^2.0.0:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
+schema-utils@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.1.0.tgz#940363b6b1ec407800a22951bdcc23363c039393"
+  integrity sha512-g6SViEZAfGNrToD82ZPUjq52KUPDYc+fN5+g6Euo5mLokl/9Yx14z0Cu4RR1m55HtBXejO0sBt+qw79axN+Fiw==
+  dependencies:
+    ajv "^6.1.0"
+    ajv-keywords "^3.1.0"
+
 sdp@^2.6.0, sdp@^2.9.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/sdp/-/sdp-2.10.0.tgz#643fff1a43cdba54a739c7b202f56bd854474af2"
@@ -13688,13 +13696,13 @@ strong-log-transformer@^2.0.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
-style-loader@^0.23.0:
-  version "0.23.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.23.1.tgz#cb9154606f3e771ab6c4ab637026a1049174d925"
-  integrity sha512-XK+uv9kWwhZMZ1y7mysB+zoihsEj4wneFWAS5qoiLwzW0WzSqMrrsIy+a3zkQJq0ipFtBpX5W3MqyRIBF/WFGg==
+style-loader@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-1.0.0.tgz#1d5296f9165e8e2c85d24eee0b7caf9ec8ca1f82"
+  integrity sha512-B0dOCFwv7/eY31a5PCieNwMgMhVGFe9w+rh7s/Bx8kfFkrth9zfTZquoYvdw8URgiqxObQKcpW51Ugz1HjfdZw==
   dependencies:
-    loader-utils "^1.1.0"
-    schema-utils "^1.0.0"
+    loader-utils "^1.2.3"
+    schema-utils "^2.0.1"
 
 styled-components@^4.3.1, styled-components@^4.3.2:
   version "4.3.2"
@@ -14269,7 +14277,7 @@ typedoc-default-themes@^0.6.0:
     lunr "^2.3.6"
     underscore "^1.9.1"
 
-typedoc-plugin-markdown@^2.1.0:
+typedoc-plugin-markdown@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-2.1.1.tgz#b9bbb48c23b1994be3b9b09f2626887bac613aa0"
   integrity sha512-AQxnYLwdOzwCTo+VAVIxIXuVdMsK3Jamyd4m29630Llga+i59dqsYyduFFlzlJM8Xu8EiVCeURwr+vwMl87Gqg==
