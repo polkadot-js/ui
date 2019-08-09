@@ -4,7 +4,7 @@ A generic identity icon that can render icons based on an address.
 
 ## Usage Examples
 
-To install the component, do `yarn add @polkadot/vue-identicon` and then use it with `import Identicon from '@polkadot/vu-identicon';`
+To install the component, do `yarn add @polkadot/vue-identicon` and then use it with `import Identicon from '@polkadot/vue-identicon';`
 
 Inside a Vue component, you can now render any account with the associated icon, with associated props -
 
@@ -14,19 +14,24 @@ Inside a Vue component, you can now render any account with the associated icon,
   - `polkadot` or
   - `substrate` (equivalent to `jdenticon`) or
   - `beachball` or
-  - `empty` (displaying nothing)
+  - `empty` (displays nothing)
 
 ```
 <template>
   <Identicon
     :size="128"
-    :theme="polkadot"
-    :value="5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"
+    :theme="'polkadot'"
+    :value="'5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY'"
   />
 </template>
 
 <script>
   import Identicon from '@polkadot/vue-identicon';
-  ...
+
+  export default {
+    ...
+    components: { Identicon }
+    ...
+  };
 </script>
 ```
