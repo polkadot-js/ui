@@ -1,12 +1,9 @@
-[![polkadotjs](https://img.shields.io/badge/polkadot-js-orange?style=for-the-badge)](https://polkadot.js.org)
-![license](https://img.shields.io/badge/License-Apache%202.0-blue?logo=apache&style=for-the-badge)
-[![npm](https://img.shields.io/npm/v/@polkadot/react-identicon?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@polkadot/react-identicon)
-[![beta](https://img.shields.io/npm/v/@polkadot/react-identicon/beta?label=beta&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@polkadot/react-identicon)
-[![travisci](https://img.shields.io/travis/com/polkadot-js/ui?logo=travis&style=for-the-badge)](https://travis-ci.com/polkadot-js/ui)
-[![circleci](https://img.shields.io/circleci/build/github/polkadot-js/ui/master?logo=circleci&style=for-the-badge)](https://circleci.com/gh/polkadot-js/ui)
-[![maintainability](https://img.shields.io/codeclimate/maintainability/polkadot-js/ui?logo=code-climate&style=for-the-badge)](https://codeclimate.com/github/polkadot-js/ui)
-[![coverage](https://img.shields.io/codeclimate/coverage/polkadot-js/ui?logo=code-climate&style=for-the-badge)](https://codeclimate.com/github/polkadot-js/ui)
-[![greenkeeper](https://img.shields.io/badge/greenkeeper-enabled-brightgreen?logo=greenkeeper&style=for-the-badge)](https://greenkeeper.io/)
+[![polkadotjs](https://img.shields.io/badge/polkadot-js-orange?style=flat-square)](https://polkadot.js.org)
+![license](https://img.shields.io/badge/License-Apache%202.0-blue?logo=apache&style=flat-square)
+[![npm](https://img.shields.io/npm/v/@polkadot/react-identicon?logo=npm&style=flat-square)](https://www.npmjs.com/package/@polkadot/react-identicon)
+[![beta](https://img.shields.io/npm/v/@polkadot/react-identicon/beta?label=beta&logo=npm&style=flat-square)](https://www.npmjs.com/package/@polkadot/react-identicon)
+[![maintainability](https://img.shields.io/codeclimate/maintainability/polkadot-js/ui?logo=code-climate&style=flat-square)](https://codeclimate.com/github/polkadot-js/ui)
+[![coverage](https://img.shields.io/codeclimate/coverage/polkadot-js/ui?logo=code-climate&style=flat-square)](https://codeclimate.com/github/polkadot-js/ui)
 
 # @polkadot/ui
 
