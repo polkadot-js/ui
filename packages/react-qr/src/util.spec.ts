@@ -60,7 +60,7 @@ describe('util', (): void => {
     it('encodes a payload properly', (): void => {
       expect(
         u8aToHex(
-          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', new Uint8Array([3]), 'THIS IS SPARTA!')
+          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', 3, 'THIS IS SPARTA!')
         )
       ).toEqual(
         '0x' + // prefix
@@ -77,7 +77,7 @@ describe('util', (): void => {
     it('encodes frames properly', (): void => {
       expect(
         createFrames(
-          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', new Uint8Array([0]), '0x12345678')
+          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', 0, '0x12345678')
         ).map((u8a): string => u8aToHex(u8a))
       ).toEqual([
         '0x' +

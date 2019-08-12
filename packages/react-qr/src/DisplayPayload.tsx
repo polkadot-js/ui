@@ -12,7 +12,7 @@ import QrDisplay from './Display';
 
 interface Props extends BaseProps {
   address: string;
-  cmd: Uint8Array;
+  cmd: number;
   payload: Uint8Array;
 }
 

@@ -36,11 +36,11 @@ export function createAddressPayload (address: string): Uint8Array {
   );
 }
 
-export function createSignPayload (address: string, cmd: Uint8Array, payload: string | Uint8Array): Uint8Array {
+export function createSignPayload (address: string, cmd: number, payload: string | Uint8Array): Uint8Array {
   return u8aConcat(
     SUBSTRATE_ID,
     CRYPTO_SR25519,
-    cmd,
+    new Uint8Array([cmd]),
     decodeAddress(address),
     u8aToU8a(payload)
   );
