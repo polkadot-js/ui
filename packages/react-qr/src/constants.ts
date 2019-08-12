@@ -7,10 +7,10 @@ const ADDRESS_PREFIX = 'substrate:';
 const FRAME_SIZE = 2048;
 const SUBSTRATE_ID = new Uint8Array([0x53]);
 const CRYPTO_SR25519 = new Uint8Array([0x01]);
-const CMD_SIGN_TX = new Uint8Array([0x00]);
-const CMD_SIGN_TX_HASH = new Uint8Array([0x01]);
-const CMD_SIGN_IMMORTAL_TX = new Uint8Array([0x02]);
-const CMD_SIGN_MSG = new Uint8Array([0x03]);
+const CMD_SIGN_TX = new Uint8Array([0]);
+const CMD_SIGN_TX_HASH = new Uint8Array([1]);
+const CMD_SIGN_IMMORTAL_TX = new Uint8Array([2]);
+const CMD_SIGN_MSG = new Uint8Array([3]);
 
 export {
   ADDRESS_PREFIX,
