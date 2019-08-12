@@ -60,13 +60,13 @@ describe('util', (): void => {
     it('encodes a payload properly', (): void => {
       expect(
         u8aToHex(
-          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', 'THIS IS SPARTA!')
+          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', 3, 'THIS IS SPARTA!')
         )
       ).toEqual(
         '0x' + // prefix
         '53' + // substrate
         '01' + // sr25519
-        '00' + // sign tx
+        '03' + // sign tx
         'f4cd755672a8f9542ca9da4fbf2182e79135d94304002e6a09ffc96fef6e6c4c' + // publickey
         '544849532049532053504152544121' // THIS IS SPARTA!
       );
@@ -77,7 +77,7 @@ describe('util', (): void => {
     it('encodes frames properly', (): void => {
       expect(
         createFrames(
-          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', '0x12345678')
+          createSignPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq', 0, '0x12345678')
         ).map((u8a): string => u8aToHex(u8a))
       ).toEqual([
         '0x' +
