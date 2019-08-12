@@ -28,8 +28,7 @@ function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, 
 export default function genericSubject (keyCreator: (address: string) => string, withTest: boolean = false): AddressSubject {
   let current: SubjectInfo = {};
   const subject = new BehaviorSubject({});
-  const next = (): void =>
-    callNext(current, subject, withTest);
+  const next = (): void => callNext(current, subject, withTest);
 
   development.subject.subscribe(next);
 
@@ -38,16 +37,11 @@ export default function genericSubject (keyCreator: (address: string) => string,
       current = { ...current };
 
       current[address] = {
-        json: {
-          ...json,
-          address
-        },
+        json: { ...json, address },
         option: createOptionItem(address, json.meta.name, !json.meta.isRecent)
       };
 
-      const isDevMode = development.isDevelopment();
-
-      if (!json.meta.isInjected && (!json.meta.isTesting || isDevMode)) {
+      if (!json.meta.isInjected && (!json.meta.isTesting || development.isDevelopment())) {
         store.set(keyCreator(address), json);
       }
 
