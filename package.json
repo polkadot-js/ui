@@ -26,11 +26,11 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/runtime": "^7.5.5",
-    "@polkadot/dev-react": "^0.31.0-beta.1",
+    "@polkadot/dev-react": "^0.31.0-beta.3",
     "@polkadot/ts": "^0.1.64",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
-    "gh-pages": "2.0.1",
+    "gh-pages": "^2.1.1",
     "webpack-serve": "^3.1.1"
   }
 }
