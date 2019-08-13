@@ -2002,15 +2002,15 @@
     universal-user-agent "^3.0.0"
     url-template "^2.0.8"
 
-"@polkadot/dev-react@^0.31.0-beta.1":
-  version "0.31.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/dev-react/-/dev-react-0.31.0-beta.1.tgz#c028bd009210486de55669b084fa5570b10eff85"
-  integrity sha512-an2Ve5ldpEViGTdoWgdNOn+az8qFk9MHqz8fxCa+2BDMYJDUcjHP6tlSYZH43kCJt0t8Oujs7i6yYpiyfz+Ysw==
+"@polkadot/dev-react@^0.31.0-beta.2":
+  version "0.31.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@polkadot/dev-react/-/dev-react-0.31.0-beta.2.tgz#0f4ec9d4e65476996c017e511a53c3c32c63d876"
+  integrity sha512-pVMq5qEgyeGDCvwAe9zAC8wM7HXsd2ZHWzkIYk26mWh9aXoJ5ZTNd6OIf/VIxmdjgYJNuqionRllro8/rDbwEw==
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/preset-react" "^7.0.0"
-    "@polkadot/dev" "^0.31.0-beta.1"
+    "@polkadot/dev" "^0.31.0-beta.2"
     "@types/react" "^16.9.0"
     "@types/react-dom" "^16.8.5"
     "@types/styled-components" "4.1.8"
@@ -2040,10 +2040,10 @@
     webpack-plugin-serve "^0.12.0"
     worker-loader "^2.0.0"
 
-"@polkadot/dev@^0.31.0-beta.1":
-  version "0.31.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/dev/-/dev-0.31.0-beta.1.tgz#444cf9b5a2d93bc0c4e054c95bb30e49842b5f06"
-  integrity sha512-VevAWJHaoftMUNG2CfKwwLeKuvOpzQDomEyTdAGnjqXsigc3Bp/aBR/SkS9EQZU/wA7HcbVDZhEHK6yUm6ETAQ==
+"@polkadot/dev@^0.31.0-beta.2":
+  version "0.31.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@polkadot/dev/-/dev-0.31.0-beta.2.tgz#28d1e10cc40267db2dc7854916feeb0613c22609"
+  integrity sha512-jtexumNVyfcbIPCbuwYF77DE54it/CeKdg9HClyjig3Iw26Np0uHIrfDCxmINLwrckkuvka66hs64sj7u3QqXw==
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
@@ -2103,10 +2103,10 @@
   dependencies:
     "@types/chrome" "^0.0.86"
 
-"@polkadot/types@^0.90.0-beta.34":
-  version "0.90.0-beta.34"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.90.0-beta.34.tgz#e564bf587568b6e5dee9dbdf98c1e7932ab7011b"
-  integrity sha512-6Fa5AIwzTGpGsU6+RbIvlT4PpOM6G7c7HF/8xqr2iYVLSbAwyzh+gRLG8UTHV+MA2ygkqG/F4ucw0+G0X9wqcA==
+"@polkadot/types@^0.90.0-beta.46":
+  version "0.90.0-beta.46"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.90.0-beta.46.tgz#4bbc3f2d28aa2de508bd558659da5cfee572b81b"
+  integrity sha512-AofJjFcimcXuzpOqZ+rfTtcTvF9xVBJCy+sbPw+jl35tj0znUsBtHzIzoqo3ezWUgIR1snT7IcG4Dfrefd5RgA==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@polkadot/util" "^1.1.1"
