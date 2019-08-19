@@ -22,8 +22,9 @@ interface State {
 }
 
 const DEFAULT_SIZE = 64;
-const Components: { [index: string]: React.ComponentType<ComponentProps> } = {
+const Components: Record<string, React.ComponentType<ComponentProps>> = {
   beachball: Beachball,
+  empty: Empty,
   jdenticon: Jdenticon,
   polkadot: Polkadot,
   substrate: Jdenticon

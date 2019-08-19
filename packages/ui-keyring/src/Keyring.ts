@@ -29,30 +29,27 @@ export class Keyring extends Base implements KeyringStruct {
 
   public addExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
     const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
-    const json = this.saveAccount(pair);
 
     return {
-      json,
+      json: this.saveAccount(pair),
       pair
     };
   }
 
   public addPair (pair: KeyringPair, password: string): CreateResult {
     this.keyring.addPair(pair);
-    const json = this.saveAccount(pair, password);
 
     return {
-      json,
+      json: this.saveAccount(pair, password),
       pair
     };
   }
 
   public addUri (suri: string, password?: string, meta: KeyringPair$Meta = {}, type?: KeypairType): CreateResult {
     const pair = this.keyring.addFromUri(suri, meta, type);
-    const json = this.saveAccount(pair, password);
 
     return {
-      json,
+      json: this.saveAccount(pair, password),
       pair
     };
   }
@@ -111,7 +108,6 @@ export class Keyring extends Base implements KeyringStruct {
       ? _address
       : this.encodeAddress(_address);
     const publicKey = this.decodeAddress(address);
-
     const stores = type
       ? [this.stores[type]]
       : Object.values(this.stores);
@@ -143,11 +139,9 @@ export class Keyring extends Base implements KeyringStruct {
 
     return Object
       .entries(available)
-      .filter(([, data]): boolean => {
-        const { json: { meta: { contract } } } = data;
-
-        return !!contract && contract.genesisHash === this.genesisHash;
-      })
+      .filter(([, { json: { meta: { contract } } }]): boolean =>
+        !!contract && contract.genesisHash === this.genesisHash
+      )
       .map(([address]): KeyringAddress => this.getContract(address) as KeyringAddress);
   }
 
@@ -226,11 +220,7 @@ export class Keyring extends Base implements KeyringStruct {
         } else if (addressRegex.test(key)) {
           this.loadAddress(json, key);
         } else if (contractRegex.test(key)) {
-          if (
-            json.meta && json.meta.contract &&
-            this.genesisHash &&
-            this.genesisHash === json.meta.contract.genesisHash
-          ) {
+          if (json.meta && json.meta.contract && this.genesisHash && this.genesisHash === json.meta.contract.genesisHash) {
             this.loadContract(json, key);
           }
         }
@@ -316,15 +306,13 @@ export class Keyring extends Base implements KeyringStruct {
     const available = this.addresses.subject.getValue();
 
     if (!available[address]) {
-      const json = {
+      this.addresses.add(this._store, address, {
         address,
         meta: {
           isRecent: true,
           whenCreated: Date.now()
         }
-      };
-
-      this.addresses.add(this._store, address, (json as KeyringJson));
+      });
     }
 
     return this.addresses.subject.getValue()[address];
