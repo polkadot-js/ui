@@ -52,36 +52,19 @@ class KeyringOption implements KeyringOptionInstance {
     assert(!hasCalledInitOptions, 'Unable to initialise options more than once');
 
     observableAll.subscribe((): void => {
-      const options = this.emptyOptions();
+      const opts = this.emptyOptions();
 
-      this.addAccounts(keyring, options);
-      this.addAddresses(keyring, options);
-      this.addContracts(keyring, options);
+      this.addAccounts(keyring, opts);
+      this.addAddresses(keyring, opts);
+      this.addContracts(keyring, opts);
 
-      options.address = this.linkItems({
-        Addresses: options.address,
-        Recent: options.recent
-      });
-      options.account = this.linkItems({
-        Accounts: options.account,
-        Development: options.testing
-      });
-      options.contract = this.linkItems({
-        Contracts: options.contract
-      });
+      opts.address = this.linkItems({ Addresses: opts.address, Recent: opts.recent });
+      opts.account = this.linkItems({ Accounts: opts.account, Development: opts.testing });
+      opts.contract = this.linkItems({ Contracts: opts.contract });
+      opts.all = ([] as KeyringSectionOptions).concat(opts.account, opts.address);
+      opts.allPlus = ([] as KeyringSectionOptions).concat(opts.account, opts.address, opts.contract);
 
-      options.all = ([] as KeyringSectionOptions).concat(
-        options.account,
-        options.address
-      );
-
-      options.allPlus = ([] as KeyringSectionOptions).concat(
-        options.account,
-        options.address,
-        options.contract
-      );
-
-      this.optionsSubject.next(options);
+      this.optionsSubject.next(opts);
     });
 
     hasCalledInitOptions = true;
