@@ -22,6 +22,12 @@ const WSS_NODES = {
     nodes: {
       alex: 'wss://alex.unfrastructure.io/public/ws'
     }
+  },
+  w3f: {
+    hosted: 'hosted by Web3 Foundation',
+    nodes: {
+      kusama: 'wss://canary-5.kusama.network/'
+    }
   }
 };
 const LANGUAGE_DEFAULT = 'default';
@@ -36,6 +42,10 @@ const ENDPOINTS: Options = [
   {
     text: `Kusama (Polkadot Canary, ${WSS_NODES.parity.hosted})`,
     value: WSS_NODES.parity.nodes.kusama
+  },
+  {
+    text: `Kusama (Polkadot Canary, ${WSS_NODES.w3f.hosted})`,
+    value: WSS_NODES.w3f.nodes.kusama
   },
   {
     text: `Alexander (Polkadot Test, ${WSS_NODES.parity.hosted})`,
