@@ -31,7 +31,7 @@ export default class Demo extends React.PureComponent {
 const rootElement = document.getElementById('demo');
 
 if (!rootElement) {
-  throw new Error(`Unable to find element with id 'demo'`);
+  throw new Error('Unable to find element with id \'demo\'');
 }
 
 ReactDOM.render(<Demo />, rootElement);

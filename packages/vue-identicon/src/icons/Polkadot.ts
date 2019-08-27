@@ -14,10 +14,12 @@ interface Data {
  * @description The Polkadot default identicon
  */
 export const Polkadot = Vue.extend({
+  // eslint-disable-next-line quotes
   template: `<div v-html="svgHtml" />`,
   props: ['address', 'size'],
   data: function (): Data {
     return {
+      // eslint-disable-next-line quotes
       svgHtml: `<svg viewBox="0 0 64 64" />`
     };
   },

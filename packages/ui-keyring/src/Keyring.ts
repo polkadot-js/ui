@@ -282,7 +282,7 @@ export class Keyring extends Base implements KeyringStruct {
     const json = (available[address] && available[address].json) || {
       address,
       meta: {
-        isRecent: void 0,
+        isRecent: undefined,
         whenCreated: Date.now()
       }
     };

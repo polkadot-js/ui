@@ -14,10 +14,12 @@ interface Data {
  * @description The Beachball identicon
  */
 export const Beachball = Vue.extend({
+  // eslint-disable-next-line quotes
   template: `<div v-html="html" />`,
   props: ['address', 'size'],
   data: function (): Data {
     return {
+      // eslint-disable-next-line quotes
       html: `<div />`
     };
   },

@@ -56,7 +56,7 @@ export default class Base {
       return this._keyring;
     }
 
-    throw new Error(`Keyring should be initialised via 'loadAll' before use`);
+    throw new Error('Keyring should be initialised via \'loadAll\' before use');
   }
 
   public get genesisHash (): string | undefined {
