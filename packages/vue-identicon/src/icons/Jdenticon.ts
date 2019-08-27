@@ -14,10 +14,12 @@ interface Data {
  * @description The substrate default via Jdenticon
  */
 export const Jdenticon = Vue.extend({
+  // eslint-disable-next-line quotes
   template: `<div v-html="svgHtml" />`,
   props: ['publicKey', 'size'],
   data: function (): Data {
     return {
+      // eslint-disable-next-line quotes
       svgHtml: `<svg viewBox="0 0 64 64" />`
     };
   },
