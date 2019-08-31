@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-const ADDRESS_PREFIX = 'substrate:';
+const ADDRESS_PREFIX = 'substrate';
 const FRAME_SIZE = 2048;
 const SUBSTRATE_ID = new Uint8Array([0x53]);
 const CRYPTO_SR25519 = new Uint8Array([0x01]);
