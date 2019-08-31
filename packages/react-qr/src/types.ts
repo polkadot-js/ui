@@ -4,5 +4,6 @@
 
 export interface BaseProps {
   className?: string;
+  size?: string | number;
   style?: Record<string, string | number>;
 }

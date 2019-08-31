@@ -37,7 +37,7 @@ export default class DisplayExtrinsic extends React.PureComponent<Props, State> 
   }
 
   public render (): React.ReactNode {
-    const { className, style } = this.props;
+    const { className, size, style } = this.props;
     const { data } = this.state;
 
     if (!data) {
@@ -48,6 +48,7 @@ export default class DisplayExtrinsic extends React.PureComponent<Props, State> 
       <QrDisplay
         className={className}
         skipEncoding={true}
+        size={size}
         style={style}
         value={data}
       />

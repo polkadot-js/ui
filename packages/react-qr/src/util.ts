@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { u8aConcat, u8aToU8a } from '@polkadot/util';
+import { isString, u8aConcat, u8aToU8a } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
 import { ADDRESS_PREFIX, CRYPTO_SR25519, DEFAULT_IMG_SIZE, FRAME_SIZE, SUBSTRATE_ID } from './constants';
@@ -66,8 +66,10 @@ export function createFrames (input: Uint8Array): Uint8Array[] {
   );
 }
 
-export function createImgSize (size: number = DEFAULT_IMG_SIZE): Record<string, string> {
-  const height = `${size}px`;
+export function createImgSize (size: string | number = DEFAULT_IMG_SIZE): Record<string, string> {
+  const height = isString(size)
+    ? size
+    : `${size}px`;
 
   return {
     height,
