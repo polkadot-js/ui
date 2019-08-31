@@ -9,7 +9,7 @@ import { isUndefined } from '@polkadot/util';
 
 import KeyPair from './KeyPair';
 
-export default function createItem (address: string, _name?: string, isUppercase: boolean = true): KeyringSectionOption {
+export default function createItem (address: string, _name?: string, isUppercase = true): KeyringSectionOption {
   const name = isUndefined(_name)
     ? (
       (address.length > 15)

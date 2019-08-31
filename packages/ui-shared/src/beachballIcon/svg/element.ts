@@ -5,7 +5,7 @@
 
 import createSvg from './svg';
 
-export default function element (size: number, type: string = 'svg', x: number = 0, y: number = 0): Element {
+export default function element (size: number, type = 'svg', x = 0, y = 0): Element {
   const elem = createSvg(type);
 
   elem.setAttributeNS('', 'x', `${x}`);
