@@ -32,8 +32,8 @@ function getDataUrl (value: Uint8Array): string {
 
   // HACK See out qrcode stringToBytes override as used internally. This
   // will only work for the case where we actuall pass `Bytes` in here
-  // @ts-ignore
-  qr.addData(value, 'Byte');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  qr.addData(value as any, 'Byte');
   qr.make();
 
   return qr.createDataURL(16, 0);

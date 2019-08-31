@@ -25,7 +25,7 @@ function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, 
   subject.next(filtered);
 }
 
-export default function genericSubject (keyCreator: (address: string) => string, withTest: boolean = false): AddressSubject {
+export default function genericSubject (keyCreator: (address: string) => string, withTest = false): AddressSubject {
   let current: SubjectInfo = {};
   const subject = new BehaviorSubject({});
   const next = (): void => callNext(current, subject, withTest);

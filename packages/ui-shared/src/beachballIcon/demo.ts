@@ -24,7 +24,7 @@ function generateIcon (seed: string = encodeAddress(randomAsU8a(32))): void {
   console.log(`Icon generated in ${(Date.now() - start)}ms`);
 }
 
-function generateIcons (count: number = 512): void {
+function generateIcons (count = 512): void {
   generateIcon(encodeAddress(new Uint8Array(32)));
 
   for (let index = 1; index < count; index++) {

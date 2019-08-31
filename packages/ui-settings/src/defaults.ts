@@ -5,7 +5,7 @@
 import { Options } from './types';
 
 // matches https://polkadot.js.org & https://*.polkadot.io
-const isPolkadot = typeof window !== 'undefined' && window.location.host.indexOf('polkadot') !== -1;
+const isPolkadot = typeof window !== 'undefined' && window.location.host.includes('polkadot');
 
 const WSS_NODES = {
   parity: {
@@ -158,7 +158,7 @@ const UITHEME_DEFAULT = isPolkadot
   ? 'polkadot'
   : 'substrate';
 
-const UIMODE_DEFAULT = !isPolkadot && typeof window !== 'undefined' && window.location.host.indexOf('ui-light') !== -1
+const UIMODE_DEFAULT = !isPolkadot && typeof window !== 'undefined' && window.location.host.includes('ui-light')
   ? 'light'
   : 'full';
 

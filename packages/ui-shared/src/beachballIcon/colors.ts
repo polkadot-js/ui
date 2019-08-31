@@ -17,7 +17,7 @@ export default function colors (seeder: Seeder): ColorGen {
     Color(hex).rotate(amount)
   );
 
-  return (alpha: number = 1): string => {
+  return (alpha = 1): string => {
     const index = Math.floor(all.length * seeder());
 
     return all.splice(index, 1)[0]

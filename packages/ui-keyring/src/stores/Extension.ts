@@ -47,7 +47,7 @@ export default class ExtensionStore implements KeyringStore {
 
   public set (key: string, value: KeyringJson, cb?: () => void): void {
     // shortcut, don't save testing accounts in extension storage
-    if (key.indexOf('account:') === 0 && value.meta && value.meta.isTesting) {
+    if (key.startsWith('account:') && value.meta && value.meta.isTesting) {
       cb && cb();
 
       return;

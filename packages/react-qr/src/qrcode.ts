@@ -6,8 +6,8 @@ import qrcode from 'qrcode-generator';
 
 // HACK The default function take string -> number[], the Uint8array is compatible
 // with that signature and the use thereof
-// @ts-ignore
-qrcode.stringToBytes = (data: Uint8Array): Uint8Array =>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(qrcode as any).stringToBytes = (data: Uint8Array): Uint8Array =>
   data;
 
 export default qrcode;
