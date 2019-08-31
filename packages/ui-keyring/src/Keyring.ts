@@ -27,8 +27,8 @@ export class Keyring extends Base implements KeyringStruct {
     account: (): AddressSubject => this.accounts
   };
 
-  public addExternal (publicKey: Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
-    const pair = this.keyring.addFromAddress(publicKey, { ...meta, isExternal: true }, null);
+  public addExternal (address: string | Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
+    const pair = this.keyring.addFromAddress(address, { ...meta, isExternal: true }, null);
 
     return {
       json: this.saveAccount(pair),
