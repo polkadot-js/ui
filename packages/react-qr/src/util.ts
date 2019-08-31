@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { isString, u8aConcat, u8aToU8a } from '@polkadot/util';
+import { isString, u8aConcat, u8aToHex, u8aToU8a } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
 import { ADDRESS_PREFIX, CRYPTO_SR25519, FRAME_SIZE, SUBSTRATE_ID } from './constants';
@@ -30,10 +30,9 @@ export function decodeString (value: Uint8Array): string {
 }
 
 export function createAddressPayload (address: string): Uint8Array {
-  return u8aConcat(
-    encodeString(ADDRESS_PREFIX),
-    encodeString(address)
-  );
+  const publicKey = u8aToHex(decodeAddress(address));
+
+  return encodeString(`${ADDRESS_PREFIX}:${address}:${publicKey}`);
 }
 
 export function createSignPayload (address: string, cmd: number, payload: string | Uint8Array): Uint8Array {

@@ -50,9 +50,13 @@ describe('util', (): void => {
     it('encodes an address properly', (): void => {
       expect(
         u8aToString(
-          createAddressPayload('5GKhfyctwmW5LQdGaHTyU9qq2yDtggdJo719bj5ZUxnVGtmX')
+          createAddressPayload('5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq')
         )
-      ).toEqual('substrate:5GKhfyctwmW5LQdGaHTyU9qq2yDtggdJo719bj5ZUxnVGtmX');
+      ).toEqual(
+        'substrate:' +
+        '5HbgaJEuVN5qGbkhgtuDQANivSWwHXWsC2erP1SQUXgciTVq:' +
+        '0xf4cd755672a8f9542ca9da4fbf2182e79135d94304002e6a09ffc96fef6e6c4c'
+      );
     });
   });
 
