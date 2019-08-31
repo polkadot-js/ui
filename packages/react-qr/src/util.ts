@@ -5,7 +5,7 @@
 import { isString, u8aConcat, u8aToU8a } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
-import { ADDRESS_PREFIX, CRYPTO_SR25519, DEFAULT_IMG_SIZE, FRAME_SIZE, SUBSTRATE_ID } from './constants';
+import { ADDRESS_PREFIX, CRYPTO_SR25519, FRAME_SIZE, SUBSTRATE_ID } from './constants';
 
 const MULTIPART = new Uint8Array([0]);
 
@@ -66,7 +66,14 @@ export function createFrames (input: Uint8Array): Uint8Array[] {
   );
 }
 
-export function createImgSize (size: string | number = DEFAULT_IMG_SIZE): Record<string, string> {
+export function createImgSize (size?: string | number): Record<string, string> {
+  if (!size) {
+    return {
+      height: 'auto',
+      width: '100%'
+    };
+  }
+
   const height = isString(size)
     ? size
     : `${size}px`;
