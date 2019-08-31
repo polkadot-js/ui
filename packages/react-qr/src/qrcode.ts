@@ -2,7 +2,10 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import qrcode from 'qrcode-generator';
+import _qrcode from 'qrcode-generator';
+
+// A small hurdle to jump through, just to get the default/default correct (as generated)
+const qrcode: typeof _qrcode = _qrcode;
 
 // HACK The default function take string -> number[], the Uint8array is compatible
 // with that signature and the use thereof
