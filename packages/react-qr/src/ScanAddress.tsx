@@ -11,9 +11,14 @@ import { ADDRESS_PREFIX } from './constants';
 import QrScan from './Scan';
 import { decodeAddress } from '@polkadot/util-crypto';
 
+interface ScanType {
+  address: string;
+  genesisHash: string;
+}
+
 interface Props extends BaseProps {
   onError?: (error: Error) => void;
-  onScan?: (aqddress: string, genesisHash: string) => void;
+  onScan?: (scanned: ScanType) => void;
 }
 
 export default class ScanAddress extends React.PureComponent<Props> {
@@ -44,7 +49,7 @@ export default class ScanAddress extends React.PureComponent<Props> {
       assert(prefix === ADDRESS_PREFIX, `Invalid address received, expected '${ADDRESS_PREFIX}', found '${prefix}'`);
 
       decodeAddress(address);
-      onScan(address, genesisHash);
+      onScan({ address, genesisHash });
     } catch (error) {
       console.error('@polkadot/react-qr:QrScanAddress', error.message, data);
     }
