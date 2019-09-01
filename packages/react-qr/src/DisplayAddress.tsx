@@ -12,6 +12,7 @@ import QrDisplay from './Display';
 
 interface Props extends BaseProps {
   address: string;
+  genesisHash: string;
 }
 
 interface State {
@@ -25,8 +26,8 @@ export default class DisplayExtrinsic extends React.PureComponent<Props, State> 
     dataHash: null
   };
 
-  public static getDerivedStateFromProps ({ address }: Props, prevState: State): State | null {
-    const data = createAddressPayload(address);
+  public static getDerivedStateFromProps ({ address, genesisHash }: Props, prevState: State): State | null {
+    const data = createAddressPayload(address, genesisHash);
     const dataHash = xxhashAsHex(data);
 
     if (dataHash === prevState.dataHash) {
@@ -37,7 +38,7 @@ export default class DisplayExtrinsic extends React.PureComponent<Props, State> 
   }
 
   public render (): React.ReactNode {
-    const { className, style } = this.props;
+    const { className, size, style } = this.props;
     const { data } = this.state;
 
     if (!data) {
@@ -48,6 +49,7 @@ export default class DisplayExtrinsic extends React.PureComponent<Props, State> 
       <QrDisplay
         className={className}
         skipEncoding={true}
+        size={size}
         style={style}
         value={data}
       />

@@ -14,7 +14,6 @@ interface Props extends BaseProps {
   delay?: number;
   onError?: (error: Error) => void;
   onScan?: (data: string) => void;
-  size?: number;
 }
 
 const DEFAULT_DELAY = 150;

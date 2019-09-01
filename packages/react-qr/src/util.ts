@@ -2,10 +2,10 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { u8aConcat, u8aToU8a } from '@polkadot/util';
+import { isString, u8aConcat, u8aToU8a } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
-import { ADDRESS_PREFIX, CRYPTO_SR25519, DEFAULT_IMG_SIZE, FRAME_SIZE, SUBSTRATE_ID } from './constants';
+import { ADDRESS_PREFIX, CRYPTO_SR25519, FRAME_SIZE, SUBSTRATE_ID } from './constants';
 
 const MULTIPART = new Uint8Array([0]);
 
@@ -29,11 +29,8 @@ export function decodeString (value: Uint8Array): string {
   }, '');
 }
 
-export function createAddressPayload (address: string): Uint8Array {
-  return u8aConcat(
-    encodeString(ADDRESS_PREFIX),
-    encodeString(address)
-  );
+export function createAddressPayload (address: string, genesisHash: string): Uint8Array {
+  return encodeString(`${ADDRESS_PREFIX}:${address}:${genesisHash}`);
 }
 
 export function createSignPayload (address: string, cmd: number, payload: string | Uint8Array): Uint8Array {
@@ -66,8 +63,17 @@ export function createFrames (input: Uint8Array): Uint8Array[] {
   );
 }
 
-export function createImgSize (size: number = DEFAULT_IMG_SIZE): Record<string, string> {
-  const height = `${size}px`;
+export function createImgSize (size?: string | number): Record<string, string> {
+  if (!size) {
+    return {
+      height: 'auto',
+      width: '100%'
+    };
+  }
+
+  const height = isString(size)
+    ? size
+    : `${size}px`;
 
   return {
     height,

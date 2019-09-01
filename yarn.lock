@@ -2082,19 +2082,19 @@
     typescript "^3.6.2"
     vuepress "^1.0.3"
 
-"@polkadot/keyring@^1.2.0-beta.3":
-  version "1.2.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@polkadot/keyring/-/keyring-1.2.0-beta.3.tgz#94d7ab481b2d3932b1ae69f28579bbc9a6bc22a8"
-  integrity sha512-EZVCH/4snM+5rVc9QbD+opQ7rsuxwHf9KCE7+vHGHZKupXbbXv2KTv1X+JVK0Pnxk60vJ5e6idHpNVGZ1AjZag==
+"@polkadot/keyring@^1.2.0-beta.5":
+  version "1.2.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@polkadot/keyring/-/keyring-1.2.0-beta.5.tgz#bac4fe845efdf07e40760c6ff700d7e29c3f6cb8"
+  integrity sha512-Pmq0kibuRJVGCqqW+w1Xwgd5UOQHrhyfvRx8XaU79iAZVUBzeJFWF8k+IraRJ5795sZfgECNBcCcm+KYJoaHcw==
   dependencies:
     "@babel/runtime" "^7.5.5"
-    "@polkadot/util" "^1.2.0-beta.3"
-    "@polkadot/util-crypto" "^1.2.0-beta.3"
+    "@polkadot/util" "^1.2.0-beta.5"
+    "@polkadot/util-crypto" "^1.2.0-beta.5"
 
-"@polkadot/ts@^0.1.69":
-  version "0.1.69"
-  resolved "https://registry.yarnpkg.com/@polkadot/ts/-/ts-0.1.69.tgz#ffc5b4b4c7aedc0a7e61d13b9487ba3bae30cbd5"
-  integrity sha512-JrzntjqVfEOV/VEMNx8TeW4263bLyvou+ecxNUAW1plAQXEp7PdDtR1wVS1mlhM0/mXt1iYZXet2XchP0po7Fg==
+"@polkadot/ts@^0.1.70":
+  version "0.1.70"
+  resolved "https://registry.yarnpkg.com/@polkadot/ts/-/ts-0.1.70.tgz#0f6462871c557fc81bf0e0542d5ac4ccd18f134c"
+  integrity sha512-SREHjU1WHfQeHo8/ieeQuiahHXSvZMyySdP44+G+sySgTDHK5wfOK7zJKv1dFOZBHrWcqtjCptTNMg2B9E2ysQ==
   dependencies:
     "@types/chrome" "^0.0.88"
 
@@ -2131,14 +2131,14 @@
     tweetnacl "^1.0.1"
     xxhashjs "^0.2.2"
 
-"@polkadot/util-crypto@^1.2.0-beta.3":
-  version "1.2.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-1.2.0-beta.3.tgz#fb0df4d48e97e49f7dfd554fe99196bcf5885bff"
-  integrity sha512-qnlai3+s/q7JJLgcY6nxQUHL/YQx+8k8gRcilxqNlXI40Q/u1O9oYSYSFMBOKCHrXSJJkaBWVU25bMw7FO56XQ==
+"@polkadot/util-crypto@^1.2.0-beta.5":
+  version "1.2.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-1.2.0-beta.5.tgz#c9b5cad0000e4079929bf90fc2e73e15fb77f4c3"
+  integrity sha512-ffnExVlHedNhR9LfaWKWX0sXxU3BDcVrRqOIgNvPmy0VuwKSaDX/Zr06slz9JNmgMygsUBoLwTGeSrfW3AW5Gg==
   dependencies:
     "@babel/runtime" "^7.5.5"
-    "@polkadot/util" "^1.2.0-beta.3"
-    "@polkadot/wasm-crypto" "^0.14.0-beta.1"
+    "@polkadot/util" "^1.2.0-beta.5"
+    "@polkadot/wasm-crypto" "^0.14.0-beta.2"
     "@types/bip39" "^2.4.2"
     "@types/bs58" "^4.0.0"
     "@types/pbkdf2" "^3.0.0"
@@ -2166,10 +2166,10 @@
     ip-regex "^4.1.0"
     moment "^2.24.0"
 
-"@polkadot/util@^1.2.0-beta.3":
-  version "1.2.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-1.2.0-beta.3.tgz#4f88e22ef5ae31ecf937175572545c65bba66fa0"
-  integrity sha512-w/Sbs3Bi+rl+TcJKRNFkc9X0yFEPn2i7cH6Y43Pm05UKuMNlJKo3ilKJbGjuwYZJUDWyTqPap2pfSKraH1HDbQ==
+"@polkadot/util@^1.2.0-beta.5":
+  version "1.2.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-1.2.0-beta.5.tgz#546103410f46a805eceb4c220ed396e82ab3725d"
+  integrity sha512-KnBaQU6QHHuO3UyYUAWAdMkdd3976sVnyFUUk69ATRk8TCF84TI2Zwcjvq9VVyoCTGR8IPIpPOhmQYhUFiFzsQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@types/bn.js" "^4.11.5"
@@ -2184,10 +2184,10 @@
   resolved "https://registry.yarnpkg.com/@polkadot/wasm-crypto/-/wasm-crypto-0.13.1.tgz#602305b2ca86fc320a35ce820835e0e2dd9e646e"
   integrity sha512-24a63FynhyBHEGxqoDMZHAcaSxJqnjBPnEcmXXYCN2lI7b4iKaJKF2t+/FUmY7XTST+xNgFTJZ7A/o8jjgC/mA==
 
-"@polkadot/wasm-crypto@^0.14.0-beta.1":
-  version "0.14.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@polkadot/wasm-crypto/-/wasm-crypto-0.14.0-beta.2.tgz#a405cbf019e0213b6d6df7ad0062fc766af3f537"
-  integrity sha512-QGXgLfeaQDKBASZ70mrSApQ8ROOj2eRDdSUSNu+ApgoRODptkm7NrRtGBWw+5nH5qVOmGG3eZYFHFDZGUrlOag==
+"@polkadot/wasm-crypto@^0.14.0-beta.2":
+  version "0.14.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@polkadot/wasm-crypto/-/wasm-crypto-0.14.0-beta.3.tgz#740e576ed07e378b55e7333239da23a44d0a07f3"
+  integrity sha512-CbPx+ymPkE5TPDH/1cnIi7WhssIRrVY3Ira2qY9YDcc1+L3Gr3yvPvLnNnynaZ+LtYkt57jRSZtUbUgXoT98Dw==
 
 "@react-native-community/cli-platform-android@^2.6.0", "@react-native-community/cli-platform-android@^2.9.0":
   version "2.9.0"

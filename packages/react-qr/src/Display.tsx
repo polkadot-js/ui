@@ -12,7 +12,6 @@ import qrcode from './qrcode';
 import { createFrames, createImgSize } from './util';
 
 interface Props extends BaseProps {
-  size?: number;
   skipEncoding?: boolean;
   value: Uint8Array;
 }

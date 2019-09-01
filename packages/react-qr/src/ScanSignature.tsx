@@ -16,13 +16,14 @@ interface Props extends BaseProps {
 
 export default class ScanSignature extends React.PureComponent<Props> {
   public render (): React.ReactNode {
-    const { className, onError, style } = this.props;
+    const { className, onError, size, style } = this.props;
 
     return (
       <QrScan
         className={className}
         onError={onError}
         onScan={this.onScan}
+        size={size}
         style={style}
       />
     );

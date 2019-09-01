@@ -39,7 +39,7 @@ export default class DisplayPayload extends React.PureComponent<Props, State> {
   }
 
   public render (): React.ReactNode {
-    const { className, style } = this.props;
+    const { className, size, style } = this.props;
     const { data } = this.state;
 
     if (!data) {
@@ -49,6 +49,7 @@ export default class DisplayPayload extends React.PureComponent<Props, State> {
     return (
       <QrDisplay
         className={className}
+        size={size}
         style={style}
         value={data}
       />

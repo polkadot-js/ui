@@ -5,6 +5,7 @@
 import { BaseProps } from './types';
 
 import React from 'react';
+import { assert } from '@polkadot/util';
 
 import { ADDRESS_PREFIX } from './constants';
 import QrScan from './Scan';
@@ -12,18 +13,19 @@ import { decodeAddress } from '@polkadot/util-crypto';
 
 interface Props extends BaseProps {
   onError?: (error: Error) => void;
-  onScan?: (data: string) => void;
+  onScan?: (aqddress: string, genesisHash: string) => void;
 }
 
 export default class ScanAddress extends React.PureComponent<Props> {
   public render (): React.ReactNode {
-    const { className, onError, style } = this.props;
+    const { className, onError, size, style } = this.props;
 
     return (
       <QrScan
         className={className}
         onError={onError}
         onScan={this.onScan}
+        size={size}
         style={style}
       />
     );
@@ -32,17 +34,19 @@ export default class ScanAddress extends React.PureComponent<Props> {
   private onScan = (data: string | null): void => {
     const { onScan } = this.props;
 
-    if (!data || !onScan || !data.startsWith(ADDRESS_PREFIX)) {
+    if (!data || !onScan) {
       return;
     }
 
-    const address = data.substr(ADDRESS_PREFIX.length);
-
     try {
+      const [prefix, address, genesisHash] = data.split(':');
+
+      assert(prefix === ADDRESS_PREFIX, `Invalid address received, expected '${ADDRESS_PREFIX}', found '${prefix}'`);
+
       decodeAddress(address);
-      onScan(address);
+      onScan(address, genesisHash);
     } catch (error) {
-      console.error('@polkadot/react-qr:QrScanAddress', error.message);
+      console.error('@polkadot/react-qr:QrScanAddress', error.message, data);
     }
   }
 }
