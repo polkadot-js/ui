@@ -5,13 +5,18 @@
 import { BaseProps } from './types';
 
 import React from 'react';
+import { u8aToHex } from '@polkadot/util';
 
 import QrScan from './Scan';
 import { encodeString } from './util';
 
+interface ScanType {
+  signature: string;
+}
+
 interface Props extends BaseProps {
   onError?: (error: Error) => void;
-  onScan?: (data: Uint8Array) => void;
+  onScan?: (scanned: ScanType) => void;
 }
 
 export default class ScanSignature extends React.PureComponent<Props> {
@@ -36,6 +41,6 @@ export default class ScanSignature extends React.PureComponent<Props> {
       return;
     }
 
-    onScan(encodeString(data));
+    onScan({ signature: u8aToHex(encodeString(data)) });
   }
 }
