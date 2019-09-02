@@ -213,12 +213,12 @@ export class Keyring extends Base implements KeyringStruct {
     this.accounts.add(this._store, pair.address, json);
   }
 
-  private allowGenesis (meta?: KeyringJson$Meta): boolean {
-    if (meta && this.genesisHash) {
-      if (meta.genesisHash) {
-        return this.genesisHash === meta.genesisHash;
-      } else if (meta.contract) {
-        return this.genesisHash === meta.contract.genesisHash;
+  private allowGenesis (json?: KeyringJson | null): boolean {
+    if (json && json.meta && this.genesisHash) {
+      if (json.meta.genesisHash) {
+        return this.genesisHash === json.meta.genesisHash;
+      } else if (json.meta.contract) {
+        return this.genesisHash === json.meta.contract.genesisHash;
       }
     }
 
@@ -230,7 +230,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     this._store.all((key: string, json: KeyringJson): void => {
       if (options.filter ? options.filter(json) : true) {
-        if (this.allowGenesis(json.meta)) {
+        if (this.allowGenesis(json)) {
           if (accountRegex.test(key)) {
             this.loadAccount(json, key);
           } else if (addressRegex.test(key)) {
