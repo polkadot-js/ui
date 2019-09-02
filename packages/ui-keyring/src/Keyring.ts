@@ -193,6 +193,9 @@ export class Keyring extends Base implements KeyringStruct {
     );
     const [, hexAddr] = key.split(':');
 
+    // move genesisHash to top-level (TODO Remove from contracts section?)
+    json.meta.genesisHash = json.meta.genesisHash || (json.meta.contract && json.meta.contract.genesisHash);
+
     this.contracts.add(this._store, address, json);
     this.rewriteKey(json, key, hexAddr, contractKey);
   }
@@ -210,26 +213,40 @@ export class Keyring extends Base implements KeyringStruct {
     this.accounts.add(this._store, pair.address, json);
   }
 
+  private allowGenesis (json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
+    if (json && json.meta && this.genesisHash) {
+      if (json.meta.genesisHash) {
+        return this.genesisHash === json.meta.genesisHash;
+      } else if (json.meta.contract) {
+        return this.genesisHash === json.meta.contract.genesisHash;
+      }
+    }
+
+    return true;
+  }
+
   public loadAll (options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta }[] = []): void {
     super.initKeyring(options);
 
     this._store.all((key: string, json: KeyringJson): void => {
       if (options.filter ? options.filter(json) : true) {
-        if (accountRegex.test(key)) {
-          this.loadAccount(json, key);
-        } else if (addressRegex.test(key)) {
-          this.loadAddress(json, key);
-        } else if (contractRegex.test(key)) {
-          if (json.meta && json.meta.contract && this.genesisHash && this.genesisHash === json.meta.contract.genesisHash) {
+        if (this.allowGenesis(json)) {
+          if (accountRegex.test(key)) {
+            this.loadAccount(json, key);
+          } else if (addressRegex.test(key)) {
+            this.loadAddress(json, key);
+          } else if (contractRegex.test(key)) {
             this.loadContract(json, key);
           }
         }
       }
     });
 
-    injected.forEach(({ address, meta }): void =>
-      this.loadInjected(address, meta)
-    );
+    injected.forEach((account): void => {
+      if (this.allowGenesis(account)) {
+        this.loadInjected(account.address, account.meta);
+      }
+    });
 
     keyringOption.init(this);
   }
