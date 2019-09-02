@@ -4,7 +4,7 @@ function copy_folder () {
   SRC="packages/$1/build"
   DST="../extension/node_modules/@polkadot/$1"
 
-  echo "** Copying $SRC to apps/$DST"
+  echo "** Copying $SRC to $DST"
 
   rm -rf $DST
   cp -r $SRC $DST
