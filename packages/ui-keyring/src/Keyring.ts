@@ -193,6 +193,9 @@ export class Keyring extends Base implements KeyringStruct {
     );
     const [, hexAddr] = key.split(':');
 
+    // move genesisHash to top-level (TODO Remove from contracts section?)
+    json.meta.genesisHash = json.meta.genesisHash || (json.meta.contract && json.meta.contract.genesisHash);
+
     this.contracts.add(this._store, address, json);
     this.rewriteKey(json, key, hexAddr, contractKey);
   }
@@ -210,17 +213,29 @@ export class Keyring extends Base implements KeyringStruct {
     this.accounts.add(this._store, pair.address, json);
   }
 
+  private allowGenesis (meta?: KeyringJson$Meta): boolean {
+    if (meta) {
+      if (meta.genesisHash) {
+        return this.genesisHash === meta.genesisHash;
+      } else if (meta.contract) {
+        return this.genesisHash === meta.contract.genesisHash;
+      }
+    }
+
+    return true;
+  }
+
   public loadAll (options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta }[] = []): void {
     super.initKeyring(options);
 
     this._store.all((key: string, json: KeyringJson): void => {
       if (options.filter ? options.filter(json) : true) {
-        if (accountRegex.test(key)) {
-          this.loadAccount(json, key);
-        } else if (addressRegex.test(key)) {
-          this.loadAddress(json, key);
-        } else if (contractRegex.test(key)) {
-          if (json.meta && json.meta.contract && this.genesisHash && this.genesisHash === json.meta.contract.genesisHash) {
+        if (this.allowGenesis(json.meta)) {
+          if (accountRegex.test(key)) {
+            this.loadAccount(json, key);
+          } else if (addressRegex.test(key)) {
+            this.loadAddress(json, key);
+          } else if (contractRegex.test(key)) {
             this.loadContract(json, key);
           }
         }
