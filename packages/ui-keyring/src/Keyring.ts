@@ -214,7 +214,7 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   private allowGenesis (meta?: KeyringJson$Meta): boolean {
-    if (meta) {
+    if (meta && this.genesisHash) {
       if (meta.genesisHash) {
         return this.genesisHash === meta.genesisHash;
       } else if (meta.contract) {
