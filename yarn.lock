@@ -2098,18 +2098,18 @@
   dependencies:
     "@types/chrome" "^0.0.88"
 
-"@polkadot/types@^0.91.0-beta.11":
-  version "0.91.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.91.0-beta.11.tgz#da87a2b103e81d5ba471c76cb3c76ecd8a576473"
-  integrity sha512-ev2WocOI6i1De1zO4n7xKzZV8TXDwoEUafNBCvK+ak9FRZQEhtD/gvWZOwfwMl4sqK+q+i6m/U7LCGrAvkjsVg==
+"@polkadot/types@^0.91.0-beta.14":
+  version "0.91.0-beta.14"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.91.0-beta.14.tgz#d0d6f4ecb983988f0695fb4bc44ecbb3d888d510"
+  integrity sha512-57KdS7mMPuBUUdjMwbXkIrsVf48KWTw2CDv13Ry5+IrGUPnO+/oOC+DnegQ2Oy/+J2wI6+4emOetEh6UGVhwPQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
-    "@polkadot/util" "^1.2.0-beta.3"
-    "@polkadot/util-crypto" "^1.2.0-beta.3"
+    "@polkadot/util" "^1.2.0-beta.6"
+    "@polkadot/util-crypto" "^1.2.0-beta.6"
     "@types/memoizee" "^0.4.2"
     memoizee "^0.4.14"
 
-"@polkadot/util-crypto@^1.2.0-beta.3", "@polkadot/util-crypto@^1.2.0-beta.6":
+"@polkadot/util-crypto@^1.2.0-beta.6":
   version "1.2.0-beta.6"
   resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-1.2.0-beta.6.tgz#f8b5a27c902146e4897376961e1b19ebbe307959"
   integrity sha512-PizsGpmYf6Muu41EnJeHJ+nkxthWukHommVzfhvSS1l7cNxTwPFdDlYwnUzW4JAiL54zhNAb9cbTN+hb1Nuttw==
@@ -2131,7 +2131,7 @@
     tweetnacl "^1.0.1"
     xxhashjs "^0.2.2"
 
-"@polkadot/util@^1.2.0-beta.3", "@polkadot/util@^1.2.0-beta.6":
+"@polkadot/util@^1.2.0-beta.6":
   version "1.2.0-beta.6"
   resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-1.2.0-beta.6.tgz#dc5261f0ad8b8d9fc2ff419bf4527a5f95e65544"
   integrity sha512-sfHIDz9VvoL61o7tCTija4Yv7VsoEhgdpvzB4CRsPyGe8inaAhXxsgGYLlOWIrnDAxjov2X1IdDwmlMLd0lu8A==
