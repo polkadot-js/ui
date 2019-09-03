@@ -326,6 +326,7 @@ export class Keyring extends Base implements KeyringStruct {
       this.addresses.add(this._store, address, {
         address,
         meta: {
+          genesisHash: this.genesisHash,
           isRecent: true,
           whenCreated: Date.now()
         }
