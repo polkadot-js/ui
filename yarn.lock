@@ -2098,10 +2098,10 @@
   dependencies:
     "@types/chrome" "^0.0.88"
 
-"@polkadot/types@^0.91.0-beta.16":
-  version "0.91.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.91.0-beta.16.tgz#98ca2e2fa713a9b6021549144aeca9e91e3560d4"
-  integrity sha512-JK73wdMwECc6lNxaShxLEd5JDY75QyWS+fk2jjGsv76BEw8KC/k0MQjtMbOZrtSFDkAk1BSzD/YIoz4C8LUsQA==
+"@polkadot/types@^0.91.0-beta.19":
+  version "0.91.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.91.0-beta.19.tgz#1a28c787bfb60075d1c055ca7db355ff28500800"
+  integrity sha512-kXL9v0sTRbhHnHnjkzKenkMX8tw70r3vuNz0Ft6FVkdVH/32HG9X6UYcDAz11HvAyB/wMzR4Ff7RuKEnP/b6/g==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@polkadot/util" "^1.2.0-beta.6"

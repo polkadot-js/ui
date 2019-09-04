@@ -6,7 +6,7 @@ import store from 'store';
 import { isUndefined } from '@polkadot/util';
 
 import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
-import { Options, SettingsStruct } from './types';
+import { Option, SettingsStruct } from './types';
 
 export class Settings implements SettingsStruct {
   private _apiUrl: string;
@@ -56,31 +56,31 @@ export class Settings implements SettingsStruct {
     return this._uiTheme;
   }
 
-  public get availableNodes (): Options {
+  public get availableNodes (): Option[] {
     return ENDPOINTS;
   }
 
-  public get availableCryptos (): Options {
+  public get availableCryptos (): Option[] {
     return CRYPTOS;
   }
 
-  public get availableLanguages (): Options {
+  public get availableLanguages (): Option[] {
     return LANGUAGES;
   }
 
-  public get availableLocking (): Options {
+  public get availableLocking (): Option[] {
     return LOCKING;
   }
 
-  public get availablePrefixes (): Options {
+  public get availablePrefixes (): Option[] {
     return PREFIXES;
   }
 
-  public get availableUIModes (): Options {
+  public get availableUIModes (): Option[] {
     return UIMODES;
   }
 
-  public get availableUIThemes (): Options {
+  public get availableUIThemes (): Option[] {
     return UITHEMES;
   }
 
