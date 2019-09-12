@@ -1,3 +1,16 @@
+# 0.44.1
+
+- Update `@polkadot/util` to 1.4.1
+- Upddate to babel 7.6
+
+# 0.43.1
+
+- Add W3F Node for Kusama
+- Add extended info to ui-settings, i.e. info on each option
+- Adjust logos in ui-assets (incl. updated Substrate logo)
+- ui-keyring now check the genesisHash on  all load operations (if supplied)
+- react-qr is now operational and integrated in the polkadot-js/extension and apps repos
+
 # 0.42.1
 
 - **Breaking Change** The `@polkadot/ui-identicon` package has been renamed to `@polkadot/react-identicon`
