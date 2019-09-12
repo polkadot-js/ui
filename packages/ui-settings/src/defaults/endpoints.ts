@@ -35,7 +35,7 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
     type: 'Polkadot Test'
   },
   edgewareTest: {
-    chainDisplay: 'Edgeware Test 2',
+    chainDisplay: 'Edgeware Testnet',
     logo: 'edgeware',
     type: 'Edgeware Test'
   },
