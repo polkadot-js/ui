@@ -95,7 +95,7 @@ export const ENDPOINTS: Option[] = ORDER_CHAINS.reduce((endpoints: Option[], cha
     if (wssUrl) {
       endpoints.push({
         info: logo,
-        text: `${chainDisplay} (${type}, hosted by ${providerDisplay}}`,
+        text: `${chainDisplay} (${type}, hosted by ${providerDisplay})`,
         value: wssUrl
       });
     }
@@ -107,6 +107,6 @@ export const ENDPOINTS: Option[] = ORDER_CHAINS.reduce((endpoints: Option[], cha
 // add a local node right at the end
 ENDPOINTS.push({
   info: 'local',
-  text: 'Local Node (Any, 127.0.0.1:9944)',
+  text: 'Local Node (Own, 127.0.0.1:9944)',
   value: 'ws://127.0.0.1:9944/'
 });
