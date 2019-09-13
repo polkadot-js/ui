@@ -7,7 +7,7 @@ import { Option } from '../types';
 import { CRYPTOS } from './crypto';
 import { ENDPOINTS, ENDPOINT_DEFAULT } from './endpoints';
 import { PREFIXES, PREFIX_DEFAULT } from './ss58';
-import { ICON_DEFAULT, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
+import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
 
 const LANGUAGE_DEFAULT = 'default';
 
@@ -39,6 +39,7 @@ export {
   ENDPOINT_DEFAULT,
   ENDPOINTS,
   ICON_DEFAULT,
+  ICON_DEFAULT_HOST,
   ICONS,
   LANGUAGE_DEFAULT,
   LANGUAGES,
