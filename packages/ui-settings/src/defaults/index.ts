@@ -7,7 +7,7 @@ import { Option } from '../types';
 import { CRYPTOS } from './crypto';
 import { ENDPOINTS, ENDPOINT_DEFAULT } from './endpoints';
 import { PREFIXES, PREFIX_DEFAULT } from './ss58';
-import { isPolkadot } from './type';
+import { ICON_DEFAULT, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
 
 const LANGUAGE_DEFAULT = 'default';
 
@@ -34,44 +34,12 @@ const LOCKING: Option[] = [
   }
 ];
 
-const UIMODE_DEFAULT = !isPolkadot && typeof window !== 'undefined' && window.location.host.includes('ui-light')
-  ? 'light'
-  : 'full';
-
-const UIMODES: Option[] = [
-  {
-    info: 'full',
-    text: 'Fully featured',
-    value: 'full'
-  },
-  {
-    info: 'light',
-    text: 'Basic features only',
-    value: 'light'
-  }
-];
-
-const UITHEME_DEFAULT = isPolkadot
-  ? 'polkadot'
-  : 'substrate';
-
-const UITHEMES: Option[] = [
-  {
-    info: 'polkadot',
-    text: 'Polkadot',
-    value: 'polkadot'
-  },
-  {
-    info: 'substrate',
-    text: 'Substrate',
-    value: 'substrate'
-  }
-];
-
 export {
   CRYPTOS,
   ENDPOINT_DEFAULT,
   ENDPOINTS,
+  ICON_DEFAULT,
+  ICONS,
   LANGUAGE_DEFAULT,
   LANGUAGES,
   LOCKING_DEFAULT,
