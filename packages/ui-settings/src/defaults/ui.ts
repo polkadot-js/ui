@@ -42,7 +42,9 @@ const UITHEMES: Option[] = [
   }
 ];
 
-const ICON_DEFAULT = isPolkadot
+const ICON_DEFAULT = 'default';
+
+const ICON_DEFAULT_HOST = isPolkadot
   ? 'polkadot'
   : 'substrate';
 
@@ -50,7 +52,7 @@ const ICONS: Option[] = [
   {
     info: 'default',
     text: 'Default for the connected node',
-    value: -1
+    value: 'default'
   },
   {
     info: 'polkadot',
@@ -71,6 +73,7 @@ const ICONS: Option[] = [
 
 export {
   ICON_DEFAULT,
+  ICON_DEFAULT_HOST,
   ICONS,
   LANGUAGE_DEFAULT,
   UIMODE_DEFAULT,
