@@ -5,13 +5,15 @@
 import store from 'store';
 import { isUndefined } from '@polkadot/util';
 
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Option, SettingsStruct } from './types';
 
 export class Settings implements SettingsStruct {
   private _apiUrl: string;
 
   private _i18nLang: string;
+
+  private _icon: string;
 
   private _locking: string;
 
@@ -26,6 +28,7 @@ export class Settings implements SettingsStruct {
 
     this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
     this._i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
+    this._icon = settings.icon || ICON_DEFAULT;
     this._locking = settings.locking || LOCKING_DEFAULT;
     this._prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
     this._uiMode = settings.uiMode || UIMODE_DEFAULT;
@@ -38,6 +41,10 @@ export class Settings implements SettingsStruct {
 
   public get i18nLang (): string {
     return this._i18nLang;
+  }
+
+  public get icon (): string {
+    return this._icon;
   }
 
   public get locking (): string {
@@ -56,12 +63,12 @@ export class Settings implements SettingsStruct {
     return this._uiTheme;
   }
 
-  public get availableNodes (): Option[] {
-    return ENDPOINTS;
-  }
-
   public get availableCryptos (): Option[] {
     return CRYPTOS;
+  }
+
+  public get availableIcons (): Option[] {
+    return ICONS;
   }
 
   public get availableLanguages (): Option[] {
@@ -70,6 +77,10 @@ export class Settings implements SettingsStruct {
 
   public get availableLocking (): Option[] {
     return LOCKING;
+  }
+
+  public get availableNodes (): Option[] {
+    return ENDPOINTS;
   }
 
   public get availablePrefixes (): Option[] {
@@ -88,6 +99,7 @@ export class Settings implements SettingsStruct {
     return {
       apiUrl: this._apiUrl,
       i18nLang: this._i18nLang,
+      icon: this._icon,
       locking: this._locking,
       prefix: this._prefix,
       uiMode: this._uiMode,
@@ -98,6 +110,7 @@ export class Settings implements SettingsStruct {
   public set (settings: Partial<SettingsStruct>): void {
     this._apiUrl = settings.apiUrl || this._apiUrl;
     this._i18nLang = settings.i18nLang || this._i18nLang;
+    this._icon = settings.icon || this._icon;
     this._locking = settings.locking || this._locking;
     this._prefix = isUndefined(settings.prefix) ? this._prefix : settings.prefix;
     this._uiMode = settings.uiMode || this._uiMode;

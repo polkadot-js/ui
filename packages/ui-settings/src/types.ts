@@ -12,6 +12,7 @@ export type Option = {
 export interface SettingsStruct {
   apiUrl: string;
   i18nLang: string;
+  icon: string;
   locking: string;
   prefix: number;
   uiMode: string;

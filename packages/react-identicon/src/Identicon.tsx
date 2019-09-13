@@ -8,7 +8,7 @@ import { IdentityProps as Props, Props as ComponentProps } from './types';
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
-import settings from '@polkadot/ui-settings';
+import settings, { ICON_DEFAULT } from '@polkadot/ui-settings';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
@@ -29,6 +29,7 @@ const Components: Record<string, React.ComponentType<ComponentProps>> = {
   polkadot: Polkadot,
   substrate: Jdenticon
 };
+
 const Wrapper = styled.div`
   cursor: copy;
   display: inline-block;
@@ -109,10 +110,10 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
   }
 
   private getWrapped ({ address, publicKey }: State): React.ReactNode {
-    const { className, isHighlight = false, size = DEFAULT_SIZE, style, theme = settings.uiTheme } = this.props;
+    const { className, isHighlight = false, size = DEFAULT_SIZE, style, theme = settings.icon } = this.props;
     const Component = !address
       ? Empty
-      : Components[theme] || Fallback;
+      : Components[theme === 'default' ? ICON_DEFAULT : theme] || Fallback;
 
     return (
       <Wrapper
