@@ -54,7 +54,7 @@ const Wrapper = styled.div`
     }
 
     &.highlight:before {
-      box-shadow: 0 0 5px 2px red;
+      box-shadow: 0 0 5px 2px darkorange;
     }
   }
 `;
