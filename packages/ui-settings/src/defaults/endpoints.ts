@@ -6,7 +6,7 @@ import { Option } from '../types';
 
 import { isPolkadot } from './type';
 
-type ChainName = 'alexander' | 'edgewareTest' | 'flamingFir' | 'kusama';
+type ChainName = 'alexander' | 'edgeware' | 'edgewareTest' | 'flamingFir' | 'kusama';
 
 interface ChainData {
   chainDisplay: string;
@@ -22,7 +22,7 @@ interface PoviderData {
 }
 
 // we use this to give an ordering to the chains available
-const ORDER_CHAINS: ChainName[] = ['kusama', 'alexander', 'edgewareTest', 'flamingFir'];
+const ORDER_CHAINS: ChainName[] = ['kusama', 'edgeware', 'alexander', 'edgewareTest', 'flamingFir'];
 
 // we use this to order the providers inside the chains
 const ORDER_PROVIDERS: ProviderName[] = ['parity', 'w3f', 'unfrastructure', 'commonwealth'];
@@ -32,17 +32,22 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
   alexander: {
     chainDisplay: 'Alexander',
     logo: 'alexander',
-    type: 'Polkadot Test'
+    type: 'Polkadot Testnet'
+  },
+  edgeware: {
+    chainDisplay: 'Edgeware',
+    logo: 'edgeware',
+    type: 'Edgeware Mainnet'
   },
   edgewareTest: {
     chainDisplay: 'Edgeware Testnet',
     logo: 'edgeware',
-    type: 'Edgeware Test'
+    type: 'Edgeware Testnet'
   },
   flamingFir: {
     chainDisplay: 'Flaming Fir',
     logo: 'substrate',
-    type: 'Substrate Test'
+    type: 'Substrate Testnet'
   },
   kusama: {
     chainDisplay: 'Kusama CC1',
@@ -56,6 +61,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   commonwealth: {
     providerDisplay: 'Commonwealth Labs',
     nodes: {
+      edgeware: 'wss://mainnet1.edgewa.re',
       edgewareTest: 'wss://testnet2.edgewa.re'
     }
   },
