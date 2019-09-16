@@ -29,5 +29,5 @@ Additionally some shared libraries -
 
 In addition to the above packages, there are examples available for intergation  of `ui-keyring`, `ui-settings` & the relevant `*-identicon` package. These are
 
-- [example-react](packages/example-react) - start with `yarn example:react`  and view of `http://localhost:8080`
-- [example-vue](packages/example-vue) - start with `yarn example:vue`  and view of `http://localhost:8080`
+- [example-react](packages/example-react) - start with `yarn example:react` and view on `http://localhost:8080`
+- [example-vue](packages/example-vue) - start with `yarn example:vue` and view on `http://localhost:8080`
