@@ -1,3 +1,11 @@
+# 0.45.0-beta.x
+
+- **Breaking change** The subscription subject for `ui-keyring` does not return a pre-formatted React object anymore. This is SUI-specific, so had limited use and therefore should not even be split into a `react-keyring` component. Rather users of this functionality should construct their own options for their framework.
+- Add specific settings for the icon type to `ui-settings`
+- Add Edgeware live RPC endpoints to `ui-settings`
+- Adjust `react-identicon` highlights (validators)
+- Add `example-{react, vue}` highlighting simple use with `ui-keyring`, `ui-settings` & `*-identicon` components
+
 # 0.44.1
 
 - Update `@polkadot/util` to 1.4.1
