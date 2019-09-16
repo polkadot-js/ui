@@ -4,12 +4,9 @@
 
 import { KeyringSectionOption } from './types';
 
-import React from 'react';
 import { isUndefined } from '@polkadot/util';
 
-import KeyPair from './KeyPair';
-
-export default function createItem (address: string, _name?: string, isUppercase = true): KeyringSectionOption {
+export default function createItem (address: string, _name?: string): KeyringSectionOption {
   const name = isUndefined(_name)
     ? (
       (address.length > 15)
@@ -21,13 +18,6 @@ export default function createItem (address: string, _name?: string, isUppercase
   return {
     key: address,
     name,
-    text: (
-      <KeyPair
-        address={address}
-        isUppercase={isUppercase}
-        name={name}
-      />
-    ),
     value: address
   };
 }

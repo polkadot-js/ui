@@ -4,15 +4,11 @@
 
 import { KeyringItemType, KeyringStruct } from '../types';
 
-import React from 'react';
-
 export interface KeyringSectionOption {
   className?: string;
   disabled?: boolean;
-  content?: React.ReactNode;
   key: string | null;
   name: string;
-  text: React.ReactNode;
   value: string | null;
 }
 

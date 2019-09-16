@@ -24,3 +24,10 @@ Additionally some shared libraries -
 - [ui-keyring](packages/ui-keyring/) A browser-specific wrapper around the base [@polkadot/util-keyring](https://github.com/polkadot-js/util/) library
 - [ui-settings](packages/ui-settings/) A browser local storage wrapper for app settings & configuration
 - [ui-shared](packages/ui-shared) Shared logic that is used accross UI components, e.g. for icon generation
+
+## examples
+
+In addition to the above packages, there are examples available for intergation  of `ui-keyring`, `ui-settings` & the relevant `*-identicon` package. These are
+
+- [example-react](packages/example-react) - start with `yarn example:react`  and view of `http://localhost:8080`
+- [example-vue](packages/example-vue) - start with `yarn example:vue`  and view of `http://localhost:8080`

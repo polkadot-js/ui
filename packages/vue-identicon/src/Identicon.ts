@@ -2,11 +2,18 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import { Prefix } from '@polkadot/util-crypto/address/types';
+
 import Vue from 'vue';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
 import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
+
+interface Account {
+  address: string;
+  publicKey: string;
+}
 
 interface Data {
   address: string;
@@ -16,6 +23,19 @@ interface Data {
 }
 
 const DEFAULT_SIZE = 64;
+
+function encodeAccount (value: string | Uint8Array, prefix?: Prefix): Account {
+  try {
+    const address = isU8a(value) || isHex(value)
+      ? encodeAddress(value as string, prefix)
+      : value;
+    const publicKey = u8aToHex(decodeAddress(address, false, prefix));
+
+    return { address, publicKey };
+  } catch (error) {
+    return { address: '', publicKey: '0x' };
+  }
+}
 
 /**
  * @name Identicon
@@ -30,16 +50,16 @@ export const Identicon = Vue.extend({
   // here so we don't create a div wrapped for the div wrapper of the icon
   template: `
     <div v-if="type === 'empty' || address === ''">
-      <Empty :size="iconSize" />
+      <Empty :key="address" :size="iconSize" />
     </div>
     <div v-else-if="type === 'beachball'">
-      <Beachball :address="address" :size="iconSize" />
+      <Beachball :key="address" :address="address" :size="iconSize" />
     </div>
     <div v-else-if="type === 'polkadot'">
-      <Polkadot :address="address" :size="iconSize" />
+      <Polkadot :key="address"  :address="address" :size="iconSize" />
     </div>
     <div v-else>
-      <Jdenticon :publicKey="publicKey" :size="iconSize" />
+      <Jdenticon :key="address" :publicKey="publicKey" :size="iconSize" />
     </div>
   `,
   props: ['prefix', 'size', 'theme', 'value'],
@@ -63,16 +83,20 @@ export const Identicon = Vue.extend({
   methods: {
     createData: function (): void {
       this.iconSize = this.size || DEFAULT_SIZE;
+      this.type = this.theme;
 
-      try {
-        this.address = isU8a(this.value) || isHex(this.value)
-          ? encodeAddress(this.value as string, this.prefix)
-          : this.value;
-        this.publicKey = u8aToHex(decodeAddress(this.address, false, this.prefix));
-        this.type = this.theme;
-      } catch (error) {
-        this.address = '';
-      }
+      this.recodeAddress();
+    },
+    recodeAddress: function (): void {
+      const { address, publicKey } = encodeAccount(this.value);
+
+      this.address = address;
+      this.publicKey = publicKey;
+    }
+  },
+  watch: {
+    value: function (): void {
+      this.recodeAddress();
     }
   }
 });

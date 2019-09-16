@@ -40,10 +40,8 @@ class KeyringOption implements KeyringOptionInstance {
 
   public createOptionHeader (name: string): KeyringSectionOption {
     return {
-      className: 'header disabled',
       name,
       key: `header-${name.toLowerCase()}`,
-      text: name,
       value: null
     };
   }
