@@ -24,9 +24,7 @@ export interface LedgerSignature {
 export interface LedgerVersion {
   isLocked: boolean;
   isTestMode: boolean;
-  major: number;
-  minor: number;
-  patch: number;
+  version: [number, number, number];
 }
 
 export const LEDGER_DEFAULT_ACCOUNT = 0x80000000;
@@ -110,9 +108,7 @@ export default class Ledger {
       return {
         isLocked: device_locked,
         isTestMode: test_mode,
-        major,
-        minor,
-        patch
+        version: [major, minor, patch]
       };
     });
   }
