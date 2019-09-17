@@ -36,6 +36,10 @@ export class Keyring extends Base implements KeyringStruct {
     };
   }
 
+  public addHardware (address: string | Uint8Array, hardwareType: string, meta: KeyringPair$Meta = {}): CreateResult {
+    return this.addExternal(address, { ...meta, hardwareType, isHardware: true });
+  }
+
   public addPair (pair: KeyringPair, password: string): CreateResult {
     this.keyring.addPair(pair);
 

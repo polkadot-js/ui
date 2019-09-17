@@ -9,6 +9,12 @@
   ],
   "contributors": [],
   "license": "Apache-2.0",
+  "browser": {
+    "@ledgerhq/hw-transport-node-hid": "@ledgerhq/hw-transport-u2f"
+  },
+  "react-native": {
+    "@ledgerhq/hw-transport-node-hid": "@ledgerhq/hw-transport-u2f"
+  },
   "dependencies": {
     "@babel/runtime": "^7.6.0",
     "@ledgerhq/hw-transport-node-hid": "^4.70.0",
