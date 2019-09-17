@@ -8,7 +8,7 @@ import LedgerHid from '@ledgerhq/hw-transport-node-hid';
 import LedgerU2F from '@ledgerhq/hw-transport-u2f';
 import LedgerWebUSB from '@ledgerhq/hw-transport-webusb';
 import LedgerApp, { ResponseBase } from 'ledger-polkadot';
-import { assert, u8aToBuffer } from '@polkadot/util';
+import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
 
 export type LedgerTypes = 'hid' | 'u2f' | 'webusb';
 
@@ -123,7 +123,7 @@ export default class Ledger {
       const { signature } = await this.wrapError(app.sign(account, change, addressIndex, buffer));
 
       return {
-        signature: `0x${signature}`
+        signature: u8aToHex(bufferToU8a(signature))
       };
     });
   }

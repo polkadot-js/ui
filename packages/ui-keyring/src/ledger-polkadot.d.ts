@@ -20,7 +20,7 @@ declare module 'ledger-polkadot' {
   }
 
   export interface ResponseSign extends ResponseBase {
-    signature: string;
+    signature: Buffer;
   }
 
   declare class LedgerApp {
