@@ -2,14 +2,20 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import EventEmitter from 'eventemitter3';
 import store from 'store';
 import { isUndefined } from '@polkadot/util';
 
 import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LANGUAGES, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Option, SettingsStruct } from './types';
 
+type ChangeCallback = (settings: SettingsStruct) => void;
+type OnTypes = 'change';
+
 export class Settings implements SettingsStruct {
   private _apiUrl: string;
+
+  private _emitter: EventEmitter;
 
   private _i18nLang: string;
 
@@ -27,6 +33,8 @@ export class Settings implements SettingsStruct {
 
   public constructor () {
     const settings = store.get('settings') || {};
+
+    this._emitter = new EventEmitter();
 
     this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
     this._ledgerConn = settings.ledgerConn || LEDGER_CONN_DEFAULT;
@@ -129,7 +137,14 @@ export class Settings implements SettingsStruct {
     this._uiMode = settings.uiMode || this._uiMode;
     this._uiTheme = settings.uiTheme || this._uiTheme;
 
-    store.set('settings', this.get());
+    const newValues = this.get();
+
+    store.set('settings', newValues);
+    this._emitter.emit('change', newValues);
+  }
+
+  public on (type: OnTypes, cb: ChangeCallback): void {
+    this._emitter.on(type, cb);
   }
 }
 

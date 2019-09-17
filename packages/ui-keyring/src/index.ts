@@ -5,11 +5,13 @@
 import { assertSingletonPackage } from '@polkadot/util';
 
 import keyring, { Keyring } from './Keyring';
+import { openLedger } from './ledger';
 
 assertSingletonPackage('@polkadot/ui-keyring');
 
 export default keyring;
 
 export {
-  Keyring
+  Keyring,
+  openLedger
 };
