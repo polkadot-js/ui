@@ -1,11 +1,16 @@
+/* eslint-disable @typescript-eslint/camelcase */
 // Copyright 2017-2019 @polkadot/ui-keyring authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import Transport from '@ledgerhq/hw-transport';
+import LedgerHid from '@ledgerhq/hw-transport-node-hid';
 import LedgerU2F from '@ledgerhq/hw-transport-u2f';
 import LedgerWebUSB from '@ledgerhq/hw-transport-webusb';
 import LedgerApp, { ResponseBase } from 'ledger-polkadot';
+import { assert } from '@polkadot/util';
+
+export type LedgerTypes = 'hid' | 'u2f' | 'webusb';
 
 export interface LedgerAddress {
   address: string;
@@ -29,65 +34,93 @@ const DEFAULT_CHANGE = 0x80000000;
 const DEFAULT_INDEX = 0x80000005;
 const SUCCESS_CODE = 0x9000;
 
-export class Ledger {
-  private app: LedgerApp;
+// A very basic wrapper for a ledger app -
+//  - it connects automatically, creating an app as required
+//  - Promises return errors (instead of wrapper errors)
+export default class Ledger {
+  private app: LedgerApp | null = null;
+  private type: LedgerTypes;
 
-  constructor (transport: Transport) {
-    this.app = new LedgerApp(transport);
+  constructor (type: LedgerTypes) {
+    assert(['hid', 'u2f', 'webusb'].includes(type), `Unsupported transport ${type}`);
+
+    this.type = type;
   }
 
-  private throwError (result: ResponseBase): void {
-    if (result.return_code !== SUCCESS_CODE) {
-      throw new Error(result.error_message);
+  private async getApp (): Promise<LedgerApp> {
+    if (!this.app) {
+      let transport: Transport;
+
+      if (this.type === 'hid') {
+        transport = await LedgerHid.create();
+      } else if (this.type === 'u2f') {
+        transport = await LedgerU2F.create();
+      } else if (this.type === 'webusb') {
+        transport = await LedgerWebUSB.create();
+      } else {
+        throw new Error(`Unable to create app for ${this.type}`);
+      }
+
+      this.app = new LedgerApp(transport);
+    }
+
+    return this.app;
+  }
+
+  private async wrapResult <T> (fn: (app: LedgerApp) => Promise<T>): Promise<T> {
+    try {
+      const app = await this.getApp();
+
+      return await fn(app);
+    } catch (error) {
+      this.app = null;
+
+      throw error;
     }
   }
 
+  private async wrapError <T extends ResponseBase> (promise: Promise<T>): Promise<T> {
+    const result = await promise;
+
+    if (result.return_code !== SUCCESS_CODE) {
+      throw new Error(result.error_message);
+    }
+
+    return result;
+  }
+
   public async getAddress (confirm = false, account = DEFAULT_ACCOUNT, change = DEFAULT_CHANGE, addressIndex = DEFAULT_INDEX): Promise<LedgerAddress> {
-    const result = await this.app.getAddress(account, change, addressIndex, confirm);
+    return this.wrapResult(async (app: LedgerApp): Promise<LedgerAddress> => {
+      const { address, pubKey } = await this.wrapError(app.getAddress(account, change, addressIndex, confirm));
 
-    this.throwError(result);
-
-    return {
-      address: result.address,
-      publicKey: `0x${result.pubKey}`
-    };
+      return {
+        address,
+        publicKey: `0x${pubKey}`
+      };
+    });
   }
 
   public async getVersion (): Promise<LedgerVersion> {
-    const result = await this.app.getVersion();
+    return this.wrapResult(async (app: LedgerApp): Promise<LedgerVersion> => {
+      const { device_locked, major, minor, patch, test_mode } = await this.wrapError(app.getVersion());
 
-    this.throwError(result);
-
-    return {
-      isLocked: result.device_locked,
-      isTestMode: result.test_mode,
-      major: result.major,
-      minor: result.minor,
-      patch: result.patch
-    };
+      return {
+        isLocked: device_locked,
+        isTestMode: test_mode,
+        major,
+        minor,
+        patch
+      };
+    });
   }
 
   public async sign (message: Uint8Array, account = DEFAULT_ACCOUNT, change = DEFAULT_CHANGE, addressIndex = DEFAULT_INDEX): Promise<LedgerSignature> {
-    const result = await this.app.sign(account, change, addressIndex, message);
+    return this.wrapResult(async (app: LedgerApp): Promise<LedgerSignature> => {
+      const { signature } = await this.wrapError(app.sign(account, change, addressIndex, message));
 
-    this.throwError(result);
-
-    return {
-      signature: `0x${result.signature}`
-    };
+      return {
+        signature: `0x${signature}`
+      };
+    });
   }
-}
-
-export async function openLedger (type: 'u2f' | 'webusb'): Promise<Ledger> {
-  let transport: Transport;
-
-  if (type === 'u2f') {
-    transport = await LedgerU2F.create(7500);
-  } else if (type === 'webusb') {
-    transport = await LedgerWebUSB.create();
-  } else {
-    throw new Error(`Unsupported transport ${type}`);
-  }
-
-  return new Ledger(transport);
 }
