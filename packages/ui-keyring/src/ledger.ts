@@ -42,8 +42,8 @@ export class Ledger {
     }
   }
 
-  public async getAddress (account = DEFAULT_ACCOUNT, change = DEFAULT_CHANGE, addressIndex = DEFAULT_INDEX, requireConfirmation = false): Promise<LedgerAddress> {
-    const result = await this.app.getAddress(account, change, addressIndex, requireConfirmation);
+  public async getAddress (confirm = false, account = DEFAULT_ACCOUNT, change = DEFAULT_CHANGE, addressIndex = DEFAULT_INDEX): Promise<LedgerAddress> {
+    const result = await this.app.getAddress(account, change, addressIndex, confirm);
 
     this.throwError(result);
 
