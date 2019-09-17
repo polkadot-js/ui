@@ -5,7 +5,7 @@
 import store from 'store';
 import { isUndefined } from '@polkadot/util';
 
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LANGUAGES, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Option, SettingsStruct } from './types';
 
 export class Settings implements SettingsStruct {
@@ -14,6 +14,8 @@ export class Settings implements SettingsStruct {
   private _i18nLang: string;
 
   private _icon: string;
+
+  private _ledgerConn: string;
 
   private _locking: string;
 
@@ -27,6 +29,7 @@ export class Settings implements SettingsStruct {
     const settings = store.get('settings') || {};
 
     this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
+    this._ledgerConn = settings.ledgerConn || LEDGER_CONN_DEFAULT;
     this._i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
     this._icon = settings.icon || ICON_DEFAULT;
     this._locking = settings.locking || LOCKING_DEFAULT;
@@ -45,6 +48,10 @@ export class Settings implements SettingsStruct {
 
   public get icon (): string {
     return this._icon;
+  }
+
+  public get ledgerConn (): string {
+    return this._ledgerConn;
   }
 
   public get locking (): string {
@@ -75,6 +82,10 @@ export class Settings implements SettingsStruct {
     return LANGUAGES;
   }
 
+  public get availableLedgerConn (): Option[] {
+    return LEDGER_CONN;
+  }
+
   public get availableLocking (): Option[] {
     return LOCKING;
   }
@@ -100,6 +111,7 @@ export class Settings implements SettingsStruct {
       apiUrl: this._apiUrl,
       i18nLang: this._i18nLang,
       icon: this._icon,
+      ledgerConn: this._ledgerConn,
       locking: this._locking,
       prefix: this._prefix,
       uiMode: this._uiMode,
@@ -109,6 +121,7 @@ export class Settings implements SettingsStruct {
 
   public set (settings: Partial<SettingsStruct>): void {
     this._apiUrl = settings.apiUrl || this._apiUrl;
+    this._ledgerConn = settings.ledgerConn || this._ledgerConn;
     this._i18nLang = settings.i18nLang || this._i18nLang;
     this._icon = settings.icon || this._icon;
     this._locking = settings.locking || this._locking;

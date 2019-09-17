@@ -41,7 +41,8 @@ export default function genericSubject (keyCreator: (address: string) => string,
         option: createOptionItem(address, json.meta.name)
       };
 
-      if (!json.meta.isInjected && (!json.meta.isTesting || development.isDevelopment())) {
+      // we do not store dev accounts, injected or hardware (the latter two are external/transient)
+      if (!json.meta.isInjected && !json.meta.isHardware && (!json.meta.isTesting || development.isDevelopment())) {
         store.set(keyCreator(address), json);
       }
 

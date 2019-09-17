@@ -6,6 +6,7 @@ import { Option } from '../types';
 
 import { CRYPTOS } from './crypto';
 import { ENDPOINTS, ENDPOINT_DEFAULT } from './endpoints';
+import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger';
 import { PREFIXES, PREFIX_DEFAULT } from './ss58';
 import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
 
@@ -43,6 +44,8 @@ export {
   ICONS,
   LANGUAGE_DEFAULT,
   LANGUAGES,
+  LEDGER_CONN_DEFAULT,
+  LEDGER_CONN,
   LOCKING_DEFAULT,
   LOCKING,
   PREFIX_DEFAULT,

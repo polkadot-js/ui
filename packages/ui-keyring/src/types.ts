@@ -30,6 +30,8 @@ export interface KeyringOptions extends KeyringOptionsBase {
 export interface KeyringJson$Meta {
   contract?: ContractMeta;
   genesisHash?: string | null;
+  hardwareType?: 'ledger';
+  isHardware?: boolean;
   isInjected?: boolean;
   isRecent?: boolean;
   isTesting?: boolean;
