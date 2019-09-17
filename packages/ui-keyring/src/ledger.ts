@@ -8,7 +8,7 @@ import LedgerHid from '@ledgerhq/hw-transport-node-hid';
 import LedgerU2F from '@ledgerhq/hw-transport-u2f';
 import LedgerWebUSB from '@ledgerhq/hw-transport-webusb';
 import LedgerApp, { ResponseBase } from 'ledger-polkadot';
-import { assert } from '@polkadot/util';
+import { assert, u8aToBuffer } from '@polkadot/util';
 
 export type LedgerTypes = 'hid' | 'u2f' | 'webusb';
 
@@ -29,9 +29,12 @@ export interface LedgerVersion {
   patch: number;
 }
 
-const DEFAULT_ACCOUNT = 0x80000000;
-const DEFAULT_CHANGE = 0x80000000;
-const DEFAULT_INDEX = 0x80000005;
+export const LEDGER_DEFAULT_ACCOUNT = 0x80000000;
+
+export const LEDGER_DEFAULT_CHANGE = 0x80000000;
+
+export const LEDGER_DEFAULT_INDEX = 0x80000000;
+
 const SUCCESS_CODE = 0x9000;
 
 // A very basic wrapper for a ledger app -
@@ -89,7 +92,7 @@ export default class Ledger {
     return result;
   }
 
-  public async getAddress (confirm = false, account = DEFAULT_ACCOUNT, change = DEFAULT_CHANGE, addressIndex = DEFAULT_INDEX): Promise<LedgerAddress> {
+  public async getAddress (confirm = false, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerAddress> {
     return this.wrapResult(async (app: LedgerApp): Promise<LedgerAddress> => {
       const { address, pubKey } = await this.wrapError(app.getAddress(account, change, addressIndex, confirm));
 
@@ -114,9 +117,10 @@ export default class Ledger {
     });
   }
 
-  public async sign (message: Uint8Array, account = DEFAULT_ACCOUNT, change = DEFAULT_CHANGE, addressIndex = DEFAULT_INDEX): Promise<LedgerSignature> {
+  public async sign (message: Uint8Array, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerSignature> {
     return this.wrapResult(async (app: LedgerApp): Promise<LedgerSignature> => {
-      const { signature } = await this.wrapError(app.sign(account, change, addressIndex, message));
+      const buffer = u8aToBuffer(message);
+      const { signature } = await this.wrapError(app.sign(account, change, addressIndex, buffer));
 
       return {
         signature: `0x${signature}`
