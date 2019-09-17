@@ -2147,10 +2147,10 @@
   dependencies:
     "@types/chrome" "^0.0.88"
 
-"@polkadot/types@^0.93.0-beta.3":
-  version "0.93.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.93.0-beta.3.tgz#2a5843c35b3fb3369390e66236ff20968099b9fe"
-  integrity sha512-RlwhdtnQXq9yHgNwQJ2Rnl0RtklGucPFJE2in6gCNrvAE9V+KbJqXrwGtCqbt/CmGySTZclaL9yJ9Qzg1JgS1w==
+"@polkadot/types@^0.93.0-beta.4":
+  version "0.93.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.93.0-beta.4.tgz#a4512efa541e10fc7feae5c7d66e6656cc0b8e01"
+  integrity sha512-OdE7WxhNp/+IbMs4ALujMUA5MNK8R9buD7QWDXjWg2DxuavN0UziHkDRNgMasoYlqvn/xDevu8oy+RYyVm/Vkg==
   dependencies:
     "@babel/runtime" "^7.6.0"
     "@polkadot/util" "^1.4.1"
