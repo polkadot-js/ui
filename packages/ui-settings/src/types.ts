@@ -13,6 +13,7 @@ export interface SettingsStruct {
   apiUrl: string;
   i18nLang: string;
   icon: string;
+  ledgerConn: string;
   locking: string;
   prefix: number;
   uiMode: string;
