@@ -11,9 +11,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.6.0",
+    "@ledgerhq/hw-transport-u2f": "^4.70.0",
+    "@ledgerhq/hw-transport-webusb": "^4.70.0",
+    "@types/ledgerhq__hw-transport-u2f": "^4.21.1",
     "@types/mkdirp": "^0.5.2",
     "@types/store": "^2.0.2",
     "extensionizer": "^1.0.1",
+    "ledger-polkadot": "^0.0.3",
     "mkdirp": "^0.5.1",
     "store": "^2.0.12",
     "styled-components": "^4.3.1"
