@@ -70,7 +70,7 @@ export default class Ledger {
     return this.app;
   }
 
-  private async wrapResult <T> (fn: (app: LedgerApp) => Promise<T>): Promise<T> {
+  private async withApp <T> (fn: (app: LedgerApp) => Promise<T>): Promise<T> {
     try {
       const app = await this.getApp();
 
@@ -93,7 +93,7 @@ export default class Ledger {
   }
 
   public async getAddress (confirm = false, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerAddress> {
-    return this.wrapResult(async (app: LedgerApp): Promise<LedgerAddress> => {
+    return this.withApp(async (app: LedgerApp): Promise<LedgerAddress> => {
       const { address, pubKey } = await this.wrapError(app.getAddress(account, change, addressIndex, confirm));
 
       return {
@@ -104,7 +104,7 @@ export default class Ledger {
   }
 
   public async getVersion (): Promise<LedgerVersion> {
-    return this.wrapResult(async (app: LedgerApp): Promise<LedgerVersion> => {
+    return this.withApp(async (app: LedgerApp): Promise<LedgerVersion> => {
       const { device_locked, major, minor, patch, test_mode } = await this.wrapError(app.getVersion());
 
       return {
@@ -118,7 +118,7 @@ export default class Ledger {
   }
 
   public async sign (message: Uint8Array, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerSignature> {
-    return this.wrapResult(async (app: LedgerApp): Promise<LedgerSignature> => {
+    return this.withApp(async (app: LedgerApp): Promise<LedgerSignature> => {
       const buffer = u8aToBuffer(message);
       const { signature } = await this.wrapError(app.sign(account, change, addressIndex, buffer));
 
