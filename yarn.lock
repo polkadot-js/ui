@@ -2172,10 +2172,10 @@
   dependencies:
     "@types/chrome" "^0.0.88"
 
-"@polkadot/types@^0.93.0-beta.4":
-  version "0.93.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.93.0-beta.4.tgz#a4512efa541e10fc7feae5c7d66e6656cc0b8e01"
-  integrity sha512-OdE7WxhNp/+IbMs4ALujMUA5MNK8R9buD7QWDXjWg2DxuavN0UziHkDRNgMasoYlqvn/xDevu8oy+RYyVm/Vkg==
+"@polkadot/types@^0.93.0-beta.7":
+  version "0.93.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.93.0-beta.7.tgz#c45d3aa2eff3082d8a45a9c0ec9fbbaa103e9008"
+  integrity sha512-WwvAcfFC0j4lqBskl1TsJ3AkfvFggdtcKtS0qvmBxzvJZsTP7mdbHYECBTnT6TmNRi142a67rOHh4x+/UkWb6Q==
   dependencies:
     "@babel/runtime" "^7.6.0"
     "@polkadot/util" "^1.4.1"
@@ -9290,10 +9290,10 @@ lcov-parse@^0.0.10:
   resolved "https://registry.yarnpkg.com/lcov-parse/-/lcov-parse-0.0.10.tgz#1b0b8ff9ac9c7889250582b70b71315d9da6d9a3"
   integrity sha1-GwuP+ayceIklBYK3C3ExXZ2m2aM=
 
-ledger-polkadot@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/ledger-polkadot/-/ledger-polkadot-0.0.3.tgz#a7d611bad64607c48bc13f23db3dcc339410434d"
-  integrity sha512-TkT4oXnuSTIraUSa4ERBsK2JGSh6FFh7/d+RYneglud254NzIAhpX1ksPCXjvVRxY09RLGxLFJT018Fa/UqTLQ==
+ledger-polkadot@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ledger-polkadot/-/ledger-polkadot-0.0.4.tgz#3f9b56287fe25e51314df7c573a5b4dc8e620c7f"
+  integrity sha512-krXq/BC3K6VHKS4U1Ou+7HUEWCP4OkinK7z8NW5T2/NjQ62u1m9SeyHCXT03ycpU/WqhQWO7tuhvX3zhNH5eqA==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@ledgerhq/hw-transport" "^4.35.0"
