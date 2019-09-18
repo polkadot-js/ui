@@ -3,29 +3,12 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import Transport from '@ledgerhq/hw-transport';
-import LedgerHid from '@ledgerhq/hw-transport-node-hid';
-import LedgerU2F from '@ledgerhq/hw-transport-u2f';
-import LedgerWebUSB from '@ledgerhq/hw-transport-webusb';
+import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
+
 import LedgerApp, { ResponseBase } from 'ledger-polkadot';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
 
-export type LedgerTypes = 'hid' | 'u2f' | 'webusb';
-
-export interface LedgerAddress {
-  address: string;
-  publicKey: string;
-}
-
-export interface LedgerSignature {
-  signature: string;
-}
-
-export interface LedgerVersion {
-  isLocked: boolean;
-  isTestMode: boolean;
-  version: [number, number, number];
-}
+import createTransport from './transports';
 
 export const LEDGER_DEFAULT_ACCOUNT = 0x80000000;
 
@@ -50,19 +33,7 @@ export default class Ledger {
 
   private async getApp (): Promise<LedgerApp> {
     if (!this.app) {
-      let transport: Transport;
-
-      if (this.type === 'hid') {
-        transport = await LedgerHid.create();
-      } else if (this.type === 'u2f') {
-        transport = await LedgerU2F.create();
-      } else if (this.type === 'webusb') {
-        transport = await LedgerWebUSB.create();
-      } else {
-        throw new Error(`Unable to create app for ${this.type}`);
-      }
-
-      this.app = new LedgerApp(transport);
+      this.app = new LedgerApp(await createTransport(this.type));
     }
 
     return this.app;
