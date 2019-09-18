@@ -8,7 +8,7 @@ import LedgerHid from '@ledgerhq/hw-transport-node-hid';
 import LedgerU2F from '@ledgerhq/hw-transport-u2f';
 import LedgerWebUSB from '@ledgerhq/hw-transport-webusb';
 import LedgerApp, { ResponseBase } from 'ledger-polkadot';
-import { assert, u8aToBuffer } from '@polkadot/util';
+import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
 
 export type LedgerTypes = 'hid' | 'u2f' | 'webusb';
 
@@ -24,9 +24,7 @@ export interface LedgerSignature {
 export interface LedgerVersion {
   isLocked: boolean;
   isTestMode: boolean;
-  major: number;
-  minor: number;
-  patch: number;
+  version: [number, number, number];
 }
 
 export const LEDGER_DEFAULT_ACCOUNT = 0x80000000;
@@ -70,7 +68,7 @@ export default class Ledger {
     return this.app;
   }
 
-  private async wrapResult <T> (fn: (app: LedgerApp) => Promise<T>): Promise<T> {
+  private async withApp <T> (fn: (app: LedgerApp) => Promise<T>): Promise<T> {
     try {
       const app = await this.getApp();
 
@@ -93,7 +91,7 @@ export default class Ledger {
   }
 
   public async getAddress (confirm = false, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerAddress> {
-    return this.wrapResult(async (app: LedgerApp): Promise<LedgerAddress> => {
+    return this.withApp(async (app: LedgerApp): Promise<LedgerAddress> => {
       const { address, pubKey } = await this.wrapError(app.getAddress(account, change, addressIndex, confirm));
 
       return {
@@ -104,26 +102,24 @@ export default class Ledger {
   }
 
   public async getVersion (): Promise<LedgerVersion> {
-    return this.wrapResult(async (app: LedgerApp): Promise<LedgerVersion> => {
+    return this.withApp(async (app: LedgerApp): Promise<LedgerVersion> => {
       const { device_locked, major, minor, patch, test_mode } = await this.wrapError(app.getVersion());
 
       return {
         isLocked: device_locked,
         isTestMode: test_mode,
-        major,
-        minor,
-        patch
+        version: [major, minor, patch]
       };
     });
   }
 
   public async sign (message: Uint8Array, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerSignature> {
-    return this.wrapResult(async (app: LedgerApp): Promise<LedgerSignature> => {
+    return this.withApp(async (app: LedgerApp): Promise<LedgerSignature> => {
       const buffer = u8aToBuffer(message);
       const { signature } = await this.wrapError(app.sign(account, change, addressIndex, buffer));
 
       return {
-        signature: `0x${signature}`
+        signature: u8aToHex(bufferToU8a(signature))
       };
     });
   }
