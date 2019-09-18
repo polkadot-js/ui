@@ -3,29 +3,13 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import Transport from '@ledgerhq/hw-transport';
-import LedgerHid from '@ledgerhq/hw-transport-node-hid';
-import LedgerU2F from '@ledgerhq/hw-transport-u2f';
-import LedgerWebUSB from '@ledgerhq/hw-transport-webusb';
+import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion, TransportDef } from './types';
+
 import LedgerApp, { ResponseBase } from 'ledger-polkadot';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
 
-export type LedgerTypes = 'hid' | 'u2f' | 'webusb';
-
-export interface LedgerAddress {
-  address: string;
-  publicKey: string;
-}
-
-export interface LedgerSignature {
-  signature: string;
-}
-
-export interface LedgerVersion {
-  isLocked: boolean;
-  isTestMode: boolean;
-  version: [number, number, number];
-}
+import allNode from './transportsNode';
+import allWeb from './transportsWeb';
 
 export const LEDGER_DEFAULT_ACCOUNT = 0x80000000;
 
@@ -34,6 +18,8 @@ export const LEDGER_DEFAULT_CHANGE = 0x80000000;
 export const LEDGER_DEFAULT_INDEX = 0x80000000;
 
 const SUCCESS_CODE = 0x9000;
+
+const transports = allNode.concat(allWeb);
 
 // A very basic wrapper for a ledger app -
 //  - it connects automatically, creating an app as required
@@ -50,17 +36,12 @@ export default class Ledger {
 
   private async getApp (): Promise<LedgerApp> {
     if (!this.app) {
-      let transport: Transport;
+      const def = transports.find(({ type }): boolean => type === this.type);
 
-      if (this.type === 'hid') {
-        transport = await LedgerHid.create();
-      } else if (this.type === 'u2f') {
-        transport = await LedgerU2F.create();
-      } else if (this.type === 'webusb') {
-        transport = await LedgerWebUSB.create();
-      } else {
-        throw new Error(`Unable to create app for ${this.type}`);
-      }
+      assert(def, `Unable to find a transport for ${this.type}`);
+
+      // we have checked for undefined in the assert
+      const transport = await (def as TransportDef).create();
 
       this.app = new LedgerApp(transport);
     }
