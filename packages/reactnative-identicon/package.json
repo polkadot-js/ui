@@ -9,16 +9,16 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.6.0",
+    "@babel/runtime": "^7.6.2",
     "@polkadot/ui-shared": "^0.45.0-beta.13",
-    "react-native-svg": "^9.9.3"
+    "react-native-svg": "^9.9.4"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
   },
   "devDependencies": {
-    "@types/react-native": "^0.60.12",
-    "react-native": "^0.60.5"
+    "@types/react-native": "^0.60.15",
+    "react-native": "^0.61.1"
   }
 }

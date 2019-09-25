@@ -2,8 +2,6 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { Prefix } from '@polkadot/util-crypto/address/types';
-
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import Identicon from '@polkadot/react-identicon';
@@ -24,7 +22,7 @@ if (!rootElement) {
 function App ({ className }: Props): React.ReactElement<Props> | null {
   const [address, setAddress] = useState<string | null>(null);
   const [phrase, setPhrase] = useState<string | null>(null);
-  const [ss58Format, setSS58Format] = useState<Prefix>(42);
+  const [ss58Format, setSS58Format] = useState(42);
 
   const _onClickNew = (): void => {
     const phrase = mnemonicGenerate(12);
@@ -34,7 +32,7 @@ function App ({ className }: Props): React.ReactElement<Props> | null {
     setPhrase(phrase);
   };
   const _onChangeSS58Format = ({ currentTarget: { value } }: React.SyntheticEvent<HTMLSelectElement>): void => {
-    setSS58Format(parseInt(value, 10) as Prefix);
+    setSS58Format(parseInt(value, 10));
   };
 
   useEffect((): void => {

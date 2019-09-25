@@ -64,15 +64,11 @@ export default class Base {
   }
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean, ss58Format?: Prefix): Uint8Array => {
-    // FIXME Tryings are wrong... :()
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (this.keyring.decodeAddress as any)(key, ignoreChecksum, ss58Format);
+    return this.keyring.decodeAddress(key, ignoreChecksum, ss58Format);
   }
 
   public encodeAddress = (key: string | Uint8Array, ss58Format?: Prefix): string => {
-    // FIXME Tryings are wrong... :()
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (this.keyring.encodeAddress as any)(key, ss58Format);
+    return this.keyring.encodeAddress(key, ss58Format);
   }
 
   public getPair (address: string | Uint8Array): KeyringPair {
@@ -100,8 +96,8 @@ export default class Base {
     return password.length > 0 && password.length <= MAX_PASS_LEN;
   }
 
-  public setSS58Format (ss58Format: number): void {
-    this._ss58Format = ss58Format as Prefix;
+  public setSS58Format (ss58Format: Prefix): void {
+    this._ss58Format = ss58Format;
   }
 
   public setDevMode (isDevelopment: boolean): void {
