@@ -26,13 +26,13 @@
     "test:one": "jest"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/runtime": "^7.6.0",
-    "@polkadot/dev-react": "^0.31.0-beta.8",
-    "@polkadot/ts": "^0.1.72",
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@polkadot/dev-react": "^0.31.1",
+    "@polkadot/ts": "^0.1.73",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
     "gh-pages": "^2.1.1",
-    "webpack-serve": "^3.1.1"
+    "webpack-serve": "^3.2.0"
   }
 }

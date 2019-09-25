@@ -9,7 +9,7 @@
 # 0.44.1
 
 - Update `@polkadot/util` to 1.4.1
-- Upddate to babel 7.6
+- Upddate to Babel 7.6
 
 # 0.43.1
 
