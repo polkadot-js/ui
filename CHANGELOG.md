@@ -1,4 +1,4 @@
-# 0.45.0-beta.x
+# 0.45.1
 
 - Support for Kusama CC2
 - **Breaking change** The subscription subject for `ui-keyring` does not return a pre-formatted React object anymore. This is SUI-specific, so had limited use and therefore should not even be split into a `react-keyring` component. Rather users of this functionality should construct their own options for their framework.
