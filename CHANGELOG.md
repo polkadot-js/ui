@@ -1,6 +1,8 @@
 # 0.45.0-beta.x
 
+- Support for Kusama CC2
 - **Breaking change** The subscription subject for `ui-keyring` does not return a pre-formatted React object anymore. This is SUI-specific, so had limited use and therefore should not even be split into a `react-keyring` component. Rather users of this functionality should construct their own options for their framework.
+- Experimental support for signing via Ledger HW
 - Add specific settings for the icon type to `ui-settings`
 - Add Edgeware live RPC endpoints to `ui-settings`
 - Adjust `react-identicon` highlights (validators)
