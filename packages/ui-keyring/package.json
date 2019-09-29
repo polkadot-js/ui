@@ -31,15 +31,13 @@
   },
   "devDependencies": {
     "@polkadot/keyring": "^1.5.1",
-    "@polkadot/types": "^0.93.1",
+    "@polkadot/types": "^0.94.0-beta.1",
     "@polkadot/util": "^1.5.1"
   },
   "optionalDependencies": {
     "@ledgerhq/hw-transport-node-hid": "^4.70.0"
   },
   "peerDependencies": {
-    "@polkadot/keyring": "*",
-    "@polkadot/types": "*",
-    "@polkadot/util": "*"
+    "@polkadot/keyring": "*"
   }
 }

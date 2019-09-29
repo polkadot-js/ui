@@ -22,6 +22,21 @@ module.exports = {
     ],
     search: false,
     sidebar: [
+      {
+        title: 'Getting started',
+        path: '/start/',
+        collapsable: false,
+        sidebarDepth: 0,
+        children: [
+          ['start/packages.md', 'Available packages'],
+          ['start/keyring.md', 'Keyring'],
+          ['start/keyring.accounts.md', 'Keyring accounts'],
+          ['start/keyring.derivation.md', 'Account derivation'],
+          ['start/keyring.retrieve.md', 'Account retrieval'],
+          ['start/keyring.other.md', 'Other addresses'],
+          ['start/FAQ.md', 'FAQ']
+        ]
+      },
       ['/react-identicon/', '@polkadot/react-identicon'],
       ['/react-qr/', '@polkadot/react-qr'],
       ['/reactnative-identicon/', '@polkadot/reactnative-identicon'],
