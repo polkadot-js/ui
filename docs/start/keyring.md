@@ -1,6 +1,6 @@
 # Keyring
 
-The [@polkadot/ui-keyring](https://www.npmjs.com/package/@polkadot/ui-keyring) package provides a wrapper around the [@polkadot/keyring](https://www.npmjs.com/package/@polkadot/keyring) package, specifically for use in browser environments. The `ui-keyring` only extends the `keyring`, but does not replace it. All underlying account management functions are provided by the base keyring, the browser-specifc extensions allows for transparent management of account state in storage.
+The [@polkadot/ui-keyring](https://www.npmjs.com/package/@polkadot/ui-keyring) package provides a wrapper around the [@polkadot/keyring](https://www.npmjs.com/package/@polkadot/keyring) package, specifically for use in browser environments. The `ui-keyring` only extends the `keyring`, but does not replace it. All underlying account management functions are provided by the base keyring, the browser-specific extensions allows for transparent management of account state in storage.
 
 Additionally where the base keyring is focussed on accounts, the `ui-keyring` extends this to cater for an address-book, contracts and allows for accounts to be tied to a specific chain. Since UIs are typically split into different parts, it also allows for subscriptions on accounts, so notifications are available when accounts are added or removed.
 
@@ -8,13 +8,13 @@ Additionally where the base keyring is focussed on accounts, the `ui-keyring` ex
 
 If you already use the [@polkadot/api](https://www.npmjs.com/package/@polkadot/api) in your project (which is true in most cases), you don't need anything more than `yarn add @polkadot/ui-keyring`.
 
-If however you use the `ui-keyring` indepnedently (i.e. in an address generator, like the examples) you would need the `keyring` dependency as well, `yarn add @polkadot/keyring @polkadot/ui-keyring`. (In the first case the `@polkadot/api` already comes bundled with the base keyring, so no additional depndencies are needed).
+If however you use the `ui-keyring` independently (i.e. in an address generator, like the examples) you would need the `keyring` dependency as well, `yarn add @polkadot/keyring @polkadot/ui-keyring`. (In the first case the `@polkadot/api` already comes bundled with the base keyring, so no additional dependencies are needed).
 
 ## Initialization
 
 To understand the initialization process, some background on the underlying libraries are required. For the [Schnorrkel sr25519](https://github.com/w3f/schnorrkel) a WASM library is used. This means that before `sr25519` can be used, the WASM libraries needs to be loaded and initialized. This is not an issue when the keyring only used `ed25519`.
 
-While the WASM inilialization process kicks in as soon as the library is loaded, we take care of the  initialization as before we load, yielding -
+While the WASM initialization process kicks in as soon as the library is loaded, we take care of the  initialization as before we load, yielding -
 
 ```js
 import keyring from '@polkadot/ui-keyring';
@@ -75,7 +75,7 @@ The above pattern is how initialization is done in some applications such as the
 
 ## Additional create options
 
-In addition to the `ss58Format` and `type` options (both optional), the following additional configuartion options are available to the `loadAll(...)` call -
+In addition to the `ss58Format` and `type` options (both optional), the following additional configuration options are available to the `loadAll(...)` call -
 
 - `filter?: (json: KeyringJson) => boolean` - An optional filter that is executed on account loading. This allows us to check the loaded account and apply rules on it before including it in the keyring. Generally this would be used for advanced cases, any account that is filtered with `false` won't appear.
 

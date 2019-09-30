@@ -33,7 +33,7 @@ Similarly we have a `getPairs()` that mirrors `getAccounts()`, but retrieves the
 
 ## Subscriptions (Optional)
 
-In addition to the retrieving of accounts on demand, we can actually subscribe to accounts for the keyring. This scubscription returns a list of all accounts as they are updated, i.e. when a new account is added it will callback with a list of all the account, including the new one, when an account is removed, it will callback with a list of accounts, excluding the removed member.
+In addition to the retrieving of accounts on demand, we can actually subscribe to accounts for the keyring. This subscription returns a list of all accounts as they are updated, i.e. when a new account is added it will callback with a list of all the account, including the new one, when an account is removed, it will callback with a list of accounts, excluding the removed member.
 
 ```js
 ...
@@ -50,8 +50,8 @@ const sub = keyring.accounts.subject.subscribe((accounts) => {
 sub.unsubscribe();
 ```
 
-As with the `get{Accounts|ddresses|Contracts}()` functions, smiliarly we have in addition to `keyring.accounts.subject` the `keyring.addresses.subject` and `keyring.contracts.subject` subscriptions availble, with the same generic resultset.
+As with the `get{Accounts|Addresses|Contracts}()` functions, similarly we have in addition to `keyring.accounts.subject` the `keyring.addresses.subject` and `keyring.contracts.subject` subscriptions available, with the same generic result set.
 
 ## Other address types
 
-We have been referencing conacts and contracts and number of times up till now, up next we will take a look at [how to store other addresses, be if for an addressbook or contract](keyring.other.md).
+We have been referencing contacts and contracts and number of times up till now, up next we will take a look at [how to store other addresses, be if for an address book or contract](keyring.other.md).

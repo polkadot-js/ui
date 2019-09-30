@@ -4,7 +4,7 @@ These sections should provide you with all the information needed to install any
 
 ## What this is not
 
-This is not line-by-line documentation of all the existing function calls available, nor it is tied to a specific framework that you may end up using. We have users using frameworks such as Angular, Electron, React, React Native, Next.js and Vue and even support dirrect environments such as browser extensions, Electron apps in addition to the normal web applications you may be used to. There will be some things in the libraries that are probably not covered, which brings us to the next point...
+This is not line-by-line documentation of all the existing function calls available, nor it is tied to a specific framework that you may end up using. We have users using frameworks such as Angular, Electron, React, React Native, Next.js and Vue and even support direct environments such as browser extensions, Electron apps in addition to the normal web applications you may be used to. There will be some things in the libraries that are probably not covered, which brings us to the next point...
 
 ## Help us help others
 

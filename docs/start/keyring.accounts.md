@@ -27,7 +27,7 @@ Metadata is free form, with any indicators that you would find useful in your ap
 
 ## Non-mnemonic accounts
 
-Generally, we would encourage all wallets and users to only support mnemonic phrases - there are portable between crypto implementations, has built-in checksums and it a standard accross the blockchain environment.
+Generally, we would encourage all wallets and users to only support mnemonic phrases - there are portable between crypto implementations, has built-in checksums and it a standard across the blockchain environment.
 
 In some cases however, either due to the need to provide backwards compatibility or for closed environments, other seed types may be used. The `addUri` will detect the type of input, i.e. if a hex-encoded value is provided, it will treat it as a raw seed. With this in mind, we can rewrite our example above to generate a random raw seed -
 
