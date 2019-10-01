@@ -20,7 +20,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/src')
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
     },
     extensions: ['.js', '.ts']
   },

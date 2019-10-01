@@ -8,6 +8,8 @@ import { encodeAddress, randomAsU8a } from '@polkadot/util-crypto';
 
 import IdentityIcon from '.';
 
+const THEMES = ['beachball', 'polkadot', 'substrate'];
+
 export default class Demo extends React.PureComponent {
   public render (): React.ReactNode {
     const identities: string[] = [];
@@ -18,10 +20,10 @@ export default class Demo extends React.PureComponent {
       );
     }
 
-    return identities.map((value): React.ReactNode => (
+    return identities.map((value, index): React.ReactNode => (
       <IdentityIcon
         key={value.toString()}
-        theme='jdenticon'
+        theme={THEMES[index % THEMES.length] as 'empty'}
         value={value}
       />
     ));
