@@ -19,10 +19,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@polkadot/react-identicon': path.resolve(__dirname, '../react-identicon/src'),
-      '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/src'),
-      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/src'),
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/src')
+      '@polkadot/react-identicon': path.resolve(__dirname, '../react-identicon/build'),
+      '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
+      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
     },
     extensions: ['.js', '.ts', '.tsx']
   },

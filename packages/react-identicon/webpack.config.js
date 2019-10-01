@@ -19,7 +19,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/src')
+      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build')
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },

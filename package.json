@@ -13,14 +13,16 @@
     "typescript": "^3.6.3"
   },
   "scripts": {
-    "build": "polkadot-dev-build-ts && polkadot-dev-build-docs",
+    "build": "yarn build:ts && yarn build:docs",
+    "build:docs": "polkadot-dev-build-docs",
+    "build:ts": "polkadot-dev-build-ts",
     "check": "yarn lint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
-    "demo:identicon:react": "webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
-    "demo:identicon:vue": "webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
-    "example:react": "cd packages/example-react && webpack --config webpack.config.js",
-    "example:vue": "cd packages/example-vue && webpack --config webpack.config.js",
+    "demo:identicon:react": "yarn build:ts && webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
+    "demo:identicon:vue": "yarn build:ts && webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
+    "example:react": "yarn build:ts && cd packages/example-react && webpack --config webpack.config.js",
+    "example:vue": "yarn build:ts && cd packages/example-vue && webpack --config webpack.config.js",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "jest --coverage --runInBand",
     "test:one": "jest"

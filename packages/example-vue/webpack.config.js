@@ -21,10 +21,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/src'),
-      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/src'),
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/src'),
-      '@polkadot/vue-identicon': path.resolve(__dirname, '../vue-identicon/src')
+      '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
+      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
+      '@polkadot/vue-identicon': path.resolve(__dirname, '../vue-identicon/build')
     },
     extensions: ['.js', '.ts', '.tsx']
   },
