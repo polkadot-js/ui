@@ -13,9 +13,9 @@
     "typescript": "^3.6.3"
   },
   "scripts": {
-    "build": "yarn build:ts && yarn build:docs",
-    "build:docs": "polkadot-dev-build-docs",
-    "build:ts": "polkadot-dev-build-ts",
+    "build": "yarn build:split:code && yarn build:split:docs",
+    "build:split:code": "polkadot-dev-build-ts",
+    "build:split:docs": "polkadot-dev-build-docs",
     "check": "yarn lint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
