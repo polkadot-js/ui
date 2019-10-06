@@ -36,6 +36,7 @@
     "stream-http": "^3.1.0"
   },
   "devDependencies": {
+    "@react-native-community/cli-platform-ios": "^2.9.0",
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^0.0.5",
