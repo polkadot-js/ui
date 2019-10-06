@@ -9,7 +9,7 @@ Make sure Xcode (iOS) and Android Studio (Android) are installed. Also make sure
 1. `cd ios && pod install`
 1. `yarn start`
 1. Build the apps and start the simulators (in a new terminal)
-  - iOS: `yarn ios --simulator="iPhone 11"` where `iPhone 11` is replaced with the name of the installed simulator
+  - iOS: `yarn ios --simulator="iPhone 11"` where `iPhone 11` is replaced with the name of the installed simulator (run `xcrun simctl list devices` to see installed simulators)
   - Android: `yarn android`
 
 The first time metro bundles the package, it will hang at 98% and take about 10 minutes to finish.
