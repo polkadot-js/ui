@@ -21,6 +21,8 @@
     "clean": "polkadot-dev-clean-build",
     "demo:identicon:react": "yarn build:ts && webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
     "demo:identicon:vue": "yarn build:ts && webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
+    "example:rn:ios": "yarn build:split:code && cd packages/exampleReactNative && yarn copy-workspace-packages && cd ios && pod install && cd .. && yarn ios && yarn start",
+    "example:rn:android": "yarn build:split:code && cd packages/exampleReactNative && yarn copy-workspace-packages && yarn android && yarn start",
     "example:react": "yarn build:ts && cd packages/example-react && webpack --config webpack.config.js",
     "example:vue": "yarn build:ts && cd packages/example-vue && webpack --config webpack.config.js",
     "postinstall": "polkadot-dev-yarn-only",
