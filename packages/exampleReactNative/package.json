@@ -8,8 +8,7 @@
       "react-native/**",
       "react-native-randombytes",
       "react-native-randombytes/**",
-      "@react-native-community/async-storage",
-      "@react-native-community/async-storage/**",
+      "@react-native-community/**",
       "react-native-svg",
       "react-native-svg/**"
     ]
