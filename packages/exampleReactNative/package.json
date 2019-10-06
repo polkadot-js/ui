@@ -18,8 +18,8 @@
     "copy-workspace-packages": "yarn copy-identicon && yarn copy-ui-shared",
     "copy-identicon": "mkdir -p node_modules/@polkadot/reactnative-identicon && cp -r ../reactnative-identicon/build/* ./node_modules/@polkadot/reactnative-identicon",
     "copy-ui-shared": "mkdir -p node_modules/@polkadot/ui-shared && cp -r ../ui-shared/build/* ./node_modules/@polkadot/ui-shared",
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "react-native run-android --no-packager",
+    "ios": "react-native run-ios --no-packager",
     "start": "NODE_OPTIONS=--max_old_space_size=8192 react-native start",
     "test": "jest"
   },
