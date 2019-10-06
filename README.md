@@ -1,33 +1,34 @@
-[![polkadotjs](https://img.shields.io/badge/polkadot-js-orange?style=flat-square)](https://polkadot.js.org)
-![license](https://img.shields.io/badge/License-Apache%202.0-blue?logo=apache&style=flat-square)
-[![npm](https://img.shields.io/npm/v/@polkadot/react-identicon?logo=npm&style=flat-square)](https://www.npmjs.com/package/@polkadot/react-identicon)
-[![beta](https://img.shields.io/npm/v/@polkadot/react-identicon/beta?label=beta&logo=npm&style=flat-square)](https://www.npmjs.com/package/@polkadot/react-identicon)
-[![maintainability](https://img.shields.io/codeclimate/maintainability-percentage/polkadot-js/ui?logo=code-climate&style=flat-square)](https://codeclimate.com/github/polkadot-js/ui)
-[![coverage](https://img.shields.io/codeclimate/coverage/polkadot-js/ui?logo=code-climate&style=flat-square)](https://codeclimate.com/github/polkadot-js/ui)
+# Running
 
-# @polkadot/ui
+Make sure Xcode (iOS) and Android Studio (Android) are installed. Also make sure [CocoaPods](https://cocoapods.org/) and a JDK are installed.
 
-Basic browser and UI components for creating apps using the polkadot{.js} libraries
+1. `cd exampleReactNative/../../` i.e. the project root
+1. `yarn install` and `yarn build`
+1. `cd packages/exampleReactNative`
+1. `yarn copy-workspace-packages`
+1. `cd ios && pod install`
+1. `yarn start`
+1. Build the apps and start the simulators (in a new terminal)
+  - iOS: `yarn ios --simulator="iPhone 11"` where `iPhone 11` is replaced with the name of the installed simulator (run `xcrun simctl list devices` to see installed simulators)
+  - Android: `yarn android`
 
-## overview
+The first time metro bundles the package, it will hang at 98% and take about 10 minutes to finish.
 
-The following UI components are currently available -
+# Packages
 
-- [react-identicon](packages/react-identicon/) React identity icon generator with address as input
-- [reactnative-identicon](packages/reactnative-identicon/) React Native identity icon generator with address as input
-- [vue-identicon](packages/vue-identicon/) Vue identity icon generator with address as input
-- [react-qr](packages/react-qr/) QR code generator/reader for [uos](https://github.com/maciejhirsz/uos) (Substrate/Polkadot only)
+Native packages need to be added to `nohoist` in the `package.json`. There is no need to link them, but `cd ios && pod install` must be run after yarn adds the package.
 
-Additionally some shared libraries -
+Non-native packages can be yarn added as usual.
 
-- [ui-assets](packages/ui-assets/) Static assets, images and others, shared accross projects
-- [ui-keyring](packages/ui-keyring/) A browser-specific wrapper around the base [@polkadot/util-keyring](https://github.com/polkadot-js/util/) library
-- [ui-settings](packages/ui-settings/) A browser local storage wrapper for app settings & configuration
-- [ui-shared](packages/ui-shared) Shared logic that is used accross UI components, e.g. for icon generation
+Replacements for node builtin packages can be added in the `extraNodeModules` section of `metro.config.js`. Some node packages will expect global variables to be set, these are set in `nodeGlobalsShim.js`
 
-## examples
+# Yarn Workspaces
 
-In addition to the above packages, there are examples available for intergation  of `ui-keyring`, `ui-settings` & the relevant `*-identicon` package. These are
+Metro will watch the build dirs of the packages in `packages/*` for changes, as well as use the `node_modules` of the root folder. However, packages that depend on the `nohoist`ed `react-native` , such as `reactnative-identicon`, must be copied to the local `node_modules` folder. See `metro.config.js` and `package.json`'s scripts for details.
 
-- [example-react](packages/example-react) - start with `yarn example:react` and view on `http://localhost:8080`
-- [example-vue](packages/example-vue) - start with `yarn example:vue` and view on `http://localhost:8080`
+# Screenshots
+
+iOs                         |  Android
+:-------------------------:|:-------------------------:
+![](https://i.imgur.com/ttYwAMg.png)  |  ![](https://i.imgur.com/axt1X9n.jpg)
+
