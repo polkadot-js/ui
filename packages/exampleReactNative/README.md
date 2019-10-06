@@ -20,6 +20,8 @@ Native packages need to be added to `nohoist` in the `package.json`. There is no
 
 Non-native packages can be yarn added as usual.
 
+Replacements for node builtin packages can be added in the `extraNodeModules` section of `metro.config.js`. Some node packages will expect global variables to be set, these are set in `nodeGlobalsShim.js`
+
 # Yarn Workspaces
 
 Metro will watch the build dirs of the packages in `packages/*` for changes, as well as use the `node_modules` of the root folder. However, packages that depend on the `nohoist`ed `react-native` , such as `reactnative-identicon`, must be copied to the local `node_modules` folder. See `metro.config.js` and `package.json`'s scripts for details.
