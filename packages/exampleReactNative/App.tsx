@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
   }
 });
 
+const globalAny:any = global;
+
 const App = () => {
   const [ready, setReady] = useState(false);
   const [address, setAddress] = useState<string | null>(null);
@@ -70,7 +72,7 @@ const App = () => {
     setPhrase(phrase);
   };
 
-  const _onChangeSS58Format = (value): void => {
+  const _onChangeSS58Format = (value: string): void => {
     setSS58Format(parseInt(value, 10));
   };
 
@@ -88,7 +90,7 @@ const App = () => {
     } catch (e) {
       console.log('Error loading keyring ', e);
     }
-    await global.localStorage.init();
+    await globalAny.localStorage.init();
     await cryptoWaitReady();
     setReady(true);
     _onClickNew();
@@ -136,7 +138,7 @@ const App = () => {
                 {settings.availablePrefixes
                   .filter((_, index): boolean => index !== 0)
                   .map(({ text, value }): React.ReactNode => (
-                    <Button key={value} title={text} onPress={(): void => _onChangeSS58Format(value)} />
+                    <Button key={value} title={text} onPress={(): void => _onChangeSS58Format(value.toString())} />
                   ))
                 }
               </View>
