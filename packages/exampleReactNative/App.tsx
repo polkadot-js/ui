@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const globalAny:any = global;
+const globalAny: any = global;
 
 const App = () => {
   const [ready, setReady] = useState(false);
