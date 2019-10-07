@@ -1,12 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+// Copyright 2017-2019 @polkadot/example-react authors & contributors
+// This software may be modified and distributed under the terms
+// of the Apache-2.0 license. See the LICENSE file for details.
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -17,7 +11,6 @@ import {
   Text,
   StatusBar,
   Button,
-  Picker,
 } from 'react-native';
 
 import {
