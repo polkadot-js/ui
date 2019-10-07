@@ -1,18 +1,11 @@
-/**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
- *
- * @format
- */
- 
-const path = require('path')
+const path = require('path');
 const getWorkspaces = require('get-yarn-workspaces');
 const workspaces = getWorkspaces(__dirname).filter(item => {
-  return path.normalize(item) != path.normalize(__dirname)
+  return path.normalize(item) != path.normalize(__dirname);
 })
-var workspacesBuildDirs = workspaces.map(workspace => path.join(workspace, "build/"))
-workspacesBuildDirs = workspacesBuildDirs.filter(item => item != path.join(__dirname, "../reactnative-identicon/build/"))
-const blacklist = require('metro-config/src/defaults/blacklist')
+var workspacesBuildDirs = workspaces.map(workspace => path.join(workspace, "build/"));
+workspacesBuildDirs = workspacesBuildDirs.filter(item => item != path.join(__dirname, "../reactnative-identicon/build/"));
+const blacklist = require('metro-config/src/defaults/blacklist');
 
 module.exports = {
 

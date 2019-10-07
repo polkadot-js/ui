@@ -23,21 +23,21 @@ import { mnemonicGenerate, cryptoWaitReady } from '@polkadot/util-crypto';
 import keyring from '@polkadot/ui-keyring';
 
 const App = () => {
-  const [ready, setReady] = useState(false)
+  const [ready, setReady] = useState(false);
   const [address, setAddress] = useState<string | null>(null);
   const [phrase, setPhrase] = useState<string | null>(null);
   const [ss58Format, setSS58Format] = useState(42);
 
   const initialize = async (): Promise<void> => {
     try {
-      keyring.loadAll({ ss58Format: 42, type: 'sr25519' })
+      keyring.loadAll({ ss58Format: 42, type: 'sr25519' });
     } catch(e) {
-      console.log("Error loading keyring ", e)
+      console.log('Error loading keyring ', e);
     }
-    await global.localStorage.init()
-    await cryptoWaitReady()
-    setReady(true)
-    _onClickNew()
+    await global.localStorage.init();
+    await cryptoWaitReady();
+    setReady(true);
+    _onClickNew();
   }
 
   const _onClickNew = (): void => {
@@ -61,7 +61,7 @@ const App = () => {
   }, [address, ss58Format]);
 
   if (!ready) {
-    initialize()
+    initialize();
   }
 
   if (!ready || !address || !phrase) {
@@ -70,17 +70,17 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle='dark-content' />
       <SafeAreaView>
         <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
+          contentInsetAdjustmentBehavior='automatic'
           style={styles.scrollView}>
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.mainTitle}>React-Native Example</Text>
             </View>
             <View style={styles.sectionContainer}>
-              <Button title="Generate Address" onPress={_onClickNew}></Button>
+              <Button title='Generate Address' onPress={_onClickNew}></Button>
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Phrase</Text>
