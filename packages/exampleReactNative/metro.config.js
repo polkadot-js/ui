@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const getWorkspaces = require('get-yarn-workspaces');
 const workspaces = getWorkspaces(__dirname).filter(item => {
-  return path.normalize(item) != path.normalize(__dirname);
-})
-var workspacesBuildDirs = workspaces.map(workspace => path.join(workspace, "build/"));
-workspacesBuildDirs = workspacesBuildDirs.filter(item => item != path.join(__dirname, "../reactnative-identicon/build/"));
-const blacklist = require('metro-config/src/defaults/blacklist');
+  return path.normalize(item) !== path.normalize(__dirname);
+});
+let workspacesBuildDirs = workspaces.map(workspace => path.join(workspace, 'build/'));
+workspacesBuildDirs = workspacesBuildDirs.filter(item => item !== path.join(__dirname, '../reactnative-identicon/build/'));
 
 module.exports = {
 
@@ -18,20 +18,20 @@ module.exports = {
   // remap node packages to react-native packages
   resolver: {
     extraNodeModules: {
-      crypto: require.resolve("react-native-crypto"),
-      stream: require.resolve("stream-http"),
-      vm: require.resolve("vm-browserify"),
-      process: require.resolve("process"),
-      os: require.resolve("os-browserify"),
-    },
+      crypto: require.resolve('react-native-crypto'),
+      stream: require.resolve('stream-http'),
+      vm: require.resolve('vm-browserify'),
+      process: require.resolve('process'),
+      os: require.resolve('os-browserify')
+    }
   },
 
   transformer: {
-    getTransformOptions: async () => ({
+    getTransformOptions: () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: false,
-      },
-    }),
-  },
+        inlineRequires: false
+      }
+    })
+  }
 };

@@ -10,35 +10,57 @@ import {
   View,
   Text,
   StatusBar,
-  Button,
+  Button
 } from 'react-native';
 
 import {
-  Colors,
+  Colors
 } from 'react-native/Libraries/NewAppScreen';
 
-import Identicon from "@polkadot/reactnative-identicon";
+import Identicon from '@polkadot/reactnative-identicon';
 import settings from '@polkadot/ui-settings';
 import { mnemonicGenerate, cryptoWaitReady } from '@polkadot/util-crypto';
 import keyring from '@polkadot/ui-keyring';
+
+const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: Colors.lighter
+  },
+  body: {
+    backgroundColor: Colors.white
+  },
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: Colors.black
+  },
+  mainTitle: {
+    fontSize: 28,
+    fontWeight: '600',
+    color: Colors.black
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: Colors.dark
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'flex-start'
+  }
+});
 
 const App = () => {
   const [ready, setReady] = useState(false);
   const [address, setAddress] = useState<string | null>(null);
   const [phrase, setPhrase] = useState<string | null>(null);
   const [ss58Format, setSS58Format] = useState(42);
-
-  const initialize = async (): Promise<void> => {
-    try {
-      keyring.loadAll({ ss58Format: 42, type: 'sr25519' });
-    } catch(e) {
-      console.log('Error loading keyring ', e);
-    }
-    await global.localStorage.init();
-    await cryptoWaitReady();
-    setReady(true);
-    _onClickNew();
-  }
 
   const _onClickNew = (): void => {
     const phrase = mnemonicGenerate(12);
@@ -59,6 +81,18 @@ const App = () => {
   useEffect((): void => {
     ready && address && setAddress(keyring.encodeAddress(address, ss58Format));
   }, [address, ss58Format]);
+
+  const initialize = async (): Promise<void> => {
+    try {
+      keyring.loadAll({ ss58Format: 42, type: 'sr25519' });
+    } catch (e) {
+      console.log('Error loading keyring ', e);
+    }
+    await global.localStorage.init();
+    await cryptoWaitReady();
+    setReady(true);
+    _onClickNew();
+  };
 
   if (!ready) {
     initialize();
@@ -90,7 +124,7 @@ const App = () => {
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Icons</Text>
-              <Identicon  value={address} />
+              <Identicon value={address} />
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Address</Text>
@@ -102,7 +136,7 @@ const App = () => {
                 {settings.availablePrefixes
                   .filter((_, index): boolean => index !== 0)
                   .map(({ text, value }): React.ReactNode => (
-                    <Button key={value} title={text} onPress={() : void => _onChangeSS58Format(value)} />
+                    <Button key={value} title={text} onPress={(): void => _onChangeSS58Format(value)} />
                   ))
                 }
               </View>
@@ -111,41 +145,7 @@ const App = () => {
         </ScrollView>
       </SafeAreaView>
     </>
-  )
+  );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  mainTitle: {
-    fontSize: 28,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  buttonContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-  }
-});
 
 export default App;
