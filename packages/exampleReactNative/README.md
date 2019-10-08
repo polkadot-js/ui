@@ -1,16 +1,12 @@
 # Running
 
-Make sure Xcode (iOS) and Android Studio (Android) are installed. Also make sure [CocoaPods](https://cocoapods.org/) and a JDK are installed.
+For iOS, make sure that Xcode and [CocoaPods](https://cocoapods.org/) are installed.
 
-1. `cd exampleReactNative/../../` i.e. the project root
-1. `yarn install` and `yarn build`
-1. `cd packages/exampleReactNative`
-1. `yarn copy-workspace-packages`
-1. `cd ios && pod install`
-1. `yarn start`
-1. Build the apps and start the simulators (in a new terminal)
-  - iOS: `yarn ios --simulator="iPhone 11"` where `iPhone 11` is replaced with the name of the installed simulator (run `xcrun simctl list devices` to see installed simulators)
-  - Android: `yarn android`
+For Android, make sure that Android Studio and a JDK are installed.
+
+At the repo root, run the bundler `yarn example:rn:packager` and `yarn example:rn:ios` or `yarn example:rn:android`
+
+If the iOS run complains about a missing simulator, use `yarn ios --simulator="iPhone 11"`, where `iPhone 11` is replaced with an installed simulator (see `xcrun simctl list devices`)
 
 The first time metro bundles the package, it will hang at 98% and take about 10 minutes to finish. Just refresh the simulator when it finishes.
 
