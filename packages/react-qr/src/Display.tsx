@@ -12,6 +12,7 @@ import qrcode from './qrcode';
 import { createFrames, createImgSize } from './util';
 
 interface Props extends BaseProps {
+  size?: number;
   skipEncoding?: boolean;
   value: Uint8Array;
 }
@@ -31,11 +32,11 @@ function getDataUrl (value: Uint8Array): string {
 
   // HACK See out qrcode stringToBytes override as used internally. This
   // will only work for the case where we actuall pass `Bytes` in here
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  qr.addData(value as any, 'Byte');
+  // @ts-ignore
+  qr.addData(value, 'Byte');
   qr.make();
 
-  return qr.createDataURL(16, 0);
+  return qr.createDataURL(32, 0);
 }
 
 class Display extends React.PureComponent<Props, State> {

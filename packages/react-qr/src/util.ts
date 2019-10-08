@@ -7,8 +7,6 @@ import { decodeAddress } from '@polkadot/util-crypto';
 
 import { ADDRESS_PREFIX, CRYPTO_SR25519, FRAME_SIZE, SUBSTRATE_ID } from './constants';
 
-const MULTIPART = new Uint8Array([0]);
-
 export function encodeNumber (value: number): Uint8Array {
   return new Uint8Array([value >> 8, value & 0xff]);
 }
@@ -53,9 +51,11 @@ export function createFrames (input: Uint8Array): Uint8Array[] {
     idx += FRAME_SIZE;
   }
 
+  const isMultipart = frames.length > 1 ? new Uint8Array([1]) : new Uint8Array([0]);
+
   return frames.map((frame, index: number): Uint8Array =>
     u8aConcat(
-      MULTIPART,
+      isMultipart,
       encodeNumber(frames.length),
       encodeNumber(index),
       frame
