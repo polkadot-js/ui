@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 const ADDRESS_PREFIX = 'substrate';
-const FRAME_SIZE = 2048;
+const FRAME_SIZE = 1024;
 const SUBSTRATE_ID = new Uint8Array([0x53]);
 const CRYPTO_SR25519 = new Uint8Array([0x01]);
 const CMD_SIGN_TX = new Uint8Array([0]);
