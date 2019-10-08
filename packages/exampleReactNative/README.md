@@ -4,7 +4,7 @@ For iOS, make sure that Xcode and [CocoaPods](https://cocoapods.org/) are instal
 
 For Android, make sure that Android Studio and a JDK are installed.
 
-At the repo root, run the bundler `yarn example:rn:packager` and `yarn example:rn:ios` or `yarn example:rn:android`
+At the repo root, run the bundler `yarn example:rn:packager` and, in a new terminal, `yarn example:rn:ios` or `yarn example:rn:android`.
 
 If the iOS run complains about a missing simulator, use `yarn ios --simulator="iPhone 11"`, where `iPhone 11` is replaced with an installed simulator (see `xcrun simctl list devices`)
 
