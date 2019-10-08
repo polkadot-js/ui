@@ -1,6 +1,6 @@
 {
   "name": "exampleReactNative",
-  "version": "0.0.1",
+  "version": "0.46.0-beta.2",
   "private": true,
   "workspaces": {
     "nohoist": [
@@ -10,7 +10,9 @@
       "react-native-randombytes/**",
       "@react-native-community/**",
       "react-native-svg",
-      "react-native-svg/**"
+      "react-native-svg/**",
+      "@types/react-native",
+      "@types/react-native/**"
     ]
   },
   "scripts": {
@@ -23,7 +25,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@polkadot/dev": "^0.31.1",
+    "@polkadot/ui-keyring": "0.46.0-beta.2",
+    "@polkadot/ui-settings": "0.46.0-beta.2",
+    "@polkadot/reactnative-identicon": "0.46.0-beta.2",
     "@react-native-community/async-storage": "^1.6.2",
+    "@types/react-native": "^0.60.19",
     "get-yarn-workspaces": "^1.0.2",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
@@ -40,7 +47,6 @@
     "@react-native-community/cli-platform-ios": "^2.9.0",
     "@types/jest": "^24.0.18",
     "@types/react": "16.9.0",
-    "@types/react-native": "^0.60.19",
     "@types/react-test-renderer": "16.9.0",
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
