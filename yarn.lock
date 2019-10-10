@@ -1241,24 +1241,10 @@
     "@ledgerhq/logs" "^4.70.0"
     rxjs "^6.5.3"
 
-"@ledgerhq/devices@^4.72.1":
-  version "4.72.1"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/devices/-/devices-4.72.1.tgz#725c89c434ce764a30bfb1c14df6e3a5066f8427"
-  integrity sha512-Y0b6mMMawsTaq+xfze11CPiDN++Yq6TUz0THb9xp+KB+77F7fs5A1A0q+MKoISg7rlgKF9IWsWtc5aQIuOOewQ==
-  dependencies:
-    "@ledgerhq/errors" "^4.72.1"
-    "@ledgerhq/logs" "^4.72.0"
-    rxjs "^6.5.3"
-
 "@ledgerhq/errors@^4.71.0":
   version "4.71.0"
   resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-4.71.0.tgz#a3a32fc2701a6b93cd7b0c72fb0c4e8a9502f16a"
   integrity sha512-peKnZP7lY7+C8UrJtrq8V4oRAWipoxOq9Chj03Rr4mgu2HEQwO8MR7r61q+gKwEu6MhuNu57SnLV1zPAWagstg==
-
-"@ledgerhq/errors@^4.72.1":
-  version "4.72.1"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-4.72.1.tgz#de2d0390476078d5bd5a0659dae796f36ed3970a"
-  integrity sha512-zzxy/pGSLPBkd9RJXhiQj53lsx4c3vMFMy0rMymhnKcBZboI+uD2E7WOToHvxtY34jka9vnH/ySjUIB/Ytvyzg==
 
 "@ledgerhq/hw-transport-node-hid-noevents@^4.71.0":
   version "4.71.0"
@@ -1270,31 +1256,6 @@
     "@ledgerhq/hw-transport" "^4.71.0"
     "@ledgerhq/logs" "^4.70.0"
     node-hid "^0.7.9"
-
-"@ledgerhq/hw-transport-node-hid-noevents@^4.72.1":
-  version "4.72.1"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-noevents/-/hw-transport-node-hid-noevents-4.72.1.tgz#078758f8034c6276b0938c53d272673ec284a3d5"
-  integrity sha512-E8Wi04qZROSd/vbjwaDFeQ5ZbNxXmlkmRaNtNyiVCykjBurzCYMb8USaap/VEVFKh4R2wNlX/nu+sy4rXdbfww==
-  dependencies:
-    "@ledgerhq/devices" "^4.72.1"
-    "@ledgerhq/errors" "^4.72.1"
-    "@ledgerhq/hw-transport" "^4.72.1"
-    "@ledgerhq/logs" "^4.72.0"
-    node-hid "^0.7.9"
-
-"@ledgerhq/hw-transport-node-hid@^4.70.0":
-  version "4.72.1"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid/-/hw-transport-node-hid-4.72.1.tgz#e651f813bbf09ec80bf476e5623fd495e4bdc67f"
-  integrity sha512-IH1Zy9HbGKcqKRWvOZ1mEgwws190mXcpTqpASLSsnIZ1yrhwZE6eLc/cbLLiUaErqlxsNaxp9mF8E/6pE1JtWQ==
-  dependencies:
-    "@ledgerhq/devices" "^4.72.1"
-    "@ledgerhq/errors" "^4.72.1"
-    "@ledgerhq/hw-transport" "^4.72.1"
-    "@ledgerhq/hw-transport-node-hid-noevents" "^4.72.1"
-    "@ledgerhq/logs" "^4.72.0"
-    lodash "^4.17.15"
-    node-hid "^0.7.9"
-    usb "^1.6.0"
 
 "@ledgerhq/hw-transport-node-hid@^4.71.0":
   version "4.71.0"
@@ -1310,16 +1271,6 @@
     node-hid "^0.7.9"
     usb "^1.6.0"
 
-"@ledgerhq/hw-transport-u2f@^4.70.0":
-  version "4.72.1"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-u2f/-/hw-transport-u2f-4.72.1.tgz#3663e8c0adc21f8ad17c1b0412492618e129d7b0"
-  integrity sha512-9K+f9pMlf+y0BorkUoY1gvzH9EiFbJ59B+dEyMxzJFRgx4zf6raIrJta0dA8z+r5gVK9AkgOCPdpaLmmsdgeDw==
-  dependencies:
-    "@ledgerhq/errors" "^4.72.1"
-    "@ledgerhq/hw-transport" "^4.72.1"
-    "@ledgerhq/logs" "^4.72.0"
-    u2f-api "0.2.7"
-
 "@ledgerhq/hw-transport-u2f@^4.71.0":
   version "4.71.0"
   resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-u2f/-/hw-transport-u2f-4.71.0.tgz#8ab16d0befe9207b0c1899ea6ab82d28d90fef19"
@@ -1329,16 +1280,6 @@
     "@ledgerhq/hw-transport" "^4.71.0"
     "@ledgerhq/logs" "^4.70.0"
     u2f-api "0.2.7"
-
-"@ledgerhq/hw-transport-webusb@^4.70.0":
-  version "4.72.1"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webusb/-/hw-transport-webusb-4.72.1.tgz#3730857d3aab3bc1a5150e74cf0c88392e3be699"
-  integrity sha512-nuvwOJWHPudNrF6HkD1cjAEbHwc2Q4i1/WZuwYcvBiDES2Oe6+yrzeQ6eNOKWVZFiEtV3WF56bjufFc9pq3D3A==
-  dependencies:
-    "@ledgerhq/devices" "^4.72.1"
-    "@ledgerhq/errors" "^4.72.1"
-    "@ledgerhq/hw-transport" "^4.72.1"
-    "@ledgerhq/logs" "^4.72.0"
 
 "@ledgerhq/hw-transport-webusb@^4.71.0":
   version "4.71.0"
@@ -1359,24 +1300,10 @@
     "@ledgerhq/errors" "^4.71.0"
     events "^3.0.0"
 
-"@ledgerhq/hw-transport@^4.72.1":
-  version "4.72.1"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-4.72.1.tgz#431be99e883c71be6fc6bd7480902bcd41ae24a0"
-  integrity sha512-6RBiDALBiVfBWK6zaZzhVj/jPZR4vEfxfRvh8iDerxYhcFY/uVVbQkoegt6dBtCX0q5T4nDLAWp5jqV8j0dcZw==
-  dependencies:
-    "@ledgerhq/devices" "^4.72.1"
-    "@ledgerhq/errors" "^4.72.1"
-    events "^3.0.0"
-
 "@ledgerhq/logs@^4.70.0":
   version "4.70.0"
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-4.70.0.tgz#b5176430ccb5a81becce25fcbbd8afcfa91a4388"
   integrity sha512-hyMppU1b2tBDRyKJiV71RnN51Tkkriv/7DHQF9thAmrwEDFmfmEwAQaS2VyeIogir0HD7aDcKg7DnHqgiWe/8g==
-
-"@ledgerhq/logs@^4.72.0":
-  version "4.72.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-4.72.0.tgz#43df23af013ad1135407e5cf33ca6e4c4c7708d5"
-  integrity sha512-o+TYF8vBcyySRsb2kqBDv/KMeme8a2nwWoG+lAWzbDmWfb2/MrVWYCVYDYvjXdSoI/Cujqy1i0gIDrkdxa9chA==
 
 "@lerna/add@3.16.5":
   version "3.16.5"
@@ -2215,15 +2142,6 @@
     "@polkadot/util" "^1.5.1"
     "@polkadot/util-crypto" "^1.5.1"
 
-"@polkadot/reactnative-identicon@0.46.0-beta.2":
-  version "0.46.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@polkadot/reactnative-identicon/-/reactnative-identicon-0.46.0-beta.2.tgz#2b1728815b4a2939bd4766c50a7e62cd676dd1be"
-  integrity sha512-1uwggBeX5rm5SjPgvM54ImV8SXalvxeCokCpyglbZ6Uy5PKGCKJHwLeCFM8Tcc36m2giZz6F/pfkYi+hcUPthg==
-  dependencies:
-    "@babel/runtime" "^7.6.2"
-    "@polkadot/ui-shared" "^0.46.0-beta.2"
-    react-native-svg "^9.9.4"
-
 "@polkadot/ts@^0.1.80":
   version "0.1.80"
   resolved "https://registry.yarnpkg.com/@polkadot/ts/-/ts-0.1.80.tgz#6c8acc72e453993e22c9ced53c1b5913650b97b9"
@@ -2241,34 +2159,6 @@
     "@polkadot/util-crypto" "^1.5.1"
     "@types/memoizee" "^0.4.3"
     memoizee "^0.4.14"
-
-"@polkadot/ui-keyring@0.46.0-beta.2":
-  version "0.46.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@polkadot/ui-keyring/-/ui-keyring-0.46.0-beta.2.tgz#58e63d0249a27404e375665d9414e2dbcac7986e"
-  integrity sha512-GTutuloKOBPjwdrHcBuVuzk6WiIix+J2wO/QCD6fTL7Rf42/f8fcTnSTGJPuEFl5t3cRobiCyl+qjAuHAL8aCQ==
-  dependencies:
-    "@babel/runtime" "^7.6.2"
-    "@ledgerhq/hw-transport-u2f" "^4.70.0"
-    "@ledgerhq/hw-transport-webusb" "^4.70.0"
-    "@types/ledgerhq__hw-transport-node-hid" "^4.21.1"
-    "@types/ledgerhq__hw-transport-u2f" "^4.21.1"
-    "@types/mkdirp" "^0.5.2"
-    "@types/store" "^2.0.2"
-    extensionizer "^1.0.1"
-    ledger-polkadot "^0.0.4"
-    mkdirp "^0.5.1"
-    store "^2.0.12"
-  optionalDependencies:
-    "@ledgerhq/hw-transport-node-hid" "^4.70.0"
-
-"@polkadot/ui-settings@0.46.0-beta.2":
-  version "0.46.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@polkadot/ui-settings/-/ui-settings-0.46.0-beta.2.tgz#7fc5610a75eef4c6adb144708687e2d72e3840fb"
-  integrity sha512-qYTSOZlmIhzPPlaPEZpK4s3bcQAVTsOYlUM87vmXKc50u//xAVejivN5xY98PJz9RJQz/e2KHCav6OMy+UiU3g==
-  dependencies:
-    "@babel/runtime" "^7.6.2"
-    "@types/store" "^2.0.2"
-    store "^2.0.12"
 
 "@polkadot/util-crypto@^1.5.1":
   version "1.5.1"
@@ -12564,7 +12454,7 @@ react-native-randombytes@^3.5.3:
     buffer "^4.9.1"
     sjcl "^1.0.3"
 
-react-native-svg@^9.11.1, react-native-svg@^9.9.4:
+react-native-svg@^9.11.1:
   version "9.11.1"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.11.1.tgz#b1ccf48de413ff8c4f476f202aaa3893f4c8b59a"
   integrity sha512-BmNCM81SSzhj1+N5rYiy7sxrkmybgiT8Cu8yVRB7zVoWze/i1lbCWJah+Gk0OHHwR35ZA31oVKf5jtO4G1n94Q==
