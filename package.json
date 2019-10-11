@@ -1,5 +1,5 @@
 {
-  "version": "0.45.1",
+  "version": "0.46.0-beta.8",
   "private": true,
   "engines": {
     "yarn": "^1.10.1"
@@ -13,14 +13,19 @@
     "typescript": "^3.6.3"
   },
   "scripts": {
-    "build": "polkadot-dev-build-ts && polkadot-dev-build-docs",
+    "build": "yarn build:split:code && yarn build:split:docs",
+    "build:split:code": "polkadot-dev-build-ts",
+    "build:split:docs": "polkadot-dev-build-docs",
     "check": "yarn lint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx . && tsc --noEmit --pretty",
     "clean": "polkadot-dev-clean-build",
-    "demo:identicon:react": "webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
-    "demo:identicon:vue": "webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
-    "example:react": "cd packages/example-react && webpack --config webpack.config.js",
-    "example:vue": "cd packages/example-vue && webpack --config webpack.config.js",
+    "demo:identicon:react": "yarn build:ts && webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
+    "demo:identicon:vue": "yarn build:ts && webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
+    "example:rn:packager": "yarn build:split:code && cd packages/exampleReactNative && yarn copy-workspace-packages && yarn start",
+    "example:rn:ios": "cd packages/exampleReactNative && cd ios && pod install && cd .. && yarn ios",
+    "example:rn:android": "cd packages/exampleReactNative && yarn android",
+    "example:react": "yarn build:ts && cd packages/example-react && webpack --config webpack.config.js",
+    "example:vue": "yarn build:ts && cd packages/example-vue && webpack --config webpack.config.js",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "jest --coverage --runInBand",
     "test:one": "jest"
@@ -28,8 +33,8 @@
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
-    "@polkadot/dev-react": "^0.31.1",
-    "@polkadot/ts": "^0.1.73",
+    "@polkadot/dev-react": "^0.32.0-beta.7",
+    "@polkadot/ts": "^0.1.80",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
     "gh-pages": "^2.1.1",

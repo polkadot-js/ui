@@ -25,5 +25,8 @@
       "./node_modules/@types"
     ],
     "skipLibCheck": true
-  }
+  },
+  "exclude": [
+     "packages/exampleReactNative"
+  ]
 }
