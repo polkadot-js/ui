@@ -17,9 +17,9 @@
     "./ledger/transportsWeb": "./ledger/transportsEmpty"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
-    "@ledgerhq/hw-transport-u2f": "^4.71.0",
-    "@ledgerhq/hw-transport-webusb": "^4.71.0",
+    "@babel/runtime": "^7.6.3",
+    "@ledgerhq/hw-transport-u2f": "^4.72.1",
+    "@ledgerhq/hw-transport-webusb": "^4.72.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.21.1",
     "@types/ledgerhq__hw-transport-u2f": "^4.21.1",
     "@types/mkdirp": "^0.5.2",
@@ -31,11 +31,11 @@
   },
   "devDependencies": {
     "@polkadot/keyring": "^1.5.1",
-    "@polkadot/types": "^0.95.0-beta.4",
+    "@polkadot/types": "^0.95.0-beta.13",
     "@polkadot/util": "^1.5.1"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^4.71.0"
+    "@ledgerhq/hw-transport-node-hid": "^4.72.1"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",

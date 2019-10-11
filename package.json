@@ -10,7 +10,7 @@
   ],
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.4"
   },
   "scripts": {
     "build": "yarn build:split:code && yarn build:split:docs",
@@ -31,9 +31,9 @@
     "test:one": "jest"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/runtime": "^7.6.2",
-    "@polkadot/dev-react": "^0.32.0-beta.7",
+    "@babel/core": "^7.6.4",
+    "@babel/runtime": "^7.6.3",
+    "@polkadot/dev-react": "^0.32.0-beta.8",
     "@polkadot/ts": "^0.1.80",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
