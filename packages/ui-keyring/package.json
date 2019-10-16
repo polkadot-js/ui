@@ -38,8 +38,6 @@
     "@ledgerhq/hw-transport-node-hid": "^4.72.1"
   },
   "peerDependencies": {
-    "@polkadot/keyring": "*",
-    "@polkadot/types": "*",
-    "@polkadot/util": "*"
+    "@polkadot/keyring": "*"
   }
 }
