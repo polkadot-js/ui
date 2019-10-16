@@ -12,9 +12,9 @@ If however you use the `ui-keyring` independently (i.e. in an address generator,
 
 ## Initialization
 
-To understand the initialization process, some background on the underlying libraries are required. For the [Schnorrkel sr25519](https://github.com/w3f/schnorrkel) a WASM library is used. This means that before `sr25519` can be used, the WASM libraries needs to be loaded and initialized. This is not an issue when the keyring only used `ed25519`.
+To understand the initialization process, some background on the underlying libraries are required. For the [Schnorrkel sr25519](https://github.com/w3f/schnorrkel) a WASM library is used. This means that before `sr25519` can be used, the WASM libraries needs to be loaded and initialized. This is not an issue when the keyring only uses `ed25519`.
 
-While the WASM initialization process kicks in as soon as the library is loaded, we take care of the  initialization as before we load, yielding -
+With this in mind, we take care of the  initialization as before we load our keyring, yielding -
 
 ```js
 import keyring from '@polkadot/ui-keyring';
@@ -57,7 +57,7 @@ cryptoWaitReady().then(() => {
 });
 ```
 
-When using the keyring together with the Polkadot-js API, the above would be adapted since the API itself already has a check for the WASM availability. In this case, we can adapt the interface to folow the following pattern -
+When using the keyring together with the Polkadot-js API, the above would be adapted since the API itself already has a check for the WASM availability. In this case, we can adapt the interface to follow the following pattern -
 
 ```js
 import { ApiPromise } from '@polkadot/api';
