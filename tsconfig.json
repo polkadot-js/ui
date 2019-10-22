@@ -20,13 +20,10 @@
       "@polkadot/vue-identicon": [ "packages/vue-identicon/src" ],
       "@polkadot/vue-identicon/*": [ "packages/vue-identicon/src/*" ]
     },
+    "skipLibCheck": true,
     "typeRoots": [
       "./node_modules/@polkadot/ts",
       "./node_modules/@types"
-    ],
-    "skipLibCheck": true
-  },
-  "exclude": [
-     "packages/exampleReactNative"
-  ]
+    ]
+  }
 }

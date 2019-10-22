@@ -3,24 +3,12 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import React, { useEffect, useState } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Button
-} from 'react-native';
-
-import {
-  Colors
-} from 'react-native/Libraries/NewAppScreen';
-
+import { Button, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Identicon from '@polkadot/reactnative-identicon';
+import keyring from '@polkadot/ui-keyring';
 import settings from '@polkadot/ui-settings';
 import { mnemonicGenerate, cryptoWaitReady } from '@polkadot/util-crypto';
-import keyring from '@polkadot/ui-keyring';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -56,9 +44,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const globalAny: any = global;
+const globalAny = global as unknown as Window;
 
-const App = () => {
+export default function App (): React.ReactElement<{}> | null {
   const [ready, setReady] = useState(false);
   const [address, setAddress] = useState<string | null>(null);
   const [phrase, setPhrase] = useState<string | null>(null);
@@ -138,7 +126,11 @@ const App = () => {
                 {settings.availablePrefixes
                   .filter((_, index): boolean => index !== 0)
                   .map(({ text, value }): React.ReactNode => (
-                    <Button key={value} title={text} onPress={(): void => _onChangeSS58Format(value.toString())} />
+                    <Button
+                      key={value}
+                      title={text}
+                      onPress={(): void => _onChangeSS58Format(value.toString())}
+                    />
                   ))
                 }
               </View>
@@ -148,6 +140,4 @@ const App = () => {
       </SafeAreaView>
     </>
   );
-};
-
-export default App;
+}
