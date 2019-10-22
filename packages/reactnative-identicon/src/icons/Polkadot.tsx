@@ -13,33 +13,29 @@ interface Props extends BaseProps {
   sixPoint?: boolean;
 }
 
-export default class Identicon extends React.PureComponent<Props> {
-  public render (): React.ReactNode {
-    const { address, sixPoint, size } = this.props;
+function renderCircle ({ cx, cy, r, fill }: CircleType, key: number): React.ReactNode {
+  return (
+    <SvgCircle
+      key={key}
+      cx={cx}
+      cy={cy}
+      r={r}
+      fill={fill}
+    />
+  );
+}
 
-    return (
-      <View>
-        <Svg
-          height={size}
-          id={address}
-          width={size}
-          viewBox='0 0 64 64'
-        >
-          {generateIcon(address, sixPoint).map(this.renderCircle)}
-        </Svg>
-      </View>
-    );
-  }
-
-  private renderCircle = ({ cx, cy, r, fill }: CircleType, key: number): React.ReactNode => {
-    return (
-      <SvgCircle
-        key={key}
-        cx={cx}
-        cy={cy}
-        r={r}
-        fill={fill}
-      />
-    );
-  }
+export default function Identicon ({ address, sixPoint, size }: Props): React.ReactElement<Props> {
+  return (
+    <View>
+      <Svg
+        height={size}
+        id={address}
+        width={size}
+        viewBox='0 0 64 64'
+      >
+        {generateIcon(address, sixPoint).map(renderCircle)}
+      </Svg>
+    </View>
+  );
 }
