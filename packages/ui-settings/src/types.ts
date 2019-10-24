@@ -11,6 +11,7 @@ export type Option = {
 
 export interface SettingsStruct {
   apiUrl: string;
+  camera: string;
   i18nLang: string;
   icon: string;
   ledgerConn: string;

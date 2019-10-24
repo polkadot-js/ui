@@ -6,7 +6,7 @@ import EventEmitter from 'eventemitter3';
 import store from 'store';
 import { isUndefined } from '@polkadot/util';
 
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LANGUAGES, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CAMERA_DEFAULT, CAMERA, CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LANGUAGES, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Option, SettingsStruct } from './types';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
@@ -14,6 +14,8 @@ type OnTypes = 'change';
 
 export class Settings implements SettingsStruct {
   private _apiUrl: string;
+
+  private _camera: string;
 
   private _emitter: EventEmitter;
 
@@ -37,6 +39,7 @@ export class Settings implements SettingsStruct {
     this._emitter = new EventEmitter();
 
     this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
+    this._camera = settings.camera || CAMERA_DEFAULT;
     this._ledgerConn = settings.ledgerConn || LEDGER_CONN_DEFAULT;
     this._i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
     this._icon = settings.icon || ICON_DEFAULT;
@@ -44,6 +47,10 @@ export class Settings implements SettingsStruct {
     this._prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
     this._uiMode = settings.uiMode || UIMODE_DEFAULT;
     this._uiTheme = settings.uiTheme || UITHEME_DEFAULT;
+  }
+
+  public get camera (): string {
+    return this._camera;
   }
 
   public get apiUrl (): string {
@@ -76,6 +83,10 @@ export class Settings implements SettingsStruct {
 
   public get uiTheme (): string {
     return this._uiTheme;
+  }
+
+  public get availableCamera (): Option[] {
+    return CAMERA;
   }
 
   public get availableCryptos (): Option[] {
@@ -117,6 +128,7 @@ export class Settings implements SettingsStruct {
   public get (): SettingsStruct {
     return {
       apiUrl: this._apiUrl,
+      camera: this._camera,
       i18nLang: this._i18nLang,
       icon: this._icon,
       ledgerConn: this._ledgerConn,
@@ -129,6 +141,7 @@ export class Settings implements SettingsStruct {
 
   public set (settings: Partial<SettingsStruct>): void {
     this._apiUrl = settings.apiUrl || this._apiUrl;
+    this._camera = settings.camera || this._camera;
     this._ledgerConn = settings.ledgerConn || this._ledgerConn;
     this._i18nLang = settings.i18nLang || this._i18nLang;
     this._icon = settings.icon || this._icon;
