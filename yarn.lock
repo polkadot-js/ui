@@ -913,7 +913,7 @@
     core-js "^2.6.5"
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.4.4", "@babel/runtime@^7.6.2", "@babel/runtime@^7.6.3":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.4.4", "@babel/runtime@^7.6.3":
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
   integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
@@ -2156,38 +2156,16 @@
   dependencies:
     "@types/chrome" "^0.0.91"
 
-"@polkadot/types@^0.95.0-beta.33":
-  version "0.95.0-beta.33"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.95.0-beta.33.tgz#bc2cd2f536bb061c926e13c0126c64dee53f24a9"
-  integrity sha512-d1M0z6r4vZ9kGEAaRYw9PI8s/TVCjjQAdmEfPtKPVj9uuoL8jW8TajAzA3Yvd4s/Y9F/0nNipHUg6w88UdgxYg==
+"@polkadot/types@^0.95.0-beta.36":
+  version "0.95.0-beta.36"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.95.0-beta.36.tgz#2b380a2e4fdf9df784023c49d803ee8dfffd7293"
+  integrity sha512-sdYSYq5WUREBg2XjxBPII4ovN+6W30+P+eht92tqjHGO+uPX8Pndpx13g5y4hOJ8OYcfXT5KiKoumEr2pV/VIg==
   dependencies:
     "@babel/runtime" "^7.6.3"
-    "@polkadot/util" "^1.5.1"
-    "@polkadot/util-crypto" "^1.5.1"
+    "@polkadot/util" "^1.6.1"
+    "@polkadot/util-crypto" "^1.6.1"
     "@types/memoizee" "^0.4.3"
     memoizee "^0.4.14"
-
-"@polkadot/util-crypto@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-1.5.1.tgz#18de631265b5cf13ff8b9a00b747de56b72eb38d"
-  integrity sha512-m7pzRW1ltmgTMyFnpnDq0SIaE+2pyT0yzzjswNLJzo8r1MAI7eT7N5s89KoPLmbsi37Nxuc0T/JKs1Du6KvMrg==
-  dependencies:
-    "@babel/runtime" "^7.6.2"
-    "@polkadot/util" "^1.5.1"
-    "@polkadot/wasm-crypto" "^0.14.1"
-    "@types/bip39" "^2.4.2"
-    "@types/bs58" "^4.0.0"
-    "@types/pbkdf2" "^3.0.0"
-    "@types/secp256k1" "^3.5.0"
-    "@types/xxhashjs" "^0.2.1"
-    base-x "3.0.5"
-    bip39 "^2.5.0"
-    blakejs "^1.1.0"
-    bs58 "^4.0.1"
-    js-sha3 "^0.8.0"
-    secp256k1 "^3.7.0"
-    tweetnacl "^1.0.1"
-    xxhashjs "^0.2.2"
 
 "@polkadot/util-crypto@^1.6.1":
   version "1.6.1"
@@ -2210,19 +2188,6 @@
     secp256k1 "^3.7.0"
     tweetnacl "^1.0.1"
     xxhashjs "^0.2.2"
-
-"@polkadot/util@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-1.5.1.tgz#acc6d1fd041959a1a781ee2a4d0fc8dae99d4e1a"
-  integrity sha512-eK0FT251GZ/pZY4HjVm4E14w02cLzJLriY8FAqM+hKoNkkqN/0CIijZWMS89e91emAxQxFbQnJqFQyA6e8e3Rw==
-  dependencies:
-    "@babel/runtime" "^7.6.2"
-    "@types/bn.js" "^4.11.5"
-    bn.js "^4.11.8"
-    camelcase "^5.3.1"
-    chalk "^2.4.2"
-    ip-regex "^4.1.0"
-    moment "^2.24.0"
 
 "@polkadot/util@^1.6.1":
   version "1.6.1"
