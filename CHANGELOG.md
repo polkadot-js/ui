@@ -1,3 +1,9 @@
+# 0.46.1
+
+- Add an example for using React Native (thanks to https://github.com/cameronfr)
+- Add base documentation for getting started
+- Add camera access to the setting structure
+
 # 0.45.1
 
 - Support for Kusama CC2
