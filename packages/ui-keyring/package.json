@@ -18,24 +18,24 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
-    "@ledgerhq/hw-transport-u2f": "^4.72.2",
-    "@ledgerhq/hw-transport-webusb": "^4.72.2",
+    "@ledgerhq/hw-transport-u2f": "^4.72.3",
+    "@ledgerhq/hw-transport-webusb": "^4.72.3",
     "@types/ledgerhq__hw-transport-node-hid": "^4.21.1",
     "@types/ledgerhq__hw-transport-u2f": "^4.21.1",
     "@types/mkdirp": "^0.5.2",
     "@types/store": "^2.0.2",
     "extensionizer": "^1.0.1",
-    "ledger-polkadot": "^0.5.1",
+    "ledger-polkadot": "^0.7.0",
     "mkdirp": "^0.5.1",
     "store": "^2.0.12"
   },
   "devDependencies": {
     "@polkadot/keyring": "^1.6.1",
-    "@polkadot/types": "^0.95.1",
+    "@polkadot/types": "^0.96.0-beta.5",
     "@polkadot/util": "^1.6.1"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^4.72.2"
+    "@ledgerhq/hw-transport-node-hid": "^4.72.3"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*"
