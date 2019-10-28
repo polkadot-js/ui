@@ -1241,63 +1241,86 @@
     "@ledgerhq/logs" "^4.72.0"
     rxjs "^6.5.3"
 
+"@ledgerhq/devices@^4.73.3":
+  version "4.73.3"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/devices/-/devices-4.73.3.tgz#d589f30c5032f612fa82e72bb827e9c565b4b64d"
+  integrity sha512-5l4Qx028ybS8KRJF+7jI+xq0sTRPMVgbA1pdFfeT5emlx5gZa2L88EC8hanSXLB5DocqPY3B/x4/ONtZs9x8hQ==
+  dependencies:
+    "@ledgerhq/errors" "^4.73.2"
+    "@ledgerhq/logs" "^4.72.0"
+    rxjs "^6.5.3"
+
 "@ledgerhq/errors@^4.72.2":
   version "4.72.2"
   resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-4.72.2.tgz#62a87a249c3c05e7295f66c3d49d78e7d46d611f"
   integrity sha512-Q9SnjsoIiNhoTujUWfNgGqvYHgaPGRLzuYAC0Rx2WjEKp7swO42BMukYtSgXyyrz4yfHhMBMYerEF2sonBVzXw==
 
-"@ledgerhq/hw-transport-node-hid-noevents@^4.72.2":
-  version "4.72.2"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-noevents/-/hw-transport-node-hid-noevents-4.72.2.tgz#3991614bd6793a1bf66a27c9fe50ec23ba2aa5ec"
-  integrity sha512-yzsN5dDAeZlC3FzYQbCN8yeyWvHzNNRrYQFwtWFDs43ZD2k0p9j1xr5rozAIP9NTzVlAyAow0VCRTQEzUb9QuA==
+"@ledgerhq/errors@^4.73.2":
+  version "4.73.2"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-4.73.2.tgz#db4435dd9c272c5bf68d574d813918a8d5b4efd3"
+  integrity sha512-OkzL02yZF+neB3UWIS/Dgb0bLKE3ohUfBsVSfYsj3mXlxmtKkjhvrOH41MwjZnzaPsl16Xb5K4DZMlojBhqIsA==
+
+"@ledgerhq/hw-transport-node-hid-noevents@^4.73.3":
+  version "4.73.3"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-noevents/-/hw-transport-node-hid-noevents-4.73.3.tgz#ccae10149e557a9fa62b9b677c6f73761970062e"
+  integrity sha512-jUknfm5vVUwhgPyDrcc/S3m921p2iimuZsMgECTcVyONInKXMJ7my3p2+RwVCktyVLrKFfM4Ug6zQ6B4Bsj6AA==
   dependencies:
-    "@ledgerhq/devices" "^4.72.2"
-    "@ledgerhq/errors" "^4.72.2"
-    "@ledgerhq/hw-transport" "^4.72.2"
+    "@ledgerhq/devices" "^4.73.3"
+    "@ledgerhq/errors" "^4.73.2"
+    "@ledgerhq/hw-transport" "^4.73.3"
     "@ledgerhq/logs" "^4.72.0"
     node-hid "^0.7.9"
 
-"@ledgerhq/hw-transport-node-hid@^4.72.2":
-  version "4.72.2"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid/-/hw-transport-node-hid-4.72.2.tgz#921b6d5757f31fff6209dba5148a4b74b10c7a4a"
-  integrity sha512-KGFt/GqJUO8gDTA0HzXckvDcGgvGRA6jFrsRLaRBPmflaVMOjJ7UkeTL9kSLkJCyxFp1YuJ0eZaGIO25dACn0g==
+"@ledgerhq/hw-transport-node-hid@^4.72.3":
+  version "4.73.3"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid/-/hw-transport-node-hid-4.73.3.tgz#32add5b2be5e1e4c76a033a6055657565cbb25be"
+  integrity sha512-oZo2C0Cjg+62LrUKn5ah/aGal3rpXgEL9MJucPrtZCRJOBhVb/Re+D7Mex/nUPMBPDQTTeAagABGRc58wlk98w==
   dependencies:
-    "@ledgerhq/devices" "^4.72.2"
-    "@ledgerhq/errors" "^4.72.2"
-    "@ledgerhq/hw-transport" "^4.72.2"
-    "@ledgerhq/hw-transport-node-hid-noevents" "^4.72.2"
+    "@ledgerhq/devices" "^4.73.3"
+    "@ledgerhq/errors" "^4.73.2"
+    "@ledgerhq/hw-transport" "^4.73.3"
+    "@ledgerhq/hw-transport-node-hid-noevents" "^4.73.3"
     "@ledgerhq/logs" "^4.72.0"
     lodash "^4.17.15"
     node-hid "^0.7.9"
     usb "^1.6.0"
 
-"@ledgerhq/hw-transport-u2f@^4.72.2":
-  version "4.72.2"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-u2f/-/hw-transport-u2f-4.72.2.tgz#8017c6e6fbad13dec7fe62f64d79aecc1dd63ef1"
-  integrity sha512-QkwRXBBXyHcTYrOOqDo7792TpAuzUtLZrcHtaaaFvBy0+o/SVRcp3qs0fxPfhw6qYT2eulsTYThkdL2fr6F4YA==
+"@ledgerhq/hw-transport-u2f@^4.72.3":
+  version "4.73.3"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-u2f/-/hw-transport-u2f-4.73.3.tgz#2d4141c49f30bf237d7bde90b4c5b2def83ab478"
+  integrity sha512-bmRrja0wqOKMaqgFC2p5GbY/76+en6FbZQmGzldprfksE+j00OPr3x0GCYF0rLzvpca3M2Kmz89b7b9S0vOzwA==
   dependencies:
-    "@ledgerhq/errors" "^4.72.2"
-    "@ledgerhq/hw-transport" "^4.72.2"
+    "@ledgerhq/errors" "^4.73.2"
+    "@ledgerhq/hw-transport" "^4.73.3"
     "@ledgerhq/logs" "^4.72.0"
     u2f-api "0.2.7"
 
-"@ledgerhq/hw-transport-webusb@^4.72.2":
-  version "4.72.2"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webusb/-/hw-transport-webusb-4.72.2.tgz#62817f647c98cb3066036351b87dbde9b7da587f"
-  integrity sha512-At51EeJl8wDB7UqIsRCBlJOw4PuabMQhl5FWAD3d7zTQJ2jSLKMqJ3ZIbuzi+zjQkg43ndVcQd7N7btCUKJsUg==
+"@ledgerhq/hw-transport-webusb@^4.72.3":
+  version "4.73.3"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webusb/-/hw-transport-webusb-4.73.3.tgz#bad2b573af3127e1725aeff4996c1f87e0fdcdee"
+  integrity sha512-cNnX1MuWjUpZikrkRx/rkgsiF94b4Om6OCa/E0dBjdNedmgPqFNyLINJfWvohl8H3bDPQ3jFHmtR0UXkDVZYCg==
   dependencies:
-    "@ledgerhq/devices" "^4.72.2"
-    "@ledgerhq/errors" "^4.72.2"
-    "@ledgerhq/hw-transport" "^4.72.2"
+    "@ledgerhq/devices" "^4.73.3"
+    "@ledgerhq/errors" "^4.73.2"
+    "@ledgerhq/hw-transport" "^4.73.3"
     "@ledgerhq/logs" "^4.72.0"
 
-"@ledgerhq/hw-transport@^4.35.0", "@ledgerhq/hw-transport@^4.72.2":
+"@ledgerhq/hw-transport@^4.35.0":
   version "4.72.2"
   resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-4.72.2.tgz#b13d1797ba7530b9b94ebee71f3d0d2185153988"
   integrity sha512-HYe3kTNoA9YHGCsktAzMURpXqZ1QvMUreI24GhMKfec6AIuB0d05avn2j7z8QeOpAUh5L6/OaPPWi9t4KpqG5A==
   dependencies:
     "@ledgerhq/devices" "^4.72.2"
     "@ledgerhq/errors" "^4.72.2"
+    events "^3.0.0"
+
+"@ledgerhq/hw-transport@^4.73.3":
+  version "4.73.3"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-4.73.3.tgz#1a6a16669bdbad70d9a6d5d7975f9e4245e8dcdd"
+  integrity sha512-qWYRmEM48vgcr6ZMibLr1+M+iVaLZw/wU5H15e3/XHLSWbvmoFyyu5Z7fMrJC375PExgAnCjxnsPJGObvNy6jg==
+  dependencies:
+    "@ledgerhq/devices" "^4.73.3"
+    "@ledgerhq/errors" "^4.73.2"
     events "^3.0.0"
 
 "@ledgerhq/logs@^4.72.0":
@@ -2156,10 +2179,10 @@
   dependencies:
     "@types/chrome" "^0.0.91"
 
-"@polkadot/types@^0.95.1":
-  version "0.95.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.95.1.tgz#15869606391a3489a142662a4fb9de4bb4111993"
-  integrity sha512-Jh6qOrbGn36xd801DnUmk51q2j+9C4hIOCwRS2XUqgP5OjYmg+sIde+5SkbwXv7H0W0W1qELmlmmvgDs7sCksA==
+"@polkadot/types@^0.96.0-beta.5":
+  version "0.96.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-0.96.0-beta.5.tgz#66b05939d979840e77ee854319849aac8eabbd9f"
+  integrity sha512-/2sUKN81INueb8jwWCaPMau++c+rlvhkVUOUbPJ30akneM63AW1dni+Dqb/cqa+sNBkomKqT/LDKxDT82d9L3g==
   dependencies:
     "@babel/runtime" "^7.6.3"
     "@polkadot/util" "^1.6.1"
@@ -5185,7 +5208,7 @@ css-select@^1.1.0, css-select@~1.2.0:
     domutils "1.5.1"
     nth-check "~1.0.1"
 
-css-select@^2.0.0:
+css-select@^2.0.0, css-select@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/css-select/-/css-select-2.0.2.tgz#ab4386cec9e1f668855564b17c3733b43b2a5ede"
   integrity sha512-dSpYaDVoWaELjvZ3mS6IKZM/y2PMPa/XYoEfYNZePL4U/XgyxZNroHEHReDx/d+VgXh9VbCTtFqLkFbmeqeaRQ==
@@ -5219,6 +5242,14 @@ css-tree@1.0.0-alpha.33:
   dependencies:
     mdn-data "2.0.4"
     source-map "^0.5.3"
+
+css-tree@^1.0.0-alpha.37:
+  version "1.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha.37.tgz#98bebd62c4c1d9f960ec340cf9f7522e30709a22"
+  integrity sha512-DMxWJg0rnz7UgxKT0Q1HU/L9BeJI0M6ksor0OgqOnF+aRCDWg/N2641HmVyU9KVIu0OVVWOb2IpC9A+BJRnejg==
+  dependencies:
+    mdn-data "2.0.4"
+    source-map "^0.6.1"
 
 css-unit-converter@^1.1.1:
   version "1.1.1"
@@ -9378,10 +9409,10 @@ lcov-parse@^0.0.10:
   resolved "https://registry.yarnpkg.com/lcov-parse/-/lcov-parse-0.0.10.tgz#1b0b8ff9ac9c7889250582b70b71315d9da6d9a3"
   integrity sha1-GwuP+ayceIklBYK3C3ExXZ2m2aM=
 
-ledger-polkadot@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/ledger-polkadot/-/ledger-polkadot-0.5.1.tgz#26397bad0400cb614ea2348b6a935a6bfa192e6e"
-  integrity sha512-RpUX5HO99W3hHVyAV0h3oQwi/Oq3pCLjs4g7X4aSOp4ApV+E13diTNjWOKSaLqYtZj+kM0QbIVT8G4thrpZNfA==
+ledger-polkadot@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/ledger-polkadot/-/ledger-polkadot-0.7.0.tgz#6a2e11b50a841e74396a1750c97fc4edbc2466fa"
+  integrity sha512-IRaxj8Cb1YqPoijh7Y0oLPLDhb6YhKTk6Wlet1PvOG4APsK+snPdk/gRO8qG1ZO1CzX6Cem2nlSgd4RJ78OBdw==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@ledgerhq/hw-transport" "^4.35.0"
@@ -10060,10 +10091,51 @@ metro-minify-uglify@0.56.0:
   dependencies:
     uglify-es "^3.1.9"
 
-metro-react-native-babel-preset@0.56.0, metro-react-native-babel-preset@^0.56.0:
+metro-react-native-babel-preset@0.56.0:
   version "0.56.0"
   resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.56.0.tgz#fa47dfd5f7678e89cffd1249020b8add6938fc48"
   integrity sha512-MAo1fm0dNn6MVZmylaz6k2HC1MINHLTLfE7O3a9Xz3fAtbGbApisp06rBUfK5uUqIJDmAaKgbiT34lHJSIiE6Q==
+  dependencies:
+    "@babel/plugin-proposal-class-properties" "^7.0.0"
+    "@babel/plugin-proposal-export-default-from" "^7.0.0"
+    "@babel/plugin-proposal-nullish-coalescing-operator" "^7.0.0"
+    "@babel/plugin-proposal-object-rest-spread" "^7.0.0"
+    "@babel/plugin-proposal-optional-catch-binding" "^7.0.0"
+    "@babel/plugin-proposal-optional-chaining" "^7.0.0"
+    "@babel/plugin-syntax-dynamic-import" "^7.0.0"
+    "@babel/plugin-syntax-export-default-from" "^7.0.0"
+    "@babel/plugin-syntax-flow" "^7.2.0"
+    "@babel/plugin-transform-arrow-functions" "^7.0.0"
+    "@babel/plugin-transform-block-scoping" "^7.0.0"
+    "@babel/plugin-transform-classes" "^7.0.0"
+    "@babel/plugin-transform-computed-properties" "^7.0.0"
+    "@babel/plugin-transform-destructuring" "^7.0.0"
+    "@babel/plugin-transform-exponentiation-operator" "^7.0.0"
+    "@babel/plugin-transform-flow-strip-types" "^7.0.0"
+    "@babel/plugin-transform-for-of" "^7.0.0"
+    "@babel/plugin-transform-function-name" "^7.0.0"
+    "@babel/plugin-transform-literals" "^7.0.0"
+    "@babel/plugin-transform-modules-commonjs" "^7.0.0"
+    "@babel/plugin-transform-object-assign" "^7.0.0"
+    "@babel/plugin-transform-parameters" "^7.0.0"
+    "@babel/plugin-transform-react-display-name" "^7.0.0"
+    "@babel/plugin-transform-react-jsx" "^7.0.0"
+    "@babel/plugin-transform-react-jsx-source" "^7.0.0"
+    "@babel/plugin-transform-regenerator" "^7.0.0"
+    "@babel/plugin-transform-runtime" "^7.0.0"
+    "@babel/plugin-transform-shorthand-properties" "^7.0.0"
+    "@babel/plugin-transform-spread" "^7.0.0"
+    "@babel/plugin-transform-sticky-regex" "^7.0.0"
+    "@babel/plugin-transform-template-literals" "^7.0.0"
+    "@babel/plugin-transform-typescript" "^7.0.0"
+    "@babel/plugin-transform-unicode-regex" "^7.0.0"
+    "@babel/template" "^7.0.0"
+    react-refresh "^0.4.0"
+
+metro-react-native-babel-preset@^0.56.3:
+  version "0.56.3"
+  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.56.3.tgz#5a1097c2f94e8ee0797a8ba2ab8f86d096f4c093"
+  integrity sha512-tGPzX2ZwI8vQ8SiNVBPUIgKqmaRNVB6rtJtHCBQZAYRiMbxh0NHCUoFfKBej6U5qVgxiYYHyN8oB23evG4/Oow==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-proposal-export-default-from" "^7.0.0"
@@ -12524,10 +12596,13 @@ react-native-randombytes@^3.5.3:
     buffer "^4.9.1"
     sjcl "^1.0.3"
 
-react-native-svg@^9.12.0:
-  version "9.12.0"
-  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.12.0.tgz#ddb6302358dfd75af3000f0fed67b26923a92dd8"
-  integrity sha512-NoEiYCmTqgNtjDhTHfB7iARGz4AkTzu191Rr6jrGTchp5/ZdwpmYG/9qXWXTDDNULX5xChljI6IL/gkynfEenw==
+react-native-svg@^9.13.3:
+  version "9.13.3"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.13.3.tgz#6414b337d55af169ac2487ab70f3108404434446"
+  integrity sha512-H50b2m4jvrQ7KxKs8uYSuWecr6e5XC7BDfS7DaA96+0Owjh0C9DksI5l8SRyHnmE+emiYMPu6Qqfr9dCyKkaJQ==
+  dependencies:
+    css-select "^2.0.2"
+    css-tree "^1.0.0-alpha.37"
 
 react-native@^0.61.2:
   version "0.61.2"
