@@ -9,7 +9,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.6.3",
+    "@babel/runtime": "^7.7.1",
     "@types/react-qr-reader": "^2.1.1",
     "qrcode-generator": "^1.4.4",
     "react-qr-reader": "^2.2.1"
