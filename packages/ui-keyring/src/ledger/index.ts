@@ -28,7 +28,7 @@ export default class Ledger {
   private app: LedgerApp | null = null;
   private type: LedgerTypes;
 
-  public constructor (type: LedgerTypes) {
+  constructor (type: LedgerTypes) {
     assert(['hid', 'u2f', 'webusb'].includes(type), `Unsupported transport ${type}`);
 
     this.type = type;

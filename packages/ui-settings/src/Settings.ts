@@ -33,7 +33,7 @@ export class Settings implements SettingsStruct {
 
   private _uiTheme: string;
 
-  public constructor () {
+  constructor () {
     const settings = store.get('settings') || {};
 
     this._emitter = new EventEmitter();
