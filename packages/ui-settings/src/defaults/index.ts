@@ -10,7 +10,7 @@ import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger';
 import { PREFIXES, PREFIX_DEFAULT } from './ss58';
 import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
 
-const CAMERA_DEFAULT = 'on';
+const CAMERA_DEFAULT = 'off';
 
 const CAMERA: Option[] = [
   {
