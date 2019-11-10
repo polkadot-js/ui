@@ -32,7 +32,7 @@ export default class Base {
 
   private _ss58Format?: Prefix;
 
-  public constructor () {
+  constructor () {
     this._accounts = accounts;
     this._addresses = addresses;
     this._contracts = contracts;

@@ -12,7 +12,7 @@ import path from 'path';
 export default class FileStore implements KeyringStore {
   private _path: string;
 
-  public constructor (path: string) {
+  constructor (path: string) {
     if (!fs.existsSync(path)) {
       mkdirp.sync(path);
     }

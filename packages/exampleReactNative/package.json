@@ -1,6 +1,6 @@
 {
   "name": "exampleReactNative",
-  "version": "0.46.1",
+  "version": "0.47.0-beta.4",
   "private": true,
   "workspaces": {
     "nohoist": [
@@ -23,28 +23,27 @@
     "test": "jest"
   },
   "dependencies": {
-    "@polkadot/reactnative-identicon": "^0.46.1",
-    "@polkadot/ui-keyring": "^0.46.1",
-    "@polkadot/ui-settings": "^0.46.1",
+    "@polkadot/reactnative-identicon": "^0.47.0-beta.4",
+    "@polkadot/ui-keyring": "^0.47.0-beta.4",
+    "@polkadot/ui-settings": "^0.47.0-beta.4",
     "@react-native-community/async-storage": "^1.6.2",
     "get-yarn-workspaces": "^1.0.2",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
-    "react": "16.10.2",
-    "react-native": "^0.61.2",
+    "react": "16.11.0",
+    "react-native": "^0.61.4",
     "react-native-crypto": "^2.2.0",
     "react-native-randombytes": "^3.5.3",
-    "react-native-svg": "^9.12.0",
     "stream-http": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/runtime": "^7.6.3",
+    "@babel/core": "^7.7.0",
+    "@babel/runtime": "^7.7.1",
     "@react-native-community/cli-platform-ios": "^2.9.0",
     "@types/react-test-renderer": "16.9.1",
     "babel-jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.56.0",
-    "react-test-renderer": "16.10.2"
+    "metro-react-native-babel-preset": "^0.57.0",
+    "react-test-renderer": "16.11.0"
   },
   "jest": {
     "preset": "react-native",
