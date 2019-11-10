@@ -118,6 +118,7 @@ class Display extends React.PureComponent<Props, State> {
       ? 0
       : frameIdx + 1;
     const nextDelay = timerDelay + ((nextIdx === 0) ? TIMER_INC : 0);
+    const timerId = setTimeout(this.nextFrame, nextDelay);
 
     // only encode the frames on demand, not above as part of the
     // state derivation - in the case of large payloads, this should
@@ -125,10 +126,9 @@ class Display extends React.PureComponent<Props, State> {
     this.setState({
       frameIdx: nextIdx,
       image: getDataUrl(frames[nextIdx]),
+      timerId,
       timerDelay: nextDelay
     });
-
-    setTimeout(this.nextFrame, nextDelay);
   }
 }
 
