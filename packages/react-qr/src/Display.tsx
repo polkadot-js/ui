@@ -20,11 +20,13 @@ interface State {
   frames: Uint8Array[];
   frameIdx: number;
   image: string | null;
+  timerDelay: number;
   timerId: number | null;
   valueHash: string | null;
 }
 
-const FRAME_DELAY = 2100;
+const FRAME_DELAY = 2500;
+const TIMER_INC = 500;
 
 function getDataUrl (value: Uint8Array): string {
   const qr = qrcode(0, 'M');
@@ -43,6 +45,7 @@ class Display extends React.PureComponent<Props, State> {
     frames: [],
     frameIdx: 0,
     image: null,
+    timerDelay: FRAME_DELAY,
     timerId: null,
     valueHash: null
   };
@@ -69,7 +72,7 @@ class Display extends React.PureComponent<Props, State> {
 
   public componentDidMount (): void {
     this.setState({
-      timerId: window.setInterval(this.nextFrame, FRAME_DELAY)
+      timerId: window.setTimeout(this.nextFrame, FRAME_DELAY)
     });
   }
 
@@ -77,7 +80,7 @@ class Display extends React.PureComponent<Props, State> {
     const { timerId } = this.state;
 
     if (timerId) {
-      clearInterval(timerId);
+      clearTimeout(timerId);
     }
   }
 
@@ -105,7 +108,7 @@ class Display extends React.PureComponent<Props, State> {
   }
 
   private nextFrame = (): void => {
-    const { frames, frameIdx } = this.state;
+    const { frames, frameIdx, timerDelay } = this.state;
 
     if (!frames || frames.length <= 1) {
       return;
@@ -114,13 +117,17 @@ class Display extends React.PureComponent<Props, State> {
     const nextIdx = frameIdx === frames.length - 1
       ? 0
       : frameIdx + 1;
+    const nextDelay = timerDelay + ((nextIdx === 0) ? TIMER_INC : 0);
+    const timerId = setTimeout(this.nextFrame, nextDelay);
 
     // only encode the frames on demand, not above as part of the
     // state derivation - in the case of large payloads, this should
     // be slightly more responsive on initial load
     this.setState({
       frameIdx: nextIdx,
-      image: getDataUrl(frames[nextIdx])
+      image: getDataUrl(frames[nextIdx]),
+      timerId,
+      timerDelay: nextDelay
     });
   }
 }
