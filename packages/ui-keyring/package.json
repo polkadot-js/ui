@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@polkadot/keyring": "^1.7.0-beta.5",
-    "@polkadot/types": "^0.96.0-beta.34",
+    "@polkadot/types": "^0.97.0-beta.0",
     "@polkadot/util": "^1.7.0-beta.5"
   },
   "optionalDependencies": {
