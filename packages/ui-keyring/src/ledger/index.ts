@@ -40,8 +40,7 @@ export default class Ledger {
 
       assert(def, `Unable to find a transport for ${this.type}`);
 
-      // we have checked for undefined in the assert
-      const transport = await (def as TransportDef).create();
+      const transport = await def.create();
 
       this.app = new LedgerApp(transport);
     }
