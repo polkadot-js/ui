@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/camelcase */
 // Copyright 2017-2019 @polkadot/ui-keyring authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion, TransportDef } from './types';
+import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
 
 import LedgerApp, { ResponseBase } from 'ledger-polkadot';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
@@ -83,11 +82,11 @@ export default class Ledger {
 
   public async getVersion (): Promise<LedgerVersion> {
     return this.withApp(async (app: LedgerApp): Promise<LedgerVersion> => {
-      const { device_locked, major, minor, patch, test_mode } = await this.wrapError(app.getVersion());
+      const { device_locked: isLocked, major, minor, patch, test_mode: isTestMode } = await this.wrapError(app.getVersion());
 
       return {
-        isLocked: device_locked,
-        isTestMode: test_mode,
+        isLocked,
+        isTestMode,
         version: [major, minor, patch]
       };
     });
