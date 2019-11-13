@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/camelcase */
 // Copyright 2017-2019 @polkadot/ui-keyring authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion, TransportDef } from './types';
+import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
 
 import LedgerApp, { ResponseBase } from 'ledger-polkadot';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
@@ -40,8 +39,7 @@ export default class Ledger {
 
       assert(def, `Unable to find a transport for ${this.type}`);
 
-      // we have checked for undefined in the assert
-      const transport = await (def as TransportDef).create();
+      const transport = await def.create();
 
       this.app = new LedgerApp(transport);
     }
@@ -64,9 +62,7 @@ export default class Ledger {
   private async wrapError <T extends ResponseBase> (promise: Promise<T>): Promise<T> {
     const result = await promise;
 
-    if (result.return_code !== SUCCESS_CODE) {
-      throw new Error(result.error_message);
-    }
+    assert(result.return_code === SUCCESS_CODE, result.error_message);
 
     return result;
   }
@@ -84,11 +80,11 @@ export default class Ledger {
 
   public async getVersion (): Promise<LedgerVersion> {
     return this.withApp(async (app: LedgerApp): Promise<LedgerVersion> => {
-      const { device_locked, major, minor, patch, test_mode } = await this.wrapError(app.getVersion());
+      const { device_locked: isLocked, major, minor, patch, test_mode: isTestMode } = await this.wrapError(app.getVersion());
 
       return {
-        isLocked: device_locked,
-        isTestMode: test_mode,
+        isLocked,
+        isTestMode,
         version: [major, minor, patch]
       };
     });
