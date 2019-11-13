@@ -62,9 +62,7 @@ export default class Ledger {
   private async wrapError <T extends ResponseBase> (promise: Promise<T>): Promise<T> {
     const result = await promise;
 
-    if (result.return_code !== SUCCESS_CODE) {
-      throw new Error(result.error_message);
-    }
+    assert(result.return_code === SUCCESS_CODE, result.error_message);
 
     return result;
   }
