@@ -29,9 +29,19 @@ const LANGUAGE_DEFAULT = 'default';
 
 const LANGUAGES: Option[] = [
   {
-    info: 'detect',
+    info: LANGUAGE_DEFAULT,
     text: 'Default browser language (auto-detect)',
     value: LANGUAGE_DEFAULT
+  },
+  {
+    info: 'en',
+    text: 'English',
+    value: 'en'
+  },
+  {
+    info: 'ja',
+    text: '日本語',
+    value: 'ja'
   }
 ];
 
