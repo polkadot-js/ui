@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-shared",
-  "version": "0.47.0-beta.9",
+  "version": "0.47.0-beta.10",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
