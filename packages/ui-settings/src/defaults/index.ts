@@ -27,24 +27,6 @@ const CAMERA: Option[] = [
 
 const LANGUAGE_DEFAULT = 'default';
 
-const LANGUAGES: Option[] = [
-  {
-    info: LANGUAGE_DEFAULT,
-    text: 'Default browser language (auto-detect)',
-    value: LANGUAGE_DEFAULT
-  },
-  {
-    info: 'en',
-    text: 'English',
-    value: 'en'
-  },
-  {
-    info: 'ja',
-    text: '日本語',
-    value: 'ja'
-  }
-];
-
 const LOCKING_DEFAULT = 'session';
 
 const LOCKING: Option[] = [
@@ -70,7 +52,6 @@ export {
   ICON_DEFAULT_HOST,
   ICONS,
   LANGUAGE_DEFAULT,
-  LANGUAGES,
   LEDGER_CONN_DEFAULT,
   LEDGER_CONN,
   LOCKING_DEFAULT,
