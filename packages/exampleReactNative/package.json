@@ -30,20 +30,20 @@
     "get-yarn-workspaces": "^1.0.2",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
-    "react": "16.11.0",
+    "react": "16.12.0",
     "react-native": "^0.61.4",
     "react-native-crypto": "^2.2.0",
     "react-native-randombytes": "^3.5.3",
     "stream-http": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/runtime": "^7.7.2",
-    "@react-native-community/cli-platform-ios": "^2.9.0",
+    "@babel/core": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
+    "@react-native-community/cli-platform-ios": "^3.0.0",
     "@types/react-test-renderer": "16.9.1",
     "babel-jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.57.0",
-    "react-test-renderer": "16.11.0"
+    "react-test-renderer": "16.12.0"
   },
   "jest": {
     "preset": "react-native",
