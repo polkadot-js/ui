@@ -82,7 +82,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   w3f: {
     providerDisplay: 'Web3 Foundation',
     nodes: {
-      kusama: 'wss://serinus-5.kusama.network/'
+      kusama: 'wss://cc3-5.kusama.network/'
     }
   }
 };
