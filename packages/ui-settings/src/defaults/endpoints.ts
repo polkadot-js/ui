@@ -50,7 +50,7 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
     type: 'Substrate Testnet'
   },
   kusama: {
-    chainDisplay: 'Kusama CC2',
+    chainDisplay: 'Kusama CC3',
     logo: 'kusama',
     type: 'Polkadot Canary'
   }
