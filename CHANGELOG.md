@@ -1,6 +1,7 @@
 # 0.47.1
 
 - Support for Kusama CC3 (network endpoints)
+- Genesis hashes for accounts can now lookup against a range (so CC2-locked accounts will show on CC3)
 - Language options have been removed from settings (these will be app-specific)
 - QR display loops now have a timeout decay (slower as it loops)
 
