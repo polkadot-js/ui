@@ -8,6 +8,7 @@ import { AddressSubject, SingleAddress } from './observable/types';
 import { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import createPair from '@polkadot/keyring/pair';
+import chains from '@polkadot/ui-settings/defaults/chains';
 import { hexToU8a, isHex, isString } from '@polkadot/util';
 
 import env from './observable/development';
@@ -219,10 +220,14 @@ export class Keyring extends Base implements KeyringStruct {
 
   private allowGenesis (json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
     if (json && json.meta && this.genesisHash) {
+      const hashes: (string | null | undefined)[] = Object.values(chains).find((hashes): boolean =>
+        hashes.includes(this.genesisHash || '')
+      ) || [this.genesisHash];
+
       if (json.meta.genesisHash) {
-        return this.genesisHash === json.meta.genesisHash;
+        return hashes.includes(json.meta.genesisHash);
       } else if (json.meta.contract) {
-        return this.genesisHash === json.meta.contract.genesisHash;
+        return hashes.includes(json.meta.contract.genesisHash);
       }
     }
 
