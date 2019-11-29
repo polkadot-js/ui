@@ -50,7 +50,7 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
     type: 'Substrate Testnet'
   },
   kusama: {
-    chainDisplay: 'Kusama CC2',
+    chainDisplay: 'Kusama CC3',
     logo: 'kusama',
     type: 'Polkadot Canary'
   }
@@ -82,7 +82,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   w3f: {
     providerDisplay: 'Web3 Foundation',
     nodes: {
-      kusama: 'wss://serinus-5.kusama.network/'
+      kusama: 'wss://cc3-5.kusama.network/'
     }
   }
 };
