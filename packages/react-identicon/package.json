@@ -9,7 +9,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.7.4",
+    "@babel/runtime": "^7.7.5",
     "@polkadot/ui-settings": "^0.48.0-beta.0",
     "@polkadot/ui-shared": "^0.48.0-beta.0",
     "@types/color": "^3.0.0",
