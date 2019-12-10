@@ -61,7 +61,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   commonwealth: {
     providerDisplay: 'Commonwealth Labs',
     nodes: {
-      edgeware: 'wss://mainnet1.edgewa.re',
+      // edgeware: 'wss://mainnet1.edgewa.re',
       edgewareTest: 'wss://testnet2.edgewa.re'
     }
   },
