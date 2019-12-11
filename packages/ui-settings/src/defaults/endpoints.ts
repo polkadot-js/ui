@@ -62,7 +62,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
     providerDisplay: 'Commonwealth Labs',
     nodes: {
       // edgeware: 'wss://mainnet1.edgewa.re',
-      edgewareTest: 'wss://testnet2.edgewa.re'
+      edgewareTest: 'wss://testnet4.edgewa.re'
     }
   },
   parity: {
