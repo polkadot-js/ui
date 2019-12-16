@@ -68,7 +68,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   parity: {
     providerDisplay: 'Parity',
     nodes: {
-      alexander: 'wss://poc3-rpc.polkadot.io/',
+      // alexander: 'wss://poc3-rpc.polkadot.io/',
       flamingFir: 'wss://substrate-rpc.parity.io/',
       kusama: 'wss://kusama-rpc.polkadot.io/'
     }
@@ -76,7 +76,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   unfrastructure: {
     providerDisplay: 'Centrality UNfrastructure',
     nodes: {
-      alexander: 'wss://alex.unfrastructure.io/public/ws'
+      // alexander: 'wss://alex.unfrastructure.io/public/ws'
     }
   },
   w3f: {
