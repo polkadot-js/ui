@@ -1,6 +1,6 @@
 # Available Packages
 
-Let's take a slightly deeper diver into the available packages that we provide. While we won't (yet) cover the specifics of Frameworks-specifics (suck as React, React Native or Vue), we will also take a slight detour from the rest of the  getting started sections, just allowing a comprehensive overview of everything provided... including the framework-specifics.
+Let's take a slightly deeper diver into the available packages that we provide. While we won't (yet) cover the specifics of Frameworks-specifics (such as React, React Native or Vue), we will also take a slight detour from the rest of the  getting started sections, just allowing a comprehensive overview of everything provided... including the framework-specifics.
 
 ## Organization
 
