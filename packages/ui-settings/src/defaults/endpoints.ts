@@ -93,7 +93,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   kulupu: {
     providerDisplay: 'Kulupu',
     nodes: {
-      kulupu: 'wss://rpc.kulupu.network/ws' 
+      kulupu: 'wss://rpc.kulupu.network/ws'
     }
   }
 };
