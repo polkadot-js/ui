@@ -6,7 +6,7 @@ import { Option } from '../types';
 
 import { isPolkadot } from './type';
 
-type ChainName = 'alexander' | 'edgeware' | 'edgewareTest' | 'flamingFir' | 'kusama';
+type ChainName = 'alexander' | 'edgeware' | 'edgewareTest' | 'flamingFir' | 'kusama' | 'kulupu';
 
 interface ChainData {
   chainDisplay: string;
@@ -14,7 +14,7 @@ interface ChainData {
   type: string;
 }
 
-type ProviderName = 'commonwealth' | 'parity' | 'unfrastructure' | 'w3f';
+type ProviderName = 'commonwealth' | 'parity' | 'unfrastructure' | 'w3f' | 'kulupu';
 
 interface PoviderData {
   providerDisplay: string;
@@ -22,10 +22,10 @@ interface PoviderData {
 }
 
 // we use this to give an ordering to the chains available
-const ORDER_CHAINS: ChainName[] = ['kusama', 'edgeware', 'alexander', 'edgewareTest', 'flamingFir'];
+const ORDER_CHAINS: ChainName[] = ['kusama', 'edgeware', 'alexander', 'edgewareTest', 'flamingFir', 'kulupu'];
 
 // we use this to order the providers inside the chains
-const ORDER_PROVIDERS: ProviderName[] = ['parity', 'w3f', 'unfrastructure', 'commonwealth'];
+const ORDER_PROVIDERS: ProviderName[] = ['parity', 'w3f', 'unfrastructure', 'commonwealth', 'kulupu'];
 
 // some suplementary info on a per-chain basis
 const CHAIN_INFO: Record<ChainName, ChainData> = {
@@ -53,6 +53,11 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
     chainDisplay: 'Kusama CC3',
     logo: 'kusama',
     type: 'Polkadot Canary'
+  },
+  kulupu: {
+    chainDisplay: 'Kulupu',
+    logo: 'substrate',
+    type: 'Kulupu Mainnet'
   }
 };
 
@@ -83,6 +88,12 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
     providerDisplay: 'Web3 Foundation',
     nodes: {
       kusama: 'wss://cc3-5.kusama.network/'
+    }
+  },
+  kulupu: {
+    providerDisplay: 'Kulupu',
+    nodes: {
+      kulupu: 'wss://rpc.kulupu.network/ws'
     }
   }
 };
