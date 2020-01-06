@@ -26,7 +26,7 @@
     "@polkadot/reactnative-identicon": "^0.48.0-beta.5",
     "@polkadot/ui-keyring": "^0.48.0-beta.5",
     "@polkadot/ui-settings": "^0.48.0-beta.5",
-    "@react-native-community/async-storage": "^1.6.2",
+    "@react-native-community/async-storage": "^1.7.1",
     "get-yarn-workspaces": "^1.0.2",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
@@ -37,8 +37,8 @@
     "stream-http": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/runtime": "^7.7.5",
+    "@babel/core": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
     "@react-native-community/cli-platform-ios": "^3.0.0",
     "@types/react-test-renderer": "16.9.1",
     "babel-jest": "^24.9.0",
