@@ -62,6 +62,7 @@ export default styled(Scan)`
   .ui--qr-Scan {
     display: inline-block;
     height: 100%;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
     width: 100%;
 
     video {
