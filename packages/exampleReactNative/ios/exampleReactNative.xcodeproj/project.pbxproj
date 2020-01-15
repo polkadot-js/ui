@@ -161,7 +161,6 @@
 				7DE1F6B3025518D718441D67 /* Pods-exampleReactNativeTests.debug.xcconfig */,
 				FD82CB3C48B719DCC61D04D7 /* Pods-exampleReactNativeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -371,7 +371,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\nexport NODE_ARGS=--max_old_space_size=8192\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		1F39ED716AE6354C4F187983 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
