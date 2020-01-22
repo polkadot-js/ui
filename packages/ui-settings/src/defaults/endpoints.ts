@@ -6,7 +6,7 @@ import { Option } from '../types';
 
 import { isPolkadot } from './type';
 
-type ChainName = 'alexander' | 'edgeware' | 'edgewareTest' | 'flamingFir' | 'kusama' | 'kulupu';
+type ChainName = 'alexander' | 'edgeware' | 'edgewareTest' | 'flamingFir' | 'kusama' | 'kulupu' | 'westend';
 
 interface ChainData {
   chainDisplay: string;
@@ -22,7 +22,7 @@ interface PoviderData {
 }
 
 // we use this to give an ordering to the chains available
-const ORDER_CHAINS: ChainName[] = ['kusama', 'edgeware', 'alexander', 'edgewareTest', 'flamingFir', 'kulupu'];
+const ORDER_CHAINS: ChainName[] = ['kusama', 'edgeware', 'westend', 'edgewareTest', 'flamingFir', 'kulupu'];
 
 // we use this to order the providers inside the chains
 const ORDER_PROVIDERS: ProviderName[] = ['parity', 'w3f', 'unfrastructure', 'commonwealth', 'kulupu'];
@@ -58,6 +58,11 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
     chainDisplay: 'Kulupu',
     logo: 'substrate',
     type: 'Kulupu Mainnet'
+  },
+  westend: {
+    chainDisplay: 'Westend',
+    logo: 'alexander',
+    type: 'Polkadot Testnet'
   }
 };
 
@@ -75,7 +80,8 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
     nodes: {
       // alexander: 'wss://poc3-rpc.polkadot.io/',
       flamingFir: 'wss://substrate-rpc.parity.io/',
-      kusama: 'wss://kusama-rpc.polkadot.io/'
+      kusama: 'wss://kusama-rpc.polkadot.io/',
+      westend: 'wss://westend-rpc.polkadot.io'
     }
   },
   unfrastructure: {
