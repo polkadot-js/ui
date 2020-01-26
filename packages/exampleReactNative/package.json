@@ -38,12 +38,12 @@
     "stream-http": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/runtime": "^7.7.7",
+    "@babel/core": "^7.8.3",
+    "@babel/runtime": "^7.8.3",
     "@react-native-community/cli-platform-ios": "^3.0.0",
-    "@types/react-test-renderer": "16.9.1",
-    "babel-jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.57.0",
+    "@types/react-test-renderer": "16.9.2",
+    "babel-jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.58.0",
     "react-test-renderer": "16.12.0"
   },
   "jest": {
