@@ -7,7 +7,14 @@ import { detectPackage } from '@polkadot/util';
 import keyring, { Keyring } from './Keyring';
 import Ledger from './ledger';
 
+let dirname = 'node_modules';
 let pkgJson;
+
+try {
+  dirname = __dirname;
+} catch (error) {
+  // ignore
+}
 
 try {
   pkgJson = require('./package.json');
@@ -15,7 +22,7 @@ try {
   pkgJson = require('../package.json');
 }
 
-detectPackage(pkgJson);
+detectPackage(dirname, pkgJson);
 
 export default keyring;
 
