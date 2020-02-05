@@ -13,7 +13,7 @@ import { u8aToHex } from '@polkadot/util';
 const accounts = keyring.getAccounts();
 
 accounts.forEach(({ address, meta, publicKey }) =>
-  console.log(address, JSON.stringify(meta), u8aToHex(publicKey));
+  console.log(address, JSON.stringify(meta), u8aToHex(publicKey))
 );
 ```
 
