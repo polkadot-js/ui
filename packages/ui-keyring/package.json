@@ -10,11 +10,9 @@
   "contributors": [],
   "license": "Apache-2.0",
   "browser": {
-    "../package.json": "./package.json",
     "./ledger/transportsNode": "./ledger/transportsEmpty"
   },
   "react-native": {
-    "../package.json": "./package.json",
     "./ledger/transportsNode": "./ledger/transportsEmpty",
     "./ledger/transportsWeb": "./ledger/transportsEmpty"
   },
@@ -32,9 +30,9 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^2.1.0-beta.1",
-    "@polkadot/types": "^1.1.0-beta.16",
-    "@polkadot/util": "^2.1.0-beta.1"
+    "@polkadot/keyring": "^2.2.0-beta.0",
+    "@polkadot/types": "^1.1.0-beta.22",
+    "@polkadot/util": "^2.2.0-beta.0"
   },
   "optionalDependencies": {
     "@ledgerhq/hw-transport-node-hid": "^5.7.0"
