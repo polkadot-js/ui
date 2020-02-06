@@ -1,3 +1,14 @@
+# 0.49.1
+
+- Add resolver for jest requires (tests from src)
+
+# 0.48.1
+
+- Add Westend & Kulupulu, remove Alexander
+- Update Edgeware wss uri
+- Change display name for Kusama
+- Mirror QR scanning display
+
 # 0.47.1
 
 - Support for Kusama CC3 (network endpoints)
