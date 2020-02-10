@@ -40,7 +40,7 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
     type: 'Edgeware Mainnet'
   },
   edgewareTest: {
-    chainDisplay: 'Edgeware Testnet',
+    chainDisplay: 'Berlin',
     logo: 'edgeware',
     type: 'Edgeware Testnet'
   },
@@ -71,8 +71,8 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   commonwealth: {
     providerDisplay: 'Commonwealth Labs',
     nodes: {
-      // edgeware: 'wss://mainnet1.edgewa.re',
-      edgewareTest: 'wss://testnet4.edgewa.re'
+      edgeware: 'wss://mainnet1.edgewa.re',
+      edgewareTest: 'wss://berlin1.edgewa.re'
     }
   },
   parity: {
