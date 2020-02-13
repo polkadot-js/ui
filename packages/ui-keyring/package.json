@@ -30,9 +30,9 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^2.3.0-beta.0",
-    "@polkadot/types": "^1.2.0-beta.10",
-    "@polkadot/util": "^2.3.0-beta.0"
+    "@polkadot/keyring": "^2.3.0-beta.1",
+    "@polkadot/types": "^1.2.0-beta.12",
+    "@polkadot/util": "^2.3.0-beta.1"
   },
   "optionalDependencies": {
     "@ledgerhq/hw-transport-node-hid": "^5.7.0"

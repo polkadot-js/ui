@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const base = require('@polkadot/dev-react/config/babel');
+const base = require('@polkadot/dev/config/babel');
 
 module.exports = Object.keys(base).reduce((config, key) => {
   config[key] = base[key];

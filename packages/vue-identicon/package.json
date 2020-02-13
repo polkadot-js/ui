@@ -16,5 +16,9 @@
   "peerDependencies": {
     "@polkadot/util-crypto": "*",
     "vue": "*"
+  },
+  "devDependencies": {
+    "@polkadot/util-crypto": "^2.3.0-beta.1",
+    "vue": "^2.6.11"
   }
 }

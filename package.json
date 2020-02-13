@@ -15,7 +15,7 @@
   "scripts": {
     "build": "polkadot-dev-build-ts",
     "docs": "polkadot-dev-build-docs",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx . && tsc --noEmit --pretty",
+    "lint": "polkadot-dev-run-lint",
     "clean": "polkadot-dev-clean-build",
     "demo:identicon:react": "yarn build:ts && webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
     "demo:identicon:vue": "yarn build:ts && webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
@@ -25,14 +25,14 @@
     "example:react": "yarn build:ts && cd packages/example-react && webpack --config webpack.config.js",
     "example:vue": "yarn build:ts && cd packages/example-vue && webpack --config webpack.config.js",
     "postinstall": "polkadot-dev-yarn-only",
-    "test": "jest --coverage --runInBand",
-    "test:one": "jest"
+    "test": "polkadot-dev-run-test --coverage --runInBand",
+    "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/runtime": "^7.8.4",
-    "@polkadot/dev-react": "^0.34.1",
-    "@polkadot/ts": "^0.2.2",
+    "@polkadot/dev": "^0.40.3",
+    "@polkadot/ts": "^0.2.3",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
     "react": "^16.12.0",
