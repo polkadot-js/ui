@@ -10,13 +10,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.8.4",
-    "@types/color": "^3.0.1",
     "color": "^3.1.2"
   },
   "peerDependencies": {
     "@polkadot/util-crypto": "*"
   },
   "devDependencies": {
-    "@polkadot/util-crypto": "^2.3.0-beta.5"
+    "@polkadot/util-crypto": "^2.3.0-beta.6",
+    "@types/color": "^3.0.1"
   }
 }

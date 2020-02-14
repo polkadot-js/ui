@@ -10,10 +10,12 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.8.4",
-    "@types/react-qr-reader": "^2.1.1",
-    "@types/styled-components": "^4.4.3",
     "qrcode-generator": "^1.4.4",
     "react-qr-reader": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/react-qr-reader": "^2.1.1",
+    "@types/styled-components": "^4.4.3"
   },
   "peerDependencies": {
     "react": "*",
