@@ -1,6 +1,8 @@
 # 0.50.1 Feb 16, 2020
 
 - ui-settings does not expose pre-configured endpoints by default (only local dev node)
+- Bump to `@polkadot/api` 1.2.1
+- Bump to `@polkadot/util` 2.3.1
 
 # 0.49.1 Feb 06, 2020
 
