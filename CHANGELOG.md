@@ -1,3 +1,9 @@
+# 0.51.1 Feb 18, 2020
+
+- Support formatting of addresses via createPair base on latest upstream keyring
+- Bump to `@polkadot/api` 1.3.1
+- Bump to `@polkadot/util` 2.4.1
+
 # 0.50.1 Feb 16, 2020
 
 - ui-settings does not expose pre-configured endpoints by default (only local dev node)

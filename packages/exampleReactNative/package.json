@@ -1,6 +1,6 @@
 {
   "name": "exampleReactNative",
-  "version": "0.51.0-beta.1",
+  "version": "0.51.0",
   "private": true,
   "workspaces": {
     "nohoist": [
@@ -23,9 +23,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@polkadot/reactnative-identicon": "^0.51.0-beta.1",
-    "@polkadot/ui-keyring": "^0.51.0-beta.1",
-    "@polkadot/ui-settings": "^0.51.0-beta.1",
+    "@polkadot/reactnative-identicon": "^0.51.0",
+    "@polkadot/ui-keyring": "^0.51.0",
+    "@polkadot/ui-settings": "^0.51.0",
     "@react-native-community/async-storage": "^1.7.1",
     "fast-text-encoding": "^1.0.0",
     "get-yarn-workspaces": "^1.0.2",
@@ -40,9 +40,9 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/runtime": "^7.8.4",
-    "@polkadot/keyring": "^2.4.0-beta.2",
-    "@polkadot/util": "^2.4.0-beta.2",
-    "@polkadot/util-crypto": "^2.4.0-beta.2",
+    "@polkadot/keyring": "^2.4.1",
+    "@polkadot/util": "^2.4.1",
+    "@polkadot/util-crypto": "^2.4.1",
     "@react-native-community/cli-platform-ios": "^3.0.0",
     "@types/react-test-renderer": "16.9.2",
     "babel-jest": "^25.1.0",
