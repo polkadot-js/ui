@@ -30,8 +30,6 @@ export default class Base {
 
   protected _store!: KeyringStore;
 
-  private _ss58Format?: Prefix;
-
   constructor () {
     this._accounts = accounts;
     this._addresses = addresses;
@@ -96,8 +94,10 @@ export default class Base {
     return password.length > 0 && password.length <= MAX_PASS_LEN;
   }
 
-  public setSS58Format (ss58Format: Prefix): void {
-    this._ss58Format = ss58Format;
+  public setSS58Format (ss58Format?: Prefix): void {
+    if (this._keyring && ss58Format) {
+      this._keyring.setSS58Format(ss58Format);
+    }
   }
 
   public setDevMode (isDevelopment: boolean): void {
@@ -105,7 +105,7 @@ export default class Base {
   }
 
   protected initKeyring (options: KeyringOptions): void {
-    const keyring = testKeyring({ ss58Format: this._ss58Format, ...options }, true);
+    const keyring = testKeyring(options, true);
 
     if (isBoolean(options.isDevelopment)) {
       this.setDevMode(options.isDevelopment);

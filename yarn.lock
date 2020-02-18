@@ -2337,13 +2337,13 @@
     "@polkadot/util" "^2.4.1"
     "@polkadot/util-crypto" "^2.4.1"
 
-"@polkadot/metadata@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/metadata/-/metadata-1.3.1.tgz#1324195c67c0ec7b01873a30ac77dcb5303ad359"
-  integrity sha512-sdtitMkdPzcnVfdDNyE1f916B35kRa4I/PGTrFR7/Q9xW5p/A1XbMNjApcXg3HGudrS9JRddebUM6q2MYsaGTA==
+"@polkadot/metadata@^1.4.0-beta.5":
+  version "1.4.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@polkadot/metadata/-/metadata-1.4.0-beta.5.tgz#90b8d36a003fbd57866bdc8b874adcb11ea9ddf8"
+  integrity sha512-SoPNZ11E+VrGTu2l93FfZiRWvu2krrcwFacMW2M08FGwo1TiHBuVHzjNhxNA7vKcLi6HqbKrTKi/Mj+FaPu7bA==
   dependencies:
     "@babel/runtime" "^7.8.4"
-    "@polkadot/types" "^1.3.1"
+    "@polkadot/types" "^1.4.0-beta.5"
     "@polkadot/util" "^2.4.1"
     "@polkadot/util-crypto" "^2.4.1"
     bn.js "^5.1.1"
@@ -2355,13 +2355,13 @@
   dependencies:
     "@types/chrome" "^0.0.95"
 
-"@polkadot/types@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-1.3.1.tgz#849050c11f0cbe119822e601a4500d2d2822fbc8"
-  integrity sha512-BJOVE9rjeBOCCcl8Z2DlBXooavipovQwPs4HDMGykdypYmjKIpr1iEVBKWhDspANfNUi7PntfoLGNvsga0PSiw==
+"@polkadot/types@^1.4.0-beta.5":
+  version "1.4.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@polkadot/types/-/types-1.4.0-beta.5.tgz#bd09e7c52aaec78bcf9d66a5bcf5f6cdcd757690"
+  integrity sha512-dNy18407wM16MMiC1/VRBD4xYG+7HjuK42SHtvB0oaSfP1av8eIqOPnYKNK+LgBARHFw3DoyISj3dsjEE5yESw==
   dependencies:
     "@babel/runtime" "^7.8.4"
-    "@polkadot/metadata" "^1.3.1"
+    "@polkadot/metadata" "^1.4.0-beta.5"
     "@polkadot/util" "^2.4.1"
     "@polkadot/util-crypto" "^2.4.1"
     "@types/bn.js" "^4.11.6"
