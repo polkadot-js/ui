@@ -1,3 +1,7 @@
+# 0.52.0-beta.x
+
+- Remove internal ui-keyring ss58Format mapping, rather set it directly on internal keyring
+
 # 0.51.1 Feb 18, 2020
 
 - Support formatting of addresses via createPair base on latest upstream keyring
