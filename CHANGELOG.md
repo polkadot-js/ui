@@ -1,6 +1,7 @@
 # 0.52.0-beta.x
 
 - Remove internal ui-keyring ss58Format mapping, rather set it directly on internal keyring
+- Add logo for Centrifuge to ui-assets
 
 # 0.51.1 Feb 18, 2020
 
