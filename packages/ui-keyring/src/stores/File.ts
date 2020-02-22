@@ -10,19 +10,19 @@ import path from 'path';
 
 // NOTE untested and unused by any known apps, probably broken in various mysterious ways
 export default class FileStore implements KeyringStore {
-  private _path: string;
+  #path: string;
 
   constructor (path: string) {
     if (!fs.existsSync(path)) {
       mkdirp.sync(path);
     }
 
-    this._path = path;
+    this.#path = path;
   }
 
   public all (cb: (key: string, value: KeyringJson) => void): void {
     fs
-      .readdirSync(this._path)
+      .readdirSync(this.#path)
       .filter((key): boolean => !['.', '..'].includes(key))
       .forEach((key): void => {
         cb(key, this._readKey(key));
@@ -44,7 +44,7 @@ export default class FileStore implements KeyringStore {
   }
 
   private _getPath (key: string): string {
-    return path.join(this._path, key);
+    return path.join(this.#path, key);
   }
 
   private _readKey (key: string): KeyringJson {

@@ -19,7 +19,7 @@
     "react-native": "*"
   },
   "devDependencies": {
-    "@polkadot/util-crypto": "^2.4.1",
+    "@polkadot/util-crypto": "^2.5.1",
     "@types/react-native": "^0.61.12"
   }
 }

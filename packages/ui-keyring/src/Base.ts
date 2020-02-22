@@ -18,40 +18,40 @@ import BrowserStore from './stores/Browser'; // direct import (skip index with a
 import { MAX_PASS_LEN } from './defaults';
 
 export default class Base {
-  private _accounts: AddressSubject;
+  #accounts: AddressSubject;
 
-  private _addresses: AddressSubject;
+  #addresses: AddressSubject;
 
-  private _contracts: AddressSubject;
+  #contracts: AddressSubject;
 
-  private _keyring?: KeyringInstance;
+  #keyring?: KeyringInstance;
+
+  protected _store: KeyringStore;
 
   protected _genesisHash?: string;
 
-  protected _store!: KeyringStore;
-
   constructor () {
-    this._accounts = accounts;
-    this._addresses = addresses;
-    this._contracts = contracts;
-    this._keyring = undefined;
+    this.#accounts = accounts;
+    this.#addresses = addresses;
+    this.#contracts = contracts;
+    this._store = new BrowserStore();
   }
 
   public get accounts (): AddressSubject {
-    return this._accounts;
+    return this.#accounts;
   }
 
   public get addresses (): AddressSubject {
-    return this._addresses;
+    return this.#addresses;
   }
 
   public get contracts (): AddressSubject {
-    return this._contracts;
+    return this.#contracts;
   }
 
   public get keyring (): KeyringInstance {
-    if (this._keyring) {
-      return this._keyring;
+    if (this.#keyring) {
+      return this.#keyring;
     }
 
     throw new Error('Keyring should be initialised via \'loadAll\' before use');
@@ -95,8 +95,8 @@ export default class Base {
   }
 
   public setSS58Format (ss58Format?: Prefix): void {
-    if (this._keyring && ss58Format) {
-      this._keyring.setSS58Format(ss58Format);
+    if (this.#keyring && ss58Format) {
+      this.#keyring.setSS58Format(ss58Format);
     }
   }
 
@@ -111,9 +111,9 @@ export default class Base {
       this.setDevMode(options.isDevelopment);
     }
 
-    this._keyring = keyring;
+    this.#keyring = keyring;
     this._genesisHash = options.genesisHash && options.genesisHash.toHex();
-    this._store = options.store || new BrowserStore();
+    this._store = options.store || this._store;
 
     this.addAccountPairs();
   }

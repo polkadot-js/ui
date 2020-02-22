@@ -13,76 +13,76 @@ type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';
 
 export class Settings implements SettingsStruct {
-  private _apiUrl: string;
+  readonly #emitter: EventEmitter;
 
-  private _camera: string;
+  #apiUrl: string;
 
-  private _emitter: EventEmitter;
+  #camera: string;
 
-  private _i18nLang: string;
+  #i18nLang: string;
 
-  private _icon: string;
+  #icon: string;
 
-  private _ledgerConn: string;
+  #ledgerConn: string;
 
-  private _locking: string;
+  #locking: string;
 
-  private _prefix: number;
+  #prefix: number;
 
-  private _uiMode: string;
+  #uiMode: string;
 
-  private _uiTheme: string;
+  #uiTheme: string;
 
   constructor () {
     const settings = store.get('settings') || {};
 
-    this._emitter = new EventEmitter();
+    this.#emitter = new EventEmitter();
 
-    this._apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
-    this._camera = settings.camera || CAMERA_DEFAULT;
-    this._ledgerConn = settings.ledgerConn || LEDGER_CONN_DEFAULT;
-    this._i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
-    this._icon = settings.icon || ICON_DEFAULT;
-    this._locking = settings.locking || LOCKING_DEFAULT;
-    this._prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
-    this._uiMode = settings.uiMode || UIMODE_DEFAULT;
-    this._uiTheme = settings.uiTheme || UITHEME_DEFAULT;
+    this.#apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
+    this.#camera = settings.camera || CAMERA_DEFAULT;
+    this.#ledgerConn = settings.ledgerConn || LEDGER_CONN_DEFAULT;
+    this.#i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
+    this.#icon = settings.icon || ICON_DEFAULT;
+    this.#locking = settings.locking || LOCKING_DEFAULT;
+    this.#prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
+    this.#uiMode = settings.uiMode || UIMODE_DEFAULT;
+    this.#uiTheme = settings.uiTheme || UITHEME_DEFAULT;
   }
 
   public get camera (): string {
-    return this._camera;
+    return this.#camera;
   }
 
   public get apiUrl (): string {
-    return this._apiUrl;
+    return this.#apiUrl;
   }
 
   public get i18nLang (): string {
-    return this._i18nLang;
+    return this.#i18nLang;
   }
 
   public get icon (): string {
-    return this._icon;
+    return this.#icon;
   }
 
   public get ledgerConn (): string {
-    return this._ledgerConn;
+    return this.#ledgerConn;
   }
 
   public get locking (): string {
-    return this._locking;
+    return this.#locking;
   }
 
   public get prefix (): number {
-    return this._prefix;
+    return this.#prefix;
   }
 
   public get uiMode (): string {
-    return this._uiMode;
+    return this.#uiMode;
   }
 
   public get uiTheme (): string {
-    return this._uiTheme;
+    return this.#uiTheme;
   }
 
   public get availableCamera (): Option[] {
@@ -123,37 +123,37 @@ export class Settings implements SettingsStruct {
 
   public get (): SettingsStruct {
     return {
-      apiUrl: this._apiUrl,
-      camera: this._camera,
-      i18nLang: this._i18nLang,
-      icon: this._icon,
-      ledgerConn: this._ledgerConn,
-      locking: this._locking,
-      prefix: this._prefix,
-      uiMode: this._uiMode,
-      uiTheme: this._uiTheme
+      apiUrl: this.#apiUrl,
+      camera: this.#camera,
+      i18nLang: this.#i18nLang,
+      icon: this.#icon,
+      ledgerConn: this.#ledgerConn,
+      locking: this.#locking,
+      prefix: this.#prefix,
+      uiMode: this.#uiMode,
+      uiTheme: this.#uiTheme
     };
   }
 
   public set (settings: Partial<SettingsStruct>): void {
-    this._apiUrl = settings.apiUrl || this._apiUrl;
-    this._camera = settings.camera || this._camera;
-    this._ledgerConn = settings.ledgerConn || this._ledgerConn;
-    this._i18nLang = settings.i18nLang || this._i18nLang;
-    this._icon = settings.icon || this._icon;
-    this._locking = settings.locking || this._locking;
-    this._prefix = isUndefined(settings.prefix) ? this._prefix : settings.prefix;
-    this._uiMode = settings.uiMode || this._uiMode;
-    this._uiTheme = settings.uiTheme || this._uiTheme;
+    this.#apiUrl = settings.apiUrl || this.#apiUrl;
+    this.#camera = settings.camera || this.#camera;
+    this.#ledgerConn = settings.ledgerConn || this.#ledgerConn;
+    this.#i18nLang = settings.i18nLang || this.#i18nLang;
+    this.#icon = settings.icon || this.#icon;
+    this.#locking = settings.locking || this.#locking;
+    this.#prefix = isUndefined(settings.prefix) ? this.#prefix : settings.prefix;
+    this.#uiMode = settings.uiMode || this.#uiMode;
+    this.#uiTheme = settings.uiTheme || this.#uiTheme;
 
     const newValues = this.get();
 
     store.set('settings', newValues);
-    this._emitter.emit('change', newValues);
+    this.#emitter.emit('change', newValues);
   }
 
   public on (type: OnTypes, cb: ChangeCallback): void {
-    this._emitter.on(type, cb);
+    this.#emitter.on(type, cb);
   }
 }
 

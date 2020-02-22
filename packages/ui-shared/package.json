@@ -16,7 +16,7 @@
     "@polkadot/util-crypto": "*"
   },
   "devDependencies": {
-    "@polkadot/util-crypto": "^2.4.1",
+    "@polkadot/util-crypto": "^2.5.1",
     "@types/color": "^3.0.1"
   }
 }
