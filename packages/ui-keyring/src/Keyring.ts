@@ -22,7 +22,7 @@ const RECENT_EXPIRY = 24 * 60 * 60;
 // Chain determination occurs outside of Keyring. Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
 export class Keyring extends Base implements KeyringStruct {
-  private stores = {
+  #stores = {
     address: (): AddressSubject => this.addresses,
     contract: (): AddressSubject => this.contracts,
     account: (): AddressSubject => this.accounts
@@ -114,8 +114,8 @@ export class Keyring extends Base implements KeyringStruct {
       : this.encodeAddress(_address);
     const publicKey = this.decodeAddress(address);
     const stores = type
-      ? [this.stores[type]]
-      : Object.values(this.stores);
+      ? [this.#stores[type]]
+      : Object.values(this.#stores);
 
     const info = stores.reduce<SingleAddress | undefined>((lastInfo, store): SingleAddress | undefined =>
       (store().subject.getValue()[address] || lastInfo), undefined);
@@ -319,7 +319,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     delete json.meta.isRecent;
 
-    this.stores[type]().add(this._store, address, json);
+    this.#stores[type]().add(this._store, address, json);
 
     return json as KeyringPair$Json;
   }
