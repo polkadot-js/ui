@@ -1,7 +1,11 @@
 # 0.52.0-beta.x
 
+- **Breaking change** (TypeScript only) The `*.d.ts` files now contain TypeScript 3.8 features, `#private`, which is not usable in older versions
 - Remove internal ui-keyring ss58Format mapping, rather set it directly on internal keyring
 - Add logo for Centrifuge to ui-assets
+- Bump to `@polkadot/api` 1.4.1
+- Bump to `@polkadot/util` 2.5.1
+- Convert `private <field>` to `#<field>`
 
 # 0.51.1 Feb 18, 2020
 
