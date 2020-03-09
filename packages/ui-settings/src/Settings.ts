@@ -38,7 +38,7 @@ export class Settings implements SettingsStruct {
 
     this.#emitter = new EventEmitter();
 
-    this.#apiUrl = settings.apiUrl || process.env.WS_URL || ENDPOINT_DEFAULT;
+    this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || process.env.WS_URL || ENDPOINT_DEFAULT;
     this.#camera = settings.camera || CAMERA_DEFAULT;
     this.#ledgerConn = settings.ledgerConn || LEDGER_CONN_DEFAULT;
     this.#i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
