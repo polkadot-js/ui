@@ -4,8 +4,7 @@
 
 import { BaseProps } from './types';
 
-import React from 'react';
-import { xxhashAsHex } from '@polkadot/util-crypto';
+import React, { useEffect, useState } from 'react';
 
 import { createSignPayload } from './util';
 import QrDisplay from './Display';
@@ -16,43 +15,25 @@ interface Props extends BaseProps {
   payload: Uint8Array;
 }
 
-interface State {
-  data: Uint8Array | null;
-  dataHash: string | null;
-}
+function DisplayPayload ({ address, className, cmd, payload, size, style }: Props): React.ReactElement<Props> | null {
+  const [data, setData] = useState<Uint8Array | null>(null);
 
-export default class DisplayPayload extends React.PureComponent<Props, State> {
-  public state: State = {
-    data: null,
-    dataHash: null
-  };
+  useEffect((): void => {
+    setData(createSignPayload(address, cmd, payload));
+  }, [address, cmd, payload]);
 
-  public static getDerivedStateFromProps ({ address, cmd, payload }: Props, prevState: State): State | null {
-    const data = createSignPayload(address, cmd, payload);
-    const dataHash = xxhashAsHex(data);
-
-    if (dataHash === prevState.dataHash) {
-      return null;
-    }
-
-    return { data, dataHash };
+  if (!data) {
+    return null;
   }
 
-  public render (): React.ReactNode {
-    const { className, size, style } = this.props;
-    const { data } = this.state;
-
-    if (!data) {
-      return null;
-    }
-
-    return (
-      <QrDisplay
-        className={className}
-        size={size}
-        style={style}
-        value={data}
-      />
-    );
-  }
+  return (
+    <QrDisplay
+      className={className}
+      size={size}
+      style={style}
+      value={data}
+    />
+  );
 }
+
+export default React.memo(DisplayPayload);
