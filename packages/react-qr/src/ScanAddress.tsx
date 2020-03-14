@@ -40,7 +40,7 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
         console.error('@polkadot/react-qr:QrScanAddress', error.message, data);
       }
     },
-    []
+    [onScan]
   );
 
   return (

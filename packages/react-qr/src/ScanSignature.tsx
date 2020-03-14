@@ -26,7 +26,7 @@ function ScanSignature ({ className, onError, onScan, size, style }: Props): Rea
 
       onScan({ signature: `0x${signature}` });
     },
-    []
+    [onScan]
   );
 
   return (
