@@ -4,12 +4,12 @@
 
 import { BaseProps } from './types';
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { assert } from '@polkadot/util';
+import { decodeAddress } from '@polkadot/util-crypto';
 
 import { ADDRESS_PREFIX } from './constants';
 import QrScan from './Scan';
-import { decodeAddress } from '@polkadot/util-crypto';
 
 interface ScanType {
   address: string;
@@ -22,37 +22,36 @@ interface Props extends BaseProps {
   onScan?: (scanned: ScanType) => void;
 }
 
-export default class ScanAddress extends React.PureComponent<Props> {
-  public render (): React.ReactNode {
-    const { className, onError, size, style } = this.props;
+function ScanAddress ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {
+  const _onScan = useCallback(
+    (data: string | null): void => {
+      if (!data || !onScan) {
+        return;
+      }
 
-    return (
-      <QrScan
-        className={className}
-        onError={onError}
-        onScan={this.onScan}
-        size={size}
-        style={style}
-      />
-    );
-  }
+      try {
+        const [prefix, address, genesisHash, name] = data.split(':');
 
-  private onScan = (data: string | null): void => {
-    const { onScan } = this.props;
+        assert(prefix === ADDRESS_PREFIX, `Invalid address received, expected '${ADDRESS_PREFIX}', found '${prefix}'`);
 
-    if (!data || !onScan) {
-      return;
-    }
+        decodeAddress(address);
+        onScan({ address, genesisHash, name });
+      } catch (error) {
+        console.error('@polkadot/react-qr:QrScanAddress', error.message, data);
+      }
+    },
+    []
+  );
 
-    try {
-      const [prefix, address, genesisHash, name] = data.split(':');
-
-      assert(prefix === ADDRESS_PREFIX, `Invalid address received, expected '${ADDRESS_PREFIX}', found '${prefix}'`);
-
-      decodeAddress(address);
-      onScan({ address, genesisHash, name });
-    } catch (error) {
-      console.error('@polkadot/react-qr:QrScanAddress', error.message, data);
-    }
-  }
+  return (
+    <QrScan
+      className={className}
+      onError={onError}
+      onScan={_onScan}
+      size={size}
+      style={style}
+    />
+  );
 }
+
+export default React.memo(ScanAddress);
