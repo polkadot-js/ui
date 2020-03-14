@@ -39,6 +39,7 @@
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
+    "@polkadot/ui-settings": "*",
     "@polkadot/util": "*"
   }
 }
