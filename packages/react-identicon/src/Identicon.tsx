@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   }
 `;
 
-export default class IdentityIcon extends React.PureComponent<Props, State> {
+class BaseIcon extends React.PureComponent<Props, State> {
   public state: State = {
     address: '',
     publicKey: '0x'
@@ -69,10 +69,10 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
   private static prefix?: Prefix = undefined;
 
   public static setDefaultPrefix (prefix: Prefix): void {
-    IdentityIcon.prefix = prefix;
+    BaseIcon.prefix = prefix;
   }
 
-  public static getDerivedStateFromProps ({ prefix = IdentityIcon.prefix, value }: Props, prevState: State): State | null {
+  public static getDerivedStateFromProps ({ prefix = BaseIcon.prefix, value }: Props, prevState: State): State | null {
     try {
       const address = isU8a(value) || isHex(value)
         ? encodeAddress(value, prefix)
@@ -140,3 +140,9 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
     }
   }
 }
+
+function Identicon (props: Props): React.ReactElement<Props> {
+  return <BaseIcon {...props} />;
+}
+
+export default React.memo(Identicon);

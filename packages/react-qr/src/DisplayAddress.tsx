@@ -4,8 +4,7 @@
 
 import { BaseProps } from './types';
 
-import React from 'react';
-import { xxhashAsHex } from '@polkadot/util-crypto';
+import React, { useEffect, useState } from 'react';
 
 import { createAddressPayload } from './util';
 import QrDisplay from './Display';
@@ -15,44 +14,26 @@ interface Props extends BaseProps {
   genesisHash: string;
 }
 
-interface State {
-  data: Uint8Array | null;
-  dataHash: string | null;
-}
+function DisplayExtrinsic ({ address, className, genesisHash, size, style }: Props): React.ReactElement<Props> | null {
+  const [data, setData] = useState<Uint8Array | null>(null);
 
-export default class DisplayExtrinsic extends React.PureComponent<Props, State> {
-  public state: State = {
-    data: null,
-    dataHash: null
-  };
+  useEffect((): void => {
+    setData(createAddressPayload(address, genesisHash));
+  }, [address, genesisHash]);
 
-  public static getDerivedStateFromProps ({ address, genesisHash }: Props, prevState: State): State | null {
-    const data = createAddressPayload(address, genesisHash);
-    const dataHash = xxhashAsHex(data);
-
-    if (dataHash === prevState.dataHash) {
-      return null;
-    }
-
-    return { data, dataHash };
+  if (!data) {
+    return null;
   }
 
-  public render (): React.ReactNode {
-    const { className, size, style } = this.props;
-    const { data } = this.state;
-
-    if (!data) {
-      return null;
-    }
-
-    return (
-      <QrDisplay
-        className={className}
-        skipEncoding={true}
-        size={size}
-        style={style}
-        value={data}
-      />
-    );
-  }
+  return (
+    <QrDisplay
+      className={className}
+      skipEncoding={true}
+      size={size}
+      style={style}
+      value={data}
+    />
+  );
 }
+
+export default React.memo(DisplayExtrinsic);
