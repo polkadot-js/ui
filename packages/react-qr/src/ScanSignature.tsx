@@ -4,7 +4,7 @@
 
 import { BaseProps } from './types';
 
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import QrScan from './Scan';
 
@@ -17,28 +17,27 @@ interface Props extends BaseProps {
   onScan?: (scanned: ScanType) => void;
 }
 
-export default class ScanSignature extends React.PureComponent<Props> {
-  public render (): React.ReactNode {
-    const { className, onError, size, style } = this.props;
+function ScanSignature ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {
+  const _onScan = useCallback(
+    (signature: string | null): void => {
+      if (!signature || !onScan) {
+        return;
+      }
 
-    return (
-      <QrScan
-        className={className}
-        onError={onError}
-        onScan={this.onScan}
-        size={size}
-        style={style}
-      />
-    );
-  }
+      onScan({ signature: `0x${signature}` });
+    },
+    [onScan]
+  );
 
-  private onScan = (signature: string | null): void => {
-    const { onScan } = this.props;
-
-    if (!signature || !onScan) {
-      return;
-    }
-
-    onScan({ signature: `0x${signature}` });
-  }
+  return (
+    <QrScan
+      className={className}
+      onError={onError}
+      onScan={_onScan}
+      size={size}
+      style={style}
+    />
+  );
 }
+
+export default React.memo(ScanSignature);
