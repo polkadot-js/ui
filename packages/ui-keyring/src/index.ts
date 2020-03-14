@@ -7,13 +7,8 @@ import { detectPackage } from '@polkadot/util';
 import keyring, { Keyring } from './Keyring';
 import Ledger from './ledger';
 
-// eslint-disable-next-line no-useless-catch
-try {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  detectPackage(require('./package.json'), __dirname);
-} catch (error) {
-  throw error;
-}
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+detectPackage(require('./package.json'), typeof __dirname !== 'undefined' && __dirname);
 
 export default keyring;
 

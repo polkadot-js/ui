@@ -28,16 +28,16 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/runtime": "^7.8.4",
-    "@polkadot/dev": "^0.50.15",
-    "@polkadot/ts": "^0.3.3",
+    "@babel/core": "^7.8.7",
+    "@babel/runtime": "^7.8.7",
+    "@polkadot/dev": "^0.50.31",
+    "@polkadot/ts": "^0.3.8",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-is": "^16.12.0",
-    "react-native": "^0.61.4",
-    "vue-template-compiler": "^2.6.10"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-is": "^16.13.0",
+    "react-native": "^0.61.5",
+    "vue-template-compiler": "^2.6.11"
   }
 }
