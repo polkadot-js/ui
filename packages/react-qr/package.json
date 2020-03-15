@@ -18,7 +18,10 @@
     "@types/styled-components": "^5.0.1"
   },
   "peerDependencies": {
+    "@polkadot/util": "*",
+    "@polkadot/util-crypto": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "styles-components": "*"
   }
 }
