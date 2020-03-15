@@ -23,6 +23,7 @@
     "extensionizer": "^1.0.1",
     "ledger-polkadot": "^0.7.0",
     "mkdirp": "^1.0.3",
+    "rxjs": "^6.5.4",
     "store": "^2.0.12"
   },
   "devDependencies": {
@@ -40,7 +41,6 @@
   "peerDependencies": {
     "@polkadot/keyring": "*",
     "@polkadot/ui-settings": "*",
-    "@polkadot/util": "*",
-    "rxjs": "*"
+    "@polkadot/util": "*"
   }
 }

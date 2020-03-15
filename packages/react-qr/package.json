@@ -22,6 +22,6 @@
     "@polkadot/util-crypto": "*",
     "react": "*",
     "react-dom": "*",
-    "styles-components": "*"
+    "styled-components": "*"
   }
 }
