@@ -2,6 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 /* eslint-disable no-global-assign */
+
 import 'fast-text-encoding';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -19,7 +20,7 @@ class Storage {
     return [...data];
   }
 
-  getItem = key => {
+  getItem = (key) => {
     return this.dataMap.get(key);
   }
 
@@ -28,12 +29,12 @@ class Storage {
     return AsyncStorage.setItem(key, value);
   }
 
-  remove = key => {
+  remove = (key) => {
     this.dataMap.delete(key);
     return AsyncStorage.removeItem(key);
   }
 
-  saveItem = item => {
+  saveItem = (item) => {
     this.dataMap.set(item[0], item[1]);
   }
 }
