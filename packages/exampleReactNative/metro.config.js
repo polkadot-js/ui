@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const getWorkspaces = require('get-yarn-workspaces');
-const workspaces = getWorkspaces(__dirname).filter(item => {
-  return path.normalize(item) !== path.normalize(__dirname);
-});
-let workspacesBuildDirs = workspaces.map(workspace => path.join(workspace, 'build/'));
-workspacesBuildDirs = workspacesBuildDirs.filter(item => item !== path.join(__dirname, '../reactnative-identicon/build/'));
+const workspaces = getWorkspaces(__dirname).filter((item) =>
+  path.normalize(item) !== path.normalize(__dirname)
+);
+let workspacesBuildDirs = workspaces.map((workspace) => path.join(workspace, 'build/'));
+workspacesBuildDirs = workspacesBuildDirs.filter((item) => item !== path.join(__dirname, '../reactnative-identicon/build/'));
 
 module.exports = {
 
