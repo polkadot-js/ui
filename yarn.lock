@@ -1389,6 +1389,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.9.2":
+  version: 7.9.2
+  resolution: "@babel/runtime@npm:7.9.2"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: 2/50c65b4972e62ca260ff6f3f99cf2395585d7f7bcd947ee87d082c2926cb4f0c93c815d5e9071162e689a4d2ba4143ffd5b005893be860088689c963f34e50c8
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.0.0, @babel/template@npm:^7.0.0-beta.46, @babel/template@npm:^7.7.4, @babel/template@npm:^7.8.3, @babel/template@npm:^7.8.6":
   version: 7.8.6
   resolution: "@babel/template@npm:7.8.6"
@@ -3004,7 +3013,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/example-react@workspace:packages/example-react"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
   languageName: unknown
   linkType: soft
 
@@ -3012,7 +3021,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/example-vue@workspace:packages/example-vue"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
   languageName: unknown
   linkType: soft
 
@@ -3027,16 +3036,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/metadata@npm:1.8.0-beta.8":
-  version: 1.8.0-beta.8
-  resolution: "@polkadot/metadata@npm:1.8.0-beta.8"
+"@polkadot/metadata@npm:1.8.1":
+  version: 1.8.1
+  resolution: "@polkadot/metadata@npm:1.8.1"
   dependencies:
-    "@babel/runtime": ^7.9.0
-    "@polkadot/types": 1.8.0-beta.8
+    "@babel/runtime": ^7.9.2
+    "@polkadot/types": 1.8.1
     "@polkadot/util": ^2.6.2
     "@polkadot/util-crypto": ^2.6.2
     bn.js: ^5.1.1
-  checksum: 2/da0fe4b882fe136ff0ef8ecd6dad8884cc30c353bff87873d1bde0887aa8f7d9ba090f801f649403aaa449756e65af0a1a929ac0a9ad7878b7dabf0d45639f56
+  checksum: 2/dc05d25228888861b0b25189073a90211677a5d688603c8b491e8a66c47a6c83dc1c3507800b60e0936bdbf1f62418b60c85db8d91d7b9014e25fa04e324ae29
   languageName: node
   linkType: hard
 
@@ -3044,7 +3053,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/react-identicon@workspace:packages/react-identicon"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@polkadot/keyring": ^2.6.2
     "@polkadot/ui-settings": 0.52.0-beta.18
     "@polkadot/ui-shared": 0.52.0-beta.18
@@ -3072,7 +3081,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/react-qr@workspace:packages/react-qr"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@types/react-qr-reader": ^2.1.2
     "@types/styled-components": ^5.0.1
     qrcode-generator: ^1.4.4
@@ -3090,7 +3099,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@polkadot/ui-shared": 0.52.0-beta.18
     "@polkadot/util-crypto": ^2.6.2
     "@types/react-native": ^0.61.23
@@ -3111,19 +3120,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/types@npm:1.8.0-beta.8, @polkadot/types@npm:^1.8.0-beta.8":
-  version: 1.8.0-beta.8
-  resolution: "@polkadot/types@npm:1.8.0-beta.8"
+"@polkadot/types@npm:1.8.1, @polkadot/types@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "@polkadot/types@npm:1.8.1"
   dependencies:
-    "@babel/runtime": ^7.9.0
-    "@polkadot/metadata": 1.8.0-beta.8
+    "@babel/runtime": ^7.9.2
+    "@polkadot/metadata": 1.8.1
     "@polkadot/util": ^2.6.2
     "@polkadot/util-crypto": ^2.6.2
     "@types/bn.js": ^4.11.6
     bn.js: ^5.1.1
     memoizee: ^0.4.14
     rxjs: ^6.5.4
-  checksum: 2/30389d7de601a8ac4624374e8a464054877365adbb968b086472aabbb013458b3c9f39012dd625a548363fc74c2ff60368439308d643a631b5815577ea19ef47
+  checksum: 2/4f542b5195360228b51f15371415a44a6303774a72b4eec7b02ba5a851883ee41118024bb14c9d6622b9aea12689bbf0c62fe882de41360f3d45d3871203f54c
   languageName: node
   linkType: hard
 
@@ -3131,7 +3140,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-assets@workspace:packages/ui-assets"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
   languageName: unknown
   linkType: soft
 
@@ -3139,12 +3148,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@ledgerhq/hw-transport-node-hid": ^5.11.0
     "@ledgerhq/hw-transport-u2f": ^5.11.0
     "@ledgerhq/hw-transport-webusb": ^5.11.0
     "@polkadot/keyring": ^2.6.2
-    "@polkadot/types": ^1.8.0-beta.8
+    "@polkadot/types": ^1.8.1
     "@polkadot/util": ^2.6.2
     "@types/ledgerhq__hw-transport-node-hid": ^4.22.1
     "@types/ledgerhq__hw-transport-u2f": ^4.21.1
@@ -3169,7 +3178,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@polkadot/util": ^2.6.2
     "@types/store": ^2.0.2
     eventemitter3: ^4.0.0
@@ -3183,7 +3192,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@polkadot/util": ^2.6.2
     "@polkadot/util-crypto": ^2.6.2
     "@types/color": ^3.0.1
@@ -3233,7 +3242,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@polkadot/ui-shared": 0.52.0-beta.18
     "@polkadot/util-crypto": ^2.6.2
     jdenticon: 2.2.0
@@ -8867,7 +8876,7 @@ __metadata:
   resolution: "exampleReactNative@workspace:packages/exampleReactNative"
   dependencies:
     "@babel/core": ^7.9.0
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@polkadot/keyring": ^2.6.2
     "@polkadot/reactnative-identicon": 0.52.0-beta.18
     "@polkadot/ui-keyring": 0.52.0-beta.18
@@ -17738,7 +17747,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@babel/core": ^7.9.0
-    "@babel/runtime": ^7.9.0
+    "@babel/runtime": ^7.9.2
     "@polkadot/dev": ^0.51.7
     "@polkadot/ts": ^0.3.14
     "@types/jest": ^25.1.4
