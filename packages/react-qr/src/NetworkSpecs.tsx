@@ -14,7 +14,7 @@ interface Props extends BaseProps {
   networkSpecs: NetworkSpecsStruct;
 }
 
-function DisplayNetworkSpecs({ className, networkSpecs, size, style }: Props): React.ReactElement<Props> | null {
+function DisplayNetworkSpecs ({ className, networkSpecs, size, style }: Props): React.ReactElement<Props> | null {
   const [data, setData] = useState<Uint8Array | null>(null);
 
   useEffect((): void => {
