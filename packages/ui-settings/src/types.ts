@@ -20,3 +20,12 @@ export interface SettingsStruct {
   uiMode: string;
   uiTheme: string;
 }
+
+export interface NetworkSpecsStruct {
+  color: string;
+  decimals: number;
+  genesisHash: string;
+  prefix: number;
+  title: string;
+  unit: string;
+}

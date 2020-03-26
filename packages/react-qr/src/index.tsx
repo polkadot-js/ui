@@ -6,3 +6,4 @@ export { default as QrDisplayAddress } from './DisplayAddress';
 export { default as QrDisplayPayload } from './DisplayPayload';
 export { default as QrScanAddress } from './ScanAddress';
 export { default as QrScanSignature } from './ScanSignature';
+export { default as QrNetworkSpecs } from './NetworkSpecs';
