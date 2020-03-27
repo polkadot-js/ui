@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 const globalAny = global as unknown as Window;
 
 export default function App (): React.ReactElement<{}> | null {
-  const [ready, setReady] = useState(false);
+  const [isReady, setReady] = useState(false);
   const [address, setAddress] = useState<string | null>(null);
   const [phrase, setPhrase] = useState<string | null>(null);
   const [ss58Format, setSS58Format] = useState(42);
@@ -65,12 +65,13 @@ export default function App (): React.ReactElement<{}> | null {
   };
 
   useEffect((): void => {
-    ready && _onClickNew();
-  }, []);
+    isReady && _onClickNew();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isReady]);
 
   useEffect((): void => {
-    ready && address && setAddress(keyring.encodeAddress(address, ss58Format));
-  }, [address, ss58Format]);
+    isReady && address && setAddress(keyring.encodeAddress(address, ss58Format));
+  }, [address, isReady, ss58Format]);
 
   const initialize = async (): Promise<void> => {
     try {
@@ -84,11 +85,11 @@ export default function App (): React.ReactElement<{}> | null {
     _onClickNew();
   };
 
-  if (!ready) {
+  if (!isReady) {
     initialize();
   }
 
-  if (!ready || !address || !phrase) {
+  if (!isReady || !address || !phrase) {
     return null;
   }
 

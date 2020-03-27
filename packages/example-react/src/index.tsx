@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import Identicon from '@polkadot/react-identicon';
 import keyring from '@polkadot/ui-keyring';
@@ -24,19 +24,23 @@ function App ({ className }: Props): React.ReactElement<Props> | null {
   const [phrase, setPhrase] = useState<string | null>(null);
   const [ss58Format, setSS58Format] = useState(42);
 
-  const _onClickNew = (): void => {
-    const phrase = mnemonicGenerate(12);
-    const { address } = keyring.createFromUri(phrase);
+  const _onClickNew = useCallback(
+    (): void => {
+      const phrase = mnemonicGenerate(12);
+      const { address } = keyring.createFromUri(phrase);
 
-    setAddress(keyring.encodeAddress(address, ss58Format));
-    setPhrase(phrase);
-  };
+      setAddress(keyring.encodeAddress(address, ss58Format));
+      setPhrase(phrase);
+    },
+    [ss58Format]
+  );
   const _onChangeSS58Format = ({ currentTarget: { value } }: React.SyntheticEvent<HTMLSelectElement>): void => {
     setSS58Format(parseInt(value, 10));
   };
 
   useEffect((): void => {
     _onClickNew();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect((): void => {
