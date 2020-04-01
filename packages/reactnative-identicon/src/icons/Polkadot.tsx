@@ -13,14 +13,14 @@ interface Props extends BaseProps {
   sixPoint?: boolean;
 }
 
-function renderCircle ({ cx, cy, r, fill }: CircleType, key: number): React.ReactNode {
+function renderCircle ({ cx, cy, fill, r }: CircleType, key: number): React.ReactNode {
   return (
     <SvgCircle
-      key={key}
       cx={cx}
       cy={cy}
-      r={r}
       fill={fill}
+      key={key}
+      r={r}
     />
   );
 }
@@ -31,8 +31,8 @@ export default function Identicon ({ address, sixPoint, size }: Props): React.Re
       <Svg
         height={size}
         id={address}
-        width={size}
         viewBox='0 0 64 64'
+        width={size}
       >
         {generateIcon(address, sixPoint).map(renderCircle)}
       </Svg>

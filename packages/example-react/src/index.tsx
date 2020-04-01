@@ -58,13 +58,29 @@ function App ({ className }: Props): React.ReactElement<Props> | null {
       </section>
       <section>
         <label>phrase</label>
-        <textarea cols={40} rows={4} readOnly value={phrase} />
+        <textarea
+          cols={40}
+          readOnly
+          rows={4}
+          value={phrase}
+        />
       </section>
       <section>
         <label>icons</label>
-        <Identicon className='icon' value={address} />
-        <Identicon className='icon' value={address} theme='polkadot' />
-        <Identicon className='icon' value={address} theme='beachball' />
+        <Identicon
+          className='icon'
+          value={address}
+        />
+        <Identicon
+          className='icon'
+          theme='polkadot'
+          value={address}
+        />
+        <Identicon
+          className='icon'
+          theme='beachball'
+          value={address}
+        />
       </section>
       <section>
         <label>address</label>
@@ -72,11 +88,19 @@ function App ({ className }: Props): React.ReactElement<Props> | null {
       </section>
       <section>
         <label>ss58 format</label>
-        <select onChange={_onChangeSS58Format} value={ss58Format}>
+        <select
+          onChange={_onChangeSS58Format}
+          value={ss58Format}
+        >
           {settings.availablePrefixes
             .filter((_, index): boolean => index !== 0)
             .map(({ text, value }): React.ReactNode => (
-              <option key={value} value={value}>{text}</option>
+              <option
+                key={value}
+                value={value}
+              >
+                {text}
+              </option>
             ))
           }
         </select>

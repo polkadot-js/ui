@@ -28,8 +28,8 @@ function DisplayExtrinsic ({ address, className, genesisHash, size, style }: Pro
   return (
     <QrDisplay
       className={className}
-      skipEncoding={true}
       size={size}
+      skipEncoding
       style={style}
       value={data}
     />

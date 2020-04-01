@@ -105,11 +105,17 @@ export default function App (): React.ReactElement<{}> | null {
               <Text style={styles.mainTitle}>React-Native Example</Text>
             </View>
             <View style={styles.sectionContainer}>
-              <Button title='Generate Address' onPress={_onClickNew}></Button>
+              <Button
+                onPress={_onClickNew}
+                title='Generate Address'
+              />
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Phrase</Text>
-              <Text selectable={true} style={styles.sectionDescription}>
+              <Text
+                selectable={true}
+                style={styles.sectionDescription}
+              >
                 {phrase}
               </Text>
             </View>
@@ -129,8 +135,8 @@ export default function App (): React.ReactElement<{}> | null {
                   .map(({ text, value }): React.ReactNode => (
                     <Button
                       key={value}
-                      title={text}
                       onPress={(): void => _onChangeSS58Format(value.toString())}
+                      title={text}
                     />
                   ))
                 }

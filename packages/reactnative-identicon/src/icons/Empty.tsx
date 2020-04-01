@@ -19,8 +19,8 @@ export default function Empty ({ size }: Props): React.ReactElement<Props> {
         <Circle
           cx='32'
           cy='32'
-          r='32'
           fill='#eee'
+          r='32'
         />
       </Svg>
     </View>

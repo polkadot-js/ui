@@ -35,11 +35,11 @@ export default class Identicon extends React.PureComponent<Props> {
         style={style}
       >
         <svg
+          height={size}
           id={address}
           name={address}
-          width={size}
-          height={size}
           viewBox='0 0 64 64'
+          width={size}
         >
           {generateIcon(address, sixPoint).map(this.renderCircle)}
         </svg>
@@ -47,14 +47,14 @@ export default class Identicon extends React.PureComponent<Props> {
     );
   }
 
-  private renderCircle = ({ cx, cy, r, fill }: Circle, key: number): React.ReactNode => {
+  private renderCircle = ({ cx, cy, fill, r }: Circle, key: number): React.ReactNode => {
     return (
       <circle
-        key={key}
         cx={cx}
         cy={cy}
-        r={r}
         fill={fill}
+        key={key}
+        r={r}
       />
     );
   }

@@ -28,8 +28,8 @@ function DisplayNetworkSpecs ({ className, networkSpecs, size, style }: Props): 
   return (
     <QrDisplay
       className={className}
-      skipEncoding={true}
       size={size}
+      skipEncoding
       style={style}
       value={data}
     />
