@@ -30,20 +30,20 @@ const Z = S / 64 * 5;
 const ZERO = blake2(new Uint8Array(32));
 
 const SCHEMA: { [index: string]: Scheme } = {
-  target: { freq: 1, colors: [0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 1] },
-  cube: { freq: 20, colors: [0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 5] },
-  quazar: { freq: 16, colors: [1, 2, 3, 1, 2, 4, 5, 5, 4, 1, 2, 3, 1, 2, 4, 5, 5, 4, 0] },
-  flower: { freq: 32, colors: [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 3] },
-  cyclic: { freq: 32, colors: [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 6] },
-  vmirror: { freq: 128, colors: [0, 1, 2, 3, 4, 5, 3, 4, 2, 0, 1, 6, 7, 8, 9, 7, 8, 6, 10] },
-  hmirror: { freq: 128, colors: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 8, 6, 7, 5, 3, 4, 2, 11] }
+  cube: { colors: [0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 5], freq: 20 },
+  cyclic: { colors: [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 6], freq: 32 },
+  flower: { colors: [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 3], freq: 32 },
+  hmirror: { colors: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 8, 6, 7, 5, 3, 4, 2, 11], freq: 128 },
+  quazar: { colors: [1, 2, 3, 1, 2, 4, 5, 5, 4, 1, 2, 3, 1, 2, 4, 5, 5, 4, 0], freq: 16 },
+  target: { colors: [0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 1], freq: 1 },
+  vmirror: { colors: [0, 1, 2, 3, 4, 5, 3, 4, 2, 0, 1, 6, 7, 8, 9, 7, 8, 6, 10], freq: 128 }
 };
 
 const OUTER_CIRCLE: Circle = {
   cx: C,
   cy: C,
-  r: C,
-  fill: '#eee'
+  fill: '#eee',
+  r: C
 };
 
 function getRotation (isSixPoint: boolean): { r: number; ro2: number; r3o4: number; ro4: number; rroot3o2: number; rroot3o4: number } {
@@ -56,11 +56,11 @@ function getRotation (isSixPoint: boolean): { r: number; ro2: number; r3o4: numb
   const ro4 = r / 4;
   const r3o4 = r * 3 / 4;
 
-  return { r, ro2, r3o4, ro4, rroot3o2, rroot3o4 };
+  return { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 };
 }
 
 function getCircleXY (isSixPoint: boolean): [number, number][] {
-  const { r, ro2, r3o4, ro4, rroot3o2, rroot3o4 } = getRotation(isSixPoint);
+  const { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 } = getRotation(isSixPoint);
 
   return [
     [C, C - r],
@@ -139,7 +139,7 @@ export default function generate (address: string, isSixPoint = false): Circle[]
 
   return [OUTER_CIRCLE].concat(
     getCircleXY(isSixPoint).map(([cx, cy], index): Circle => ({
-      cx, cy, r: Z, fill: colors[index]
+      cx, cy, fill: colors[index], r: Z
     }))
   );
 }

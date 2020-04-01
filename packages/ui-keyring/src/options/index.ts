@@ -40,8 +40,8 @@ class KeyringOption implements KeyringOptionInstance {
 
   public createOptionHeader (name: string): KeyringSectionOption {
     return {
-      name,
       key: `header-${name.toLowerCase()}`,
+      name,
       value: null
     };
   }
@@ -131,9 +131,9 @@ class KeyringOption implements KeyringOptionInstance {
     return {
       account: [],
       address: [],
-      contract: [],
       all: [],
       allPlus: [],
+      contract: [],
       recent: [],
       testing: []
     };

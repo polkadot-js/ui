@@ -42,15 +42,15 @@ function getDataUrl (value: Uint8Array): string {
 
 class Display extends React.PureComponent<Props, State> {
   public state: State = {
-    frames: [],
     frameIdx: 0,
+    frames: [],
     image: null,
     timerDelay: FRAME_DELAY,
     timerId: null,
     valueHash: null
   };
 
-  public static getDerivedStateFromProps ({ value, skipEncoding = false }: Props, prevState: State): Pick<State, never> | null {
+  public static getDerivedStateFromProps ({ skipEncoding = false, value }: Props, prevState: State): Pick<State, never> | null {
     const valueHash = xxhashAsHex(value);
 
     if (valueHash === prevState.valueHash) {
@@ -63,8 +63,8 @@ class Display extends React.PureComponent<Props, State> {
 
     // encode on demand
     return {
-      frames,
       frameIdx: 0,
+      frames,
       image: getDataUrl(frames[0]),
       valueHash
     };
@@ -108,7 +108,7 @@ class Display extends React.PureComponent<Props, State> {
   }
 
   private nextFrame = (): void => {
-    const { frames, frameIdx, timerDelay } = this.state;
+    const { frameIdx, frames, timerDelay } = this.state;
 
     if (!frames || frames.length <= 1) {
       return;
@@ -126,8 +126,8 @@ class Display extends React.PureComponent<Props, State> {
     this.setState({
       frameIdx: nextIdx,
       image: getDataUrl(frames[nextIdx]),
-      timerId,
-      timerDelay: nextDelay
+      timerDelay: nextDelay,
+      timerId
     });
   }
 }

@@ -13,27 +13,27 @@ module.exports = {
   devtool: isProd ? 'source-map' : 'cheap-eval-source-map',
   entry: './src/Demo.tsx',
   mode: ENV,
-  output: {
-    path: __dirname,
-    filename: './demo.js'
-  },
-  resolve: {
-    alias: {
-      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
-    },
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
-  },
   module: {
     rules: [
       {
-        test: /\.(js|ts|tsx)$/,
         exclude: /(node_modules)/,
+        test: /\.(js|ts|tsx)$/,
         use: [
           'babel-loader'
         ]
       }
     ]
   },
-  plugins: []
+  output: {
+    filename: './demo.js',
+    path: __dirname
+  },
+  plugins: [],
+  resolve: {
+    alias: {
+      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
+    },
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  }
 };

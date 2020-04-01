@@ -11,36 +11,36 @@ import settings from '@polkadot/ui-settings';
 import { mnemonicGenerate, cryptoWaitReady } from '@polkadot/util-crypto';
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter
-  },
   body: {
     backgroundColor: Colors.white
+  },
+  buttonContainer: {
+    alignItems: 'flex-start',
+    flex: 1,
+    flexDirection: 'column'
+  },
+  mainTitle: {
+    color: Colors.black,
+    fontSize: 28,
+    fontWeight: '600'
+  },
+  scrollView: {
+    backgroundColor: Colors.lighter
   },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black
-  },
-  mainTitle: {
-    fontSize: 28,
-    fontWeight: '600',
-    color: Colors.black
-  },
   sectionDescription: {
-    marginTop: 8,
+    color: Colors.dark,
     fontSize: 18,
     fontWeight: '400',
-    color: Colors.dark
+    marginTop: 8
   },
-  buttonContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'flex-start'
+  sectionTitle: {
+    color: Colors.black,
+    fontSize: 24,
+    fontWeight: '600'
   }
 });
 

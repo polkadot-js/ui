@@ -23,9 +23,9 @@ const RECENT_EXPIRY = 24 * 60 * 60;
 // from the API after the chain is received
 export class Keyring extends Base implements KeyringStruct {
   #stores = {
+    account: (): AddressSubject => this.accounts,
     address: (): AddressSubject => this.addresses,
-    contract: (): AddressSubject => this.contracts,
-    account: (): AddressSubject => this.accounts
+    contract: (): AddressSubject => this.contracts
   };
 
   public addExternal (address: string | Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
@@ -122,8 +122,8 @@ export class Keyring extends Base implements KeyringStruct {
 
     return info && {
       address,
-      publicKey,
-      meta: info.json.meta
+      meta: info.json.meta,
+      publicKey
     };
   }
 
