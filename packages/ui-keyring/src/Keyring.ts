@@ -177,6 +177,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     if (isRecent && (Date.now() - whenCreated) > RECENT_EXPIRY) {
       this._store.remove(key);
+
       return;
     }
 

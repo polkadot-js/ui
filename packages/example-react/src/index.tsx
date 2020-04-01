@@ -34,9 +34,13 @@ function App ({ className }: Props): React.ReactElement<Props> | null {
     },
     [ss58Format]
   );
-  const _onChangeSS58Format = ({ currentTarget: { value } }: React.SyntheticEvent<HTMLSelectElement>): void => {
-    setSS58Format(parseInt(value, 10));
-  };
+
+  const _onChangeSS58Format = useCallback(
+    ({ currentTarget: { value } }: React.SyntheticEvent<HTMLSelectElement>): void => {
+      setSS58Format(parseInt(value, 10));
+    },
+    []
+  );
 
   useEffect((): void => {
     _onClickNew();

@@ -15,8 +15,10 @@ class Storage {
   init = async () => {
     const keys = await AsyncStorage.getAllKeys();
     const data = await AsyncStorage.multiGet(keys);
+
     data.forEach(this.saveItem.bind(this));
     this.loading = false;
+
     return [...data];
   }
 
@@ -26,11 +28,13 @@ class Storage {
 
   setItem = (key, value) => {
     this.dataMap.set(key, value);
+
     return AsyncStorage.setItem(key, value);
   }
 
   remove = (key) => {
     this.dataMap.delete(key);
+
     return AsyncStorage.removeItem(key);
   }
 

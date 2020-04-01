@@ -79,8 +79,10 @@ export default function App (): React.ReactElement<{}> | null {
     } catch (e) {
       console.log('Error loading keyring ', e);
     }
+
     await globalAny.localStorage.init();
     await cryptoWaitReady();
+
     setReady(true);
     _onClickNew();
   };
