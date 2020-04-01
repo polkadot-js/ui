@@ -16,6 +16,16 @@ interface Data {
  * @description Demo component
  */
 const Demo = Vue.extend({
+  components: {
+    Identicon
+  },
+  data: function (): Data {
+    return {
+      address: '5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY',
+      size: 128
+    };
+  },
+  name: 'Demo',
   template: `
     <div id="demo">
       <Identicon :size="size" :theme="'polkadot'" :value="address" />
@@ -23,17 +33,7 @@ const Demo = Vue.extend({
       <Identicon :size="size" :theme="'beachball'" :value="address" />
       <Identicon :size="size" :theme="'empty'" />
     </div>
-  `,
-  name: 'Demo',
-  data: function (): Data {
-    return {
-      address: '5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY',
-      size: 128
-    };
-  },
-  components: {
-    Identicon
-  }
+  `
 });
 
 new Vue({

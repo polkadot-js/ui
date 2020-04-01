@@ -11,26 +11,11 @@ module.exports = {
   devtool: 'cheap-eval-source-map',
   entry: './src/index.tsx',
   mode: 'development',
-  output: {
-    chunkFilename: '[name].[chunkhash:8].js',
-    globalObject: '(typeof self !== \'undefined\' ? self : this)',
-    filename: '[name].js',
-    path: path.join(__dirname, 'build')
-  },
-  resolve: {
-    alias: {
-      '@polkadot/react-identicon': path.resolve(__dirname, '../react-identicon/build'),
-      '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
-      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
-    },
-    extensions: ['.js', '.ts', '.tsx']
-  },
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
         exclude: /(node_modules)/,
+        test: /\.(ts|tsx)$/,
         use: [
           {
             loader: 'babel-loader',
@@ -40,14 +25,29 @@ module.exports = {
       }
     ]
   },
+  output: {
+    chunkFilename: '[name].[chunkhash:8].js',
+    filename: '[name].js',
+    globalObject: '(typeof self !== \'undefined\' ? self : this)',
+    path: path.join(__dirname, 'build')
+  },
   plugins: [
     new WebpackPluginServe({
       hmr: false, // switch off, Chrome WASM memory leak
       liveReload: false, // explict off, overrides hmr
-      progress: false, // since we have hmr off, disable
       port: 8080,
+      progress: false, // since we have hmr off, disable
       static: __dirname
     })
   ],
+  resolve: {
+    alias: {
+      '@polkadot/react-identicon': path.resolve(__dirname, '../react-identicon/build'),
+      '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
+      '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
+    },
+    extensions: ['.js', '.ts', '.tsx']
+  },
   watch: true
 };

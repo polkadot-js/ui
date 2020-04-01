@@ -33,6 +33,25 @@ function generateAccount (ss58Format: Prefix = 42): Account {
 }
 
 const Example = Vue.extend({
+  components: {
+    Identicon
+  },
+  data: function (): Data {
+    return {
+      ...generateAccount(),
+      ss58Format: 42,
+      ss58Options
+    };
+  },
+  methods: {
+    onClickNew: function (): void {
+      const { address, phrase } = generateAccount(this.ss58Format);
+
+      this.address = address;
+      this.phrase = phrase;
+    }
+  },
+  name: 'Example',
   template: `
     <div id="example">
       <section>
@@ -62,25 +81,6 @@ const Example = Vue.extend({
       </section>
     </div>
   `,
-  name: 'Example',
-  components: {
-    Identicon
-  },
-  data: function (): Data {
-    return {
-      ...generateAccount(),
-      ss58Format: 42,
-      ss58Options
-    };
-  },
-  methods: {
-    onClickNew: function (): void {
-      const { address, phrase } = generateAccount(this.ss58Format);
-
-      this.address = address;
-      this.phrase = phrase;
-    }
-  },
   watch: {
     ss58Format: function (): void {
       this.address = keyring.encodeAddress(this.address, this.ss58Format);

@@ -46,6 +46,38 @@ function encodeAccount (value: string | Uint8Array, prefix?: Prefix): Account {
  * ```
  */
 export const Identicon = Vue.extend({
+  components: {
+    Beachball,
+    Empty,
+    Jdenticon,
+    Polkadot
+  },
+  created: function (): void {
+    this.createData();
+  },
+  data: function (): Data {
+    return {
+      address: '',
+      iconSize: DEFAULT_SIZE,
+      publicKey: '0x',
+      type: 'empty'
+    };
+  },
+  methods: {
+    createData: function (): void {
+      this.iconSize = this.size || DEFAULT_SIZE;
+      this.type = this.theme;
+
+      this.recodeAddress();
+    },
+    recodeAddress: function (): void {
+      const { address, publicKey } = encodeAccount(this.value);
+
+      this.address = address;
+      this.publicKey = publicKey;
+    }
+  },
+  props: ['prefix', 'size', 'theme', 'value'],
   // FIXME These nested divs are not correct, would like a different way
   // here so we don't create a div wrapped for the div wrapper of the icon
   template: `
@@ -62,38 +94,6 @@ export const Identicon = Vue.extend({
       <Jdenticon :key="address" :publicKey="publicKey" :size="iconSize" />
     </div>
   `,
-  props: ['prefix', 'size', 'theme', 'value'],
-  components: {
-    Beachball,
-    Empty,
-    Jdenticon,
-    Polkadot
-  },
-  data: function (): Data {
-    return {
-      address: '',
-      iconSize: DEFAULT_SIZE,
-      publicKey: '0x',
-      type: 'empty'
-    };
-  },
-  created: function (): void {
-    this.createData();
-  },
-  methods: {
-    createData: function (): void {
-      this.iconSize = this.size || DEFAULT_SIZE;
-      this.type = this.theme;
-
-      this.recodeAddress();
-    },
-    recodeAddress: function (): void {
-      const { address, publicKey } = encodeAccount(this.value);
-
-      this.address = address;
-      this.publicKey = publicKey;
-    }
-  },
   watch: {
     value: function (): void {
       this.recodeAddress();
