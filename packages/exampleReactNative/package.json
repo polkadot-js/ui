@@ -1,6 +1,6 @@
 {
   "name": "exampleReactNative",
-  "version": "0.52.0-beta.22",
+  "version": "0.52.0-beta.23",
   "private": true,
   "workspaces": {
     "nohoist": [
@@ -23,9 +23,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@polkadot/reactnative-identicon": "0.52.0-beta.22",
-    "@polkadot/ui-keyring": "0.52.0-beta.22",
-    "@polkadot/ui-settings": "0.52.0-beta.22",
+    "@polkadot/reactnative-identicon": "0.52.0-beta.23",
+    "@polkadot/ui-keyring": "0.52.0-beta.23",
+    "@polkadot/ui-settings": "0.52.0-beta.23",
     "@react-native-community/async-storage": "^1.8.1",
     "fast-text-encoding": "^1.0.1",
     "get-yarn-workspaces": "^1.0.2",
