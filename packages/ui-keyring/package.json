@@ -18,25 +18,26 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.2",
-    "@ledgerhq/hw-transport-u2f": "^5.11.0",
-    "@ledgerhq/hw-transport-webusb": "^5.11.0",
-    "extensionizer": "^1.0.1",
+    "@ledgerhq/hw-transport-u2f": "^5.12.0",
+    "@ledgerhq/hw-transport-webusb": "^5.12.0",
     "ledger-polkadot": "^0.7.0",
-    "mkdirp": "^1.0.3",
-    "rxjs": "^6.5.4",
+    "mkdirp": "^1.0.4",
+    "rxjs": "^6.5.5",
     "store": "^2.0.12"
   },
   "devDependencies": {
     "@polkadot/keyring": "^2.7.1",
-    "@polkadot/types": "^1.9.1",
+    "@polkadot/types": "^1.10.0-beta.7",
     "@polkadot/util": "^2.7.1",
+    "@types/chrome": "^0.0.103",
+    "@types/firefox-webext-browser": "^70.0.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
     "@types/ledgerhq__hw-transport-u2f": "^4.21.1",
     "@types/mkdirp": "^1.0.0",
     "@types/store": "^2.0.2"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^5.11.0"
+    "@ledgerhq/hw-transport-node-hid": "^5.12.0"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
