@@ -3024,17 +3024,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/metadata@npm:1.10.0-beta.9":
-  version: 1.10.0-beta.9
-  resolution: "@polkadot/metadata@npm:1.10.0-beta.9"
+"@polkadot/metadata@npm:1.10.0-beta.11":
+  version: 1.10.0-beta.11
+  resolution: "@polkadot/metadata@npm:1.10.0-beta.11"
   dependencies:
     "@babel/runtime": ^7.9.2
-    "@polkadot/types": 1.10.0-beta.9
-    "@polkadot/types-known": 1.10.0-beta.9
+    "@polkadot/types": 1.10.0-beta.11
+    "@polkadot/types-known": 1.10.0-beta.11
     "@polkadot/util": ^2.7.1
     "@polkadot/util-crypto": ^2.7.1
     bn.js: ^5.1.1
-  checksum: 2/0b825c6787a5db769b250240f73947f3ef0c9c1b1b0e72407fd87eb0341c37d8b80bdb07a61e61253de1af84a04d07a79c4a43209b90f1ce728a5bda75245059
+  checksum: 2/44168a7c99f4dca971c610b9c9709a7cf0e958e86bbc2f11c9428f0d098fdfcb194ed55e6e609186026a45924f7cc1f19981940be3949e70b63ec3641a53afc5
   languageName: node
   linkType: hard
 
@@ -3109,31 +3109,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/types-known@npm:1.10.0-beta.9":
-  version: 1.10.0-beta.9
-  resolution: "@polkadot/types-known@npm:1.10.0-beta.9"
+"@polkadot/types-known@npm:1.10.0-beta.11":
+  version: 1.10.0-beta.11
+  resolution: "@polkadot/types-known@npm:1.10.0-beta.11"
   dependencies:
     "@babel/runtime": ^7.9.2
-    "@polkadot/types": 1.10.0-beta.9
+    "@polkadot/types": 1.10.0-beta.11
     "@polkadot/util": ^2.7.1
     bn.js: ^5.1.1
-  checksum: 2/8f8aa53f283aa2e7c899cf07047de1a0f8be656b7e3e1dea05c69438619b7c629b8485c23e3d1ed76f4f769fa418c09eff3ea7a97a8ccf71beb48e3b9da9e260
+  checksum: 2/18d96f907b91277c141b15843daf741ef37894c7087ad301d0097d886e8bab5723137f405c122d666ee14d5e2c98f1f75dad34cbb2b799a0c17d424f3158256d
   languageName: node
   linkType: hard
 
-"@polkadot/types@npm:1.10.0-beta.9, @polkadot/types@npm:^1.10.0-beta.9":
-  version: 1.10.0-beta.9
-  resolution: "@polkadot/types@npm:1.10.0-beta.9"
+"@polkadot/types@npm:1.10.0-beta.11, @polkadot/types@npm:^1.10.0-beta.11":
+  version: 1.10.0-beta.11
+  resolution: "@polkadot/types@npm:1.10.0-beta.11"
   dependencies:
     "@babel/runtime": ^7.9.2
-    "@polkadot/metadata": 1.10.0-beta.9
+    "@polkadot/metadata": 1.10.0-beta.11
     "@polkadot/util": ^2.7.1
     "@polkadot/util-crypto": ^2.7.1
     "@types/bn.js": ^4.11.6
     bn.js: ^5.1.1
     memoizee: ^0.4.14
     rxjs: ^6.5.5
-  checksum: 2/23aad4fa67e5e7f879c487208b123f4d70bc4bf7fad99f3676487595a39c68fe8197723319a1633ebc678fab557ad5937bc226a0268b54745706709a0c08ab06
+  checksum: 2/c9447720d253eafe28af229dd55fc9eb32fba68bca4c7c14069a9ca3df3e1e6572d00d3eda68b80f5295d802e0a73a8673fce2fb42ed048895cada389a2a815d
   languageName: node
   linkType: hard
 
@@ -3154,10 +3154,8 @@ __metadata:
     "@ledgerhq/hw-transport-u2f": ^5.12.0
     "@ledgerhq/hw-transport-webusb": ^5.12.0
     "@polkadot/keyring": ^2.7.1
-    "@polkadot/types": ^1.10.0-beta.9
+    "@polkadot/types": ^1.10.0-beta.11
     "@polkadot/util": ^2.7.1
-    "@types/chrome": ^0.0.103
-    "@types/firefox-webext-browser": ^70.0.1
     "@types/ledgerhq__hw-transport-node-hid": ^4.22.1
     "@types/ledgerhq__hw-transport-u2f": ^4.21.1
     "@types/mkdirp": ^1.0.0
@@ -3523,13 +3521,6 @@ __metadata:
   version: 0.0.28
   resolution: "@types/filewriter@npm:0.0.28"
   checksum: 2/6346ce6ccb9755609dfa85ae706a7578fb516d7ca6895c3d8879a348464e87f849fa1edbf423b6ff2f205a0c29029aef7bd3cf8b27a9185395114d59050d83f9
-  languageName: node
-  linkType: hard
-
-"@types/firefox-webext-browser@npm:^70.0.1":
-  version: 70.0.1
-  resolution: "@types/firefox-webext-browser@npm:70.0.1"
-  checksum: 2/6687a6583d0812112641a9201ea297697aa26c2fd1c437a45046165d44ba11f88c4cdd19f17e73c3bf7d682a695f01d00dbd04d3ec5f625722aa37587455253c
   languageName: node
   linkType: hard
 
@@ -6226,9 +6217,9 @@ __metadata:
   linkType: hard
 
 "cli-spinners@npm:^2.0.0, cli-spinners@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "cli-spinners@npm:2.2.0"
-  checksum: 2/25f28decc8664cd523f581e3099986e3be1ef86c6901813e5cea466bc2371d4742bf8b6628e7c4a47b49cfb0bb75e728ed34449884a755ef72e85f234263357a
+  version: 2.3.0
+  resolution: "cli-spinners@npm:2.3.0"
+  checksum: 2/f2cb86cf2a413a101c0adbab5ad93025d9d16a148fc312fdc2bf7b5344ee4315bc88012eea5bd9b15adc158e54d70405a4234d644aab336e4db64f2f426bf263
   languageName: node
   linkType: hard
 
@@ -10326,7 +10317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"handlebars@npm:^4.4.0, handlebars@npm:^4.7.3":
+"handlebars@npm:^4.4.0, handlebars@npm:^4.7.3, handlebars@npm:^4.7.6":
   version: 4.7.6
   resolution: "handlebars@npm:4.7.6"
   dependencies:
@@ -13436,12 +13427,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:0.8.0":
-  version: 0.8.0
-  resolution: "marked@npm:0.8.0"
+"marked@npm:0.8.2":
+  version: 0.8.2
+  resolution: "marked@npm:0.8.2"
   bin:
     marked: bin/marked
-  checksum: 2/ab4d7b0cce8b5dbf5c41a902f99422838966fcac6848a45c268868d5b607c56089dc922b69f93bc2da8d243e56f8bb283525d5d6b46812525ffa5fe7655978dc
+  checksum: 2/49148dd7898fcd7215458a6ba5dec895a8343f2823c12da527dd40b29ed71c5235cba06a19833cc61e138811fa459484550a69ad89aa42af9f6e87b9dad19b7d
   languageName: node
   linkType: hard
 
@@ -15319,11 +15310,11 @@ __metadata:
   linkType: hard
 
 "p-limit@npm:^2.0.0, p-limit@npm:^2.2.0, p-limit@npm:^2.2.1":
-  version: 2.2.2
-  resolution: "p-limit@npm:2.2.2"
+  version: 2.3.0
+  resolution: "p-limit@npm:2.3.0"
   dependencies:
     p-try: ^2.0.0
-  checksum: 2/10cd927c1e3b6c66a294dd803bc05acd721d003b7c8c16d6648f133b4f47853f37d6895096e56cbbc4d10009f8380b7679e4f0220ead74c82f5b036e45bbb520
+  checksum: 2/5f20492a25c5f93fca2930dbbf41fa1bee46ef70eaa6b49ad1f7b963f309e599bc40507e0a3a531eee4bcd10fec4dd4a63291d0e3b2d84ac97d7403d43d271a9
   languageName: node
   linkType: hard
 
@@ -19760,12 +19751,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-default-themes@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "typedoc-default-themes@npm:0.9.0"
+"typedoc-default-themes@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "typedoc-default-themes@npm:0.10.0"
   dependencies:
     lunr: ^2.3.8
-  checksum: 2/0232b5ed08537e7b6d6bdd9a56e641074391ee2960eb7b3a86eba8e4cfd0dba6e4ddee3825839a599c92196302e9d88c1ee0ac511d68cdca56f58b45bea346bf
+  checksum: 2/5ff69892e56197f9dca4e326c071873c04fa995e61f570e87eb7bf7c76eafcfbf7c5b5190803749b2277709070f6a2a75fa30e67a1cc69fc8f619ba3ba0c1c67
   languageName: node
   linkType: hard
 
@@ -19791,23 +19782,24 @@ __metadata:
   linkType: hard
 
 "typedoc@npm:^0.17.3":
-  version: 0.17.3
-  resolution: "typedoc@npm:0.17.3"
+  version: 0.17.4
+  resolution: "typedoc@npm:0.17.4"
   dependencies:
     fs-extra: ^8.1.0
-    handlebars: ^4.7.3
+    handlebars: ^4.7.6
     highlight.js: ^9.18.1
     lodash: ^4.17.15
-    marked: 0.8.0
+    lunr: ^2.3.8
+    marked: 0.8.2
     minimatch: ^3.0.0
     progress: ^2.0.3
     shelljs: ^0.8.3
-    typedoc-default-themes: ^0.9.0
+    typedoc-default-themes: ^0.10.0
   peerDependencies:
     typescript: ">=3.8.3"
   bin:
     typedoc: bin/typedoc
-  checksum: 2/b0bf2b8cac1c641bb37160306f064c6f18c97ec7b81a6d65cf201fdc746180a38bb1b61cdad044c025787e56f97dc5032ae237fa3e4e123ea2c36e7c898134f5
+  checksum: 2/994624da398f7874db4a1e56be2c4823ed02d6ca7628cac34592ae12f2e2dd67952a8fd898b5cfb77504bd3775a1fa2bb1c8acecfc0b3c7c709a25d9a6f50e64
   languageName: node
   linkType: hard
 
