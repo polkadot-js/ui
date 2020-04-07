@@ -1,6 +1,7 @@
-// Copyright 2017-2020 @polkadot/example-react authors & contributors
+// Copyright 2017-2020 @polkadot/example-reactnative authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
+
 /* eslint-disable no-global-assign */
 
 import 'fast-text-encoding';

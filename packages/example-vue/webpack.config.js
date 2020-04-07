@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 // Copyright 2017-2020 @polkadot/example-vue authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
