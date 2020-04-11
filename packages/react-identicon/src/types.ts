@@ -11,11 +11,13 @@ export interface BaseProps {
 
 export interface Props extends BaseProps {
   address: string;
+  isAlternative?: boolean;
   publicKey: string;
   size: number;
 }
 
 export interface IdentityProps extends BaseProps {
+  isAlternative?: boolean;
   isHighlight?: boolean;
   onCopy?: (value: string) => void;
   prefix?: Prefix;

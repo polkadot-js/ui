@@ -6,6 +6,7 @@
 - Bump to `@polkadot/api` 1.4.1
 - Bump to `@polkadot/util` 2.5.1
 - Convert `private <field>` to `#<field>`
+- start of `isAlternative` implementations for identicons
 
 # 0.51.1 Feb 18, 2020
 

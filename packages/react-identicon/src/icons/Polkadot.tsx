@@ -16,46 +16,45 @@
 //   - Move constants to file-level
 //   - Overall it is now just a static component, expecting an address as an input value
 
+import { Circle } from '@polkadot/ui-shared/types';
 import { Props as BaseProps } from '../types';
 
 import React from 'react';
-import generateIcon, { Circle } from '@polkadot/ui-shared/polkadotIcon';
+import generateIcon from '@polkadot/ui-shared/polkadotIcon';
 
 interface Props extends BaseProps {
-  sixPoint?: boolean;
+  isAlternative?: boolean;
 }
 
-export default class Identicon extends React.PureComponent<Props> {
-  public render (): React.ReactNode {
-    const { address, className, sixPoint, size, style } = this.props;
+function renderCircle ({ cx, cy, fill, r }: Circle, key: number): React.ReactNode {
+  return (
+    <circle
+      cx={cx}
+      cy={cy}
+      fill={fill}
+      key={key}
+      r={r}
+    />
+  );
+}
 
-    return (
-      <div
-        className={`container ${className}`}
-        style={style}
+function Identicon ({ address, className, isAlternative = false, size, style }: Props): React.ReactElement<Props> {
+  return (
+    <div
+      className={`container ${className}`}
+      style={style}
+    >
+      <svg
+        height={size}
+        id={address}
+        name={address}
+        viewBox='0 0 64 64'
+        width={size}
       >
-        <svg
-          height={size}
-          id={address}
-          name={address}
-          viewBox='0 0 64 64'
-          width={size}
-        >
-          {generateIcon(address, sixPoint).map(this.renderCircle)}
-        </svg>
-      </div>
-    );
-  }
-
-  private renderCircle = ({ cx, cy, fill, r }: Circle, key: number): React.ReactNode => {
-    return (
-      <circle
-        cx={cx}
-        cy={cy}
-        fill={fill}
-        key={key}
-        r={r}
-      />
-    );
-  }
+        {generateIcon(address, { isSixPoint: isAlternative }).map(renderCircle)}
+      </svg>
+    </div>
+  );
 }
+
+export default React.memo(Identicon);

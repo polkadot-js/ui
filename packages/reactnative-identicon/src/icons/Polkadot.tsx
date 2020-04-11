@@ -2,15 +2,16 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import { Circle as CircleType } from '@polkadot/ui-shared/types';
 import { Props as BaseProps } from '../types';
 
 import React from 'react';
 import { View } from 'react-native';
 import Svg, { Circle as SvgCircle } from 'react-native-svg';
-import generateIcon, { Circle as CircleType } from '@polkadot/ui-shared/polkadotIcon';
+import generateIcon from '@polkadot/ui-shared/polkadotIcon';
 
 interface Props extends BaseProps {
-  sixPoint?: boolean;
+  isAlternative?: boolean;
 }
 
 function renderCircle ({ cx, cy, fill, r }: CircleType, key: number): React.ReactNode {
@@ -25,7 +26,7 @@ function renderCircle ({ cx, cy, fill, r }: CircleType, key: number): React.Reac
   );
 }
 
-export default function Identicon ({ address, sixPoint, size }: Props): React.ReactElement<Props> {
+export default function Identicon ({ address, isAlternative = false, size }: Props): React.ReactElement<Props> {
   return (
     <View>
       <Svg
@@ -34,7 +35,7 @@ export default function Identicon ({ address, sixPoint, size }: Props): React.Re
         viewBox='0 0 64 64'
         width={size}
       >
-        {generateIcon(address, sixPoint).map(renderCircle)}
+        {generateIcon(address, { isSixPoint: isAlternative }).map(renderCircle)}
       </Svg>
     </View>
   );

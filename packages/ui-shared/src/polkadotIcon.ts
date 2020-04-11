@@ -7,13 +7,12 @@
 //
 // https://github.com/paritytech/oo7/blob/251ba2b7c45503b68eab4320c270b5afa9bccb60/packages/polkadot-identicon/src/index.jsx
 
+import { Circle } from './types';
+
 import { blake2AsU8a, decodeAddress } from '@polkadot/util-crypto';
 
-export interface Circle {
-  cx: number;
-  cy: number;
-  fill: string;
-  r: number;
+interface Options {
+  isSixPoint: boolean;
 }
 
 interface Scheme {
@@ -134,9 +133,9 @@ function getColors (address: string): string[] {
 }
 
 /**
- * @description Generate a array of the circles that make up an indenticon
+ * @description Generate a array of the circles that make up an identicon
  */
-export default function generate (address: string, isSixPoint = false): Circle[] {
+export default function generate (address: string, { isSixPoint }: Options): Circle[] {
   const colors = getColors(address);
 
   return [OUTER_CIRCLE].concat(

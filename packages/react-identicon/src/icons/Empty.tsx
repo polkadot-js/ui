@@ -6,21 +6,19 @@ import { Props } from '../types';
 
 import React from 'react';
 
-export default class Empty extends React.PureComponent<Props> {
-  public render (): React.ReactNode {
-    const { className, size, style } = this.props;
-
-    return (
-      <div
-        className={`container ${className}`}
-        style={style}
-      >
-        <svg
-          height={size}
-          viewBox='0 0 64 64'
-          width={size}
-        />
-      </div>
-    );
-  }
+function Empty ({ className, size, style }: Props): React.ReactElement<Props> {
+  return (
+    <div
+      className={`container ${className}`}
+      style={style}
+    >
+      <svg
+        height={size}
+        viewBox='0 0 64 64'
+        width={size}
+      />
+    </div>
+  );
 }
+
+export default React.memo(Empty);
