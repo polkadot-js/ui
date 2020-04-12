@@ -110,7 +110,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
   }
 
   private getWrapped ({ address, publicKey }: State): React.ReactNode {
-    const { className, isHighlight = false, size = DEFAULT_SIZE, style, theme = settings.icon } = this.props;
+    const { className, isAlternative, isHighlight, size = DEFAULT_SIZE, style, theme = settings.icon } = this.props;
     const Component = !address
       ? Empty
       : Components[theme === 'default' ? ICON_DEFAULT_HOST : theme] || Fallback;
@@ -124,6 +124,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
         <Component
           address={address}
           className={isHighlight ? 'highlight' : ''}
+          isAlternative={isAlternative}
           publicKey={publicKey}
           size={size}
         />

@@ -4,29 +4,26 @@
 
 import { Props } from '../types';
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import generate from '@polkadot/ui-shared/beachballIcon';
 
-export default class Beachball extends React.PureComponent<Props> {
-  public render (): React.ReactNode {
-    const { className, style } = this.props;
-
-    return (
-      <div
-        className={`container ${className}`}
-        ref={this.appendIcon}
-        style={style}
-      />
-    );
-  }
-
-  private appendIcon = (node: Element | null): void => {
-    const { address, size } = this.props;
-
-    if (node) {
-      node.appendChild(
+function Beachball ({ address, className, size, style }: Props): React.ReactElement<Props> {
+  const updateElem = useCallback(
+    (node: HTMLDivElement): void => {
+      node && node.appendChild(
         generate(address, size)
       );
-    }
-  }
+    },
+    [address, size]
+  );
+
+  return (
+    <div
+      className={`container ${className}`}
+      ref={updateElem}
+      style={style}
+    />
+  );
 }
+
+export default React.memo(Beachball);
