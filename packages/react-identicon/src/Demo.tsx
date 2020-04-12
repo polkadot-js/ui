@@ -20,13 +20,28 @@ export default class Demo extends React.PureComponent {
       );
     }
 
-    return identities.map((value, index): React.ReactNode => (
-      <IdentityIcon
-        key={value.toString()}
-        theme={THEMES[index % THEMES.length] as 'empty'}
-        value={value}
-      />
-    ));
+    return (
+      <div>
+        <div>
+          {identities.map((value, index): React.ReactNode => (
+            <IdentityIcon
+              key={value.toString()}
+              theme={THEMES[index % THEMES.length] as 'empty'}
+              value={value}
+            />
+          ))}
+        </div>
+        <div>
+          {THEMES.map((theme): React.ReactNode => (
+            <IdentityIcon
+              key={theme}
+              theme={theme as 'empty'}
+              value='5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY'
+            />
+          ))}
+        </div>
+      </div>
+    );
   }
 }
 
