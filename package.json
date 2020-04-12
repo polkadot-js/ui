@@ -18,13 +18,13 @@
     "docs:release": "polkadot-ci-ghact-docs",
     "lint": "polkadot-dev-run-lint",
     "clean": "polkadot-dev-clean-build",
-    "demo:identicon:react": "yarn build:ts && webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
-    "demo:identicon:vue": "yarn build:ts && webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
-    "example:rn:packager": "yarn build:split:code && cd packages/exampleReactNative && yarn copy-workspace-packages && yarn start",
+    "demo:identicon:react": "yarn build && webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
+    "demo:identicon:vue": "yarn build && webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
+    "example:rn:packager": "yarn build && cd packages/exampleReactNative && yarn copy-workspace-packages && yarn start",
     "example:rn:ios": "cd packages/exampleReactNative && cd ios && pod install && cd .. && yarn ios",
     "example:rn:android": "cd packages/exampleReactNative && yarn android",
-    "example:react": "yarn build:ts && cd packages/example-react && webpack --config webpack.config.js",
-    "example:vue": "yarn build:ts && cd packages/example-vue && webpack --config webpack.config.js",
+    "example:react": "yarn build && cd packages/example-react && webpack --config webpack.config.js",
+    "example:vue": "yarn build && cd packages/example-vue && webpack --config webpack.config.js",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "polkadot-dev-run-test --coverage --runInBand",
     "test:one": "polkadot-dev-run-test"
@@ -41,6 +41,7 @@
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
     "react-native": "^0.62.1",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-serve": "^3.2.0"
   }
 }

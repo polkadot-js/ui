@@ -1,5 +1,5 @@
 // Copyright 2018 Paritytech via paritytech/oo7/polkadot-identicon
-// Copyright 2018 @polkadot/ui-shared authors & contributors
+// Copyright 2018-2020 @polkadot/ui-shared authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
@@ -7,13 +7,9 @@
 //
 // https://github.com/paritytech/oo7/blob/251ba2b7c45503b68eab4320c270b5afa9bccb60/packages/polkadot-identicon/src/index.jsx
 
-import { Circle } from './types';
+import { Circle, Options } from './types';
 
 import { blake2AsU8a, decodeAddress } from '@polkadot/util-crypto';
-
-interface Options {
-  isSixPoint: boolean;
-}
 
 interface Scheme {
   freq: number;
@@ -135,11 +131,11 @@ function getColors (address: string): string[] {
 /**
  * @description Generate a array of the circles that make up an identicon
  */
-export default function generate (address: string, { isSixPoint }: Options): Circle[] {
+export default function generate (address: string, { isAlternative }: Options): Circle[] {
   const colors = getColors(address);
 
   return [OUTER_CIRCLE].concat(
-    getCircleXY(isSixPoint).map(([cx, cy], index): Circle => ({
+    getCircleXY(isAlternative).map(([cx, cy], index): Circle => ({
       cx, cy, fill: colors[index], r: Z
     }))
   );

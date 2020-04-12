@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import Vue from 'vue';
-import generate from '@polkadot/ui-shared/beachballIcon';
+import { beachballIcon } from '@polkadot/ui-shared';
 
 interface Data {
   html: string;
@@ -25,7 +25,7 @@ export const Beachball = Vue.extend({
   },
   methods: {
     createHtml: function (): void {
-      this.html = generate(this.address, this.size).outerHTML;
+      this.html = beachballIcon(this.address, this.size).outerHTML;
     }
   },
   props: ['address', 'size'],

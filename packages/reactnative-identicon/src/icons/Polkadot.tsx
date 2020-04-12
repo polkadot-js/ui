@@ -1,14 +1,14 @@
-// Copyright 2018 @polkadot/reactnative-identicon authors & contributors
+// Copyright 2018-2020 @polkadot/reactnative-identicon authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { Circle as CircleType } from '@polkadot/ui-shared/types';
+import { Circle as CircleType } from '@polkadot/ui-shared/icons/types';
 import { Props as BaseProps } from '../types';
 
 import React from 'react';
 import { View } from 'react-native';
 import Svg, { Circle as SvgCircle } from 'react-native-svg';
-import generateIcon from '@polkadot/ui-shared/polkadotIcon';
+import { polkadotIcon } from '@polkadot/ui-shared';
 
 interface Props extends BaseProps {
   isAlternative?: boolean;
@@ -35,7 +35,7 @@ export default function Identicon ({ address, isAlternative = false, size }: Pro
         viewBox='0 0 64 64'
         width={size}
       >
-        {generateIcon(address, { isSixPoint: isAlternative }).map(renderCircle)}
+        {polkadotIcon(address, { isAlternative }).map(renderCircle)}
       </Svg>
     </View>
   );

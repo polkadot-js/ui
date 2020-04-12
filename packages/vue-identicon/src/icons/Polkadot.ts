@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import Vue from 'vue';
-import generateIcon from '@polkadot/ui-shared/polkadotIcon';
+import { polkadotIcon } from '@polkadot/ui-shared';
 
 interface Data {
   svgHtml: string;
@@ -25,7 +25,7 @@ export const Polkadot = Vue.extend({
   },
   methods: {
     createSvgHtml: function (): void {
-      const circles = generateIcon(this.address, { isSixPoint: this.isAlternative || false }).map(({ cx, cy, fill, r }) =>
+      const circles = polkadotIcon(this.address, { isAlternative: this.isAlternative || false }).map(({ cx, cy, fill, r }) =>
         `<circle cx=${cx} cy=${cy} fill="${fill}" r=${r} />`
       ).join('');
 

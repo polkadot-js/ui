@@ -18,7 +18,7 @@ function generateIcon (seed: string = encodeAddress(randomAsU8a(32))): void {
   }
 
   element.appendChild(
-    identicon(seed, 100, 'padded')
+    identicon(seed, { isAlternative: false, size: 100 }, 'padded')
   );
 
   console.log(`Icon generated in ${(Date.now() - start)}ms`);
