@@ -1,13 +1,13 @@
-// Copyright 2018 @polkadot/ui-shared authors & contributors
+// Copyright 2018-2020 @polkadot/ui-shared authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import generate from './polkadotIcon';
+import generate from './polkadot';
 
 describe('polkadotIcon', (): void => {
   it('generates the correct points from known', (): void => {
     expect(
-      generate('5Dqvi1p4C7EhPPFKCixpF3QiaJEaDwWrR9gfWR5eUsfC39TX', { isSixPoint: false })
+      generate('5Dqvi1p4C7EhPPFKCixpF3QiaJEaDwWrR9gfWR5eUsfC39TX', { isAlternative: false })
     ).toEqual([
       { cx: 32, cy: 32, fill: '#eee', r: 32 },
       { cx: 32, cy: 8, fill: 'hsl(196, 65%, 53%)', r: 5 },

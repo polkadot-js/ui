@@ -1,5 +1,5 @@
 // Copyright 2018 Paritytech via paritytech/oo7/polkadot-identicon
-// Copyright 2018 @polkadot/react-identicon authors & contributors
+// Copyright 2018-2020 @polkadot/react-identicon authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
@@ -16,11 +16,11 @@
 //   - Move constants to file-level
 //   - Overall it is now just a static component, expecting an address as an input value
 
-import { Circle } from '@polkadot/ui-shared/types';
+import { Circle } from '@polkadot/ui-shared/icons/types';
 import { Props as BaseProps } from '../types';
 
 import React from 'react';
-import generateIcon from '@polkadot/ui-shared/polkadotIcon';
+import { polkadotIcon } from '@polkadot/ui-shared';
 
 interface Props extends BaseProps {
   isAlternative?: boolean;
@@ -51,7 +51,7 @@ function Identicon ({ address, className, isAlternative = false, size, style }: 
         viewBox='0 0 64 64'
         width={size}
       >
-        {generateIcon(address, { isSixPoint: isAlternative }).map(renderCircle)}
+        {polkadotIcon(address, { isAlternative }).map(renderCircle)}
       </svg>
     </div>
   );

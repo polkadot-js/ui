@@ -5,8 +5,6 @@
 import { KeyringItemType, KeyringStruct } from '../types';
 
 export interface KeyringSectionOption {
-  className?: string;
-  disabled?: boolean;
   key: string | null;
   name: string;
   value: string | null;
