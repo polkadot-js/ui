@@ -1,12 +1,12 @@
-# 0.52.0-beta.x
+# 0.52.1 Apr 15, 2020
 
 - **Breaking change** (TypeScript only) The `*.d.ts` files now contain TypeScript 3.8 features, `#private`, which is not usable in older versions
-- Remove internal ui-keyring ss58Format mapping, rather set it directly on internal keyring
-- Add logo for Centrifuge to ui-assets
-- Bump to `@polkadot/api` 1.4.1
-- Bump to `@polkadot/util` 2.5.1
+- Allow for the encoding of chain-settings via QR (Thanks to https://github.com/hanwencheng)
+- Enhance checks for ws url in settings (Thanks to https://github.com/kwingram25)
+- Start of `isAlternative` implementations for identicons to react, react-native & vue (currently only Polkadot sixPoint)
+- Bump to `@polkadot/api` 1.10 & `@polkadot/util` 2.8
 - Convert `private <field>` to `#<field>`
-- start of `isAlternative` implementations for identicons
+- Remove internal/duplicated ui-keyring ss58Format mapping, rather set it directly on wrapped keyring
 
 # 0.51.1 Feb 18, 2020
 

@@ -3099,17 +3099,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/metadata@npm:1.10.0-beta.28":
-  version: 1.10.0-beta.28
-  resolution: "@polkadot/metadata@npm:1.10.0-beta.28"
+"@polkadot/metadata@npm:1.10.1":
+  version: 1.10.1
+  resolution: "@polkadot/metadata@npm:1.10.1"
   dependencies:
     "@babel/runtime": ^7.9.2
-    "@polkadot/types": 1.10.0-beta.28
-    "@polkadot/types-known": 1.10.0-beta.28
+    "@polkadot/types": 1.10.1
+    "@polkadot/types-known": 1.10.1
     "@polkadot/util": ^2.8.1
     "@polkadot/util-crypto": ^2.8.1
     bn.js: ^5.1.1
-  checksum: 2/189e13c93fde90d4f613747ea3be651dc6ce90cd39cc56a6698bee1067dfcf4991ddccc4777d44ec68301815be4dcda6fdfa7e2ebf732e1c0436f0ecf77a5822
+  checksum: 2/a3b2306c96fb59e3a230ff78416402f8f116b40b67cdca6b12761ad12f062d369ab92309b28ffb7d93ca4598c8c19bbf29ab7993448893e20aa578cbffd70147
   languageName: node
   linkType: hard
 
@@ -3119,8 +3119,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.9.2
     "@polkadot/keyring": ^2.8.1
-    "@polkadot/ui-settings": 0.52.0-beta.32
-    "@polkadot/ui-shared": 0.52.0-beta.32
+    "@polkadot/ui-settings": 0.52.0
+    "@polkadot/ui-shared": 0.52.0
     "@polkadot/util": ^2.8.1
     "@polkadot/util-crypto": ^2.8.1
     "@types/react-copy-to-clipboard": ^4.3.0
@@ -3159,12 +3159,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/reactnative-identicon@0.52.0-beta.32, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
+"@polkadot/reactnative-identicon@0.52.0, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
     "@babel/runtime": ^7.9.2
-    "@polkadot/ui-shared": 0.52.0-beta.32
+    "@polkadot/ui-shared": 0.52.0
     "@polkadot/util-crypto": ^2.8.1
     "@types/react-native": ^0.62.1
     react-native-svg: ^12.0.3
@@ -3184,31 +3184,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/types-known@npm:1.10.0-beta.28":
-  version: 1.10.0-beta.28
-  resolution: "@polkadot/types-known@npm:1.10.0-beta.28"
+"@polkadot/types-known@npm:1.10.1":
+  version: 1.10.1
+  resolution: "@polkadot/types-known@npm:1.10.1"
   dependencies:
     "@babel/runtime": ^7.9.2
-    "@polkadot/types": 1.10.0-beta.28
+    "@polkadot/types": 1.10.1
     "@polkadot/util": ^2.8.1
     bn.js: ^5.1.1
-  checksum: 2/8860f03e986d6d39ccaec0c4fbb3bd1c3f991ed20bf9fc95f6a9bce31a1ed5e32a65ffbe10546d99b2a7885894f86d70e3ef1e2fea7767081fb9f5f09afe7b3a
+  checksum: 2/6e40ec7eb26910b8055b30a8e97dbf2dee17ee2da3f6a7a0d38ae6c69be2f667b834fa8ffc18d271fd55cb41c383b144a5e9fee2d2971cb080eb12681cec13b2
   languageName: node
   linkType: hard
 
-"@polkadot/types@npm:1.10.0-beta.28, @polkadot/types@npm:^1.10.0-beta.28":
-  version: 1.10.0-beta.28
-  resolution: "@polkadot/types@npm:1.10.0-beta.28"
+"@polkadot/types@npm:1.10.1, @polkadot/types@npm:^1.10.1":
+  version: 1.10.1
+  resolution: "@polkadot/types@npm:1.10.1"
   dependencies:
     "@babel/runtime": ^7.9.2
-    "@polkadot/metadata": 1.10.0-beta.28
+    "@polkadot/metadata": 1.10.1
     "@polkadot/util": ^2.8.1
     "@polkadot/util-crypto": ^2.8.1
     "@types/bn.js": ^4.11.6
     bn.js: ^5.1.1
     memoizee: ^0.4.14
     rxjs: ^6.5.5
-  checksum: 2/c4b053bfd12b3e47be2a7773bca3b7ee6f24d30143402e768f80b6e447ac5abbcd5100f04707eea97d181b65c30e7447cc7f0af9f57f26dddda5fdd3a5f66095
+  checksum: 2/95bd6111a8be93400a08136e5f62c2682dfe7301b9ff740be05b7fb0ef73314412c0e1f87c2de74d9929d865332f97ef058b9fc9211bbe136e1de783f1a6fa59
   languageName: node
   linkType: hard
 
@@ -3220,7 +3220,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-keyring@0.52.0-beta.32, @polkadot/ui-keyring@workspace:packages/ui-keyring":
+"@polkadot/ui-keyring@0.52.0, @polkadot/ui-keyring@workspace:packages/ui-keyring":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
@@ -3229,7 +3229,7 @@ __metadata:
     "@ledgerhq/hw-transport-u2f": ^5.12.0
     "@ledgerhq/hw-transport-webusb": ^5.12.0
     "@polkadot/keyring": ^2.8.1
-    "@polkadot/types": ^1.10.0-beta.28
+    "@polkadot/types": ^1.10.1
     "@polkadot/util": ^2.8.1
     "@types/ledgerhq__hw-transport-node-hid": ^4.22.1
     "@types/ledgerhq__hw-transport-u2f": ^4.21.1
@@ -3249,7 +3249,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@0.52.0-beta.32, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@0.52.0, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
@@ -3263,7 +3263,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@0.52.0-beta.32, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@0.52.0, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
@@ -3318,7 +3318,7 @@ __metadata:
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
     "@babel/runtime": ^7.9.2
-    "@polkadot/ui-shared": 0.52.0-beta.32
+    "@polkadot/ui-shared": 0.52.0
     "@polkadot/util-crypto": ^2.8.1
     jdenticon: 2.2.0
     vue: ^2.6.11
@@ -9117,9 +9117,9 @@ __metadata:
     "@babel/core": ^7.9.0
     "@babel/runtime": ^7.9.2
     "@polkadot/keyring": ^2.8.1
-    "@polkadot/reactnative-identicon": 0.52.0-beta.32
-    "@polkadot/ui-keyring": 0.52.0-beta.32
-    "@polkadot/ui-settings": 0.52.0-beta.32
+    "@polkadot/reactnative-identicon": 0.52.0
+    "@polkadot/ui-keyring": 0.52.0
+    "@polkadot/ui-settings": 0.52.0
     "@polkadot/util": ^2.8.1
     "@polkadot/util-crypto": ^2.8.1
     "@react-native-community/async-storage": ^1.9.0
