@@ -43,7 +43,7 @@ export class Keyring extends Base implements KeyringStruct {
     return this.addExternal(address, { ...meta, hardwareType, isHardware: true });
   }
 
-  public addMultisg (addresses: (string | Uint8Array)[], threshold: BigInt | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
+  public addMultisig (addresses: (string | Uint8Array)[], threshold: BigInt | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
     const address = createKeyMulti(addresses, threshold);
     const who = addresses.map((who) => this.encodeAddress(who));
 
