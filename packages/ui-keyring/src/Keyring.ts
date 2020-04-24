@@ -10,7 +10,7 @@ import { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, Keyr
 import BN from 'bn.js';
 import createPair from '@polkadot/keyring/pair';
 import chains from '@polkadot/ui-settings/defaults/chains';
-import { bnToBn, hexToU8a, isHex, isString } from '@polkadot/util';
+import { bnToBn, hexToU8a, isHex, isString, u8aSorted } from '@polkadot/util';
 import { createKeyMulti } from '@polkadot/util-crypto';
 
 import env from './observable/development';
@@ -45,7 +45,9 @@ export class Keyring extends Base implements KeyringStruct {
 
   public addMultisig (addresses: (string | Uint8Array)[], threshold: BigInt | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
     const address = createKeyMulti(addresses, threshold);
-    const who = addresses.map((who) => this.encodeAddress(who));
+
+    // we could use `sortAddresses`, but rather use internal encode/decode so we are 100%
+    const who = u8aSorted(addresses.map((who) => this.decodeAddress(who))).map((who) => this.encodeAddress(who));
 
     return this.addExternal(address, { ...meta, isMultisig: true, threshold: bnToBn(threshold).toNumber(), who });
   }
