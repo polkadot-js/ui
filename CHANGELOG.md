@@ -1,3 +1,7 @@
+# 0.53.0-beta.x
+
+- Add `addMultisig` into keyring (with all options to re-create address)
+
 # 0.52.1 Apr 15, 2020
 
 - **Breaking change** (TypeScript only) The `*.d.ts` files now contain TypeScript 3.8 features, `#private`, which is not usable in older versions

@@ -7,9 +7,11 @@ import { KeypairType } from '@polkadot/util-crypto/types';
 import { AddressSubject, SingleAddress } from './observable/types';
 import { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
+import BN from 'bn.js';
 import createPair from '@polkadot/keyring/pair';
 import chains from '@polkadot/ui-settings/defaults/chains';
-import { hexToU8a, isHex, isString } from '@polkadot/util';
+import { bnToBn, hexToU8a, isHex, isString } from '@polkadot/util';
+import { createKeyMulti } from '@polkadot/util-crypto';
 
 import env from './observable/development';
 import Base from './Base';
@@ -39,6 +41,13 @@ export class Keyring extends Base implements KeyringStruct {
 
   public addHardware (address: string | Uint8Array, hardwareType: string, meta: KeyringPair$Meta = {}): CreateResult {
     return this.addExternal(address, { ...meta, hardwareType, isHardware: true });
+  }
+
+  public addMultisig (addresses: (string | Uint8Array)[], threshold: BigInt | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
+    const address = createKeyMulti(addresses, threshold);
+    const who = addresses.map((who) => this.encodeAddress(who));
+
+    return this.addExternal(address, { ...meta, isMultisig: true, threshold: bnToBn(threshold).toNumber(), who });
   }
 
   public addPair (pair: KeyringPair, password: string): CreateResult {

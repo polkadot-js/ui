@@ -15,7 +15,7 @@
     "color": "^3.1.2",
     "jdenticon": "2.2.0",
     "react-copy-to-clipboard": "^5.0.2",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.1.0"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
@@ -26,12 +26,12 @@
     "react-is": "*"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^2.8.1",
-    "@polkadot/util": "^2.8.1",
-    "@polkadot/util-crypto": "^2.8.1",
+    "@polkadot/keyring": "^2.9.0-beta.0",
+    "@polkadot/util": "^2.9.0-beta.0",
+    "@polkadot/util-crypto": "^2.9.0-beta.0",
     "@types/react-copy-to-clipboard": "^4.3.0",
     "@types/react-dom": "^16.9.6",
-    "@types/styled-components": "^5.0.1",
+    "@types/styled-components": "^5.1.0",
     "xmlserializer": "^0.6.1"
   }
 }
