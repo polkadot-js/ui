@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.9.2",
     "@polkadot/ui-shared": "0.52.1",
-    "react-native-svg": "^12.0.3"
+    "react-native-svg": "^12.1.0"
   },
   "peerDependencies": {
     "@polkadot/util-crypto": "*",
@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "@polkadot/util-crypto": "^2.9.0-beta.0",
-    "@types/react-native": "^0.62.1"
+    "@types/react-native": "^0.62.4"
   }
 }

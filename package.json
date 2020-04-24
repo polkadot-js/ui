@@ -40,7 +40,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
-    "react-native": "^0.62.1",
+    "react-native": "^0.62.2",
     "vue-template-compiler": "^2.6.11",
     "webpack-serve": "^3.2.0"
   }
