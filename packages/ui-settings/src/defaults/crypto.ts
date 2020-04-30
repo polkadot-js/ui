@@ -6,6 +6,11 @@ import { Option } from '../types';
 
 export const CRYPTOS: Option[] = [
   {
+    info: 'ecdsa',
+    text: 'ECDSA (ecdsa)',
+    value: 'ecdsa'
+  },
+  {
     info: 'ed25519',
     text: 'Edwards (ed25519)',
     value: 'ed25519'
