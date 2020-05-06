@@ -24,42 +24,43 @@ const transports = allNode.concat(allWeb);
 //  - it connects automatically, creating an app as required
 //  - Promises return errors (instead of wrapper errors)
 export default class Ledger {
-  private app: LedgerApp | null = null;
-  private type: LedgerTypes;
+  #app: LedgerApp | null = null;
+
+  #type: LedgerTypes;
 
   constructor (type: LedgerTypes) {
     assert(['hid', 'u2f', 'webusb'].includes(type), `Unsupported transport ${type}`);
 
-    this.type = type;
+    this.#type = type;
   }
 
-  private async getApp (): Promise<LedgerApp> {
-    if (!this.app) {
-      const def = transports.find(({ type }): boolean => type === this.type);
+  private async _getApp (): Promise<LedgerApp> {
+    if (!this.#app) {
+      const def = transports.find(({ type }) => type === this.#type);
 
-      assert(def, `Unable to find a transport for ${this.type}`);
+      assert(def, `Unable to find a transport for ${this.#type}`);
 
       const transport = await def.create();
 
-      this.app = new LedgerApp(transport);
+      this.#app = new LedgerApp(transport);
     }
 
-    return this.app;
+    return this.#app;
   }
 
-  private async withApp <T> (fn: (app: LedgerApp) => Promise<T>): Promise<T> {
+  private async _withApp <T> (fn: (app: LedgerApp) => Promise<T>): Promise<T> {
     try {
-      const app = await this.getApp();
+      const app = await this._getApp();
 
       return await fn(app);
     } catch (error) {
-      this.app = null;
+      this.#app = null;
 
       throw error;
     }
   }
 
-  private async wrapError <T extends ResponseBase> (promise: Promise<T>): Promise<T> {
+  private async _wrapError <T extends ResponseBase> (promise: Promise<T>): Promise<T> {
     const result = await promise;
 
     assert(result.return_code === SUCCESS_CODE, result.error_message);
@@ -68,8 +69,8 @@ export default class Ledger {
   }
 
   public async getAddress (confirm = false, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerAddress> {
-    return this.withApp(async (app: LedgerApp): Promise<LedgerAddress> => {
-      const { address, pubKey } = await this.wrapError(app.getAddress(account, change, addressIndex, confirm));
+    return this._withApp(async (app: LedgerApp): Promise<LedgerAddress> => {
+      const { address, pubKey } = await this._wrapError(app.getAddress(account, change, addressIndex, confirm));
 
       return {
         address,
@@ -79,8 +80,8 @@ export default class Ledger {
   }
 
   public async getVersion (): Promise<LedgerVersion> {
-    return this.withApp(async (app: LedgerApp): Promise<LedgerVersion> => {
-      const { device_locked: isLocked, major, minor, patch, test_mode: isTestMode } = await this.wrapError(app.getVersion());
+    return this._withApp(async (app: LedgerApp): Promise<LedgerVersion> => {
+      const { device_locked: isLocked, major, minor, patch, test_mode: isTestMode } = await this._wrapError(app.getVersion());
 
       return {
         isLocked,
@@ -91,9 +92,9 @@ export default class Ledger {
   }
 
   public async sign (message: Uint8Array, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerSignature> {
-    return this.withApp(async (app: LedgerApp): Promise<LedgerSignature> => {
+    return this._withApp(async (app: LedgerApp): Promise<LedgerSignature> => {
       const buffer = u8aToBuffer(message);
-      const { signature } = await this.wrapError(app.sign(account, change, addressIndex, buffer));
+      const { signature } = await this._wrapError(app.sign(account, change, addressIndex, buffer));
 
       return {
         signature: u8aToHex(bufferToU8a(signature))

@@ -26,9 +26,9 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^2.9.0-beta.1",
-    "@polkadot/types": "^1.12.0-beta.6",
-    "@polkadot/util": "^2.9.0-beta.1",
+    "@polkadot/keyring": "^2.9.1",
+    "@polkadot/types": "^1.13.0-beta.15",
+    "@polkadot/util": "^2.9.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
     "@types/ledgerhq__hw-transport-u2f": "^4.21.1",
     "@types/mkdirp": "^1.0.0",
