@@ -12,6 +12,14 @@ import { Option, SettingsStruct } from './types';
 type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';
 
+function withDefault (options: Option[], option: string | undefined, fallback: string): string {
+  const _option = option || fallback;
+
+  return options.some(({ value }) => value === _option)
+    ? _option
+    : fallback;
+}
+
 export class Settings implements SettingsStruct {
   readonly #emitter: EventEmitter;
 
@@ -39,8 +47,8 @@ export class Settings implements SettingsStruct {
     this.#emitter = new EventEmitter();
 
     this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || process.env.WS_URL || ENDPOINT_DEFAULT;
-    this.#camera = settings.camera || CAMERA_DEFAULT;
-    this.#ledgerConn = settings.ledgerConn || LEDGER_CONN_DEFAULT;
+    this.#camera = withDefault(CAMERA, settings.camera, CAMERA_DEFAULT);
+    this.#ledgerConn = withDefault(LEDGER_CONN, settings.ledgerConn, LEDGER_CONN_DEFAULT);
     this.#i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
     this.#icon = settings.icon || ICON_DEFAULT;
     this.#locking = settings.locking || LOCKING_DEFAULT;

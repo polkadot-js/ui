@@ -12,11 +12,12 @@ export const LEDGER_CONN: Option[] = [
     text: 'Do not attach Ledger devices',
     value: 'none'
   },
-  {
-    info: 'u2f',
-    text: 'Attach Ledger via U2F',
-    value: 'u2f'
-  },
+  // Deprecated
+  // {
+  //   info: 'u2f',
+  //   text: 'Attach Ledger via U2F',
+  //   value: 'u2f'
+  // },
   {
     info: 'webusb',
     text: 'Attach Ledger via WebUSB',
