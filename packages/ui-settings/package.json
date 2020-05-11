@@ -9,12 +9,12 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.9.2",
-    "eventemitter3": "^4.0.0",
+    "@babel/runtime": "^7.9.6",
+    "eventemitter3": "^4.0.1",
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/util": "^2.9.1",
+    "@polkadot/util": "^2.10.0-beta.3",
     "@types/store": "^2.0.2"
   },
   "peerDependencies": {
