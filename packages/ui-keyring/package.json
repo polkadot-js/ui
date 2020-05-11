@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",
-    "@ledgerhq/hw-transport-u2f": "^5.15.0",
     "@ledgerhq/hw-transport-webusb": "^5.15.0",
     "ledger-polkadot": "^0.7.0",
     "mkdirp": "^1.0.4",
@@ -30,7 +29,6 @@
     "@polkadot/types": "^1.14.0-beta.5",
     "@polkadot/util": "^2.10.0-beta.3",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
-    "@types/ledgerhq__hw-transport-u2f": "^4.21.1",
     "@types/mkdirp": "^1.0.0",
     "@types/store": "^2.0.2"
   },

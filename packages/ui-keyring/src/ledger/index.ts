@@ -29,7 +29,8 @@ export default class Ledger {
   #type: LedgerTypes;
 
   constructor (type: LedgerTypes) {
-    assert(['hid', 'u2f', 'webusb'].includes(type), `Unsupported transport ${type}`);
+    // u2f is deprecated
+    assert(['hid', 'webusb'].includes(type), `Unsupported transport ${type}`);
 
     this.#type = type;
   }

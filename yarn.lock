@@ -1942,18 +1942,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ledgerhq/hw-transport-u2f@npm:^5.15.0":
-  version: 5.15.0
-  resolution: "@ledgerhq/hw-transport-u2f@npm:5.15.0"
-  dependencies:
-    "@ledgerhq/errors": ^5.15.0
-    "@ledgerhq/hw-transport": ^5.15.0
-    "@ledgerhq/logs": ^5.15.0
-    u2f-api: 0.2.7
-  checksum: 2/ee19fecc88b3d0406ed981bbffc4d6a5822913f51f793fd2596e01c2645c0e7a22412e170f080c77bafa82371fce820589201007fdbd3e5f22b6a11eb57b9a33
-  languageName: node
-  linkType: hard
-
 "@ledgerhq/hw-transport-webusb@npm:^5.15.0":
   version: 5.15.0
   resolution: "@ledgerhq/hw-transport-webusb@npm:5.15.0"
@@ -3214,13 +3202,11 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.9.6
     "@ledgerhq/hw-transport-node-hid": ^5.15.0
-    "@ledgerhq/hw-transport-u2f": ^5.15.0
     "@ledgerhq/hw-transport-webusb": ^5.15.0
     "@polkadot/keyring": ^2.10.0-beta.3
     "@polkadot/types": ^1.14.0-beta.5
     "@polkadot/util": ^2.10.0-beta.3
     "@types/ledgerhq__hw-transport-node-hid": ^4.22.1
-    "@types/ledgerhq__hw-transport-u2f": ^4.21.1
     "@types/mkdirp": ^1.0.0
     "@types/store": ^2.0.2
     ledger-polkadot: ^0.7.0
@@ -3687,16 +3673,6 @@ __metadata:
     "@types/node": "*"
     "@types/node-hid": "*"
   checksum: 2/ea3e657e5068b137e5524c4c1287692841875961dd48b0250bfbffc7ae61c0c5e8efd07612f0b016c197f98f76ac84e298cff3852495f3a91d7176daee145117
-  languageName: node
-  linkType: hard
-
-"@types/ledgerhq__hw-transport-u2f@npm:^4.21.1":
-  version: 4.21.1
-  resolution: "@types/ledgerhq__hw-transport-u2f@npm:4.21.1"
-  dependencies:
-    "@types/ledgerhq__hw-transport": "*"
-    "@types/node": "*"
-  checksum: 2/af6de5833b5a8167b75d877b116fafea0e81c50d3a6974bc06d4c13f4627c168127291a4ba59b3503e61450135a82e3de063de5d6a07594b9c1850b48fc97321
   languageName: node
   linkType: hard
 
@@ -20543,13 +20519,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 2/519b11576247fe3570d89a2aa757d8f666aafc0cb9465a6cdd4df09c1dc6bf7285f0c6008d2ac7a55ea26457e767aaab819f58439d80af2cce1d9805b2be1034
-  languageName: node
-  linkType: hard
-
-"u2f-api@npm:0.2.7":
-  version: 0.2.7
-  resolution: "u2f-api@npm:0.2.7"
-  checksum: 2/45700b5d30416ce7a6055d3cc262c51f31f3aadcb4e398c7359caa6b635a21f1901340196163ef4cf82664a3e90894336076600d1293ef702d5a1be25e5ca82c
   languageName: node
   linkType: hard
 
