@@ -26,5 +26,10 @@ export const PREFIXES: Option[] = [
     info: 'polkadot',
     text: 'Polkadot (live)',
     value: 0
+  },
+  {
+    info: 'edgeware',
+    text: 'Edgeware (live)',
+    value: 7
   }
 ];
