@@ -1,6 +1,10 @@
-# 0.53.0-beta.x
+# 0.53.1 May 14, 2020
 
+- Add Ecdsa to the supported crypto types options (Thanks to https://github.com/akru)
+- Add Egedware to network prefix settings (Thanks to https://github.com/jnaviask)
 - Add `addMultisig` into keyring (with all options to re-create address)
+- Bump to `@polkadot/api` 1.14.1
+- Bump to `@polkadot/util` 2.10.1
 
 # 0.52.1 Apr 15, 2020
 
