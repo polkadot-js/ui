@@ -26,7 +26,7 @@
     "@polkadot/reactnative-identicon": "0.53.1",
     "@polkadot/ui-keyring": "0.53.1",
     "@polkadot/ui-settings": "0.53.1",
-    "@react-native-community/async-storage": "^1.10.0",
+    "@react-native-community/async-storage": "^1.10.1",
     "fast-text-encoding": "^1.0.2",
     "get-yarn-workspaces": "^1.0.2",
     "os-browserify": "^0.3.0",

@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "@polkadot/util-crypto": "^2.10.1",
-    "@types/react-native": "^0.62.7"
+    "@types/react-native": "^0.62.9"
   }
 }
