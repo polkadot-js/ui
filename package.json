@@ -8,8 +8,7 @@
     "packages/*"
   ],
   "resolutions": {
-    "babel-core": "^7.0.0-bridge.0",
-    "typescript": "^3.8.3"
+    "babel-core": "^7.0.0-bridge.0"
   },
   "scripts": {
     "build": "polkadot-dev-build-ts",
@@ -32,9 +31,9 @@
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/runtime": "^7.9.6",
-    "@polkadot/dev": "^0.52.19",
-    "@polkadot/ts": "^0.3.21",
-    "@types/jest": "^25.2.1",
+    "@polkadot/dev": "^0.53.5",
+    "@polkadot/ts": "^0.3.22",
+    "@types/jest": "^25.2.2",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
     "react": "^16.13.1",
