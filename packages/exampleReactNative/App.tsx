@@ -12,6 +12,7 @@ import { mnemonicGenerate, cryptoWaitReady } from '@polkadot/util-crypto';
 
 const styles = StyleSheet.create({
   body: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
     backgroundColor: Colors.white
   },
   buttonContainer: {
@@ -20,11 +21,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column'
   },
   mainTitle: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
     color: Colors.black,
     fontSize: 28,
     fontWeight: '600'
   },
   scrollView: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
     backgroundColor: Colors.lighter
   },
   sectionContainer: {
@@ -32,12 +35,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24
   },
   sectionDescription: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
     color: Colors.dark,
     fontSize: 18,
     fontWeight: '400',
     marginTop: 8
   },
   sectionTitle: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
     color: Colors.black,
     fontSize: 24,
     fontWeight: '600'
@@ -46,7 +51,7 @@ const styles = StyleSheet.create({
 
 const globalAny = global as unknown as Window;
 
-export default function App (): React.ReactElement<{}> | null {
+export default function App (): React.ReactElement | null {
   const [isReady, setReady] = useState(false);
   const [address, setAddress] = useState<string | null>(null);
   const [phrase, setPhrase] = useState<string | null>(null);
@@ -80,6 +85,7 @@ export default function App (): React.ReactElement<{}> | null {
       console.log('Error loading keyring ', e);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     await globalAny.localStorage.init();
     await cryptoWaitReady();
 
@@ -88,6 +94,7 @@ export default function App (): React.ReactElement<{}> | null {
   };
 
   if (!isReady) {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     initialize();
   }
 

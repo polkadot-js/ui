@@ -38,7 +38,7 @@ function renderCircle ({ cx, cy, fill, r }: Circle, key: number): React.ReactNod
   );
 }
 
-function Identicon ({ address, className, isAlternative = false, size, style }: Props): React.ReactElement<Props> {
+function Identicon ({ address, className = '', isAlternative = false, size, style }: Props): React.ReactElement<Props> {
   return (
     <div
       className={`container ${className}`}

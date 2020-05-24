@@ -37,7 +37,7 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
         decodeAddress(address);
         onScan({ address, genesisHash, name });
       } catch (error) {
-        console.error('@polkadot/react-qr:QrScanAddress', error.message, data);
+        console.error('@polkadot/react-qr:QrScanAddress', (error as Error).message, data);
       }
     },
     [onScan]

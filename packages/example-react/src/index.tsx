@@ -113,7 +113,9 @@ function App ({ className }: Props): React.ReactElement<Props> | null {
   );
 }
 
-cryptoWaitReady().then((): void => {
-  keyring.loadAll({ ss58Format: 42, type: 'sr25519' });
-  ReactDOM.render(<App />, rootElement);
-});
+cryptoWaitReady()
+  .then((): void => {
+    keyring.loadAll({ ss58Format: 42, type: 'sr25519' });
+    ReactDOM.render(<App />, rootElement);
+  })
+  .catch(console.error);

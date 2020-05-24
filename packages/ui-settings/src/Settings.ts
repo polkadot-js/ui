@@ -42,11 +42,11 @@ export class Settings implements SettingsStruct {
   #uiTheme: string;
 
   constructor () {
-    const settings = store.get('settings') || {};
+    const settings = (store.get('settings') as SettingsStruct) || {};
 
     this.#emitter = new EventEmitter();
 
-    this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || process.env.WS_URL || ENDPOINT_DEFAULT;
+    this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || process.env.WS_URL || (ENDPOINT_DEFAULT.value as string);
     this.#camera = withDefault(CAMERA, settings.camera, CAMERA_DEFAULT);
     this.#ledgerConn = withDefault(LEDGER_CONN, settings.ledgerConn, LEDGER_CONN_DEFAULT);
     this.#i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;

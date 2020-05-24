@@ -88,10 +88,12 @@ const Example = Vue.extend({
   }
 });
 
-cryptoWaitReady().then((): void => {
-  keyring.loadAll({ ss58Format: 42, type: 'sr25519' });
+cryptoWaitReady()
+  .then((): void => {
+    keyring.loadAll({ ss58Format: 42, type: 'sr25519' });
 
-  new Vue({
-    render: (h): VNode => h(Example)
-  }).$mount('#example');
-});
+    new Vue({
+      render: (h): VNode => h(Example)
+    }).$mount('#example');
+  })
+  .catch(console.error);

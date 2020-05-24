@@ -26,7 +26,6 @@ export interface KeyringOptions extends KeyringOptionsBase {
   store?: KeyringStore;
 }
 
-// eslint-disable-next-line @typescript-eslint/class-name-casing
 export interface KeyringJson$Meta {
   contract?: ContractMeta;
   genesisHash?: string | null;
@@ -39,8 +38,7 @@ export interface KeyringJson$Meta {
   whenCreated?: number;
   whenEdited?: number;
   whenUsed?: number;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [index: string]: any;
+  [index: string]: unknown;
 }
 
 export interface KeyringJson {
