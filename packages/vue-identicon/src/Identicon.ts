@@ -66,7 +66,7 @@ export const Identicon = Vue.extend({
   methods: {
     createData: function (): void {
       this.iconSize = this.size as number || DEFAULT_SIZE;
-      this.type = this.theme as string;
+      this.type = this.theme as 'empty';
 
       this.recodeAddress();
     },
