@@ -7,7 +7,7 @@ import container from './container';
 describe('container', (): void => {
   it('applies default styles', (): void => {
     expect(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unsafe-member-access
       (container(100).style as any)._values
     ).toMatchObject({
       background: 'white',
@@ -23,7 +23,7 @@ describe('container', (): void => {
 
   it('overrides with supplied styles', (): void => {
     expect(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unsafe-member-access
       (container(50, 'black', '', { display: 'block' }).style as any)._values
     ).toMatchObject({
       background: 'black',

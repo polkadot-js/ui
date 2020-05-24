@@ -117,7 +117,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
 
     return (
       <Wrapper
-        className={`ui--IdentityIcon ${className}`}
+        className={`ui--IdentityIcon ${className || ''}`}
         key={address}
         style={style}
       >

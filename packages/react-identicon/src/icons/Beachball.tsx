@@ -7,7 +7,7 @@ import { Props } from '../types';
 import React, { useCallback } from 'react';
 import { beachballIcon } from '@polkadot/ui-shared';
 
-function Beachball ({ address, className, size, style }: Props): React.ReactElement<Props> {
+function Beachball ({ address, className = '', size, style }: Props): React.ReactElement<Props> {
   const updateElem = useCallback(
     (node: HTMLDivElement): void => {
       node && node.appendChild(

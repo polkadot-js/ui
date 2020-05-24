@@ -7,7 +7,7 @@ import { Props } from '../types';
 import React from 'react';
 import jdenticon from 'jdenticon';
 
-function Jdenticon ({ className, publicKey, size, style }: Props): React.ReactElement<Props> {
+function Jdenticon ({ className = '', publicKey, size, style }: Props): React.ReactElement<Props> {
   return (
     <div
       className={`container ${className}`}

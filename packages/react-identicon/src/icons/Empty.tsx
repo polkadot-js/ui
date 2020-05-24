@@ -6,7 +6,7 @@ import { Props } from '../types';
 
 import React from 'react';
 
-function Empty ({ className, size, style }: Props): React.ReactElement<Props> {
+function Empty ({ className = '', size, style }: Props): React.ReactElement<Props> {
   return (
     <div
       className={`container ${className}`}

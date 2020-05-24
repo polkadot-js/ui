@@ -25,7 +25,7 @@ export const Jdenticon = Vue.extend({
   },
   methods: {
     createSvgHtml: function (): void {
-      this.svgHtml = jdenticon.toSvg(this.publicKey.substr(2), this.size);
+      this.svgHtml = jdenticon.toSvg((this.publicKey as string).substr(2), this.size);
     }
   },
   props: ['publicKey', 'size'],
