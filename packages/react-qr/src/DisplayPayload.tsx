@@ -12,15 +12,16 @@ import QrDisplay from './Display';
 interface Props extends BaseProps {
   address: string;
   cmd: number;
+  genesisHash: Uint8Array | string;
   payload: Uint8Array;
 }
 
-function DisplayPayload ({ address, className, cmd, payload, size, style }: Props): React.ReactElement<Props> | null {
+function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, style }: Props): React.ReactElement<Props> | null {
   const [data, setData] = useState<Uint8Array | null>(null);
 
   useEffect((): void => {
-    setData(createSignPayload(address, cmd, payload));
-  }, [address, cmd, payload]);
+    setData(createSignPayload(address, cmd, payload, genesisHash));
+  }, [address, cmd, payload, genesisHash]);
 
   if (!data) {
     return null;
