@@ -20,8 +20,8 @@ function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, 
   const [data, setData] = useState<Uint8Array | null>(null);
 
   useEffect((): void => {
-    setData(createSignPayload(address, cmd, genesisHash, payload));
-  }, [address, cmd, genesisHash, payload]);
+    setData(createSignPayload(address, cmd, payload, genesisHash));
+  }, [address, cmd, payload, genesisHash]);
 
   if (!data) {
     return null;
