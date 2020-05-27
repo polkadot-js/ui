@@ -73,7 +73,7 @@ describe('util', (): void => {
         '03' + // sign tx
         'f4cd755672a8f9542ca9da4fbf2182e79135d94304002e6a09ffc96fef6e6c4c' + // publickey
         '544849532049532053504152544121' + // THIS IS SPARTA!
-        '0xb0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe' //genesis Hash
+        'b0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe' //genesis Hash
       );
     });
   });
