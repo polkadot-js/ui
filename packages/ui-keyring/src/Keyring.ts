@@ -326,7 +326,7 @@ export class Keyring extends Base implements KeyringStruct {
     };
 
     Object.keys(meta).forEach((key): void => {
-      json.meta[key] = meta[key] as unknown;
+      json.meta[key] = meta[key];
     });
 
     delete json.meta.isRecent;
