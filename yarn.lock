@@ -3192,11 +3192,11 @@ __metadata:
   linkType: soft
 
 "@polkadot/ts@npm:^0.3.25":
-  version: 0.3.25
-  resolution: "@polkadot/ts@npm:0.3.25"
+  version: 0.3.26
+  resolution: "@polkadot/ts@npm:0.3.26"
   dependencies:
     "@types/chrome": ^0.0.114
-  checksum: 3/9cd069fca8d70ce56618ce45d98670f5d4c020518148d61413227e9b9aae2d59200897866e1b7513dd8445a37daaeb98546a48d0903ac5ba73409f932f24a44a
+  checksum: 3/c035d1282c66144bbfd6dee67ca0142dc051271d9905f729c7632754f645c9472366af5790364fe280f52062a630e4d13e2f995263dd71516c630c6010ca6d79
   languageName: node
   linkType: hard
 
