@@ -9,13 +9,13 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.9.6",
+    "@babel/runtime": "^7.10.2",
     "@polkadot/ui-settings": "0.54.0-beta.4",
     "@polkadot/ui-shared": "0.54.0-beta.4",
     "color": "^3.1.2",
     "jdenticon": "2.2.0",
     "react-copy-to-clipboard": "^5.0.2",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.1"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
@@ -26,9 +26,9 @@
     "react-is": "*"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^2.11.1",
-    "@polkadot/util": "^2.11.1",
-    "@polkadot/util-crypto": "^2.11.1",
+    "@polkadot/keyring": "^2.12.2",
+    "@polkadot/util": "^2.12.2",
+    "@polkadot/util-crypto": "^2.12.2",
     "@types/react-copy-to-clipboard": "^4.3.0",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.0",
