@@ -3,6 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 const ADDRESS_PREFIX = 'substrate';
+const SEED_PREFIX = 'secret';
 const FRAME_SIZE = 1024;
 const SUBSTRATE_ID = new Uint8Array([0x53]);
 const CRYPTO_SR25519 = new Uint8Array([0x01]);
@@ -19,5 +20,6 @@ export {
   CMD_SIGN_MSG,
   CRYPTO_SR25519,
   FRAME_SIZE,
+  SEED_PREFIX,
   SUBSTRATE_ID
 };

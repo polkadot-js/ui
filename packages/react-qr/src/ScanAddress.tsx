@@ -2,17 +2,18 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { BaseProps } from './types';
-
-import React, { useCallback } from 'react';
 import { assert } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
-import { ADDRESS_PREFIX } from './constants';
+import React, { useCallback } from 'react';
+
+import { ADDRESS_PREFIX, SEED_PREFIX } from './constants';
 import QrScan from './Scan';
+import { BaseProps } from './types';
 
 interface ScanType {
-  address: string;
+  isAddress: boolean;
+  content: string;
   genesisHash: string;
   name?: string;
 }
@@ -30,12 +31,16 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
       }
 
       try {
-        const [prefix, address, genesisHash, name] = data.split(':');
+        const [prefix, content, genesisHash, name] = data.split(':');
 
-        assert(prefix === ADDRESS_PREFIX, `Invalid address received, expected '${ADDRESS_PREFIX}', found '${prefix}'`);
+        assert(prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
+        const isAddress = prefix === ADDRESS_PREFIX;
 
-        decodeAddress(address);
-        onScan({ address, genesisHash, name });
+        if (isAddress) {
+          decodeAddress(content);
+        }
+
+        onScan({ content, genesisHash, isAddress, name });
       } catch (error) {
         console.error('@polkadot/react-qr:QrScanAddress', (error as Error).message, data);
       }
