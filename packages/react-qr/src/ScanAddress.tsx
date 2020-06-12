@@ -35,7 +35,7 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
         const isValidPrefix = prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX;
 
         assert(isValidPrefix, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
-        
+
         const isAddress = prefix === ADDRESS_PREFIX;
 
         if (isAddress) {
