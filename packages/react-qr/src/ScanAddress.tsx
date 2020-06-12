@@ -8,11 +8,12 @@ import React, { useCallback } from 'react';
 import { assert } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
-import { ADDRESS_PREFIX } from './constants';
+import { ADDRESS_PREFIX, SEED_PREFIX } from './constants';
 import QrScan from './Scan';
 
 interface ScanType {
-  address: string;
+  isAddress: boolean;
+  content: string;
   genesisHash: string;
   name?: string;
 }
@@ -30,12 +31,18 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
       }
 
       try {
-        const [prefix, address, genesisHash, name] = data.split(':');
+        const [prefix, content, genesisHash, name] = data.split(':');
+        const isValidPrefix = prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX;
 
-        assert(prefix === ADDRESS_PREFIX, `Invalid address received, expected '${ADDRESS_PREFIX}', found '${prefix}'`);
+        assert(isValidPrefix, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
 
-        decodeAddress(address);
-        onScan({ address, genesisHash, name });
+        const isAddress = prefix === ADDRESS_PREFIX;
+
+        if (isAddress) {
+          decodeAddress(content);
+        }
+
+        onScan({ content, genesisHash, isAddress, name });
       } catch (error) {
         console.error('@polkadot/react-qr:QrScanAddress', (error as Error).message, data);
       }
