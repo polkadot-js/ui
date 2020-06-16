@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 0.54.1 Jun 16, 2020
+
+- Add genesisHash to signer payload (Thanks to https://github.com/hanwencheng)
+- Allow QR scanning to parse mini keys (Thanks to https://github.com/hanwencheng)
+- Adjust ordering of available crypto types (native first)
+- Rename Substrate prefix entry (42) to "generic"
+- Bump to `@polkadot/api` 1.19.1
+- Bump to `@polkadot/util` 2.14.1
+
 ## 0.53.1 May 14, 2020
 
 - Add Ecdsa to the supported crypto types options (Thanks to https://github.com/akru)
