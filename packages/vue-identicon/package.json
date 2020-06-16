@@ -18,7 +18,7 @@
     "vue": "*"
   },
   "devDependencies": {
-    "@polkadot/util-crypto": "^2.12.2",
+    "@polkadot/util-crypto": "^2.14.1",
     "vue": "^2.6.11"
   }
 }

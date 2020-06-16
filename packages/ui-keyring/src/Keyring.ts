@@ -276,10 +276,7 @@ export class Keyring extends Base implements KeyringStruct {
     const type = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
     const pair = createPair(
       { toSS58: this.encodeAddress, type },
-      {
-        // FIXME Just for the transition period (ignoreChecksum)
-        publicKey: this.decodeAddress(json.address, true)
-      },
+      { publicKey: this.decodeAddress(json.address, true) },
       json.meta,
       hexToU8a(json.encoded)
     );

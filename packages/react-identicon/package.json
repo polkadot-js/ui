@@ -26,9 +26,9 @@
     "react-is": "*"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^2.12.2",
-    "@polkadot/util": "^2.12.2",
-    "@polkadot/util-crypto": "^2.12.2",
+    "@polkadot/keyring": "^2.14.1",
+    "@polkadot/util": "^2.14.1",
+    "@polkadot/util-crypto": "^2.14.1",
     "@types/react-copy-to-clipboard": "^4.3.0",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.0",
