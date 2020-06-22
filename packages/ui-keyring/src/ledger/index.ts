@@ -5,13 +5,11 @@
 import Transport from '@ledgerhq/hw-transport';
 import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
 
-import { newKusamaApp, newPolkadotApp, ResponseBase, SubstrateApp } from '@zondax/ledger-polkadot';
+import { ResponseBase, SubstrateApp, newKusamaApp, newPolkadotApp } from '@zondax/ledger-polkadot';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
 
 import allNode from './transportsNode';
 import allWeb from './transportsWeb';
-
-type Chain = 'kusama' | 'polkadot';
 
 export const LEDGER_DEFAULT_ACCOUNT = 0x80000000;
 
@@ -23,10 +21,12 @@ const SUCCESS_CODE = 0x9000;
 
 const transports = allNode.concat(allWeb);
 
-const APPS: Record<Chain, (transport: Transport) => SubstrateApp> = {
+const APPS: Record<string, (transport: Transport) => SubstrateApp> = {
   kusama: newKusamaApp,
   polkadot: newPolkadotApp
 };
+
+type Chain = keyof typeof APPS;
 
 // A very basic wrapper for a ledger app -
 //  - it connects automatically, creating an app as required
@@ -41,7 +41,7 @@ export default class Ledger {
   constructor (transport: LedgerTypes, chain: Chain) {
     // u2f is deprecated
     assert(['hid', 'webusb'].includes(transport), `Unsupported transport ${transport}`);
-    assert(['kusama', 'polkadot'].includes(chain), `Unsupported chain ${chain}`);
+    assert(Object.keys(APPS).includes(chain), `Unsupported chain ${chain}`);
 
     this.#chain = chain;
     this.#transport = transport;
