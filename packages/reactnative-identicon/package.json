@@ -9,7 +9,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.10.2",
+    "@babel/runtime": "^7.10.3",
     "@polkadot/ui-shared": "0.54.1",
     "react-native-svg": "^12.1.0"
   },

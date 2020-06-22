@@ -9,7 +9,7 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.10.2",
+    "@babel/runtime": "^7.10.3",
     "@polkadot/ui-shared": "0.54.1",
     "jdenticon": "2.2.0"
   },
