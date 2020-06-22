@@ -2,9 +2,10 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import Transport from '@ledgerhq/hw-transport';
 import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
 
-import LedgerApp, { ResponseBase } from 'ledger-polkadot';
+import { ResponseBase, SubstrateApp, newKusamaApp, newPolkadotApp } from '@zondax/ledger-polkadot';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
 
 import allNode from './transportsNode';
@@ -20,36 +21,47 @@ const SUCCESS_CODE = 0x9000;
 
 const transports = allNode.concat(allWeb);
 
+const APPS: Record<string, (transport: Transport) => SubstrateApp> = {
+  kusama: newKusamaApp,
+  polkadot: newPolkadotApp
+};
+
+type Chain = keyof typeof APPS;
+
 // A very basic wrapper for a ledger app -
 //  - it connects automatically, creating an app as required
 //  - Promises return errors (instead of wrapper errors)
 export default class Ledger {
-  #app: LedgerApp | null = null;
+  #app: SubstrateApp | null = null;
 
-  #type: LedgerTypes;
+  #chain: Chain;
 
-  constructor (type: LedgerTypes) {
+  #transport: LedgerTypes;
+
+  constructor (transport: LedgerTypes, chain: Chain) {
     // u2f is deprecated
-    assert(['hid', 'webusb'].includes(type), `Unsupported transport ${type}`);
+    assert(['hid', 'webusb'].includes(transport), `Unsupported transport ${transport}`);
+    assert(Object.keys(APPS).includes(chain), `Unsupported chain ${chain}`);
 
-    this.#type = type;
+    this.#chain = chain;
+    this.#transport = transport;
   }
 
-  private async _getApp (): Promise<LedgerApp> {
+  private async _getApp (): Promise<SubstrateApp> {
     if (!this.#app) {
-      const def = transports.find(({ type }) => type === this.#type);
+      const def = transports.find(({ type }) => type === this.#transport);
 
-      assert(def, `Unable to find a transport for ${this.#type}`);
+      assert(def, `Unable to find a transport for ${this.#transport}`);
 
       const transport = await def.create();
 
-      this.#app = new LedgerApp(transport);
+      this.#app = APPS[this.#chain](transport);
     }
 
     return this.#app;
   }
 
-  private async _withApp <T> (fn: (app: LedgerApp) => Promise<T>): Promise<T> {
+  private async _withApp <T> (fn: (app: SubstrateApp) => Promise<T>): Promise<T> {
     try {
       const app = await this._getApp();
 
@@ -70,7 +82,7 @@ export default class Ledger {
   }
 
   public async getAddress (confirm = false, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerAddress> {
-    return this._withApp(async (app: LedgerApp): Promise<LedgerAddress> => {
+    return this._withApp(async (app: SubstrateApp): Promise<LedgerAddress> => {
       const { address, pubKey } = await this._wrapError(app.getAddress(account, change, addressIndex, confirm));
 
       return {
@@ -81,7 +93,7 @@ export default class Ledger {
   }
 
   public async getVersion (): Promise<LedgerVersion> {
-    return this._withApp(async (app: LedgerApp): Promise<LedgerVersion> => {
+    return this._withApp(async (app: SubstrateApp): Promise<LedgerVersion> => {
       const { device_locked: isLocked, major, minor, patch, test_mode: isTestMode } = await this._wrapError(app.getVersion());
 
       return {
@@ -93,7 +105,7 @@ export default class Ledger {
   }
 
   public async sign (message: Uint8Array, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerSignature> {
-    return this._withApp(async (app: LedgerApp): Promise<LedgerSignature> => {
+    return this._withApp(async (app: SubstrateApp): Promise<LedgerSignature> => {
       const buffer = u8aToBuffer(message);
       const { signature } = await this._wrapError(app.sign(account, change, addressIndex, buffer));
 
