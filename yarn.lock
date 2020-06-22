@@ -4036,8 +4036,8 @@ __metadata:
   linkType: hard
 
 "@vue/babel-preset-app@npm:^4.1.2":
-  version: 4.4.4
-  resolution: "@vue/babel-preset-app@npm:4.4.4"
+  version: 4.4.5
+  resolution: "@vue/babel-preset-app@npm:4.4.5"
   dependencies:
     "@babel/core": ^7.9.6
     "@babel/helper-compilation-targets": ^7.9.6
@@ -4060,7 +4060,7 @@ __metadata:
   peerDependenciesMeta:
     core-js:
       optional: true
-  checksum: 3/c7eb745884f907a88c438cafb5b4a69e39b354f68cbbfd2afa9e84efb93a57c7a75b69b145dade3cdb2d1cd901160d7c6ff9922e98a48fbd86378946b987c784
+  checksum: 3/2a2e5b98e9b5254eb063fd61277a44a569b5838196c5df8e89439e0b39a94a68d9b74983fb66d5800a75400a0a89560f1ebbee4a65348314b8f5f9b52602e1a5
   languageName: node
   linkType: hard
 
@@ -4507,12 +4507,12 @@ __metadata:
   linkType: hard
 
 "@zondax/ledger-polkadot@npm:^0.10.2":
-  version: 0.10.2
-  resolution: "@zondax/ledger-polkadot@npm:0.10.2"
+  version: 0.10.4
+  resolution: "@zondax/ledger-polkadot@npm:0.10.4"
   dependencies:
     "@babel/runtime": ^7.10.3
     "@ledgerhq/hw-transport": ^5.17.0
-  checksum: 3/c7a9b4fe327281fdc5a8adbda755045c97d90b8683b5ffdb2d35ff57ae9d513bbcd1f024c41294a6ac2a8a12880a2852db02dc6179591d6d053f953fb93f90f6
+  checksum: 3/775943a30257cac48218828dc394054213e002f6deb1b8d66c3b6bbae106a07b22d83723465cdbedcd90d0f320dab8772a48de784dc776ebb892696ddd747b45
   languageName: node
   linkType: hard
 
@@ -22129,12 +22129,12 @@ __metadata:
   linkType: hard
 
 "webrtc-adapter@npm:^7.2.1":
-  version: 7.6.2
-  resolution: "webrtc-adapter@npm:7.6.2"
+  version: 7.6.3
+  resolution: "webrtc-adapter@npm:7.6.3"
   dependencies:
     rtcpeerconnection-shim: ^1.2.15
     sdp: ^2.12.0
-  checksum: 3/a2fa60c44692f5f87a5ac0bf62bbced9416cf358cc51cd6194a5e5744c972ee69845086df1f0a204156c43f5481ec34479166b075dadcde3e2852301cf922dff
+  checksum: 3/b6c3920c2020d705ed4c81a791de49bce3182958c8ce4227b857b0f4762b727ce7c7cf52fbc7a7a435ff12e673cc43b6137edb30603987f0ce4f8261973f4937
   languageName: node
   linkType: hard
 
