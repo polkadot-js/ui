@@ -19,7 +19,7 @@
   "dependencies": {
     "@babel/runtime": "^7.10.3",
     "@ledgerhq/hw-transport-webusb": "^5.17.0",
-    "@zondax/ledger-polkadot": "^0.10.2",
+    "@zondax/ledger-polkadot": "^0.10.4",
     "mkdirp": "^1.0.4",
     "rxjs": "^6.5.5",
     "store": "^2.0.12"

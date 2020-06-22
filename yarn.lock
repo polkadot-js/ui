@@ -3214,7 +3214,7 @@ __metadata:
     "@types/ledgerhq__hw-transport-webusb": ^4.70.0
     "@types/mkdirp": ^1.0.1
     "@types/store": ^2.0.2
-    "@zondax/ledger-polkadot": ^0.10.2
+    "@zondax/ledger-polkadot": ^0.10.4
     mkdirp: ^1.0.4
     rxjs: ^6.5.5
     store: ^2.0.12
@@ -4506,7 +4506,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zondax/ledger-polkadot@npm:^0.10.2":
+"@zondax/ledger-polkadot@npm:^0.10.4":
   version: 0.10.4
   resolution: "@zondax/ledger-polkadot@npm:0.10.4"
   dependencies:
