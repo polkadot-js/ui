@@ -4,7 +4,7 @@
 
 import { BaseProps } from './types';
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Reader from 'react-qr-reader';
 import styled from 'styled-components';
 
@@ -13,7 +13,7 @@ import { createImgSize } from './util';
 interface Props extends BaseProps {
   delay?: number;
   onError?: (error: Error) => void;
-  onScan?: (data: string) => void;
+  onScan: (data: string) => void;
 }
 
 const DEFAULT_DELAY = 150;
@@ -23,26 +23,26 @@ const DEFAULT_ERROR = (error: Error): void => {
 };
 
 function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onScan, size, style }: Props): React.ReactElement<Props> {
+  const [containerStyle, setContainerStyle] = useState(createImgSize(size));
+
+  useEffect((): void => {
+    setContainerStyle(createImgSize(size));
+  }, [size]);
+
   const _onError = useCallback(
-    (error: Error): void => onError(error),
+    (error: Error) => onError(error),
     [onError]
   );
 
   const _onScan = useCallback(
-    (data: string | null): void => {
-      if (!data || !onScan) {
-        return;
-      }
-
-      onScan(data);
-    },
+    (data: string | null) => data && onScan(data),
     [onScan]
   );
 
   return (
     <div
       className={className}
-      style={createImgSize(size)}
+      style={containerStyle}
     >
       <Reader
         className='ui--qr-Scan'

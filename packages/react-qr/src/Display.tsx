@@ -4,7 +4,7 @@
 
 import { BaseProps } from './types';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
@@ -16,13 +16,16 @@ interface Props extends BaseProps {
   value: Uint8Array;
 }
 
-interface State {
+interface FrameState {
   frames: Uint8Array[];
   frameIdx: number;
   image: string | null;
+  valueHash: string | null;
+}
+
+interface TimerState {
   timerDelay: number;
   timerId: number | null;
-  valueHash: string | null;
 }
 
 const FRAME_DELAY = 2500;
@@ -40,99 +43,94 @@ function getDataUrl (value: Uint8Array): string {
   return qr.createDataURL(16, 0);
 }
 
-class Display extends React.PureComponent<Props, State> {
-  public state: State = {
-    frameIdx: 0,
-    frames: [],
-    image: null,
-    timerDelay: FRAME_DELAY,
-    timerId: null,
-    valueHash: null
-  };
+function Display ({ className, size, skipEncoding, style, value }: Props): React.ReactElement<Props> | null {
+  const [{ image }, setFrameState] = useState<FrameState>({ frameIdx: 0, frames: [], image: null, valueHash: null });
+  const [containerStyle, setContainerStyle] = useState(createImgSize(size));
+  const timerRef = useRef<TimerState>({ timerDelay: FRAME_DELAY, timerId: null });
 
-  public static getDerivedStateFromProps ({ skipEncoding = false, value }: Props, prevState: State): Pick<State, never> | null {
-    const valueHash = xxhashAsHex(value);
+  // run on initial load to setup the global timer and provide and unsubscribe
+  useEffect((): () => void => {
+    const nextFrame = () => setFrameState((state): FrameState => {
+      // when we have a single frame, we only ever fire once
+      if (state.frames.length <= 1) {
+        return state;
+      }
 
-    if (valueHash === prevState.valueHash) {
-      return null;
-    }
+      let frameIdx = state.frameIdx + 1;
 
-    const frames: Uint8Array[] = skipEncoding
-      ? [value]
-      : createFrames(value);
+      // when we overflow, skip to the first and slightly increase the delay between frames
+      if (frameIdx === state.frames.length) {
+        frameIdx = 0;
+        timerRef.current.timerDelay = timerRef.current.timerDelay + TIMER_INC;
+      }
 
-    // encode on demand
-    return {
-      frameIdx: 0,
-      frames,
-      image: getDataUrl(frames[0]),
-      valueHash
+      timerRef.current.timerId = setTimeout(nextFrame, timerRef.current.timerDelay);
+
+      // only encode the frames on demand, not above as part of the
+      // state derivation - in the case of large payloads, this should
+      // be slightly more responsive on initial load
+      return {
+        ...state,
+        frameIdx,
+        image: getDataUrl(state.frames[frameIdx])
+      };
+    });
+
+    timerRef.current.timerId = window.setTimeout(nextFrame, FRAME_DELAY);
+
+    return (): void => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      timerRef.current.timerId && clearTimeout(timerRef.current.timerId);
     };
-  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  public componentDidMount (): void {
-    this.setState({
-      timerId: window.setTimeout(this.nextFrame, FRAME_DELAY)
+  useEffect((): void => {
+    setContainerStyle(createImgSize(size));
+  }, [size]);
+
+  useEffect((): void => {
+    setFrameState((state): FrameState => {
+      const valueHash = xxhashAsHex(value);
+
+      if (valueHash === state.valueHash) {
+        return state;
+      }
+
+      const frames: Uint8Array[] = skipEncoding
+        ? [value]
+        : createFrames(value);
+
+      // encode on demand
+      return {
+        frameIdx: 0,
+        frames,
+        image: getDataUrl(frames[0]),
+        valueHash
+      };
     });
+  }, [skipEncoding, value]);
+
+  if (!image) {
+    return null;
   }
 
-  public componentWillUnmount (): void {
-    const { timerId } = this.state;
-
-    if (timerId) {
-      clearTimeout(timerId);
-    }
-  }
-
-  public render (): React.ReactNode {
-    const { className, size, style } = this.props;
-    const { image } = this.state;
-
-    if (!image) {
-      return null;
-    }
-
-    return (
+  return (
+    <div
+      className={className}
+      style={containerStyle}
+    >
       <div
-        className={className}
-        style={createImgSize(size)}
+        className='ui--qr-Display'
+        style={style}
       >
-        <div
-          className='ui--qr-Display'
-          style={style}
-        >
-          <img src={image} />
-        </div>
+        <img src={image} />
       </div>
-    );
-  }
-
-  private nextFrame = (): void => {
-    const { frameIdx, frames, timerDelay } = this.state;
-
-    if (!frames || frames.length <= 1) {
-      return;
-    }
-
-    const nextIdx = frameIdx === frames.length - 1
-      ? 0
-      : frameIdx + 1;
-    const nextDelay = timerDelay + ((nextIdx === 0) ? TIMER_INC : 0);
-    const timerId = setTimeout(this.nextFrame, nextDelay);
-
-    // only encode the frames on demand, not above as part of the
-    // state derivation - in the case of large payloads, this should
-    // be slightly more responsive on initial load
-    this.setState({
-      frameIdx: nextIdx,
-      image: getDataUrl(frames[nextIdx]),
-      timerDelay: nextDelay,
-      timerId
-    });
-  }
+    </div>
+  );
 }
 
-export default styled(Display as React.ComponentClass<Props>)`
+export default React.memo(styled(Display)`
   .ui--qr-Display {
     height: 100%;
     width: 100%;
@@ -146,4 +144,4 @@ export default styled(Display as React.ComponentClass<Props>)`
       width: auto !important;
     }
   }
-`;
+`);

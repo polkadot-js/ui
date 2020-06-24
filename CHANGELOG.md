@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.55.0-beta.x
+
+- Adjust react-qr `Scan*` makign `onScan` callbacks required
+- Rework the react-qr display to use functional components
+- Bump to `@polkadot/api` 1.21.1
+- Bump to `@polkadot/util` 2.15.1
+
 ## 0.54.1 Jun 16, 2020
 
 - Add genesisHash to signer payload (Thanks to https://github.com/hanwencheng)
