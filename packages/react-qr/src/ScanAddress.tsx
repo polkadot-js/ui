@@ -20,13 +20,13 @@ interface ScanType {
 
 interface Props extends BaseProps {
   onError?: (error: Error) => void;
-  onScan?: (scanned: ScanType) => void;
+  onScan: (scanned: ScanType) => void;
 }
 
 function ScanAddress ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {
   const _onScan = useCallback(
     (data: string | null): void => {
-      if (!data || !onScan) {
+      if (!data) {
         return;
       }
 

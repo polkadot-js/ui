@@ -14,17 +14,13 @@ interface ScanType {
 
 interface Props extends BaseProps {
   onError?: (error: Error) => void;
-  onScan?: (scanned: ScanType) => void;
+  onScan: (scanned: ScanType) => void;
 }
 
 function ScanSignature ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {
   const _onScan = useCallback(
     (signature: string | null): void => {
-      if (!signature || !onScan) {
-        return;
-      }
-
-      onScan({ signature: `0x${signature}` });
+      signature && onScan({ signature: `0x${signature}` });
     },
     [onScan]
   );

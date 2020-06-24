@@ -13,7 +13,7 @@ import { createImgSize } from './util';
 interface Props extends BaseProps {
   delay?: number;
   onError?: (error: Error) => void;
-  onScan?: (data: string) => void;
+  onScan: (data: string) => void;
 }
 
 const DEFAULT_DELAY = 150;
@@ -24,17 +24,13 @@ const DEFAULT_ERROR = (error: Error): void => {
 
 function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onScan, size, style }: Props): React.ReactElement<Props> {
   const _onError = useCallback(
-    (error: Error): void => onError(error),
+    (error: Error) => onError(error),
     [onError]
   );
 
   const _onScan = useCallback(
     (data: string | null): void => {
-      if (!data || !onScan) {
-        return;
-      }
-
-      onScan(data);
+      data && onScan(data);
     },
     [onScan]
   );

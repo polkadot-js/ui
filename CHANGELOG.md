@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.55.0-beta.x
+
+- Adjust react-qr `Scan*` makign `onScan` callbacks required
+
 ## 0.54.1 Jun 16, 2020
 
 - Add genesisHash to signer payload (Thanks to https://github.com/hanwencheng)
