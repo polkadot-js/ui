@@ -19,9 +19,7 @@ interface Props extends BaseProps {
 
 function ScanSignature ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {
   const _onScan = useCallback(
-    (signature: string | null): void => {
-      signature && onScan({ signature: `0x${signature}` });
-    },
+    (signature: string | null) => signature && onScan({ signature: `0x${signature}` }),
     [onScan]
   );
 

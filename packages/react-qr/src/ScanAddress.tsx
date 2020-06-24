@@ -26,25 +26,23 @@ interface Props extends BaseProps {
 function ScanAddress ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {
   const _onScan = useCallback(
     (data: string | null): void => {
-      if (!data) {
-        return;
-      }
+      if (data) {
+        try {
+          const [prefix, content, genesisHash, name] = data.split(':');
+          const isValidPrefix = prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX;
 
-      try {
-        const [prefix, content, genesisHash, name] = data.split(':');
-        const isValidPrefix = prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX;
+          assert(isValidPrefix, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
 
-        assert(isValidPrefix, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
+          const isAddress = prefix === ADDRESS_PREFIX;
 
-        const isAddress = prefix === ADDRESS_PREFIX;
+          if (isAddress) {
+            decodeAddress(content);
+          }
 
-        if (isAddress) {
-          decodeAddress(content);
+          onScan({ content, genesisHash, isAddress, name });
+        } catch (error) {
+          console.error('@polkadot/react-qr:QrScanAddress', (error as Error).message, data);
         }
-
-        onScan({ content, genesisHash, isAddress, name });
-      } catch (error) {
-        console.error('@polkadot/react-qr:QrScanAddress', (error as Error).message, data);
       }
     },
     [onScan]

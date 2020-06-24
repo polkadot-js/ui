@@ -35,9 +35,7 @@ function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onSc
   );
 
   const _onScan = useCallback(
-    (data: string | null): void => {
-      data && onScan(data);
-    },
+    (data: string | null) => data && onScan(data),
     [onScan]
   );
 
