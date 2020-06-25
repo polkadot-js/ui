@@ -3079,17 +3079,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/metadata@npm:1.22.0-beta.1":
-  version: 1.22.0-beta.1
-  resolution: "@polkadot/metadata@npm:1.22.0-beta.1"
+"@polkadot/metadata@npm:1.22.0-beta.3":
+  version: 1.22.0-beta.3
+  resolution: "@polkadot/metadata@npm:1.22.0-beta.3"
   dependencies:
     "@babel/runtime": ^7.10.3
-    "@polkadot/types": 1.22.0-beta.1
-    "@polkadot/types-known": 1.22.0-beta.1
+    "@polkadot/types": 1.22.0-beta.3
+    "@polkadot/types-known": 1.22.0-beta.3
     "@polkadot/util": ^2.15.1
     "@polkadot/util-crypto": ^2.15.1
     bn.js: ^5.1.2
-  checksum: 3/6a16edf83f6fc38ff03277b5de5bea45942e046102ce72a37ff2c1dea8c254239bee9fe7ef0b38dc4bdf51b56cb68eba25319ad32d7f4d6566274292e3b3e4d8
+  checksum: 3/6a6e1ed23eedd75f9256025838693108e0d6a59df81c3a6d4d85f67cb354248ee6b900103210bb64cb422073208f2ba0f8791adb2ce681dcc0e05e6305f33e54
   languageName: node
   linkType: hard
 
@@ -3118,6 +3118,7 @@ __metadata:
     react: "*"
     react-dom: "*"
     react-is: "*"
+    styled-components: "*"
   languageName: unknown
   linkType: soft
 
@@ -3164,31 +3165,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/types-known@npm:1.22.0-beta.1":
-  version: 1.22.0-beta.1
-  resolution: "@polkadot/types-known@npm:1.22.0-beta.1"
+"@polkadot/types-known@npm:1.22.0-beta.3":
+  version: 1.22.0-beta.3
+  resolution: "@polkadot/types-known@npm:1.22.0-beta.3"
   dependencies:
     "@babel/runtime": ^7.10.3
-    "@polkadot/types": 1.22.0-beta.1
+    "@polkadot/types": 1.22.0-beta.3
     "@polkadot/util": ^2.15.1
     bn.js: ^5.1.2
-  checksum: 3/f482f7d64ce157ed2b1c513c58143c589a0d0ce18534a88b176dab98e9b46cf44dc6eb83e36a9a070ab59a0b91461d97051c9625f271441e42d6b74383c96382
+  checksum: 3/6b9e3054e7f491ef1f847aff31eed1abc2cd7d560d0bc45ea509c72ffad7baf9303e70e12ede25c6d3afbdd7359a809a107e57a881b04c7aaa5dfe943b4ed591
   languageName: node
   linkType: hard
 
-"@polkadot/types@npm:1.22.0-beta.1, @polkadot/types@npm:^1.22.0-beta.1":
-  version: 1.22.0-beta.1
-  resolution: "@polkadot/types@npm:1.22.0-beta.1"
+"@polkadot/types@npm:1.22.0-beta.3, @polkadot/types@npm:^1.22.0-beta.3":
+  version: 1.22.0-beta.3
+  resolution: "@polkadot/types@npm:1.22.0-beta.3"
   dependencies:
     "@babel/runtime": ^7.10.3
-    "@polkadot/metadata": 1.22.0-beta.1
+    "@polkadot/metadata": 1.22.0-beta.3
     "@polkadot/util": ^2.15.1
     "@polkadot/util-crypto": ^2.15.1
     "@types/bn.js": ^4.11.6
     bn.js: ^5.1.2
     memoizee: ^0.4.14
     rxjs: ^6.5.5
-  checksum: 3/6472b4def24708096be7a824c48f6df684f63a5324a84d3dc680d6f69c8c97382380eaf990c7b7bf490f287edd8356d94cd8ef58e8915fb184ab8a9d24e1041b
+  checksum: 3/78fbb7173d1808b7445af498b9ddb0d678300fa034362aa777ff1da085a5f7831a9a423f0e5151b2347fb215e04edeb09770521635e6436905070910a64b7d80
   languageName: node
   linkType: hard
 
@@ -3208,7 +3209,7 @@ __metadata:
     "@ledgerhq/hw-transport-node-hid": ^5.17.0
     "@ledgerhq/hw-transport-webusb": ^5.17.0
     "@polkadot/keyring": ^2.15.1
-    "@polkadot/types": ^1.22.0-beta.1
+    "@polkadot/types": ^1.22.0-beta.3
     "@polkadot/util": ^2.15.1
     "@types/ledgerhq__hw-transport-node-hid": ^4.22.1
     "@types/ledgerhq__hw-transport-webusb": ^4.70.0
