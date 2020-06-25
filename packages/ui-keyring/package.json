@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@polkadot/keyring": "^2.15.1",
-    "@polkadot/types": "^1.22.0-beta.1",
+    "@polkadot/types": "^1.22.0-beta.3",
     "@polkadot/util": "^2.15.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
     "@types/ledgerhq__hw-transport-webusb": "^4.70.0",
