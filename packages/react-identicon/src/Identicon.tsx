@@ -43,19 +43,15 @@ const Wrapper = styled.div`
       position: relative;
     }
 
-    &:before {
+    &.highlight:before {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       border-radius: 50%;
-      box-shadow: 0 0 5px 2px #e0e0e0;
-      content: '';
-    }
-
-    &.highlight:before {
       box-shadow: 0 0 5px 2px #aaa;
+      content: '';
     }
   }
 `;
@@ -110,14 +106,14 @@ class BaseIcon extends React.PureComponent<Props, State> {
   }
 
   private getWrapped ({ address, publicKey }: State): React.ReactNode {
-    const { className, isAlternative, isHighlight, size = DEFAULT_SIZE, style, theme = settings.icon } = this.props;
+    const { className = '', isAlternative, isHighlight, size = DEFAULT_SIZE, style, theme = settings.icon } = this.props;
     const Component = !address
       ? Empty
       : Components[theme === 'default' ? ICON_DEFAULT_HOST : theme] || Fallback;
 
     return (
       <Wrapper
-        className={`ui--IdentityIcon ${className || ''}`}
+        className={`ui--IdentityIcon  ${className}`}
         key={address}
         style={style}
       >
