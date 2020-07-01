@@ -23,7 +23,7 @@ export default class FileStore implements KeyringStore {
   public all (cb: (key: string, value: KeyringJson) => void): void {
     fs
       .readdirSync(this.#path)
-      .filter((key): boolean => !['.', '..'].includes(key))
+      .filter((key): boolean => !['.', '..', '.DS_Store'].includes(key))
       .forEach((key): void => {
         cb(key, this._readKey(key));
       });
