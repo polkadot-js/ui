@@ -48,8 +48,13 @@ export default class FileStore implements KeyringStore {
   }
 
   private _readKey (key: string): KeyringJson {
-    return JSON.parse(
-      fs.readFileSync(this._getPath(key)).toString('utf-8')
-    ) as KeyringJson;
+    try {
+      return JSON.parse(
+        fs.readFileSync(this._getPath(key)).toString('utf-8')
+      ) as KeyringJson;
+    } catch (error) {
+      console.log('_readKey error:', error);
+    }
+    
   }
 }
