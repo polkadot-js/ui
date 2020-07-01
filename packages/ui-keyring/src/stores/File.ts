@@ -55,6 +55,5 @@ export default class FileStore implements KeyringStore {
     } catch (error) {
       console.log('_readKey error:', error);
     }
-    
   }
 }
