@@ -62,7 +62,7 @@ export default class FileStore implements KeyringStore {
       ) as KeyringJson;
     } catch (error) {
       console.log('_readKey error:', error);
-      
+
       return {} as KeyringJson;
     }
   }
