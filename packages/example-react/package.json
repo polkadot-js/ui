@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/example-react",
-  "version": "0.55.0",
+  "version": "0.55.1",
   "description": "A very basic example with ui-* & react-* packages",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
