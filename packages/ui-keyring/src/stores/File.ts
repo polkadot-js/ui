@@ -26,14 +26,14 @@ export default class FileStore implements KeyringStore {
       .filter((key): boolean => !['.', '..'].includes(key))
       .forEach((key): void => {
         if(this._readKey(key)) {
-          cb(key, this._readKey(key));
+          cb(key, this._readKey(key) as KeyringJson);
         }
       });
   }
 
   public get (key: string, cb: (value: KeyringJson) => void): void {
     if(this._readKey(key)) {
-      cb(this._readKey(key));
+      cb(this._readKey(key) as KeyringJson);
     }
   }
 
