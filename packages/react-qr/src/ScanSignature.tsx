@@ -2,8 +2,6 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { BaseProps } from './types';
-
 import React, { useCallback } from 'react';
 
 import QrScan from './Scan';
@@ -12,9 +10,12 @@ interface ScanType {
   signature: string;
 }
 
-interface Props extends BaseProps {
+interface Props {
+  className?: string;
   onError?: (error: Error) => void;
   onScan: (scanned: ScanType) => void;
+  size?: string | number;
+  style?: React.CSSProperties;
 }
 
 function ScanSignature ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {

@@ -2,18 +2,19 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { BaseProps } from './types';
-
 import React, { useEffect, useState } from 'react';
 
 import { createSignPayload } from './util';
 import QrDisplay from './Display';
 
-interface Props extends BaseProps {
+interface Props {
   address: string;
+  className?: string;
   cmd: number;
   genesisHash: Uint8Array | string;
   payload: Uint8Array;
+  size?: string | number;
+  style?: React.CSSProperties;
 }
 
 function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, style }: Props): React.ReactElement<Props> | null {

@@ -3,17 +3,20 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { Prefix } from '@polkadot/util-crypto/address/types';
+import React from 'react';
 
 export interface BaseProps {
   className?: string;
-  style?: Record<string, string | number>;
+  style?: React.CSSProperties;
 }
 
 export interface Props extends BaseProps {
   address: string;
   isAlternative?: boolean;
+  className?: string;
   publicKey: string;
   size: number;
+  style?: React.CSSProperties;
 }
 
 export interface IdentityProps extends BaseProps {

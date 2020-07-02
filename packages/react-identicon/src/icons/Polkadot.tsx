@@ -17,14 +17,10 @@
 //   - Overall it is now just a static component, expecting an address as an input value
 
 import { Circle } from '@polkadot/ui-shared/icons/types';
-import { Props as BaseProps } from '../types';
+import { Props } from '../types';
 
 import React from 'react';
 import { polkadotIcon } from '@polkadot/ui-shared';
-
-interface Props extends BaseProps {
-  isAlternative?: boolean;
-}
 
 function renderCircle ({ cx, cy, fill, r }: Circle, key: number): React.ReactNode {
   return (

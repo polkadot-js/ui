@@ -2,8 +2,6 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { BaseProps } from './types';
-
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { xxhashAsHex } from '@polkadot/util-crypto';
@@ -11,8 +9,11 @@ import { xxhashAsHex } from '@polkadot/util-crypto';
 import qrcode from './qrcode';
 import { createFrames, createImgSize } from './util';
 
-interface Props extends BaseProps {
+interface Props {
+  className?: string;
+  size?: string | number;
   skipEncoding?: boolean;
+  style?: React.CSSProperties;
   value: Uint8Array;
 }
 

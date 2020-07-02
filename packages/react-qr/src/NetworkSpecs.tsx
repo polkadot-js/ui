@@ -6,12 +6,14 @@ import { NetworkSpecsStruct } from '@polkadot/ui-settings';
 
 import React, { useEffect, useState } from 'react';
 import QrDisplay from './Display';
-import { BaseProps } from './types';
 
 import { encodeString } from './util';
 
-interface Props extends BaseProps {
+interface Props {
+  className?: string;
   networkSpecs: NetworkSpecsStruct;
+  size?: string | number;
+  style?: React.CSSProperties;
 }
 
 function DisplayNetworkSpecs ({ className, networkSpecs, size, style }: Props): React.ReactElement<Props> | null {

@@ -2,18 +2,19 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { BaseProps } from './types';
-
 import React, { useCallback, useEffect, useState } from 'react';
 import Reader from 'react-qr-reader';
 import styled from 'styled-components';
 
 import { createImgSize } from './util';
 
-interface Props extends BaseProps {
+interface Props {
+  className?: string;
   delay?: number;
   onError?: (error: Error) => void;
   onScan: (data: string) => void;
+  size?: string | number;
+  style?: React.CSSProperties;
 }
 
 const DEFAULT_DELAY = 150;
