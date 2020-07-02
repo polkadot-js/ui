@@ -4,6 +4,7 @@
 
 export interface Props {
   address: string;
+  isAlternative?: boolean;
   publicKey: string;
   size: number;
 }
