@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.55.0-beta.x
+## 0.55.1 Jul 2, 2020
 
 - Better error-handling for invalid FileStore accounts (Thanks to https://github.com/yuhui1208)
 - Adjust react-qr `Scan*` making `onScan` callbacks required
