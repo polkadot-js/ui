@@ -25,15 +25,17 @@ export default class FileStore implements KeyringStore {
       .readdirSync(this.#path)
       .filter((key): boolean => !['.', '..'].includes(key))
       .forEach((key): void => {
-        if(JSON.stringify(this._readKey(key)) != '{}') {
-          cb(key, this._readKey(key));
+        const value = this._readKey(key);
+        if(JSON.stringify(value) !== '{}') {
+          cb(key, value);
         }
       });
   }
 
   public get (key: string, cb: (value: KeyringJson) => void): void {
-    if(JSON.stringify(this._readKey(key)) != '{}') {
-      cb(this._readKey(key));
+    const value = this._readKey(key);
+    if(JSON.stringify(value) !== '{}') {
+      cb(value);
     }
   }
 
