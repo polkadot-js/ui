@@ -26,7 +26,8 @@ export default class FileStore implements KeyringStore {
       .filter((key): boolean => !['.', '..'].includes(key))
       .forEach((key): void => {
         const value = this._readKey(key);
-        if(JSON.stringify(value) !== '{}') {
+
+        if (JSON.stringify(value) !== '{}') {
           cb(key, value);
         }
       });
@@ -34,7 +35,8 @@ export default class FileStore implements KeyringStore {
 
   public get (key: string, cb: (value: KeyringJson) => void): void {
     const value = this._readKey(key);
-    if(JSON.stringify(value) !== '{}') {
+
+    if (JSON.stringify(value) !== '{}') {
       cb(value);
     }
   }
@@ -60,6 +62,7 @@ export default class FileStore implements KeyringStore {
       ) as KeyringJson;
     } catch (error) {
       console.log('_readKey error:', error);
+      
       return {} as KeyringJson;
     }
   }
