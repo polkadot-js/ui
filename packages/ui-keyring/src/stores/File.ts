@@ -7,6 +7,7 @@ import { KeyringStore, KeyringJson } from '../types';
 import fs from 'fs';
 import mkdirp from 'mkdirp';
 import path from 'path';
+import { assert } from '@polkadot/util';
 
 // NOTE untested and unused by any known apps, probably broken in various mysterious ways
 export default class FileStore implements KeyringStore {
@@ -27,18 +28,16 @@ export default class FileStore implements KeyringStore {
       .forEach((key): void => {
         const value = this._readKey(key);
 
-        if (JSON.stringify(value) !== '{}') {
-          cb(key, value);
-        }
+        value?.address && cb(key, value);
       });
   }
 
   public get (key: string, cb: (value: KeyringJson) => void): void {
     const value = this._readKey(key);
 
-    if (JSON.stringify(value) !== '{}') {
-      cb(value);
-    }
+    assert(value?.address, `Invalid JSON found for ${key}`);
+
+    cb(value);
   }
 
   public remove (key: string, cb?: () => void): void {
@@ -55,15 +54,15 @@ export default class FileStore implements KeyringStore {
     return path.join(this.#path, key);
   }
 
-  private _readKey (key: string): KeyringJson {
+  private _readKey (key: string): KeyringJson | undefined {
     try {
       return JSON.parse(
         fs.readFileSync(this._getPath(key)).toString('utf-8')
       ) as KeyringJson;
     } catch (error) {
-      console.log('_readKey error:', error);
-
-      return {} as KeyringJson;
+      console.error(error);
     }
+
+    return undefined;
   }
 }

@@ -2,7 +2,8 @@
 
 ## 0.55.0-beta.x
 
-- Adjust react-qr `Scan*` makign `onScan` callbacks required
+- Better error-handling for invalid FileStore accounts (Thanks to https://github.com/yuhui1208)
+- Adjust react-qr `Scan*` making `onScan` callbacks required
 - Rework the react-qr display to use functional components
 - Bump to `@polkadot/api` 1.21.1
 - Bump to `@polkadot/util` 2.15.1
