@@ -42,6 +42,8 @@ const UITHEMES: Option[] = [
   }
 ];
 
+const UIDARK_DEFAULT = !isPolkadot;
+
 const ICON_DEFAULT = 'default';
 
 const ICON_DEFAULT_HOST = isPolkadot
@@ -76,6 +78,7 @@ export {
   ICON_DEFAULT_HOST,
   ICONS,
   LANGUAGE_DEFAULT,
+  UIDARK_DEFAULT,
   UIMODE_DEFAULT,
   UIMODES,
   UITHEME_DEFAULT,

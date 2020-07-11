@@ -6,7 +6,7 @@ import EventEmitter from 'eventemitter3';
 import store from 'store';
 import { isUndefined } from '@polkadot/util';
 
-import { CAMERA_DEFAULT, CAMERA, CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CAMERA_DEFAULT, CAMERA, CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIDARK_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 import { Option, SettingsStruct } from './types';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
@@ -37,6 +37,8 @@ export class Settings implements SettingsStruct {
 
   #prefix: number;
 
+  #uiDark: boolean;
+
   #uiMode: string;
 
   #uiTheme: string;
@@ -53,6 +55,7 @@ export class Settings implements SettingsStruct {
     this.#icon = settings.icon || ICON_DEFAULT;
     this.#locking = settings.locking || LOCKING_DEFAULT;
     this.#prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
+    this.#uiDark = settings.uiDark || UIDARK_DEFAULT;
     this.#uiMode = settings.uiMode || UIMODE_DEFAULT;
     this.#uiTheme = settings.uiTheme || UITHEME_DEFAULT;
   }
@@ -83,6 +86,10 @@ export class Settings implements SettingsStruct {
 
   public get prefix (): number {
     return this.#prefix;
+  }
+
+  public get uiDark (): boolean {
+    return this.#uiDark;
   }
 
   public get uiMode (): string {
@@ -138,6 +145,7 @@ export class Settings implements SettingsStruct {
       ledgerConn: this.#ledgerConn,
       locking: this.#locking,
       prefix: this.#prefix,
+      uiDark: this.#uiDark,
       uiMode: this.#uiMode,
       uiTheme: this.#uiTheme
     };
@@ -152,6 +160,7 @@ export class Settings implements SettingsStruct {
     this.#locking = settings.locking || this.#locking;
     this.#prefix = isUndefined(settings.prefix) ? this.#prefix : settings.prefix;
     this.#uiMode = settings.uiMode || this.#uiMode;
+    this.#uiDark = settings.uiDark || this.#uiDark;
     this.#uiTheme = settings.uiTheme || this.#uiTheme;
 
     const newValues = this.get();

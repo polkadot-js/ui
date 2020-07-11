@@ -17,6 +17,7 @@ export interface SettingsStruct {
   ledgerConn: string;
   locking: string;
   prefix: number;
+  uiDark: boolean;
   uiMode: string;
   uiTheme: string;
 }
