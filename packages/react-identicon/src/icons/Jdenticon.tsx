@@ -10,7 +10,7 @@ import jdenticon from 'jdenticon';
 function Jdenticon ({ className = '', publicKey, size, style }: Props): React.ReactElement<Props> {
   return (
     <div
-      className={`container ${className}`}
+      className={className}
       dangerouslySetInnerHTML={{
         __html: jdenticon.toSvg(publicKey.substr(2), size)
       }}

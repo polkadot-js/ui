@@ -36,20 +36,17 @@ function renderCircle ({ cx, cy, fill, r }: Circle, key: number): React.ReactNod
 
 function Identicon ({ address, className = '', isAlternative = false, size, style }: Props): React.ReactElement<Props> {
   return (
-    <div
-      className={`container ${className}`}
+    <svg
+      className={className}
+      height={size}
+      id={address}
+      name={address}
       style={style}
+      viewBox='0 0 64 64'
+      width={size}
     >
-      <svg
-        height={size}
-        id={address}
-        name={address}
-        viewBox='0 0 64 64'
-        width={size}
-      >
-        {polkadotIcon(address, { isAlternative }).map(renderCircle)}
-      </svg>
-    </div>
+      {polkadotIcon(address, { isAlternative }).map(renderCircle)}
+    </svg>
   );
 }
 

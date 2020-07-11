@@ -19,7 +19,7 @@ function Beachball ({ address, className = '', size, style }: Props): React.Reac
 
   return (
     <div
-      className={`container ${className}`}
+      className={className}
       ref={updateElem}
       style={style}
     />

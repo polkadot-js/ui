@@ -8,16 +8,13 @@ import React from 'react';
 
 function Empty ({ className = '', size, style }: Props): React.ReactElement<Props> {
   return (
-    <div
-      className={`container ${className}`}
+    <svg
+      className={className}
+      height={size}
       style={style}
-    >
-      <svg
-        height={size}
-        viewBox='0 0 64 64'
-        width={size}
-      />
-    </div>
+      viewBox='0 0 64 64'
+      width={size}
+    />
   );
 }
 
