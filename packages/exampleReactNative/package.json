@@ -32,7 +32,7 @@
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "react": "16.13.1",
-    "react-native": "^0.62.2",
+    "react-native": "^0.63.0",
     "react-native-crypto": "^2.2.0",
     "react-native-randombytes": "^3.5.3",
     "stream-http": "^3.1.1"
@@ -40,9 +40,9 @@
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/runtime": "^7.10.4",
-    "@polkadot/keyring": "^2.16.1",
-    "@polkadot/util": "^2.16.1",
-    "@polkadot/util-crypto": "^2.16.1",
+    "@polkadot/keyring": "^2.18.0-beta.3",
+    "@polkadot/util": "^2.18.0-beta.3",
+    "@polkadot/util-crypto": "^2.18.0-beta.3",
     "@react-native-community/cli-platform-ios": "^4.10.1",
     "@types/react-test-renderer": "16.9.2",
     "babel-jest": "^26.1.0",

@@ -14,7 +14,7 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/util": "^2.16.1",
+    "@polkadot/util": "^2.18.0-beta.3",
     "@types/store": "^2.0.2"
   },
   "peerDependencies": {
