@@ -2961,9 +2961,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/dev@npm:^0.55.23":
-  version: 0.55.23
-  resolution: "@polkadot/dev@npm:0.55.23"
+"@polkadot/dev@npm:^0.55.26":
+  version: 0.55.26
+  resolution: "@polkadot/dev@npm:0.55.26"
   dependencies:
     "@babel/cli": ^7.10.5
     "@babel/core": ^7.10.5
@@ -3046,7 +3046,7 @@ __metadata:
     polkadot-exec-typedoc: scripts/polkadot-exec-typedoc.js
     polkadot-exec-vuepress: scripts/polkadot-exec-vuepress.js
     polkadot-exec-webpack: scripts/polkadot-exec-webpack.js
-  checksum: 3/bf1331658034b931afc5c291ce27ba12a9c206f0f4394fd7cc0799bc53efea88d8ca899951088907c10642bb36beb506df1009126dd41e9d701d5dfaaff01c5e
+  checksum: 3/243f590b0ae6266a2ad1fe526a04de459cd565eaee7b27444c29b79a3bc0bddc55bec10519fc32042a53bb0385a7bff5554bba7f766bd3847ce4599395f372f2
   languageName: node
   linkType: hard
 
@@ -18904,7 +18904,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.10.5
     "@babel/runtime": ^7.10.5
-    "@polkadot/dev": ^0.55.23
+    "@polkadot/dev": ^0.55.26
     "@polkadot/ts": ^0.3.29
     "@types/jest": ^26.0.4
     babel-plugin-transform-vue-template: ^0.4.2
