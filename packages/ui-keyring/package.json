@@ -17,24 +17,24 @@
     "./ledger/transportsWeb": "./ledger/transportsEmpty"
   },
   "dependencies": {
-    "@babel/runtime": "^7.10.4",
-    "@ledgerhq/hw-transport-webusb": "^5.19.0",
-    "@zondax/ledger-polkadot": "^0.10.4",
+    "@babel/runtime": "^7.10.5",
+    "@ledgerhq/hw-transport-webusb": "^5.19.1",
+    "@zondax/ledger-polkadot": "^0.11.0",
     "mkdirp": "^1.0.4",
     "rxjs": "^6.6.0",
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/keyring": "^2.18.0-beta.3",
-    "@polkadot/types": "^1.24.0-beta.2",
-    "@polkadot/util": "^2.18.0-beta.3",
+    "@polkadot/keyring": "^2.18.1",
+    "@polkadot/types": "^1.25.0-beta.8",
+    "@polkadot/util": "^2.18.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
     "@types/ledgerhq__hw-transport-webusb": "^4.70.0",
     "@types/mkdirp": "^1.0.1",
     "@types/store": "^2.0.2"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^5.19.0"
+    "@ledgerhq/hw-transport-node-hid": "^5.19.1"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
