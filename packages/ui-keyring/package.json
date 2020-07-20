@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-keyring",
-  "version": "0.56.0-beta.3",
+  "version": "0.56.0",
   "main": "index.js",
   "repository": "https://github.com/polkadot-js/apps.git",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@polkadot/keyring": "^2.18.1",
-    "@polkadot/types": "^1.25.0-beta.8",
+    "@polkadot/types": "^1.25.1",
     "@polkadot/util": "^2.18.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
     "@types/ledgerhq__hw-transport-webusb": "^4.70.0",

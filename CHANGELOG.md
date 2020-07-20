@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.56.1 Jul 20, 2020
+
+- Add Kulupu to ss58 options (https://github.com/carumusan)
+- Remove CC1 naming for Polkadot (as applicable)
+- Flatten React IdentityIcon (no extra wrapping)
+- Bump to `@polkadot/api` 1.25.1
+- Bump to `@polkadot/util` 2.18.1
+
 ## 0.55.1 Jul 2, 2020
 
 - Better error-handling for invalid FileStore accounts (Thanks to https://github.com/yuhui1208)
