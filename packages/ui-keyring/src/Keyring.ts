@@ -11,7 +11,7 @@ import BN from 'bn.js';
 import createPair from '@polkadot/keyring/pair';
 import chains from '@polkadot/ui-settings/defaults/chains';
 import { bnToBn, hexToU8a, isHex, isString, u8aSorted } from '@polkadot/util';
-import { createKeyMulti } from '@polkadot/util-crypto';
+import { base64Decode, createKeyMulti } from '@polkadot/util-crypto';
 
 import env from './observable/development';
 import Base from './Base';
@@ -273,12 +273,14 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   public restoreAccount (json: KeyringPair$Json, password: string): KeyringPair {
-    const type = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
+    const cryptoType = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
+    const encType = Array.isArray(json.encoding.type) ? json.encoding.type : [json.encoding.type];
     const pair = createPair(
-      { toSS58: this.encodeAddress, type },
+      { toSS58: this.encodeAddress, type: cryptoType },
       { publicKey: this.decodeAddress(json.address, true) },
       json.meta,
-      hexToU8a(json.encoded)
+      isHex(json.encoded) ? hexToU8a(json.encoded) : base64Decode(json.encoded),
+      encType
     );
 
     // unlock, save account and then lock (locking cleans secretKey, so needs to be last)
