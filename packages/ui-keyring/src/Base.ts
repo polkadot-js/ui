@@ -15,7 +15,6 @@ import addresses from './observable/addresses';
 import contracts from './observable/contracts';
 import env from './observable/development';
 import BrowserStore from './stores/Browser'; // direct import (skip index with all)
-import { MAX_PASS_LEN } from './defaults';
 
 export default class Base {
   #accounts: AddressSubject;
@@ -91,7 +90,7 @@ export default class Base {
   }
 
   public isPassValid (password: string): boolean {
-    return password.length > 0 && password.length <= MAX_PASS_LEN;
+    return password.length > 0;
   }
 
   public setSS58Format (ss58Format?: Prefix): void {

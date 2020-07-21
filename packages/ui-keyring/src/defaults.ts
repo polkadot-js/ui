@@ -8,7 +8,6 @@ import { decodeAddress } from '@polkadot/keyring';
 const ACCOUNT_PREFIX = 'account:';
 const ADDRESS_PREFIX = 'address:';
 const CONTRACT_PREFIX = 'contract:';
-const MAX_PASS_LEN = 32;
 
 function toHex (address: string): string {
   return u8aToHex(
@@ -38,6 +37,5 @@ export {
   addressKey,
   addressRegex,
   contractKey,
-  contractRegex,
-  MAX_PASS_LEN
+  contractRegex
 };
