@@ -1,6 +1,6 @@
 # CHANGELOG
 
-### 0.57.2 Jul 27, 2020
+## 0.57.3 Jul 27, 2020
 
 - Support for JSON v3 kdf-enabled format
 - Adjust password validity checks (alongside v3)
