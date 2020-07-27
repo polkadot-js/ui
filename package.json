@@ -31,15 +31,15 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/runtime": "^7.10.5",
-    "@polkadot/dev": "^0.55.27",
+    "@polkadot/dev": "^0.55.28",
     "@polkadot/ts": "^0.3.29",
-    "@types/jest": "^26.0.5",
+    "@types/jest": "^26.0.7",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
-    "react-native": "^0.63.1",
+    "react-native": "^0.63.2",
     "vue-template-compiler": "^2.6.11",
     "webpack-serve": "^3.2.0"
   },
