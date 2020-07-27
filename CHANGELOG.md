@@ -1,5 +1,12 @@
 # CHANGELOG
 
+### 0.57.1 Jul 27, 2020
+
+- Support for JSON v3 kdf-enabled format
+- Adjust password validity checks (alongside v3)
+- Bump to `@polkadot/api` 1.26.1
+- Bump to `@polkadot/util` 3.0.1
+
 ## 0.56.1 Jul 20, 2020
 
 - Add Kulupu to ss58 options (https://github.com/carumusan)
