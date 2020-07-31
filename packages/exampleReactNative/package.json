@@ -38,14 +38,14 @@
     "stream-http": "^3.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/runtime": "^7.10.5",
-    "@polkadot/keyring": "^3.0.1",
-    "@polkadot/util": "^3.0.1",
-    "@polkadot/util-crypto": "^3.0.1",
+    "@babel/core": "^7.11.0",
+    "@babel/runtime": "^7.11.0",
+    "@polkadot/keyring": "^3.1.0-beta.1",
+    "@polkadot/util": "^3.1.0-beta.1",
+    "@polkadot/util-crypto": "^3.1.0-beta.1",
     "@react-native-community/cli-platform-ios": "^4.10.1",
     "@types/react-test-renderer": "16.9.2",
-    "babel-jest": "^26.1.0",
+    "babel-jest": "^26.2.2",
     "metro-react-native-babel-preset": "^0.61.0",
     "react-test-renderer": "16.13.1"
   },
