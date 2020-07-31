@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/reactnative-identicon",
-  "version": "0.58.0-beta.1",
+  "version": "0.58.0-beta.2",
   "description": "Renders an SVG picture representing an address",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.11.0",
-    "@polkadot/ui-shared": "0.58.0-beta.1",
+    "@polkadot/ui-shared": "0.58.0-beta.2",
     "react-native-svg": "^12.1.0"
   },
   "peerDependencies": {
