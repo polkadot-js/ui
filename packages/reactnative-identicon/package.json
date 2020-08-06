@@ -9,7 +9,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.11.0",
+    "@babel/runtime": "^7.11.2",
     "@polkadot/ui-shared": "0.58.0-beta.2",
     "react-native-svg": "^12.1.0"
   },
@@ -19,7 +19,7 @@
     "react-native": "*"
   },
   "devDependencies": {
-    "@polkadot/util-crypto": "^3.1.0-beta.1",
-    "@types/react-native": "^0.63.2"
+    "@polkadot/util-crypto": "^3.1.0-beta.4",
+    "@types/react-native": "^0.63.4"
   }
 }
