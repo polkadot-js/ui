@@ -29,7 +29,7 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
     (data: string | null): void => {
       if (data) {
         try {
-          const [prefix, content, genesisHash, name] = data.split(':');
+          const [prefix, content, genesisHash, ...name] = data.split(':');
           const isValidPrefix = prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX;
 
           assert(isValidPrefix, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
@@ -40,7 +40,7 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
             decodeAddress(content);
           }
 
-          onScan({ content, genesisHash, isAddress, name });
+          onScan({ content, genesisHash, isAddress, name: name?.length ? name.join(':') : undefined });
         } catch (error) {
           console.error('@polkadot/react-qr:QrScanAddress', (error as Error).message, data);
         }
