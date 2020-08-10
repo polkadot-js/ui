@@ -40,9 +40,9 @@
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/runtime": "^7.11.2",
-    "@polkadot/keyring": "^3.1.0-beta.4",
-    "@polkadot/util": "^3.1.0-beta.4",
-    "@polkadot/util-crypto": "^3.1.0-beta.4",
+    "@polkadot/keyring": "^3.1.1",
+    "@polkadot/util": "^3.1.1",
+    "@polkadot/util-crypto": "^3.1.1",
     "@react-native-community/cli-platform-ios": "^4.10.1",
     "@types/react-test-renderer": "16.9.3",
     "babel-jest": "^26.2.2",

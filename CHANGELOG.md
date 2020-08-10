@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.58.0-beta.x
+
+- Support QR scanning where name contains ":"
+
 ## 0.57.3 Jul 27, 2020
 
 - Support for JSON v3 kdf-enabled format
