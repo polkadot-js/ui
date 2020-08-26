@@ -29,10 +29,10 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.4",
     "@babel/runtime": "^7.11.2",
-    "@polkadot/dev": "^0.55.39",
-    "@polkadot/ts": "^0.3.39",
+    "@polkadot/dev": "^0.55.43",
+    "@polkadot/ts": "^0.3.40",
     "@types/jest": "^26.0.10",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
@@ -40,7 +40,10 @@
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
     "react-native": "^0.63.2",
-    "vue-template-compiler": "^2.6.11",
+    "typedoc": "^0.18.0",
+    "typedoc-plugin-markdown": "^2.4.2",
+    "typedoc-plugin-no-inherit": "^1.1.10",
+    "vue-template-compiler": "^2.6.12",
     "webpack-serve": "^3.2.0"
   },
   "version": "0.58.0-beta.7"

@@ -17,7 +17,15 @@ export const CRYPTOS: Option[] = [
   },
   {
     info: 'ecdsa',
-    text: 'ECDSA (BTC/ETH compatible)',
+    text: 'ECDSA (Non BTC/ETH compatible)',
     value: 'ecdsa'
+  }
+];
+
+export const CRYPTOS_ETH: Option[] = [
+  {
+    info: 'ethereum',
+    text: 'ECDSA (ETH compatible)',
+    value: 'ethereum'
   }
 ];
