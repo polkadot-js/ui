@@ -4,7 +4,7 @@
 
 import { Option } from '../types';
 
-import { CRYPTOS } from './crypto';
+import { CRYPTOS, CRYPTOS_ETH } from './crypto';
 import { ENDPOINTS, ENDPOINT_DEFAULT } from './endpoints';
 import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger';
 import { PREFIXES, PREFIX_DEFAULT } from './ss58';
@@ -46,6 +46,7 @@ export {
   CAMERA_DEFAULT,
   CAMERA,
   CRYPTOS,
+  CRYPTOS_ETH,
   ENDPOINT_DEFAULT,
   ENDPOINTS,
   ICON_DEFAULT,
