@@ -25,7 +25,7 @@ export const CRYPTOS: Option[] = [
 export const CRYPTOS_ETH: Option[] = [
   {
     info: 'ethereum',
-    text: 'ECDSA (BTC/ETH compatible)',
+    text: 'ECDSA (ETH compatible)',
     value: 'ethereum'
   }
 ];
