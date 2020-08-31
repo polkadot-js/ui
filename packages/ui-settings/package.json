@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-settings",
-  "version": "0.58.0-beta.9",
+  "version": "0.58.0",
   "description": "Manages app settings",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -14,7 +14,7 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/util": "^3.4.0-beta.1",
+    "@polkadot/util": "^3.4.1",
     "@types/store": "^2.0.2"
   },
   "peerDependencies": {
