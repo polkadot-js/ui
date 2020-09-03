@@ -2,17 +2,6 @@
   "name": "exampleReactNative",
   "version": "0.58.1",
   "private": true,
-  "workspaces": {
-    "nohoist": [
-      "react-native",
-      "react-native/**",
-      "react-native-randombytes",
-      "react-native-randombytes/**",
-      "@react-native-community/**",
-      "react-native-svg",
-      "react-native-svg/**"
-    ]
-  },
   "scripts": {
     "copy-workspace-packages": "yarn copy-identicon && yarn copy-ui-shared",
     "copy-identicon": "mkdir -p node_modules/@polkadot/reactnative-identicon && cp -r ../reactnative-identicon/build/* ./node_modules/@polkadot/reactnative-identicon",
@@ -38,7 +27,7 @@
     "stream-http": "^3.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.4",
+    "@babel/core": "^7.11.5",
     "@babel/runtime": "^7.11.2",
     "@polkadot/keyring": "^3.4.1",
     "@polkadot/util": "^3.4.1",
