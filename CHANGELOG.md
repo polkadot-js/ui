@@ -2,13 +2,19 @@
 
 ## 0.58.1 Aug 31, 2020
 
+Contributed:
+
 - Add Subsocial to ss58 defaults (Thanks to https://github.com/F3Joule)
+
+Changes:
 
 - Support QR scanning where name contains ":"
 - Support for Moonbeam ETH-compatible crypto types
 
 
 ## 0.57.3 Jul 27, 2020
+
+Changes:
 
 - Support for JSON v3 kdf-enabled format
 - Adjust password validity checks (alongside v3)
@@ -18,7 +24,11 @@
 
 ## 0.56.1 Jul 20, 2020
 
+Contributed:
+
 - Add Kulupu to ss58 options (https://github.com/carumusan)
+
+Changes:
 
 - Remove CC1 naming for Polkadot (as applicable)
 - Flatten React IdentityIcon (no extra wrapping)
@@ -28,7 +38,11 @@
 
 ## 0.55.1 Jul 2, 2020
 
+Contributed:
+
 - Better error-handling for invalid FileStore accounts (Thanks to https://github.com/yuhui1208)
+
+Changes:
 
 - Adjust react-qr `Scan*` making `onScan` callbacks required
 - Rework the react-qr display to use functional components
@@ -38,8 +52,12 @@
 
 ## 0.54.1 Jun 16, 2020
 
+Contributed:
+
 - Add genesisHash to signer payload (Thanks to https://github.com/hanwencheng)
 - Allow QR scanning to parse mini keys (Thanks to https://github.com/hanwencheng)
+
+Changes:
 
 - Adjust ordering of available crypto types (native first)
 - Rename Substrate prefix entry (42) to "generic"
@@ -49,8 +67,12 @@
 
 ## 0.53.1 May 14, 2020
 
+Contributed:
+
 - Add Ecdsa to the supported crypto types options (Thanks to https://github.com/akru)
 - Add Egedware to network prefix settings (Thanks to https://github.com/jnaviask)
+
+Changes:
 
 - Add `addMultisig` into keyring (with all options to re-create address)
 - Bump to `@polkadot/api` 1.14.1
@@ -61,8 +83,12 @@
 
 - **Breaking change** (TypeScript only) The `*.d.ts` files now contain TypeScript 3.8 features, `#private`, which is not usable in older versions
 
+Contributed:
+
 - Allow for the encoding of chain-settings via QR (Thanks to https://github.com/hanwencheng)
 - Enhance checks for ws url in settings (Thanks to https://github.com/kwingram25)
+
+Changes:
 
 - Start of `isAlternative` implementations for identicons to react, react-native & vue (currently only Polkadot sixPoint)
 - Bump to `@polkadot/api` 1.10 & `@polkadot/util` 2.8
@@ -72,12 +98,16 @@
 
 ## 0.51.1 Feb 18, 2020
 
+Changes:
+
 - Support formatting of addresses via createPair base on latest upstream keyring
 - Bump to `@polkadot/api` 1.3.1
 - Bump to `@polkadot/util` 2.4.1
 
 
 ## 0.50.1 Feb 16, 2020
+
+Changes:
 
 - ui-settings does not expose pre-configured endpoints by default (only local dev node)
 - Bump to `@polkadot/api` 1.2.1
@@ -86,10 +116,14 @@
 
 ## 0.49.1 Feb 06, 2020
 
+Changes:
+
 - Add resolver for jest requires (tests from src)
 
 
 ## 0.48.1 Jan 30, 2020
+
+Changes:
 
 - Add Westend & Kulupulu, remove Alexander
 - Update Edgeware wss uri
@@ -98,6 +132,8 @@
 
 
 ## 0.47.1 Nov 29, 2019
+
+Changes:
 
 - Support for Kusama CC3 (network endpoints)
 - Genesis hashes for accounts can now lookup against a range (so CC2-locked accounts will show on CC3)
@@ -109,6 +145,8 @@
 
 - Add an example for using React Native (thanks to https://github.com/cameronfr)
 
+Changes:
+
 - Add base documentation for getting started
 - Add camera access to the setting structure
 
@@ -116,6 +154,8 @@
 ## 0.45.1 Sep 26, 2019
 
 - **Breaking change** The subscription subject for `ui-keyring` does not return a pre-formatted React object anymore. This is SUI-specific, so had limited use and therefore should not even be split into a `react-keyring` component. Rather users of this functionality should construct their own options for their framework.
+
+Changes:
 
 - Support for Kusama CC2
 - Experimental support for signing via Ledger HW
@@ -127,11 +167,15 @@
 
 ## 0.44.1 Sep 12, 2019
 
+Changes:
+
 - Update `@polkadot/util` to 1.4.1
 - Upddate to Babel 7.6
 
 
 ## 0.43.1 Sep 10, 2019
+
+Changes:
 
 - Add W3F Node for Kusama
 - Add extended info to ui-settings, i.e. info on each option
@@ -145,6 +189,8 @@
 - **Breaking Change** The `@polkadot/ui-identicon` package has been renamed to `@polkadot/react-identicon`
 - **Breaking change** For `@polkadot/ui-keyring` the stores are now not exported from the index, imports should be changed to either `ui-keyring/stores` or explicitly to `ui-keyring/stores/Extension`
 
+Changes:
+
 - Support for Kusama with endpoints and settings
 - The `@polkadot/reactnative-identicon` package has been added (only Polkadot support atm)
 - The `@polkadot/react-qr` package has been added to display/scan QR codes
@@ -153,6 +199,8 @@
 
 
 ## 0.41.1 Jun 14, 2019
+
+Changes:
 
 - Adapt interface to cater for new `@polkadot/keyring`, where pairs -
   - expose `address` getter instead of `address()`
@@ -167,16 +215,22 @@
 
 ## 0.40.1 Jun 04, 2019
 
+Changes:
+
 - Address encoding changes, use encoded address instead of supplied
 
 
 ## 0.39.1 May 22, 2019
+
+Changes:
 
 - Allow for externally injected accounts
 - @polkadot/util 0.91.1 & @polkadot/api 0.79.1
 
 
 ## 0.38.1 May 08, 2019
+
+Changes:
 
 - Sorting of keyring addresses
 - Fix JSON import defaults (previously detection was not working for old accounts)
@@ -187,26 +241,36 @@
 
 ## 0.37.1 Apr 03, 2019
 
+Changes:
+
 - Add Emberic Elm (Dried Danta discontinued)
 - @polkadot/util & @polkadot/api 0.75.1
 
 
 ## 0.36.1 Mar 29, 2019
 
+Changes:
+
 - Small fixes, latest @polkadot/wasm-* packages
 
 
 ## 0.35.1  Mar 29, 2019
+
+Changes:
 
 - @polkadot/util & @polkadot/api 0.75.1
 
 
 ## 0.34.1 Mar 28, 2019
 
+Changes:
+
 - Fix for blake2 in Polkadot identicon generation
 
 
 ## 0.33.1 Mar 23, 2019
+
+Changes:
 
 - Rename createUri and createExternal to addExternal and addUri
 - Rename addAccountPair to addPair
@@ -216,6 +280,8 @@
 
 ## 0.32.1 Mar 20, 2019
 
+Changes:
+
 - Add createUri to create an account from a path uri
 - Add createExternal as an alias for createAccountExternal
 - Deprecate createAccount, createAccountExternal and createAccountMnemonic
@@ -224,36 +290,50 @@
 
 ## 0.31.1 Mar 18, 2019
 
+Changes:
+
 - Allow for latest keyring with sr25519 derived support
 - When using dev mode, it assumes the substrate node has sr25519 derived keys
 
 
 ## 0.30.1 Mar 14, 2019
 
+Changes:
+
 - Swap to publishing -beta.x on merge (non-breaking testing)
 
 
 ## 0.29.1 Mar 13, 2019
+
+Changes:
 
 Swap to using a dev HDKD keyring (only available on latest substrate master, only affects nodes running with --dev, normal operation unaffected)
 
 
 ## 0.28.1 Feb 21, 2019
 
+Changes:
+
 Default Substrate icon is Jdenticon
 
 
 ## 0.27.1 Feb 20, 2019
+
+Changes:
 
 Replace Charred Cherry with Dried Danta, remove old decimals and token name configs
 
 
 ## 0.26.1 Feb 14, 2019
 
+Changes:
+
 Add keyring support for sd25519 (schnorrkel)
 
 
 ## 0.25.1 Jan 09, 2019
+
+Changes:
 
 Add `@polkadot/{keyring,util,util-crypto,types}` as peerDependencies for the various packages as used. Thie should allow less churn on this repo with version bumps, although it does add some extra effort onto the users of these libraries. (But the assumption is that they use these anyway)
 
@@ -263,5 +343,7 @@ Add `@polkadot/{keyring,util,util-crypto,types}` as peerDependencies for the var
 ## 0.23.1 Dec 14, 2018
 
 ## 0.22.1 Dec 05, 2018
+
+Changes:
 
 - Split from apps
