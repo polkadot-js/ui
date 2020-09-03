@@ -12,20 +12,6 @@ export interface ContractMeta {
   genesisHash?: string | null;
 }
 
-export interface KeyringStore {
-  all: (cb: (key: string, value: KeyringJson) => void) => void;
-  get: (key: string, cb: (value: KeyringJson) => void) => void;
-  remove: (key: string, cb?: () => void) => void;
-  set: (key: string, value: KeyringJson, cb?: () => void) => void;
-}
-
-export interface KeyringOptions extends KeyringOptionsBase {
-  filter?: (json: KeyringJson) => boolean;
-  genesisHash?: Hash;
-  isDevelopment?: boolean;
-  store?: KeyringStore;
-}
-
 export interface KeyringJson$Meta {
   contract?: ContractMeta;
   genesisHash?: string | null;
@@ -44,6 +30,20 @@ export interface KeyringJson$Meta {
 export interface KeyringJson {
   address: string;
   meta: KeyringJson$Meta;
+}
+
+export interface KeyringStore {
+  all: (cb: (key: string, value: KeyringJson) => void) => void;
+  get: (key: string, cb: (value: KeyringJson) => void) => void;
+  remove: (key: string, cb?: () => void) => void;
+  set: (key: string, value: KeyringJson, cb?: () => void) => void;
+}
+
+export interface KeyringOptions extends KeyringOptionsBase {
+  filter?: (json: KeyringJson) => boolean;
+  genesisHash?: Hash;
+  isDevelopment?: boolean;
+  store?: KeyringStore;
 }
 
 export interface KeyringAddress {
