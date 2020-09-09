@@ -18,15 +18,15 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@ledgerhq/hw-transport-webusb": "^5.22.0",
+    "@ledgerhq/hw-transport-webusb": "^5.23.0",
     "@zondax/ledger-polkadot": "^0.11.0",
     "mkdirp": "^1.0.4",
-    "rxjs": "^6.6.2",
+    "rxjs": "^6.6.3",
     "store": "^2.0.12"
   },
   "devDependencies": {
     "@polkadot/keyring": "^3.4.1",
-    "@polkadot/types": "^1.32.0-beta.22",
+    "@polkadot/types": "^1.33.0-beta.0",
     "@polkadot/util": "^3.4.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
     "@types/ledgerhq__hw-transport-webusb": "^4.70.0",
@@ -34,7 +34,7 @@
     "@types/store": "^2.0.2"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^5.22.0"
+    "@ledgerhq/hw-transport-node-hid": "^5.23.0"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",

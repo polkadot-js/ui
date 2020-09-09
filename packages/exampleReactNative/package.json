@@ -32,7 +32,7 @@
     "@polkadot/keyring": "^3.4.1",
     "@polkadot/util": "^3.4.1",
     "@polkadot/util-crypto": "^3.4.1",
-    "@react-native-community/cli-platform-ios": "^4.11.0",
+    "@react-native-community/cli-platform-ios": "^4.13.0",
     "@types/react-test-renderer": "16.9.3",
     "babel-jest": "^26.3.0",
     "metro-react-native-babel-preset": "^0.63.0",
