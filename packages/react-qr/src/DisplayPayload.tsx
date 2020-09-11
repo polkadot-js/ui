@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 
 import { createSignPayload } from './util';
 import QrDisplay from './Display';
@@ -18,11 +18,10 @@ interface Props {
 }
 
 function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, style }: Props): React.ReactElement<Props> | null {
-  const [data, setData] = useState<Uint8Array | null>(null);
-
-  useEffect((): void => {
-    setData(createSignPayload(address, cmd, payload, genesisHash));
-  }, [address, cmd, payload, genesisHash]);
+  const data = useMemo(
+    () => createSignPayload(address, cmd, payload, genesisHash),
+    [address, cmd, payload, genesisHash]
+  );
 
   if (!data) {
     return null;

@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@polkadot/keyring": "^3.4.1",
-    "@polkadot/types": "^1.33.0-beta.0",
+    "@polkadot/types": "^1.33.0-beta.5",
     "@polkadot/util": "^3.4.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.1",
     "@types/ledgerhq__hw-transport-webusb": "^4.70.0",
@@ -34,7 +34,7 @@
     "@types/store": "^2.0.2"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^5.23.0"
+    "@ledgerhq/hw-transport-node-hid": "^5.23.2"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
