@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import Reader from 'react-qr-reader';
 import styled from 'styled-components';
 
@@ -24,11 +24,10 @@ const DEFAULT_ERROR = (error: Error): void => {
 };
 
 function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onScan, size, style }: Props): React.ReactElement<Props> {
-  const [containerStyle, setContainerStyle] = useState(createImgSize(size));
-
-  useEffect((): void => {
-    setContainerStyle(createImgSize(size));
-  }, [size]);
+  const containerStyle = useMemo(
+    () => createImgSize(size),
+    [size]
+  );
 
   const _onError = useCallback(
     (error: Error) => onError(error),

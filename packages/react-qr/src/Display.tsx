@@ -2,7 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
@@ -46,8 +46,12 @@ function getDataUrl (value: Uint8Array): string {
 
 function Display ({ className, size, skipEncoding, style, value }: Props): React.ReactElement<Props> | null {
   const [{ image }, setFrameState] = useState<FrameState>({ frameIdx: 0, frames: [], image: null, valueHash: null });
-  const [containerStyle, setContainerStyle] = useState(createImgSize(size));
   const timerRef = useRef<TimerState>({ timerDelay: FRAME_DELAY, timerId: null });
+
+  const containerStyle = useMemo(
+    () => createImgSize(size),
+    [size]
+  );
 
   // run on initial load to setup the global timer and provide and unsubscribe
   useEffect((): () => void => {
@@ -85,10 +89,6 @@ function Display ({ className, size, skipEncoding, style, value }: Props): React
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect((): void => {
-    setContainerStyle(createImgSize(size));
-  }, [size]);
 
   useEffect((): void => {
     setFrameState((state): FrameState => {

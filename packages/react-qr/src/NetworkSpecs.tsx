@@ -4,7 +4,7 @@
 
 import { NetworkSpecsStruct } from '@polkadot/ui-settings';
 
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import QrDisplay from './Display';
 
 import { encodeString } from './util';
@@ -17,11 +17,10 @@ interface Props {
 }
 
 function DisplayNetworkSpecs ({ className, networkSpecs, size, style }: Props): React.ReactElement<Props> | null {
-  const [data, setData] = useState<Uint8Array | null>(null);
-
-  useEffect((): void => {
-    setData(encodeString(JSON.stringify(networkSpecs)));
-  }, [networkSpecs]);
+  const data = useMemo(
+    () => encodeString(JSON.stringify(networkSpecs)),
+    [networkSpecs]
+  );
 
   if (!data) {
     return null;
