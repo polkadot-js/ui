@@ -6,6 +6,12 @@ import Transport from '@ledgerhq/hw-transport';
 
 export type LedgerTypes = 'hid' | 'u2f' | 'webusb';
 
+export interface AccountOptions {
+  account: number;
+  addressIndex: number;
+  change: number;
+}
+
 export interface LedgerAddress {
   address: string;
   publicKey: string;
