@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import Transport from '@ledgerhq/hw-transport';
-import { LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
+import { AccountOptions, LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
 
 import { ResponseBase, SubstrateApp, newKusamaApp, newPolkadotApp } from '@zondax/ledger-polkadot';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
@@ -81,9 +81,9 @@ export default class Ledger {
     return result;
   }
 
-  public async getAddress (confirm = false, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerAddress> {
+  public async getAddress (confirm = false, accountOffset = 0, addressOffset = 0, { account = LEDGER_DEFAULT_ACCOUNT, addressIndex = LEDGER_DEFAULT_INDEX, change = LEDGER_DEFAULT_CHANGE }: Partial<AccountOptions> = {}): Promise<LedgerAddress> {
     return this._withApp(async (app: SubstrateApp): Promise<LedgerAddress> => {
-      const { address, pubKey } = await this._wrapError(app.getAddress(account, change, addressIndex, confirm));
+      const { address, pubKey } = await this._wrapError(app.getAddress(account + accountOffset, change, addressIndex + addressOffset, confirm));
 
       return {
         address,
@@ -104,10 +104,10 @@ export default class Ledger {
     });
   }
 
-  public async sign (message: Uint8Array, account = LEDGER_DEFAULT_ACCOUNT, change = LEDGER_DEFAULT_CHANGE, addressIndex = LEDGER_DEFAULT_INDEX): Promise<LedgerSignature> {
+  public async sign (message: Uint8Array, accountOffset = 0, addressOffset = 0, { account = LEDGER_DEFAULT_ACCOUNT, addressIndex = LEDGER_DEFAULT_INDEX, change = LEDGER_DEFAULT_CHANGE }: Partial<AccountOptions> = {}): Promise<LedgerSignature> {
     return this._withApp(async (app: SubstrateApp): Promise<LedgerSignature> => {
       const buffer = u8aToBuffer(message);
-      const { signature } = await this._wrapError(app.sign(account, change, addressIndex, buffer));
+      const { signature } = await this._wrapError(app.sign(account + accountOffset, change, addressIndex + addressOffset, buffer));
 
       return {
         signature: u8aToHex(bufferToU8a(signature))
