@@ -33,14 +33,16 @@ export function createAddressPayload (address: string, genesisHash: string): Uin
   return encodeString(`${ADDRESS_PREFIX}:${address}:${genesisHash}`);
 }
 
-export function createSignPayload (address: string, cmd: number, payload: string | Uint8Array, genesisHash: string | Uint8Array): Uint8Array {
+export function createSignPayload (address: string, cmd: number, payload: string | Uint8Array, genesisHash: string | Uint8Array, specVersion: number): Uint8Array {
+  const specVersionString = specVersion.toString().padStart(6, '0');
   return u8aConcat(
     SUBSTRATE_ID,
     CRYPTO_SR25519,
     new Uint8Array([cmd]),
     decodeAddress(address),
     u8aToU8a(payload),
-    u8aToU8a(genesisHash)
+    u8aToU8a(genesisHash),
+    u8aToU8a(specVersionString)
   );
 }
 

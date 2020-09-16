@@ -14,13 +14,14 @@ interface Props {
   genesisHash: Uint8Array | string;
   payload: Uint8Array;
   size?: string | number;
+  specVersion: number;
   style?: React.CSSProperties;
 }
 
-function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, style }: Props): React.ReactElement<Props> | null {
+function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, specVersion, style }: Props): React.ReactElement<Props> | null {
   const data = useMemo(
-    () => createSignPayload(address, cmd, payload, genesisHash),
-    [address, cmd, payload, genesisHash]
+    () => createSignPayload(address, cmd, payload, genesisHash, specVersion),
+    [address, cmd, payload, genesisHash, specVersion]
   );
 
   if (!data) {
