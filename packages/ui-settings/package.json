@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-settings",
-  "version": "0.59.0-beta.7",
+  "version": "0.59.0-beta.8",
   "description": "Manages app settings",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
