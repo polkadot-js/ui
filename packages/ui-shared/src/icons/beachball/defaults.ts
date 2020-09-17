@@ -1,7 +1,6 @@
 // Copyright 2016 Dan Finlay
 // Copyright 2017-2020 @polkadot/ui-shared authors & contributors
-// This software may be modified and distributed under the terms
-// of the Apache-2.0 license. See the LICENSE file for details.
+// SPDX-License-Identifier: Apache-2.0
 
 const COLORS: string[] = [
   // https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/

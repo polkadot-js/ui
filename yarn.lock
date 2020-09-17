@@ -3156,17 +3156,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/metadata@npm:1.34.0-beta.8":
-  version: 1.34.0-beta.8
-  resolution: "@polkadot/metadata@npm:1.34.0-beta.8"
+"@polkadot/metadata@npm:1.34.0-beta.10":
+  version: 1.34.0-beta.10
+  resolution: "@polkadot/metadata@npm:1.34.0-beta.10"
   dependencies:
     "@babel/runtime": ^7.11.2
-    "@polkadot/types": 1.34.0-beta.8
-    "@polkadot/types-known": 1.34.0-beta.8
+    "@polkadot/types": 1.34.0-beta.10
+    "@polkadot/types-known": 1.34.0-beta.10
     "@polkadot/util": ^3.4.1
     "@polkadot/util-crypto": ^3.4.1
     bn.js: ^5.1.3
-  checksum: 244e3bd0248a348e39c7ba340054ecd6e14d78eeffe4b507644a4509276f628f4690791bf4ddaa766d8522af26c048c92b1f2aa3943910a0ea3b5563af5538e6
+  checksum: 09075b88e497ac7fc7d4ba6fd0655c9d0fc8932fccbec732d41fa74b0b9f637276c27b89d5bd38679ac94a3f832404cafd7865d21a5d9068c8b60826bc2b7fd6
   languageName: node
   linkType: hard
 
@@ -3242,31 +3242,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/types-known@npm:1.34.0-beta.8":
-  version: 1.34.0-beta.8
-  resolution: "@polkadot/types-known@npm:1.34.0-beta.8"
+"@polkadot/types-known@npm:1.34.0-beta.10":
+  version: 1.34.0-beta.10
+  resolution: "@polkadot/types-known@npm:1.34.0-beta.10"
   dependencies:
     "@babel/runtime": ^7.11.2
-    "@polkadot/types": 1.34.0-beta.8
+    "@polkadot/types": 1.34.0-beta.10
     "@polkadot/util": ^3.4.1
     bn.js: ^5.1.3
-  checksum: b97c8096cf2aff6cb783e2b0846e30169d1218c9e2dd3c900ccdee37cfba1ce8a38e73f378b3a417b6d82e833a32ec9343d67c4c6ed087c445be9765febebd6d
+  checksum: 3d2783b8d2d7c12e2f1897640035f8e4f42ff83f8fc147d5406aa7678a06b96c14ba1e197d4432a1442c0e7c9da2836a504e777ecc83aa7f830a38d9a52665ee
   languageName: node
   linkType: hard
 
-"@polkadot/types@npm:1.34.0-beta.8, @polkadot/types@npm:^1.34.0-beta.8":
-  version: 1.34.0-beta.8
-  resolution: "@polkadot/types@npm:1.34.0-beta.8"
+"@polkadot/types@npm:1.34.0-beta.10, @polkadot/types@npm:^1.34.0-beta.10":
+  version: 1.34.0-beta.10
+  resolution: "@polkadot/types@npm:1.34.0-beta.10"
   dependencies:
     "@babel/runtime": ^7.11.2
-    "@polkadot/metadata": 1.34.0-beta.8
+    "@polkadot/metadata": 1.34.0-beta.10
     "@polkadot/util": ^3.4.1
     "@polkadot/util-crypto": ^3.4.1
     "@types/bn.js": ^4.11.6
     bn.js: ^5.1.3
     memoizee: ^0.4.14
     rxjs: ^6.6.3
-  checksum: 1c1577ef0f0b8b35e53009c3d2d03afafae7d2ba5742e95557edc5045262db88b4a683459a396a89152fb834e8b533eb53fb35437675eb4894e7ec4ae0b84e20
+  checksum: d8513376b5e2b503173198d96a3052381af384aae12ff5e988dd398f1647f383face8f37fd06f0f7e85d2208069d6d2b16e8d78ca9be24ccb99c8d8f322a2cd4
   languageName: node
   linkType: hard
 
@@ -3286,7 +3286,7 @@ __metadata:
     "@ledgerhq/hw-transport-node-hid": ^5.23.2
     "@ledgerhq/hw-transport-webusb": ^5.23.0
     "@polkadot/keyring": ^3.4.1
-    "@polkadot/types": ^1.34.0-beta.8
+    "@polkadot/types": ^1.34.0-beta.10
     "@polkadot/util": ^3.4.1
     "@types/ledgerhq__hw-transport-node-hid": ^4.22.1
     "@types/ledgerhq__hw-transport-webusb": ^4.70.0
