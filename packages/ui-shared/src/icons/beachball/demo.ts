@@ -1,6 +1,6 @@
-// Copyright 2016 Dan Finlay
 // Copyright 2017-2020 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+// Copyright 2016 Dan Finlay
 
 import { isNull } from '@polkadot/util';
 import { encodeAddress, randomAsU8a } from '@polkadot/util-crypto';

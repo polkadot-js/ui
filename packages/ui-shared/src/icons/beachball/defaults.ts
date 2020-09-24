@@ -1,6 +1,6 @@
-// Copyright 2016 Dan Finlay
 // Copyright 2017-2020 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+// Copyright 2016 Dan Finlay
 
 const COLORS: string[] = [
   // https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/
