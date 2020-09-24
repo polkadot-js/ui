@@ -1,6 +1,6 @@
 {
   "name": "exampleReactNative",
-  "version": "0.59.0-beta.9",
+  "version": "0.59.0-beta.10",
   "private": true,
   "scripts": {
     "copy-workspace-packages": "yarn copy-identicon && yarn copy-ui-shared",
@@ -12,9 +12,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@polkadot/reactnative-identicon": "0.59.0-beta.9",
-    "@polkadot/ui-keyring": "0.59.0-beta.9",
-    "@polkadot/ui-settings": "0.59.0-beta.9",
+    "@polkadot/reactnative-identicon": "0.59.0-beta.10",
+    "@polkadot/ui-keyring": "0.59.0-beta.10",
+    "@polkadot/ui-settings": "0.59.0-beta.10",
     "@react-native-community/async-storage": "^1.12.0",
     "fast-text-encoding": "^1.0.3",
     "get-yarn-workspaces": "^1.0.2",
