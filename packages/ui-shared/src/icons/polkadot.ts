@@ -1,6 +1,6 @@
-// Copyright 2018 Paritytech via paritytech/oo7/polkadot-identicon
 // Copyright 2018-2020 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+// Copyright 2018 Paritytech via paritytech/oo7/polkadot-identicon
 
 // This has been converted from the original version that can be found at
 //
