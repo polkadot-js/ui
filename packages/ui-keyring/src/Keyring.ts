@@ -79,6 +79,10 @@ export class Keyring extends Base implements KeyringStruct {
     return pair.toJson(password);
   }
 
+  public createFromJSON (json: KeyringPair$Json, meta: KeyringPair$Meta = {}): KeyringPair {
+    return this.keyring.createFromJSON({ ...json, meta: { ...(json.meta || {}), meta } });
+  }
+
   public createFromUri (suri: string, meta: KeyringPair$Meta = {}, type?: KeypairType): KeyringPair {
     return this.keyring.createFromUri(suri, meta, type);
   }
