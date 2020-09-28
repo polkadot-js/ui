@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 0.59.1 Sep 28, 2020
+
+Changes:
+
+- Expose createFromJson on keyring to compliment createFromUri
+- Support Account/address indexes for Ledger
+- Bump to `@polkadot/api` 2.0.1
+- Bump to `@polkadot/util` 3.5.1
+
+
 ## 0.58.1 Aug 31, 2020
 
 Contributed:
