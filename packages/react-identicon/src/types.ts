@@ -19,6 +19,7 @@ export interface Props extends BaseProps {
 }
 
 export interface IdentityProps extends BaseProps {
+  Custom?: React.ComponentType<Props>;
   isAlternative?: boolean;
   isHighlight?: boolean;
   onCopy?: (value: string) => void;
