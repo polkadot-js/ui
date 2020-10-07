@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 0.60.1 Oct 7, 2020
+
+Changes:
+
+- Allow for custom IdentityIcon overrides
+- Move docs to docs repo
+- Bump to `@polkadot/api` 2.1.1
+
+
 ## 0.59.1 Sep 28, 2020
 
 Changes:
