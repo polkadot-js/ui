@@ -45,5 +45,5 @@
     "vue-template-compiler": "^2.6.12",
     "webpack-serve": "^3.2.0"
   },
-  "version": "0.60.0"
+  "version": "0.60.1"
 }
