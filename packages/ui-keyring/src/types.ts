@@ -4,10 +4,11 @@
 import { Hash } from '@polkadot/types/interfaces';
 import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
 import { KeypairType } from '@polkadot/util-crypto/types';
+import { AnyJson } from '@polkadot/types/types';
 import { AddressSubject, SingleAddress } from './observable/types';
 
 export interface ContractMeta {
-  abi: string;
+  abi: AnyJson;
   genesisHash?: string | null;
 }
 
