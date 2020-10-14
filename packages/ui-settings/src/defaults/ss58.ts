@@ -39,6 +39,11 @@ export const PREFIXES: Option[] = [
     value: 16
   },
   {
+    info: 'darwinia',
+    text: 'Darwinia (live)',
+    value: 18
+  },
+  {
     info: 'subsocial',
     text: 'Subsocial (live)',
     value: 28
