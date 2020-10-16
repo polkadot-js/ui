@@ -1,6 +1,5 @@
 // Copyright 2017-2020 @polkadot/react-identicon authors & contributors
-// This software may be modified and distributed under the terms
-// of the Apache-2.0 license. See the LICENSE file for details.
+// SPDX-License-Identifier: Apache-2.0
 
 import { Prefix } from '@polkadot/util-crypto/address/types';
 import { IdentityProps as Props, Props as ComponentProps } from './types';
@@ -91,7 +90,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
 
   public render (): React.ReactNode {
     const { address } = this.state;
-    const wrapped = this.getWrapped(this.state);
+    const wrapped = this.getWrapped(this.state, this.props);
 
     return !address
       ? wrapped
@@ -105,11 +104,11 @@ class BaseIcon extends React.PureComponent<Props, State> {
       );
   }
 
-  private getWrapped ({ address, publicKey }: State): React.ReactNode {
+  private getWrapped ({ address, publicKey }: State, { Custom }: Props): React.ReactNode {
     const { className = '', isAlternative, isHighlight, size = DEFAULT_SIZE, style, theme = settings.icon } = this.props;
     const Component = !address
       ? Empty
-      : Components[theme === 'default' ? ICON_DEFAULT_HOST : theme] || Fallback;
+      : Custom || Components[theme === 'default' ? ICON_DEFAULT_HOST : theme] || Fallback;
 
     return (
       <Wrapper

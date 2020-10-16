@@ -1,6 +1,5 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
-// This software may be modified and distributed under the terms
-// of the Apache-2.0 license. See the LICENSE file for details.
+// SPDX-License-Identifier: Apache-2.0
 
 import { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
 import { KeypairType } from '@polkadot/util-crypto/types';
@@ -78,6 +77,10 @@ export class Keyring extends Base implements KeyringStruct {
     pair.decodePkcs8(password);
 
     return pair.toJson(password);
+  }
+
+  public createFromJson (json: KeyringPair$Json, meta: KeyringPair$Meta = {}): KeyringPair {
+    return this.keyring.createFromJson({ ...json, meta: { ...(json.meta || {}), meta } });
   }
 
   public createFromUri (suri: string, meta: KeyringPair$Meta = {}, type?: KeypairType): KeyringPair {

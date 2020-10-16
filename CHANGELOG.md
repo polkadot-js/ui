@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## 0.60.1 Oct 7, 2020
+
+Changes:
+
+- Allow for custom IdentityIcon overrides
+- Move docs to docs repo
+- Bump to `@polkadot/api` 2.1.1
+
+
+## 0.59.1 Sep 28, 2020
+
+Changes:
+
+- Expose createFromJson on keyring to compliment createFromUri
+- Support Account/address indexes for Ledger
+- Bump to `@polkadot/api` 2.0.1
+- Bump to `@polkadot/util` 3.5.1
+
+
 ## 0.58.1 Aug 31, 2020
 
 Contributed:
