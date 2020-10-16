@@ -3170,6 +3170,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@polkadot/networks@npm:^3.6.0-beta.14":
+  version: 3.6.0-beta.14
+  resolution: "@polkadot/networks@npm:3.6.0-beta.14"
+  dependencies:
+    "@babel/runtime": ^7.11.2
+  checksum: d66a52cef07632bd34811b23467101c1c2a50baf1a97fa8a8ab04f103add93936eeb0af533d7944605abec3cb9b35db1ee6095fe3e3ee9fd34fd8dc7ecca1e37
+  languageName: node
+  linkType: hard
+
 "@polkadot/react-identicon@workspace:packages/react-identicon":
   version: 0.0.0-use.local
   resolution: "@polkadot/react-identicon@workspace:packages/react-identicon"
@@ -3311,6 +3320,7 @@ __metadata:
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
     "@babel/runtime": ^7.11.2
+    "@polkadot/networks": ^3.6.0-beta.14
     "@polkadot/util": ^3.4.1
     "@types/store": ^2.0.2
     eventemitter3: ^4.0.7
