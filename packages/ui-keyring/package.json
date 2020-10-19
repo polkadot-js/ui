@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-keyring",
-  "version": "0.60.2-3",
+  "version": "0.61.0",
   "main": "index.js",
   "repository": "https://github.com/polkadot-js/apps.git",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -17,25 +17,25 @@
     "./ledger/transportsWeb": "./ledger/transportsEmpty"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "@ledgerhq/hw-transport-webusb": "^5.25.0",
-    "@polkadot/keyring": "^3.6.0-beta.14",
-    "@polkadot/ui-settings": "^0.60.2-3",
-    "@polkadot/util": "^3.6.0-beta.14",
+    "@babel/runtime": "^7.12.1",
+    "@ledgerhq/hw-transport-webusb": "^5.26.0",
+    "@polkadot/keyring": "^3.6.1",
+    "@polkadot/ui-settings": "^0.61.0",
+    "@polkadot/util": "^3.6.1",
     "@zondax/ledger-polkadot": "^0.11.0",
     "mkdirp": "^1.0.4",
     "rxjs": "^6.6.3",
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/types": "^2.2.2-7",
+    "@polkadot/types": "^2.3.1",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.2",
     "@types/ledgerhq__hw-transport-webusb": "^4.70.1",
     "@types/mkdirp": "^1.0.1",
     "@types/store": "^2.0.2"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^5.25.0"
+    "@ledgerhq/hw-transport-node-hid": "^5.26.0"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
