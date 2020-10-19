@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-shared",
-  "version": "0.60.2-3",
+  "version": "0.61.0",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -9,16 +9,16 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "color": "^3.1.2"
+    "@babel/runtime": "^7.12.1",
+    "color": "^3.1.3"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
     "@polkadot/util-crypto": "*"
   },
   "devDependencies": {
-    "@polkadot/util": "^3.6.0-beta.14",
-    "@polkadot/util-crypto": "^3.6.0-beta.14",
+    "@polkadot/util": "^3.6.1",
+    "@polkadot/util-crypto": "^3.6.1",
     "@types/color": "^3.0.1",
     "@types/xmlserializer": "^0.6.1"
   }

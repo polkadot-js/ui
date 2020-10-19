@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 0.61.1 Oct 18, 2020
+
+Contributed:
+
+- Add Darwinia ss58 (Thanks to https://github.com/WoeOm)
+- Swap network identifiers to @polkadot/networks (Thanks to https://github.com/Tbaut)
+
+Changes:
+
+- Explicit deps versions (with peerDependencies as provided)
+- Bump to `@polkadot/api` 2.3.1
+- Bump to `@polkadot/util` 3.6.1
+
+
 ## 0.60.1 Oct 7, 2020
 
 Changes:
