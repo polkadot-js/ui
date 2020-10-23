@@ -2190,6 +2190,7 @@ __metadata:
     "@types/styled-components": ^5.1.4
     qrcode-generator: ^1.4.4
     react-qr-reader: ^2.2.1
+    styled-components: ^5.2.0
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
