@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.61.1 Oct 18, 2020
+## 0.61.1 Oct 19, 2020
 
 Contributed:
 
