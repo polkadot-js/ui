@@ -5,6 +5,16 @@ const base = require('@polkadot/dev/config/eslint');
 
 module.exports = {
   ...base,
+  ignorePatterns: [
+    '.eslintrc.js',
+    '.github/**',
+    '.vscode/**',
+    '.yarn/**',
+    '**/build/*',
+    '**/coverage/*',
+    '**/node_modules/*',
+    '**/*.d.ts'
+  ],
   parserOptions: {
     ...base.parserOptions,
     project: [
