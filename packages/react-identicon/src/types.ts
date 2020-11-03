@@ -25,6 +25,6 @@ export interface IdentityProps extends BaseProps {
   onCopy?: (value: string) => void;
   prefix?: Prefix;
   size?: number;
-  theme?: 'beachball' | 'empty' | 'jdenticon' | 'polkadot' | 'substrate';
+  theme?: 'beachball' | 'empty' | 'ethereum' | 'jdenticon' | 'polkadot' | 'substrate';
   value?: string | Uint8Array | null;
 }

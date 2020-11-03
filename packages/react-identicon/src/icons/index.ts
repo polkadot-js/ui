@@ -3,5 +3,6 @@
 
 export { default as Beachball } from './Beachball';
 export { default as Empty } from './Empty';
+export { default as Ethereum } from './Ethereum';
 export { default as Jdenticon } from './Jdenticon';
 export { default as Polkadot } from './Polkadot';

@@ -9,9 +9,9 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 import settings, { ICON_DEFAULT_HOST } from '@polkadot/ui-settings';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
-import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
+import { decodeAddress, encodeAddress, ethereumEncode } from '@polkadot/util-crypto';
 
-import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
+import { Beachball, Empty, Ethereum, Jdenticon, Polkadot } from './icons';
 
 const Fallback = Beachball;
 
@@ -24,6 +24,7 @@ const DEFAULT_SIZE = 64;
 const Components: Record<string, React.ComponentType<ComponentProps>> = {
   beachball: Beachball,
   empty: Empty,
+  ethereum: Ethereum,
   jdenticon: Jdenticon,
   polkadot: Polkadot,
   substrate: Jdenticon
@@ -67,7 +68,15 @@ class BaseIcon extends React.PureComponent<Props, State> {
     BaseIcon.prefix = prefix;
   }
 
-  public static getDerivedStateFromProps ({ prefix = BaseIcon.prefix, value }: Props, prevState: State): State | null {
+  public static getDerivedStateFromProps ({ prefix = BaseIcon.prefix, theme, value }: Props, prevState: State): State | null {
+    if (theme === 'ethereum') {
+      const address = isU8a(value)
+        ? ethereumEncode(value)
+        : value || '';
+
+      return { address, publicKey: '' };
+    }
+
     try {
       const address = isU8a(value) || isHex(value)
         ? encodeAddress(value, prefix)
