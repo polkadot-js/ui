@@ -10,7 +10,7 @@ import BN from 'bn.js';
 import createPair from '@polkadot/keyring/pair';
 import chains from '@polkadot/ui-settings/defaults/chains';
 import { bnToBn, hexToU8a, isHex, isString, u8aSorted } from '@polkadot/util';
-import { base64Decode, createKeyMulti } from '@polkadot/util-crypto';
+import { base64Decode, createKeyMulti, ethereumEncode } from '@polkadot/util-crypto';
 
 import env from './observable/development';
 import Base from './Base';
@@ -195,12 +195,16 @@ export class Keyring extends Base implements KeyringStruct {
       return;
     }
 
-    const address = this.encodeAddress(
-      isHex(json.address)
-        ? hexToU8a(json.address)
-        // FIXME Just for the transition period (ignoreChecksum)
-        : this.decodeAddress(json.address, true)
-    );
+    // We assume anything hex that is not 32bytes (64 + 2 bytes hex) is an Ethereum-like address
+    // (this caters for both H160 addresses as well as full or compressed publicKeys)
+    const address = isHex(json.address) && json.address.length !== 66
+      ? ethereumEncode(json.address)
+      : this.encodeAddress(
+        isHex(json.address)
+          ? hexToU8a(json.address)
+          // FIXME Just for the transition period (ignoreChecksum)
+          : this.decodeAddress(json.address, true)
+      );
     const [, hexAddr] = key.split(':');
 
     this.addresses.add(this._store, address, json);
