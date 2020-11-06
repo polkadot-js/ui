@@ -195,12 +195,17 @@ export class Keyring extends Base implements KeyringStruct {
       return;
     }
 
-    const address = this.encodeAddress(
-      isHex(json.address)
-        ? hexToU8a(json.address)
-        // FIXME Just for the transition period (ignoreChecksum)
-        : this.decodeAddress(json.address, true)
-    );
+    // We assume anything hex that is not 32bytes (64 + 2 bytes hex) is an Ethereum-like address
+    // (this caters for both H160 addresses as well as full or compressed publicKeys) - in the case
+    // of both ecdsa and ethereum, we keep it as-is
+    const address = isHex(json.address) && json.address.length !== 66
+      ? json.address
+      : this.encodeAddress(
+        isHex(json.address)
+          ? hexToU8a(json.address)
+          // FIXME Just for the transition period (ignoreChecksum)
+          : this.decodeAddress(json.address, true)
+      );
     const [, hexAddr] = key.split(':');
 
     this.addresses.add(this._store, address, json);
