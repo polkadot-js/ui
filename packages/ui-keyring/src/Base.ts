@@ -6,7 +6,7 @@ import { Prefix } from '@polkadot/util-crypto/address/types';
 import { AddressSubject } from './observable/types';
 import { KeyringOptions, KeyringStore } from './types';
 
-import testKeyring from '@polkadot/keyring/testing';
+import { createTestKeyring } from '@polkadot/keyring/testing';
 import { isBoolean, isString } from '@polkadot/util';
 
 import accounts from './observable/accounts';
@@ -103,7 +103,7 @@ export default class Base {
   }
 
   protected initKeyring (options: KeyringOptions): void {
-    const keyring = testKeyring(options, true);
+    const keyring = createTestKeyring(options, true);
 
     if (isBoolean(options.isDevelopment)) {
       this.setDevMode(options.isDevelopment);

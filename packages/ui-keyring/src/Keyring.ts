@@ -7,7 +7,7 @@ import { AddressSubject, SingleAddress } from './observable/types';
 import { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import BN from 'bn.js';
-import createPair from '@polkadot/keyring/pair';
+import { createPair } from '@polkadot/keyring/pair';
 import chains from '@polkadot/ui-settings/defaults/chains';
 import { bnToBn, hexToU8a, isHex, isString, u8aSorted } from '@polkadot/util';
 import { base64Decode, createKeyMulti } from '@polkadot/util-crypto';
