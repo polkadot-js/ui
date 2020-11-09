@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-shared",
-  "version": "0.62.2-1",
+  "version": "0.62.2-2",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
   "module": "esnext/index.js",
