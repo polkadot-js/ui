@@ -2,6 +2,8 @@
   "name": "@polkadot/ui-keyring",
   "version": "0.62.1",
   "main": "index.js",
+  "module": "esnext/index.js",
+  "sideEffects": false,
   "repository": "https://github.com/polkadot-js/apps.git",
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [
