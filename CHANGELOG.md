@@ -1,11 +1,21 @@
 # CHANGELOG
 
+## 0.62.1 Nov 9, 2020
+
+Changes:
+
+- Update address checks to allow for Ethereum-compatible chains
+- Add Ethereum icon type (uses blockies underneath)
+- Updated to `@polkadot/{keyring, util, util-crypto}` 4.0.1
+- Updated to `@polkadot/api` 2.6.1
+
+
 ## 0.61.1 Oct 19, 2020
 
 Contributed:
 
 - Add Darwinia ss58 (Thanks to https://github.com/WoeOm)
-- Swap network identifiers to @polkadot/networks (Thanks to https://github.com/Tbaut)
+- Swap network identifiers to `@polkadot/networks` (Thanks to https://github.com/Tbaut)
 
 Changes:
 
