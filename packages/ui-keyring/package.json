@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-keyring",
-  "version": "0.62.1",
+  "version": "0.62.2-0",
   "main": "index.js",
   "module": "esnext/index.js",
   "sideEffects": false,
@@ -22,7 +22,7 @@
     "@babel/runtime": "^7.12.5",
     "@ledgerhq/hw-transport-webusb": "^5.28.0",
     "@polkadot/keyring": "^4.0.1",
-    "@polkadot/ui-settings": "0.62.1",
+    "@polkadot/ui-settings": "0.62.2-0",
     "@polkadot/util": "^4.0.1",
     "@zondax/ledger-polkadot": "^0.11.0",
     "mkdirp": "^1.0.4",
