@@ -7,6 +7,8 @@
     "Jaco Greeff <jacogr@gmail.com>"
   ],
   "main": "index.js",
+  "module": "esnext/index.js",
+  "sideEffects": false,
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.12.5",

@@ -3,6 +3,8 @@
   "version": "0.62.1",
   "description": "Manages app settings",
   "main": "index.js",
+  "module": "esnext/index.js",
+  "sideEffects": false,
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [
     "Jaco Greeff <jacogr@gmail.com>"
