@@ -5,7 +5,7 @@ const config = require('@polkadot/dev/config/jest');
 
 module.exports = Object.assign({}, config, {
   moduleNameMapper: {
-    '@polkadot/ledger-transports(.*)$': '<rootDir>/packages/ledger-transports/src/$1',
+    '@polkadot/ledger-transports(.*)$': '<rootDir>/packages/ledger-transports/src/node',
     // eslint-disable-next-line sort-keys
     '@polkadot/ledger(.*)$': '<rootDir>/packages/ledger/src/$1',
     '@polkadot/react-(identicon|qr)(.*)$': '<rootDir>/packages/react-$1/src/$2',
