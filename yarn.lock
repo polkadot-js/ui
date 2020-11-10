@@ -2213,6 +2213,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@polkadot/ledger-transports@0.62.2-4, @polkadot/ledger-transports@workspace:packages/ledger-transports":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/ledger-transports@workspace:packages/ledger-transports"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@ledgerhq/hw-transport-node-hid": ^5.28.0
+    "@ledgerhq/hw-transport-webusb": ^5.28.0
+    "@polkadot/types": ^2.6.2-4
+    "@types/ledgerhq__hw-transport-node-hid": ^4.22.2
+    "@types/ledgerhq__hw-transport-webusb": ^4.70.1
+  dependenciesMeta:
+    "@ledgerhq/hw-transport-node-hid":
+      optional: true
+  languageName: unknown
+  linkType: soft
+
+"@polkadot/ledger@^0.62.2-4, @polkadot/ledger@workspace:packages/ledger":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/ledger@workspace:packages/ledger"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@polkadot/ledger-transports": 0.62.2-4
+    "@polkadot/types": ^2.6.2-4
+    "@polkadot/util": ^4.0.2-8
+    "@zondax/ledger-polkadot": ^0.11.0
+  peerDependencies:
+    "@polkadot/util": "*"
+  languageName: unknown
+  linkType: soft
+
 "@polkadot/metadata@npm:2.6.2-4":
   version: 2.6.2-4
   resolution: "@polkadot/metadata@npm:2.6.2-4"
@@ -2355,17 +2385,13 @@ __metadata:
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
     "@babel/runtime": ^7.12.5
-    "@ledgerhq/hw-transport-node-hid": ^5.28.0
-    "@ledgerhq/hw-transport-webusb": ^5.28.0
     "@polkadot/keyring": ^4.0.2-8
+    "@polkadot/ledger": ^0.62.2-4
     "@polkadot/types": ^2.6.2-4
     "@polkadot/ui-settings": 0.62.2-4
     "@polkadot/util": ^4.0.2-8
-    "@types/ledgerhq__hw-transport-node-hid": ^4.22.2
-    "@types/ledgerhq__hw-transport-webusb": ^4.70.1
     "@types/mkdirp": ^1.0.1
     "@types/store": ^2.0.2
-    "@zondax/ledger-polkadot": ^0.11.0
     mkdirp: ^1.0.4
     rxjs: ^6.6.3
     store: ^2.0.12
@@ -2373,9 +2399,6 @@ __metadata:
     "@polkadot/keyring": "*"
     "@polkadot/ui-settings": "*"
     "@polkadot/util": "*"
-  dependenciesMeta:
-    "@ledgerhq/hw-transport-node-hid":
-      optional: true
   languageName: unknown
   linkType: soft
 

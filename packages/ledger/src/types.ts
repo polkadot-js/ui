@@ -1,7 +1,5 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2020 @polkadot/ledger authors & contributors
 // SPDX-License-Identifier: Apache-2.0
-
-import Transport from '@ledgerhq/hw-transport';
 
 export type LedgerTypes = 'hid' | 'u2f' | 'webusb';
 
@@ -24,9 +22,4 @@ export interface LedgerVersion {
   isLocked: boolean;
   isTestMode: boolean;
   version: [number, number, number];
-}
-
-export interface TransportDef {
-  create (): Promise<Transport>;
-  type: LedgerTypes;
 }
