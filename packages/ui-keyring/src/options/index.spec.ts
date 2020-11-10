@@ -2,7 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { KeyringStruct } from '../types';
-import keyringOptionInstance from '.';
+import { KeyringOption } from '.';
+
+const keyringOptionInstance = new KeyringOption();
 
 describe('KeyringOption', (): void => {
   it('should not allow initOptions to be called more than once', (): void => {

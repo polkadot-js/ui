@@ -3,9 +3,11 @@
 
 import './detectPackage';
 
-import keyring, { Keyring } from './Keyring';
+import { Keyring } from './Keyring';
 
 export { default as Ledger } from '@polkadot/ledger';
+
+const keyring = new Keyring();
 
 export default keyring;
 

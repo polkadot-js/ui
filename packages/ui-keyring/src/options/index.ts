@@ -34,7 +34,7 @@ const sortByCreated = (a: SingleAddress, b: SingleAddress): number => {
   return 0;
 };
 
-class KeyringOption implements KeyringOptionInstance {
+export class KeyringOption implements KeyringOptionInstance {
   public readonly optionsSubject: BehaviorSubject<KeyringOptions> = new BehaviorSubject(this.emptyOptions());
 
   public createOptionHeader (name: string): KeyringSectionOption {
@@ -138,7 +138,3 @@ class KeyringOption implements KeyringOptionInstance {
     };
   }
 }
-
-const keyringOptionInstance = new KeyringOption();
-
-export default keyringOptionInstance;
