@@ -138,3 +138,7 @@ export class KeyringOption implements KeyringOptionInstance {
     };
   }
 }
+
+const keyringOption = new KeyringOption();
+
+export default keyringOption;

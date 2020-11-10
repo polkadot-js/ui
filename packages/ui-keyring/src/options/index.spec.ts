@@ -2,20 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { KeyringStruct } from '../types';
-import { KeyringOption } from '.';
-
-const keyringOptionInstance = new KeyringOption();
+import keyringOption from '.';
 
 describe('KeyringOption', (): void => {
   it('should not allow initOptions to be called more than once', (): void => {
     const state: Partial<KeyringStruct> = {};
 
     // first call
-    keyringOptionInstance.init(state as KeyringStruct);
+    keyringOption.init(state as KeyringStruct);
 
     // second call
     expect((): void => {
-      keyringOptionInstance.init(state as KeyringStruct);
+      keyringOption.init(state as KeyringStruct);
     }).toThrowError('Unable to initialise options more than once');
   });
 });
