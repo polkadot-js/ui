@@ -2238,9 +2238,6 @@ __metadata:
     "@polkadot/types": ^2.6.2-4
     "@polkadot/util": ^4.0.2-8
     "@zondax/ledger-polkadot": ^0.11.0
-    mkdirp: ^1.0.4
-    rxjs: ^6.6.3
-    store: ^2.0.12
   peerDependencies:
     "@polkadot/util": "*"
   languageName: unknown
