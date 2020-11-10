@@ -15,7 +15,7 @@ import { base64Decode, createKeyMulti } from '@polkadot/util-crypto';
 import env from './observable/development';
 import Base from './Base';
 import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
-import keyringOption from './options';
+import { KeyringOption } from './options';
 
 const RECENT_EXPIRY = 24 * 60 * 60;
 
@@ -23,6 +23,8 @@ const RECENT_EXPIRY = 24 * 60 * 60;
 // Chain determination occurs outside of Keyring. Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
 export class Keyring extends Base implements KeyringStruct {
+  public readonly keyringOption = new KeyringOption();
+
   #stores = {
     account: (): AddressSubject => this.accounts,
     address: (): AddressSubject => this.addresses,
@@ -277,7 +279,7 @@ export class Keyring extends Base implements KeyringStruct {
       }
     });
 
-    keyringOption.init(this);
+    this.keyringOption.init(this);
   }
 
   public restoreAccount (json: KeyringPair$Json, password: string): KeyringPair {
