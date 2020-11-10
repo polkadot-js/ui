@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-keyring",
-  "version": "0.62.2-8",
+  "version": "0.62.2-9",
   "main": "index.js",
   "module": "esm/index.js",
   "sideEffects": false,
@@ -12,8 +12,8 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@polkadot/keyring": "^4.0.2-11",
-    "@polkadot/ledger": "^0.62.2-8",
-    "@polkadot/ui-settings": "0.62.2-8",
+    "@polkadot/ledger": "^0.62.2-9",
+    "@polkadot/ui-settings": "0.62.2-9",
     "@polkadot/util": "^4.0.2-11",
     "mkdirp": "^1.0.4",
     "rxjs": "^6.6.3",
