@@ -11,33 +11,20 @@
   ],
   "contributors": [],
   "license": "Apache-2.0",
-  "browser": {
-    "./ledger/transportsNode": "./ledger/transportsEmpty"
-  },
-  "react-native": {
-    "./ledger/transportsNode": "./ledger/transportsEmpty",
-    "./ledger/transportsWeb": "./ledger/transportsEmpty"
-  },
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "@ledgerhq/hw-transport-webusb": "^5.28.0",
     "@polkadot/keyring": "^4.0.2-8",
+    "@polkadot/ledger": "^0.62.2-4",
     "@polkadot/ui-settings": "0.62.2-4",
     "@polkadot/util": "^4.0.2-8",
-    "@zondax/ledger-polkadot": "^0.11.0",
     "mkdirp": "^1.0.4",
     "rxjs": "^6.6.3",
     "store": "^2.0.12"
   },
   "devDependencies": {
     "@polkadot/types": "^2.6.2-4",
-    "@types/ledgerhq__hw-transport-node-hid": "^4.22.2",
-    "@types/ledgerhq__hw-transport-webusb": "^4.70.1",
     "@types/mkdirp": "^1.0.1",
     "@types/store": "^2.0.2"
-  },
-  "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^5.28.0"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",

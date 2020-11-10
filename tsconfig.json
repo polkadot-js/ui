@@ -7,6 +7,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@polkadot/ledger": [ "packages/ledger/src" ],
+      "@polkadot/ledger/*": [ "packages/ledger/src/*" ],
+      "@polkadot/ledger-transports": [ "packages/ledger-transports/src" ],
+      "@polkadot/ledger-transports/*": [ "packages/ledger-transports/src/*" ],
       "@polkadot/react-identicon": [ "packages/react-identicon/src" ],
       "@polkadot/react-identicon/*": [ "packages/react-identicon/src/*" ],
       "@polkadot/react-qr": [ "packages/react-qr/src" ],
