@@ -3,7 +3,6 @@
   "version": "0.62.2-8",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
-  "module": "esm/index.js",
   "sideEffects": false,
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],

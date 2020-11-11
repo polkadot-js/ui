@@ -3,7 +3,6 @@
   "version": "0.62.2-8",
   "description": "Renders an SVG picture representing an address",
   "main": "index.js",
-  "module": "esm/index.js",
   "sideEffects": false,
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],

@@ -5,7 +5,6 @@
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
   "main": "index.js",
-  "module": "esm/index.js",
   "sideEffects": false,
   "license": "Apache-2.0",
   "dependencies": {
