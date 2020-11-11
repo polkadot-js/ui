@@ -275,7 +275,11 @@ export class Keyring extends Base implements KeyringStruct {
 
     injected.forEach((account): void => {
       if (this.allowGenesis(account)) {
-        this.loadInjected(account.address, account.meta);
+        try {
+          this.loadInjected(account.address, account.meta);
+        } catch (error) {
+          console.warn(`Failed loading ${account.address}`);
+        }
       }
     });
 
