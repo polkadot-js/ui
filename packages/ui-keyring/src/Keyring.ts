@@ -261,14 +261,18 @@ export class Keyring extends Base implements KeyringStruct {
 
     this._store.all((key: string, json: KeyringJson): void => {
       if (options.filter ? options.filter(json) : true) {
-        if (this.allowGenesis(json)) {
-          if (accountRegex.test(key)) {
-            this.loadAccount(json, key);
-          } else if (addressRegex.test(key)) {
-            this.loadAddress(json, key);
-          } else if (contractRegex.test(key)) {
-            this.loadContract(json, key);
+        try {
+          if (this.allowGenesis(json)) {
+            if (accountRegex.test(key)) {
+              this.loadAccount(json, key);
+            } else if (addressRegex.test(key)) {
+              this.loadAddress(json, key);
+            } else if (contractRegex.test(key)) {
+              this.loadContract(json, key);
+            }
           }
+        } catch (error) {
+          // ignore
         }
       }
     });
@@ -278,7 +282,7 @@ export class Keyring extends Base implements KeyringStruct {
         try {
           this.loadInjected(account.address, account.meta);
         } catch (error) {
-          console.warn(`Failed loading ${account.address}`);
+          // ignore
         }
       }
     });
