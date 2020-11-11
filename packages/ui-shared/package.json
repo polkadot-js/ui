@@ -3,7 +3,6 @@
   "version": "0.62.2-9",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
-  "module": "esm/index.js",
   "sideEffects": false,
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
@@ -17,8 +16,8 @@
     "@polkadot/util-crypto": "*"
   },
   "devDependencies": {
-    "@polkadot/util": "^4.0.2-11",
-    "@polkadot/util-crypto": "^4.0.2-11",
+    "@polkadot/util": "^4.0.2-12",
+    "@polkadot/util-crypto": "^4.0.2-12",
     "@types/color": "^3.0.1",
     "@types/xmlserializer": "^0.6.1"
   }
