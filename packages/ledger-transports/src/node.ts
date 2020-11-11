@@ -4,7 +4,7 @@
 import { TransportDef } from './types';
 
 import Transport from '@ledgerhq/hw-transport';
-import LedgerHid from '@ledgerhq/hw-transport-node-hid';
+import LedgerHid from '@ledgerhq/hw-transport-node-hid-singleton';
 
 const transports: TransportDef[] = [
   {
