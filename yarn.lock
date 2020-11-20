@@ -2128,7 +2128,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/ledger-transports@0.62.2-12, @polkadot/ledger-transports@workspace:packages/ledger-transports":
+"@polkadot/ledger-transports@0.62.2-13, @polkadot/ledger-transports@workspace:packages/ledger-transports":
   version: 0.0.0-use.local
   resolution: "@polkadot/ledger-transports@workspace:packages/ledger-transports"
   dependencies:
@@ -2144,12 +2144,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ledger@^0.62.2-12, @polkadot/ledger@workspace:packages/ledger":
+"@polkadot/ledger@^0.62.2-13, @polkadot/ledger@workspace:packages/ledger":
   version: 0.0.0-use.local
   resolution: "@polkadot/ledger@workspace:packages/ledger"
   dependencies:
     "@babel/runtime": ^7.12.5
-    "@polkadot/ledger-transports": 0.62.2-12
+    "@polkadot/ledger-transports": 0.62.2-13
     "@polkadot/types": ^2.7.2-3
     "@polkadot/util": ^4.1.2-2
     "@zondax/ledger-polkadot": ^0.11.0
@@ -2187,8 +2187,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.12.5
     "@polkadot/keyring": ^4.1.2-2
-    "@polkadot/ui-settings": 0.62.2-12
-    "@polkadot/ui-shared": 0.62.2-12
+    "@polkadot/ui-settings": 0.62.2-13
+    "@polkadot/ui-shared": 0.62.2-13
     "@polkadot/util": ^4.1.2-2
     "@polkadot/util-crypto": ^4.1.2-2
     "@types/react-copy-to-clipboard": ^4.3.0
@@ -2232,12 +2232,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/reactnative-identicon@0.62.2-12, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
+"@polkadot/reactnative-identicon@0.62.2-13, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
     "@babel/runtime": ^7.12.5
-    "@polkadot/ui-shared": 0.62.2-12
+    "@polkadot/ui-shared": 0.62.2-13
     "@polkadot/util": ^4.1.2-2
     "@polkadot/util-crypto": ^4.1.2-2
     "@types/react-native": ^0.63.35
@@ -2295,15 +2295,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-keyring@0.62.2-12, @polkadot/ui-keyring@workspace:packages/ui-keyring":
+"@polkadot/ui-keyring@0.62.2-13, @polkadot/ui-keyring@workspace:packages/ui-keyring":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
     "@babel/runtime": ^7.12.5
     "@polkadot/keyring": ^4.1.2-2
-    "@polkadot/ledger": ^0.62.2-12
+    "@polkadot/ledger": ^0.62.2-13
     "@polkadot/types": ^2.7.2-3
-    "@polkadot/ui-settings": 0.62.2-12
+    "@polkadot/ui-settings": 0.62.2-13
     "@polkadot/util": ^4.1.2-2
     "@types/mkdirp": ^1.0.1
     "@types/store": ^2.0.2
@@ -2317,7 +2317,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@0.62.2-12, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@0.62.2-13, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
@@ -2333,7 +2333,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@0.62.2-12, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@0.62.2-13, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
@@ -2394,7 +2394,7 @@ __metadata:
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
     "@babel/runtime": ^7.12.5
-    "@polkadot/ui-shared": 0.62.2-12
+    "@polkadot/ui-shared": 0.62.2-13
     "@polkadot/util": ^4.1.2-2
     "@polkadot/util-crypto": ^4.1.2-2
     jdenticon: 2.2.0
@@ -6919,9 +6919,9 @@ __metadata:
     "@babel/core": ^7.12.3
     "@babel/runtime": ^7.12.5
     "@polkadot/keyring": ^4.1.2-2
-    "@polkadot/reactnative-identicon": 0.62.2-12
-    "@polkadot/ui-keyring": 0.62.2-12
-    "@polkadot/ui-settings": 0.62.2-12
+    "@polkadot/reactnative-identicon": 0.62.2-13
+    "@polkadot/ui-keyring": 0.62.2-13
+    "@polkadot/ui-settings": 0.62.2-13
     "@polkadot/util": ^4.1.2-2
     "@polkadot/util-crypto": ^4.1.2-2
     "@react-native-community/async-storage": ^1.12.1
