@@ -11,14 +11,14 @@
   "react-native": "react-native.js",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "@ledgerhq/hw-transport-webusb": "^5.28.0"
+    "@ledgerhq/hw-transport-webusb": "^5.30.0"
   },
   "devDependencies": {
-    "@polkadot/types": "^2.6.2-7",
+    "@polkadot/types": "^2.7.2-3",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.2",
     "@types/ledgerhq__hw-transport-webusb": "^4.70.1"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid-singleton": "^5.28.0"
+    "@ledgerhq/hw-transport-node-hid-singleton": "^5.30.0"
   }
 }
