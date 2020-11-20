@@ -11,11 +11,11 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@polkadot/ledger-transports": "0.62.2-12",
-    "@polkadot/util": "^4.0.2-12",
+    "@polkadot/util": "^4.1.2-2",
     "@zondax/ledger-polkadot": "^0.11.0"
   },
   "devDependencies": {
-    "@polkadot/types": "^2.6.2-7"
+    "@polkadot/types": "^2.7.2-3"
   },
   "peerDependencies": {
     "@polkadot/util": "*"
