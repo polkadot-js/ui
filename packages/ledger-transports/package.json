@@ -14,7 +14,7 @@
     "@ledgerhq/hw-transport-webusb": "^5.30.0"
   },
   "devDependencies": {
-    "@polkadot/types": "^2.7.2-3",
+    "@polkadot/types": "^2.8.2-0",
     "@types/ledgerhq__hw-transport-node-hid": "^4.22.2",
     "@types/ledgerhq__hw-transport-webusb": "^4.70.1"
   },
