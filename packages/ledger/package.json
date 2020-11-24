@@ -14,9 +14,6 @@
     "@polkadot/util": "^4.2.1",
     "@zondax/ledger-polkadot": "^0.11.0"
   },
-  "devDependencies": {
-    "@polkadot/types": "^2.8.2-0"
-  },
   "peerDependencies": {
     "@polkadot/util": "*"
   }
