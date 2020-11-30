@@ -29,7 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.8",
     "@babel/runtime": "^7.12.5",
-    "@polkadot/dev": "^0.60.4",
+    "@polkadot/dev": "^0.60.5",
     "@polkadot/ts": "^0.3.55",
     "@types/jest": "^26.0.15",
     "babel-plugin-transform-vue-template": "^0.4.2",
