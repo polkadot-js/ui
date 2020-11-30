@@ -18,6 +18,6 @@
     "@types/ledgerhq__hw-transport-webusb": "^4.70.1"
   },
   "optionalDependencies": {
-    "@ledgerhq/hw-transport-node-hid-singleton": "^5.30.0"
+    "@ledgerhq/hw-transport-node-hid-singleton": "^5.31.1"
   }
 }

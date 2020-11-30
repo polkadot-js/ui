@@ -27,7 +27,7 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.8",
+    "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@polkadot/dev": "^0.60.5",
     "@polkadot/ts": "^0.3.55",

@@ -49,7 +49,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.0.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.12.8, @babel/core@npm:^7.12.9, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.0.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.12.9, @babel/core@npm:^7.7.5":
   version: 7.12.9
   resolution: "@babel/core@npm:7.12.9"
   dependencies:
@@ -1911,32 +1911,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ledgerhq/hw-transport-node-hid-noevents@npm:^5.30.0":
-  version: 5.30.0
-  resolution: "@ledgerhq/hw-transport-node-hid-noevents@npm:5.30.0"
+"@ledgerhq/hw-transport-node-hid-noevents@npm:^5.31.1":
+  version: 5.31.1
+  resolution: "@ledgerhq/hw-transport-node-hid-noevents@npm:5.31.1"
   dependencies:
     "@ledgerhq/devices": ^5.30.0
     "@ledgerhq/errors": ^5.30.0
     "@ledgerhq/hw-transport": ^5.30.0
     "@ledgerhq/logs": ^5.30.0
     node-hid: 1.3.0
-  checksum: 49349c7871b1f7e5cbc308b4c721be7377b452c1fca8e45f2d0e7c01e59833d3580a8f0c36caf1b86ed432cdf36dfca34699763577e978c5415b32f5c7346676
+  checksum: 1b1937e0218f760a62bdc14533855b4fdebd929e650f5a063d0f29207d43cb3b5b59c9c159db15e7ca74077a56efdf5f96ebec3e46ff41dcd90a4669818b87c8
   languageName: node
   linkType: hard
 
-"@ledgerhq/hw-transport-node-hid-singleton@npm:^5.30.0":
-  version: 5.30.0
-  resolution: "@ledgerhq/hw-transport-node-hid-singleton@npm:5.30.0"
+"@ledgerhq/hw-transport-node-hid-singleton@npm:^5.31.1":
+  version: 5.31.1
+  resolution: "@ledgerhq/hw-transport-node-hid-singleton@npm:5.31.1"
   dependencies:
     "@ledgerhq/devices": ^5.30.0
     "@ledgerhq/errors": ^5.30.0
     "@ledgerhq/hw-transport": ^5.30.0
-    "@ledgerhq/hw-transport-node-hid-noevents": ^5.30.0
+    "@ledgerhq/hw-transport-node-hid-noevents": ^5.31.1
     "@ledgerhq/logs": ^5.30.0
     lodash: ^4.17.20
     node-hid: 1.3.0
     usb-detection: ^4.10.0
-  checksum: 87c8dcc5c342490a785c58c199631ea1c57b77e5fed5d9e604363dee69a5e312efba4df5a45b64abd33714f2dfbd56dcfd8788377cc4802ed714b13f9955e36e
+  checksum: 1cf9b4d1832aca821325d9fe30faddf024531f51ab67f362d58cd1bc2bb7fda8e59e1ebaa4cd449d3378a162ea195a08fa46f2cf12365ea79dd4c9e1a0ee9f79
   languageName: node
   linkType: hard
 
@@ -2143,7 +2143,7 @@ __metadata:
   resolution: "@polkadot/ledger-transports@workspace:packages/ledger-transports"
   dependencies:
     "@babel/runtime": ^7.12.5
-    "@ledgerhq/hw-transport-node-hid-singleton": ^5.30.0
+    "@ledgerhq/hw-transport-node-hid-singleton": ^5.31.1
     "@ledgerhq/hw-transport-webusb": ^5.30.0
     "@types/ledgerhq__hw-transport-node-hid": ^4.22.2
     "@types/ledgerhq__hw-transport-webusb": ^4.70.1
@@ -2200,7 +2200,7 @@ __metadata:
     "@polkadot/util": ^4.2.1
     "@polkadot/util-crypto": ^4.2.1
     "@types/react-copy-to-clipboard": ^4.3.0
-    "@types/react-dom": ^16.9.10
+    "@types/react-dom": ^17.0.0
     "@types/styled-components": ^5.1.4
     color: ^3.1.3
     ethereum-blockies-base64: ^1.0.2
@@ -2940,12 +2940,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^16.9.10":
-  version: 16.9.10
-  resolution: "@types/react-dom@npm:16.9.10"
+"@types/react-dom@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "@types/react-dom@npm:17.0.0"
   dependencies:
-    "@types/react": ^16
-  checksum: 910dd9894ba67438f8c80e71dc4f2ef1c15e2d62145309679dc3b2c0a6f2c4e5a611566a15174e4a7891f9fb6149f21a0a393488716665ff20f10b1181745964
+    "@types/react": "*"
+  checksum: 7ca9351b6c2523327cd7afe40082a37034898f65e9d86700236682efed910ba7c9cec10e9a3b829aa7b804b18791a28743ce468fcb42e9a788bfc33b84137e45
   languageName: node
   linkType: hard
 
@@ -2967,16 +2967,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-test-renderer@npm:16.9.4":
-  version: 16.9.4
-  resolution: "@types/react-test-renderer@npm:16.9.4"
+"@types/react-test-renderer@npm:17.0.0":
+  version: 17.0.0
+  resolution: "@types/react-test-renderer@npm:17.0.0"
   dependencies:
-    "@types/react": ^16
-  checksum: ce75c5e51594e673391cd8d37523e95e2735703ab54763ce17d8c6bbed19a9ab8f14d5f3c75f2b99762ac33d92dd5aa0087add8e209f678619fdfb307e226b8a
+    "@types/react": "*"
+  checksum: 4931f75cfd17a43d257e9b6a021d1b01f8c859e8ee76353ab881cc3a8f6842c238b68ed643cfd69998193a16536b31f9dae329d8beca1e7c8425f6663f853750
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^16":
+"@types/react@npm:*":
   version: 16.14.2
   resolution: "@types/react@npm:16.14.2"
   dependencies:
@@ -6924,7 +6924,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "exampleReactNative@workspace:packages/exampleReactNative"
   dependencies:
-    "@babel/core": ^7.12.8
+    "@babel/core": ^7.12.9
     "@babel/runtime": ^7.12.5
     "@polkadot/keyring": ^4.2.1
     "@polkadot/reactnative-identicon": 0.62.2-15
@@ -6934,7 +6934,7 @@ __metadata:
     "@polkadot/util-crypto": ^4.2.1
     "@react-native-community/async-storage": ^1.12.1
     "@react-native-community/cli-platform-ios": ^4.13.0
-    "@types/react-test-renderer": 16.9.4
+    "@types/react-test-renderer": 17.0.0
     babel-jest: ^26.6.3
     fast-text-encoding: ^1.0.3
     get-yarn-workspaces: ^1.0.2
@@ -13798,7 +13798,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@babel/core": ^7.12.8
+    "@babel/core": ^7.12.9
     "@babel/runtime": ^7.12.5
     "@polkadot/dev": ^0.60.5
     "@polkadot/ts": ^0.3.55
