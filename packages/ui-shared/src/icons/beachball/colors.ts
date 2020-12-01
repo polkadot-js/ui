@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright 2016 Dan Finlay
 
-import { ColorGen, Seeder } from './types';
+import type { ColorGen, Seeder } from './types';
 
 import Color from 'color';
 

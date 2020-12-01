@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright 2016 Dan Finlay
 
-import { Options } from '../types';
+import type { Options } from '../types';
 
 import colors from './colors';
 import newContainer from './container';

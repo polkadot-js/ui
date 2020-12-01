@@ -1,7 +1,7 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { KeyringSectionOption } from './types';
+import type { KeyringSectionOption } from './types';
 
 import { isUndefined } from '@polkadot/util';
 

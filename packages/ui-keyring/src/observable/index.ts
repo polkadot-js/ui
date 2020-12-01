@@ -1,7 +1,7 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { SubjectInfo } from './types';
+import type { SubjectInfo } from './types';
 
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';

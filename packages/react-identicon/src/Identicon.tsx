@@ -1,8 +1,8 @@
 // Copyright 2017-2020 @polkadot/react-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { Prefix } from '@polkadot/util-crypto/address/types';
-import { IdentityProps as Props, Props as ComponentProps } from './types';
+import type { Prefix } from '@polkadot/util-crypto/address/types';
+import type { IdentityProps as Props, Props as ComponentProps } from './types';
 
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';

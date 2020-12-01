@@ -1,9 +1,9 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { KeyringStruct } from '../types';
-import { SingleAddress } from '../observable/types';
-import { KeyringOptions, KeyringOptionInstance, KeyringSectionOption, KeyringSectionOptions } from './types';
+import type { KeyringStruct } from '../types';
+import type { SingleAddress } from '../observable/types';
+import type { KeyringOptions, KeyringOptionInstance, KeyringSectionOption, KeyringSectionOptions } from './types';
 
 import { BehaviorSubject } from 'rxjs';
 import { assert } from '@polkadot/util';

@@ -15,8 +15,8 @@
 //   - Move constants to file-level
 //   - Overall it is now just a static component, expecting an address as an input value
 
-import { Circle } from '@polkadot/ui-shared/icons/types';
-import { Props } from '../types';
+import type { Circle } from '@polkadot/ui-shared/icons/types';
+import type { Props } from '../types';
 
 import React from 'react';
 import { polkadotIcon } from '@polkadot/ui-shared';

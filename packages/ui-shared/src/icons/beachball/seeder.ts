@@ -1,7 +1,7 @@
 // Copyright 2017-2020 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { Seeder } from './types';
+import type { Seeder } from './types';
 
 import { isU8a, stringToU8a } from '@polkadot/util';
 
