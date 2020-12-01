@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-keyring",
-  "version": "0.62.2-17",
+  "version": "0.62.2-18",
   "main": "index.js",
   "sideEffects": false,
   "repository": "github:polkadot-js/apps",
@@ -11,8 +11,8 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@polkadot/keyring": "^4.2.1",
-    "@polkadot/ledger": "^0.62.2-17",
-    "@polkadot/ui-settings": "0.62.2-17",
+    "@polkadot/ledger": "^0.62.2-18",
+    "@polkadot/ui-settings": "0.62.2-18",
     "@polkadot/util": "^4.2.1",
     "mkdirp": "^1.0.4",
     "rxjs": "^6.6.3",
