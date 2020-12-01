@@ -1,7 +1,7 @@
 // Copyright 2017-2020 @polkadot/example-vue authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { Prefix } from '@polkadot/util-crypto/address/types';
+import type { Prefix } from '@polkadot/util-crypto/address/types';
 
 import Vue, { VNode } from 'vue';
 import keyring from '@polkadot/ui-keyring';

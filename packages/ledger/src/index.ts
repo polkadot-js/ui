@@ -1,8 +1,8 @@
 // Copyright 2017-2020 @polkadot/ledger authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import Transport from '@ledgerhq/hw-transport';
-import { AccountOptions, LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
+import type Transport from '@ledgerhq/hw-transport';
+import type { AccountOptions, LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
 
 import { ResponseBase, SubstrateApp, newKusamaApp, newPolkadotApp } from '@zondax/ledger-polkadot';
 import transports from '@polkadot/ledger-transports';

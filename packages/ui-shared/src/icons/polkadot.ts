@@ -6,7 +6,7 @@
 //
 // https://github.com/paritytech/oo7/blob/251ba2b7c45503b68eab4320c270b5afa9bccb60/packages/polkadot-identicon/src/index.jsx
 
-import { Circle, Options } from './types';
+import type { Circle, Options } from './types';
 
 import { blake2AsU8a, decodeAddress } from '@polkadot/util-crypto';
 

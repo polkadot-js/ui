@@ -1,9 +1,9 @@
 // Copyright 2017-2020 @polkadot/ledger authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { TransportDef } from './types';
+import type Transport from '@ledgerhq/hw-transport';
+import type { TransportDef } from './types';
 
-import Transport from '@ledgerhq/hw-transport';
 import LedgerWebUSB from '@ledgerhq/hw-transport-webusb';
 
 const transports: TransportDef[] = [

@@ -1,8 +1,8 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { SubjectInfo, AddressSubject, SingleAddress } from './types';
-import { KeyringJson, KeyringStore } from '../types';
+import type { SubjectInfo, AddressSubject, SingleAddress } from './types';
+import type { KeyringJson, KeyringStore } from '../types';
 
 import { BehaviorSubject } from 'rxjs';
 

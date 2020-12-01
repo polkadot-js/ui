@@ -1,10 +1,10 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { Hash } from '@polkadot/types/interfaces';
-import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
-import { KeypairType } from '@polkadot/util-crypto/types';
-import { AddressSubject, SingleAddress } from './observable/types';
+import type { Hash } from '@polkadot/types/interfaces';
+import type { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
+import type { KeypairType } from '@polkadot/util-crypto/types';
+import type { AddressSubject, SingleAddress } from './observable/types';
 
 export interface ContractMeta {
   abi: string;

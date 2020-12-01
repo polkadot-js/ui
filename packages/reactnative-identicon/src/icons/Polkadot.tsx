@@ -1,8 +1,8 @@
 // Copyright 2018-2020 @polkadot/reactnative-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { Circle as CircleType } from '@polkadot/ui-shared/icons/types';
-import { Props } from '../types';
+import type { Circle as CircleType } from '@polkadot/ui-shared/icons/types';
+import type { Props } from '../types';
 
 import React from 'react';
 import { View } from 'react-native';

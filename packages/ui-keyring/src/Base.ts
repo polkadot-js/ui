@@ -1,10 +1,10 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { KeyringInstance, KeyringPair } from '@polkadot/keyring/types';
-import { Prefix } from '@polkadot/util-crypto/address/types';
-import { AddressSubject } from './observable/types';
-import { KeyringOptions, KeyringStore } from './types';
+import type { KeyringInstance, KeyringPair } from '@polkadot/keyring/types';
+import type { Prefix } from '@polkadot/util-crypto/address/types';
+import type { AddressSubject } from './observable/types';
+import type { KeyringOptions, KeyringStore } from './types';
 
 import { createTestKeyring } from '@polkadot/keyring/testing';
 import { isBoolean, isString } from '@polkadot/util';

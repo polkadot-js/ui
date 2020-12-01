@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright 2016 Dan Finlay
 
-import { Seeder } from '../types';
+import type { Seeder } from '../types';
 
 import newRect from '../svg/rect';
 import { SHAPE_COUNT } from '../defaults';
