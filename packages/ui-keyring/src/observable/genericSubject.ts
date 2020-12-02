@@ -1,6 +1,7 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { SubjectInfo, AddressSubject, SingleAddress } from './types';
 import type { KeyringJson, KeyringStore } from '../types';
 
@@ -32,12 +33,13 @@ export default function genericSubject (keyCreator: (address: string) => string,
   development.subject.subscribe(next);
 
   return {
-    add: (store: KeyringStore, address: string, json: KeyringJson): SingleAddress => {
+    add: (store: KeyringStore, address: string, json: KeyringJson, type?: KeypairType): SingleAddress => {
       current = { ...current };
 
       current[address] = {
         json: { ...json, address },
-        option: createOptionItem(address, json.meta.name)
+        option: createOptionItem(address, json.meta.name),
+        type
       };
 
       // we do not store dev accounts, injected or hardware (the latter two are external/transient)

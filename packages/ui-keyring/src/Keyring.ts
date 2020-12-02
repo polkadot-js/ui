@@ -95,7 +95,7 @@ export class Keyring extends Base implements KeyringStruct {
     json.meta.whenEdited = Date.now();
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this._store, pair.address, json, pair.type);
   }
 
   public forgetAccount (address: string): void {
@@ -180,7 +180,7 @@ export class Keyring extends Base implements KeyringStruct {
       // FIXME Just for the transition period (ignoreChecksum)
       const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
 
-      this.accounts.add(this._store, pair.address, json);
+      this.accounts.add(this._store, pair.address, json, pair.type);
     }
 
     const [, hexAddr] = key.split(':');
@@ -237,7 +237,7 @@ export class Keyring extends Base implements KeyringStruct {
     };
     const pair = this.keyring.addFromAddress(address, json.meta);
 
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this._store, pair.address, json, pair.type);
   }
 
   private allowGenesis (json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
@@ -315,7 +315,7 @@ export class Keyring extends Base implements KeyringStruct {
     const json = pair.toJson(password);
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this._store, pair.address, json, pair.type);
 
     return json;
   }
@@ -327,7 +327,7 @@ export class Keyring extends Base implements KeyringStruct {
       pair.setMeta(meta);
       json.meta = pair.meta;
 
-      this.accounts.add(this._store, address, json);
+      this.accounts.add(this._store, address, json, pair.type);
     });
   }
 
