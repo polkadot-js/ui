@@ -119,8 +119,10 @@ export default class Base {
   protected addAccountPairs (): void {
     this.keyring
       .getPairs()
-      .forEach(({ address, meta }: KeyringPair): void => {
-        this.accounts.add(this._store, address, { address, meta });
+      .forEach((pair: KeyringPair): void => {
+        const { address, encoding, meta } = pair.toJson();
+
+        this.accounts.add(this._store, address, { address, encoding, meta });
       });
   }
 

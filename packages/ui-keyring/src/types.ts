@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Hash } from '@polkadot/types/interfaces';
-import type { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
+import type { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringPair$JsonEncoding, KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
 
@@ -29,6 +29,7 @@ export interface KeyringJson$Meta {
 export interface KeyringJson {
   address: string;
   meta: KeyringJson$Meta;
+  encoding: KeyringPair$JsonEncoding;
 }
 
 export interface KeyringStore {

@@ -239,7 +239,7 @@ export class Keyring extends Base implements KeyringStruct {
     };
     const pair = this.keyring.addFromAddress(address, json.meta);
 
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this._store, pair.address, pair.toJson());
   }
 
   private allowGenesis (json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
