@@ -1,13 +1,12 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { KeyringPair$Json } from '@polkadot/keyring/types';
 import type { BehaviorSubject } from 'rxjs';
 import type { KeyringSectionOption } from '../options/types';
 import type { KeyringJson, KeyringStore } from '../types';
 
 export interface SingleAddress {
-  json: KeyringJson | KeyringPair$Json;
+  json: KeyringJson;
   option: KeyringSectionOption;
 }
 

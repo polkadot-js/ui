@@ -1,7 +1,7 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { KeyringJson$Meta, KeyringStruct } from '../types';
+import type { KeyringStruct } from '../types';
 import type { SingleAddress } from '../observable/types';
 import type { KeyringOptions, KeyringOptionInstance, KeyringSectionOption, KeyringSectionOptions } from './types';
 
@@ -20,11 +20,8 @@ const sortByName = (a: SingleAddress, b: SingleAddress): number => {
 };
 
 const sortByCreated = (a: SingleAddress, b: SingleAddress): number => {
-  const aMeta = a.json.meta as KeyringJson$Meta;
-  const bMeta = b.json.meta as KeyringJson$Meta;
-
-  const valueA = aMeta.whenCreated || 0;
-  const valueB = bMeta.whenCreated || 0;
+  const valueA = a.json.meta.whenCreated || 0;
+  const valueB = b.json.meta.whenCreated || 0;
 
   if (valueA < valueB) {
     return 1;

@@ -160,11 +160,9 @@ export class Keyring extends Base implements KeyringStruct {
 
     return Object
       .entries(available)
-      .filter(([, { json }]): boolean => {
-        const { contract } = json.meta as KeyringJson$Meta;
-
-        return !!contract && contract.genesisHash === this.genesisHash;
-      })
+      .filter(([, { json: { meta: { contract } } }]): boolean =>
+        !!contract && contract.genesisHash === this.genesisHash
+      )
       .map(([address]): KeyringAddress => this.getContract(address) as KeyringAddress);
   }
 
