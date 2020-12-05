@@ -34,8 +34,8 @@ const TIMER_INC = 500;
 function getDataUrl (value: Uint8Array): string {
   const qr = qrcode(0, 'M');
 
-  // HACK See out qrcode stringToBytes override as used internally. This
-  // will only work for the case where we actuall pass `Bytes` in here
+  // HACK See our qrcode stringToBytes override as used internally. This
+  // will only work for the case where we actually pass `Bytes` in here
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   qr.addData(value as any, 'Byte');
   qr.make();
