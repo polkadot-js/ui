@@ -1,12 +1,13 @@
 // Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
+import type { KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
 import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import BN from 'bn.js';
+
 import { createPair } from '@polkadot/keyring/pair';
 import chains from '@polkadot/ui-settings/defaults/chains';
 import { bnToBn, hexToU8a, isHex, isString, u8aSorted } from '@polkadot/util';
@@ -14,7 +15,7 @@ import { base64Decode, createKeyMulti } from '@polkadot/util-crypto';
 
 import env from './observable/development';
 import Base from './Base';
-import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
+import { accountKey, accountRegex, addressKey, addressRegex, contractKey, contractRegex } from './defaults';
 import { KeyringOption } from './options';
 
 const RECENT_EXPIRY = 24 * 60 * 60;

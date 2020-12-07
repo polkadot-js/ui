@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { u8aConcat, u8aToHex, u8aToString } from '@polkadot/util';
-
-import { createAddressPayload, createSignPayload, createFrames, decodeString, encodeNumber, encodeString } from './util';
 import { randomAsU8a } from '@polkadot/util-crypto';
+
+import { createAddressPayload, createFrames, createSignPayload, decodeString, encodeNumber, encodeString } from './util';
 
 describe('util', (): void => {
   describe('Uint8Array <-> string', (): void => {

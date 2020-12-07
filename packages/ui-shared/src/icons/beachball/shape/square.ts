@@ -1,11 +1,12 @@
 // Copyright 2017-2020 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2016 Dan Finlay
 
 import type { Seeder } from '../types';
 
-import newRect from '../svg/rect';
 import { SHAPE_COUNT } from '../defaults';
+import newRect from '../svg/rect';
 
 export default function square (seeder: Seeder, fill: string, diameter: number, count: number): Element {
   const center = diameter / 2;

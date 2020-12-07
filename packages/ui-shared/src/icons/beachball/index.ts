@@ -1,15 +1,16 @@
 // Copyright 2017-2020 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2016 Dan Finlay
 
 import type { Options } from '../types';
 
-import colors from './colors';
-import newContainer from './container';
-import newSeeder from './seeder';
 import newShape from './shape/circle';
 import newElement from './svg/element';
+import colors from './colors';
+import newContainer from './container';
 import { SHAPE_COUNT } from './defaults';
+import newSeeder from './seeder';
 
 export default function generate (seed: string | Uint8Array, { size = 256 }: Options, className = '', style?: { [index: string]: string }): HTMLElement {
   const seeder = newSeeder(seed);

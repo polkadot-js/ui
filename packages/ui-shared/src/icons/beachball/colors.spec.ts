@@ -3,8 +3,8 @@
 
 import type { ColorGen } from './types';
 
-import newSeeder from './seeder';
 import newColors from './colors';
+import newSeeder from './seeder';
 
 describe('colors', (): void => {
   let colors: ColorGen;

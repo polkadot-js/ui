@@ -3,6 +3,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { encodeAddress, randomAsU8a } from '@polkadot/util-crypto';
 
 import IdentityIcon from '.';

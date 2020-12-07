@@ -7,6 +7,7 @@ import type { IdentityProps as Props, Props as ComponentProps } from './types';
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
+
 import settings, { ICON_DEFAULT_HOST } from '@polkadot/ui-settings';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress, ethereumEncode } from '@polkadot/util-crypto';

@@ -7,6 +7,7 @@ import type { Props } from '../types';
 import React from 'react';
 import { View } from 'react-native';
 import Svg, { Circle as SvgCircle } from 'react-native-svg';
+
 import { polkadotIcon } from '@polkadot/ui-shared';
 
 function renderCircle ({ cx, cy, fill, r }: CircleType, key: number): React.ReactNode {

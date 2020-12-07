@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useCallback } from 'react';
+
 import { assert } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 

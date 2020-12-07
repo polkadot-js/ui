@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import Vue from 'vue';
+
 import { beachballIcon } from '@polkadot/ui-shared';
 
 interface Data {

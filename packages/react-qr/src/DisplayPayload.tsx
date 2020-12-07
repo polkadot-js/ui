@@ -3,8 +3,8 @@
 
 import React, { useMemo } from 'react';
 
-import { createSignPayload } from './util';
 import QrDisplay from './Display';
+import { createSignPayload } from './util';
 
 interface Props {
   address: string;

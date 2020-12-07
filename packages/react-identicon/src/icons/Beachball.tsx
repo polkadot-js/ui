@@ -4,6 +4,7 @@
 import type { Props } from '../types';
 
 import React, { useCallback } from 'react';
+
 import { beachballIcon } from '@polkadot/ui-shared';
 
 function Beachball ({ address, className = '', size, style }: Props): React.ReactElement<Props> {
