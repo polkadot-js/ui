@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import Vue from 'vue';
+
 import { polkadotIcon } from '@polkadot/ui-shared';
 
 interface Data {

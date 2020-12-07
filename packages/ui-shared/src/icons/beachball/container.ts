@@ -1,5 +1,6 @@
 // Copyright 2017-2020 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2016 Dan Finlay
 
 export default function container (diameter: number, background = 'white', className = '', _style: { [index: string]: string } = {}): HTMLElement {

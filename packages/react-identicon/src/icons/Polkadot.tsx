@@ -1,5 +1,6 @@
 // Copyright 2018-2020 @polkadot/react-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2018 Paritytech via paritytech/oo7/polkadot-identicon
 
 // This has been converted from the original version that can be found at
@@ -19,6 +20,7 @@ import type { Circle } from '@polkadot/ui-shared/icons/types';
 import type { Props } from '../types';
 
 import React from 'react';
+
 import { polkadotIcon } from '@polkadot/ui-shared';
 
 function renderCircle ({ cx, cy, fill, r }: Circle, key: number): React.ReactNode {

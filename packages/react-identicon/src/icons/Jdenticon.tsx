@@ -3,8 +3,8 @@
 
 import type { Props } from '../types';
 
-import React from 'react';
 import jdenticon from 'jdenticon';
+import React from 'react';
 
 function Jdenticon ({ className = '', publicKey, size, style }: Props): React.ReactElement<Props> {
   return (

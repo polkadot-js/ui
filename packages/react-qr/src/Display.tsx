@@ -3,6 +3,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
+
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
 import qrcode from './qrcode';

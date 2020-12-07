@@ -4,10 +4,11 @@
 import React, { useEffect, useState } from 'react';
 import { Button, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+
 import Identicon from '@polkadot/reactnative-identicon';
 import keyring from '@polkadot/ui-keyring';
 import settings from '@polkadot/ui-settings';
-import { mnemonicGenerate, cryptoWaitReady } from '@polkadot/util-crypto';
+import { cryptoWaitReady, mnemonicGenerate } from '@polkadot/util-crypto';
 
 const styles = StyleSheet.create({
   body: {

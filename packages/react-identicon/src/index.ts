@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import Identicon from './Identicon';
+
 export * from './icons';
 
 export default Identicon;
