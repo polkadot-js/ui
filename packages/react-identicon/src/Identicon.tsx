@@ -8,7 +8,7 @@ import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 
-import settings, { ICON_DEFAULT_HOST } from '@polkadot/ui-settings';
+import { ICON_DEFAULT_HOST, settings } from '@polkadot/ui-settings';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress, ethereumEncode } from '@polkadot/util-crypto';
 
@@ -147,8 +147,8 @@ class BaseIcon extends React.PureComponent<Props, State> {
   }
 }
 
-function Identicon (props: Props): React.ReactElement<Props> {
+function Icon (props: Props): React.ReactElement<Props> {
   return <BaseIcon {...props} />;
 }
 
-export default React.memo(Identicon);
+export const Identicon = React.memo(Icon);

@@ -6,9 +6,9 @@ import type { SubjectInfo } from './types';
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import accounts from './accounts';
-import addresses from './addresses';
-import contracts from './contracts';
+import { accounts } from './accounts';
+import { addresses } from './addresses';
+import { contracts } from './contracts';
 
 interface Result {
   accounts: SubjectInfo;
@@ -16,7 +16,7 @@ interface Result {
   contracts: SubjectInfo;
 }
 
-export default combineLatest(
+export const obervableAll = combineLatest(
   accounts.subject,
   addresses.subject,
   contracts.subject

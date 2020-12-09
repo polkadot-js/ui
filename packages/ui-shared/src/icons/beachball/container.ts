@@ -3,7 +3,7 @@
 
 // Copyright 2016 Dan Finlay
 
-export default function container (diameter: number, background = 'white', className = '', _style: { [index: string]: string } = {}): HTMLElement {
+export function container (diameter: number, background = 'white', className = '', _style: { [index: string]: string } = {}): HTMLElement {
   const element = document.createElement('div');
   const style = Object.assign({
     background,

@@ -5,4 +5,4 @@ import type { TransportDef } from './types';
 
 const transports: TransportDef[] = [];
 
-export default transports;
+export { transports };

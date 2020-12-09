@@ -12,4 +12,4 @@ const qrcode: typeof _qrcode = _qrcode;
 (qrcode as any).stringToBytes = (data: Uint8Array): Uint8Array =>
   data;
 
-export default qrcode;
+export { qrcode };

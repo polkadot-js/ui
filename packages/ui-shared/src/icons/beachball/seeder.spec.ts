@@ -3,7 +3,7 @@
 
 import type { Seeder } from './types';
 
-import newSeeder from './seeder';
+import { seeder as newSeeder } from './seeder';
 
 describe('seeder', (): void => {
   let seeder: Seeder;

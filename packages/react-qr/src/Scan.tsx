@@ -54,7 +54,7 @@ function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onSc
   );
 }
 
-export default React.memo(styled(Scan)`
+export const QrScan = React.memo(styled(Scan)`
   .ui--qr-Scan {
     display: inline-block;
     height: 100%;

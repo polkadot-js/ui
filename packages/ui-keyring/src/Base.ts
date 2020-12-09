@@ -9,13 +9,13 @@ import type { KeyringOptions, KeyringStore } from './types';
 import { createTestKeyring } from '@polkadot/keyring/testing';
 import { isBoolean, isString } from '@polkadot/util';
 
-import accounts from './observable/accounts';
-import addresses from './observable/addresses';
-import contracts from './observable/contracts';
-import env from './observable/development';
-import BrowserStore from './stores/Browser'; // direct import (skip index with all)
+import { accounts } from './observable/accounts';
+import { addresses } from './observable/addresses';
+import { contracts } from './observable/contracts';
+import { env } from './observable/env';
+import { BrowserStore } from './stores/Browser'; // direct import (skip index with all)
 
-export default class Base {
+export class Base {
   #accounts: AddressSubject;
 
   #addresses: AddressSubject;

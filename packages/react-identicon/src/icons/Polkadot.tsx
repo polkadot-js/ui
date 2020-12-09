@@ -51,4 +51,4 @@ function Identicon ({ address, className = '', isAlternative = false, size, styl
   );
 }
 
-export default React.memo(Identicon);
+export const Polkadot = React.memo(Identicon);

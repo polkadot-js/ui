@@ -14,4 +14,4 @@ const transports: TransportDef[] = [
   }
 ];
 
-export default transports;
+export { transports };

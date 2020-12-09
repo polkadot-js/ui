@@ -9,4 +9,4 @@ const chains: Record <string, ChainDef> = known
   .filter(({ genesisHash }) => genesisHash.length > 1)
   .reduce((chains, { genesisHash, network }) => ({ ...chains, [network]: genesisHash }), {});
 
-export default chains;
+export { chains };

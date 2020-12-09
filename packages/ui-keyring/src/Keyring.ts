@@ -9,12 +9,12 @@ import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType,
 import BN from 'bn.js';
 
 import { createPair } from '@polkadot/keyring/pair';
-import chains from '@polkadot/ui-settings/defaults/chains';
+import { chains } from '@polkadot/ui-settings/defaults/chains';
 import { bnToBn, hexToU8a, isHex, isString, u8aSorted } from '@polkadot/util';
 import { base64Decode, createKeyMulti } from '@polkadot/util-crypto';
 
-import env from './observable/development';
-import Base from './Base';
+import { env } from './observable/env';
+import { Base } from './Base';
 import { accountKey, accountRegex, addressKey, addressRegex, contractKey, contractRegex } from './defaults';
 import { KeyringOption } from './options';
 
@@ -122,7 +122,7 @@ export class Keyring extends Base implements KeyringStruct {
     return Object
       .keys(available)
       .map((address): KeyringAddress => this.getAddress(address, 'account') as KeyringAddress)
-      .filter((account): boolean => env.isDevelopment() || account.meta.isTesting !== true);
+      .filter((account) => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
   public getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress | undefined {

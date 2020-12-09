@@ -3,8 +3,8 @@
 
 import xmlserializer from 'xmlserializer';
 
-import seeder from '../seeder';
-import circle from './circle';
+import { seeder } from '../seeder';
+import { circle } from './circle';
 
 describe('circle', (): void => {
   it('creates a circle shape', (): void => {

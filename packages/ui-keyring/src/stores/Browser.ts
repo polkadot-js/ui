@@ -5,7 +5,7 @@ import type { KeyringJson, KeyringStore } from '../types';
 
 import store from 'store';
 
-export default class BrowserStore implements KeyringStore {
+export class BrowserStore implements KeyringStore {
   public all (cb: (key: string, value: KeyringJson) => void): void {
     store.each((value: KeyringJson, key: string): void => {
       cb(key, value);

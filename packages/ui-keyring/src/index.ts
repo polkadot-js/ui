@@ -5,10 +5,10 @@ import './detectPackage';
 
 import { Keyring } from './Keyring';
 
-export { default as Ledger } from '@polkadot/ledger';
+export { Ledger } from '@polkadot/ledger';
 
 const keyring = new Keyring();
 
-export default keyring;
+export { Keyring, keyring };
 
-export { Keyring };
+export default keyring;

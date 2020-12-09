@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 
 const subject = new BehaviorSubject(false);
 
-export default {
+export const env = {
   isDevelopment: (): boolean =>
     subject.getValue(),
   set: (isDevelopment: boolean): void => {

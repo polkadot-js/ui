@@ -131,7 +131,7 @@ function getColors (address: string): string[] {
 /**
  * @description Generate a array of the circles that make up an identicon
  */
-export default function generate (address: string, { isAlternative }: Options): Circle[] {
+export function polkadotIcon (address: string, { isAlternative }: Options): Circle[] {
   const colors = getColors(address);
 
   return [OUTER_CIRCLE].concat(

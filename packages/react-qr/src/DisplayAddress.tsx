@@ -3,7 +3,7 @@
 
 import React, { useMemo } from 'react';
 
-import QrDisplay from './Display';
+import { QrDisplay } from './Display';
 import { createAddressPayload } from './util';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-function DisplayExtrinsic ({ address, className, genesisHash, size, style }: Props): React.ReactElement<Props> | null {
+function DisplayAddress ({ address, className, genesisHash, size, style }: Props): React.ReactElement<Props> | null {
   const data = useMemo(
     () => createAddressPayload(address, genesisHash),
     [address, genesisHash]
@@ -35,4 +35,4 @@ function DisplayExtrinsic ({ address, className, genesisHash, size, style }: Pro
   );
 }
 
-export default React.memo(DisplayExtrinsic);
+export const QrDisplayAddress = React.memo(DisplayAddress);

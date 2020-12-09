@@ -6,7 +6,7 @@ import type { Props } from '../types';
 import jdenticon from 'jdenticon';
 import React from 'react';
 
-function Jdenticon ({ className = '', publicKey, size, style }: Props): React.ReactElement<Props> {
+function Identicon ({ className = '', publicKey, size, style }: Props): React.ReactElement<Props> {
   return (
     <div
       className={className}
@@ -18,4 +18,4 @@ function Jdenticon ({ className = '', publicKey, size, style }: Props): React.Re
   );
 }
 
-export default React.memo(Jdenticon);
+export const Jdenticon = React.memo(Identicon);

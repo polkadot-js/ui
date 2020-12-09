@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
-import qrcode from './qrcode';
+import { qrcode } from './qrcode';
 import { createFrames, createImgSize } from './util';
 
 interface Props {
@@ -131,7 +131,7 @@ function Display ({ className, size, skipEncoding, style, value }: Props): React
   );
 }
 
-export default React.memo(styled(Display)`
+export const QrDisplay = React.memo(styled(Display)`
   .ui--qr-Display {
     height: 100%;
     width: 100%;
