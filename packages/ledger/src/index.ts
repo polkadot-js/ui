@@ -6,7 +6,7 @@ import type { AccountOptions, LedgerAddress, LedgerSignature, LedgerTypes, Ledge
 
 import { newKusamaApp, newPolkadotApp, ResponseBase, SubstrateApp } from '@zondax/ledger-polkadot';
 
-import transports from '@polkadot/ledger-transports';
+import { transports } from '@polkadot/ledger-transports';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
 
 export const LEDGER_DEFAULT_ACCOUNT = 0x80000000;
@@ -27,7 +27,7 @@ type Chain = keyof typeof APPS;
 // A very basic wrapper for a ledger app -
 //  - it connects automatically, creating an app as required
 //  - Promises return errors (instead of wrapper errors)
-export default class Ledger {
+export class Ledger {
   #app: SubstrateApp | null = null;
 
   #chain: Chain;

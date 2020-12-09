@@ -5,7 +5,7 @@ import React, { useMemo } from 'react';
 
 import { NetworkSpecsStruct } from '@polkadot/ui-settings';
 
-import QrDisplay from './Display';
+import { QrDisplay } from './Display';
 import { encodeString } from './util';
 
 interface Props {
@@ -36,4 +36,4 @@ function DisplayNetworkSpecs ({ className, networkSpecs, size, style }: Props): 
   );
 }
 
-export default React.memo(DisplayNetworkSpecs);
+export const QrNetworkSpecs = React.memo(DisplayNetworkSpecs);

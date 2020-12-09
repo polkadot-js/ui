@@ -6,9 +6,9 @@
 import type { Seeder } from '../types';
 
 import { SHAPE_COUNT } from '../defaults';
-import newRect from '../svg/rect';
+import { rect as newRect } from '../svg/rect';
 
-export default function square (seeder: Seeder, fill: string, diameter: number, count: number): Element {
+export function square (seeder: Seeder, fill: string, diameter: number, count: number): Element {
   const center = diameter / 2;
   const svg = newRect(diameter);
   const firstRot = seeder();

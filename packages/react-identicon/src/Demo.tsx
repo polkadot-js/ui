@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 
 import { encodeAddress, randomAsU8a } from '@polkadot/util-crypto';
 
-import IdentityIcon from '.';
+import { Identicon } from '.';
 
 const THEMES = ['beachball', 'polkadot', 'substrate'];
 
@@ -24,7 +24,7 @@ export default class Demo extends React.PureComponent {
       <div>
         <div>
           {identities.map((value, index): React.ReactNode => (
-            <IdentityIcon
+            <Identicon
               key={value.toString()}
               theme={THEMES[index % THEMES.length] as 'empty'}
               value={value}
@@ -33,7 +33,7 @@ export default class Demo extends React.PureComponent {
         </div>
         <div>
           {THEMES.map((theme): React.ReactNode => (
-            <IdentityIcon
+            <Identicon
               key={theme}
               theme={theme as 'empty'}
               value='5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY'

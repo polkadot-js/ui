@@ -7,11 +7,11 @@ import type { AddressSubject, SingleAddress, SubjectInfo } from './types';
 
 import { BehaviorSubject } from 'rxjs';
 
-import createOptionItem from '../options/item';
-import development from './development';
+import { createOptionItem } from '../options/item';
+import { env } from './env';
 
 function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, withTest: boolean): void {
-  const isDevMode = development.isDevelopment();
+  const isDevMode = env.isDevelopment();
   const filtered: SubjectInfo = {};
 
   Object.keys(current).forEach((key): void => {
@@ -25,12 +25,12 @@ function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, 
   subject.next(filtered);
 }
 
-export default function genericSubject (keyCreator: (address: string) => string, withTest = false): AddressSubject {
+export function genericSubject (keyCreator: (address: string) => string, withTest = false): AddressSubject {
   let current: SubjectInfo = {};
   const subject = new BehaviorSubject({});
   const next = (): void => callNext(current, subject, withTest);
 
-  development.subject.subscribe(next);
+  env.subject.subscribe(next);
 
   return {
     add: (store: KeyringStore, address: string, json: KeyringJson, type?: KeypairType): SingleAddress => {
@@ -43,7 +43,7 @@ export default function genericSubject (keyCreator: (address: string) => string,
       };
 
       // we do not store dev accounts, injected or hardware (the latter two are external/transient)
-      if (!json.meta.isInjected && !json.meta.isHardware && (!json.meta.isTesting || development.isDevelopment())) {
+      if (!json.meta.isInjected && !json.meta.isHardware && (!json.meta.isTesting || env.isDevelopment())) {
         store.set(keyCreator(address), json);
       }
 

@@ -5,7 +5,7 @@ import type { KeyringSectionOption } from './types';
 
 import { isUndefined } from '@polkadot/util';
 
-export default function createItem (address: string, _name?: string): KeyringSectionOption {
+export function createOptionItem (address: string, _name?: string): KeyringSectionOption {
   const name = isUndefined(_name)
     ? (
       (address.length > 15)

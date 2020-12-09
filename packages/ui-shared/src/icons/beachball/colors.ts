@@ -11,7 +11,7 @@ import { COLORS } from './defaults';
 
 const WOBBLE = 30;
 
-export default function colors (seeder: Seeder): ColorGen {
+export function colors (seeder: Seeder): ColorGen {
   const amount = (seeder() * WOBBLE) - (WOBBLE / 2);
   const all = COLORS.map((hex): Color =>
     Color(hex).rotate(amount)

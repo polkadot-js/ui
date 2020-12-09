@@ -3,7 +3,7 @@
 
 import React, { useMemo } from 'react';
 
-import QrDisplay from './Display';
+import { QrDisplay } from './Display';
 import { createSignPayload } from './util';
 
 interface Props {
@@ -36,4 +36,4 @@ function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, 
   );
 }
 
-export default React.memo(DisplayPayload);
+export const QrDisplayPayload = React.memo(DisplayPayload);

@@ -7,7 +7,7 @@ import React, { useCallback } from 'react';
 
 import { beachballIcon } from '@polkadot/ui-shared';
 
-function Beachball ({ address, className = '', size, style }: Props): React.ReactElement<Props> {
+function Identicon ({ address, className = '', size, style }: Props): React.ReactElement<Props> {
   const updateElem = useCallback(
     (node: HTMLDivElement): void => {
       node && node.appendChild(
@@ -26,4 +26,4 @@ function Beachball ({ address, className = '', size, style }: Props): React.Reac
   );
 }
 
-export default React.memo(Beachball);
+export const Beachball = React.memo(Identicon);

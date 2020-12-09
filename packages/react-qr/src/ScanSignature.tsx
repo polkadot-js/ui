@@ -3,7 +3,7 @@
 
 import React, { useCallback } from 'react';
 
-import QrScan from './Scan';
+import { QrScan } from './Scan';
 
 interface ScanType {
   signature: string;
@@ -34,4 +34,4 @@ function ScanSignature ({ className, onError, onScan, size, style }: Props): Rea
   );
 }
 
-export default React.memo(ScanSignature);
+export const QrScanSignature = React.memo(ScanSignature);

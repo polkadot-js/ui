@@ -2,6 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { accountKey } from '../defaults';
-import genericSubject from './genericSubject';
+import { genericSubject } from './genericSubject';
 
-export default genericSubject(accountKey, true);
+export const accounts = genericSubject(accountKey, true);

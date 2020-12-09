@@ -5,8 +5,8 @@ import type { Prefix } from '@polkadot/util-crypto/address/types';
 
 import Vue, { VNode } from 'vue';
 
-import keyring from '@polkadot/ui-keyring';
-import settings from '@polkadot/ui-settings';
+import { keyring } from '@polkadot/ui-keyring';
+import { settings } from '@polkadot/ui-settings';
 import { cryptoWaitReady, mnemonicGenerate } from '@polkadot/util-crypto';
 import Identicon from '@polkadot/vue-identicon';
 

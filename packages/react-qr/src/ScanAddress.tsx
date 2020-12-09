@@ -7,7 +7,7 @@ import { assert } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
 import { ADDRESS_PREFIX, SEED_PREFIX } from './constants';
-import QrScan from './Scan';
+import { QrScan } from './Scan';
 
 interface ScanType {
   isAddress: boolean;
@@ -60,4 +60,4 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
   );
 }
 
-export default React.memo(ScanAddress);
+export const QrScanAddress = React.memo(ScanAddress);

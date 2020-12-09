@@ -5,7 +5,7 @@ import type { Props } from '../types';
 
 import React from 'react';
 
-function Empty ({ className = '', size, style }: Props): React.ReactElement<Props> {
+function Identicon ({ className = '', size, style }: Props): React.ReactElement<Props> {
   return (
     <svg
       className={className}
@@ -17,4 +17,4 @@ function Empty ({ className = '', size, style }: Props): React.ReactElement<Prop
   );
 }
 
-export default React.memo(Empty);
+export const Empty = React.memo(Identicon);

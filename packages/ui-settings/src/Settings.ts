@@ -170,6 +170,4 @@ export class Settings implements SettingsStruct {
   }
 }
 
-const settings = new Settings();
-
-export default settings;
+export const settings = new Settings();

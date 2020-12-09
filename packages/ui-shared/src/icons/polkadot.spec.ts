@@ -1,12 +1,12 @@
 // Copyright 2018-2020 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import generate from './polkadot';
+import { polkadotIcon } from './polkadot';
 
 describe('polkadotIcon', (): void => {
   it('generates the correct points from known', (): void => {
     expect(
-      generate('5Dqvi1p4C7EhPPFKCixpF3QiaJEaDwWrR9gfWR5eUsfC39TX', { isAlternative: false })
+      polkadotIcon('5Dqvi1p4C7EhPPFKCixpF3QiaJEaDwWrR9gfWR5eUsfC39TX', { isAlternative: false })
     ).toEqual([
       { cx: 32, cy: 32, fill: '#eee', r: 32 },
       { cx: 32, cy: 8, fill: 'hsl(196, 65%, 53%)', r: 5 },

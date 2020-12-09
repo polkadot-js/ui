@@ -10,7 +10,7 @@ import path from 'path';
 import { assert } from '@polkadot/util';
 
 // NOTE untested and unused by any known apps, probably broken in various mysterious ways
-export default class FileStore implements KeyringStore {
+export class FileStore implements KeyringStore {
   #path: string;
 
   constructor (path: string) {

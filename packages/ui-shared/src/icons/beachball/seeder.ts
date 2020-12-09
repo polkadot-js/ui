@@ -7,7 +7,7 @@ import { isU8a, stringToU8a } from '@polkadot/util';
 
 const DIVISOR = 256 * 256;
 
-export default function seeder (_seed: string | Uint8Array = new Uint8Array(32)): Seeder {
+export function seeder (_seed: string | Uint8Array = new Uint8Array(32)): Seeder {
   const seed: Uint8Array = isU8a(_seed)
     ? _seed
     : stringToU8a(_seed);

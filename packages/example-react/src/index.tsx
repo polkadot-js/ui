@@ -4,9 +4,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import Identicon from '@polkadot/react-identicon';
-import keyring from '@polkadot/ui-keyring';
-import settings from '@polkadot/ui-settings';
+import { Identicon } from '@polkadot/react-identicon';
+import { keyring } from '@polkadot/ui-keyring';
+import { settings } from '@polkadot/ui-settings';
 import { cryptoWaitReady, mnemonicGenerate } from '@polkadot/util-crypto';
 
 interface Props {
