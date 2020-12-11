@@ -5,9 +5,8 @@ import type { SingleAddress } from '../observable/types';
 import type { KeyringStruct } from '../types';
 import type { KeyringOptionInstance, KeyringOptions, KeyringSectionOption, KeyringSectionOptions } from './types';
 
-import { BehaviorSubject } from 'rxjs';
-
 import { assert } from '@polkadot/util';
+import { BehaviorSubject } from '@polkadot/x-rxjs';
 
 import { obervableAll } from '../observable';
 
