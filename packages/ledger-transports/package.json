@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ledger-transports",
-  "version": "0.62.2-28",
+  "version": "0.63.0",
   "repository": "github:polkadot-js/ui",
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
