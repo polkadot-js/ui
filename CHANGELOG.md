@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## 0.63.1 Dec 14, 2020
+
+Contributed:
+
+- Export types for icons (Thanks to https://github.com/Tbaut)
+
+Changes:
+
+- Bump to latest WebUSB from Ledger
+- Swap Ledger functionality to dedicated packages
+- Build esm packages alongside cjs
+- Convert all imports/exports to named
+- Pass pair type through to all creation actions
+- Allow for transparent failures on account injection
+- Swap to using `import type { ... }`
+- Updated to `@polkadot/{keyring, util, util-crypto}` 5.0.1
+- Updated to `@polkadot/api` 3.0.1
+
+
 ## 0.62.1 Nov 9, 2020
 
 Changes:
