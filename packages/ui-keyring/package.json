@@ -14,12 +14,12 @@
     "@polkadot/ledger": "^0.63.1",
     "@polkadot/ui-settings": "0.63.1",
     "@polkadot/util": "^5.0.1",
-    "@polkadot/x-rxjs": "^3.0.1",
+    "@polkadot/x-rxjs": "^3.0.2-1",
     "mkdirp": "^1.0.4",
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/types": "^3.0.1",
+    "@polkadot/types": "^3.0.2-1",
     "@types/mkdirp": "^1.0.1",
     "@types/store": "^2.0.2"
   },

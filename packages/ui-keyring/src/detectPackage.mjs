@@ -3,5 +3,8 @@
 
 import { detectPackage } from '@polkadot/util';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-detectPackage(require('./package.json'), typeof __dirname !== 'undefined' && __dirname);
+import packageInfo from './package-info.json';
+
+detectPackage(packageInfo, import.meta.url);
+
+export { packageInfo };
