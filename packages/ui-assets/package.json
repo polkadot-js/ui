@@ -3,6 +3,7 @@
   "version": "0.63.2-0",
   "description": "Static assets shared accross projects",
   "main": "index.js",
+  "module": "index.mjs",
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
   "license": "Apache-2.0",

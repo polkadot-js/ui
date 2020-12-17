@@ -5,13 +5,14 @@
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
   "main": "index.js",
+  "module": "index.mjs",
   "sideEffects": false,
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@polkadot/ui-shared": "0.63.2-0",
-    "@polkadot/util": "^5.0.2-1",
-    "@polkadot/util-crypto": "^5.0.2-1",
+    "@polkadot/util": "^5.0.2-6",
+    "@polkadot/util-crypto": "^5.0.2-6",
     "jdenticon": "2.2.0"
   },
   "peerDependencies": {

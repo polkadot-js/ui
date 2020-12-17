@@ -9,6 +9,7 @@
   "main": "node.js",
   "browser": "browser.js",
   "react-native": "react-native.js",
+  "sideEffects": false,
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@ledgerhq/hw-transport-webusb": "^5.36.0"

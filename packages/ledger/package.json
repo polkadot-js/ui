@@ -7,11 +7,12 @@
   "contributors": [],
   "license": "Apache-2.0",
   "main": "index.js",
+  "module": "index.mjs",
   "sideEffects": false,
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@polkadot/ledger-transports": "0.63.2-0",
-    "@polkadot/util": "^5.0.2-1",
+    "@polkadot/util": "^5.0.2-6",
     "@zondax/ledger-polkadot": "^0.12.0"
   },
   "peerDependencies": {
