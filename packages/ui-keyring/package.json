@@ -3,7 +3,10 @@
   "version": "0.63.2-1",
   "main": "index.js",
   "module": "index.mjs",
-  "sideEffects": false,
+  "sideEffects": [
+    "./detectPackage.js",
+    "./detectPackage.mjs"
+  ],
   "repository": "github:polkadot-js/apps",
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
