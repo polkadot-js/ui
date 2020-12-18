@@ -12,12 +12,12 @@
     "test": "jest"
   },
   "dependencies": {
-    "@polkadot/keyring": "^5.0.2-6",
+    "@polkadot/keyring": "^5.0.2-8",
     "@polkadot/reactnative-identicon": "0.63.2-2",
     "@polkadot/ui-keyring": "0.63.2-2",
     "@polkadot/ui-settings": "0.63.2-2",
-    "@polkadot/util": "^5.0.2-6",
-    "@polkadot/util-crypto": "^5.0.2-6",
+    "@polkadot/util": "^5.0.2-8",
+    "@polkadot/util-crypto": "^5.0.2-8",
     "@react-native-community/async-storage": "^1.12.1",
     "fast-text-encoding": "^1.0.3",
     "get-yarn-workspaces": "^1.0.2",
