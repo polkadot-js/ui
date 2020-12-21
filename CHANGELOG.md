@@ -1,10 +1,11 @@
 # CHANGELOG
 
-## 0.64.1
+## 0.64.1 Dec 21, 2020
 
 Changes:
 
 - Don't re-export types from index (esm build compat)
+- Correctly mark `detectPackage` as a side-effect
 - Updated to `@polkadot/{keyring, util, util-crypto}` 5.1.1
 - Updated to `@polkadot/api` 3.1.1
 
