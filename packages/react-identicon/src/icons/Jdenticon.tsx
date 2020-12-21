@@ -3,7 +3,7 @@
 
 import type { Props } from '../types';
 
-import jdenticon from 'jdenticon';
+import * as jdenticon from 'jdenticon';
 import React from 'react';
 
 function Identicon ({ className = '', publicKey, size, style }: Props): React.ReactElement<Props> {
