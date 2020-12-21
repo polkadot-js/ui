@@ -8,6 +8,8 @@
     "packages/*"
   ],
   "resolutions": {
+    "eventemitter3": "^4.0.7",
+    "mkdirp": "^1.0.4",
     "typescript": "^4.1.3"
   },
   "scripts": {
