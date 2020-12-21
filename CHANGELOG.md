@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.64.1
+
+Changes:
+
+- Don't re-export types from index (esm build compat)
+
+
 ## 0.63.1 Dec 14, 2020
 
 Contributed:
