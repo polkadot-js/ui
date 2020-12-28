@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-keyring",
-  "version": "0.64.2-1",
+  "version": "0.65.0",
   "main": "index.js",
   "module": "index.mjs",
   "sideEffects": [
@@ -14,16 +14,16 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "@polkadot/keyring": "^5.1.1",
-    "@polkadot/ledger": "^0.64.2-1",
-    "@polkadot/ui-settings": "0.64.2-1",
-    "@polkadot/util": "^5.1.1",
-    "@polkadot/x-rxjs": "^3.1.2-2",
+    "@polkadot/keyring": "^5.2.2",
+    "@polkadot/ledger": "^0.65.0",
+    "@polkadot/ui-settings": "0.65.0",
+    "@polkadot/util": "^5.2.2",
+    "@polkadot/x-rxjs": "^3.2.2",
     "mkdirp": "^1.0.4",
     "store": "^2.0.12"
   },
   "devDependencies": {
-    "@polkadot/types": "^3.1.2-2",
+    "@polkadot/types": "^3.2.2",
     "@types/mkdirp": "^1.0.1",
     "@types/store": "^2.0.2"
   },
