@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.65.1 Dec 28, 2020
+
+Changes:
+
+- Updated to `@polkadot/{keyring, util, util-crypto}` 5.2.2
+- Updated to `@polkadot/api` 3.2.2
+
+
 ## 0.64.1 Dec 21, 2020
 
 Changes:
