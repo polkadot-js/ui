@@ -4,7 +4,7 @@
 import type Transport from '@ledgerhq/hw-transport';
 import type { AccountOptions, LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
 
-import { newDockApp, newKusamaApp, newPolkadotApp, ResponseBase, SubstrateApp } from '@zondax/ledger-polkadot';
+import { newDockApp, newPolymeshApp, newKusamaApp, newPolkadotApp, ResponseBase, SubstrateApp } from '@zondax/ledger-polkadot';
 
 import { transports } from '@polkadot/ledger-transports';
 import { assert, bufferToU8a, u8aToBuffer, u8aToHex } from '@polkadot/util';
@@ -19,6 +19,7 @@ const SUCCESS_CODE = 0x9000;
 
 const APPS: Record<string, (transport: Transport) => SubstrateApp> = {
   dock: newDockApp,
+  polymesh: newPolymeshApp,
   kusama: newKusamaApp,
   polkadot: newPolkadotApp
 };
