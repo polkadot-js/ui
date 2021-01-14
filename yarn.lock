@@ -2130,7 +2130,7 @@ __metadata:
     color: ^3.1.3
     ethereum-blockies-base64: ^1.0.2
     jdenticon: 3.1.0
-    react-copy-to-clipboard: ^5.0.2
+    react-copy-to-clipboard: ^5.0.3
     styled-components: ^5.2.1
     xmlserializer: ^0.6.1
   peerDependencies:
@@ -2173,7 +2173,7 @@ __metadata:
     "@polkadot/ui-shared": 0.65.2-3
     "@polkadot/util": ^5.2.4-4
     "@polkadot/util-crypto": ^5.2.4-4
-    "@types/react-native": ^0.63.44
+    "@types/react-native": ^0.63.45
     react-native-svg: ^12.1.0
   peerDependencies:
     "@polkadot/util": "*"
@@ -2273,7 +2273,7 @@ __metadata:
     "@polkadot/util": ^5.2.4-4
     "@polkadot/util-crypto": ^5.2.4-4
     "@types/color": ^3.0.1
-    "@types/xmlserializer": ^0.6.1
+    "@types/xmlserializer": ^0.6.2
     color: ^3.1.3
   peerDependencies:
     "@polkadot/util": "*"
@@ -2973,12 +2973,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.63.44":
-  version: 0.63.44
-  resolution: "@types/react-native@npm:0.63.44"
+"@types/react-native@npm:^0.63.45":
+  version: 0.63.45
+  resolution: "@types/react-native@npm:0.63.45"
   dependencies:
     "@types/react": "*"
-  checksum: bc6d95736cfe0fbf3cfae23773c326a8862a8c3c0fdd019e4dc4872921e00be6868314f2045dd06d89e83d0df521c862dc041820c0754dad9ef48185a1c51280
+  checksum: 1fe4bc616bd2864eeff0cdce793aedbe25090d04550b3b4365f9d4153b46ad7af6641c5637015da328fff0fece2e1f3c52e28bdef2b3a802bfdd23c8286353cb
   languageName: node
   linkType: hard
 
@@ -3051,12 +3051,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/xmlserializer@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "@types/xmlserializer@npm:0.6.1"
+"@types/xmlserializer@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@types/xmlserializer@npm:0.6.2"
   dependencies:
     parse5: ^5.1.0
-  checksum: 5ea1d515d4ab6a713103aa7623a5cad5947df67ad2d8855ad4b79084d896c9a336b042f376c0ffe49288535f77debe7d8fb13929629d7ccf4b77bef18f3f63f1
+  checksum: 4ce09144d8c5e8defde28f731827f090f6c35c8e6d277db2ee3fbc7d7d7d05a5dda43f4180886d34bcc06e2b2bab2dcf9c7456a509abf7f4ae6d60c1ba24e4de
   languageName: node
   linkType: hard
 
@@ -13126,15 +13126,15 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-copy-to-clipboard@npm:^5.0.2":
-  version: 5.0.2
-  resolution: "react-copy-to-clipboard@npm:5.0.2"
+"react-copy-to-clipboard@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "react-copy-to-clipboard@npm:5.0.3"
   dependencies:
     copy-to-clipboard: ^3
     prop-types: ^15.5.8
   peerDependencies:
-    react: ^15.3.0 || ^16.0.0
-  checksum: 7a0ceebcfde3118302885f115c9992ecf191d2cca5712f7fde9cfc8ad62b98d6d41b647352b408df9cf993c662047a6e55a66b4ae55dc6559a8f82ffb4aa5513
+    react: ^15.3.0 || ^16.0.0 || ^17.0.0
+  checksum: 82e0caff24d44920fe20333bbb061ae7f55fb669a9264ab3789534189dbba9fb6e59b6a74c6341fe454d3c56da181808ab137c9a3f3bdaae9c410d9a874dc9eb
   languageName: node
   linkType: hard
 
