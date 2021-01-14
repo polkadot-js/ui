@@ -5,7 +5,7 @@ import './detectPackage';
 
 import { Keyring } from './Keyring';
 
-export { Ledger } from '@polkadot/ledger';
+export { Ledger } from '@polkadot/hw-ledger';
 
 const keyring = new Keyring();
 
