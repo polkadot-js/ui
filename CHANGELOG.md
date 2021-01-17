@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## 0.66.1 Jan 17, 2020
+
+- **Important** Users of the `@polkadot/ledger` package should now import `@polkadot/hw-wallet`
+
+Contributed:
+
+- Dock Ledger integration (Thanks to https://github.com/lovesh, moved to common)
+- Polymesh Ledger integration (https://github.com/adamdossa, moved to common)
+
+Changes:
+
+- Remove `@polkadot/ledger` package (Moved to common as `@polkadot/hw-ledger`)
+- Keyring options genesis allows a `string` | `Hash` (e.g. `api.genesisHash`) input
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 5.3.1
+- Removed `@polkadot/types` dependencies (only interface needed, supplied)
+
+
 ## 0.65.1 Dec 28, 2020
 
 Changes:

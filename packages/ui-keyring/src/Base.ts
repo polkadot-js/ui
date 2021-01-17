@@ -110,7 +110,11 @@ export class Base {
     }
 
     this.#keyring = keyring;
-    this._genesisHash = options.genesisHash && options.genesisHash.toHex();
+    this._genesisHash = options.genesisHash && (
+      isString(options.genesisHash)
+        ? options.genesisHash.toString()
+        : options.genesisHash.toHex()
+    );
     this._store = options.store || this._store;
 
     this.addAccountPairs();
