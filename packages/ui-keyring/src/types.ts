@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { KeyringInstance as BaseKeyringInstance, KeyringOptions as KeyringOptionsBase, KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
-import type { Hash } from '@polkadot/types/interfaces';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
 
@@ -40,7 +39,7 @@ export interface KeyringStore {
 
 export interface KeyringOptions extends KeyringOptionsBase {
   filter?: (json: KeyringJson) => boolean;
-  genesisHash?: Hash;
+  genesisHash?: string | { toHex: () => string };
   isDevelopment?: boolean;
   store?: KeyringStore;
 }
