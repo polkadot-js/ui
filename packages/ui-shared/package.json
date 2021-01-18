@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-shared",
-  "version": "0.66.2",
+  "version": "0.66.3",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
   "module": "index.mjs",
