@@ -1,16 +1,17 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SubjectInfo, AddressSubject, SingleAddress } from './types';
+import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { KeyringJson, KeyringStore } from '../types';
+import type { AddressSubject, SingleAddress, SubjectInfo } from './types';
 
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from '@polkadot/x-rxjs';
 
-import createOptionItem from '../options/item';
-import development from './development';
+import { createOptionItem } from '../options/item';
+import { env } from './env';
 
 function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, withTest: boolean): void {
-  const isDevMode = development.isDevelopment();
+  const isDevMode = env.isDevelopment();
   const filtered: SubjectInfo = {};
 
   Object.keys(current).forEach((key): void => {
@@ -24,24 +25,25 @@ function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, 
   subject.next(filtered);
 }
 
-export default function genericSubject (keyCreator: (address: string) => string, withTest = false): AddressSubject {
+export function genericSubject (keyCreator: (address: string) => string, withTest = false): AddressSubject {
   let current: SubjectInfo = {};
   const subject = new BehaviorSubject({});
   const next = (): void => callNext(current, subject, withTest);
 
-  development.subject.subscribe(next);
+  env.subject.subscribe(next);
 
   return {
-    add: (store: KeyringStore, address: string, json: KeyringJson): SingleAddress => {
+    add: (store: KeyringStore, address: string, json: KeyringJson, type?: KeypairType): SingleAddress => {
       current = { ...current };
 
       current[address] = {
         json: { ...json, address },
-        option: createOptionItem(address, json.meta.name)
+        option: createOptionItem(address, json.meta.name),
+        type
       };
 
-      // we do not store dev accounts or injected (external/transient)
-      if (!json.meta.isInjected && (!json.meta.isTesting || development.isDevelopment())) {
+      // we do not store dev or injected accounts (external/transient)
+      if (!json.meta.isInjected && (!json.meta.isTesting || env.isDevelopment())) {
         store.set(keyCreator(address), json);
       }
 

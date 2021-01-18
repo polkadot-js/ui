@@ -1,12 +1,13 @@
-// Copyright 2017-2020 @polkadot/example-react authors & contributors
+// Copyright 2017-2021 @polkadot/example-react authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useCallback, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import Identicon from '@polkadot/react-identicon';
-import keyring from '@polkadot/ui-keyring';
-import settings from '@polkadot/ui-settings';
-import { mnemonicGenerate, cryptoWaitReady } from '@polkadot/util-crypto';
+
+import { Identicon } from '@polkadot/react-identicon';
+import { keyring } from '@polkadot/ui-keyring';
+import { settings } from '@polkadot/ui-settings';
+import { cryptoWaitReady, mnemonicGenerate } from '@polkadot/util-crypto';
 
 interface Props {
   className?: string;

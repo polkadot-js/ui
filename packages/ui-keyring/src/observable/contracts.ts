@@ -1,8 +1,7 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import { contractKey } from '../defaults';
+import { genericSubject } from './genericSubject';
 
-import genericSubject from './genericSubject';
-
-export default genericSubject(contractKey);
+export const contracts = genericSubject(contractKey);

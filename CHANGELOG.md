@@ -1,5 +1,59 @@
 # CHANGELOG
 
+## 0.66.1 Jan 17, 2020
+
+- **Important** Users of the `@polkadot/ledger` package should now import `@polkadot/hw-wallet`
+
+Contributed:
+
+- Dock Ledger integration (Thanks to https://github.com/lovesh, moved to common)
+- Polymesh Ledger integration (https://github.com/adamdossa, moved to common)
+
+Changes:
+
+- Remove `@polkadot/ledger` package (Moved to common as `@polkadot/hw-ledger`)
+- Keyring options genesis allows a `string` | `Hash` (e.g. `api.genesisHash`) input
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 5.3.1
+- Removed `@polkadot/types` dependencies (only interface needed, supplied)
+
+
+## 0.65.1 Dec 28, 2020
+
+Changes:
+
+- Updated to `@polkadot/{keyring, util, util-crypto}` 5.2.2
+- Updated to `@polkadot/api` 3.2.2
+
+
+## 0.64.1 Dec 21, 2020
+
+Changes:
+
+- Don't re-export types from index (esm build compat)
+- Correctly mark `detectPackage` as a side-effect
+- Updated to `@polkadot/{keyring, util, util-crypto}` 5.1.1
+- Updated to `@polkadot/api` 3.1.1
+
+
+## 0.63.1 Dec 14, 2020
+
+Contributed:
+
+- Export types for icons (Thanks to https://github.com/Tbaut)
+
+Changes:
+
+- Bump to latest WebUSB from Ledger
+- Swap Ledger functionality to dedicated packages
+- Build esm packages alongside cjs
+- Convert all imports/exports to named
+- Pass pair type through to all creation actions
+- Allow for transparent failures on account injection
+- Swap to using `import type { ... }`
+- Updated to `@polkadot/{keyring, util, util-crypto}` 5.0.1
+- Updated to `@polkadot/api` 3.0.1
+
+
 ## 0.62.1 Nov 9, 2020
 
 Changes:

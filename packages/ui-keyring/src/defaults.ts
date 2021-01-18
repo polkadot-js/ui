@@ -1,8 +1,8 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { u8aToHex } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/keyring';
+import { u8aToHex } from '@polkadot/util';
 
 const ACCOUNT_PREFIX = 'account:';
 const ADDRESS_PREFIX = 'address:';

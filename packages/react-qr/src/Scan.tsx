@@ -1,4 +1,4 @@
-// Copyright 2017-2020 @polkadot/react-qr authors & contributors
+// Copyright 2017-2021 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useCallback, useMemo } from 'react';
@@ -54,7 +54,7 @@ function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onSc
   );
 }
 
-export default React.memo(styled(Scan)`
+export const QrScan = React.memo(styled(Scan)`
   .ui--qr-Scan {
     display: inline-block;
     height: 100%;

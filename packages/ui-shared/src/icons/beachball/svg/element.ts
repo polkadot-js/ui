@@ -1,11 +1,12 @@
-// Copyright 2017-2020 @polkadot/ui-shared authors & contributors
+// Copyright 2017-2021 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2016 Dan Finlay
 
-import createSvg from './svg';
+import { svg } from './svg';
 
-export default function element (size: number, type = 'svg', x = 0, y = 0): Element {
-  const elem = createSvg(type);
+export function element (size: number, type = 'svg', x = 0, y = 0): Element {
+  const elem = svg(type);
 
   elem.setAttributeNS('', 'x', `${x}`);
   elem.setAttributeNS('', 'y', `${y}`);

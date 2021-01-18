@@ -1,12 +1,12 @@
-// Copyright 2017-2020 @polkadot/ui-settings authors & contributors
+// Copyright 2017-2021 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Option } from '../types';
 
 import { CRYPTOS, CRYPTOS_ETH } from './crypto';
-import { ENDPOINTS, ENDPOINT_DEFAULT } from './endpoints';
+import { ENDPOINT_DEFAULT, ENDPOINTS } from './endpoints';
 import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger';
-import { PREFIXES, PREFIX_DEFAULT } from './ss58';
+import { PREFIX_DEFAULT, PREFIXES } from './ss58';
 import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
 
 const CAMERA_DEFAULT = 'off';

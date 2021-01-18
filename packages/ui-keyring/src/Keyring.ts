@@ -1,20 +1,21 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { KeyringPair, KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
+import type { KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
 import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
 
 import BN from 'bn.js';
+
 import { createPair } from '@polkadot/keyring/pair';
-import chains from '@polkadot/ui-settings/defaults/chains';
+import { chains } from '@polkadot/ui-settings/defaults/chains';
 import { bnToBn, hexToU8a, isHex, isString, u8aSorted } from '@polkadot/util';
 import { base64Decode, createKeyMulti } from '@polkadot/util-crypto';
 
-import env from './observable/development';
-import Base from './Base';
-import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
+import { env } from './observable/env';
+import { Base } from './Base';
+import { accountKey, accountRegex, addressKey, addressRegex, contractKey, contractRegex } from './defaults';
 import { KeyringOption } from './options';
 
 const RECENT_EXPIRY = 24 * 60 * 60;
@@ -95,7 +96,7 @@ export class Keyring extends Base implements KeyringStruct {
     json.meta.whenEdited = Date.now();
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this._store, pair.address, json, pair.type);
   }
 
   public forgetAccount (address: string): void {
@@ -121,7 +122,7 @@ export class Keyring extends Base implements KeyringStruct {
     return Object
       .keys(available)
       .map((address): KeyringAddress => this.getAddress(address, 'account') as KeyringAddress)
-      .filter((account): boolean => env.isDevelopment() || account.meta.isTesting !== true);
+      .filter((account) => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
   public getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress | undefined {
@@ -180,7 +181,7 @@ export class Keyring extends Base implements KeyringStruct {
       // FIXME Just for the transition period (ignoreChecksum)
       const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
 
-      this.accounts.add(this._store, pair.address, json);
+      this.accounts.add(this._store, pair.address, json, pair.type);
     }
 
     const [, hexAddr] = key.split(':');
@@ -237,7 +238,7 @@ export class Keyring extends Base implements KeyringStruct {
     };
     const pair = this.keyring.addFromAddress(address, json.meta);
 
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this._store, pair.address, json, pair.type);
   }
 
   private allowGenesis (json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
@@ -315,7 +316,7 @@ export class Keyring extends Base implements KeyringStruct {
     const json = pair.toJson(password);
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this._store, pair.address, json, pair.type);
 
     return json;
   }
@@ -327,7 +328,7 @@ export class Keyring extends Base implements KeyringStruct {
       pair.setMeta(meta);
       json.meta = pair.meta;
 
-      this.accounts.add(this._store, address, json);
+      this.accounts.add(this._store, address, json, pair.type);
     });
   }
 

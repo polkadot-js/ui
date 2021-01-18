@@ -1,8 +1,8 @@
-// Copyright 2017-2020 @polkadot/react-identicon authors & contributors
+// Copyright 2017-2021 @polkadot/react-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-export { default as Beachball } from './Beachball';
-export { default as Empty } from './Empty';
-export { default as Ethereum } from './Ethereum';
-export { default as Jdenticon } from './Jdenticon';
-export { default as Polkadot } from './Polkadot';
+export { Beachball } from './Beachball';
+export { Empty } from './Empty';
+export { Ethereum } from './Ethereum';
+export { Jdenticon } from './Jdenticon';
+export { Polkadot } from './Polkadot';

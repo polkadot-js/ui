@@ -1,11 +1,11 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { KeyringStore, KeyringJson } from '../types';
+import type { KeyringJson, KeyringStore } from '../types';
 
 import store from 'store';
 
-export default class BrowserStore implements KeyringStore {
+export class BrowserStore implements KeyringStore {
   public all (cb: (key: string, value: KeyringJson) => void): void {
     store.each((value: KeyringJson, key: string): void => {
       cb(key, value);

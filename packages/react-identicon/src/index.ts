@@ -1,7 +1,10 @@
-// Copyright 2017-2020 @polkadot/react-identicon authors & contributors
+// Copyright 2017-2021 @polkadot/react-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import Identicon from './Identicon';
+import { Identicon } from './Identicon';
+
 export * from './icons';
+
+export { Identicon };
 
 export default Identicon;

@@ -1,4 +1,4 @@
-// Copyright 2017-2020 @polkadot/react-identicon authors & contributors
+// Copyright 2017-2021 @polkadot/react-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Prefix } from '@polkadot/util-crypto/address/types';
@@ -7,7 +7,8 @@ import type { IdentityProps as Props, Props as ComponentProps } from './types';
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
-import settings, { ICON_DEFAULT_HOST } from '@polkadot/ui-settings';
+
+import { ICON_DEFAULT_HOST, settings } from '@polkadot/ui-settings';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress, ethereumEncode } from '@polkadot/util-crypto';
 
@@ -146,8 +147,8 @@ class BaseIcon extends React.PureComponent<Props, State> {
   }
 }
 
-function Identicon (props: Props): React.ReactElement<Props> {
+function Icon (props: Props): React.ReactElement<Props> {
   return <BaseIcon {...props} />;
 }
 
-export default React.memo(Identicon);
+export const Identicon = React.memo(Icon);

@@ -1,5 +1,6 @@
-// Copyright 2017-2020 @polkadot/ui-shared authors & contributors
+// Copyright 2017-2021 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2016 Dan Finlay
 
 import type { ColorGen, Seeder } from './types';
@@ -10,7 +11,7 @@ import { COLORS } from './defaults';
 
 const WOBBLE = 30;
 
-export default function colors (seeder: Seeder): ColorGen {
+export function colors (seeder: Seeder): ColorGen {
   const amount = (seeder() * WOBBLE) - (WOBBLE / 2);
   const all = COLORS.map((hex): Color =>
     Color(hex).rotate(amount)

@@ -1,7 +1,7 @@
-// Copyright 2017-2020 @polkadot/ui-shared authors & contributors
+// Copyright 2017-2021 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import container from './container';
+import { container } from './container';
 
 describe('container', (): void => {
   it('applies default styles', (): void => {

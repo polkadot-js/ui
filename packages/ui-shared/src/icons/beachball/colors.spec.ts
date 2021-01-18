@@ -1,10 +1,10 @@
-// Copyright 2017-2020 @polkadot/ui-shared authors & contributors
+// Copyright 2017-2021 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { ColorGen } from './types';
 
-import newSeeder from './seeder';
-import newColors from './colors';
+import { colors as newColors } from './colors';
+import { seeder as newSeeder } from './seeder';
 
 describe('colors', (): void => {
   let colors: ColorGen;

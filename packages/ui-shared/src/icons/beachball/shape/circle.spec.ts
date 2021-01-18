@@ -1,10 +1,10 @@
-// Copyright 2017-2020 @polkadot/ui-shared authors & contributors
+// Copyright 2017-2021 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import xmlserializer from 'xmlserializer';
 
-import seeder from '../seeder';
-import circle from './circle';
+import { seeder } from '../seeder';
+import { circle } from './circle';
 
 describe('circle', (): void => {
   it('creates a circle shape', (): void => {

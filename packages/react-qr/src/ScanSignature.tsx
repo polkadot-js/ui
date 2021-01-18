@@ -1,9 +1,9 @@
-// Copyright 2017-2020 @polkadot/react-qr authors & contributors
+// Copyright 2017-2021 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useCallback } from 'react';
 
-import QrScan from './Scan';
+import { QrScan } from './Scan';
 
 interface ScanType {
   signature: string;
@@ -34,4 +34,4 @@ function ScanSignature ({ className, onError, onScan, size, style }: Props): Rea
   );
 }
 
-export default React.memo(ScanSignature);
+export const QrScanSignature = React.memo(ScanSignature);

@@ -1,11 +1,12 @@
-// Copyright 2017-2020 @polkadot/ui-shared authors & contributors
+// Copyright 2017-2021 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2016 Dan Finlay
 
 import { isNull } from '@polkadot/util';
 import { encodeAddress, randomAsU8a } from '@polkadot/util-crypto';
 
-import identicon from '.';
+import { beachballIcon } from '.';
 
 const element = document.getElementById('demo');
 
@@ -17,7 +18,7 @@ function generateIcon (seed: string = encodeAddress(randomAsU8a(32))): void {
   }
 
   element.appendChild(
-    identicon(seed, { isAlternative: false, size: 100 }, 'padded')
+    beachballIcon(seed, { isAlternative: false, size: 100 }, 'padded')
   );
 
   console.log(`Icon generated in ${(Date.now() - start)}ms`);

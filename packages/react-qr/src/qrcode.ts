@@ -1,4 +1,4 @@
-// Copyright 2017-2020 @polkadot/react-qr authors & contributors
+// Copyright 2017-2021 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import _qrcode from 'qrcode-generator';
@@ -12,4 +12,4 @@ const qrcode: typeof _qrcode = _qrcode;
 (qrcode as any).stringToBytes = (data: Uint8Array): Uint8Array =>
   data;
 
-export default qrcode;
+export { qrcode };

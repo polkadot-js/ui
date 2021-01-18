@@ -1,11 +1,12 @@
-// Copyright 2017-2020 @polkadot/react-qr authors & contributors
+// Copyright 2017-2021 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
+
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
-import qrcode from './qrcode';
+import { qrcode } from './qrcode';
 import { createFrames, createImgSize } from './util';
 
 interface Props {
@@ -34,8 +35,8 @@ const TIMER_INC = 500;
 function getDataUrl (value: Uint8Array): string {
   const qr = qrcode(0, 'M');
 
-  // HACK See out qrcode stringToBytes override as used internally. This
-  // will only work for the case where we actuall pass `Bytes` in here
+  // HACK See our qrcode stringToBytes override as used internally. This
+  // will only work for the case where we actually pass `Bytes` in here
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   qr.addData(value as any, 'Byte');
   qr.make();
@@ -130,7 +131,7 @@ function Display ({ className, size, skipEncoding, style, value }: Props): React
   );
 }
 
-export default React.memo(styled(Display)`
+export const QrDisplay = React.memo(styled(Display)`
   .ui--qr-Display {
     height: 100%;
     width: 100%;

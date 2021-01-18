@@ -1,14 +1,14 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { SubjectInfo } from './types';
 
-import { combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { combineLatest } from '@polkadot/x-rxjs';
+import { map } from '@polkadot/x-rxjs/operators';
 
-import accounts from './accounts';
-import addresses from './addresses';
-import contracts from './contracts';
+import { accounts } from './accounts';
+import { addresses } from './addresses';
+import { contracts } from './contracts';
 
 interface Result {
   accounts: SubjectInfo;
@@ -16,7 +16,7 @@ interface Result {
   contracts: SubjectInfo;
 }
 
-export default combineLatest(
+export const obervableAll = combineLatest(
   accounts.subject,
   addresses.subject,
   contracts.subject

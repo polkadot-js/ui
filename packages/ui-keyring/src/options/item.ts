@@ -1,11 +1,11 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { KeyringSectionOption } from './types';
 
 import { isUndefined } from '@polkadot/util';
 
-export default function createItem (address: string, _name?: string): KeyringSectionOption {
+export function createOptionItem (address: string, _name?: string): KeyringSectionOption {
   const name = isUndefined(_name)
     ? (
       (address.length > 15)

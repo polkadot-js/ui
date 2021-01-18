@@ -1,13 +1,14 @@
-// Copyright 2017-2020 @polkadot/ui-shared authors & contributors
+// Copyright 2017-2021 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2016 Dan Finlay
 
 import type { Seeder } from '../types';
 
-import newCircle from '../svg/circle';
 import { SHAPE_COUNT } from '../defaults';
+import { circle as newCircle } from '../svg/circle';
 
-export default function circle (seeder: Seeder, fill: string, diameter: number, count: number): Element {
+export function circle (seeder: Seeder, fill: string, diameter: number, count: number): Element {
   const center = diameter / 2;
   const angle = seeder() * 360;
   const radius = (((SHAPE_COUNT - count) / SHAPE_COUNT) * (diameter / 2)) + ((diameter / 8) * seeder());

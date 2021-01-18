@@ -1,23 +1,24 @@
 {
   "name": "@polkadot/react-qr",
-  "version": "0.62.2-18",
+  "version": "0.66.2",
   "description": "Generates and reads QR codes",
   "main": "index.js",
+  "module": "index.mjs",
   "sideEffects": false,
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "@polkadot/util": "^4.2.1",
-    "@polkadot/util-crypto": "^4.2.1",
+    "@polkadot/util": "^5.3.1",
+    "@polkadot/util-crypto": "^5.3.1",
     "qrcode-generator": "^1.4.4",
     "react-qr-reader": "^2.2.1",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@types/react-qr-reader": "^2.1.3",
-    "@types/styled-components": "^5.1.4"
+    "@types/styled-components": "^5.1.7"
   },
   "peerDependencies": {
     "@polkadot/util": "*",

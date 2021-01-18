@@ -1,8 +1,8 @@
-// Copyright 2017-2020 @polkadot/vue-identicon authors & contributors
+// Copyright 2017-2021 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import * as jdenticon from 'jdenticon';
 import Vue from 'vue';
-import jdenticon from 'jdenticon';
 
 interface Data {
   svgHtml: string;

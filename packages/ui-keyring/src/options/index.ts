@@ -1,14 +1,14 @@
-// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { KeyringStruct } from '../types';
 import type { SingleAddress } from '../observable/types';
-import type { KeyringOptions, KeyringOptionInstance, KeyringSectionOption, KeyringSectionOptions } from './types';
+import type { KeyringStruct } from '../types';
+import type { KeyringOptionInstance, KeyringOptions, KeyringSectionOption, KeyringSectionOptions } from './types';
 
-import { BehaviorSubject } from 'rxjs';
 import { assert } from '@polkadot/util';
+import { BehaviorSubject } from '@polkadot/x-rxjs';
 
-import observableAll from '../observable';
+import { obervableAll } from '../observable';
 
 let hasCalledInitOptions = false;
 
@@ -48,7 +48,7 @@ export class KeyringOption implements KeyringOptionInstance {
   public init (keyring: KeyringStruct): void {
     assert(!hasCalledInitOptions, 'Unable to initialise options more than once');
 
-    observableAll.subscribe((): void => {
+    obervableAll.subscribe((): void => {
       const opts = this.emptyOptions();
 
       this.addAccounts(keyring, opts);

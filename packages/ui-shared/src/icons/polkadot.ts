@@ -1,5 +1,6 @@
-// Copyright 2018-2020 @polkadot/ui-shared authors & contributors
+// Copyright 2018-2021 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 // Copyright 2018 Paritytech via paritytech/oo7/polkadot-identicon
 
 // This has been converted from the original version that can be found at
@@ -130,7 +131,7 @@ function getColors (address: string): string[] {
 /**
  * @description Generate a array of the circles that make up an identicon
  */
-export default function generate (address: string, { isAlternative }: Options): Circle[] {
+export function polkadotIcon (address: string, { isAlternative }: Options): Circle[] {
   const colors = getColors(address);
 
   return [OUTER_CIRCLE].concat(
