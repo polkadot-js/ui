@@ -42,8 +42,8 @@ export function genericSubject (keyCreator: (address: string) => string, withTes
         type
       };
 
-      // we do not store dev accounts, injected or hardware (the latter two are external/transient)
-      if (!json.meta.isInjected && !json.meta.isHardware && (!json.meta.isTesting || env.isDevelopment())) {
+      // we do not store dev or injected accounts (external/transient)
+      if (!json.meta.isInjected && (!json.meta.isTesting || env.isDevelopment())) {
         store.set(keyCreator(address), json);
       }
 
