@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-keyring",
-  "version": "0.66.4-2",
+  "version": "0.66.4-3",
   "main": "index.js",
   "sideEffects": [
     "./detectPackage.js",
@@ -15,7 +15,7 @@
     "@babel/runtime": "^7.12.5",
     "@polkadot/hw-ledger": "^5.4.4",
     "@polkadot/keyring": "^5.4.4",
-    "@polkadot/ui-settings": "0.66.4-2",
+    "@polkadot/ui-settings": "0.66.4-3",
     "@polkadot/util": "^5.4.4",
     "@polkadot/x-rxjs": "^5.4.4",
     "mkdirp": "^1.0.4",

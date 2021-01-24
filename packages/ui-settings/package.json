@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-settings",
-  "version": "0.66.4-2",
+  "version": "0.66.4-3",
   "description": "Manages app settings",
   "main": "index.js",
   "sideEffects": false,
