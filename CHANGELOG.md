@@ -1,6 +1,18 @@
 # CHANGELOG
 
-## 0.66.1 Jan 17, 2020
+## 0.67.1 Jan 24, 2021
+
+Contributed:
+
+- Store hardware accounts (Thanks to https://github.com/Tbaut)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 5.4.4
+- Cleanup dependencies to only have common (no api repo)
+
+
+## 0.66.1 Jan 17, 2021
 
 - **Important** Users of the `@polkadot/ledger` package should now import `@polkadot/hw-wallet`
 

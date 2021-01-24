@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/react-identicon",
-  "version": "0.66.4-3",
+  "version": "0.67.0",
   "description": "Renders an SVG picture representing an address",
   "main": "index.js",
   "sideEffects": false,
@@ -10,8 +10,8 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@polkadot/keyring": "^5.4.4",
-    "@polkadot/ui-settings": "0.66.4-3",
-    "@polkadot/ui-shared": "0.66.4-3",
+    "@polkadot/ui-settings": "0.67.0",
+    "@polkadot/ui-shared": "0.67.0",
     "@polkadot/util": "^5.4.4",
     "@polkadot/util-crypto": "^5.4.4",
     "color": "^3.1.3",
