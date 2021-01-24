@@ -3,7 +3,6 @@
   "version": "0.66.4-1",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
-  "module": "index.mjs",
   "sideEffects": false,
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
@@ -17,8 +16,8 @@
     "@polkadot/util-crypto": "*"
   },
   "devDependencies": {
-    "@polkadot/util": "^5.3.2-1",
-    "@polkadot/util-crypto": "^5.3.2-1",
+    "@polkadot/util": "^5.4.2",
+    "@polkadot/util-crypto": "^5.4.2",
     "@types/color": "^3.0.1",
     "@types/xmlserializer": "^0.6.2"
   }
