@@ -248,9 +248,11 @@ export class Keyring extends Base implements KeyringStruct {
       ) || [this.genesisHash];
 
       if (json.meta.genesisHash) {
-        return Array.isArray(json.meta.genesisHash)
-          ? json.meta.genesisHash.some((g) => hashes.includes(g))
-          : hashes.includes(json.meta.genesisHash);
+        return isString(json.meta.genesisHash)
+          ? hashes.includes(json.meta.genesisHash)
+          : json.meta.genesisHash.allow.length
+            ? json.meta.genesisHash.allow.some((g) => hashes.includes(g))
+            : !json.meta.genesisHash.deny.some((g) => hashes.includes(g));
       } else if (json.meta.contract) {
         return hashes.includes(json.meta.contract.genesisHash);
       }

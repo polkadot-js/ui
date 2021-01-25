@@ -10,9 +10,14 @@ export interface ContractMeta {
   genesisHash?: string | null;
 }
 
+export interface GenesisList {
+  allow: string[];
+  deny: string[];
+}
+
 export interface KeyringJson$Meta {
   contract?: ContractMeta;
-  genesisHash?: string[] | string | null;
+  genesisHash?: GenesisList | string | null;
   hardwareType?: 'ledger';
   isHardware?: boolean;
   isInjected?: boolean;
