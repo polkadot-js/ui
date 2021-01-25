@@ -16,7 +16,7 @@ export const CRYPTOS: Option[] = [
   },
   {
     info: 'ecdsa',
-    text: 'ECDSA (Non BTC/ETH compatible)',
+    text: 'EDCSA (Non BTC/ETH compatible)',
     value: 'ecdsa'
   }
 ];
@@ -26,5 +26,14 @@ export const CRYPTOS_ETH: Option[] = [
     info: 'ethereum',
     text: 'ECDSA (ETH compatible)',
     value: 'ethereum'
+  }
+];
+
+export const CRYPTOS_LEDGER: Option[] = [
+  ...CRYPTOS,
+  {
+    info: 'ed25519-bip44',
+    text: 'Edwards (ed25519, BIP44 compatible)',
+    value: 'ed25519-bip44'
   }
 ];
