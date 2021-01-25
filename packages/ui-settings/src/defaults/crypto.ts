@@ -32,8 +32,8 @@ export const CRYPTOS_ETH: Option[] = [
 export const CRYPTOS_LEDGER: Option[] = [
   ...CRYPTOS,
   {
-    info: 'ed25519-bip44',
-    text: 'Edwards (ed25519, BIP44 compatible)',
-    value: 'ed25519-bip44'
+    info: 'ed25519-bip39',
+    text: 'Edwards (ed25519, BIP39 compatible)',
+    value: 'ed25519-bip39'
   }
 ];
