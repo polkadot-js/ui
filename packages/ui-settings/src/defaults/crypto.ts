@@ -28,3 +28,12 @@ export const CRYPTOS_ETH: Option[] = [
     value: 'ethereum'
   }
 ];
+
+export const CRYPTOS_LEDGER: Option[] = [
+  ...CRYPTOS,
+  {
+    info: 'ed25519-ledger',
+    text: 'Ledger (ed25519, BIP32 derivation)',
+    value: 'ed25519-ledger'
+  }
+];
