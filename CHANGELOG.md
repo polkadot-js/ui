@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.68.1 Feb 1, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 5.5.1
+- Added `ed25519-ledger` option for `hdLedger` from `@polkadot/util-crypto`
+
+
 ## 0.67.1 Jan 24, 2021
 
 Contributed:
