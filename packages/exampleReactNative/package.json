@@ -1,6 +1,6 @@
 {
   "name": "exampleReactNative",
-  "version": "0.67.2-0",
+  "version": "0.68.0",
   "private": true,
   "scripts": {
     "copy-workspace-packages": "yarn copy-identicon && yarn copy-ui-shared",
@@ -12,12 +12,12 @@
     "test": "jest"
   },
   "dependencies": {
-    "@polkadot/keyring": "^5.4.4",
-    "@polkadot/reactnative-identicon": "0.67.2-0",
-    "@polkadot/ui-keyring": "0.67.2-0",
-    "@polkadot/ui-settings": "0.67.2-0",
-    "@polkadot/util": "^5.4.4",
-    "@polkadot/util-crypto": "^5.4.4",
+    "@polkadot/keyring": "^5.5.1",
+    "@polkadot/reactnative-identicon": "0.68.0",
+    "@polkadot/ui-keyring": "0.68.0",
+    "@polkadot/ui-settings": "0.68.0",
+    "@polkadot/util": "^5.5.1",
+    "@polkadot/util-crypto": "^5.5.1",
     "@react-native-community/async-storage": "^1.12.1",
     "fast-text-encoding": "^1.0.3",
     "get-yarn-workspaces": "^1.0.2",
@@ -35,7 +35,7 @@
     "@react-native-community/cli-platform-ios": "^4.13.0",
     "@types/react-test-renderer": "17.0.0",
     "babel-jest": "^26.6.3",
-    "metro-react-native-babel-preset": "^0.64.0",
+    "metro-react-native-babel-preset": "^0.65.0",
     "react-test-renderer": "17.0.1"
   },
   "jest": {
