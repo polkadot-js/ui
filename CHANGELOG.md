@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.68.1 Feb 7, 2021
+## 0.69.1 Feb 7, 2021
 
 Changes:
 
