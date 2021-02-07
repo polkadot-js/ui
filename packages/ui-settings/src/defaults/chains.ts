@@ -5,8 +5,14 @@ import known from '@polkadot/networks';
 
 type ChainDef = string[];
 
+interface NetDef {
+  genesisHash: string[];
+  network: string;
+}
+
 const chains: Record <string, ChainDef> = known
-  .filter(({ genesisHash }) => genesisHash.length > 1)
+  .map(({ genesisHash, network }) => ({ genesisHash, network }))
+  .filter((def): def is NetDef => def.genesisHash.length > 0 && !!def.network)
   .reduce((chains, { genesisHash, network }) => ({ ...chains, [network]: genesisHash }), {});
 
 export { chains };
