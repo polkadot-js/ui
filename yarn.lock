@@ -2226,8 +2226,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.12.13
     "@polkadot/keyring": ^5.6.3
-    "@polkadot/ui-settings": 0.69.2-0
-    "@polkadot/ui-shared": 0.69.2-0
+    "@polkadot/ui-settings": 0.69.2-1
+    "@polkadot/ui-shared": 0.69.2-1
     "@polkadot/util": ^5.6.3
     "@polkadot/util-crypto": ^5.6.3
     "@types/react-copy-to-clipboard": ^5.0.0
@@ -2271,12 +2271,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/reactnative-identicon@0.69.2-0, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
+"@polkadot/reactnative-identicon@0.69.2-1, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
     "@babel/runtime": ^7.12.13
-    "@polkadot/ui-shared": 0.69.2-0
+    "@polkadot/ui-shared": 0.69.2-1
     "@polkadot/util": ^5.6.3
     "@polkadot/util-crypto": ^5.6.3
     "@types/react-native": ^0.63.49
@@ -2306,14 +2306,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-keyring@0.69.2-0, @polkadot/ui-keyring@workspace:packages/ui-keyring":
+"@polkadot/ui-keyring@0.69.2-1, @polkadot/ui-keyring@workspace:packages/ui-keyring":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
     "@babel/runtime": ^7.12.13
     "@polkadot/hw-ledger": ^5.6.3
     "@polkadot/keyring": ^5.6.3
-    "@polkadot/ui-settings": 0.69.2-0
+    "@polkadot/ui-settings": 0.69.2-1
     "@polkadot/util": ^5.6.3
     "@polkadot/x-rxjs": ^5.6.3
     "@types/mkdirp": ^1.0.1
@@ -2327,7 +2327,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@0.69.2-0, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@0.69.2-1, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
@@ -2343,7 +2343,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@0.69.2-0, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@0.69.2-1, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
@@ -2404,7 +2404,7 @@ __metadata:
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
     "@babel/runtime": ^7.12.13
-    "@polkadot/ui-shared": 0.69.2-0
+    "@polkadot/ui-shared": 0.69.2-1
     "@polkadot/util": ^5.6.3
     "@polkadot/util-crypto": ^5.6.3
     jdenticon: 3.1.0
@@ -6933,9 +6933,9 @@ __metadata:
     "@babel/core": ^7.12.16
     "@babel/runtime": ^7.12.13
     "@polkadot/keyring": ^5.6.3
-    "@polkadot/reactnative-identicon": 0.69.2-0
-    "@polkadot/ui-keyring": 0.69.2-0
-    "@polkadot/ui-settings": 0.69.2-0
+    "@polkadot/reactnative-identicon": 0.69.2-1
+    "@polkadot/ui-keyring": 0.69.2-1
+    "@polkadot/ui-settings": 0.69.2-1
     "@polkadot/util": ^5.6.3
     "@polkadot/util-crypto": ^5.6.3
     "@react-native-community/async-storage": ^1.12.1
