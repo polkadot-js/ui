@@ -9,8 +9,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.13.7",
-    "@polkadot/networks": "^5.8.1",
-    "@polkadot/util": "^5.8.1",
+    "@polkadot/networks": "^5.9.1",
+    "@polkadot/util": "^5.9.1",
     "eventemitter3": "^4.0.7",
     "store": "^2.0.12"
   },
