@@ -6,3 +6,4 @@ export { QrDisplayPayload } from './DisplayPayload';
 export { QrScanAddress } from './ScanAddress';
 export { QrScanSignature } from './ScanSignature';
 export { QrNetworkSpecs } from './NetworkSpecs';
+export { packageInfo } from './packageInfo';
