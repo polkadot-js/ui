@@ -6,7 +6,7 @@ Changes:
 
 - Use `detectPackage` with `packageInfo` & check for monorepo dependencies
 - Remove `mkdirp` resolution to ensure local views work with Webpack
-- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 5.10.2
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 5.9.2
 
 
 ## 0.69.1 Feb 7, 2021
