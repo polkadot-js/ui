@@ -16,8 +16,8 @@
     "@polkadot/util-crypto": "*"
   },
   "devDependencies": {
-    "@polkadot/util": "^5.9.2",
-    "@polkadot/util-crypto": "^5.9.2",
+    "@polkadot/util": "^5.9.3-0",
+    "@polkadot/util-crypto": "^5.9.3-0",
     "@types/color": "^3.0.1",
     "@types/xmlserializer": "^0.6.2"
   }
