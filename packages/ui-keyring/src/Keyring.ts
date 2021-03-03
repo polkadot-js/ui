@@ -322,6 +322,12 @@ export class Keyring extends Base implements KeyringStruct {
     return pair;
   }
 
+  public restoreAccounts (json: KeyringPair$Json[]): void {
+    json.forEach((pair) => {
+      this.loadAccount(pair, accountKey(pair.address));
+    });
+  }
+
   public saveAccount (pair: KeyringPair, password?: string): KeyringPair$Json {
     this.addTimestamp(pair);
 
