@@ -82,7 +82,7 @@ export class Keyring extends Base implements KeyringStruct {
     return pair.toJson(password);
   }
 
-  public async backupAccounts(pairs: KeyringPair[]): Promise<KeyringPair$Json[]> {
+  public async backupAccounts (pairs: KeyringPair[]): Promise<KeyringPair$Json[]> {
     const accountPromises = pairs.map((pair) => {
       return new Promise((resolve) => {
         this._store.get(accountKey(pair.address), resolve);
