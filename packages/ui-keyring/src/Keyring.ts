@@ -307,7 +307,7 @@ export class Keyring extends Base implements KeyringStruct {
     const cryptoType = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
     const encType = Array.isArray(json.encoding.type) ? json.encoding.type : [json.encoding.type];
     const pair = createPair(
-      { toSS58: this.encodeAddress, type: cryptoType },
+      { toSS58: this.encodeAddress, type: cryptoType as KeypairType },
       { publicKey: this.decodeAddress(json.address, true) },
       json.meta,
       isHex(json.encoded) ? hexToU8a(json.encoded) : base64Decode(json.encoded),
