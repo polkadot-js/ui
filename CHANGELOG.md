@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.71.1 Mar 6, 2021
+
+Changes:
+
+- Build to ESM by default (with cjs versions via export map)
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.0.3
+
+
 ## 0.70.1 Feb 28, 2021
 
 Changes:
