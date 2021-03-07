@@ -2304,7 +2304,7 @@ __metadata:
     "@polkadot/ui-shared": 0.71.2
     "@polkadot/util": ^6.0.4
     "@polkadot/util-crypto": ^6.0.4
-    "@types/react-native": ^0.63.50
+    "@types/react-native": ^0.63.51
     react-native-svg: ^12.1.0
   peerDependencies:
     "@polkadot/util": "*"
@@ -2995,12 +2995,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.63.50":
-  version: 0.63.50
-  resolution: "@types/react-native@npm:0.63.50"
+"@types/react-native@npm:^0.63.51":
+  version: 0.63.51
+  resolution: "@types/react-native@npm:0.63.51"
   dependencies:
     "@types/react": "*"
-  checksum: 9f7b3cb22d5a34da3a09bd331b77d29db885231cd81abd5fa50e08a5d089c48095ad1875123915712decb304706040121f8627e28c9a9826328d3df241823a43
+  checksum: fbedd2a77fb198cf942d932b4ea59db643ed9edd8a673cc80eddad1eb12f96e090fa90eff3304f90231d5bce3284694f83f58e2c9e4bf0e9434b2d4085cd457f
   languageName: node
   linkType: hard
 
@@ -7013,7 +7013,7 @@ __metadata:
     babel-jest: ^26.6.3
     fast-text-encoding: ^1.0.3
     get-yarn-workspaces: ^1.0.2
-    metro-react-native-babel-preset: ^0.65.1
+    metro-react-native-babel-preset: ^0.65.2
     os-browserify: ^0.3.0
     process: ^0.11.10
     react: ^17.0.1
@@ -11051,9 +11051,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"metro-react-native-babel-preset@npm:^0.65.1":
-  version: 0.65.1
-  resolution: "metro-react-native-babel-preset@npm:0.65.1"
+"metro-react-native-babel-preset@npm:^0.65.2":
+  version: 0.65.2
+  resolution: "metro-react-native-babel-preset@npm:0.65.2"
   dependencies:
     "@babel/core": ^7.0.0
     "@babel/plugin-proposal-class-properties": ^7.0.0
@@ -11097,7 +11097,7 @@ fsevents@~2.1.2:
     react-refresh: ^0.4.0
   peerDependencies:
     "@babel/core": "*"
-  checksum: 2559fc1e9a4f8f09286268d124125e1305d7705b2a136a72981b81f04f1ef68b337c6c48f55192fde4c6d71b0c3f92aee8d2ae526b14a2656bf3cf64e666b5bb
+  checksum: a866f865c0b817e9dc6bc54fadb779ec133b32688fd07b4c4ceeae8e2b5a0c3c3dea888e37e2e48197e2226d6aaa08995cc47e1f3e766a893921477c126ecacb
   languageName: node
   linkType: hard
 
@@ -15716,23 +15716,23 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.2.2":
-  version: 4.2.2
-  resolution: "typescript@npm:4.2.2"
+"typescript@npm:^4.2.3":
+  version: 4.2.3
+  resolution: "typescript@npm:4.2.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: b2e3d5551a12c51b6b7a14f0e78d2664c136fab4dfb3eecaaf7a6e8e7e608f2cf43c6ebe81387d194db2588793b769720d2df523d445a1664b7585c5b9a85984
+  checksum: 06e8470f317db6f5e2fce809b20eb84a67a7d8179057abff36e5427bd1b891bd08e54581ff81f0fa36aef9b6d1eb0f54eaf6e2643c6dbd4e37a0adcc41eed256
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^4.2.2#builtin<compat/typescript>":
-  version: 4.2.2
-  resolution: "typescript@patch:typescript@npm%3A4.2.2#builtin<compat/typescript>::version=4.2.2&hash=a45b0e"
+"typescript@patch:typescript@npm%3A^4.2.3#builtin<compat/typescript>":
+  version: 4.2.3
+  resolution: "typescript@patch:typescript@npm%3A4.2.3#builtin<compat/typescript>::version=4.2.3&hash=a45b0e"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ea1f1b6be22c9e3348f61692719d3169dd4abaad34b2132edff44a8d5a748bde8f3116fa2fae41d61c92b3a7cf1c35d0c7276058b2f35196ff3cde3b7d57c84b
+  checksum: a8956044aabf730699bcc3c2475efdd3f35e509329325cf60b4989761d4c2188e2c474183e2cf92b8c201fcf976814a5a16f144508b2a832643c4f972d0ab803
   languageName: node
   linkType: hard
 
