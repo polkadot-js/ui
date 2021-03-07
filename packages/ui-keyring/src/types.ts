@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { KeyringInstance as BaseKeyringInstance, KeyringOptions as KeyringOptionsBase, KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
+import type { EncryptedJson } from '@polkadot/util-crypto/json/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
 
@@ -28,6 +29,13 @@ export interface KeyringJson$Meta {
 export interface KeyringJson {
   address: string;
   meta: KeyringJson$Meta;
+}
+
+export interface KeyringPairs$Json extends EncryptedJson {
+  metas: {
+    address: string;
+    name?: string;
+  }[]
 }
 
 export interface KeyringStore {
@@ -70,6 +78,7 @@ export interface KeyringStruct {
   addPair: (pair: KeyringPair, password: string) => CreateResult;
   addUri: (suri: string, password?: string, meta?: KeyringPair$Meta, type?: KeypairType) => CreateResult;
   backupAccount: (pair: KeyringPair, password: string) => KeyringPair$Json;
+  backupAccounts: (addresses: string[]) => Promise<KeyringPairs$Json>
   createFromUri (suri: string, meta?: KeyringPair$Meta, type?: KeypairType): KeyringPair;
   decodeAddress: (key: string | Uint8Array) => Uint8Array;
   encodeAddress: (key: string | Uint8Array) => string;
