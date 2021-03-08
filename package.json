@@ -30,7 +30,7 @@
     "@babel/core": "^7.13.8",
     "@babel/runtime": "^7.13.9",
     "@polkadot/dev": "^0.62.5",
-    "@polkadot/ts": "^0.3.61",
+    "@polkadot/ts": "^0.3.62",
     "@types/jest": "^26.0.20",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
@@ -43,5 +43,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-serve": "^3.2.0"
   },
-  "version": "0.71.2"
+  "version": "0.71.3"
 }
