@@ -2,16 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
+import type { EncryptedJson } from '@polkadot/util-crypto/json/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
-import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringStruct } from './types';
+import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringPairs$Json, KeyringStruct } from './types';
 
 import BN from 'bn.js';
 
 import { createPair } from '@polkadot/keyring/pair';
 import { chains } from '@polkadot/ui-settings/defaults/chains';
-import { bnToBn, hexToU8a, isHex, isString, u8aSorted } from '@polkadot/util';
-import { base64Decode, createKeyMulti } from '@polkadot/util-crypto';
+import { bnToBn, hexToU8a, isHex, isString, stringToU8a, u8aSorted, u8aToString } from '@polkadot/util';
+import { base64Decode, createKeyMulti, jsonDecrypt, jsonEncrypt } from '@polkadot/util-crypto';
 
 import { env } from './observable/env';
 import { Base } from './Base';
@@ -80,6 +81,24 @@ export class Keyring extends Base implements KeyringStruct {
     pair.decodePkcs8(password);
 
     return pair.toJson(password);
+  }
+
+  public async backupAccounts (addresses: string[]): Promise<KeyringPairs$Json> {
+    const accountPromises = addresses.map((address) => {
+      return new Promise<KeyringJson>((resolve) => {
+        this._store.get(accountKey(address), resolve);
+      });
+    });
+
+    const accounts = await Promise.all(accountPromises);
+
+    return {
+      ...jsonEncrypt(stringToU8a(JSON.stringify(accounts)), ['batch-pkcs8']),
+      accounts: accounts.map((account) => ({
+        address: account.address,
+        meta: account.meta
+      }))
+    };
   }
 
   public createFromJson (json: KeyringPair$Json, meta: KeyringPair$Meta = {}): KeyringPair {
@@ -308,6 +327,14 @@ export class Keyring extends Base implements KeyringStruct {
     pair.lock();
 
     return pair;
+  }
+
+  public restoreAccounts (json: EncryptedJson): void {
+    const accounts: KeyringJson[] = JSON.parse(u8aToString(jsonDecrypt(json))) as KeyringJson[];
+
+    accounts.forEach((account) => {
+      this.loadAccount(account, accountKey(account.address));
+    });
   }
 
   public saveAccount (pair: KeyringPair, password?: string): KeyringPair$Json {
