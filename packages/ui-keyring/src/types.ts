@@ -32,10 +32,7 @@ export interface KeyringJson {
 }
 
 export interface KeyringPairs$Json extends EncryptedJson {
-  metas: {
-    address: string;
-    name?: string;
-  }[]
+  accounts: KeyringJson[];
 }
 
 export interface KeyringStore {

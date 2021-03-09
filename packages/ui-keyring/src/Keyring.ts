@@ -94,9 +94,9 @@ export class Keyring extends Base implements KeyringStruct {
 
     return {
       ...jsonEncrypt(stringToU8a(JSON.stringify(accounts)), ['batch-pkcs8']),
-      metas: accounts.map((account) => ({
+      accounts: accounts.map((account) => ({
         address: account.address,
-        name: account.meta.name
+        meta: account.meta
       }))
     };
   }
