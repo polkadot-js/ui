@@ -7,6 +7,6 @@
   "maintainers": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.13.9"
+    "@babel/runtime": "^7.13.10"
   }
 }
