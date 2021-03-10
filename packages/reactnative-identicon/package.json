@@ -12,7 +12,7 @@
   "maintainers": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.13.9",
+    "@babel/runtime": "^7.13.10",
     "@polkadot/ui-shared": "0.71.4-0",
     "@polkadot/util": "^6.0.5",
     "@polkadot/util-crypto": "^6.0.5",
