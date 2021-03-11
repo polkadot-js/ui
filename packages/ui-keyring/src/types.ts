@@ -75,7 +75,7 @@ export interface KeyringStruct {
   addPair: (pair: KeyringPair, password: string) => CreateResult;
   addUri: (suri: string, password?: string, meta?: KeyringPair$Meta, type?: KeypairType) => CreateResult;
   backupAccount: (pair: KeyringPair, password: string) => KeyringPair$Json;
-  backupAccounts: (addresses: string[]) => Promise<KeyringPairs$Json>
+  backupAccounts: (addresses: string[], password: string) => Promise<KeyringPairs$Json>
   createFromUri (suri: string, meta?: KeyringPair$Meta, type?: KeypairType): KeyringPair;
   decodeAddress: (key: string | Uint8Array) => Uint8Array;
   encodeAddress: (key: string | Uint8Array) => string;
@@ -95,6 +95,7 @@ export interface KeyringStruct {
   isPassValid: (password: string) => boolean;
   loadAll: (options: KeyringOptions) => void;
   restoreAccount: (json: KeyringPair$Json, password: string) => KeyringPair;
+  restoreAccounts: (json: EncryptedJson, password: string) => void;
   saveAccount: (pair: KeyringPair, password?: string) => KeyringPair$Json;
   saveAccountMeta: (pair: KeyringPair, meta: KeyringPair$Meta) => void;
   saveAddress: (address: string, meta: KeyringPair$Meta) => KeyringPair$Json;
