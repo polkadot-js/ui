@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/react-qr",
-  "version": "0.71.3",
+  "version": "0.71.4-1",
   "type": "module",
   "description": "Generates and reads QR codes",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "maintainers": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.13.9",
+    "@babel/runtime": "^7.13.10",
     "@polkadot/util": "^6.0.5",
     "@polkadot/util-crypto": "^6.0.5",
     "qrcode-generator": "^1.4.4",

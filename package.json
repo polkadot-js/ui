@@ -27,8 +27,8 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/runtime": "^7.13.9",
+    "@babel/core": "^7.13.10",
+    "@babel/runtime": "^7.13.10",
     "@polkadot/dev": "^0.62.5",
     "@polkadot/ts": "^0.3.62",
     "@types/jest": "^26.0.20",
@@ -43,5 +43,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-serve": "^3.2.0"
   },
-  "version": "0.71.3"
+  "version": "0.71.4-1"
 }
