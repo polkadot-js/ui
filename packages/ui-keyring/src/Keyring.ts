@@ -83,7 +83,7 @@ export class Keyring extends Base implements KeyringStruct {
     return pair.toJson(password);
   }
 
-  public async backupAccounts (addresses: string[]): Promise<KeyringPairs$Json> {
+  public async backupAccounts (addresses: string[], password: string): Promise<KeyringPairs$Json> {
     const accountPromises = addresses.map((address) => {
       return new Promise<KeyringJson>((resolve) => {
         this._store.get(accountKey(address), resolve);
@@ -93,7 +93,7 @@ export class Keyring extends Base implements KeyringStruct {
     const accounts = await Promise.all(accountPromises);
 
     return {
-      ...jsonEncrypt(stringToU8a(JSON.stringify(accounts)), ['batch-pkcs8']),
+      ...jsonEncrypt(stringToU8a(JSON.stringify(accounts)), ['batch-pkcs8'], password),
       accounts: accounts.map((account) => ({
         address: account.address,
         meta: account.meta
@@ -329,8 +329,8 @@ export class Keyring extends Base implements KeyringStruct {
     return pair;
   }
 
-  public restoreAccounts (json: EncryptedJson): void {
-    const accounts: KeyringJson[] = JSON.parse(u8aToString(jsonDecrypt(json))) as KeyringJson[];
+  public restoreAccounts (json: EncryptedJson, password: string): void {
+    const accounts: KeyringJson[] = JSON.parse(u8aToString(jsonDecrypt(json, password))) as KeyringJson[];
 
     accounts.forEach((account) => {
       this.loadAccount(account, accountKey(account.address));
