@@ -1,6 +1,6 @@
 {
   "name": "exampleReactNative",
-  "version": "0.71.4-2",
+  "version": "0.72.0",
   "private": true,
   "scripts": {
     "copy-workspace-packages": "yarn copy-identicon && yarn copy-ui-shared",
@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@polkadot/keyring": "^6.0.5",
-    "@polkadot/reactnative-identicon": "0.71.4-2",
-    "@polkadot/ui-keyring": "0.71.4-2",
-    "@polkadot/ui-settings": "0.71.4-2",
+    "@polkadot/reactnative-identicon": "0.72.0",
+    "@polkadot/ui-keyring": "0.72.0",
+    "@polkadot/ui-settings": "0.72.0",
     "@polkadot/util": "^6.0.5",
     "@polkadot/util-crypto": "^6.0.5",
     "@react-native-community/async-storage": "^1.12.1",
@@ -24,7 +24,7 @@
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "react": "^17.0.1",
-    "react-native": "^0.63.4",
+    "react-native": "^0.64.0",
     "react-native-crypto": "^2.2.0",
     "react-native-randombytes": "^3.6.0",
     "stream-http": "^3.1.1"
