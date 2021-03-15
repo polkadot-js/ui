@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.72.1 Mar 15, 2021
+
+Contributed:
+
+- Added support for batch import/export functionality (Thanks to https://github.com/BubbleBear)
+
+
 ## 0.71.3 Mar 8, 2021
 
 Changes:
