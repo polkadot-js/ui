@@ -22,7 +22,7 @@
     "ethereum-blockies-base64": "^1.0.2",
     "jdenticon": "3.1.0",
     "react-copy-to-clipboard": "^5.0.3",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.3"
   },
   "peerDependencies": {
     "@polkadot/keyring": "*",
@@ -35,9 +35,9 @@
   },
   "devDependencies": {
     "@types/react-copy-to-clipboard": "^5.0.0",
-    "@types/react-dom": "^17.0.2",
-    "@types/styled-components": "^5.1.8",
-    "styled-components": "^5.2.1",
+    "@types/react-dom": "^17.0.3",
+    "@types/styled-components": "^5.1.9",
+    "styled-components": "^5.2.3",
     "xmlserializer": "^0.6.1"
   }
 }
