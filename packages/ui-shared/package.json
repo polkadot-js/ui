@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-shared",
-  "version": "0.72.2-0",
+  "version": "0.73.0",
   "type": "module",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
@@ -17,8 +17,8 @@
     "@polkadot/util-crypto": "*"
   },
   "devDependencies": {
-    "@polkadot/util": "^6.0.5",
-    "@polkadot/util-crypto": "^6.0.5",
+    "@polkadot/util": "^6.1.1",
+    "@polkadot/util-crypto": "^6.1.1",
     "@types/color": "^3.0.1",
     "@types/xmlserializer": "^0.6.2"
   }
