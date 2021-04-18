@@ -27,7 +27,7 @@
     "react-native": "^0.64.0",
     "react-native-crypto": "^2.2.0",
     "react-native-randombytes": "^3.6.0",
-    "stream-http": "^3.1.1"
+    "stream-http": "^3.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",

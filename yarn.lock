@@ -2271,8 +2271,8 @@ __metadata:
     "@polkadot/ui-shared": 0.73.2-0
     "@polkadot/util": ^6.2.1
     "@polkadot/util-crypto": ^6.2.1
-    "@types/react-native": ^0.64.2
-    react-native-svg: ^12.1.1-0
+    "@types/react-native": ^0.64.3
+    react-native-svg: ^12.1.1
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
@@ -3014,12 +3014,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.64.2":
-  version: 0.64.2
-  resolution: "@types/react-native@npm:0.64.2"
+"@types/react-native@npm:^0.64.3":
+  version: 0.64.3
+  resolution: "@types/react-native@npm:0.64.3"
   dependencies:
     "@types/react": "*"
-  checksum: 6536667ffc06fc87580be381146ef393b5e695ce6d176df46bf1dcda2470625480113bf13352b5ad2df833f6e888ab8a2564a225e825a2888056e565750f060c
+  checksum: e15948f33c42ce7a7b3b68285ab8f05da23e871084a2dd00dfcc15ddc5bec502c51a204b44fec68bfe0225fa0547eda54ae5ba6f5bcb532b46d52448ba9716f4
   languageName: node
   linkType: hard
 
@@ -6990,7 +6990,7 @@ __metadata:
     react-native-crypto: ^2.2.0
     react-native-randombytes: ^3.6.0
     react-test-renderer: 17.0.2
-    stream-http: ^3.1.1
+    stream-http: ^3.2.0
   languageName: unknown
   linkType: soft
 
@@ -12914,16 +12914,16 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:^12.1.1-0":
-  version: 12.1.1-0
-  resolution: "react-native-svg@npm:12.1.1-0"
+"react-native-svg@npm:^12.1.1":
+  version: 12.1.1
+  resolution: "react-native-svg@npm:12.1.1"
   dependencies:
     css-select: ^2.1.0
     css-tree: ^1.0.0-alpha.39
   peerDependencies:
     react: "*"
     react-native: ">=0.50.0"
-  checksum: b740d01119d115b2a3909c78e91b46e220dcc0017c70266b88ea1f576a3b64aa7373e86e2440bbd762544b9bc183faa6147509543c9e738ed233cc9f3d59896f
+  checksum: 9c2e353d5d28960c0fe79017d2ac3c592bdeb822b854714e0d8f9975d588ca4eceb68100abfff04f4ad2d672158a9b704b3bd8e3c5806d79724c8839dfdb4b08
   languageName: node
   linkType: hard
 
@@ -14467,15 +14467,15 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"stream-http@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "stream-http@npm:3.1.1"
+"stream-http@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "stream-http@npm:3.2.0"
   dependencies:
     builtin-status-codes: ^3.0.0
     inherits: ^2.0.4
     readable-stream: ^3.6.0
     xtend: ^4.0.2
-  checksum: 59334d615fdd774d1a8ac73ed5f348986c96ebfc0c3679a162a37838f07839ba3607e3e1a042ea78a1d920a8cf2c3ccacbb91ff9538975e9dfdcadae2ca7eb42
+  checksum: b25c176492794a7c9b06b3703f7291d44ad0352b35863f88a8cbf9128c367d654908dc63606b2166d6f24cab19d6e7264a32c0488832336f9e811527bb0b2540
   languageName: node
   linkType: hard
 
