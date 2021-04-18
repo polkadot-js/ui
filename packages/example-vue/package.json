@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/example-vue",
-  "version": "0.74.0",
+  "version": "0.74.1",
   "description": "A very basic example with ui-* & vue-* packages",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
