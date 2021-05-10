@@ -276,7 +276,7 @@ export class Keyring extends Base implements KeyringStruct {
     return true;
   }
 
-  public loadAll (options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta, type: KeypairType }[] = []): void {
+  public loadAll (options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta, type?: KeypairType }[] = []): void {
     super.initKeyring(options);
 
     this._store.all((key: string, json: KeyringJson): void => {
