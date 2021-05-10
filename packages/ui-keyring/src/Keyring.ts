@@ -247,7 +247,7 @@ export class Keyring extends Base implements KeyringStruct {
     this.rewriteKey(json, key, hexAddr, contractKey);
   }
 
-  private loadInjected (address: string, meta: KeyringJson$Meta, type: KeypairType): void {
+  private loadInjected (address: string, meta: KeyringJson$Meta, type?: KeypairType): void {
     const json = {
       address,
       meta: {
