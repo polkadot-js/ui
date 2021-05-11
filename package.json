@@ -29,7 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/runtime": "^7.14.0",
-    "@polkadot/dev": "^0.62.13",
+    "@polkadot/dev": "^0.62.14",
     "@polkadot/ts": "^0.3.65",
     "@types/jest": "^26.0.23",
     "babel-plugin-transform-vue-template": "^0.4.2",
@@ -37,7 +37,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
-    "react-native": "^0.64.0",
+    "react-native": "^0.64.1",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
