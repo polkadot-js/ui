@@ -27,10 +27,10 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.14.2",
     "@babel/runtime": "^7.14.0",
     "@polkadot/dev": "^0.62.14",
-    "@polkadot/ts": "^0.3.65",
+    "@polkadot/ts": "^0.3.66",
     "@types/jest": "^26.0.23",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
@@ -43,5 +43,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-serve": "^3.2.0"
   },
-  "version": "0.75.2-4"
+  "version": "0.76.0"
 }

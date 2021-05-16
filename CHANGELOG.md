@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 0.76.1 May 16, 2021
+
+Contributed:
+
+- Pass through injected account types (Thanks to https://github.com/joelamouche)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.4.1
+
+
 ## 0.75.1 Apr 25, 2021
 
 Changes:
