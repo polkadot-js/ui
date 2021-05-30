@@ -34,7 +34,7 @@
     "@babel/runtime": "^7.14.0",
     "@react-native-community/cli-platform-ios": "^5.0.1-alpha.2",
     "@types/react-test-renderer": "17.0.1",
-    "babel-jest": "^27.0.1",
+    "babel-jest": "^27.0.2",
     "metro-react-native-babel-preset": "^0.66.0",
     "react-test-renderer": "17.0.2"
   },
