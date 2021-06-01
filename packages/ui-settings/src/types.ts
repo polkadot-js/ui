@@ -9,6 +9,7 @@ export type Option = {
 }
 
 export interface SettingsStruct {
+  apiTypeUrl: Endpoint;
   apiUrl: string;
   camera: string;
   i18nLang: string;
@@ -27,4 +28,20 @@ export interface NetworkSpecsStruct {
   prefix: number;
   title: string;
   unit: string;
+}
+
+export type Endpoint = JsonRpcEndpoint | SubstrateConnectEndpoint;
+export interface JsonRpcEndpoint {
+  type: EndpointType.jrpc;
+  url: string;
+}
+
+export interface SubstrateConnectEndpoint {
+  type: EndpointType.substrateconnect;
+  chain: string;
+}
+
+export enum EndpointType {
+  jrpc = 'json-rpc',
+  substrateconnect = 'substrate-connect'
 }

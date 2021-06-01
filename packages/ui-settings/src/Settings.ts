@@ -1,7 +1,7 @@
 // Copyright 2017-2021 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Option, SettingsStruct } from './types';
+import { Option, SettingsStruct, Endpoint, EndpointType } from './types';
 
 import EventEmitter from 'eventemitter3';
 import store from 'store';
@@ -24,6 +24,9 @@ function withDefault (options: Option[], option: string | undefined, fallback: s
 export class Settings implements SettingsStruct {
   readonly #emitter: EventEmitter;
 
+  #apiTypeUrl: Endpoint;
+
+  // will become deprecated for supporting substrate connect light clients. apiTypeUrl structure should be used instead
   #apiUrl: string;
 
   #camera: string;
@@ -47,6 +50,8 @@ export class Settings implements SettingsStruct {
 
     this.#emitter = new EventEmitter();
 
+    this.#apiTypeUrl = { type: EndpointType.jrpc, url: this.#apiUrl };
+    // will become deprecated for supporting substrate connect light clients. apiTypeUrl structure should be used instead
     this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || process.env.WS_URL || (ENDPOINT_DEFAULT.value as string);
     this.#camera = withDefault(CAMERA, settings.camera, CAMERA_DEFAULT);
     this.#ledgerConn = withDefault(LEDGER_CONN, settings.ledgerConn, LEDGER_CONN_DEFAULT);
@@ -60,6 +65,10 @@ export class Settings implements SettingsStruct {
 
   public get camera (): string {
     return this.#camera;
+  }
+
+  public get apiTypeUrl (): Endpoint {
+    return this.#apiTypeUrl;
   }
 
   public get apiUrl (): string {
@@ -140,6 +149,7 @@ export class Settings implements SettingsStruct {
 
   public get (): SettingsStruct {
     return {
+      apiTypeUrl: this.#apiTypeUrl,
       apiUrl: this.#apiUrl,
       camera: this.#camera,
       i18nLang: this.#i18nLang,
@@ -153,6 +163,7 @@ export class Settings implements SettingsStruct {
   }
 
   public set (settings: Partial<SettingsStruct>): void {
+    this.#apiTypeUrl = settings.apiTypeUrl || this.#apiTypeUrl;
     this.#apiUrl = settings.apiUrl || this.#apiUrl;
     this.#camera = settings.camera || this.#camera;
     this.#ledgerConn = settings.ledgerConn || this.#ledgerConn;
