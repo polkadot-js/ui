@@ -9,7 +9,7 @@ export type Option = {
 }
 
 export interface SettingsStruct {
-  apiTypeUrl: Endpoint;
+  apiType: Endpoint;
   apiUrl: string;
   camera: string;
   i18nLang: string;
