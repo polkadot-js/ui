@@ -1,13 +1,12 @@
 // Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type BN from 'bn.js';
 import type { KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
 import type { EncryptedJson } from '@polkadot/util-crypto/json/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
 import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringPairs$Json, KeyringStruct } from './types';
-
-import BN from 'bn.js';
 
 import { createPair } from '@polkadot/keyring/pair';
 import { chains } from '@polkadot/ui-settings/defaults/chains';
