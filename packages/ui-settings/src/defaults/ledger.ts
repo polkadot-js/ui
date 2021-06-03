@@ -24,7 +24,7 @@ export const LEDGER_CONN: Option[] = [
   },
   {
     info: 'hid',
-    text: 'Attach Ledger via WebHID (Chrome)',
+    text: 'Attach Ledger via WebHID (Chrome, experimental)',
     value: 'hid'
   }
 ];
