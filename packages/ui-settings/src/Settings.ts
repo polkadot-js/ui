@@ -1,14 +1,13 @@
 // Copyright 2017-2021 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { Option, SettingsStruct, Endpoint, EndpointType } from './types';
-
 import EventEmitter from 'eventemitter3';
 import store from 'store';
 
 import { isUndefined } from '@polkadot/util';
 
 import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { Endpoint, EndpointType, Option, SettingsStruct } from './types';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';
