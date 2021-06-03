@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Add support for WebHID selection (as exposed by ledger packages)
+
+
 ## 0.78.1 May 29, 2021
 
 Changes:

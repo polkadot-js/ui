@@ -19,7 +19,12 @@ export const LEDGER_CONN: Option[] = [
   // },
   {
     info: 'webusb',
-    text: 'Attach Ledger via WebUSB',
+    text: 'Attach Ledger via WebUSB (Chrome, recommended)',
     value: 'webusb'
+  },
+  {
+    info: 'hid',
+    text: 'Attach Ledger via WebHID (Chrome)',
+    value: 'hid'
   }
 ];
