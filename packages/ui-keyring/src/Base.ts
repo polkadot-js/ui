@@ -28,6 +28,8 @@ export class Base {
 
   protected _genesisHash?: string;
 
+  protected _genesisHashAdd: string[] = [];
+
   constructor () {
     this.#accounts = accounts;
     this.#addresses = addresses;
@@ -57,6 +59,12 @@ export class Base {
 
   public get genesisHash (): string | undefined {
     return this._genesisHash;
+  }
+
+  public get genesisHashes (): string[] {
+    return this._genesisHash
+      ? [this._genesisHash, ...this._genesisHashAdd]
+      : [...this._genesisHashAdd];
   }
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean, ss58Format?: Prefix): Uint8Array => {
@@ -115,6 +123,7 @@ export class Base {
         ? options.genesisHash.toString()
         : options.genesisHash.toHex()
     );
+    this._genesisHashAdd = options.genesisHashAdd || [];
     this._store = options.store || this._store;
 
     this.addAccountPairs();

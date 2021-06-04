@@ -10,7 +10,7 @@ import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType,
 
 import { createPair } from '@polkadot/keyring/pair';
 import { chains } from '@polkadot/ui-settings/defaults/chains';
-import { bnToBn, hexToU8a, isHex, isString, stringToU8a, u8aSorted, u8aToString } from '@polkadot/util';
+import { bnToBn, hexToU8a, isFunction, isHex, isString, stringify, stringToU8a, u8aSorted, u8aToString } from '@polkadot/util';
 import { base64Decode, createKeyMulti, jsonDecrypt, jsonEncrypt } from '@polkadot/util-crypto';
 
 import { env } from './observable/env';
@@ -182,7 +182,7 @@ export class Keyring extends Base implements KeyringStruct {
       .filter(([, { json: { meta: { contract } } }]): boolean =>
         !!contract && contract.genesisHash === this.genesisHash
       )
-      .map(([address]): KeyringAddress => this.getContract(address) as KeyringAddress);
+      .map(([address]) => this.getContract(address) as KeyringAddress);
   }
 
   private rewriteKey (json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string): void {
@@ -196,7 +196,6 @@ export class Keyring extends Base implements KeyringStruct {
 
   private loadAccount (json: KeyringJson, key: string): void {
     if (!json.meta.isTesting && (json as KeyringPair$Json).encoded) {
-      // FIXME Just for the transition period (ignoreChecksum)
       const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
 
       this.accounts.add(this._store, pair.address, json, pair.type);
@@ -259,15 +258,13 @@ export class Keyring extends Base implements KeyringStruct {
     this.accounts.add(this._store, pair.address, json, pair.type);
   }
 
-  private allowGenesis (json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
-    if (json && json.meta && this.genesisHash) {
-      const hashes: (string | null | undefined)[] = Object.values(chains).find((hashes): boolean =>
-        hashes.includes(this.genesisHash || '')
-      ) || [this.genesisHash];
-
+  private allowGenesis (hashes: string[], json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
+    if (json && json.meta) {
       if (json.meta.genesisHash) {
-        return hashes.includes(json.meta.genesisHash);
-      } else if (json.meta.contract) {
+        return Array.isArray(json.meta.genesisHash)
+          ? json.meta.genesisHash.some((h) => hashes.includes(h))
+          : hashes.includes(json.meta.genesisHash);
+      } else if (json.meta.contract && json.meta.contract.genesisHash) {
         return hashes.includes(json.meta.contract.genesisHash);
       }
     }
@@ -278,10 +275,20 @@ export class Keyring extends Base implements KeyringStruct {
   public loadAll (options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta, type?: KeypairType }[] = []): void {
     super.initKeyring(options);
 
+    const hashes = [
+      ...this.genesisHashes,
+      ...(
+        Object
+          .values(chains)
+          .find((h) => h.includes(this.genesisHash || '')) ||
+        []
+      )
+    ];
+
     this._store.all((key: string, json: KeyringJson): void => {
-      if (options.filter ? options.filter(json) : true) {
+      if (!isFunction(options.filter) || options.filter(json)) {
         try {
-          if (this.allowGenesis(json)) {
+          if (this.allowGenesis(hashes, json)) {
             if (accountRegex.test(key)) {
               this.loadAccount(json, key);
             } else if (addressRegex.test(key)) {
@@ -291,17 +298,17 @@ export class Keyring extends Base implements KeyringStruct {
             }
           }
         } catch (error) {
-          // ignore
+          console.warn(`Keyring: Unable to load ${key}:${stringify(json)}`);
         }
       }
     });
 
     injected.forEach((account): void => {
-      if (this.allowGenesis(account)) {
+      if (this.allowGenesis(hashes, account)) {
         try {
           this.loadInjected(account.address, account.meta, account.type);
         } catch (error) {
-          // ignore
+          console.warn(`Keyring: Unable to inject ${stringify(account)}`);
         }
       }
     });
