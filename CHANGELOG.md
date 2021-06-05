@@ -5,6 +5,7 @@
 Changes:
 
 - Add support for WebHID selection (as exposed by ledger packages)
+- Support for multi genesisHash in keyring accounts
 
 
 ## 0.78.1 May 29, 2021
