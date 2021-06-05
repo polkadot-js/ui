@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/react-qr",
-  "version": "0.78.2-15",
+  "version": "0.78.2-16",
   "type": "module",
   "description": "Generates and reads QR codes",
   "main": "index.js",
