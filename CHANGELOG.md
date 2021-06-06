@@ -1,10 +1,11 @@
 # CHANGELOG
 
-## master
+## 0.79.1, Jun 6, 2021
 
 Changes:
 
 - Add support for WebHID selection (as exposed by ledger packages)
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.7.1
 
 
 ## 0.78.1 May 29, 2021
