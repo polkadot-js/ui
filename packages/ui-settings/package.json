@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-settings",
-  "version": "0.79.2-2",
+  "version": "0.80.0",
   "type": "module",
   "description": "Manages app settings",
   "main": "index.js",
@@ -9,9 +9,9 @@
   "maintainers": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
-    "@polkadot/networks": "^6.7.1",
-    "@polkadot/util": "^6.7.1",
+    "@babel/runtime": "^7.14.5",
+    "@polkadot/networks": "^6.8.1",
+    "@polkadot/util": "^6.8.1",
     "eventemitter3": "^4.0.7",
     "store": "^2.0.12"
   },
