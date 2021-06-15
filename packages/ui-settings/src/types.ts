@@ -9,6 +9,7 @@ export type Option = {
 }
 
 export interface SettingsStruct {
+  apiType: Endpoint;
   apiUrl: string;
   camera: string;
   i18nLang: string;
@@ -28,3 +29,10 @@ export interface NetworkSpecsStruct {
   title: string;
   unit: string;
 }
+
+export interface Endpoint {
+  type: EndpointType;
+  param: string;
+}
+
+export type EndpointType = 'json-rpc' | 'substrate-connect';
