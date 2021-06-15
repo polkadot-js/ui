@@ -30,18 +30,9 @@ export interface NetworkSpecsStruct {
   unit: string;
 }
 
-export type Endpoint = JsonRpcEndpoint | SubstrateConnectEndpoint;
-export interface JsonRpcEndpoint {
-  type: EndpointType.jrpc;
-  url: string;
+export type Endpoint = {
+  type: EndpointType;
+  param: string;
 }
 
-export interface SubstrateConnectEndpoint {
-  type: EndpointType.substrateconnect;
-  chain: string;
-}
-
-export enum EndpointType {
-  jrpc = 'json-rpc',
-  substrateconnect = 'substrate-connect'
-}
+export type EndpointType = 'json-rpc' | 'substrate-connect';

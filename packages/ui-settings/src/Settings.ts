@@ -1,13 +1,14 @@
 // Copyright 2017-2021 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { Endpoint, EndpointType, Option, SettingsStruct } from './types';
+
 import EventEmitter from 'eventemitter3';
 import store from 'store';
 
 import { isUndefined } from '@polkadot/util';
 
 import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
-import { Endpoint, EndpointType, Option, SettingsStruct } from './types';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';
@@ -51,7 +52,7 @@ export class Settings implements SettingsStruct {
 
     // will become deprecated for supporting substrate connect light clients. apiType structure should be used instead
     this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || process.env.WS_URL || (ENDPOINT_DEFAULT.value as string);
-    this.#apiType = { type: EndpointType.jrpc, url: this.#apiUrl };
+    this.#apiType = { type: 'json-rpc' as EndpointType, url: this.#apiUrl };
     this.#camera = withDefault(CAMERA, settings.camera, CAMERA_DEFAULT);
     this.#ledgerConn = withDefault(LEDGER_CONN, settings.ledgerConn, LEDGER_CONN_DEFAULT);
     this.#i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
