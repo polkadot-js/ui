@@ -30,7 +30,7 @@ export interface NetworkSpecsStruct {
   unit: string;
 }
 
-export type Endpoint = {
+export interface Endpoint {
   type: EndpointType;
   param: string;
 }
