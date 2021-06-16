@@ -22,15 +22,16 @@ interface Props {
   onScan: (scanned: ScanType) => void;
   size?: string | number;
   style?: React.CSSProperties;
+  isEthereum?: boolean
 }
 
-function ScanAddress ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {
+function ScanAddress ({ className, isEthereum, onError, onScan, size, style }: Props): React.ReactElement<Props> {
   const _onScan = useCallback(
     (data: string | null): void => {
       if (data) {
         try {
           const [prefix, content, genesisHash, ...name] = data.split(':');
-          const isValidPrefix = prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX;
+          const isValidPrefix = (prefix === (isEthereum ? 'ethereum' : ADDRESS_PREFIX)) || (prefix === SEED_PREFIX);
 
           assert(isValidPrefix, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
 
@@ -46,7 +47,7 @@ function ScanAddress ({ className, onError, onScan, size, style }: Props): React
         }
       }
     },
-    [onScan]
+    [onScan, isEthereum]
   );
 
   return (
