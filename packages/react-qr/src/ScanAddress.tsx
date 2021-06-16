@@ -31,7 +31,7 @@ function ScanAddress ({ className, isEthereum, onError, onScan, size, style }: P
       if (data) {
         try {
           const [prefix, content, genesisHash, ...name] = data.split(':');
-          const isValidPrefix = isEthereum ? prefix === 'ethereum' : prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX;
+          const isValidPrefix = (prefix === (isEthereum ? 'ethereum' : ADDRESS_PREFIX)) || (prefix === SEED_PREFIX);
 
           assert(isValidPrefix, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
 
