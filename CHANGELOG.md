@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 0.81.1, Jun 20, 2021
+
+Contributed:
+
+- Import `ethereum` addresses via QR (Thanks to https://github.com/joelamouche)
+- Support settings for non-RPC connectors (Thanks to https://github.com/wirednkod)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.9.1
+- Fix webpack demo import locations
+
+
 ## 0.80.1, Jun 14, 2021
 
 Changes:
