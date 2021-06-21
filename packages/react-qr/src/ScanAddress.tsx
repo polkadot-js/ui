@@ -44,12 +44,12 @@ function ScanAddress ({ className, isEthereum, onError, onScan, size, style }: P
           onScan({ content, genesisHash, isAddress, name: name?.length ? name.join(':') : undefined });
         } catch (error) {
           onError && onError(error as Error);
-          
+
           console.error('@polkadot/react-qr:QrScanAddress', (error as Error).message, data);
         }
       }
     },
-    [onScan, isEthereum]
+    [onScan, onError, isEthereum]
   );
 
   return (
