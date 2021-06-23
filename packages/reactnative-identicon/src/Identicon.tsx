@@ -33,7 +33,7 @@ const Components: Record<string, React.ComponentType<ComponentProps>> = {
 };
 
 export default class IdentityIcon extends React.PureComponent<Props, State> {
-  public state: State = {
+  public override state: State = {
     address: '',
     publicKey: '0x'
   };
@@ -62,7 +62,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
     }
   }
 
-  public render (): React.ReactNode {
+  public override render (): React.ReactNode {
     const { theme = DEFAULT_THEME, size = DEFAULT_SIZE } = this.props;
     const { address, publicKey } = this.state;
 
