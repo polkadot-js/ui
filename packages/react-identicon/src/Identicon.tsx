@@ -58,7 +58,7 @@ const Wrapper = styled.div`
 `;
 
 class BaseIcon extends React.PureComponent<Props, State> {
-  public state: State = {
+  public override state: State = {
     address: '',
     publicKey: '0x'
   };
@@ -98,7 +98,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
     }
   }
 
-  public render (): React.ReactNode {
+  public override render (): React.ReactNode {
     const { address } = this.state;
     const wrapped = this.getWrapped(this.state, this.props);
 

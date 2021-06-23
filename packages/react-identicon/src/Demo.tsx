@@ -11,7 +11,7 @@ import { Identicon } from '.';
 const THEMES = ['beachball', 'polkadot', 'substrate'];
 
 export default class Demo extends React.PureComponent {
-  public render (): React.ReactNode {
+  public override render (): React.ReactNode {
     const identities: string[] = [];
 
     while (identities.length !== 50) {
