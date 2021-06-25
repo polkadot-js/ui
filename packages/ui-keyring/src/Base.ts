@@ -7,7 +7,7 @@ import type { AddressSubject } from './observable/types';
 import type { KeyringOptions, KeyringStore } from './types';
 
 import { createTestKeyring } from '@polkadot/keyring/testing';
-import { isBoolean, isString } from '@polkadot/util';
+import { isBoolean, isNumber, isString } from '@polkadot/util';
 
 import { accounts } from './observable/accounts';
 import { addresses } from './observable/addresses';
@@ -93,7 +93,7 @@ export class Base {
   }
 
   public setSS58Format (ss58Format?: Prefix): void {
-    if (this.#keyring && ss58Format) {
+    if (this.#keyring && isNumber(ss58Format)) {
       this.#keyring.setSS58Format(ss58Format);
     }
   }
