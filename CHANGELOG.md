@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 0.82.1, Jun 26, 2021
+
+Contributed:
+
+- Adjust Qr address imports (Thanks to https://github.com/joelamouche)
+- Bubble errors on Qr scanning (Thanks to https://github.com/joelamouche)
+
+Changes:
+
+- Fix `keyring.setSS58Format` to correctly set for prefix 0
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.10.1
+
+
 ## 0.81.1, Jun 20, 2021
 
 Contributed:
