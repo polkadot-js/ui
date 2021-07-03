@@ -45,7 +45,7 @@ export class Settings implements SettingsStruct {
 
   #uiTheme: string;
 
-  #notificationType: string;
+  #notification: string;
 
   constructor () {
     const settings = (store.get('settings') as SettingsStruct) || {};
@@ -63,7 +63,7 @@ export class Settings implements SettingsStruct {
     this.#prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
     this.#uiMode = settings.uiMode || UIMODE_DEFAULT;
     this.#uiTheme = settings.uiTheme || UITHEME_DEFAULT;
-    this.#notificationType = settings.notificationType || NOTIFICATION_DEFAULT;
+    this.#notification = settings.notification || NOTIFICATION_DEFAULT;
 
   }
 
@@ -87,8 +87,8 @@ export class Settings implements SettingsStruct {
     return this.#icon;
   }
 
-  public get notificationType(): string {
-    return this.#notificationType;
+  public get notification(): string {
+    return this.#notification;
   }
 
   public get ledgerConn (): string {
@@ -164,7 +164,7 @@ export class Settings implements SettingsStruct {
       icon: this.#icon,
       ledgerConn: this.#ledgerConn,
       locking: this.#locking,
-      notificationType: this.#notificationType,
+      notification: this.#notification,
       prefix: this.#prefix,
       uiMode: this.#uiMode,
       uiTheme: this.#uiTheme
@@ -179,7 +179,7 @@ export class Settings implements SettingsStruct {
     this.#i18nLang = settings.i18nLang || this.#i18nLang;
     this.#icon = settings.icon || this.#icon;
     this.#locking = settings.locking || this.#locking;
-    this.#notificationType = settings.notificationType || this.#notificationType;
+    this.#notification = settings.notification || this.#notification;
     this.#prefix = isUndefined(settings.prefix) ? this.#prefix : settings.prefix;
     this.#uiMode = settings.uiMode || this.#uiMode;
     this.#uiTheme = settings.uiTheme || this.#uiTheme;
