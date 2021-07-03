@@ -86,7 +86,7 @@ export class Settings implements SettingsStruct {
     return this.#icon;
   }
 
-  public get notification(): string {
+  public get notification (): string {
     return this.#notification;
   }
 
