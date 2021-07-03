@@ -16,6 +16,7 @@ export interface SettingsStruct {
   icon: string;
   ledgerConn: string;
   locking: string;
+  notificationType: string;
   prefix: number;
   uiMode: string;
   uiTheme: string;
