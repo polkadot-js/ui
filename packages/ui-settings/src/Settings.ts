@@ -64,7 +64,6 @@ export class Settings implements SettingsStruct {
     this.#uiMode = settings.uiMode || UIMODE_DEFAULT;
     this.#uiTheme = settings.uiTheme || UITHEME_DEFAULT;
     this.#notification = settings.notification || NOTIFICATION_DEFAULT;
-
   }
 
   public get camera (): string {
