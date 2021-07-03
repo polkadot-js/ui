@@ -8,7 +8,7 @@ import store from 'store';
 
 import { isUndefined } from '@polkadot/util';
 
-import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';
@@ -45,6 +45,8 @@ export class Settings implements SettingsStruct {
 
   #uiTheme: string;
 
+  #notification: string;
+
   constructor () {
     const settings = (store.get('settings') as SettingsStruct) || {};
 
@@ -61,6 +63,7 @@ export class Settings implements SettingsStruct {
     this.#prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
     this.#uiMode = settings.uiMode || UIMODE_DEFAULT;
     this.#uiTheme = settings.uiTheme || UITHEME_DEFAULT;
+    this.#notification = settings.notification || NOTIFICATION_DEFAULT;
   }
 
   public get camera (): string {
@@ -81,6 +84,10 @@ export class Settings implements SettingsStruct {
 
   public get icon (): string {
     return this.#icon;
+  }
+
+  public get notification (): string {
+    return this.#notification;
   }
 
   public get ledgerConn (): string {
@@ -156,6 +163,7 @@ export class Settings implements SettingsStruct {
       icon: this.#icon,
       ledgerConn: this.#ledgerConn,
       locking: this.#locking,
+      notification: this.#notification,
       prefix: this.#prefix,
       uiMode: this.#uiMode,
       uiTheme: this.#uiTheme
@@ -170,6 +178,7 @@ export class Settings implements SettingsStruct {
     this.#i18nLang = settings.i18nLang || this.#i18nLang;
     this.#icon = settings.icon || this.#icon;
     this.#locking = settings.locking || this.#locking;
+    this.#notification = settings.notification || this.#notification;
     this.#prefix = isUndefined(settings.prefix) ? this.#prefix : settings.prefix;
     this.#uiMode = settings.uiMode || this.#uiMode;
     this.#uiTheme = settings.uiTheme || this.#uiTheme;
