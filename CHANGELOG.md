@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 0.83.1, Jul 5, 2021
+
+Contributed:
+
+- Add support for notifications setting (Thanks to https://github.com/shawntabrizi)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.11.1
+
+
 ## 0.82.1, Jun 26, 2021
 
 Contributed:
