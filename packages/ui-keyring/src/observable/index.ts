@@ -3,8 +3,7 @@
 
 import type { SubjectInfo } from './types';
 
-import { combineLatest } from '@polkadot/x-rxjs';
-import { map } from '@polkadot/x-rxjs/operators';
+import { combineLatest, map } from '@polkadot/x-rxjs';
 
 import { accounts } from './accounts';
 import { addresses } from './addresses';
@@ -16,11 +15,11 @@ interface Result {
   contracts: SubjectInfo;
 }
 
-export const obervableAll = combineLatest(
+export const obervableAll = combineLatest([
   accounts.subject,
   addresses.subject,
   contracts.subject
-).pipe(
+]).pipe(
   map(([accounts, addresses, contracts]): Result => ({
     accounts,
     addresses,
