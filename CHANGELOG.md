@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Internal RxJs usage has been bumped to the 7.2 version
+
+
 ## 0.83.1, Jul 5, 2021
 
 Contributed:
