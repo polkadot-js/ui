@@ -1,8 +1,8 @@
 // Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { BehaviorSubject } from 'rxjs';
 import type { KeypairType } from '@polkadot/util-crypto/types';
-import type { BehaviorSubject } from '@polkadot/x-rxjs';
 import type { KeyringSectionOption } from '../options/types';
 import type { KeyringJson, KeyringStore } from '../types';
 

@@ -3,7 +3,7 @@
 
 import type { SubjectInfo } from './types';
 
-import { combineLatest, map } from '@polkadot/x-rxjs';
+import { combineLatest, map } from 'rxjs';
 
 import { accounts } from './accounts';
 import { addresses } from './addresses';
