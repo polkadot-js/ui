@@ -40,7 +40,7 @@ import accountObservable from '@polkadot/ui-keyring/observable/accounts';
 import { SingleAddress, SubjectInfo } from '@polkadot/ui-keyring/observable/types';
 import React from 'react';
 import { Subscribe } from 'react-with-observable';
-import { map } from 'rxjs/operators';
+import { map } from 'rxjs';
 
 class MyReactComponent extends React.PureComponent {
   render () {

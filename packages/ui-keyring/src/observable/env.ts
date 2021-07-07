@@ -1,7 +1,7 @@
 // Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { BehaviorSubject } from '@polkadot/x-rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 const subject = new BehaviorSubject(false);
 
