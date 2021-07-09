@@ -3,11 +3,8 @@
 
 import './detectPackage';
 
-import { Identicon } from './Identicon';
+import { Identicon } from './bundle';
 
-export * from './icons';
-export { packageInfo } from './packageInfo';
-
-export { Identicon };
+export * from './bundle';
 
 export default Identicon;
