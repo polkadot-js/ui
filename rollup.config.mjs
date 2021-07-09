@@ -10,29 +10,31 @@ const pkgs = [
   '@polkadot/react-qr',
   '@polkadot/ui-keyring',
   '@polkadot/ui-settings',
-  '@polkadot/ui-shared',
   '@polkadot/vue-identicon'
 ];
 
 const external = [
   ...pkgs,
+  '@polkadot/hw-ledger',
   '@polkadot/keyring',
   '@polkadot/util',
   '@polkadot/util-crypto',
   'react',
   'react-dom',
-  'vue'
+  'vue',
+  'vue-router'
 ];
 
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
-  vue: 'Vue'
+  vue: 'Vue',
+  'vue-router': 'VueRouter'
 };
 
-const entries = ['api-derive', 'rpc-core', 'rpc-provider', 'types-known'].reduce((all, p) => ({
+const entries = ['ui-shared'].reduce((all, p) => ({
   ...all,
-  [`@polkadot/${p}`]: path.resolve(process.cwd(), `packages/${p}/build/bundle.js`)
+  [`@polkadot/${p}`]: path.resolve(process.cwd(), `packages/${p}/build`)
 }), {
   // re-exported in @polkadot/util-crypto, map directly
   '@polkadot/networks': '@polkadot/util-crypto'
