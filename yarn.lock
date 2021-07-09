@@ -2552,6 +2552,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@polkadot/x-bundle@npm:^6.11.2-14":
+  version: 6.11.2-14
+  resolution: "@polkadot/x-bundle@npm:6.11.2-14"
+  dependencies:
+    "@babel/runtime": ^7.14.6
+    "@polkadot/util": ^6.11.2-14
+    buffer-es6: ^4.9.3
+  checksum: b812b8d7134254a4b6c0441af4d64416d325cd7ded2a5ae1df34133ddb9d00a5efbd2c7c319c05e9d7a9c9e3fcaec6b917c9301bb43ee51825be26162347cfd0
+  languageName: node
+  linkType: hard
+
 "@polkadot/x-global@npm:6.11.2-14":
   version: 6.11.2-14
   resolution: "@polkadot/x-global@npm:6.11.2-14"
@@ -4856,6 +4867,13 @@ __metadata:
   dependencies:
     node-int64: ^0.4.0
   checksum: 9ba4dc58ce86300c862bffc3ae91f00b2a03b01ee07f3564beeeaf82aa243b8b03ba53f123b0b842c190d4399b94697970c8e7cf7b1ea44b61aa28c3526a4449
+  languageName: node
+  linkType: hard
+
+"buffer-es6@npm:^4.9.3":
+  version: 4.9.3
+  resolution: "buffer-es6@npm:4.9.3"
+  checksum: dfc8ebb3c5c00166e6f81e6ec7ea876693ea6197a8d0b07b1a17482ffab0e5d3307bfb539f84862b1ae35cd70ad03835db0f3c7dc4e337cbd16c50bb4c7e5df7
   languageName: node
   linkType: hard
 
@@ -14094,6 +14112,7 @@ resolve@^2.0.0-next.3:
     "@babel/runtime": ^7.14.6
     "@polkadot/dev": ^0.62.56
     "@polkadot/ts": ^0.4.4
+    "@polkadot/x-bundle": ^6.11.2-14
     "@types/jest": ^26.0.23
     babel-plugin-transform-vue-template: ^0.4.2
     empty: ^0.10.1

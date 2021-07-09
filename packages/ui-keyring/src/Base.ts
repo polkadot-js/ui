@@ -6,7 +6,7 @@ import type { Prefix } from '@polkadot/util-crypto/address/types';
 import type { AddressSubject } from './observable/types';
 import type { KeyringOptions, KeyringStore } from './types';
 
-import { createTestKeyring } from '@polkadot/keyring/testing';
+import { createTestKeyring } from '@polkadot/keyring';
 import { isBoolean, isNumber, isString } from '@polkadot/util';
 
 import { accounts } from './observable/accounts';

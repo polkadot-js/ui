@@ -8,8 +8,8 @@ import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
 import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringPairs$Json, KeyringStruct } from './types';
 
-import { createPair } from '@polkadot/keyring/pair';
-import { chains } from '@polkadot/ui-settings/defaults/chains';
+import { createPair } from '@polkadot/keyring';
+import { chains } from '@polkadot/ui-settings';
 import { bnToBn, hexToU8a, isHex, isString, stringToU8a, u8aSorted, u8aToString } from '@polkadot/util';
 import { base64Decode, createKeyMulti, jsonDecrypt, jsonEncrypt } from '@polkadot/util-crypto';
 
