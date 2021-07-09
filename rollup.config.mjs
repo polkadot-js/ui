@@ -24,6 +24,12 @@ const external = [
   'vue'
 ];
 
+const globals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  vue: 'Vue'
+};
+
 const entries = ['api-derive', 'rpc-core', 'rpc-provider', 'types-known'].reduce((all, p) => ({
   ...all,
   [`@polkadot/${p}`]: path.resolve(process.cwd(), `packages/${p}/build/bundle.js`)
@@ -39,6 +45,7 @@ export default pkgs.map((pkg) => {
 
   return createBundle({
     external,
+    globals,
     pkg,
     ...override,
     entries: {
