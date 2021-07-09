@@ -3,7 +3,7 @@
 
 import type { Option } from '../types';
 
-import { available } from '@polkadot/networks';
+import { availableNetworks } from '@polkadot/networks';
 
 export const PREFIX_DEFAULT = -1;
 
@@ -13,7 +13,7 @@ const defaultNetwork: Option = {
   value: -1
 };
 
-const networks = available.map(({ displayName, network, prefix }) => ({
+const networks = availableNetworks.map(({ displayName, network, prefix }) => ({
   info: network,
   text: displayName,
   value: prefix
