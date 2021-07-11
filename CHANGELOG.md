@@ -1,13 +1,15 @@
 # CHANGELOG
 
-## master
+## 0.84.1 Jul 11, 2021
 
 Changes:
 
 - Internal RxJs usage has been bumped to the 7.2 version
+- Allow building as a completely stand-alone browser bundle (experimental)
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.0.1
 
 
-## 0.83.1, Jul 5, 2021
+## 0.83.1 Jul 5, 2021
 
 Contributed:
 
@@ -18,7 +20,7 @@ Changes:
 - Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.11.1
 
 
-## 0.82.1, Jun 26, 2021
+## 0.82.1 Jun 26, 2021
 
 Contributed:
 
@@ -31,7 +33,7 @@ Changes:
 - Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.10.1
 
 
-## 0.81.1, Jun 20, 2021
+## 0.81.1 Jun 20, 2021
 
 Contributed:
 
@@ -44,14 +46,14 @@ Changes:
 - Fix webpack demo import locations
 
 
-## 0.80.1, Jun 14, 2021
+## 0.80.1 Jun 14, 2021
 
 Changes:
 
 - Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.8.1
 
 
-## 0.79.1, Jun 6, 2021
+## 0.79.1 Jun 6, 2021
 
 Changes:
 
