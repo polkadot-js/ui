@@ -28,12 +28,12 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/runtime": "^7.14.6",
+    "@babel/core": "^7.14.8",
+    "@babel/runtime": "^7.14.8",
     "@polkadot/dev": "^0.62.57",
     "@polkadot/ts": "^0.4.4",
-    "@polkadot/x-bundle": "^7.0.1",
-    "@types/jest": "^26.0.23",
+    "@polkadot/x-bundle": "^7.0.3",
+    "@types/jest": "^26.0.24",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
     "react": "^17.0.2",
@@ -45,5 +45,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-serve": "^3.2.0"
   },
-  "version": "0.84.1"
+  "version": "0.84.2"
 }
