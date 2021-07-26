@@ -1,12 +1,12 @@
 {
   "name": "@polkadot/example-react",
-  "version": "0.84.1",
+  "version": "0.84.2",
   "description": "A very basic example with ui-* & react-* packages",
   "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "maintainers": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.14.6"
+    "@babel/runtime": "^7.14.8"
   }
 }
