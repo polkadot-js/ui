@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.84.3 Aug 2, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.1.1
+
+
 ## 0.84.2 Jul 26, 2021
 
 Changes:
