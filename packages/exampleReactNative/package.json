@@ -30,9 +30,9 @@
     "stream-http": "^3.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
+    "@babel/core": "^7.15.0",
     "@babel/runtime": "^7.14.8",
-    "@react-native-community/cli-platform-ios": "^5.0.1",
+    "@react-native-community/cli-platform-ios": "^5.0.2",
     "@types/react-test-renderer": "17.0.1",
     "babel-jest": "^27.0.6",
     "metro-react-native-babel-preset": "^0.66.2",
