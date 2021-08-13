@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Contributed:
+
+- Always use `bigint` type to indicate instance (Thanks to https://github.com/ntduan)
+
+
 ## 0.84.3 Aug 2, 2021
 
 Changes:
