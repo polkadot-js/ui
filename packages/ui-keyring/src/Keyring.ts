@@ -45,7 +45,7 @@ export class Keyring extends Base implements KeyringStruct {
     return this.addExternal(address, { ...meta, hardwareType, isHardware: true });
   }
 
-  public addMultisig (addresses: (string | Uint8Array)[], threshold: BigInt | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
+  public addMultisig (addresses: (string | Uint8Array)[], threshold: bigint | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
     const address = createKeyMulti(addresses, threshold);
 
     // we could use `sortAddresses`, but rather use internal encode/decode so we are 100%
