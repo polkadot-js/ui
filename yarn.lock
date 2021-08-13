@@ -1461,12 +1461,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.8.4":
-  version: 7.14.8
-  resolution: "@babel/runtime@npm:7.14.8"
+"@babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.3, @babel/runtime@npm:^7.8.4":
+  version: 7.15.3
+  resolution: "@babel/runtime@npm:7.15.3"
   dependencies:
     regenerator-runtime: ^0.13.4
-  checksum: d2dd0ce51ddab78ac93928b04042425145d0dc8cc2b70150d47934f8703f55702eb0b2894f9bd47f66794ad04d8bb03a6a847d0138fbb7aa0b970b5ccd5cc8b7
+  checksum: 2f0b8d2d4e36035ab1d84af0ec26aafa098536870f27c8e07de0a0e398f7a394fdea68a88165535ffb52ded6a68912bdc3450bdf91f229eb132e1c89470789f5
   languageName: node
   linkType: hard
 
@@ -2162,9 +2162,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/dev@npm:^0.62.58":
-  version: 0.62.58
-  resolution: "@polkadot/dev@npm:0.62.58"
+"@polkadot/dev@npm:^0.62.59":
+  version: 0.62.59
+  resolution: "@polkadot/dev@npm:0.62.59"
   dependencies:
     "@babel/cli": ^7.14.8
     "@babel/core": ^7.15.0
@@ -2251,7 +2251,7 @@ __metadata:
     polkadot-exec-rollup: scripts/polkadot-exec-rollup.cjs
     polkadot-exec-tsc: scripts/polkadot-exec-tsc.cjs
     polkadot-exec-webpack: scripts/polkadot-exec-webpack.cjs
-  checksum: 10dfbc5b2afa1131a6643b69777e13c9d298a6e15c743a475f2eaa4849e44372cd22672ad838010a31cd7b0428ac5326f4dd6a75dbf9c3864c1044e858416a63
+  checksum: 2955f2b907bd23447b98f3b567284cb994ad0f75b6564286dfa96d90b072fc58ca7333865768a76c887e31ead100e4b9f6da476c90046d7ac38b40f4110a091e
   languageName: node
   linkType: hard
 
@@ -2259,7 +2259,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/example-react@workspace:packages/example-react"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
   languageName: unknown
   linkType: soft
 
@@ -2267,7 +2267,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/example-vue@workspace:packages/example-vue"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
   languageName: unknown
   linkType: soft
 
@@ -2326,7 +2326,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/react-identicon@workspace:packages/react-identicon"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
     "@polkadot/keyring": ^7.1.1
     "@polkadot/ui-settings": 0.84.4-0
     "@polkadot/ui-shared": 0.84.4-0
@@ -2356,7 +2356,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/react-qr@workspace:packages/react-qr"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
     "@polkadot/util": ^7.1.1
     "@polkadot/util-crypto": ^7.1.1
     "@types/react-qr-reader": ^2.1.4
@@ -2377,11 +2377,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
     "@polkadot/ui-shared": 0.84.4-0
     "@polkadot/util": ^7.1.1
     "@polkadot/util-crypto": ^7.1.1
-    "@types/react-native": ^0.64.12
+    "@types/react-native": ^0.64.13
     react-native-svg: ^12.1.1
   peerDependencies:
     "@polkadot/util": "*"
@@ -2404,7 +2404,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-assets@workspace:packages/ui-assets"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
   languageName: unknown
   linkType: soft
 
@@ -2412,7 +2412,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
     "@polkadot/hw-ledger": ^7.1.1
     "@polkadot/keyring": ^7.1.1
     "@polkadot/ui-settings": 0.84.4-0
@@ -2433,7 +2433,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
     "@polkadot/networks": ^7.1.1
     "@polkadot/util": ^7.1.1
     "@types/store": ^2.0.2
@@ -2449,7 +2449,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
     "@polkadot/util": ^7.1.1
     "@polkadot/util-crypto": ^7.1.1
     "@types/color": ^3.0.2
@@ -2507,7 +2507,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
     "@polkadot/ui-shared": 0.84.4-0
     "@polkadot/util": ^7.1.1
     "@polkadot/util-crypto": ^7.1.1
@@ -3216,12 +3216,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.64.12":
-  version: 0.64.12
-  resolution: "@types/react-native@npm:0.64.12"
+"@types/react-native@npm:^0.64.13":
+  version: 0.64.13
+  resolution: "@types/react-native@npm:0.64.13"
   dependencies:
     "@types/react": "*"
-  checksum: 63f73b324a39cb2bbff4ba3788d78b556bace33f53dc4d3faa2608552ae50b7675eb8b24504e3c566ce3c73a9282d722c2f5fb6345c709d846b72618d76a5fc5
+  checksum: 3e53cc7d31d5b3a134871bcc6a0c61c10caecc90f5b2d691fd8f8a480f145395098924146a05a4eb7d1a1ddaa516becdc600cdf1d50a6443e4324f94ec2e987e
   languageName: node
   linkType: hard
 
@@ -7301,7 +7301,7 @@ __metadata:
   resolution: "exampleReactNative@workspace:packages/exampleReactNative"
   dependencies:
     "@babel/core": ^7.15.0
-    "@babel/runtime": ^7.14.8
+    "@babel/runtime": ^7.15.3
     "@polkadot/keyring": ^7.1.1
     "@polkadot/reactnative-identicon": 0.84.4-0
     "@polkadot/ui-keyring": 0.84.4-0
@@ -14109,8 +14109,8 @@ resolve@^2.0.0-next.3:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@babel/core": ^7.15.0
-    "@babel/runtime": ^7.14.8
-    "@polkadot/dev": ^0.62.58
+    "@babel/runtime": ^7.15.3
+    "@polkadot/dev": ^0.62.59
     "@polkadot/ts": ^0.4.4
     "@polkadot/x-bundle": ^7.1.1
     "@types/jest": ^26.0.24
