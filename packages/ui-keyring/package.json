@@ -14,10 +14,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.15.3",
-    "@polkadot/hw-ledger": "^7.1.1",
-    "@polkadot/keyring": "^7.1.1",
+    "@polkadot/hw-ledger": "^7.1.3-3",
+    "@polkadot/keyring": "^7.1.3-3",
     "@polkadot/ui-settings": "0.84.4-0",
-    "@polkadot/util": "^7.1.1",
+    "@polkadot/util": "^7.1.3-3",
     "mkdirp": "^1.0.4",
     "rxjs": "^7.3.0",
     "store": "^2.0.12"
