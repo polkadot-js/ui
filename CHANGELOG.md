@@ -1,10 +1,14 @@
 # CHANGELOG
 
-## master
+## 0.85.1 Aug 15, 2021
 
 Contributed:
 
 - Always use `bigint` type to indicate instance (Thanks to https://github.com/ntduan)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.2.1
 
 
 ## 0.84.3 Aug 2, 2021
