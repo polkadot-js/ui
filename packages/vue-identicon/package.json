@@ -16,7 +16,7 @@
     "@polkadot/ui-shared": "0.85.1",
     "@polkadot/util": "^7.2.1",
     "@polkadot/util-crypto": "^7.2.1",
-    "jdenticon": "3.1.0"
+    "jdenticon": "3.1.1"
   },
   "peerDependencies": {
     "@polkadot/util": "*",

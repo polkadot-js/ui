@@ -20,7 +20,7 @@
     "@polkadot/util-crypto": "^7.2.1",
     "color": "^3.2.1",
     "ethereum-blockies-base64": "^1.0.2",
-    "jdenticon": "3.1.0",
+    "jdenticon": "3.1.1",
     "react-copy-to-clipboard": "^5.0.3",
     "styled-components": "^5.3.0"
   },
