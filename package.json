@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/runtime": "^7.15.3",
-    "@polkadot/dev": "^0.62.59",
+    "@polkadot/dev": "^0.62.60",
     "@polkadot/ts": "^0.4.4",
     "@polkadot/x-bundle": "^7.2.1",
     "@types/jest": "^26.0.24",
