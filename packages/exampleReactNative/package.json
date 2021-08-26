@@ -12,19 +12,19 @@
     "test": "jest"
   },
   "dependencies": {
-    "@polkadot/keyring": "^7.2.1",
+    "@polkadot/keyring": "^7.2.2-5",
     "@polkadot/reactnative-identicon": "0.85.2-0",
     "@polkadot/ui-keyring": "0.85.2-0",
     "@polkadot/ui-settings": "0.85.2-0",
-    "@polkadot/util": "^7.2.1",
-    "@polkadot/util-crypto": "^7.2.1",
+    "@polkadot/util": "^7.2.2-5",
+    "@polkadot/util-crypto": "^7.2.2-5",
     "@react-native-community/async-storage": "^1.12.1",
     "fast-text-encoding": "^1.0.3",
     "get-yarn-workspaces": "^1.0.2",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "react": "^17.0.2",
-    "react-native": "^0.64.2",
+    "react-native": "^0.65.1",
     "react-native-crypto": "^2.2.0",
     "react-native-randombytes": "^3.6.1",
     "stream-http": "^3.2.0"
