@@ -1,7 +1,7 @@
 // Copyright 2017-2021 @polkadot/example-react authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Button, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
@@ -57,17 +57,22 @@ export default function App (): React.ReactElement | null {
   const [phrase, setPhrase] = useState<string | null>(null);
   const [ss58Format, setSS58Format] = useState(42);
 
-  const _onClickNew = (): void => {
-    const phrase = mnemonicGenerate(12);
-    const { address } = keyring.createFromUri(phrase);
+  const _onClickNew = useCallback(
+    (): void => {
+      const phrase = mnemonicGenerate(12);
+      const { address } = keyring.createFromUri(phrase);
 
-    setAddress(keyring.encodeAddress(address, ss58Format));
-    setPhrase(phrase);
-  };
+      setAddress(keyring.encodeAddress(address, ss58Format));
+      setPhrase(phrase);
+    },
+    [ss58Format]
+  );
 
-  const _onChangeSS58Format = (value: string): void => {
-    setSS58Format(parseInt(value, 10));
-  };
+  const _onChangeSS58Format = useCallback(
+    (value: string) =>
+      () => setSS58Format(parseInt(value, 10)),
+    []
+  );
 
   useEffect((): void => {
     isReady && _onClickNew();
@@ -108,7 +113,8 @@ export default function App (): React.ReactElement | null {
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior='automatic'
-          style={styles.scrollView}>
+          style={styles.scrollView}
+        >
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.mainTitle}>React-Native Example</Text>
@@ -144,7 +150,7 @@ export default function App (): React.ReactElement | null {
                   .map(({ text, value }): React.ReactNode => (
                     <Button
                       key={value}
-                      onPress={(): void => _onChangeSS58Format(value.toString())}
+                      onPress={_onChangeSS58Format(value.toString())}
                       title={text}
                     />
                   ))
