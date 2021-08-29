@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.85.3 Aug 29, 2021
+
+Changes:
+
+- Revert color bump to 4.0.1, keep at 3.2.1 (numeric separators on Vue & react-native)
+
+
 ## 0.85.2 Aug 28, 2021
 
 Changes:
