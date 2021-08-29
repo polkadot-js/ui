@@ -2317,14 +2317,14 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@polkadot/keyring": ^7.3.1
-    "@polkadot/ui-settings": 0.85.2
-    "@polkadot/ui-shared": 0.85.2
+    "@polkadot/ui-settings": 0.85.3
+    "@polkadot/ui-shared": 0.85.3
     "@polkadot/util": ^7.3.1
     "@polkadot/util-crypto": ^7.3.1
     "@types/react-copy-to-clipboard": ^5.0.1
     "@types/react-dom": ^17.0.9
     "@types/styled-components": ^5.1.13
-    color: ^4.0.1
+    color: ^3.2.1
     ethereum-blockies-base64: ^1.0.2
     jdenticon: 3.1.1
     react-copy-to-clipboard: ^5.0.4
@@ -2362,16 +2362,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/reactnative-identicon@0.85.2, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
+"@polkadot/reactnative-identicon@0.85.3, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
     "@babel/runtime": ^7.15.3
-    "@polkadot/ui-shared": 0.85.2
+    "@polkadot/ui-shared": 0.85.3
     "@polkadot/util": ^7.3.1
     "@polkadot/util-crypto": ^7.3.1
     "@types/react-native": ^0.64.13
-    react-native-svg: ^12.2.0
+    react-native-svg: ^12.1.1
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
@@ -2397,14 +2397,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-keyring@0.85.2, @polkadot/ui-keyring@workspace:packages/ui-keyring":
+"@polkadot/ui-keyring@0.85.3, @polkadot/ui-keyring@workspace:packages/ui-keyring":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@polkadot/hw-ledger": ^7.3.1
     "@polkadot/keyring": ^7.3.1
-    "@polkadot/ui-settings": 0.85.2
+    "@polkadot/ui-settings": 0.85.3
     "@polkadot/util": ^7.3.1
     "@types/mkdirp": ^1.0.2
     "@types/store": ^2.0.2
@@ -2418,7 +2418,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@0.85.2, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@0.85.3, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
@@ -2434,7 +2434,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@0.85.2, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@0.85.3, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
@@ -2443,7 +2443,7 @@ __metadata:
     "@polkadot/util-crypto": ^7.3.1
     "@types/color": ^3.0.2
     "@types/xmlserializer": ^0.6.2
-    color: ^4.0.1
+    color: ^3.2.1
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
@@ -2497,7 +2497,7 @@ __metadata:
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
     "@babel/runtime": ^7.15.3
-    "@polkadot/ui-shared": 0.85.2
+    "@polkadot/ui-shared": 0.85.3
     "@polkadot/util": ^7.3.1
     "@polkadot/util-crypto": ^7.3.1
     jdenticon: 3.1.1
@@ -5395,7 +5395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-convert@npm:^1.9.0":
+"color-convert@npm:^1.9.0, color-convert@npm:^1.9.3":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
   dependencies:
@@ -5437,13 +5437,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "color@npm:4.0.1"
+"color@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "color@npm:3.2.1"
   dependencies:
-    color-convert: ^2.0.1
+    color-convert: ^1.9.3
     color-string: ^1.6.0
-  checksum: 46b1e7c6a5d5b1db5e0a8f1f32eea015a1923c9a591cbef67e20b439d67fe8043a7c3beb96c602f0055068909c3ee73bc8ee1817e76a25861a92f64430d6118f
+  checksum: f81220e8b774d35865c2561be921f5652117638dcda7ca4029262046e37fc2444ac7bbfdd110cf1fd9c074a4ee5eda8f85944ffbdda26186b602dd9bb05f6400
   languageName: node
   linkType: hard
 
@@ -7281,9 +7281,9 @@ __metadata:
     "@babel/core": ^7.15.0
     "@babel/runtime": ^7.15.3
     "@polkadot/keyring": ^7.3.1
-    "@polkadot/reactnative-identicon": 0.85.2
-    "@polkadot/ui-keyring": 0.85.2
-    "@polkadot/ui-settings": 0.85.2
+    "@polkadot/reactnative-identicon": 0.85.3
+    "@polkadot/ui-keyring": 0.85.3
+    "@polkadot/ui-settings": 0.85.3
     "@polkadot/util": ^7.3.1
     "@polkadot/util-crypto": ^7.3.1
     "@react-native-community/async-storage": ^1.12.1
@@ -13305,7 +13305,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:^12.2.0":
+"react-native-svg@npm:^12.1.1":
   version: 12.2.0
   resolution: "react-native-svg@npm:12.2.0"
   dependencies:

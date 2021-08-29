@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/ui-shared",
-  "version": "0.85.2",
+  "version": "0.85.3",
   "type": "module",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.15.3",
-    "color": "^4.0.1"
+    "color": "^3.2.1"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
