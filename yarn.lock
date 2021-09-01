@@ -2150,9 +2150,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/dev@npm:^0.62.64":
-  version: 0.62.64
-  resolution: "@polkadot/dev@npm:0.62.64"
+"@polkadot/dev@npm:^0.62.65":
+  version: 0.62.65
+  resolution: "@polkadot/dev@npm:0.62.65"
   dependencies:
     "@babel/cli": ^7.14.8
     "@babel/core": ^7.15.0
@@ -2240,7 +2240,7 @@ __metadata:
     polkadot-exec-rollup: scripts/polkadot-exec-rollup.cjs
     polkadot-exec-tsc: scripts/polkadot-exec-tsc.cjs
     polkadot-exec-webpack: scripts/polkadot-exec-webpack.cjs
-  checksum: ad8aa371f3022c61a6837364bb853d10400ee0d855fb325be99e47b74b4b42edd284241b7db1d3f22d6fcc8ab406a69259dccdfedd142642b55039fd89c9dc52
+  checksum: 0bed000319108f92a73c2861946a13a011f7d90bf2e0099627136b7e295f93810d8aa002393085ebbc9d311558ef35f1484bcf164541086594caa45c67e3df94
   languageName: node
   linkType: hard
 
@@ -2371,7 +2371,7 @@ __metadata:
     "@polkadot/util": ^7.3.1
     "@polkadot/util-crypto": ^7.3.1
     "@types/react-native": ^0.64.13
-    react-native-svg: ^12.1.1
+    react-native-svg: ^12.2.0
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
@@ -13308,7 +13308,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:^12.1.1":
+"react-native-svg@npm:^12.2.0":
   version: 12.2.0
   resolution: "react-native-svg@npm:12.2.0"
   dependencies:
@@ -13986,7 +13986,7 @@ resolve@^2.0.0-next.3:
   dependencies:
     "@babel/core": ^7.15.0
     "@babel/runtime": ^7.15.3
-    "@polkadot/dev": ^0.62.64
+    "@polkadot/dev": ^0.62.65
     "@polkadot/ts": ^0.4.6
     "@polkadot/x-bundle": ^7.3.1
     "@types/jest": ^27.0.1
