@@ -45,6 +45,6 @@
     "webpack-cli": "^3.3.12",
     "webpack-serve": "^3.2.0"
   },
-  "version": "0.85.4-1",
+  "version": "0.85.4-2",
   "packageManager": "yarn@3.0.1"
 }
