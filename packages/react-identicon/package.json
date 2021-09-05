@@ -12,7 +12,7 @@
   "maintainers": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
     "@polkadot/keyring": "^7.3.1",
     "@polkadot/ui-settings": "0.85.4-1",
     "@polkadot/ui-shared": "0.85.4-1",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "@types/react-copy-to-clipboard": "^5.0.1",
     "@types/react-dom": "^17.0.9",
-    "@types/styled-components": "^5.1.13",
+    "@types/styled-components": "^5.1.14",
     "styled-components": "^5.3.1",
     "xmlserializer": "^0.6.1"
   }
