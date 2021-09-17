@@ -32,7 +32,7 @@
     "@babel/runtime": "^7.15.4",
     "@polkadot/dev": "^0.62.67",
     "@polkadot/ts": "^0.4.8",
-    "@polkadot/x-bundle": "^7.3.1",
+    "@polkadot/x-bundle": "^7.4.1",
     "@types/jest": "^27.0.1",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
@@ -45,6 +45,6 @@
     "webpack-cli": "^3.3.12",
     "webpack-serve": "^3.2.0"
   },
-  "version": "0.85.4-3",
+  "version": "0.85.4",
   "packageManager": "yarn@3.0.1"
 }
