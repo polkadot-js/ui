@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.85.5 Oct 10, 2021
+
+Changes:
+
+- Update rxjs to 7.4 (aligning with use in API)
+
+
 ## 0.85.4 Sep 17, 2021
 
 Changes:
