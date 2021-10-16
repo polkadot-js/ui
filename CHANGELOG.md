@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 0.86.1 Oct 16, 2021
+
+Contributed:
+
+- Check for existence of `process` before using (Thanks to https://github.com/wirednkod)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.5.1
+
+
 ## 0.85.5 Oct 10, 2021
 
 Changes:
