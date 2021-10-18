@@ -30,7 +30,7 @@ export const Polkadot = Vue.extend({
   },
   methods: {
     createSvgHtml: function (): void {
-      const circles = polkadotIcon(this.address, { isAlternative: (this as This).isAlternative || false }).map(({ cx, cy, fill, r }) =>
+      const circles = polkadotIcon(this.address as string, { isAlternative: (this as This).isAlternative || false }).map(({ cx, cy, fill, r }) =>
         `<circle cx=${cx} cy=${cy} fill="${fill}" r=${r} />`
       ).join('');
 
