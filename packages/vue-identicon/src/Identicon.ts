@@ -71,7 +71,7 @@ export const Identicon = Vue.extend({
       this.recodeAddress();
     },
     recodeAddress: function (): void {
-      const { address, publicKey } = encodeAccount(this.value);
+      const { address, publicKey } = encodeAccount(this.value as string);
 
       this.address = address;
       this.publicKey = publicKey;

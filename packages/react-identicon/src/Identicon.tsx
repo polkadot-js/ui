@@ -144,7 +144,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
     if (address && onCopy) {
       onCopy(address);
     }
-  }
+  };
 }
 
 function Icon (props: Props): React.ReactElement<Props> {

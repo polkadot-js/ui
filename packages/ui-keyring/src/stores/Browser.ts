@@ -13,7 +13,8 @@ export class BrowserStore implements KeyringStore {
   }
 
   public get (key: string, cb: (value: KeyringJson) => void): void {
-    cb(store.get(key));
+    // eslint-disable-next-line node/no-callback-literal
+    cb(store.get(key) as KeyringJson);
   }
 
   public remove (key: string, cb?: () => void): void {
