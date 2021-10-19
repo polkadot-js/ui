@@ -8,7 +8,6 @@
     "packages/*"
   ],
   "resolutions": {
-    "eslint-plugin-react-hooks": "^4.2.1-alpha-930c9e7ee-20211015",
     "typescript": "^4.4.4"
   },
   "scripts": {
@@ -31,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/runtime": "^7.15.4",
-    "@polkadot/dev": "^0.63.3",
+    "@polkadot/dev": "^0.63.5",
     "@polkadot/ts": "^0.4.9",
     "@polkadot/x-bundle": "^7.5.1",
     "@types/jest": "^27.0.2",
