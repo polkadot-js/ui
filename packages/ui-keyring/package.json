@@ -1,17 +1,23 @@
 {
   "name": "@polkadot/ui-keyring",
   "version": "0.86.2",
+  "license": "Apache-2.0",
   "type": "module",
   "main": "index.js",
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "maintainers": [],
+  "contributors": [],
+  "bugs": "https://github.com/polkadot-js/ui/issues",
+  "homepage": "https://github.com/polkadot-js/ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/polkadot-js/ui.git",
+    "directory": "packages/ui-keyring"
+  },
   "sideEffects": [
     "./detectPackage.js",
     "./detectPackage.cjs"
   ],
-  "repository": "github:polkadot-js/apps",
-  "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [],
-  "contributors": [],
-  "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@polkadot/hw-ledger": "^7.6.1",
