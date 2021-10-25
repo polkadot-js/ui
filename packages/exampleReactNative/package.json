@@ -1,6 +1,7 @@
 {
   "name": "exampleReactNative",
   "version": "0.86.2",
+  "license": "Apache-2.0",
   "private": true,
   "scripts": {
     "copy-workspace-packages": "yarn copy-identicon && yarn copy-ui-shared",
@@ -11,6 +12,14 @@
     "start": "NODE_OPTIONS=--max_old_space_size=8192 react-native start",
     "test": "jest"
   },
+  "bugs": "https://github.com/polkadot-js/ui/issues",
+  "homepage": "https://github.com/polkadot-js/ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/polkadot-js/ui.git",
+    "directory": "packages/exampleReactNative"
+  },
+  "sideEffects": false,
   "dependencies": {
     "@polkadot/keyring": "^7.6.1",
     "@polkadot/reactnative-identicon": "0.86.2",
