@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/example-react",
-  "version": "0.86.2",
+  "version": "0.86.3-0",
   "license": "Apache-2.0",
   "private": true,
   "description": "A very basic example with ui-* & react-* packages",

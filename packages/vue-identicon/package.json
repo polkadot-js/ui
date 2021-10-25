@@ -1,6 +1,6 @@
 {
   "name": "@polkadot/vue-identicon",
-  "version": "0.86.2",
+  "version": "0.86.3-0",
   "license": "Apache-2.0",
   "type": "module",
   "description": "Renders an SVG picture representing an address",
@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.15.4",
-    "@polkadot/ui-shared": "0.86.2",
+    "@polkadot/ui-shared": "0.86.3-0",
     "@polkadot/util": "^7.6.1",
     "@polkadot/util-crypto": "^7.6.1",
     "jdenticon": "3.1.1"
