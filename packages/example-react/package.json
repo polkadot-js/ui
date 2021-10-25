@@ -1,22 +1,29 @@
 {
-  "name": "@polkadot/example-react",
-  "version": "0.86.3-0",
-  "license": "Apache-2.0",
-  "private": true,
-  "description": "A very basic example with ui-* & react-* packages",
-  "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [],
-  "contributors": [],
   "bugs": "https://github.com/polkadot-js/ui/issues",
-  "homepage": "https://github.com/polkadot-js/ui#readme",
+  "contributors": [],
+  "description": "A very basic example with ui-* & react-* packages",
+  "engines": {},
+  "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/example-react#readme",
+  "license": "Apache-2.0",
+  "maintainers": [],
+  "name": "@polkadot/example-react",
+  "private": true,
   "repository": {
+    "directory": "packages/example-react",
     "type": "git",
-    "url": "https://github.com/polkadot-js/ui.git",
-    "directory": "packages/example-react"
+    "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": false,
+  "version": "0.86.3-0",
+  "main": "index.js",
+  "bin": {},
+  "scripts": {},
   "dependencies": {
     "@babel/runtime": "^7.15.4"
-  }
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "peerDependencies": {},
+  "resolutions": {}
 }

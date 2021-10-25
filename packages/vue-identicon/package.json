@@ -1,24 +1,28 @@
 {
-  "name": "@polkadot/vue-identicon",
-  "version": "0.86.3-0",
-  "license": "Apache-2.0",
-  "type": "module",
-  "description": "Renders an SVG picture representing an address",
-  "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [],
-  "contributors": [],
   "bugs": "https://github.com/polkadot-js/ui/issues",
-  "homepage": "https://github.com/polkadot-js/ui#readme",
+  "contributors": [],
+  "description": "Renders an SVG picture representing an address",
+  "engines": {},
+  "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/vue-identicon#readme",
+  "license": "Apache-2.0",
+  "maintainers": [],
+  "name": "@polkadot/vue-identicon",
+  "private": false,
   "repository": {
+    "directory": "packages/vue-identicon",
     "type": "git",
-    "url": "https://github.com/polkadot-js/ui.git",
-    "directory": "packages/vue-identicon"
+    "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": [
     "./detectPackage.js",
     "./detectPackage.cjs"
   ],
+  "type": "module",
+  "version": "0.86.3-0",
+  "main": "index.js",
+  "bin": {},
+  "scripts": {},
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@polkadot/ui-shared": "0.86.3-0",
@@ -26,12 +30,14 @@
     "@polkadot/util-crypto": "^7.6.1",
     "jdenticon": "3.1.1"
   },
+  "devDependencies": {
+    "vue": "^2.6.14"
+  },
+  "optionalDependencies": {},
   "peerDependencies": {
     "@polkadot/util": "*",
     "@polkadot/util-crypto": "*",
     "vue": "*"
   },
-  "devDependencies": {
-    "vue": "^2.6.14"
-  }
+  "resolutions": {}
 }

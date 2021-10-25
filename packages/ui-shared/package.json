@@ -1,33 +1,39 @@
 {
-  "name": "@polkadot/ui-shared",
-  "version": "0.86.3-0",
-  "license": "Apache-2.0",
-  "type": "module",
-  "description": "Shared logic that is usable accross all frameworks-specific areas",
-  "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [],
-  "contributors": [],
   "bugs": "https://github.com/polkadot-js/ui/issues",
-  "homepage": "https://github.com/polkadot-js/ui#readme",
+  "contributors": [],
+  "description": "Shared logic that is usable accross all frameworks-specific areas",
+  "engines": {},
+  "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-shared#readme",
+  "license": "Apache-2.0",
+  "maintainers": [],
+  "name": "@polkadot/ui-shared",
+  "private": false,
   "repository": {
+    "directory": "packages/ui-shared",
     "type": "git",
-    "url": "https://github.com/polkadot-js/ui.git",
-    "directory": "packages/ui-shared"
+    "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": false,
+  "type": "module",
+  "version": "0.86.3-0",
+  "main": "index.js",
+  "bin": {},
+  "scripts": {},
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "color": "^3.2.1"
-  },
-  "peerDependencies": {
-    "@polkadot/util": "*",
-    "@polkadot/util-crypto": "*"
   },
   "devDependencies": {
     "@polkadot/util": "^7.6.1",
     "@polkadot/util-crypto": "^7.6.1",
     "@types/color": "^3.0.2",
     "@types/xmlserializer": "^0.6.2"
-  }
+  },
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@polkadot/util": "*",
+    "@polkadot/util-crypto": "*"
+  },
+  "resolutions": {}
 }
