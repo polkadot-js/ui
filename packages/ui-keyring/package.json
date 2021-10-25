@@ -1,23 +1,27 @@
 {
-  "name": "@polkadot/ui-keyring",
-  "version": "0.86.3-0",
-  "license": "Apache-2.0",
-  "type": "module",
-  "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [],
-  "contributors": [],
   "bugs": "https://github.com/polkadot-js/ui/issues",
-  "homepage": "https://github.com/polkadot-js/ui#readme",
+  "contributors": [],
+  "engines": {},
+  "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-keyring#readme",
+  "license": "Apache-2.0",
+  "maintainers": [],
+  "name": "@polkadot/ui-keyring",
+  "private": false,
   "repository": {
+    "directory": "packages/ui-keyring",
     "type": "git",
-    "url": "https://github.com/polkadot-js/ui.git",
-    "directory": "packages/ui-keyring"
+    "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": [
     "./detectPackage.js",
     "./detectPackage.cjs"
   ],
+  "type": "module",
+  "version": "0.86.3-0",
+  "main": "index.js",
+  "bin": {},
+  "scripts": {},
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@polkadot/hw-ledger": "^7.6.1",
@@ -32,9 +36,11 @@
     "@types/mkdirp": "^1.0.2",
     "@types/store": "^2.0.2"
   },
+  "optionalDependencies": {},
   "peerDependencies": {
     "@polkadot/keyring": "*",
     "@polkadot/ui-settings": "*",
     "@polkadot/util": "*"
-  }
+  },
+  "resolutions": {}
 }

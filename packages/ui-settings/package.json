@@ -1,21 +1,25 @@
 {
-  "name": "@polkadot/ui-settings",
-  "version": "0.86.3-0",
-  "license": "Apache-2.0",
-  "type": "module",
-  "description": "Manages app settings",
-  "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [],
-  "contributors": [],
   "bugs": "https://github.com/polkadot-js/ui/issues",
-  "homepage": "https://github.com/polkadot-js/ui#readme",
+  "contributors": [],
+  "description": "Manages app settings",
+  "engines": {},
+  "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-settings#readme",
+  "license": "Apache-2.0",
+  "maintainers": [],
+  "name": "@polkadot/ui-settings",
+  "private": false,
   "repository": {
+    "directory": "packages/ui-settings",
     "type": "git",
-    "url": "https://github.com/polkadot-js/ui.git",
-    "directory": "packages/ui-settings"
+    "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": false,
+  "type": "module",
+  "version": "0.86.3-0",
+  "main": "index.js",
+  "bin": {},
+  "scripts": {},
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@polkadot/networks": "^7.6.1",
@@ -26,8 +30,10 @@
   "devDependencies": {
     "@types/store": "^2.0.2"
   },
+  "optionalDependencies": {},
   "peerDependencies": {
     "@polkadot/networks": "*",
     "@polkadot/util": "*"
-  }
+  },
+  "resolutions": {}
 }

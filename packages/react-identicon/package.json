@@ -1,24 +1,28 @@
 {
-  "name": "@polkadot/react-identicon",
-  "version": "0.86.3-0",
-  "license": "Apache-2.0",
-  "type": "module",
-  "description": "Renders an SVG picture representing an address",
-  "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [],
-  "contributors": [],
   "bugs": "https://github.com/polkadot-js/ui/issues",
-  "homepage": "https://github.com/polkadot-js/ui#readme",
+  "contributors": [],
+  "description": "Renders an SVG picture representing an address",
+  "engines": {},
+  "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/react-identicon#readme",
+  "license": "Apache-2.0",
+  "maintainers": [],
+  "name": "@polkadot/react-identicon",
+  "private": false,
   "repository": {
+    "directory": "packages/react-identicon",
     "type": "git",
-    "url": "https://github.com/polkadot-js/ui.git",
-    "directory": "packages/react-identicon"
+    "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": [
     "./detectPackage.js",
     "./detectPackage.cjs"
   ],
+  "type": "module",
+  "version": "0.86.3-0",
+  "main": "index.js",
+  "bin": {},
+  "scripts": {},
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@polkadot/keyring": "^7.6.1",
@@ -32,6 +36,14 @@
     "react-copy-to-clipboard": "^5.0.4",
     "styled-components": "^5.3.3"
   },
+  "devDependencies": {
+    "@types/react-copy-to-clipboard": "^5.0.2",
+    "@types/react-dom": "^17.0.10",
+    "@types/styled-components": "^5.1.15",
+    "styled-components": "^5.3.3",
+    "xmlserializer": "^0.6.1"
+  },
+  "optionalDependencies": {},
   "peerDependencies": {
     "@polkadot/keyring": "*",
     "@polkadot/util": "*",
@@ -41,11 +53,5 @@
     "react-is": "*",
     "styled-components": "*"
   },
-  "devDependencies": {
-    "@types/react-copy-to-clipboard": "^5.0.2",
-    "@types/react-dom": "^17.0.10",
-    "@types/styled-components": "^5.1.15",
-    "styled-components": "^5.3.3",
-    "xmlserializer": "^0.6.1"
-  }
+  "resolutions": {}
 }
