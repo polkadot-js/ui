@@ -8,7 +8,6 @@
   "license": "Apache-2.0",
   "maintainers": [],
   "name": "@polkadot/reactnative-identicon",
-  "private": false,
   "repository": {
     "directory": "packages/reactnative-identicon",
     "type": "git",
@@ -21,7 +20,6 @@
   "type": "module",
   "version": "0.86.3-1",
   "main": "index.js",
-  "bin": {},
   "scripts": {},
   "dependencies": {
     "@babel/runtime": "^7.15.4",
@@ -33,12 +31,10 @@
   "devDependencies": {
     "@types/react-native": "^0.66.0"
   },
-  "optionalDependencies": {},
   "peerDependencies": {
     "@polkadot/util": "*",
     "@polkadot/util-crypto": "*",
     "react": "*",
     "react-native": "*"
-  },
-  "resolutions": {}
+  }
 }
