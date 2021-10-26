@@ -15,7 +15,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "bin": {},
   "scripts": {
     "build": "polkadot-dev-build-ts",
     "build:release": "polkadot-ci-ghact-build",
@@ -33,11 +32,10 @@
     "test": "polkadot-dev-run-test --coverage --runInBand",
     "test:one": "polkadot-dev-run-test"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/runtime": "^7.15.4",
-    "@polkadot/dev": "^0.63.8",
+    "@polkadot/dev": "^0.63.10",
     "@polkadot/ts": "^0.4.12",
     "@polkadot/x-bundle": "^7.6.1",
     "@types/jest": "^27.0.2",
@@ -52,8 +50,6 @@
     "webpack-cli": "^3.3.12",
     "webpack-serve": "^3.2.0"
   },
-  "optionalDependencies": {},
-  "peerDependencies": {},
   "resolutions": {
     "typescript": "^4.4.4"
   }

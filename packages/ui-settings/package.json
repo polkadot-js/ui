@@ -8,7 +8,6 @@
   "license": "Apache-2.0",
   "maintainers": [],
   "name": "@polkadot/ui-settings",
-  "private": false,
   "repository": {
     "directory": "packages/ui-settings",
     "type": "git",
@@ -18,7 +17,6 @@
   "type": "module",
   "version": "0.86.3-1",
   "main": "index.js",
-  "bin": {},
   "scripts": {},
   "dependencies": {
     "@babel/runtime": "^7.15.4",
@@ -30,10 +28,8 @@
   "devDependencies": {
     "@types/store": "^2.0.2"
   },
-  "optionalDependencies": {},
   "peerDependencies": {
     "@polkadot/networks": "*",
     "@polkadot/util": "*"
-  },
-  "resolutions": {}
+  }
 }
