@@ -3,7 +3,6 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "contributors": [],
   "description": "Shared logic that is usable accross all frameworks-specific areas",
-  "engines": {},
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-shared#readme",
   "license": "Apache-2.0",
   "maintainers": [],

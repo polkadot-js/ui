@@ -3,7 +3,6 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "contributors": [],
   "description": "Static assets shared accross projects",
-  "engines": {},
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-assets#readme",
   "license": "Apache-2.0",
   "maintainers": [],

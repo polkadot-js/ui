@@ -3,7 +3,6 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "contributors": [],
   "description": "Renders an SVG picture representing an address",
-  "engines": {},
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/reactnative-identicon#readme",
   "license": "Apache-2.0",
   "maintainers": [],

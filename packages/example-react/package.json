@@ -3,7 +3,6 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "contributors": [],
   "description": "A very basic example with ui-* & react-* packages",
-  "engines": {},
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/example-react#readme",
   "license": "Apache-2.0",
   "maintainers": [],

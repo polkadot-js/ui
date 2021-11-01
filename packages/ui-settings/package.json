@@ -3,7 +3,6 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "contributors": [],
   "description": "Manages app settings",
-  "engines": {},
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-settings#readme",
   "license": "Apache-2.0",
   "maintainers": [],
