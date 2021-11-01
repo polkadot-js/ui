@@ -15,15 +15,15 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "0.86.3-3",
+  "version": "0.86.3",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "color": "^3.2.1"
   },
   "devDependencies": {
-    "@polkadot/util": "^7.6.1",
-    "@polkadot/util-crypto": "^7.6.1",
+    "@polkadot/util": "^7.7.1",
+    "@polkadot/util-crypto": "^7.7.1",
     "@types/color": "^3.0.2",
     "@types/xmlserializer": "^0.6.2"
   },
