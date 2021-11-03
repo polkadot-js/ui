@@ -1,12 +1,14 @@
 // Copyright 2017-2021 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { HexString } from '@polkadot/util/types';
+
 import React, { useCallback } from 'react';
 
 import { QrScan } from './Scan';
 
 interface ScanType {
-  signature: string;
+  signature: HexString;
 }
 
 interface Props {
