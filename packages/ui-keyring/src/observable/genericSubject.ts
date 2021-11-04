@@ -7,7 +7,7 @@ import type { AddressSubject, SingleAddress, SubjectInfo } from './types';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { objectSpread } from '@polkadot/util';
+import { objectCopy } from '@polkadot/util';
 
 import { createOptionItem } from '../options/item';
 import { env } from './env';
@@ -36,7 +36,7 @@ export function genericSubject (keyCreator: (address: string) => string, withTes
 
   return {
     add: (store: KeyringStore, address: string, json: KeyringJson, type?: KeypairType): SingleAddress => {
-      current = objectSpread({}, current);
+      current = objectCopy(current);
 
       current[address] = {
         json: objectSpread({}, json, { address }),
@@ -54,7 +54,7 @@ export function genericSubject (keyCreator: (address: string) => string, withTes
       return current[address];
     },
     remove: (store: KeyringStore, address: string): void => {
-      current = objectSpread({}, current);
+      current = objectCopy(current);
 
       delete current[address];
 
