@@ -20,10 +20,10 @@
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
-    "@polkadot/hw-ledger": "^7.7.1",
-    "@polkadot/keyring": "^7.7.1",
+    "@polkadot/hw-ledger": "^7.7.2-5",
+    "@polkadot/keyring": "^7.7.2-5",
     "@polkadot/ui-settings": "0.86.4-0",
-    "@polkadot/util": "^7.7.1",
+    "@polkadot/util": "^7.7.2-5",
     "mkdirp": "^1.0.4",
     "rxjs": "^7.4.0",
     "store": "^2.0.12"
