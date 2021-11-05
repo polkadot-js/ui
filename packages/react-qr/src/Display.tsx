@@ -4,6 +4,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 
+import { objectSpread } from '@polkadot/util';
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
 import { qrcode } from './qrcode';
@@ -73,11 +74,10 @@ function Display ({ className, size, skipEncoding, style, value }: Props): React
       // only encode the frames on demand, not above as part of the
       // state derivation - in the case of large payloads, this should
       // be slightly more responsive on initial load
-      return {
-        ...state,
+      return objectSpread({}, state, {
         frameIdx,
         image: getDataUrl(state.frames[frameIdx])
-      };
+      });
     });
 
     timerRef.current.timerId = window.setTimeout(nextFrame, FRAME_DELAY);
