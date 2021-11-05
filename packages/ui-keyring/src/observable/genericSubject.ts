@@ -7,7 +7,7 @@ import type { AddressSubject, SingleAddress, SubjectInfo } from './types';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { objectCopy } from '@polkadot/util';
+import { objectCopy, objectSpread } from '@polkadot/util';
 
 import { createOptionItem } from '../options/item';
 import { env } from './env';
