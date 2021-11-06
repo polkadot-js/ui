@@ -17,17 +17,17 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "0.86.4-1",
+  "version": "0.86.4",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.15.4",
-    "@polkadot/ui-shared": "0.86.4-1",
-    "@polkadot/util": "^7.7.2-6",
-    "@polkadot/util-crypto": "^7.7.2-6",
+    "@babel/runtime": "^7.16.0",
+    "@polkadot/ui-shared": "0.86.4",
+    "@polkadot/util": "^7.8.1",
+    "@polkadot/util-crypto": "^7.8.1",
     "react-native-svg": "^12.2.0"
   },
   "devDependencies": {
-    "@types/react-native": "^0.66.0"
+    "@types/react-native": "^0.66.2"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
