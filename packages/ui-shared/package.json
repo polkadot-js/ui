@@ -17,12 +17,12 @@
   "version": "0.86.5",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
     "color": "^3.2.1"
   },
   "devDependencies": {
-    "@polkadot/util": "^7.8.2",
-    "@polkadot/util-crypto": "^7.8.2",
+    "@polkadot/util": "^7.8.3-27",
+    "@polkadot/util-crypto": "^7.8.3-27",
     "@types/color": "^3.0.2",
     "@types/xmlserializer": "^0.6.2"
   },
