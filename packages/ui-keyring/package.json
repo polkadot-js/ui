@@ -16,14 +16,14 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "0.86.6-0",
+  "version": "0.86.6",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.16.3",
-    "@polkadot/hw-ledger": "^7.8.3-27",
-    "@polkadot/keyring": "^7.8.3-27",
-    "@polkadot/ui-settings": "0.86.6-0",
-    "@polkadot/util": "^7.8.3-27",
+    "@polkadot/hw-ledger": "^7.9.1",
+    "@polkadot/keyring": "^7.9.1",
+    "@polkadot/ui-settings": "0.86.6",
+    "@polkadot/util": "^7.9.1",
     "mkdirp": "^1.0.4",
     "rxjs": "^7.4.0",
     "store": "^2.0.12"

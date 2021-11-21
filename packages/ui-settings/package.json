@@ -14,12 +14,12 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "0.86.6-0",
+  "version": "0.86.6",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.16.3",
-    "@polkadot/networks": "^7.8.3-27",
-    "@polkadot/util": "^7.8.3-27",
+    "@polkadot/networks": "^7.9.1",
+    "@polkadot/util": "^7.9.1",
     "eventemitter3": "^4.0.7",
     "store": "^2.0.12"
   },
