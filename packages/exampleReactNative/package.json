@@ -1,6 +1,6 @@
 {
   "name": "exampleReactNative",
-  "version": "0.86.6-0",
+  "version": "0.86.6",
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
@@ -21,12 +21,12 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@polkadot/keyring": "^7.8.3-27",
-    "@polkadot/reactnative-identicon": "0.86.6-0",
-    "@polkadot/ui-keyring": "0.86.6-0",
-    "@polkadot/ui-settings": "0.86.6-0",
-    "@polkadot/util": "^7.8.3-27",
-    "@polkadot/util-crypto": "^7.8.3-27",
+    "@polkadot/keyring": "^7.9.1",
+    "@polkadot/reactnative-identicon": "0.86.6",
+    "@polkadot/ui-keyring": "0.86.6",
+    "@polkadot/ui-settings": "0.86.6",
+    "@polkadot/util": "^7.9.1",
+    "@polkadot/util-crypto": "^7.9.1",
     "@react-native-community/async-storage": "^1.12.1",
     "fast-text-encoding": "^1.0.3",
     "get-yarn-workspaces": "^1.0.2",
