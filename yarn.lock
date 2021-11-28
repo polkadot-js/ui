@@ -2325,8 +2325,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.16.3
     "@polkadot/keyring": ^8.0.2
-    "@polkadot/ui-settings": 0.86.8-0
-    "@polkadot/ui-shared": 0.86.8-0
+    "@polkadot/ui-settings": 0.87.0
+    "@polkadot/ui-shared": 0.87.0
     "@polkadot/util": ^8.0.2
     "@polkadot/util-crypto": ^8.0.2
     "@types/react-copy-to-clipboard": ^5.0.2
@@ -2370,16 +2370,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/reactnative-identicon@0.86.8-0, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
+"@polkadot/reactnative-identicon@0.87.0, @polkadot/reactnative-identicon@workspace:packages/reactnative-identicon":
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
     "@babel/runtime": ^7.16.3
-    "@polkadot/ui-shared": 0.86.8-0
+    "@polkadot/ui-shared": 0.87.0
     "@polkadot/util": ^8.0.2
     "@polkadot/util-crypto": ^8.0.2
-    "@types/react-native": ^0.66.5
-    react-native-svg: ^12.1.1
+    "@types/react-native": ^0.66.6
+    react-native-svg: ^12.2.0
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
@@ -2405,14 +2405,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-keyring@0.86.8-0, @polkadot/ui-keyring@workspace:packages/ui-keyring":
+"@polkadot/ui-keyring@0.87.0, @polkadot/ui-keyring@workspace:packages/ui-keyring":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
     "@babel/runtime": ^7.16.3
     "@polkadot/hw-ledger": ^8.0.2
     "@polkadot/keyring": ^8.0.2
-    "@polkadot/ui-settings": 0.86.8-0
+    "@polkadot/ui-settings": 0.87.0
     "@polkadot/util": ^8.0.2
     "@types/mkdirp": ^1.0.2
     "@types/store": ^2.0.2
@@ -2426,7 +2426,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@0.86.8-0, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@0.87.0, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
@@ -2442,7 +2442,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@0.86.8-0, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@0.87.0, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
@@ -2498,7 +2498,7 @@ __metadata:
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
     "@babel/runtime": ^7.16.3
-    "@polkadot/ui-shared": 0.86.8-0
+    "@polkadot/ui-shared": 0.87.0
     "@polkadot/util": ^8.0.2
     "@polkadot/util-crypto": ^8.0.2
     jdenticon: 3.1.1
@@ -3209,12 +3209,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.66.5":
-  version: 0.66.5
-  resolution: "@types/react-native@npm:0.66.5"
+"@types/react-native@npm:^0.66.6":
+  version: 0.66.6
+  resolution: "@types/react-native@npm:0.66.6"
   dependencies:
     "@types/react": "*"
-  checksum: 7107dd8626259d2968f3ed564aae706fad3d535ae00bca2549d16d21be7926df8e982efd8c8a4b9b79a9d1c1beef3e1758fc51a877ee04426a41aca0f6b5a534
+  checksum: fba05b80bf2cf973f4448e9561df567f55988729a0a3b5ad633f07c9ab06f850658bf2ccf2a52cc947827322ecf120241a4f7a4e55485b9c6cdbbbad154d8635
   languageName: node
   linkType: hard
 
@@ -7333,9 +7333,9 @@ __metadata:
     "@babel/core": ^7.16.0
     "@babel/runtime": ^7.16.3
     "@polkadot/keyring": ^8.0.2
-    "@polkadot/reactnative-identicon": 0.86.8-0
-    "@polkadot/ui-keyring": 0.86.8-0
-    "@polkadot/ui-settings": 0.86.8-0
+    "@polkadot/reactnative-identicon": 0.87.0
+    "@polkadot/ui-keyring": 0.87.0
+    "@polkadot/ui-settings": 0.87.0
     "@polkadot/util": ^8.0.2
     "@polkadot/util-crypto": ^8.0.2
     "@react-native-community/async-storage": ^1.12.1
@@ -13394,7 +13394,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:^12.1.1":
+"react-native-svg@npm:^12.2.0":
   version: 12.2.0
   resolution: "react-native-svg@npm:12.2.0"
   dependencies:
