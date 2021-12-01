@@ -4,6 +4,7 @@
 
 Changes:
 
+- Use `hasProcess` check from `@polkadot/util`
 - Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.0.5
 
 
