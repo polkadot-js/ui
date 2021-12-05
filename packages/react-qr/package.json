@@ -14,12 +14,12 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "0.87.4-0",
+  "version": "0.87.4",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.16.3",
-    "@polkadot/util": "^8.0.5",
-    "@polkadot/util-crypto": "^8.0.5",
+    "@polkadot/util": "^8.1.1",
+    "@polkadot/util-crypto": "^8.1.1",
     "qrcode-generator": "^1.4.4",
     "react-qr-reader": "^2.2.1",
     "styled-components": "^5.3.3"
