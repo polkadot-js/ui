@@ -8,7 +8,7 @@ const isProd = ENV === 'production';
 
 module.exports = {
   context: __dirname,
-  devtool: isProd ? 'source-map' : 'cheap-eval-source-map',
+  devtool: isProd ? 'source-map' : 'eval-cheap-source-map',
   entry: './src/Demo.tsx',
   mode: ENV,
   module: {
@@ -26,11 +26,19 @@ module.exports = {
     filename: './Demo.js',
     path: path.join(__dirname, 'build')
   },
-  plugins: [],
+  plugins: [
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    })
+  ],
   resolve: {
     alias: {
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
+      'process/browser': require.resolve('process/browser')
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   }

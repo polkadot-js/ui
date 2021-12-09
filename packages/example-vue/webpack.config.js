@@ -7,7 +7,7 @@ const { WebpackPluginServe } = require('webpack-plugin-serve');
 
 module.exports = {
   context: __dirname,
-  devtool: 'cheap-eval-source-map',
+  devtool: 'eval-cheap-source-map',
   entry: './src/index.ts',
   mode: 'development',
   module: {
@@ -42,14 +42,21 @@ module.exports = {
       progress: false, // since we have hmr off, disable
       static: __dirname
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    })
   ],
   resolve: {
     alias: {
       '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
       '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
-      '@polkadot/vue-identicon': path.resolve(__dirname, '../vue-identicon/build')
+      '@polkadot/vue-identicon': path.resolve(__dirname, '../vue-identicon/build'),
+      'process/browser': require.resolve('process/browser')
     },
     extensions: ['.js', '.ts', '.tsx']
   },
