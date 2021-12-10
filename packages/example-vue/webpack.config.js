@@ -4,6 +4,7 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
+const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
@@ -44,10 +45,10 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer'],
+      Buffer: ['buffer', 'Buffer']
     }),
     new webpack.ProvidePlugin({
-      process: 'process/browser',
+      process: 'process/browser'
     })
   ],
   resolve: {

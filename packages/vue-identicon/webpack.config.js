@@ -3,7 +3,7 @@
 
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
+const webpack = require('webpack');
 const ENV = process.env.NODE_ENV || 'development';
 const isProd = ENV === 'production';
 
@@ -34,10 +34,10 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer'],
+      Buffer: ['buffer', 'Buffer']
     }),
     new webpack.ProvidePlugin({
-      process: 'process/browser',
+      process: 'process/browser'
     })
   ],
   resolve: {

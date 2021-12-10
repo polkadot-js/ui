@@ -39,10 +39,10 @@ module.exports = {
       static: __dirname
     }),
     new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer'],
+      Buffer: ['buffer', 'Buffer']
     }),
     new webpack.ProvidePlugin({
-      process: 'process/browser',
+      process: 'process/browser'
     })
   ],
   resolve: {
@@ -51,8 +51,8 @@ module.exports = {
       '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
       '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
-      'react/jsx-runtime': require.resolve('react/jsx-runtime'),
-      'process/browser': require.resolve('process/browser')
+      'process/browser': require.resolve('process/browser'),
+      'react/jsx-runtime': require.resolve('react/jsx-runtime')
     },
     extensions: ['.js', '.ts', '.tsx'],
     fallback: {
