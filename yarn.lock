@@ -2396,7 +2396,6 @@ __metadata:
     "@polkadot/util": ^8.1.2
     "@types/store": ^2.0.2
     eventemitter3: ^4.0.7
-    process: ^0.11.10
     store: ^2.0.12
   peerDependencies:
     "@polkadot/networks": "*"
