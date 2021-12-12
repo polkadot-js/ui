@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@types/react-qr-reader": "^2.1.4",
-    "@types/styled-components": "^5.1.15"
+    "@types/styled-components": "^5.1.17"
   },
   "peerDependencies": {
     "@polkadot/util": "*",

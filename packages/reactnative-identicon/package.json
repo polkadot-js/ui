@@ -24,10 +24,10 @@
     "@polkadot/ui-shared": "0.87.5",
     "@polkadot/util": "^8.1.2",
     "@polkadot/util-crypto": "^8.1.2",
-    "react-native-svg": "^12.2.0"
+    "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
-    "@types/react-native": "^0.66.6"
+    "@types/react-native": "^0.66.8"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
