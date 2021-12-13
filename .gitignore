@@ -3,6 +3,7 @@ build-docs/
 coverage/
 node_modules/
 tmp/
+.idea
 .DS_Store
 .env.local
 .env.development.local
