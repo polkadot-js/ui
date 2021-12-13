@@ -9899,7 +9899,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"jest-worker@npm:^27.4.4":
+"jest-worker@npm:^27.0.6, jest-worker@npm:^27.4.4":
   version: 27.4.4
   resolution: "jest-worker@npm:27.4.4"
   dependencies:
