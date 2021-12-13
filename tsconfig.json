@@ -1,33 +1,10 @@
 {
-  "extends": "@polkadot/dev/config/tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "exclude": [
     "build/**/*",
     "**/build/**/*"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@polkadot/react-identicon": [ "packages/react-identicon/src" ],
-      "@polkadot/react-identicon/*": [ "packages/react-identicon/src/*" ],
-      "@polkadot/react-qr": [ "packages/react-qr/src" ],
-      "@polkadot/react-qr/*": [ "packages/react-qr/src/*" ],
-      "@polkadot/reactnative-identicon": [ "packages/reactnative-identicon/src" ],
-      "@polkadot/reactnative-identicon/*": [ "packages/reactnative-identicon/src/*" ],
-      "@polkadot/ui-assets": [ "packages/ui-assets/src" ],
-      "@polkadot/ui-assets/*": [ "packages/ui-assets/src/*" ],
-      "@polkadot/ui-keyring": [ "packages/ui-keyring/src" ],
-      "@polkadot/ui-keyring/*": [ "packages/ui-keyring/src/*" ],
-      "@polkadot/ui-settings": [ "packages/ui-settings/src" ],
-      "@polkadot/ui-settings/*": [ "packages/ui-settings/src/*" ],
-      "@polkadot/ui-shared": [ "packages/ui-shared/src" ],
-      "@polkadot/ui-shared/*": [ "packages/ui-shared/src/*" ],
-      "@polkadot/vue-identicon": [ "packages/vue-identicon/src" ],
-      "@polkadot/vue-identicon/*": [ "packages/vue-identicon/src/*" ]
-    },
-    "skipLibCheck": true,
-    "typeRoots": [
-      "./node_modules/@polkadot/ts",
-      "./node_modules/@types"
-    ]
+    "baseUrl": "./packages"
   }
 }
