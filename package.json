@@ -32,10 +32,10 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/runtime": "^7.16.3",
-    "@polkadot/dev": "^0.63.40",
-    "@polkadot/ts": "^0.4.19",
+    "@babel/core": "^7.16.5",
+    "@babel/runtime": "^7.16.5",
+    "@polkadot/dev": "^0.64.3",
+    "@polkadot/ts": "^0.4.20",
     "@polkadot/x-bundle": "^8.1.2",
     "@types/jest": "^27.0.3",
     "babel-loader": "^8.2.3",
