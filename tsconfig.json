@@ -6,7 +6,6 @@
   "references": [
     { "path": "./packages/example-react" },
     { "path": "./packages/example-vue" },
-    { "path": "./packages/exampleReactNative" },
     { "path": "./packages/react-identicon" },
     { "path": "./packages/react-qr" },
     { "path": "./packages/reactnative-identicon" },
