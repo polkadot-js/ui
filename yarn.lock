@@ -2420,6 +2420,7 @@ __metadata:
     "@types/color": ^3.0.2
     "@types/xmlserializer": ^0.6.2
     color: ^3.2.1
+    xmlserializer: ^0.6.1
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
