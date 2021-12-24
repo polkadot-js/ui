@@ -7,7 +7,7 @@
     "packages/**/src/**/*",
     "packages/**/*.js"
   ],
-  "exclue": [
+  "exclude": [
     "**/node_modules/**/*"
   ]
 }
