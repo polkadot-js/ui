@@ -10,7 +10,7 @@
     "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": false,
-  "version": "0.87.7-2",
+  "version": "0.87.7-3",
   "workspaces": [
     "packages/*"
   ],
