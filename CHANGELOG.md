@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.87.7 Dec 27, 2021
+
+Changes:
+
+- Internal dev packages bumps, publish changes
+
+
 ## 0.87.6 Dec 19, 2021
 
 Changes:
