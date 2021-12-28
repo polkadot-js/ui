@@ -2,10 +2,229 @@
 
 ## master
 
+- Support for multi genesisHash in keyring accounts
+
+
+## 0.87.7 Dec 27, 2021
+
+Changes:
+
+- Internal dev packages bumps, publish changes
+
+
+## 0.87.6 Dec 19, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.2.2
+
+
+## 0.87.5 Dec 5, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.1.2
+
+
+## 0.87.4 Dec 5, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.1.1
+
+
+## 0.87.3 Dec 1, 2021
+
+Changes:
+
+- Use `hasProcess` check from `@polkadot/util`
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.0.5
+
+
+## 0.87.2 Nov 30, 2021
+
+Contributed:
+
+- Correct check for `process` variable (Thanks to https://github.com/AndreiEres)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.0.4
+
+
+## 0.87.1 Nov 28, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.0.2
+
+
+## 0.86.7 Nov 22, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.9.2
+
+
+## 0.86.6 Nov 21, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.9.1
+
+
+## 0.86.5 Nov 6, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.8.2
+
+
+## 0.86.4 Nov 6, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.8.1
+
+
+## 0.86.3 Nov 1, 2021
+
+Changes:
+
+- Add publish skip to all examples
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.7.1
+
+
+## 0.86.2 Oct 24, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.6.1
+
+
+## 0.86.1 Oct 16, 2021
+
+Contributed:
+
+- Check for existence of `process` before using (Thanks to https://github.com/wirednkod)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.5.1
+
+
+## 0.85.5 Oct 10, 2021
+
+Changes:
+
+- Update rxjs to 7.4 (aligning with use in API)
+
+
+## 0.85.4 Sep 17, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.4.1
+
+
+## 0.85.3 Aug 29, 2021
+
+Changes:
+
+- Revert color bump to 4.0.1, keep at 3.2.1 (numeric separators on Vue & react-native)
+
+
+## 0.85.2 Aug 28, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.3.1
+
+
+## 0.85.1 Aug 15, 2021
+
+Contributed:
+
+- Always use `bigint` type to indicate instance (Thanks to https://github.com/ntduan)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.2.1
+
+
+## 0.84.3 Aug 2, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.1.1
+
+
+## 0.84.2 Jul 26, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.0.3
+
+
+## 0.84.1 Jul 11, 2021
+
+Changes:
+
+- Internal RxJs usage has been bumped to the 7.2 version
+- Allow building as a completely stand-alone browser bundle (experimental)
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 7.0.1
+
+
+## 0.83.1 Jul 5, 2021
+
+Contributed:
+
+- Add support for notifications setting (Thanks to https://github.com/shawntabrizi)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.11.1
+
+
+## 0.82.1 Jun 26, 2021
+
+Contributed:
+
+- Adjust Qr address imports (Thanks to https://github.com/joelamouche)
+- Bubble errors on Qr scanning (Thanks to https://github.com/joelamouche)
+
+Changes:
+
+- Fix `keyring.setSS58Format` to correctly set for prefix 0
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.10.1
+
+
+## 0.81.1 Jun 20, 2021
+
+Contributed:
+
+- Import `ethereum` addresses via QR (Thanks to https://github.com/joelamouche)
+- Support settings for non-RPC connectors (Thanks to https://github.com/wirednkod)
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.9.1
+- Fix webpack demo import locations
+
+
+## 0.80.1 Jun 14, 2021
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.8.1
+
+
+## 0.79.1 Jun 6, 2021
+
 Changes:
 
 - Add support for WebHID selection (as exposed by ledger packages)
-- Support for multi genesisHash in keyring accounts
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 6.7.1
 
 
 ## 0.78.1 May 29, 2021

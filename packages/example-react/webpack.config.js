@@ -3,10 +3,11 @@
 
 const path = require('path');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
+const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  devtool: 'cheap-eval-source-map',
+  devtool: 'eval-cheap-source-map',
   entry: './src/index.tsx',
   mode: 'development',
   module: {
@@ -17,7 +18,7 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: require('../../babel.config.js')
+            options: require('../../babel.config.cjs')
           }
         ]
       }
@@ -36,6 +37,12 @@ module.exports = {
       port: 8080,
       progress: false, // since we have hmr off, disable
       static: __dirname
+    }),
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer']
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser'
     })
   ],
   resolve: {
@@ -43,9 +50,15 @@ module.exports = {
       '@polkadot/react-identicon': path.resolve(__dirname, '../react-identicon/build'),
       '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
+      'process/browser': require.resolve('process/browser'),
+      'react/jsx-runtime': require.resolve('react/jsx-runtime')
     },
-    extensions: ['.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx'],
+    fallback: {
+      buffer: require.resolve('buffer'),
+      stream: require.resolve('stream-browserify')
+    }
   },
   watch: true
 };

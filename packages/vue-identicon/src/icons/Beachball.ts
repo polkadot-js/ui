@@ -1,6 +1,8 @@
 // Copyright 2017-2021 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { Options } from '@polkadot/ui-shared/icons/types';
+
 import Vue from 'vue';
 
 import { beachballIcon } from '@polkadot/ui-shared';
@@ -25,7 +27,7 @@ export const Beachball = Vue.extend({
   },
   methods: {
     createHtml: function (): void {
-      this.html = beachballIcon(this.address, this.size).outerHTML;
+      this.html = beachballIcon(this.address as string, this.size as Options).outerHTML;
     }
   },
   props: ['address', 'size'],

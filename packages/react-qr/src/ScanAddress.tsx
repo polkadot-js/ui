@@ -22,31 +22,44 @@ interface Props {
   onScan: (scanned: ScanType) => void;
   size?: string | number;
   style?: React.CSSProperties;
+  isEthereum?: boolean
 }
 
-function ScanAddress ({ className, onError, onScan, size, style }: Props): React.ReactElement<Props> {
+function ScanAddress ({ className, isEthereum, onError, onScan, size, style }: Props): React.ReactElement<Props> {
   const _onScan = useCallback(
     (data: string | null): void => {
       if (data) {
         try {
-          const [prefix, content, genesisHash, ...name] = data.split(':');
-          const isValidPrefix = prefix === ADDRESS_PREFIX || prefix === SEED_PREFIX;
+          let prefix: string, content: string, genesisHash: string, name: string[];
 
-          assert(isValidPrefix, `Invalid prefix received, expected '${ADDRESS_PREFIX}/${SEED_PREFIX}' , found '${prefix}'`);
+          if (!isEthereum) {
+            [prefix, content, genesisHash, ...name] = data.split(':');
+          } else {
+            [prefix, content, ...name] = data.split(':');
+            genesisHash = '';
+            content = content.substring(0, 42);
+          }
 
-          const isAddress = prefix === ADDRESS_PREFIX;
+          const expectedPrefix = (isEthereum ? 'ethereum' : ADDRESS_PREFIX);
+          const isValidPrefix = (prefix === expectedPrefix) || (prefix === SEED_PREFIX);
 
-          if (isAddress) {
+          assert(isValidPrefix, `Invalid prefix received, expected '${expectedPrefix} or ${SEED_PREFIX}' , found '${prefix}'`);
+
+          const isAddress = prefix === expectedPrefix;
+
+          if (isAddress && !isEthereum) {
             decodeAddress(content);
           }
 
           onScan({ content, genesisHash, isAddress, name: name?.length ? name.join(':') : undefined });
         } catch (error) {
+          onError && onError(error as Error);
+
           console.error('@polkadot/react-qr:QrScanAddress', (error as Error).message, data);
         }
       }
     },
-    [onScan]
+    [onScan, onError, isEthereum]
   );
 
   return (

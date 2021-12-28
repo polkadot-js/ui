@@ -5,7 +5,9 @@ import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { KeyringJson, KeyringStore } from '../types';
 import type { AddressSubject, SingleAddress, SubjectInfo } from './types';
 
-import { BehaviorSubject } from '@polkadot/x-rxjs';
+import { BehaviorSubject } from 'rxjs';
+
+import { objectCopy, objectSpread } from '@polkadot/util';
 
 import { createOptionItem } from '../options/item';
 import { env } from './env';
@@ -34,10 +36,10 @@ export function genericSubject (keyCreator: (address: string) => string, withTes
 
   return {
     add: (store: KeyringStore, address: string, json: KeyringJson, type?: KeypairType): SingleAddress => {
-      current = { ...current };
+      current = objectCopy(current);
 
       current[address] = {
-        json: { ...json, address },
+        json: objectSpread({}, json, { address }),
         option: createOptionItem(address, json.meta.name),
         type
       };
@@ -52,7 +54,7 @@ export function genericSubject (keyCreator: (address: string) => string, withTes
       return current[address];
     },
     remove: (store: KeyringStore, address: string): void => {
-      current = { ...current };
+      current = objectCopy(current);
 
       delete current[address];
 

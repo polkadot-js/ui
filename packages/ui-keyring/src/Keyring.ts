@@ -1,15 +1,15 @@
 // Copyright 2017-2021 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type BN from 'bn.js';
 import type { KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
+import type { BN } from '@polkadot/util';
 import type { EncryptedJson } from '@polkadot/util-crypto/json/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types';
 import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringPairs$Json, KeyringStruct } from './types';
 
-import { createPair } from '@polkadot/keyring/pair';
-import { chains } from '@polkadot/ui-settings/defaults/chains';
+import { createPair } from '@polkadot/keyring';
+import { chains } from '@polkadot/ui-settings';
 import { bnToBn, hexToU8a, isFunction, isHex, isString, stringify, stringToU8a, u8aSorted, u8aToString } from '@polkadot/util';
 import { base64Decode, createKeyMulti, jsonDecrypt, jsonEncrypt } from '@polkadot/util-crypto';
 
@@ -33,7 +33,7 @@ export class Keyring extends Base implements KeyringStruct {
   };
 
   public addExternal (address: string | Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
-    const pair = this.keyring.addFromAddress(address, { ...meta, isExternal: true }, null);
+    const pair = this.keyring.addFromAddress(address, objectSpread<KeyringJson$Meta>({}, meta, { isExternal: true }), null);
 
     return {
       json: this.saveAccount(pair),
@@ -42,16 +42,16 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   public addHardware (address: string | Uint8Array, hardwareType: string, meta: KeyringPair$Meta = {}): CreateResult {
-    return this.addExternal(address, { ...meta, hardwareType, isHardware: true });
+    return this.addExternal(address, objectSpread<KeyringPair$Meta>({}, meta, { hardwareType, isHardware: true }));
   }
 
-  public addMultisig (addresses: (string | Uint8Array)[], threshold: BigInt | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
+  public addMultisig (addresses: (string | Uint8Array)[], threshold: bigint | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
     const address = createKeyMulti(addresses, threshold);
 
     // we could use `sortAddresses`, but rather use internal encode/decode so we are 100%
     const who = u8aSorted(addresses.map((who) => this.decodeAddress(who))).map((who) => this.encodeAddress(who));
 
-    return this.addExternal(address, { ...meta, isMultisig: true, threshold: bnToBn(threshold).toNumber(), who });
+    return this.addExternal(address, objectSpread<KeyringPair$Meta>({}, meta, { isMultisig: true, threshold: bnToBn(threshold).toNumber(), who }));
   }
 
   public addPair (pair: KeyringPair, password: string): CreateResult {
@@ -91,17 +91,20 @@ export class Keyring extends Base implements KeyringStruct {
 
     const accounts = await Promise.all(accountPromises);
 
-    return {
-      ...jsonEncrypt(stringToU8a(JSON.stringify(accounts)), ['batch-pkcs8'], password),
+    return objectSpread({}, jsonEncrypt(stringToU8a(JSON.stringify(accounts)), ['batch-pkcs8'], password), {
       accounts: accounts.map((account) => ({
         address: account.address,
         meta: account.meta
       }))
-    };
+    });
   }
 
   public createFromJson (json: KeyringPair$Json, meta: KeyringPair$Meta = {}): KeyringPair {
-    return this.keyring.createFromJson({ ...json, meta: { ...(json.meta || {}), meta } });
+    return this.keyring.createFromJson(
+      objectSpread({}, json, {
+        meta: objectSpread({}, json.meta, meta)
+      })
+    );
   }
 
   public createFromUri (suri: string, meta: KeyringPair$Meta = {}, type?: KeypairType): KeyringPair {
@@ -248,10 +251,7 @@ export class Keyring extends Base implements KeyringStruct {
   private loadInjected (address: string, meta: KeyringJson$Meta, type?: KeypairType): void {
     const json = {
       address,
-      meta: {
-        ...meta,
-        isInjected: true
-      }
+      meta: objectSpread<KeyringJson$Meta>({}, meta, { isInjected: true })
     };
     const pair = this.keyring.addFromAddress(address, json.meta, null, type);
 

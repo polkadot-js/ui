@@ -6,8 +6,8 @@ import type { Prefix } from '@polkadot/util-crypto/address/types';
 import type { AddressSubject } from './observable/types';
 import type { KeyringOptions, KeyringStore } from './types';
 
-import { createTestKeyring } from '@polkadot/keyring/testing';
-import { isBoolean, isString } from '@polkadot/util';
+import { createTestKeyring } from '@polkadot/keyring';
+import { isBoolean, isNumber, isString } from '@polkadot/util';
 
 import { accounts } from './observable/accounts';
 import { addresses } from './observable/addresses';
@@ -69,11 +69,11 @@ export class Base {
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean, ss58Format?: Prefix): Uint8Array => {
     return this.keyring.decodeAddress(key, ignoreChecksum, ss58Format);
-  }
+  };
 
   public encodeAddress = (key: string | Uint8Array, ss58Format?: Prefix): string => {
     return this.keyring.encodeAddress(key, ss58Format);
-  }
+  };
 
   public getPair (address: string | Uint8Array): KeyringPair {
     return this.keyring.getPair(address);
@@ -101,7 +101,7 @@ export class Base {
   }
 
   public setSS58Format (ss58Format?: Prefix): void {
-    if (this.#keyring && ss58Format) {
+    if (this.#keyring && isNumber(ss58Format)) {
       this.#keyring.setSS58Format(ss58Format);
     }
   }

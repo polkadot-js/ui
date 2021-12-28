@@ -3,6 +3,7 @@ build-docs/
 coverage/
 node_modules/
 tmp/
+.idea
 .DS_Store
 .env.local
 .env.development.local
@@ -16,5 +17,6 @@ tmp/
 cc-test-reporter
 package-lock.json
 npm-debug.log*
+tsconfig.*buildinfo
 yarn-debug.log*
 yarn-error.log*

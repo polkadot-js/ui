@@ -3,13 +3,8 @@
 
 import './detectPackage';
 
-import { Keyring } from './Keyring';
+import { keyring } from './bundle';
 
-export { Ledger } from '@polkadot/hw-ledger';
-export { packageInfo } from './packageInfo';
-
-const keyring = new Keyring();
-
-export { Keyring, keyring };
+export * from './bundle';
 
 export default keyring;

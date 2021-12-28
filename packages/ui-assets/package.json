@@ -1,12 +1,21 @@
 {
-  "name": "@polkadot/ui-assets",
-  "version": "0.78.2-14",
-  "description": "Static assets shared accross projects",
-  "main": "index.js",
   "author": "Jaco Greeff <jacogr@gmail.com>",
-  "maintainers": [],
+  "bugs": "https://github.com/polkadot-js/ui/issues",
+  "contributors": [],
+  "description": "Static assets shared accross projects",
+  "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-assets#readme",
   "license": "Apache-2.0",
+  "maintainers": [],
+  "name": "@polkadot/ui-assets",
+  "repository": {
+    "directory": "packages/ui-assets",
+    "type": "git",
+    "url": "https://github.com/polkadot-js/ui.git"
+  },
+  "sideEffects": false,
+  "version": "0.87.7",
+  "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.14.0"
+    "@babel/runtime": "^7.16.5"
   }
 }
