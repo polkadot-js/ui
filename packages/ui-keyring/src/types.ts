@@ -45,6 +45,7 @@ export interface KeyringStore {
 export interface KeyringOptions extends KeyringOptionsBase {
   filter?: (json: KeyringJson) => boolean;
   genesisHash?: string | { toHex: () => string };
+  genesisHashAdd?: string[];
   isDevelopment?: boolean;
   store?: KeyringStore;
 }
