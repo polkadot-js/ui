@@ -10,7 +10,7 @@ import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType,
 
 import { createPair } from '@polkadot/keyring';
 import { chains } from '@polkadot/ui-settings';
-import { bnToBn, hexToU8a, isFunction, isHex, isString, stringify, stringToU8a, u8aSorted, u8aToString } from '@polkadot/util';
+import { bnToBn, hexToU8a, isFunction, isHex, isString, objectSpread, stringify, stringToU8a, u8aSorted, u8aToString } from '@polkadot/util';
 import { base64Decode, createKeyMulti, jsonDecrypt, jsonEncrypt } from '@polkadot/util-crypto';
 
 import { env } from './observable/env';
@@ -265,7 +265,8 @@ export class Keyring extends Base implements KeyringStruct {
           ? json.meta.genesisHash.some((h) => hashes.includes(h))
           : hashes.includes(json.meta.genesisHash);
       } else if (json.meta.contract && json.meta.contract.genesisHash) {
-        return hashes.includes(json.meta.contract.genesisHash);
+        // for contracts, we only allow the primary/first hash
+        return hashes[0] === json.meta.contract.genesisHash;
       }
     }
 
