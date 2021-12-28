@@ -13,7 +13,7 @@ export interface ContractMeta {
 
 export interface KeyringJson$Meta {
   contract?: ContractMeta;
-  genesisHash?: string[] | string | null;
+  genesisHash?: string | null;
   hardwareType?: 'ledger';
   isHardware?: boolean;
   isInjected?: boolean;

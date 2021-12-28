@@ -261,9 +261,7 @@ export class Keyring extends Base implements KeyringStruct {
   private allowGenesis (hashes: string[], json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
     if (json && json.meta) {
       if (json.meta.genesisHash) {
-        return Array.isArray(json.meta.genesisHash)
-          ? json.meta.genesisHash.some((h) => hashes.includes(h))
-          : hashes.includes(json.meta.genesisHash);
+        return hashes.includes(json.meta.genesisHash);
       } else if (json.meta.contract && json.meta.contract.genesisHash) {
         // for contracts, we only allow the primary/first hash
         return hashes[0] === json.meta.contract.genesisHash;

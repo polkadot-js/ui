@@ -2,7 +2,7 @@
 
 ## master
 
-- Support for multi genesisHash in keyring accounts
+- Allow for loading of accounts on additional specified hashes
 
 
 ## 0.87.7 Dec 27, 2021
