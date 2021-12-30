@@ -258,13 +258,16 @@ export class Keyring extends Base implements KeyringStruct {
     this.accounts.add(this._store, pair.address, json, pair.type);
   }
 
-  private allowGenesis (hashes: string[], json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
-    if (json && json.meta) {
+  private allowGenesis (json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
+    if (json && json.meta && this.genesisHash) {
+      const hashes: (string | null | undefined)[] = Object.values(chains).find((hashes): boolean =>
+        hashes.includes(this.genesisHash || '')
+      ) || [this.genesisHash];
+
       if (json.meta.genesisHash) {
-        return hashes.includes(json.meta.genesisHash);
-      } else if (json.meta.contract && json.meta.contract.genesisHash) {
-        // for contracts, we only allow the primary/first hash
-        return hashes[0] === json.meta.contract.genesisHash;
+        return hashes.includes(json.meta.genesisHash) || this.genesisHashes.includes(json.meta.genesisHash);
+      } else if (json.meta.contract) {
+        return hashes.includes(json.meta.contract.genesisHash);
       }
     }
 
@@ -274,20 +277,10 @@ export class Keyring extends Base implements KeyringStruct {
   public loadAll (options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta, type?: KeypairType }[] = []): void {
     super.initKeyring(options);
 
-    const hashes = [
-      ...this.genesisHashes,
-      ...(
-        Object
-          .values(chains)
-          .find((h) => h.includes(this.genesisHash || '')) ||
-        []
-      )
-    ];
-
     this._store.all((key: string, json: KeyringJson): void => {
       if (!isFunction(options.filter) || options.filter(json)) {
         try {
-          if (this.allowGenesis(hashes, json)) {
+          if (this.allowGenesis(json)) {
             if (accountRegex.test(key)) {
               this.loadAccount(json, key);
             } else if (addressRegex.test(key)) {
@@ -303,7 +296,7 @@ export class Keyring extends Base implements KeyringStruct {
     });
 
     injected.forEach((account): void => {
-      if (this.allowGenesis(hashes, account)) {
+      if (this.allowGenesis(account)) {
         try {
           this.loadInjected(account.address, account.meta, account.type);
         } catch (error) {
