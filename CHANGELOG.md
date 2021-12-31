@@ -2,7 +2,8 @@
 
 ## master
 
-- Allow for loading of accounts on additional specified hashes
+- Allow for loading of accounts on additional genesisHashes
+- Ensure package path is availble under ESM & CJS
 
 
 ## 0.87.7 Dec 27, 2021
