@@ -12,7 +12,10 @@
     "type": "git",
     "url": "https://github.com/polkadot-js/ui.git"
   },
-  "sideEffects": false,
+  "sideEffects": [
+    "./detectPackage.js",
+    "./detectPackage.cjs"
+  ],
   "type": "module",
   "version": "0.87.8-3",
   "main": "index.js",
