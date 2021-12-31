@@ -4,6 +4,7 @@
 import { packageInfo as sharedInfo } from '@polkadot/ui-shared/packageInfo';
 import { detectPackage } from '@polkadot/util';
 
+import __dirname from './cjs/dirname';
 import { packageInfo } from './packageInfo';
 
 detectPackage(packageInfo, typeof __dirname !== 'undefined' && __dirname, [sharedInfo]);
