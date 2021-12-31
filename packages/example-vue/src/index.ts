@@ -1,4 +1,4 @@
-// Copyright 2017-2021 @polkadot/example-vue authors & contributors
+// Copyright 2017-2022 @polkadot/example-vue authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Prefix } from '@polkadot/util-crypto/address/types';
