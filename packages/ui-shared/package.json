@@ -17,7 +17,7 @@
   "version": "0.87.8-2",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.16.5",
+    "@babel/runtime": "^7.16.7",
     "color": "^3.2.1"
   },
   "devDependencies": {
