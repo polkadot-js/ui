@@ -17,11 +17,11 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "0.87.8-5",
+  "version": "0.87.8-6",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.16.7",
-    "@polkadot/ui-shared": "0.87.8-5",
+    "@polkadot/ui-shared": "0.87.8-6",
     "@polkadot/util": "^8.2.2",
     "@polkadot/util-crypto": "^8.2.2",
     "jdenticon": "3.1.1"
