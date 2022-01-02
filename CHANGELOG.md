@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## master
+## 0.88.1 Jan 2, 2022
 
 - Allow for loading of accounts on additional genesisHashes
 - Ensure package path is availble under ESM & CJS
