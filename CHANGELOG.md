@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.3.1
+
+
 ## 0.88.1 Jan 2, 2022
 
 - Allow for loading of accounts on additional genesisHashes
