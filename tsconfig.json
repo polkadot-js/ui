@@ -1,18 +1,13 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "composite": true
+    "baseUrl": "./packages",
+    "composite": false
   },
-  "files": [],
-  "references": [
-    { "path": "./packages/example-react" },
-    { "path": "./packages/example-vue" },
-    { "path": "./packages/react-identicon" },
-    { "path": "./packages/react-qr" },
-    { "path": "./packages/reactnative-identicon" },
-    { "path": "./packages/ui-assets" },
-    { "path": "./packages/ui-keyring" },
-    { "path": "./packages/ui-settings" },
-    { "path": "./packages/ui-shared" },
-    { "path": "./packages/vue-identicon" }
+  "include": [
+    "packages/**/src/**/*"
+  ],
+  "exclude": [
+    "**/node_modules/**/*"
   ]
 }
