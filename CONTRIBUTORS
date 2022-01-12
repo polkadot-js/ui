@@ -1,33 +1,33 @@
-     566	Jaco
-       7	YJ
-       4	Antoine Estienne
-       4	kwingram25
-       4	Thibaut Sardan
-       3	Luke Sugiura
-       3	Stefanie Doll
-       2	Drew Stone
-       2	Hanwen Cheng
-       2	Nikos Kontakis
-       2	Vlad Proshchavaiev
-       2	Xiliang Chen
-       2	雪霁
-       1	Adam Dossa
-       1	Alex Siman
-       1	Alexander Krupenkin
-       1	Andrei Eres
-       1	Axel Chalon
-       1	Cameron Franz
-       1	carumusan
-       1	Harry Liu
-       1	Jake Naviasky
-       1	Logan Saether
-       1	Lovesh Harchandani
-       1	Luke Schoen
-       1	Nantian
-       1	Nikhil Ranjan
-       1	Shawn Tabrizi
-       1	Wei Tang
-       1	WoeOm
-       1	yuhui1208
-       1	Yuri
-       1	菩提
+     567	Jaco                          	Bump dev (w/ contrib update) (#593)
+       7	YJ                            	fix #224: decrease frame size to 1024, set multipart bool (#225)
+       4	Antoine Estienne              	Refactor logic to better use prefix (#491)
+       4	kwingram25                    	fix ff api url issue (#289)
+       4	Thibaut Sardan                	store hardware wallets (#431)
+       3	Luke Sugiura                  	remove language options (#244)
+       3	Stefanie Doll                 	Replace isUndefined util with explicit typeof check (#107)
+       2	Drew Stone                    	Add Edgeware testnet and mainnet updated endpoints (#274)
+       2	Hanwen Cheng                  	allow qr to scan seed qr (#330)
+       2	Nikos Kontakis                	Fix undefined process error that may appear when using ui (#524)
+       2	Vlad Proshchavaiev            	Add Subsocial to ss58 defaults (#358)
+       2	Xiliang Chen                  	Update UNfrastructure node label (#160)
+       2	雪霁                            	Batch export patch up (#455)
+       1	Adam Dossa                    	Add Polymesh Ledger Integration (#427)
+       1	Alex Siman                    	Fix typo in README: stiorage -> storage (#69)
+       1	Alexander Krupenkin           	Added ECDSA crypto type (#313)
+       1	Andrei Eres                   	Fix raising error if process has not defined yet (#548)
+       1	Axel Chalon                   	Simplify KeyringAddress interface (#144)
+       1	Cameron Franz                 	react-native example app port (#223)
+       1	carumusan                     	Add kulupu (#342)
+       1	Harry Liu                     	Update README.md (#166)
+       1	Jake Naviasky                 	Add Edgeware chain prefix to settings. (#317)
+       1	Logan Saether                 	Propose W3F node (#188)
+       1	Lovesh Harchandani            	Allow Ledger support for Dock (#425)
+       1	Luke Schoen                   	Fix typo in heading (#114)
+       1	Nantian                       	fix bigint type (#510)
+       1	Nikhil Ranjan                 	Updated to valid javascript (#271)
+       1	Shawn Tabrizi                 	Add a new `notification` setting (#498)
+       1	Wei Tang                      	Add Kulupu to the network selection list (#254)
+       1	WoeOm                         	add darwinia ss58 (#379)
+       1	yuhui1208                     	[Stores] make FileStroe read key safely  (#338)
+       1	Yuri                          	Add webpack 5 support (#557)
+       1	菩提                            	fix some bugs  (#260)
