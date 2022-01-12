@@ -6,7 +6,8 @@
     "rootDir": "./src"
   },
   "references": [
-    { "path": "../ui-keyring" },
-    { "path": "../vue-identicon" }
+    {
+      "path": "../ui-settings/tsconfig.build.json"
+    }
   ]
 }

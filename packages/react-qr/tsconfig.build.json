@@ -6,6 +6,8 @@
     "rootDir": "./src"
   },
   "references": [
-    { "path": "../ui-settings" }
+    {
+      "path": "../ui-settings/tsconfig.build.json"
+    }
   ]
 }
