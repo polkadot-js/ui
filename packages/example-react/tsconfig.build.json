@@ -6,7 +6,11 @@
     "rootDir": "./src"
   },
   "references": [
-    { "path": "../react-identicon" },
-    { "path": "../ui-keyring" }
+    {
+      "path": "../react-identicon/tsconfig.build.json"
+    },
+    {
+      "path": "../ui-keyring/tsconfig.build.json"
+    }
   ]
 }

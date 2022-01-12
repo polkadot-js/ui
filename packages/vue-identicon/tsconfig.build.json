@@ -6,6 +6,8 @@
     "rootDir": "./src"
   },
   "references": [
-    { "path": "../ui-shared" }
+    {
+      "path": "../ui-shared/tsconfig.build.json"
+    }
   ]
 }
