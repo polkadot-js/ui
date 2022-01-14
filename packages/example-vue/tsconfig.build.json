@@ -6,11 +6,7 @@
     "rootDir": "./src"
   },
   "references": [
-    {
-      "path": "../ui-keyring/tsconfig.build.json"
-    },
-    {
-      "path": "../vue-identicon/tsconfig.build.json"
-    }
+    { "path": "../ui-keyring/tsconfig.build.json" },
+    { "path": "../vue-identicon/tsconfig.build.json" }
   ]
 }
