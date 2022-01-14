@@ -34,7 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/runtime": "^7.16.7",
-    "@polkadot/dev": "^0.65.31",
+    "@polkadot/dev": "^0.65.36",
     "@polkadot/x-bundle": "^8.3.1",
     "@types/jest": "^27.4.0",
     "babel-loader": "^8.2.3",
@@ -47,7 +47,7 @@
     "react-native": "^0.66.4",
     "stream-browserify": "^3.0.0",
     "vue-template-compiler": "^2.6.14",
-    "webpack": "^5.65.0",
+    "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
     "webpack-serve": "^4.0.0"
   },
