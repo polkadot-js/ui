@@ -3,7 +3,6 @@
 
 import { Keyring } from './Keyring';
 
-export { Ledger } from '@polkadot/hw-ledger';
 export { packageInfo } from './packageInfo';
 
 const keyring = new Keyring();

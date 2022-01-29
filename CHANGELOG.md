@@ -1,5 +1,12 @@
 # CHANGELOG
 
+**Breaking change** The `Ledger` export from `@polkadot/ui-keyring` has been removed. For users of this class, import it directly from `@polkadot/hw-ledger`
+
+Changes:
+
+- Remove `Ledger` export in `ui-keyring`
+
+
 ## 0.89.3 Jan 23, 2022
 
 Changes:
