@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 const path = require('path');
-const webpack = require('webpack');
 const ENV = process.env.NODE_ENV || 'development';
 const isProd = ENV === 'production';
 
@@ -26,14 +25,7 @@ module.exports = {
     filename: './Demo.js',
     path: path.join(__dirname, 'build')
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer']
-    }),
-    new webpack.ProvidePlugin({
-      process: 'process/browser'
-    })
-  ],
+  plugins: [],
   resolve: {
     alias: {
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),

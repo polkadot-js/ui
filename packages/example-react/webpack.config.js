@@ -3,7 +3,6 @@
 
 const path = require('path');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
-const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
@@ -37,12 +36,6 @@ module.exports = {
       port: 8080,
       progress: false, // since we have hmr off, disable
       static: __dirname
-    }),
-    new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer']
-    }),
-    new webpack.ProvidePlugin({
-      process: 'process/browser'
     })
   ],
   resolve: {

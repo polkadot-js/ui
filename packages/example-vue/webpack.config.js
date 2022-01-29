@@ -4,7 +4,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
-const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
@@ -43,13 +42,7 @@ module.exports = {
       progress: false, // since we have hmr off, disable
       static: __dirname
     }),
-    new VueLoaderPlugin(),
-    new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer']
-    }),
-    new webpack.ProvidePlugin({
-      process: 'process/browser'
-    })
+    new VueLoaderPlugin()
   ],
   resolve: {
     alias: {
