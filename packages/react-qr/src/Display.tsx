@@ -69,15 +69,18 @@ function Display ({ className, size, skipEncoding, style, value }: Props): React
         timerRef.current.timerDelay = timerRef.current.timerDelay + TIMER_INC;
       }
 
-      timerRef.current.timerId = setTimeout(nextFrame, timerRef.current.timerDelay);
-
       // only encode the frames on demand, not above as part of the
       // state derivation - in the case of large payloads, this should
       // be slightly more responsive on initial load
-      return objectSpread({}, state, {
+      const newState = objectSpread<FrameState>({}, state, {
         frameIdx,
         image: getDataUrl(state.frames[frameIdx])
       });
+
+      // set the new timer last
+      timerRef.current.timerId = setTimeout(nextFrame, timerRef.current.timerDelay);
+
+      return newState;
     });
 
     timerRef.current.timerId = window.setTimeout(nextFrame, FRAME_DELAY);

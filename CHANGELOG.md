@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## master
+
+- Adjust ordering in state & timeouts for QR display
+
+
 ## 1.0.1 Jan 29, 2022
 
 **Breaking change** The `Ledger` export from `@polkadot/ui-keyring` has been removed. For users of this class, import it directly from `@polkadot/hw-ledger`
