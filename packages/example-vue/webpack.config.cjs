@@ -1,14 +1,13 @@
-// Copyright 2017-2022 @polkadot/example-react authors & contributors
+// Copyright 2017-2022 @polkadot/example-vue authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 const path = require('path');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
-const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
   devtool: 'eval-cheap-source-map',
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
   mode: 'development',
   module: {
     rules: [
@@ -37,28 +36,17 @@ module.exports = {
       port: 8080,
       progress: false, // since we have hmr off, disable
       static: __dirname
-    }),
-    new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer']
-    }),
-    new webpack.ProvidePlugin({
-      process: 'process/browser'
     })
   ],
   resolve: {
     alias: {
-      '@polkadot/react-identicon': path.resolve(__dirname, '../react-identicon/build'),
       '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
       '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
-      'process/browser': require.resolve('process/browser'),
-      'react/jsx-runtime': require.resolve('react/jsx-runtime')
+      '@polkadot/vue-identicon': path.resolve(__dirname, '../vue-identicon/build')
     },
-    extensions: ['.js', '.ts', '.tsx'],
-    fallback: {
-      buffer: require.resolve('buffer'),
-      stream: require.resolve('stream-browserify')
-    }
+    extensions: ['.js', '.ts', '.tsx']
   },
+  target: 'web',
   watch: true
 };

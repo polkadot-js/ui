@@ -30,5 +30,4 @@ Additionally some shared libraries, that is not dependent on any framework -
 In addition to the above packages, there are examples available for intergation  of `ui-keyring`, `ui-settings` & the relevant `*-identicon` package. These are
 
 - [example-react](packages/example-react) - start with `yarn example:react` and view on `http://localhost:8080`
-- [example-reactnative](packages/exampleReactNative) - start with `yarn example:rn:packager` to start the packager service and then either `yarn example:rn:android` or `yarn example:rn:ios` in another terminal
 - [example-vue](packages/example-vue) - start with `yarn example:vue` and view on `http://localhost:8080`

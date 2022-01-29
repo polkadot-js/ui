@@ -2,8 +2,10 @@
 
 ## master
 
+Changes:
+
 - Adjust ordering in state & timeouts for QR display
-- Cleanup and simplify webpack example config
+- Adjust webpack example config (cleanups, remove unneeded plugins)
 
 
 ## 1.0.1 Jan 29, 2022
