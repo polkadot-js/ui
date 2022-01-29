@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const { WebpackPluginServe } = require('webpack-plugin-serve');
 
 module.exports = {
@@ -21,10 +20,6 @@ module.exports = {
             options: require('../../babel.config.cjs')
           }
         ]
-      },
-      {
-        loader: 'vue-loader',
-        test: /\.vue$/
       }
     ]
   },
@@ -41,18 +36,17 @@ module.exports = {
       port: 8080,
       progress: false, // since we have hmr off, disable
       static: __dirname
-    }),
-    new VueLoaderPlugin()
+    })
   ],
   resolve: {
     alias: {
       '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
       '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
-      '@polkadot/vue-identicon': path.resolve(__dirname, '../vue-identicon/build'),
-      'process/browser': require.resolve('process/browser')
+      '@polkadot/vue-identicon': path.resolve(__dirname, '../vue-identicon/build')
     },
     extensions: ['.js', '.ts', '.tsx']
   },
+  target: 'web',
   watch: true
 };

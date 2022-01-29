@@ -44,14 +44,11 @@ module.exports = {
       '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
       '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
-      'process/browser': require.resolve('process/browser'),
       'react/jsx-runtime': require.resolve('react/jsx-runtime')
     },
     extensions: ['.js', '.ts', '.tsx'],
-    fallback: {
-      buffer: require.resolve('buffer'),
-      stream: require.resolve('stream-browserify')
-    }
+    fallback: {}
   },
+  target: 'web',
   watch: true
 };
