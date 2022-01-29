@@ -3,6 +3,7 @@
 ## master
 
 - Adjust ordering in state & timeouts for QR display
+- Cleanup and simplify webpack example config
 
 
 ## 1.0.1 Jan 29, 2022
