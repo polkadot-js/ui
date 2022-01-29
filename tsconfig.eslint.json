@@ -6,6 +6,7 @@
   },
   "include": [
     "packages/**/src/**/*",
+    "packages/**/*.cjs",
     "packages/**/*.js"
   ],
   "exclude": [
