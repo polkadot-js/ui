@@ -1,6 +1,10 @@
 # CHANGELOG
 
+## 1.0.1 Jan 29, 2022
+
 **Breaking change** The `Ledger` export from `@polkadot/ui-keyring` has been removed. For users of this class, import it directly from `@polkadot/hw-ledger`
+
+**Important** This is the first release in the long-outstanding `1.x` range. Apart from the notable breaking changes, it has no functional differences to the previous versions.
 
 Changes:
 
