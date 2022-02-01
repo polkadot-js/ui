@@ -4,6 +4,7 @@
 
 Changes:
 
+- Adjust ordering in state & timeouts for QR display
 - Adjust webpack example config (cleanups, remove unneeded plugins)
 
 
