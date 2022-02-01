@@ -5,6 +5,7 @@
 Changes:
 
 - Adjust ordering in state & timeouts for QR display
+- Add `timerDelay` property to QR display to control frame timeouts
 - Adjust webpack example config (cleanups, remove unneeded plugins)
 
 
