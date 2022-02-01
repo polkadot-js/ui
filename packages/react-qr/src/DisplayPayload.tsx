@@ -10,13 +10,15 @@ interface Props {
   address: string;
   className?: string;
   cmd: number;
+  delay?: number;
   genesisHash: Uint8Array | string;
   payload: Uint8Array;
   size?: string | number;
   style?: React.CSSProperties;
+  timerDelay?: number;
 }
 
-function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, style }: Props): React.ReactElement<Props> | null {
+function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, style, timerDelay }: Props): React.ReactElement<Props> | null {
   const data = useMemo(
     () => createSignPayload(address, cmd, payload, genesisHash),
     [address, cmd, payload, genesisHash]
@@ -31,6 +33,7 @@ function DisplayPayload ({ address, className, cmd, genesisHash, payload, size, 
       className={className}
       size={size}
       style={style}
+      timerDelay={timerDelay}
       value={data}
     />
   );
