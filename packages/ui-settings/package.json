@@ -20,9 +20,9 @@
   "version": "1.0.2-1",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
-    "@polkadot/networks": "^8.3.3",
-    "@polkadot/util": "^8.3.3",
+    "@babel/runtime": "^7.17.2",
+    "@polkadot/networks": "^8.3.4-10",
+    "@polkadot/util": "^8.3.4-10",
     "eventemitter3": "^4.0.7",
     "store": "^2.0.12"
   },
