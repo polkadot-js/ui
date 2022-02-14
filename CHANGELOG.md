@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## master
+## 1.1.1 Feb 14, 2022
 
 Changes:
 
 - Adjust ordering in state & timeouts for QR display
 - Add `timerDelay` property to QR display to control frame timeouts
 - Adjust webpack example config (cleanups, remove unneeded plugins)
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.4.1
 
 
 ## 1.0.1 Jan 29, 2022
