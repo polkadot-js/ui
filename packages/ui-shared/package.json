@@ -17,15 +17,15 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "1.1.2-10",
+  "version": "1.2.0",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "color": "^3.2.1"
   },
   "devDependencies": {
-    "@polkadot/util": "^8.4.1",
-    "@polkadot/util-crypto": "^8.4.1",
+    "@polkadot/util": "^8.5.1",
+    "@polkadot/util-crypto": "^8.5.1",
     "@types/color": "^3.0.3",
     "@types/xmlserializer": "^0.6.2",
     "xmlserializer": "^0.6.1"

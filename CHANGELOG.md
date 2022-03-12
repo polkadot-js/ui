@@ -1,10 +1,11 @@
 # CHANGELOG
 
-## master
+## 1.2.1 Mar 12, 2022
 
 Changes:
 
 - Adjust for bundlers where `import.meta.url` is undefined
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.5.1
 
 
 ## 1.1.1 Feb 14, 2022
