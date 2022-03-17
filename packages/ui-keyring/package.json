@@ -19,7 +19,7 @@
   "version": "1.2.1",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.17.2",
+    "@babel/runtime": "^7.17.7",
     "@polkadot/keyring": "^8.5.1",
     "@polkadot/ui-settings": "1.2.1",
     "@polkadot/util": "^8.5.1",
