@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.3.1 Mar 19, 2022
+
+Changes:
+
+- Updated to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 8.6.1
+- Additional workaround for Vite bundling
+
+
 ## 1.2.1 Mar 12, 2022
 
 Changes:
