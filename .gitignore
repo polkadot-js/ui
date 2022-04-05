@@ -1,4 +1,6 @@
 build/
+build-cjs/
+build-esm/
 build-docs/
 coverage/
 node_modules/

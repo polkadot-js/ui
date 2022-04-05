@@ -22,8 +22,8 @@
   "dependencies": {
     "@babel/runtime": "^7.17.8",
     "@polkadot/ui-shared": "1.4.1",
-    "@polkadot/util": "^8.7.1",
-    "@polkadot/util-crypto": "^8.7.1",
+    "@polkadot/util": "^8.7.2-1",
+    "@polkadot/util-crypto": "^8.7.2-1",
     "jdenticon": "3.1.1"
   },
   "devDependencies": {
