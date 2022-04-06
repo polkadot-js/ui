@@ -4,7 +4,7 @@
 import type { Circle as CircleType } from '@polkadot/ui-shared/icons/types';
 import type { Props } from '../types';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { View } from 'react-native';
 import Svg, { Circle as SvgCircle } from 'react-native-svg';
 
@@ -23,6 +23,11 @@ function renderCircle ({ cx, cy, fill, r }: CircleType, key: number): React.Reac
 }
 
 export default function Identicon ({ address, isAlternative = false, size }: Props): React.ReactElement<Props> {
+  const circles = useMemo(
+    () => polkadotIcon(address, { isAlternative }),
+    [address, isAlternative]
+  );
+
   return (
     <View>
       <Svg
@@ -31,7 +36,7 @@ export default function Identicon ({ address, isAlternative = false, size }: Pro
         viewBox='0 0 64 64'
         width={size}
       >
-        {polkadotIcon(address, { isAlternative }).map(renderCircle)}
+        {circles.map(renderCircle)}
       </Svg>
     </View>
   );

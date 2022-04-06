@@ -22,7 +22,6 @@ const blake2 = (value: Uint8Array): Uint8Array =>
 const S = 64;
 const C = S / 2;
 const Z = S / 64 * 5;
-const ZERO = blake2(new Uint8Array(32));
 
 /* eslint-disable sort-keys */
 const SCHEMA: { [index: string]: Scheme } = {
@@ -42,6 +41,8 @@ const OUTER_CIRCLE: Circle = {
   fill: '#eee',
   r: C
 };
+
+let zeroHash: Uint8Array = new Uint8Array();
 
 function getRotation (isSixPoint: boolean): { r: number; ro2: number; r3o4: number; ro4: number; rroot3o2: number; rroot3o4: number } {
   const r = isSixPoint
@@ -98,7 +99,11 @@ function findScheme (d: number): Scheme {
 }
 
 function addressToId (address: string): Uint8Array {
-  return blake2(decodeAddress(address)).map((x, i): number => (x + 256 - ZERO[i]) % 256);
+  if (!zeroHash.length) {
+    zeroHash = blake2(new Uint8Array(32));
+  }
+
+  return blake2(decodeAddress(address)).map((x, i) => (x + 256 - zeroHash[i]) % 256);
 }
 
 function getColors (address: string): string[] {
@@ -132,10 +137,19 @@ function getColors (address: string): string[] {
  * @description Generate a array of the circles that make up an identicon
  */
 export function polkadotIcon (address: string, { isAlternative }: Options): Circle[] {
-  const colors = getColors(address);
+  const xy = getCircleXY(isAlternative);
+  let colors: string[];
+
+  try {
+    // in some cases, e.g. RN where crypto may not be initialized,
+    // in these cases we just fill with a placeholder
+    colors = getColors(address);
+  } catch {
+    colors = new Array<string>(xy.length).fill('#ddd');
+  }
 
   return [OUTER_CIRCLE].concat(
-    getCircleXY(isAlternative).map(([cx, cy], index): Circle => ({
+    xy.map(([cx, cy], index): Circle => ({
       cx, cy, fill: colors[index], r: Z
     }))
   );
