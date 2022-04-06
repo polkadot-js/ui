@@ -19,7 +19,7 @@
 import type { Circle } from '@polkadot/ui-shared/icons/types';
 import type { Props } from '../types';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { polkadotIcon } from '@polkadot/ui-shared';
 
@@ -36,6 +36,11 @@ function renderCircle ({ cx, cy, fill, r }: Circle, key: number): React.ReactNod
 }
 
 function Identicon ({ address, className = '', isAlternative = false, size, style }: Props): React.ReactElement<Props> {
+  const circles = useMemo(
+    () => polkadotIcon(address, { isAlternative }),
+    [address, isAlternative]
+  );
+
   return (
     <svg
       className={className}
@@ -46,7 +51,7 @@ function Identicon ({ address, className = '', isAlternative = false, size, styl
       viewBox='0 0 64 64'
       width={size}
     >
-      {polkadotIcon(address, { isAlternative }).map(renderCircle)}
+      {circles.map(renderCircle)}
     </svg>
   );
 }
