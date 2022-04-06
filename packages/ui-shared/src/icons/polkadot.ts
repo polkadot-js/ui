@@ -141,8 +141,8 @@ export function polkadotIcon (address: string, { isAlternative }: Options): Circ
   let colors: string[];
 
   try {
-    // in some cases, e.g. RN where crypto may not be initialized,
-    // in these cases we just fill with a placeholder
+    // in some cases, e.g. RN where crypto may not be initialized, chaos can
+    // happen when hashing, in these cases we just fill with a placeholder
     colors = getColors(address);
   } catch {
     colors = new Array<string>(xy.length).fill('#ddd');
