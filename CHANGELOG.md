@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 2.0.1 Apr 9, 2022
+
+- **Breaking change** In this major version the commonjs outputs are moved to a sub-folder. Since the export map and main field in package.json does reflect this change, there should be no usage changes. However the packages here will all need to be on the same version for internal linkage.
+
+Changes:
+
+- Adjust Polkadot icon generation with lazy init
+- Output commonjs files under the `cjs/**` root
+- Upgrade to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 9.0.1
+
+
 ## 1.4.1 Mar 27, 2022
 
 Changes:
