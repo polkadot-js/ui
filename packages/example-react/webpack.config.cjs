@@ -43,8 +43,7 @@ module.exports = {
       '@polkadot/react-identicon': path.resolve(__dirname, '../react-identicon/build'),
       '@polkadot/ui-keyring': path.resolve(__dirname, '../ui-keyring/build'),
       '@polkadot/ui-settings': path.resolve(__dirname, '../ui-settings/build'),
-      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build'),
-      'react/jsx-runtime': require.resolve('react/jsx-runtime')
+      '@polkadot/ui-shared': path.resolve(__dirname, '../ui-shared/build')
     },
     extensions: ['.js', '.ts', '.tsx'],
     fallback: {}
