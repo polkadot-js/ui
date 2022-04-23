@@ -21,33 +21,33 @@ export class FileStore implements KeyringStore {
     this.#path = path;
   }
 
-  public all (cb: (key: string, value: KeyringJson) => void): void {
+  public all (fn: (key: string, value: KeyringJson) => void): void {
     fs
       .readdirSync(this.#path)
       .filter((key): boolean => !['.', '..', '.DS_Store'].includes(key))
       .forEach((key): void => {
         const value = this._readKey(key);
 
-        value?.address && cb(key, value);
+        value?.address && fn(key, value);
       });
   }
 
-  public get (key: string, cb: (value: KeyringJson) => void): void {
+  public get (key: string, fn: (value: KeyringJson) => void): void {
     const value = this._readKey(key);
 
     assert(value?.address, `Invalid JSON found for ${key}`);
 
-    cb(value);
+    fn(value);
   }
 
-  public remove (key: string, cb?: () => void): void {
+  public remove (key: string, fn?: () => void): void {
     fs.unlinkSync(this._getPath(key));
-    cb && cb();
+    fn && fn();
   }
 
-  public set (key: string, value: KeyringJson, cb?: () => void): void {
+  public set (key: string, value: KeyringJson, fn?: () => void): void {
     fs.writeFileSync(this._getPath(key), Buffer.from(JSON.stringify(value), 'utf-8'));
-    cb && cb();
+    fn && fn();
   }
 
   private _getPath (key: string): string {

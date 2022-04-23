@@ -6,24 +6,23 @@ import type { KeyringJson, KeyringStore } from '../types';
 import store from 'store';
 
 export class BrowserStore implements KeyringStore {
-  public all (cb: (key: string, value: KeyringJson) => void): void {
+  public all (fn: (key: string, value: KeyringJson) => void): void {
     store.each((value: KeyringJson, key: string): void => {
-      cb(key, value);
+      fn(key, value);
     });
   }
 
-  public get (key: string, cb: (value: KeyringJson) => void): void {
-    // eslint-disable-next-line node/no-callback-literal
-    cb(store.get(key) as KeyringJson);
+  public get (key: string, fn: (value: KeyringJson) => void): void {
+    fn(store.get(key) as KeyringJson);
   }
 
-  public remove (key: string, cb?: () => void): void {
+  public remove (key: string, fn?: () => void): void {
     store.remove(key);
-    cb && cb();
+    fn && fn();
   }
 
-  public set (key: string, value: KeyringJson, cb?: () => void): void {
+  public set (key: string, value: KeyringJson, fn?: () => void): void {
     store.set(key, value);
-    cb && cb();
+    fn && fn();
   }
 }
