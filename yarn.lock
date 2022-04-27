@@ -2240,8 +2240,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.17.9
     "@polkadot/keyring": ^9.0.1
-    "@polkadot/ui-settings": 2.0.2-0
-    "@polkadot/ui-shared": 2.0.2-0
+    "@polkadot/ui-settings": 2.0.2-1
+    "@polkadot/ui-shared": 2.0.2-1
     "@polkadot/util": ^9.0.1
     "@polkadot/util-crypto": ^9.0.1
     "@types/react-copy-to-clipboard": ^5.0.2
@@ -2269,7 +2269,7 @@ __metadata:
   resolution: "@polkadot/react-qr@workspace:packages/react-qr"
   dependencies:
     "@babel/runtime": ^7.17.9
-    "@polkadot/ui-settings": 2.0.2-0
+    "@polkadot/ui-settings": 2.0.2-1
     "@polkadot/util": ^9.0.1
     "@polkadot/util-crypto": ^9.0.1
     "@types/react-qr-reader": ^2.1.4
@@ -2291,7 +2291,7 @@ __metadata:
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
     "@babel/runtime": ^7.17.9
-    "@polkadot/ui-shared": 2.0.2-0
+    "@polkadot/ui-shared": 2.0.2-1
     "@polkadot/util": ^9.0.1
     "@polkadot/util-crypto": ^9.0.1
     "@types/react-native": ^0.67.6
@@ -2319,7 +2319,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.17.9
     "@polkadot/keyring": ^9.0.1
-    "@polkadot/ui-settings": 2.0.2-0
+    "@polkadot/ui-settings": 2.0.2-1
     "@polkadot/util": ^9.0.1
     "@polkadot/util-crypto": ^9.0.1
     "@types/mkdirp": ^1.0.2
@@ -2334,7 +2334,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@2.0.2-0, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@2.0.2-1, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
@@ -2350,7 +2350,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@2.0.2-0, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@2.0.2-1, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
@@ -2409,7 +2409,7 @@ __metadata:
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
     "@babel/runtime": ^7.17.9
-    "@polkadot/ui-shared": 2.0.2-0
+    "@polkadot/ui-shared": 2.0.2-1
     "@polkadot/util": ^9.0.1
     "@polkadot/util-crypto": ^9.0.1
     jdenticon: 3.1.1
