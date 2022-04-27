@@ -9,7 +9,8 @@ describe('svg', (): void => {
   it('creates a basic SVG element', (): void => {
     expect(
       serializeToString(
-        svg('rect')
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-explicit-any
+        svg('rect') as any
       )
     ).toEqual('<rect xmlns="http://www.w3.org/2000/svg"/>');
   });
