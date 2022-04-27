@@ -7,6 +7,7 @@ module.exports = {
   ...base,
   ignorePatterns: [
     ...base.ignorePatterns,
+    'jest/**/*',
     '**/*.d.ts'
   ],
   parserOptions: {
