@@ -29,7 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/runtime": "^7.17.9",
-    "@polkadot/dev": "^0.66.13",
+    "@polkadot/dev": "^0.66.15",
     "@polkadot/x-bundle": "^9.0.1",
     "@types/jest": "^27.4.1",
     "babel-loader": "^8.2.5",
@@ -47,6 +47,6 @@
     "webpack-serve": "^4.0.0"
   },
   "resolutions": {
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.4"
   }
 }
