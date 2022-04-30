@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.1.1 Apr 30, 2022
+
+Changes:
+
+- Upgrade to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 9.1.1
+- Adjust Jest test init for latest `@polkadot/dev`
+
+
 ## 2.0.1 Apr 9, 2022
 
 - **Breaking change** In this major version the commonjs outputs are moved to a sub-folder. Since the export map and main field in package.json does reflect this change, there should be no usage changes. However the packages here will all need to be on the same version for internal linkage.
