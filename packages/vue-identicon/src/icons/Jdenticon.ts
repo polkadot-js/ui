@@ -17,7 +17,7 @@ export const Jdenticon = Vue.extend({
   props: ['publicKey', 'size'],
   // eslint-disable-next-line quotes
   render (h): VNode {
-    const { publicKey, size }: propsType = this.$props;
+    const { publicKey, size } = this.$props as propsType;
     const cmp = Vue.component('CJdenticon', { template: jdenticon.toSvg(publicKey.substring(2), size) });
 
     return h(cmp);

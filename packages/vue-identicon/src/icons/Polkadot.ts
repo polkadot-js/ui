@@ -6,9 +6,9 @@ import Vue, { VNode } from 'vue';
 import { polkadotIcon } from '@polkadot/ui-shared';
 
 type propsType = {
-  address: string,
-  isAlternative: boolean,
-  size: number
+  address: string;
+  isAlternative: boolean;
+  size: number;
 }
 
 /**
@@ -19,7 +19,7 @@ export const Polkadot = Vue.extend({
   props: ['address', 'isAlternative', 'size'],
   // eslint-disable-next-line quotes
   render (h): VNode {
-    const { address, isAlternative, size }: propsType = this.$props;
+    const { address, isAlternative, size } = this.$props as propsType;
     const circles = polkadotIcon(address, {
       isAlternative: isAlternative || false
     }).map(({ cx,
