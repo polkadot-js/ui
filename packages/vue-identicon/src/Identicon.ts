@@ -3,7 +3,7 @@
 
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 
-import Vue, {VNode} from 'vue';
+import Vue, { VNode } from 'vue';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
@@ -77,17 +77,18 @@ export const Identicon = Vue.extend({
       this.publicKey = publicKey;
     }
   },
-  props: ['prefix','isAlternative','size','theme','value'],
-  render(h): VNode {
-    var {type, address, iconSize, isAlternative, publicKey} = this.$data
-    if(type==='empty') {
-      return h('Empty', {attrs: {key: address, size: iconSize}}, [])
-    } else if(type==='beachball') {
-      return h('Beachball', {attrs: {key: address, address: address, isAlternative: isAlternative, size: iconSize}}, [])
-    } else if(type==='polkadot') {
-      return h('Polkadot', {attrs: {key: address, address: address, isAlternative: isAlternative, size: iconSize}}, [])
+  props: ['prefix', 'isAlternative', 'size', 'theme', 'value'],
+  render (h): VNode {
+    const { address, iconSize, isAlternative, publicKey, type } = this.$data;
+
+    if (type === 'empty') {
+      return h('Empty', { attrs: { key: address as string, size: iconSize as number } }, []);
+    } else if (type === 'beachball') {
+      return h('Beachball', { attrs: { address: address as string, isAlternative: isAlternative as boolean, key: address as string, size: iconSize as number } }, []);
+    } else if (type === 'polkadot') {
+      return h('Polkadot', { attrs: { address: address as string, isAlternative: isAlternative as boolean, key: address as string, size: iconSize as number } }, []);
     } else {
-      return h('Jdenticon', {attrs: {key: address, publicKey: publicKey, size: iconSize}}, [])
+      return h('Jdenticon', { attrs: { key: address as string, publicKey: publicKey as string, size: iconSize as number } }, []);
     }
   },
   watch: {
