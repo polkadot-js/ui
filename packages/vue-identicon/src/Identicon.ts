@@ -3,7 +3,7 @@
 
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 
-import Vue from 'vue';
+import Vue, {VNode} from 'vue';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
@@ -77,23 +77,19 @@ export const Identicon = Vue.extend({
       this.publicKey = publicKey;
     }
   },
-  props: ['prefix', 'isAlternative', 'size', 'theme', 'value'],
-  // FIXME These nested divs are not correct, would like a different way
-  // here so we don't create a div wrapped for the div wrapper of the icon
-  template: `
-    <div v-if="type === 'empty' || address === ''">
-      <Empty :key="address" :size="iconSize" />
-    </div>
-    <div v-else-if="type === 'beachball'">
-      <Beachball :key="address" :address="address" :size="iconSize" />
-    </div>
-    <div v-else-if="type === 'polkadot'">
-      <Polkadot :key="address" :address="address" :isAlternative="isAlternative" :size="iconSize" />
-    </div>
-    <div v-else>
-      <Jdenticon :key="address" :publicKey="publicKey" :size="iconSize" />
-    </div>
-  `,
+  props: ['prefix','isAlternative','size','theme','value'],
+  render(h): VNode {
+    var {type, address, iconSize, isAlternative, publicKey} = this.$data
+    if(type==='empty') {
+      return h('Empty', {attrs: {key: address, size: iconSize}}, [])
+    } else if(type==='beachball') {
+      return h('Beachball', {attrs: {key: address, address: address, isAlternative: isAlternative, size: iconSize}}, [])
+    } else if(type==='polkadot') {
+      return h('Polkadot', {attrs: {key: address, address: address, isAlternative: isAlternative, size: iconSize}}, [])
+    } else {
+      return h('Jdenticon', {attrs: {key: address, publicKey: publicKey, size: iconSize}}, [])
+    }
+  },
   watch: {
     value: function (): void {
       this.recodeAddress();
