@@ -5,15 +5,6 @@ import Vue, {VNode} from 'vue';
 
 import { polkadotIcon } from '@polkadot/ui-shared';
 
-interface Data {
-  circles: string;
-}
-
-interface This {
-  address: string;
-  isAlternative?: boolean;
-}
-
 /**
  * @name Polkadot
  * @description The Polkadot default identicon

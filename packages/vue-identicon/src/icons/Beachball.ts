@@ -1,15 +1,9 @@
 // Copyright 2017-2022 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Options } from '@polkadot/ui-shared/icons/types';
-
 import Vue, {VNode} from 'vue';
 
 import { beachballIcon } from '@polkadot/ui-shared';
-
-interface Data {
-  html: string;
-}
 
 /**
  * @name Beachball
