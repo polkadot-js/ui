@@ -23,7 +23,6 @@ export const Polkadot = Vue.extend({
   // eslint-disable-next-line quotes
   render(h, context): VNode {
     var {address, isAlternative, size} = this.$props
-    console.debug('address', address)
     const circles = polkadotIcon(address, {
       isAlternative: isAlternative || false
     }).map( ({
