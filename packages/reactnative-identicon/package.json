@@ -27,7 +27,7 @@
     "react-native-svg": "^12.3.0"
   },
   "devDependencies": {
-    "@types/react-native": "^0.67.7"
+    "@types/react-native": "^0.67.8"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
