@@ -31,7 +31,7 @@
     "@babel/runtime": "^7.18.3",
     "@polkadot/dev": "^0.66.34",
     "@polkadot/x-bundle": "^9.4.1",
-    "@types/jest": "^28.1.0",
+    "@types/jest": "^28.1.1",
     "babel-loader": "^8.2.5",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
