@@ -17,13 +17,13 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "2.4.2-0",
+  "version": "2.4.2-1",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.18.3",
     "@polkadot/keyring": "^9.4.1",
-    "@polkadot/ui-settings": "2.4.2-0",
-    "@polkadot/ui-shared": "2.4.2-0",
+    "@polkadot/ui-settings": "2.4.2-1",
+    "@polkadot/ui-shared": "2.4.2-1",
     "@polkadot/util": "^9.4.1",
     "@polkadot/util-crypto": "^9.4.1",
     "color": "^3.2.1",
