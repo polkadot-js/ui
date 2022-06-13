@@ -3,9 +3,9 @@
 
 import type { KeyringJson, KeyringStore } from '../types';
 
-import fs from 'fs';
-import mkdirp from 'mkdirp';
-import path from 'path';
+import * as fs from 'fs';
+import * as mkdirp from 'mkdirp';
+import * as path from 'path';
 
 import { assert } from '@polkadot/util';
 

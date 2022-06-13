@@ -3,7 +3,7 @@
 
 import type { Props } from '../types';
 
-import React from 'react';
+import * as React from 'react';
 import { View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 

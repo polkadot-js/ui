@@ -38,7 +38,7 @@ Option 1: Declarative subscribe/unsubscribe w/ react-with-observable (recommende
 ```js
 import accountObservable from '@polkadot/ui-keyring/observable/accounts';
 import { SingleAddress, SubjectInfo } from '@polkadot/ui-keyring/observable/types';
-import React from 'react';
+import * as React from 'react';
 import { Subscribe } from 'react-with-observable';
 import { map } from 'rxjs';
 
@@ -71,7 +71,7 @@ Option 2: Imperative subscribe/unsubscribe
 ```js
 import accountObservable from '@polkadot/ui-keyring/observable/accounts';
 import { SingleAddress, SubjectInfo } from '@polkadot/ui-keyring/observable/types';
-import React from 'react';
+import * as React from 'react';
 import { Subscription } from 'rxjs';
 
 type State = {

@@ -1,7 +1,7 @@
 // Copyright 2017-2022 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import xmlserializer from 'xmlserializer';
+import * as xmlserializer from 'xmlserializer';
 
 import { seeder } from '../seeder';
 import { circle } from './circle';

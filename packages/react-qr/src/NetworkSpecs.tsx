@@ -3,7 +3,8 @@
 
 import type { NetworkSpecsStruct } from '@polkadot/ui-settings/types';
 
-import React, { useMemo } from 'react';
+import * as React from 'react';
+import { useMemo } from 'react';
 
 import { QrDisplay } from './Display';
 import { encodeString } from './util';

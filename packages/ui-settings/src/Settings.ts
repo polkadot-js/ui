@@ -3,8 +3,8 @@
 
 import type { Endpoint, EndpointType, Option, SettingsStruct } from './types';
 
-import EventEmitter from 'eventemitter3';
-import store from 'store';
+import { EventEmitter } from 'eventemitter3';
+import * as store from 'store';
 
 import { hasProcess, isUndefined } from '@polkadot/util';
 
@@ -22,7 +22,7 @@ function withDefault (options: Option[], option: string | undefined, fallback: s
 }
 
 export class Settings implements SettingsStruct {
-  readonly #emitter: EventEmitter;
+  readonly #emitter = new EventEmitter();
 
   #apiType: Endpoint;
 
@@ -49,8 +49,6 @@ export class Settings implements SettingsStruct {
 
   constructor () {
     const settings = (store.get('settings') as SettingsStruct) || {};
-
-    this.#emitter = new EventEmitter();
 
     // will become deprecated for supporting substrate connect light clients. apiType structure should be used instead
     this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || (hasProcess && process.env && process.env.WS_URL) || (ENDPOINT_DEFAULT.value as string);

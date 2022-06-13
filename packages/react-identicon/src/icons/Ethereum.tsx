@@ -4,7 +4,8 @@
 import type { Props } from '../types';
 
 import makeBlockie from 'ethereum-blockies-base64';
-import React, { useMemo } from 'react';
+import * as React from 'react';
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 function Identicon ({ address, className = '', style }: Props): React.ReactElement<Props> {

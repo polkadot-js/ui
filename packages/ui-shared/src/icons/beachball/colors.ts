@@ -5,7 +5,7 @@
 
 import type { ColorGen, Seeder } from './types';
 
-import Color from 'color';
+import * as Color from 'color';
 
 import { COLORS } from './defaults';
 

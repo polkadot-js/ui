@@ -1,7 +1,8 @@
 // Copyright 2017-2022 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useCallback } from 'react';
+import * as React from 'react';
+import { useCallback } from 'react';
 
 import { assert } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';

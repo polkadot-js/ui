@@ -3,7 +3,7 @@
 
 import type { KeyringJson, KeyringStore } from '../types';
 
-import store from 'store';
+import * as store from 'store';
 
 export class BrowserStore implements KeyringStore {
   public all (fn: (key: string, value: KeyringJson) => void): void {

@@ -4,8 +4,8 @@
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 import type { IdentityProps as Props, Props as ComponentProps } from './types';
 
-import React from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
+import * as React from 'react';
+import * as CopyToClipboard from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 
 import { ICON_DEFAULT_HOST, settings } from '@polkadot/ui-settings';

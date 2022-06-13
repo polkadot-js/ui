@@ -4,7 +4,7 @@
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 import type { Props as ComponentProps } from './types';
 
-import React from 'react';
+import * as React from 'react';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';

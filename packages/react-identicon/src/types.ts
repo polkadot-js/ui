@@ -3,7 +3,7 @@
 
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 
-import React from 'react';
+import * as React from 'react';
 
 export interface BaseProps {
   className?: string;

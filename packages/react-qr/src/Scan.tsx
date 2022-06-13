@@ -1,8 +1,9 @@
 // Copyright 2017-2022 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useCallback, useMemo } from 'react';
-import Reader from 'react-qr-reader';
+import * as React from 'react';
+import { useCallback, useMemo } from 'react';
+import * as Reader from 'react-qr-reader';
 import styled from 'styled-components';
 
 import { createImgSize } from './util';

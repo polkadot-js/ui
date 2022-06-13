@@ -4,7 +4,8 @@
 import type { Props } from '../types';
 
 import * as jdenticon from 'jdenticon';
-import React, { useMemo } from 'react';
+import * as React from 'react';
+import { useMemo } from 'react';
 
 function Identicon ({ className = '', publicKey, size, style }: Props): React.ReactElement<Props> {
   const html = useMemo(

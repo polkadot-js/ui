@@ -19,7 +19,8 @@
 import type { Circle } from '@polkadot/ui-shared/icons/types';
 import type { Props } from '../types';
 
-import React, { useMemo } from 'react';
+import * as React from 'react';
+import { useMemo } from 'react';
 
 import { polkadotIcon } from '@polkadot/ui-shared';
 

@@ -4,7 +4,8 @@
 import type { Circle as CircleType } from '@polkadot/ui-shared/icons/types';
 import type { Props } from '../types';
 
-import React, { useMemo } from 'react';
+import * as React from 'react';
+import { useMemo } from 'react';
 import { View } from 'react-native';
 import Svg, { Circle as SvgCircle } from 'react-native-svg';
 

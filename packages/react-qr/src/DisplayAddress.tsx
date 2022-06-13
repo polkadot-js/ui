@@ -1,7 +1,8 @@
 // Copyright 2017-2022 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useMemo } from 'react';
+import * as React from 'react';
+import { useMemo } from 'react';
 
 import { QrDisplay } from './Display';
 import { createAddressPayload } from './util';

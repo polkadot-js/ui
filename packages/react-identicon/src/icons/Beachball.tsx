@@ -3,7 +3,8 @@
 
 import type { Props } from '../types';
 
-import React, { useCallback } from 'react';
+import * as React from 'react';
+import { useCallback } from 'react';
 
 import { beachballIcon } from '@polkadot/ui-shared';
 

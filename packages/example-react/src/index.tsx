@@ -1,8 +1,9 @@
 // Copyright 2017-2022 @polkadot/example-react authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useCallback, useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import * as ReactDOM from 'react-dom';
 
 import { Identicon } from '@polkadot/react-identicon';
 import { keyring } from '@polkadot/ui-keyring';

@@ -1,7 +1,7 @@
 // Copyright 2017-2022 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import _qrcode from 'qrcode-generator';
+import * as _qrcode from 'qrcode-generator';
 
 // A small hurdle to jump through, just to get the default/default correct (as generated)
 const qrcode: typeof _qrcode = _qrcode;
