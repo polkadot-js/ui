@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.5.1 Jun 19, 2022
+
+Changes:
+
+- Upgrade to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 9.5.1
+- Upgrade libs to latest stable versions
+
+
 ## 2.4.1 Jun 4, 2022
 
 Changes:
