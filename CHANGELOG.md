@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.6.2 Jun 23, 2022
+## 2.6.2 Jun 25, 2022
 
 Changes:
 
