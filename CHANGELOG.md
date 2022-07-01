@@ -2,6 +2,10 @@
 
 ## 2.7.1 Jul 1, 2022
 
+Contributed:
+
+- Remove extra div wrappers in `vue-identicon` (Thanks to https://github.com/dcolley)
+
 Changes:
 
 - Upgrade to `@polkadot/{hw-ledger, keyring, util, util-crypto}` 9.7.1
