@@ -2,10 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import * as jdenticon from 'jdenticon';
-import Vue from 'vue';
+import Vue, { VNode } from 'vue';
 
-interface Data {
-  svgHtml: string;
+type propsType = {
+  publicKey: string,
+  size: number
 }
 
 /**
@@ -13,21 +14,12 @@ interface Data {
  * @description The substrate default via Jdenticon
  */
 export const Jdenticon = Vue.extend({
-  created: function (): void {
-    this.createSvgHtml();
-  },
-  data: function (): Data {
-    return {
-      // eslint-disable-next-line quotes
-      svgHtml: `<svg viewBox="0 0 64 64" />`
-    };
-  },
-  methods: {
-    createSvgHtml: function (): void {
-      this.svgHtml = jdenticon.toSvg((this.publicKey as string).substr(2), this.size as number);
-    }
-  },
   props: ['publicKey', 'size'],
   // eslint-disable-next-line quotes
-  template: `<div v-html="svgHtml" />`
+  render (h): VNode {
+    const { publicKey, size } = this.$props as propsType;
+    const cmp = Vue.component('CJdenticon', { template: jdenticon.toSvg(publicKey.substring(2), size) });
+
+    return h(cmp);
+  }
 });

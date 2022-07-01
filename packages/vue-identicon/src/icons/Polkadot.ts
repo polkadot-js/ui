@@ -1,17 +1,14 @@
 // Copyright 2017-2022 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import Vue from 'vue';
+import Vue, { VNode } from 'vue';
 
 import { polkadotIcon } from '@polkadot/ui-shared';
 
-interface Data {
-  svgHtml: string;
-}
-
-interface This {
+type propsType = {
   address: string;
-  isAlternative?: boolean;
+  isAlternative: boolean;
+  size: number;
 }
 
 /**
@@ -19,25 +16,20 @@ interface This {
  * @description The Polkadot default identicon
  */
 export const Polkadot = Vue.extend({
-  created: function (): void {
-    this.createSvgHtml();
-  },
-  data: function (): Data {
-    return {
-      // eslint-disable-next-line quotes
-      svgHtml: `<svg viewBox="0 0 64 64" />`
-    };
-  },
-  methods: {
-    createSvgHtml: function (): void {
-      const circles = polkadotIcon(this.address as string, { isAlternative: (this as This).isAlternative || false }).map(({ cx, cy, fill, r }) =>
-        `<circle cx=${cx} cy=${cy} fill="${fill}" r=${r} />`
-      ).join('');
-
-      this.svgHtml = `<svg height=${this.size as number} viewBox='0 0 64 64' width=${this.size as number}>${circles}</svg>`;
-    }
-  },
   props: ['address', 'isAlternative', 'size'],
   // eslint-disable-next-line quotes
-  template: `<div v-html="svgHtml" />`
+  render (h): VNode {
+    const { address, isAlternative, size } = this.$props as propsType;
+    const circles = polkadotIcon(address, {
+      isAlternative: isAlternative || false
+    }).map(({ cx,
+      cy,
+      fill,
+      r }) => {
+      return h('circle', { attrs: { cx, cy, fill, r } }, []);
+    }
+    );
+
+    return h('svg', { attrs: { height: size, viewBox: '0 0 64 64', width: size } }, circles);
+  }
 });
