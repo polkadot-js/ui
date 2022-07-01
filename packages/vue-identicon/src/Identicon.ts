@@ -3,7 +3,7 @@
 
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 
-import Vue from 'vue';
+import Vue, { VNode } from 'vue';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
@@ -18,6 +18,7 @@ interface Account {
 interface Data {
   address: string;
   iconSize: number;
+  isAlternative: boolean;
   publicKey: string;
   type: 'beachball' | 'empty' | 'jdenticon' | 'polkadot' | 'substrate';
 }
@@ -59,6 +60,7 @@ export const Identicon = Vue.extend({
     return {
       address: '',
       iconSize: DEFAULT_SIZE,
+      isAlternative: false,
       publicKey: '0x',
       type: 'empty'
     };
@@ -78,22 +80,21 @@ export const Identicon = Vue.extend({
     }
   },
   props: ['prefix', 'isAlternative', 'size', 'theme', 'value'],
-  // FIXME These nested divs are not correct, would like a different way
-  // here so we don't create a div wrapped for the div wrapper of the icon
-  template: `
-    <div v-if="type === 'empty' || address === ''">
-      <Empty :key="address" :size="iconSize" />
-    </div>
-    <div v-else-if="type === 'beachball'">
-      <Beachball :key="address" :address="address" :size="iconSize" />
-    </div>
-    <div v-else-if="type === 'polkadot'">
-      <Polkadot :key="address" :address="address" :isAlternative="isAlternative" :size="iconSize" />
-    </div>
-    <div v-else>
-      <Jdenticon :key="address" :publicKey="publicKey" :size="iconSize" />
-    </div>
-  `,
+  render (h): VNode {
+    const { address, iconSize, isAlternative, publicKey, type } = this.$data as Data;
+
+    if (type === 'empty') {
+      return h('Empty', { attrs: { key: address, size: iconSize } }, []);
+    } else if (type === 'jdenticon') {
+      return h('Jdenticon', { attrs: { key: address, publicKey, size: iconSize } }, []);
+    } else {
+      // handles: beachball and polkadot
+      // TODO: substrate
+      const cmp = type.charAt(0).toUpperCase() + type.slice(1);
+
+      return h(cmp, { attrs: { address, isAlternative, key: address, size: iconSize } }, []);
+    }
+  },
   watch: {
     value: function (): void {
       this.recodeAddress();
