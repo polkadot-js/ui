@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2.8.1 Jul 9, 2022
+
+Changes:
+
+- Bump to `@polkadot/util-crypto` 10.0.1
+
+
 ## 2.7.2 Jul 4, 2022
 
 Changes:
