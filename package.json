@@ -9,8 +9,9 @@
     "type": "git",
     "url": "https://github.com/polkadot-js/ui.git"
   },
+  "type": "module",
   "sideEffects": false,
-  "version": "2.7.3-0-x",
+  "version": "2.8.0",
   "workspaces": [
     "packages/*"
   ],
@@ -29,8 +30,8 @@
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/runtime": "^7.18.6",
-    "@polkadot/dev": "^0.67.55",
-    "@polkadot/x-bundle": "^9.7.2",
+    "@polkadot/dev": "^0.67.65",
+    "@polkadot/x-bundle": "^10.0.1",
     "@types/jest": "^28.1.4",
     "babel-loader": "^8.2.5",
     "babel-plugin-transform-vue-template": "^0.4.2",
