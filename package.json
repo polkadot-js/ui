@@ -11,7 +11,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "workspaces": [
     "packages/*"
   ],
@@ -30,8 +30,8 @@
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/runtime": "^7.18.6",
-    "@polkadot/dev": "^0.67.65",
-    "@polkadot/x-bundle": "^10.0.1",
+    "@polkadot/dev": "^0.67.68",
+    "@polkadot/x-bundle": "^10.0.2",
     "@types/jest": "^28.1.4",
     "babel-loader": "^8.2.5",
     "babel-plugin-transform-vue-template": "^0.4.2",
