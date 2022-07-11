@@ -12,6 +12,7 @@
   "sideEffects": false,
   "type": "module",
   "version": "2.8.2",
+  "versionNpm": "2.8.2",
   "workspaces": [
     "packages/*"
   ],
@@ -30,7 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/runtime": "^7.18.6",
-    "@polkadot/dev": "^0.67.68",
+    "@polkadot/dev": "^0.67.69",
     "@polkadot/x-bundle": "^10.0.2",
     "@types/jest": "^28.1.4",
     "babel-loader": "^8.2.5",
