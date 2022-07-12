@@ -1,7 +1,5 @@
 build/
-build-cjs/
-build-esm/
-build-docs/
+build-*/
 coverage/
 node_modules/
 tmp/
