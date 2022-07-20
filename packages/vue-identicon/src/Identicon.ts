@@ -60,7 +60,7 @@ export const Identicon = Vue.extend({
     return {
       address: '',
       iconSize: DEFAULT_SIZE,
-      isAlternative: false,
+      isAlternativeIcon: false,
       publicKey: '0x',
       type: 'empty'
     };
@@ -69,7 +69,7 @@ export const Identicon = Vue.extend({
     createData: function (): void {
       this.iconSize = this.size as number || DEFAULT_SIZE;
       this.type = this.theme as 'empty';
-
+      this.isAlternativeIcon = this.isAlternative as boolean || false;
       this.recodeAddress();
     },
     recodeAddress: function (): void {
@@ -81,7 +81,7 @@ export const Identicon = Vue.extend({
   },
   props: ['prefix', 'isAlternative', 'size', 'theme', 'value'],
   render (h): VNode {
-    const { address, iconSize, isAlternative, publicKey, type } = this.$data as Data;
+    const { address, iconSize, isAlternativeIcon, publicKey, type } = this.$data as Data;
 
     if (type === 'empty') {
       return h('Empty', { attrs: { key: address, size: iconSize } }, []);
@@ -92,7 +92,7 @@ export const Identicon = Vue.extend({
       // TODO: substrate
       const cmp = type.charAt(0).toUpperCase() + type.slice(1);
 
-      return h(cmp, { attrs: { address, isAlternative, key: address, size: iconSize } }, []);
+      return h(cmp, { attrs: { address, isAlternative: isAlternativeIcon, key: address, size: iconSize } }, []);
     }
   },
   watch: {
