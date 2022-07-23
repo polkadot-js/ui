@@ -18,7 +18,7 @@ interface Account {
 interface Data {
   address: string;
   iconSize: number;
-  isAlternative: boolean;
+  isAlternativeIcon: boolean;
   publicKey: string;
   type: 'beachball' | 'empty' | 'jdenticon' | 'polkadot' | 'substrate';
 }
