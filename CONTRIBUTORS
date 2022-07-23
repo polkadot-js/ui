@@ -27,6 +27,7 @@
        1	Nantian                       	fix bigint type (#510)
        1	Nikhil Ranjan                 	Updated to valid javascript (#271)
        1	Shawn Tabrizi                 	Add a new `notification` setting (#498)
+       1	Viki Val                      	:bug: identicon has isAlternative both as data and prop (#668)
        1	Wei Tang                      	Add Kulupu to the network selection list (#254)
        1	WoeOm                         	add darwinia ss58 (#379)
        1	yuhui1208                     	[Stores] make FileStroe read key safely  (#338)
