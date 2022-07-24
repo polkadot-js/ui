@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2.9.2 Jul 24, 2022
+
+Contributed:
+
+- Adjust vue-identicon with no props/data duplication (Thanks to https://github.com/vikiival)
+
+
 ## 2.9.1 Jul 21, 2022
 
 Changes:

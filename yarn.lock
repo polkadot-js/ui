@@ -2266,8 +2266,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@polkadot/keyring": ^10.1.1
-    "@polkadot/ui-settings": 2.9.2-0-x
-    "@polkadot/ui-shared": 2.9.2-0-x
+    "@polkadot/ui-settings": 2.9.2
+    "@polkadot/ui-shared": 2.9.2
     "@polkadot/util": ^10.1.1
     "@polkadot/util-crypto": ^10.1.1
     "@types/react-copy-to-clipboard": ^5.0.2
@@ -2295,7 +2295,7 @@ __metadata:
   resolution: "@polkadot/react-qr@workspace:packages/react-qr"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@polkadot/ui-settings": 2.9.2-0-x
+    "@polkadot/ui-settings": 2.9.2
     "@polkadot/util": ^10.1.1
     "@polkadot/util-crypto": ^10.1.1
     "@types/react-qr-reader": ^2.1.4
@@ -2317,7 +2317,7 @@ __metadata:
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@polkadot/ui-shared": 2.9.2-0-x
+    "@polkadot/ui-shared": 2.9.2
     "@polkadot/util": ^10.1.1
     "@polkadot/util-crypto": ^10.1.1
     "@types/react-native": ^0.69.3
@@ -2345,7 +2345,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@polkadot/keyring": ^10.1.1
-    "@polkadot/ui-settings": 2.9.2-0-x
+    "@polkadot/ui-settings": 2.9.2
     "@polkadot/util": ^10.1.1
     "@polkadot/util-crypto": ^10.1.1
     "@types/mkdirp": ^1.0.2
@@ -2360,7 +2360,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@2.9.2-0-x, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@2.9.2, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
@@ -2376,7 +2376,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@2.9.2-0-x, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@2.9.2, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
@@ -2434,11 +2434,11 @@ __metadata:
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@polkadot/ui-shared": 2.9.2-0-x
+    "@polkadot/ui-shared": 2.9.2
     "@polkadot/util": ^10.1.1
     "@polkadot/util-crypto": ^10.1.1
     jdenticon: 3.1.1
-    vue: ^2.7.7
+    vue: ^2.7.8
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
@@ -3509,14 +3509,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:2.7.7":
-  version: 2.7.7
-  resolution: "@vue/compiler-sfc@npm:2.7.7"
+"@vue/compiler-sfc@npm:2.7.8":
+  version: 2.7.8
+  resolution: "@vue/compiler-sfc@npm:2.7.8"
   dependencies:
     "@babel/parser": ^7.18.4
     postcss: ^8.4.14
     source-map: ^0.6.1
-  checksum: 7771fdb5172cd4185cd7ef01ffae59ef8391361875b314ce2a379a588ccc542ab9cae4e67e6d3c7e51d62202b1772591fe4447d855129b274f2c6d955cc85311
+  checksum: da0b4b0866224fe2aee376a88c25914da4e73ba9e11e7aa2ed240b99897735b4a988e951dcae9c8f0843216c5a97050bf16e1bb04bf65541444a8bdfedc35b38
   languageName: node
   linkType: hard
 
@@ -12701,7 +12701,7 @@ resolve@^2.0.0-next.3:
     react-is: ^18.2.0
     react-native: ^0.69.2
     stream-browserify: ^3.0.0
-    vue-template-compiler: ^2.7.7
+    vue-template-compiler: ^2.7.8
     webpack: ^5.73.0
     webpack-cli: ^4.10.0
     webpack-serve: ^4.0.0
@@ -14396,13 +14396,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"vue-template-compiler@npm:^2.7.7":
-  version: 2.7.7
-  resolution: "vue-template-compiler@npm:2.7.7"
+"vue-template-compiler@npm:^2.7.8":
+  version: 2.7.8
+  resolution: "vue-template-compiler@npm:2.7.8"
   dependencies:
     de-indent: ^1.0.2
     he: ^1.2.0
-  checksum: 3ef7956ba1907206224e8bd198010c27f67dd14d29840b457b2a36c17c288e1af314f04e82aaa0734bc22bf92cf55b3e86fe2aae662fe2c4e45894808de69636
+  checksum: e0886488f46055c6e8f59c57fdcc624d1b241aaa0995977482381124a4bf602142743bb6127cf13fa8b04e4c1070253c7aa9b77abc158cf7ab988b223cddbf24
   languageName: node
   linkType: hard
 
@@ -14413,13 +14413,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"vue@npm:^2.7.7":
-  version: 2.7.7
-  resolution: "vue@npm:2.7.7"
+"vue@npm:^2.7.8":
+  version: 2.7.8
+  resolution: "vue@npm:2.7.8"
   dependencies:
-    "@vue/compiler-sfc": 2.7.7
+    "@vue/compiler-sfc": 2.7.8
     csstype: ^3.1.0
-  checksum: 3c6dacc33351d729e2d1b41242ad8ece5a1879d438a56d29c8ce3523ad5bf10f0e5c8ff622dcd778ab935248b14aa958e58199e7ffd87bcbe67df091f9045992
+  checksum: 45fc85a13fc027798ad859fe4a5509b54217ae2f129240fc349a799bd4dbc6848ef8fa9968ab7ef7afcb954735882dbfdeb746673aa3f051e4d7ae555c213a1b
   languageName: node
   linkType: hard
 
