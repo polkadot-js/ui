@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2.9.5 Aug 13, 2022
+
+Changes:
+
+- Bump to `@polkadot/util` 10.1.4
+
+
 ## 2.9.4 Aug 6, 2022
 
 Changes:
