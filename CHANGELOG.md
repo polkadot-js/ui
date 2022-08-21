@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.9.6 Aug 21, 2022
+
+Changes:
+
+- Use webpackage packages from `@polkadot/dev`
+- Bump to `@polkadot/util` 10.1.5
+
+
 ## 2.9.5 Aug 13, 2022
 
 Changes:
