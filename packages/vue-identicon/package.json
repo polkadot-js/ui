@@ -17,17 +17,17 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "2.9.6",
+  "version": "2.9.7",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@polkadot/ui-shared": "2.9.6",
-    "@polkadot/util": "^10.1.5",
-    "@polkadot/util-crypto": "^10.1.5",
+    "@polkadot/ui-shared": "2.9.7",
+    "@polkadot/util": "^10.1.6",
+    "@polkadot/util-crypto": "^10.1.6",
     "jdenticon": "3.1.1"
   },
   "devDependencies": {
-    "vue": "^2.7.9"
+    "vue": "^2.7.10"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
