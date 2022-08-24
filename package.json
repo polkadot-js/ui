@@ -11,7 +11,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "2.9.6",
+  "version": "2.9.7",
   "versions": {
     "git": "2.9.6",
     "npm": "2.9.6"
@@ -32,11 +32,11 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.18.13",
     "@babel/runtime": "^7.18.9",
-    "@polkadot/dev": "^0.67.113",
-    "@polkadot/x-bundle": "^10.1.5",
-    "@types/jest": "^28.1.7",
+    "@polkadot/dev": "^0.67.115",
+    "@polkadot/x-bundle": "^10.1.6",
+    "@types/jest": "^28.1.8",
     "babel-loader": "^8.2.5",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
@@ -46,7 +46,7 @@
     "react-is": "^18.2.0",
     "react-native": "^0.69.4",
     "stream-browserify": "^3.0.0",
-    "vue-template-compiler": "^2.7.9"
+    "vue-template-compiler": "^2.7.10"
   },
   "resolutions": {
     "typescript": "^4.7.4"
