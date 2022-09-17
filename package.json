@@ -11,7 +11,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "2.9.9-0-x",
+  "version": "2.9.9",
   "versions": {
     "git": "2.9.9-0-x",
     "npm": "2.9.8"
@@ -32,11 +32,11 @@
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.13",
-    "@babel/runtime": "^7.18.9",
-    "@polkadot/dev": "^0.67.125",
-    "@polkadot/x-bundle": "^10.1.7",
-    "@types/jest": "^29.0.0",
+    "@babel/core": "^7.19.1",
+    "@babel/runtime": "^7.19.0",
+    "@polkadot/dev": "^0.67.130",
+    "@polkadot/x-bundle": "^10.1.8",
+    "@types/jest": "^29.0.3",
     "babel-loader": "^8.2.5",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
@@ -44,7 +44,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "react-native": "^0.69.5",
+    "react-native": "^0.70.1",
     "stream-browserify": "^3.0.0",
     "vue-template-compiler": "^2.7.10"
   },
