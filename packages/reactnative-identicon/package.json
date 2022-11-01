@@ -20,14 +20,14 @@
   "version": "2.9.12",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.0",
     "@polkadot/ui-shared": "2.9.12",
     "@polkadot/util": "^10.1.11",
     "@polkadot/util-crypto": "^10.1.11",
     "react-native-svg": "^12.4.4"
   },
   "devDependencies": {
-    "@types/react-native": "^0.70.5"
+    "@types/react-native": "^0.70.6"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
