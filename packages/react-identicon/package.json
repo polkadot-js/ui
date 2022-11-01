@@ -20,7 +20,7 @@
   "version": "2.9.12",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.0",
     "@polkadot/keyring": "^10.1.11",
     "@polkadot/ui-settings": "2.9.12",
     "@polkadot/ui-shared": "2.9.12",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@types/react-copy-to-clipboard": "^5.0.4",
-    "@types/react-dom": "^18.0.6",
+    "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
     "styled-components": "^5.3.6",
     "xmlserializer": "^0.6.1"
