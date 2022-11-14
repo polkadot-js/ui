@@ -57,7 +57,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.19.6, @babel/core@npm:^7.20.2":
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.20.2":
   version: 7.20.2
   resolution: "@babel/core@npm:7.20.2"
   dependencies:
@@ -1475,7 +1475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.1, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.20.1, @babel/runtime@npm:^7.8.4":
   version: 7.20.1
   resolution: "@babel/runtime@npm:7.20.1"
   dependencies:
@@ -2141,9 +2141,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/dev@npm:^0.67.156":
-  version: 0.67.156
-  resolution: "@polkadot/dev@npm:0.67.156"
+"@polkadot/dev@npm:^0.67.157":
+  version: 0.67.157
+  resolution: "@polkadot/dev@npm:0.67.157"
   dependencies:
     "@babel/cli": ^7.19.3
     "@babel/core": ^7.20.2
@@ -2206,7 +2206,7 @@ __metadata:
     mkdirp: ^1.0.4
     prettier: ^2.7.1
     rimraf: ^3.0.2
-    rollup: ^3.2.5
+    rollup: ^3.3.0
     rollup-plugin-cleanup: ^3.2.1
     typescript: ^4.8.4
     webpack: ^5.75.0
@@ -2240,7 +2240,7 @@ __metadata:
     polkadot-exec-swc: scripts/polkadot-exec-swc.mjs
     polkadot-exec-tsc: scripts/polkadot-exec-tsc.mjs
     polkadot-exec-webpack: scripts/polkadot-exec-webpack.mjs
-  checksum: 14214f5e666c1579d3d5726771dd604e14bdbff49f2983ed6af4b1fbdca5551ca4537f22d63eb6a93f62ffd6306c72d1e0f4b37f3ae1c77d559975fee817df63
+  checksum: e8139a2d4fbb31843df8e15bfaaead585812151e6002a3dc8f524b792dfe2b5320dc8a9e76b333e4f9da7e04edee6fcf1046f4fba3ba87f680230fac12b3592e
   languageName: node
   linkType: hard
 
@@ -2248,7 +2248,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/example-react@workspace:packages/example-react"
   dependencies:
-    "@babel/runtime": ^7.20.0
+    "@babel/runtime": ^7.20.1
   languageName: unknown
   linkType: soft
 
@@ -2256,7 +2256,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/example-vue@workspace:packages/example-vue"
   dependencies:
-    "@babel/runtime": ^7.20.0
+    "@babel/runtime": ^7.20.1
   languageName: unknown
   linkType: soft
 
@@ -2289,10 +2289,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/react-identicon@workspace:packages/react-identicon"
   dependencies:
-    "@babel/runtime": ^7.20.0
+    "@babel/runtime": ^7.20.1
     "@polkadot/keyring": ^10.1.12
-    "@polkadot/ui-settings": 2.9.13-1-x
-    "@polkadot/ui-shared": 2.9.13-1-x
+    "@polkadot/ui-settings": 2.9.13
+    "@polkadot/ui-shared": 2.9.13
     "@polkadot/util": ^10.1.12
     "@polkadot/util-crypto": ^10.1.12
     "@types/react-copy-to-clipboard": ^5.0.4
@@ -2319,8 +2319,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/react-qr@workspace:packages/react-qr"
   dependencies:
-    "@babel/runtime": ^7.20.0
-    "@polkadot/ui-settings": 2.9.13-1-x
+    "@babel/runtime": ^7.20.1
+    "@polkadot/ui-settings": 2.9.13
     "@polkadot/util": ^10.1.12
     "@polkadot/util-crypto": ^10.1.12
     "@types/react-qr-reader": ^2.1.4
@@ -2341,8 +2341,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
-    "@babel/runtime": ^7.20.0
-    "@polkadot/ui-shared": 2.9.13-1-x
+    "@babel/runtime": ^7.20.1
+    "@polkadot/ui-shared": 2.9.13
     "@polkadot/util": ^10.1.12
     "@polkadot/util-crypto": ^10.1.12
     "@types/react-native": ^0.70.6
@@ -2359,7 +2359,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-assets@workspace:packages/ui-assets"
   dependencies:
-    "@babel/runtime": ^7.20.0
+    "@babel/runtime": ^7.20.1
     "@polkadot/util": ^10.1.12
   languageName: unknown
   linkType: soft
@@ -2368,9 +2368,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
-    "@babel/runtime": ^7.20.0
+    "@babel/runtime": ^7.20.1
     "@polkadot/keyring": ^10.1.12
-    "@polkadot/ui-settings": 2.9.13-1-x
+    "@polkadot/ui-settings": 2.9.13
     "@polkadot/util": ^10.1.12
     "@polkadot/util-crypto": ^10.1.12
     "@types/mkdirp": ^1.0.2
@@ -2385,11 +2385,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@2.9.13-1-x, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@2.9.13, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
-    "@babel/runtime": ^7.20.0
+    "@babel/runtime": ^7.20.1
     "@polkadot/networks": ^10.1.12
     "@polkadot/util": ^10.1.12
     "@types/store": ^2.0.2
@@ -2401,11 +2401,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@2.9.13-1-x, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@2.9.13, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
-    "@babel/runtime": ^7.20.0
+    "@babel/runtime": ^7.20.1
     "@polkadot/util": ^10.1.12
     "@polkadot/util-crypto": ^10.1.12
     "@types/color": ^3.0.3
@@ -2458,12 +2458,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
-    "@babel/runtime": ^7.20.0
-    "@polkadot/ui-shared": 2.9.13-1-x
+    "@babel/runtime": ^7.20.1
+    "@polkadot/ui-shared": 2.9.13
     "@polkadot/util": ^10.1.12
     "@polkadot/util-crypto": ^10.1.12
     jdenticon: 3.1.1
-    vue: ^2.7.13
+    vue: ^2.7.14
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
@@ -3247,13 +3247,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^29.2.1":
-  version: 29.2.1
-  resolution: "@types/jest@npm:29.2.1"
+"@types/jest@npm:^29.2.2":
+  version: 29.2.2
+  resolution: "@types/jest@npm:29.2.2"
   dependencies:
     expect: ^29.0.0
     pretty-format: ^29.0.0
-  checksum: 5610c9a44c57f6dc39cf54429ea8d04574ad4c3e3ddf9a2621882aa94a0758a42ca97a0d0aec41a8d0b149fa63bf3d077d1f07c1f1d82e3d89ad7408de211255
+  checksum: 13b1a48858c8c451109c2838205fdcee6f41d672674d2f0e3cada35e94f133370aba4f4b5c3f5b174f3e16244d76d7d718afa7cc67d4d6f90d1b87951f4c87c3
   languageName: node
   linkType: hard
 
@@ -3692,14 +3692,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:2.7.13":
-  version: 2.7.13
-  resolution: "@vue/compiler-sfc@npm:2.7.13"
+"@vue/compiler-sfc@npm:2.7.14":
+  version: 2.7.14
+  resolution: "@vue/compiler-sfc@npm:2.7.14"
   dependencies:
     "@babel/parser": ^7.18.4
     postcss: ^8.4.14
     source-map: ^0.6.1
-  checksum: c5e21f55f8951e184294b3dbfd13cb1b2bdc70be88c47c7ca1209f85b19bdb9df0a34dfa3720d75b538e34b63a5c9b8fa28b87eeedf3b84dbd03122f601dcf82
+  checksum: 25e00abaecb311f1effbf539bc3e4fdeedb39d35f9c2947b2640187a047e6a7400e693fd7da1d3a98977b9078c5bf629ca47f8b9a59dc14a080c0a1e1dd06a49
   languageName: node
   linkType: hard
 
@@ -12354,9 +12354,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native@npm:^0.70.4":
-  version: 0.70.4
-  resolution: "react-native@npm:0.70.4"
+"react-native@npm:^0.70.5":
+  version: 0.70.5
+  resolution: "react-native@npm:0.70.5"
   dependencies:
     "@jest/create-cache-key-function": ^29.0.3
     "@react-native-community/cli": 9.2.1
@@ -12394,7 +12394,7 @@ __metadata:
     react: 18.1.0
   bin:
     react-native: cli.js
-  checksum: 2782b7811e4c815020b8c60b48b7b4cbb462e75e42a83ae2f80119553cf8317ceffc3bcc0d70df29e1ff1df689faf7a5d5117c593b2f99c23a88358113078051
+  checksum: 5aca6e1dba32c450078117c874e368efa7e291fbf37263a30935e395475343ad78f87d4e41d12742cc16d9fcaebd5175a631962fc5d620daa312079782d0a66c
   languageName: node
   linkType: hard
 
@@ -12947,7 +12947,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"rollup@npm:^3.2.5":
+"rollup@npm:^3.3.0":
   version: 3.3.0
   resolution: "rollup@npm:3.3.0"
   dependencies:
@@ -12965,11 +12965,11 @@ resolve@^2.0.0-next.3:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@babel/core": ^7.19.6
-    "@babel/runtime": ^7.20.0
-    "@polkadot/dev": ^0.67.156
+    "@babel/core": ^7.20.2
+    "@babel/runtime": ^7.20.1
+    "@polkadot/dev": ^0.67.157
     "@polkadot/x-bundle": ^10.1.12
-    "@types/jest": ^29.2.1
+    "@types/jest": ^29.2.2
     babel-loader: ^8.2.5
     babel-plugin-transform-vue-template: ^0.4.2
     empty: ^0.10.1
@@ -12977,9 +12977,9 @@ resolve@^2.0.0-next.3:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-is: ^18.2.0
-    react-native: ^0.70.4
+    react-native: ^0.70.5
     stream-browserify: ^3.0.0
-    vue-template-compiler: ^2.7.13
+    vue-template-compiler: ^2.7.14
   languageName: unknown
   linkType: soft
 
@@ -14711,13 +14711,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"vue-template-compiler@npm:^2.7.13":
-  version: 2.7.13
-  resolution: "vue-template-compiler@npm:2.7.13"
+"vue-template-compiler@npm:^2.7.14":
+  version: 2.7.14
+  resolution: "vue-template-compiler@npm:2.7.14"
   dependencies:
     de-indent: ^1.0.2
     he: ^1.2.0
-  checksum: d16d5416326dbe048559301e13e34437ecd52e9e80eef865c107e548ea48786f73539991aa361d213caeacc5420ee5a9c2d462da7aca9bc6fd439df83019ac19
+  checksum: eba9d2eed6b7110c963bc356b47bdd11d4023d25148abb7e5f7826db2fefe7ad8a575787ee0d8fa47701d44a6f54bde475279b1319f44e1049271eb2419f93a7
   languageName: node
   linkType: hard
 
@@ -14728,13 +14728,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"vue@npm:^2.7.13":
-  version: 2.7.13
-  resolution: "vue@npm:2.7.13"
+"vue@npm:^2.7.14":
+  version: 2.7.14
+  resolution: "vue@npm:2.7.14"
   dependencies:
-    "@vue/compiler-sfc": 2.7.13
+    "@vue/compiler-sfc": 2.7.14
     csstype: ^3.1.0
-  checksum: b54f6a307f19ebeca5ed24a08befb7141e57e56d0367dc8179dca69ca3f6fc8cf18cbf084387d79b4e8528bb53b645af5338d1322359009e2c27a19fb25a1a8f
+  checksum: 8b06da67cc40870c66a30b7a6bc2874950cd4383792c371eb30497dd14fc7b41cf308b1c4517368d8f0e7ac16198c08de19236f6a79fe43f4bdbc4a1d9d4ad07
   languageName: node
   linkType: hard
 
