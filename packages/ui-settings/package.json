@@ -20,7 +20,7 @@
   "version": "2.9.14",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
+    "@babel/runtime": "^7.20.6",
     "@polkadot/networks": "^10.2.1",
     "@polkadot/util": "^10.2.1",
     "eventemitter3": "^4.0.7",
