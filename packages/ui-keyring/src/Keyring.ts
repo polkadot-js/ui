@@ -189,7 +189,7 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   private rewriteKey (json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string): void {
-    if (hexAddr.substr(0, 2) === '0x') {
+    if (hexAddr.substring(0, 2) === '0x') {
       return;
     }
 

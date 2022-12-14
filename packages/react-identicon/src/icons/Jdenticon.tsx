@@ -8,7 +8,7 @@ import React, { useMemo } from 'react';
 
 function Identicon ({ className = '', publicKey, size, style }: Props): React.ReactElement<Props> {
   const html = useMemo(
-    () => ({ __html: jdenticon.toSvg(publicKey.substr(2), size) }),
+    () => ({ __html: jdenticon.toSvg(publicKey.substring(2), size) }),
     [publicKey, size]
   );
 
