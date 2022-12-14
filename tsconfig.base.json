@@ -21,6 +21,6 @@
       "@polkadot/vue-identicon/*": ["vue-identicon/src/*"]
     },
     "skipLibCheck": true,
-    "target": "es2015"
+    "target": "es2020"
   }
  }

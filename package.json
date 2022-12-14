@@ -34,10 +34,10 @@
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/runtime": "^7.20.6",
-    "@polkadot/dev": "^0.67.169",
+    "@polkadot/dev": "^0.67.173",
     "@polkadot/x-bundle": "^10.2.1",
     "@types/jest": "^29.2.4",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^8.3.0",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
     "process": "^0.11.10",
