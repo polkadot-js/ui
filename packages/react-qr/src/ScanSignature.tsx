@@ -1,4 +1,4 @@
-// Copyright 2017-2022 @polkadot/react-qr authors & contributors
+// Copyright 2017-2023 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { HexString } from '@polkadot/util/types';
