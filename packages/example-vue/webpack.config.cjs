@@ -1,4 +1,4 @@
-// Copyright 2017-2022 @polkadot/example-vue authors & contributors
+// Copyright 2017-2023 @polkadot/example-vue authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 const path = require('path');
