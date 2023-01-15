@@ -11,7 +11,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "2.9.15",
+  "version": "2.10.0",
   "versions": {
     "git": "2.9.15",
     "npm": "2.9.15"
@@ -34,8 +34,8 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/runtime": "^7.20.7",
-    "@polkadot/dev": "^0.67.177",
-    "@polkadot/x-bundle": "^10.2.3",
+    "@polkadot/dev": "^0.67.181",
+    "@polkadot/x-bundle": "^10.2.6",
     "@types/jest": "^29.2.5",
     "babel-loader": "^8.3.0",
     "babel-plugin-transform-vue-template": "^0.4.2",
@@ -44,7 +44,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "react-native": "^0.70.6",
+    "react-native": "^0.71.0",
     "stream-browserify": "^3.0.0",
     "vue-template-compiler": "^2.7.14"
   },

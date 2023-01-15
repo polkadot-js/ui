@@ -18,6 +18,7 @@ export interface SettingsStruct {
   locking: string;
   notification: string;
   prefix: number;
+  storage: string;
   uiMode: string;
   uiTheme: string;
 }

@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.10.1 Jan 15, 2023
+
+Changes:
+
+- Add setting to allow/disallow in-browser account storage
+- Bump to `@polkadot/util` 10.2.3
+
+
 ## 2.9.15 Jan 8, 2023
 
 Changes:
