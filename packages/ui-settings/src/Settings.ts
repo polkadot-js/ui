@@ -8,7 +8,7 @@ import store from 'store';
 
 import { hasProcess, isUndefined } from '@polkadot/util';
 
-import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, STORAGE, STORAGE_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';
@@ -41,6 +41,8 @@ export class Settings implements SettingsStruct {
 
   #prefix: number;
 
+  #storage: string;
+
   #uiMode: string;
 
   #uiTheme: string;
@@ -60,10 +62,11 @@ export class Settings implements SettingsStruct {
     this.#i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
     this.#icon = settings.icon || ICON_DEFAULT;
     this.#locking = settings.locking || LOCKING_DEFAULT;
+    this.#notification = settings.notification || NOTIFICATION_DEFAULT;
     this.#prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
+    this.#storage = withDefault(STORAGE, settings.storage, STORAGE_DEFAULT);
     this.#uiMode = settings.uiMode || UIMODE_DEFAULT;
     this.#uiTheme = settings.uiTheme || UITHEME_DEFAULT;
-    this.#notification = settings.notification || NOTIFICATION_DEFAULT;
   }
 
   public get camera (): string {
@@ -100,6 +103,10 @@ export class Settings implements SettingsStruct {
 
   public get prefix (): number {
     return this.#prefix;
+  }
+
+  public get storage (): string {
+    return this.#storage;
   }
 
   public get uiMode (): string {
@@ -146,6 +153,10 @@ export class Settings implements SettingsStruct {
     return PREFIXES;
   }
 
+  public get availableStorage (): Option[] {
+    return STORAGE;
+  }
+
   public get availableUIModes (): Option[] {
     return UIMODES;
   }
@@ -165,6 +176,7 @@ export class Settings implements SettingsStruct {
       locking: this.#locking,
       notification: this.#notification,
       prefix: this.#prefix,
+      storage: this.#storage,
       uiMode: this.#uiMode,
       uiTheme: this.#uiTheme
     };
@@ -180,6 +192,7 @@ export class Settings implements SettingsStruct {
     this.#locking = settings.locking || this.#locking;
     this.#notification = settings.notification || this.#notification;
     this.#prefix = isUndefined(settings.prefix) ? this.#prefix : settings.prefix;
+    this.#storage = settings.storage || this.#storage;
     this.#uiMode = settings.uiMode || this.#uiMode;
     this.#uiTheme = settings.uiTheme || this.#uiTheme;
 

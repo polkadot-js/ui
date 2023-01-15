@@ -41,6 +41,21 @@ const LOCKING: Option[] = [
   }
 ];
 
+const STORAGE_DEFAULT = 'off';
+
+const STORAGE: Option[] = [
+  {
+    info: 'on',
+    text: 'Allow local in-browser account storage',
+    value: 'on'
+  },
+  {
+    info: 'off',
+    text: 'Do not allow local in-browser account storage',
+    value: 'off'
+  }
+];
+
 export {
   CAMERA_DEFAULT,
   CAMERA,
@@ -60,6 +75,8 @@ export {
   NOTIFICATION_DEFAULT,
   PREFIX_DEFAULT,
   PREFIXES,
+  STORAGE,
+  STORAGE_DEFAULT,
   UIMODE_DEFAULT,
   UIMODES,
   UITHEME_DEFAULT,

@@ -17,12 +17,12 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "2.9.15",
+  "version": "2.10.0",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.20.7",
-    "@polkadot/networks": "^10.2.3",
-    "@polkadot/util": "^10.2.3",
+    "@polkadot/networks": "^10.2.6",
+    "@polkadot/util": "^10.2.6",
     "eventemitter3": "^4.0.7",
     "store": "^2.0.12"
   },
