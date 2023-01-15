@@ -41,6 +41,21 @@ const LOCKING: Option[] = [
   }
 ];
 
+const METADATA_UP_DEFAULT = 'off';
+
+const METADATA_UP: Option[] = [
+  {
+    info: 'off',
+    text: 'Do not auto-update extension metadata',
+    value: 'off'
+  },
+  {
+    info: 'on',
+    text: 'Auto-update extension metadata',
+    value: 'on'
+  }
+];
+
 const STORAGE_DEFAULT = 'off';
 
 const STORAGE: Option[] = [
@@ -72,6 +87,8 @@ export {
   LEDGER_CONN,
   LOCKING_DEFAULT,
   LOCKING,
+  METADATA_UP,
+  METADATA_UP_DEFAULT,
   NOTIFICATION_DEFAULT,
   PREFIX_DEFAULT,
   PREFIXES,
