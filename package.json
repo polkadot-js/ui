@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@babel/runtime": "^7.20.7",
-    "@polkadot/dev": "^0.67.181",
+    "@babel/runtime": "^7.20.13",
+    "@polkadot/dev": "^0.67.184",
     "@polkadot/x-bundle": "^10.2.6",
-    "@types/jest": "^29.2.5",
+    "@types/jest": "^29.2.6",
     "babel-loader": "^8.3.0",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",
@@ -44,7 +44,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "react-native": "^0.71.0",
+    "react-native": "^0.71.1",
     "stream-browserify": "^3.0.0",
     "vue-template-compiler": "^2.7.14"
   },
