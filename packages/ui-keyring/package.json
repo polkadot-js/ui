@@ -16,12 +16,12 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "2.10.1",
+  "version": "2.10.2-0-x",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
     "@polkadot/keyring": "^10.2.6",
-    "@polkadot/ui-settings": "2.10.1",
+    "@polkadot/ui-settings": "2.10.2-0-x",
     "@polkadot/util": "^10.2.6",
     "@polkadot/util-crypto": "^10.2.6",
     "mkdirp": "^2.1.3",
