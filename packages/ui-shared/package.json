@@ -20,7 +20,7 @@
   "version": "2.10.1",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "color": "^3.2.1"
   },
   "devDependencies": {
