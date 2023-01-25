@@ -7,7 +7,7 @@ import makeBlockie from 'ethereum-blockies-base64';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 
-export interface ImgProps {
+interface ImgProps {
   size: number;
 }
 
