@@ -7,23 +7,30 @@ import makeBlockie from 'ethereum-blockies-base64';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 
-function Identicon ({ address, className = '', style }: Props): React.ReactElement<Props> {
+export interface ImgProps {
+  size: number;
+}
+
+function Identicon ({ address, className = '', size, style }: Props): React.ReactElement<Props> {
   const imgSrc = useMemo(
     () => makeBlockie(address),
     [address]
   );
 
   return (
-    <img
+    <StyledImg
       className={className}
+      size={size}
       src={imgSrc}
       style={style}
     />
   );
 }
 
-export const Ethereum = React.memo(styled(Identicon)(({ size }: Props) => `
+const StyledImg = styled.img(({ size }: ImgProps) => `
   display: block;
   height: ${size}px;
   width: ${size}px;
-`));
+`);
+
+export const Ethereum = React.memo(Identicon);

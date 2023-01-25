@@ -39,7 +39,7 @@ function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onSc
   );
 
   return (
-    <div
+    <StyledDiv
       className={className}
       style={containerStyle}
     >
@@ -50,11 +50,11 @@ function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onSc
         onScan={_onScan}
         style={style}
       />
-    </div>
+    </StyledDiv>
   );
 }
 
-export const QrScan = React.memo(styled(Scan)`
+const StyledDiv = styled.div`
   .ui--qr-Scan {
     display: inline-block;
     height: 100%;
@@ -65,4 +65,6 @@ export const QrScan = React.memo(styled(Scan)`
       margin: 0;
     }
   }
-`);
+`;
+
+export const QrScan = React.memo(Scan);
