@@ -120,7 +120,7 @@ function Display ({ className, size, skipEncoding, style, timerDelay = DEFAULT_F
   }
 
   return (
-    <div
+    <StyledDiv
       className={className}
       style={containerStyle}
     >
@@ -130,11 +130,11 @@ function Display ({ className, size, skipEncoding, style, timerDelay = DEFAULT_F
       >
         <img src={image} />
       </div>
-    </div>
+    </StyledDiv>
   );
 }
 
-export const QrDisplay = React.memo(styled(Display)`
+const StyledDiv = styled.div`
   .ui--qr-Display {
     height: 100%;
     width: 100%;
@@ -148,4 +148,6 @@ export const QrDisplay = React.memo(styled(Display)`
       width: auto !important;
     }
   }
-`);
+`;
+
+export const QrDisplay = React.memo(Display);

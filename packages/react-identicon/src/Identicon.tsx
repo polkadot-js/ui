@@ -31,32 +31,6 @@ const Components: Record<string, React.ComponentType<ComponentProps>> = {
   substrate: Jdenticon
 };
 
-const Wrapper = styled.div`
-  cursor: copy;
-  display: inline-block;
-  line-height: 0;
-
-  > .container {
-    position: relative;
-
-    > div,
-    > svg {
-      position: relative;
-    }
-
-    &.highlight:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
-      box-shadow: 0 0 5px 2px #aaa;
-      content: '';
-    }
-  }
-`;
-
 class BaseIcon extends React.PureComponent<Props, State> {
   public override state: State = {
     address: '',
@@ -121,7 +95,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
       : Custom || Components[theme === 'default' ? ICON_DEFAULT_HOST : theme] || Fallback;
 
     return (
-      <Wrapper
+      <StyledDiv
         className={`ui--IdentityIcon  ${className}`}
         key={address}
         style={style}
@@ -133,7 +107,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
           publicKey={publicKey}
           size={size}
         />
-      </Wrapper>
+      </StyledDiv>
     );
   }
 
@@ -150,5 +124,31 @@ class BaseIcon extends React.PureComponent<Props, State> {
 function Icon (props: Props): React.ReactElement<Props> {
   return <BaseIcon {...props} />;
 }
+
+const StyledDiv = styled.div`
+  cursor: copy;
+  display: inline-block;
+  line-height: 0;
+
+  > .container {
+    position: relative;
+
+    > div,
+    > svg {
+      position: relative;
+    }
+
+    &.highlight:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 5px 2px #aaa;
+      content: '';
+    }
+  }
+`;
 
 export const Identicon = React.memo(Icon);
