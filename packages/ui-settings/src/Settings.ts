@@ -8,7 +8,7 @@ import store from 'store';
 
 import { hasProcess, isUndefined } from '@polkadot/util';
 
-import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, STORAGE, STORAGE_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, METADATA_UP, METADATA_UP_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, STORAGE, STORAGE_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';
@@ -39,6 +39,8 @@ export class Settings implements SettingsStruct {
 
   #locking: string;
 
+  #metadataUp: string;
+
   #prefix: number;
 
   #storage: string;
@@ -62,6 +64,7 @@ export class Settings implements SettingsStruct {
     this.#i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
     this.#icon = settings.icon || ICON_DEFAULT;
     this.#locking = settings.locking || LOCKING_DEFAULT;
+    this.#metadataUp = withDefault(METADATA_UP, settings.storage, METADATA_UP_DEFAULT);
     this.#notification = settings.notification || NOTIFICATION_DEFAULT;
     this.#prefix = isUndefined(settings.prefix) ? PREFIX_DEFAULT : settings.prefix;
     this.#storage = withDefault(STORAGE, settings.storage, STORAGE_DEFAULT);
@@ -99,6 +102,10 @@ export class Settings implements SettingsStruct {
 
   public get locking (): string {
     return this.#locking;
+  }
+
+  public get metadataUp (): string {
+    return this.#metadataUp;
   }
 
   public get prefix (): number {
@@ -145,6 +152,10 @@ export class Settings implements SettingsStruct {
     return LOCKING;
   }
 
+  public get availableMetadataUp (): Option[] {
+    return METADATA_UP;
+  }
+
   public get availableNodes (): Option[] {
     return ENDPOINTS;
   }
@@ -174,6 +185,7 @@ export class Settings implements SettingsStruct {
       icon: this.#icon,
       ledgerConn: this.#ledgerConn,
       locking: this.#locking,
+      metadataUp: this.#metadataUp,
       notification: this.#notification,
       prefix: this.#prefix,
       storage: this.#storage,
@@ -190,6 +202,7 @@ export class Settings implements SettingsStruct {
     this.#i18nLang = settings.i18nLang || this.#i18nLang;
     this.#icon = settings.icon || this.#icon;
     this.#locking = settings.locking || this.#locking;
+    this.#metadataUp = settings.metadataUp || this.#metadataUp;
     this.#notification = settings.notification || this.#notification;
     this.#prefix = isUndefined(settings.prefix) ? this.#prefix : settings.prefix;
     this.#storage = settings.storage || this.#storage;

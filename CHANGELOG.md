@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Add setting for auto extension metadata upgrades
+
+
 ## 2.10.1 Jan 15, 2023
 
 Changes:

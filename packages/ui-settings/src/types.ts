@@ -16,6 +16,7 @@ export interface SettingsStruct {
   icon: string;
   ledgerConn: string;
   locking: string;
+  metadataUp: string;
   notification: string;
   prefix: number;
   storage: string;
