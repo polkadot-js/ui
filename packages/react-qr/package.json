@@ -17,11 +17,11 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "2.11.1",
+  "version": "2.11.2-0-x",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "@polkadot/ui-settings": "2.11.1",
+    "@polkadot/ui-settings": "2.11.2-0-x",
     "@polkadot/util": "^10.3.1",
     "@polkadot/util-crypto": "^10.3.1",
     "qrcode-generator": "^1.4.4",
