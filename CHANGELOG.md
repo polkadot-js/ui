@@ -1,10 +1,12 @@
 # CHANGELOG
 
-## master
+## 2.11.1 Jan 28, 2023
 
 Changes:
 
+- Adjust usage of `styled-component` wrappers
 - Add setting for auto extension metadata upgrades
+- Bump to `@polkadot/util` 10.3.1
 
 
 ## 2.10.1 Jan 15, 2023
