@@ -1,9 +1,9 @@
 // Copyright 2017-2023 @polkadot/ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-const nodeCrypto = require('crypto');
+import nodeCrypto from 'crypto';
 
-window.crypto = {
+window.crypto ??= {
   getRandomValues: function (buffer) {
     return nodeCrypto.randomFillSync(buffer);
   }

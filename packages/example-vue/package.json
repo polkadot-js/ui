@@ -14,7 +14,7 @@
     "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": false,
-  "version": "2.11.2",
+  "version": "2.11.3",
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.20.13"
