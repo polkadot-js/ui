@@ -28,7 +28,7 @@
     "example:vue": "yarn build && cd packages/example-vue && yarn polkadot-exec-webpack --config webpack.config.cjs",
     "lint": "polkadot-dev-run-lint",
     "postinstall": "polkadot-dev-yarn-only",
-    "test": "polkadot-dev-run-test --coverage --runInBand",
+    "test": "polkadot-dev-run-test --env jest -- --coverage --runInBand",
     "test:one": "polkadot-dev-run-test"
   },
   "devDependencies": {
