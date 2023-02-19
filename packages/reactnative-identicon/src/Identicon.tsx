@@ -63,7 +63,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
   }
 
   public override render (): React.ReactNode {
-    const { theme = DEFAULT_THEME, size = DEFAULT_SIZE } = this.props;
+    const { size = DEFAULT_SIZE, theme = DEFAULT_THEME } = this.props;
     const { address, publicKey } = this.state;
 
     const Component = !address
