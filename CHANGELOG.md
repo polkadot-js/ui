@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2.12.1 Feb 20, 2023
+
+Changes:
+
+- Adjust `styled-components` usage to cater for server-based environments
+
+
 ## 2.11.3 Feb 19, 2023
 
 Changes:

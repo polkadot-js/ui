@@ -3,9 +3,19 @@
 
 import React, { useCallback, useMemo } from 'react';
 import Reader from 'react-qr-reader';
-import styled from 'styled-components';
+import styledComponents from 'styled-components';
 
 import { createImgSize } from './util';
+
+// In styled-components v6, there is a named export which can be used
+// directly, i.e. "import { styled } from ..." with no more magic. Until
+// such time the cjs vs esm import here is problematic, so we hack around
+// the various shapes below
+const styled = (
+  (styledComponents as unknown as { styled: typeof styledComponents }).styled ||
+  (styledComponents as unknown as { default: typeof styledComponents }).default ||
+  styledComponents
+);
 
 interface Props {
   className?: string;

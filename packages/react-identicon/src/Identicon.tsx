@@ -6,13 +6,23 @@ import type { IdentityProps as Props, Props as ComponentProps } from './types';
 
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import styled from 'styled-components';
+import styledComponents from 'styled-components';
 
 import { ICON_DEFAULT_HOST, settings } from '@polkadot/ui-settings';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress, ethereumEncode } from '@polkadot/util-crypto';
 
 import { Beachball, Empty, Ethereum, Jdenticon, Polkadot } from './icons';
+
+// In styled-components v6, there is a named export which can be used
+// directly, i.e. "import { styled } from ..." with no more magic. Until
+// such time the cjs vs esm import here is problematic, so we hack around
+// the various shapes below
+const styled = (
+  (styledComponents as unknown as { styled: typeof styledComponents }).styled ||
+  (styledComponents as unknown as { default: typeof styledComponents }).default ||
+  styledComponents
+);
 
 const Fallback = Beachball;
 
