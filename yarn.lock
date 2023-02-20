@@ -2182,9 +2182,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/dev@npm:^0.68.40":
-  version: 0.68.40
-  resolution: "@polkadot/dev@npm:0.68.40"
+"@polkadot/dev@npm:^0.68.41":
+  version: 0.68.41
+  resolution: "@polkadot/dev@npm:0.68.41"
   dependencies:
     "@babel/cli": ^7.20.7
     "@babel/core": ^7.20.12
@@ -2286,7 +2286,7 @@ __metadata:
     polkadot-exec-swc: scripts/polkadot-exec-swc.mjs
     polkadot-exec-tsc: scripts/polkadot-exec-tsc.mjs
     polkadot-exec-webpack: scripts/polkadot-exec-webpack.mjs
-  checksum: efa0673933e2fec834b2d0a29c454c3d95e54c4608ea6eea8b4dc3730344234219afb61840d475771b873d6d34a67ae537e8451f73b0dd43eb82e440a1733966
+  checksum: a3e5d0acca6393c0d2cda36d5000ce605bf7cc0da6dd427947a82fe7d7783ce3ba2711bf4167d69178fc227e5ab86bd8ef75b3292d71328a817d0c3030305e95
   languageName: node
   linkType: hard
 
@@ -13928,7 +13928,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/runtime": ^7.20.13
-    "@polkadot/dev": ^0.68.40
+    "@polkadot/dev": ^0.68.41
     "@polkadot/x-bundle": ^10.4.2
     "@types/jest": ^29.4.0
     babel-loader: ^8.3.0
