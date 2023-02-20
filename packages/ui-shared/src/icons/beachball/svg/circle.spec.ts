@@ -1,14 +1,14 @@
 // Copyright 2017-2023 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { serializeToString } from 'xmlserializer';
+import xs from 'xmlserializer';
 
 import { circle } from './circle';
 
 describe('circle', (): void => {
   it('creates a basic SVG circle element', (): void => {
     expect(
-      serializeToString(
+      xs.serializeToString(
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-explicit-any
         circle(123, 12, 34) as any
       )

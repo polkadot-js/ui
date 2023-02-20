@@ -15,8 +15,8 @@ describe('KeyringOption', (): void => {
     keyringOption.init(state as KeyringStruct);
 
     // second call
-    expect((): void => {
-      keyringOption.init(state as KeyringStruct);
-    }).toThrowError('Unable to initialise options more than once');
+    expect(
+      () => keyringOption.init(state as KeyringStruct)
+    ).toThrow('Unable to initialise options more than once');
   });
 });
