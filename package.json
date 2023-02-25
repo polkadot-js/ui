@@ -32,11 +32,11 @@
     "test:one": "polkadot-dev-run-test --env browser"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/runtime": "^7.20.13",
-    "@polkadot/dev": "^0.69.5",
+    "@babel/core": "^7.21.0",
+    "@babel/runtime": "^7.21.0",
+    "@polkadot/dev": "^0.69.12",
     "@polkadot/x-bundle": "^10.4.2",
-    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.1",
     "babel-loader": "^8.3.0",
     "babel-plugin-transform-vue-template": "^0.4.2",
     "empty": "^0.10.1",

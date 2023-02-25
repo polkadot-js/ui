@@ -1,6 +1,9 @@
 // Copyright 2018-2023 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+// eslint-disable-next-line spaced-comment
+/// <reference types="@polkadot/dev/node/test/node" />
+
 import { polkadotIcon } from './polkadot';
 
 describe('polkadotIcon', (): void => {

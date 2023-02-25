@@ -1,6 +1,9 @@
 // Copyright 2017-2023 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+// eslint-disable-next-line spaced-comment
+/// <reference types="@polkadot/dev/node/test/node" />
+
 import { u8aConcat, u8aToHex, u8aToString } from '@polkadot/util';
 import { randomAsU8a } from '@polkadot/util-crypto';
 
