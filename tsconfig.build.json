@@ -9,7 +9,6 @@
     { "path": "./packages/react-identicon/tsconfig.build.json" },
     { "path": "./packages/react-qr/tsconfig.build.json" },
     { "path": "./packages/reactnative-identicon/tsconfig.build.json" },
-    { "path": "./packages/ui-assets/tsconfig.build.json" },
     { "path": "./packages/ui-keyring/tsconfig.build.json" },
     { "path": "./packages/ui-settings/tsconfig.build.json" },
     { "path": "./packages/ui-shared/tsconfig.build.json" },
