@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Remove `@polkadot/ui-assets` package
+
+
 ## 2.12.1 Feb 20, 2023
 
 Changes:

@@ -13,7 +13,6 @@ The following UI components are currently available -
 
 Additionally some shared libraries, that are not dependent on any framework -
 
-- [ui-assets](packages/ui-assets/) Static assets, images and others, shared across projects
 - [ui-keyring](packages/ui-keyring/) A browser-specific wrapper around the base [@polkadot/util-keyring](https://github.com/polkadot-js/util/) library
 - [ui-settings](packages/ui-settings/) A browser local storage wrapper for app settings & configuration
 - [ui-shared](packages/ui-shared) Shared logic that is used across UI components, e.g. for icon generation

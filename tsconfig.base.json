@@ -9,8 +9,6 @@
       "@polkadot/react-qr/*": ["react-qr/src/*"],
       "@polkadot/reactnative-identicon": ["reactnative-identicon/src"],
       "@polkadot/reactnative-identicon/*": ["reactnative-identicon/src/*"],
-      "@polkadot/ui-assets": ["ui-assets/src"],
-      "@polkadot/ui-assets/*": ["ui-assets/src/*"],
       "@polkadot/ui-keyring": ["ui-keyring/src"],
       "@polkadot/ui-keyring/*": ["ui-keyring/src/*"],
       "@polkadot/ui-settings": ["ui-settings/src"],
