@@ -1,4 +1,4 @@
-     678	Jaco                          	Remove `@polkadot/ui-assets` package (#722)
+     679	Jaco                          	Add wf continue-on-error: true (#723)
        7	YJ                            	fix #224: decrease frame size to 1024, set multipart bool (#225)
        4	Antoine Estienne              	Refactor logic to better use prefix (#491)
        4	kwingram25                    	fix ff api url issue (#289)
