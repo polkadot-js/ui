@@ -4,8 +4,6 @@
   },
   "files": [],
   "references": [
-    { "path": "./packages/example-react/tsconfig.build.json" },
-    { "path": "./packages/example-vue/tsconfig.build.json" },
     { "path": "./packages/react-identicon/tsconfig.build.json" },
     { "path": "./packages/react-qr/tsconfig.build.json" },
     { "path": "./packages/reactnative-identicon/tsconfig.build.json" },
