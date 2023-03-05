@@ -11,7 +11,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "2.12.2-5-x",
+  "version": "3.0.0",
   "versions": {
     "git": "2.12.2-5-x",
     "npm": "2.12.1"
@@ -24,29 +24,19 @@
     "build:release": "polkadot-ci-ghact-build",
     "build:rollup": "polkadot-exec-rollup --config",
     "clean": "polkadot-dev-clean-build",
-    "example:react": "yarn build && cd packages/example-react && yarn polkadot-exec-webpack --config webpack.config.cjs",
-    "example:vue": "yarn build && cd packages/example-vue && yarn polkadot-exec-webpack --config webpack.config.cjs",
     "lint": "polkadot-dev-run-lint",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "polkadot-dev-run-test --env browser",
     "test:one": "polkadot-dev-run-test --env browser"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/runtime": "^7.21.0",
-    "@polkadot/dev": "^0.69.25",
-    "@polkadot/x-bundle": "^10.4.2",
-    "@types/node": "^18.14.5",
-    "babel-loader": "^8.3.0",
-    "babel-plugin-transform-vue-template": "^0.4.2",
-    "empty": "^0.10.1",
-    "process": "^0.11.10",
+    "@polkadot/dev": "^0.69.27",
+    "@polkadot/x-bundle": "^11.0.1",
+    "@types/node": "^18.14.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "react-native": "^0.71.3",
-    "stream-browserify": "^3.0.0",
-    "vue-template-compiler": "^2.7.14"
+    "react-native": "^0.71.3"
   },
   "resolutions": {
     "typescript": "^4.9.5"

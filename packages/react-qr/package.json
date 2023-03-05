@@ -17,16 +17,16 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "2.12.2-5-x",
+  "version": "3.0.0",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
-    "@polkadot/ui-settings": "2.12.2-5-x",
-    "@polkadot/util": "^10.4.2",
-    "@polkadot/util-crypto": "^10.4.2",
+    "@polkadot/ui-settings": "3.0.0",
+    "@polkadot/util": "^11.0.1",
+    "@polkadot/util-crypto": "^11.0.1",
     "qrcode-generator": "^1.4.4",
     "react-qr-reader": "^2.2.1",
-    "styled-components": "^5.3.8"
+    "styled-components": "^5.3.8",
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@types/react-qr-reader": "^2.1.4",

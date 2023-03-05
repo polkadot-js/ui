@@ -1,10 +1,13 @@
 # CHANGELOG
 
-## master
+## 3.0.1 Mar 5, 2023
 
 Changes:
 
 - Remove `@polkadot/ui-assets` package
+- Swap TS -> JS compiler to use tsc (from babel)
+- Adjust all tests to use `node:test` runner (ESM variants)
+- Bump to `@polkadot/util` 11.0.1
 
 
 ## 2.12.1 Feb 20, 2023
