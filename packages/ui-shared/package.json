@@ -17,7 +17,7 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "index.js",
   "dependencies": {
     "color": "^3.2.1",
