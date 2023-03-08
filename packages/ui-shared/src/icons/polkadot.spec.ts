@@ -3,7 +3,7 @@
 
 /// <reference types="@polkadot/dev/node/test/node" />
 
-import { polkadotIcon } from './polkadot';
+import { polkadotIcon } from './polkadot.js';
 
 describe('polkadotIcon', (): void => {
   it('generates the correct points from known', (): void => {

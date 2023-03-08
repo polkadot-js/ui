@@ -5,7 +5,7 @@
 
 import xs from 'xmlserializer';
 
-import { element } from './element';
+import { element } from './element.js';
 
 describe('element', (): void => {
   it('creates a basic SVG element', (): void => {

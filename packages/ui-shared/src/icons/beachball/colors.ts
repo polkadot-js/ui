@@ -3,11 +3,11 @@
 
 // Copyright 2016 Dan Finlay
 
-import type { ColorGen, Seeder } from './types';
+import type { ColorGen, Seeder } from './types.js';
 
 import Color from 'color';
 
-import { COLORS } from './defaults';
+import { COLORS } from './defaults.js';
 
 const WOBBLE = 30;
 

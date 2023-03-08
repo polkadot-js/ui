@@ -6,7 +6,7 @@
 import { isNull } from '@polkadot/util';
 import { encodeAddress, randomAsU8a } from '@polkadot/util-crypto';
 
-import { beachballIcon } from '.';
+import { beachballIcon } from './index.js';
 
 const element = document.getElementById('demo');
 

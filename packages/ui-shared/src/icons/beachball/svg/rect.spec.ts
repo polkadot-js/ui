@@ -5,7 +5,7 @@
 
 import xs from 'xmlserializer';
 
-import { rect } from './rect';
+import { rect } from './rect.js';
 
 describe('rect', (): void => {
   it('creates a basic SVG rect element', (): void => {

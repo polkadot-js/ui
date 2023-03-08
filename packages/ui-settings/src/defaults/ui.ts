@@ -3,7 +3,7 @@
 
 import type { Option } from '../types';
 
-import { isPolkadot } from './type';
+import { isPolkadot } from './type.js';
 
 const LANGUAGE_DEFAULT = 'default';
 

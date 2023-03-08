@@ -6,8 +6,8 @@ import React, { useCallback } from 'react';
 import { assert } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
-import { ADDRESS_PREFIX, SEED_PREFIX } from './constants';
-import { QrScan } from './Scan';
+import { ADDRESS_PREFIX, SEED_PREFIX } from './constants.js';
+import { QrScan } from './Scan.js';
 
 interface ScanType {
   isAddress: boolean;

@@ -6,7 +6,7 @@
 import { u8aConcat, u8aToHex, u8aToString } from '@polkadot/util';
 import { randomAsU8a } from '@polkadot/util-crypto';
 
-import { createAddressPayload, createFrames, createSignPayload, decodeString, encodeNumber, encodeString } from './util';
+import { createAddressPayload, createFrames, createSignPayload, decodeString, encodeNumber, encodeString } from './util.js';
 
 describe('util', (): void => {
   describe('Uint8Array <-> string', (): void => {

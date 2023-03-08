@@ -9,8 +9,8 @@ import { BehaviorSubject } from 'rxjs';
 
 import { objectCopy, objectSpread } from '@polkadot/util';
 
-import { createOptionItem } from '../options/item';
-import { env } from './env';
+import { createOptionItem } from '../options/item.js';
+import { env } from './env.js';
 
 function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, withTest: boolean): void {
   const isDevMode = env.isDevelopment();

@@ -1,15 +1,15 @@
 // Copyright 2017-2023 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SingleAddress } from '../observable/types';
-import type { KeyringStruct } from '../types';
-import type { KeyringOptionInstance, KeyringOptions, KeyringSectionOption, KeyringSectionOptions } from './types';
+import type { SingleAddress } from '../observable/types.js';
+import type { KeyringStruct } from '../types.js';
+import type { KeyringOptionInstance, KeyringOptions, KeyringSectionOption, KeyringSectionOptions } from './types.js';
 
 import { BehaviorSubject } from 'rxjs';
 
 import { assert } from '@polkadot/util';
 
-import { obervableAll } from '../observable';
+import { obervableAll } from '../observable/index.js';
 
 let hasCalledInitOptions = false;
 

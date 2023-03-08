@@ -8,7 +8,7 @@ import Vue, { VNode } from 'vue';
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
-import { Beachball, Empty, Jdenticon, Polkadot } from './icons';
+import { Beachball, Empty, Jdenticon, Polkadot } from './icons/index.js';
 
 interface Account {
   address: string;

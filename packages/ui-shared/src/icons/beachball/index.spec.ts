@@ -5,7 +5,7 @@
 
 import xmlserializer from 'xmlserializer';
 
-import { beachballIcon } from '.';
+import { beachballIcon } from './index.js';
 
 describe('identicon', (): void => {
   it('generates a basic [0,..,0] identicon', (): void => {

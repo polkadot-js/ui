@@ -5,18 +5,18 @@ import type { KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/
 import type { BN } from '@polkadot/util';
 import type { EncryptedJson } from '@polkadot/util-crypto/json/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
-import type { AddressSubject, SingleAddress } from './observable/types';
-import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringPairs$Json, KeyringStruct } from './types';
+import type { AddressSubject, SingleAddress } from './observable/types.js';
+import type { CreateResult, KeyringAddress, KeyringAddressType, KeyringItemType, KeyringJson, KeyringJson$Meta, KeyringOptions, KeyringPairs$Json, KeyringStruct } from './types.js';
 
 import { createPair } from '@polkadot/keyring';
 import { chains } from '@polkadot/ui-settings';
 import { bnToBn, hexToU8a, isFunction, isHex, isString, objectSpread, stringify, stringToU8a, u8aSorted, u8aToString } from '@polkadot/util';
 import { base64Decode, createKeyMulti, jsonDecrypt, jsonEncrypt } from '@polkadot/util-crypto';
 
-import { env } from './observable/env';
-import { Base } from './Base';
-import { accountKey, accountRegex, addressKey, addressRegex, contractKey, contractRegex } from './defaults';
-import { KeyringOption } from './options';
+import { env } from './observable/env.js';
+import { KeyringOption } from './options/index.js';
+import { Base } from './Base.js';
+import { accountKey, accountRegex, addressKey, addressRegex, contractKey, contractRegex } from './defaults.js';
 
 const RECENT_EXPIRY = 24 * 60 * 60;
 

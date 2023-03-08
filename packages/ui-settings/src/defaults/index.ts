@@ -1,13 +1,13 @@
 // Copyright 2017-2023 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Option } from '../types';
+import type { Option } from '../types.js';
 
-import { CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER } from './crypto';
-import { ENDPOINT_DEFAULT, ENDPOINTS } from './endpoints';
-import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger';
-import { PREFIX_DEFAULT, PREFIXES } from './ss58';
-import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, NOTIFICATION_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
+import { CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER } from './crypto.js';
+import { ENDPOINT_DEFAULT, ENDPOINTS } from './endpoints.js';
+import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger.js';
+import { PREFIX_DEFAULT, PREFIXES } from './ss58.js';
+import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, NOTIFICATION_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui.js';
 
 const CAMERA_DEFAULT = 'off';
 

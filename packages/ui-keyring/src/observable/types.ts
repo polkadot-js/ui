@@ -3,8 +3,8 @@
 
 import type { BehaviorSubject } from 'rxjs';
 import type { KeypairType } from '@polkadot/util-crypto/types';
-import type { KeyringSectionOption } from '../options/types';
-import type { KeyringJson, KeyringStore } from '../types';
+import type { KeyringSectionOption } from '../options/types.js';
+import type { KeyringJson, KeyringStore } from '../types.js';
 
 export interface SingleAddress {
   json: KeyringJson;

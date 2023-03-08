@@ -5,7 +5,7 @@
 
 import type { Seeder } from './types';
 
-import { seeder as newSeeder } from './seeder';
+import { seeder as newSeeder } from './seeder.js';
 
 describe('seeder', (): void => {
   let seeder: Seeder;

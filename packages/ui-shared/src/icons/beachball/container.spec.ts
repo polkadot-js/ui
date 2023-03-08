@@ -3,7 +3,7 @@
 
 /// <reference types="@polkadot/dev/node/test/node" />
 
-import { container } from './container';
+import { container } from './container.js';
 
 describe('container', (): void => {
   it('applies default styles', (): void => {

@@ -4,7 +4,7 @@
 import type { KeyringInstance as BaseKeyringInstance, KeyringOptions as KeyringOptionsBase, KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
 import type { EncryptedJson } from '@polkadot/util-crypto/json/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
-import type { AddressSubject, SingleAddress } from './observable/types';
+import type { AddressSubject, SingleAddress } from './observable/types.js';
 
 export interface ContractMeta {
   abi: string;
