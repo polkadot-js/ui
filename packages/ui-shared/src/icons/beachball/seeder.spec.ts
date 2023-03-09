@@ -3,7 +3,7 @@
 
 /// <reference types="@polkadot/dev/node/test/node" />
 
-import type { Seeder } from './types';
+import type { Seeder } from './types.js';
 
 import { seeder as newSeeder } from './seeder.js';
 

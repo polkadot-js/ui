@@ -3,22 +3,18 @@
   "compilerOptions": {
     "composite": true,
     "paths": {
-      "@polkadot/react-identicon": ["react-identicon/src"],
-      "@polkadot/react-identicon/*": ["react-identicon/src/*"],
-      "@polkadot/react-qr": ["react-qr/src"],
-      "@polkadot/react-qr/*": ["react-qr/src/*"],
-      "@polkadot/reactnative-identicon": ["reactnative-identicon/src"],
-      "@polkadot/reactnative-identicon/*": ["reactnative-identicon/src/*"],
-      "@polkadot/ui-keyring": ["ui-keyring/src"],
-      "@polkadot/ui-keyring/*": ["ui-keyring/src/*"],
-      "@polkadot/ui-settings": ["ui-settings/src"],
-      "@polkadot/ui-settings/*": ["ui-settings/src/*"],
-      "@polkadot/ui-shared": ["ui-shared/src"],
-      "@polkadot/ui-shared/*": ["ui-shared/src/*"],
-      "@polkadot/vue-identicon": ["vue-identicon/src"],
-      "@polkadot/vue-identicon/*": ["vue-identicon/src/*"]
+      "@polkadot/react-identicon": ["react-identicon/src/index.ts"],
+      "@polkadot/react-qr": ["react-qr/src/index.ts"],
+      "@polkadot/reactnative-identicon": ["reactnative-identicon/src/index.ts"],
+      "@polkadot/ui-keyring": ["ui-keyring/src/index.ts"],
+      "@polkadot/ui-settings": ["ui-settings/src/index.ts"],
+      "@polkadot/ui-settings/packageInfo": ["ui-settings/src/packageInfo.ts"],
+      "@polkadot/ui-settings/types": ["ui-settings/src/types.ts"],
+      "@polkadot/ui-shared": ["ui-shared/src/index.ts"],
+      "@polkadot/ui-shared/icons/*": ["ui-shared/src/icons/*.ts"],
+      "@polkadot/ui-shared/packageInfo": ["ui-shared/src/packageInfo.ts"],
+      "@polkadot/vue-identicon": ["vue-identicon/src/index.ts"],
     },
-    "skipLibCheck": true,
-    "target": "es2020"
+    "skipLibCheck": true
   }
  }

@@ -3,7 +3,7 @@
 
 // Copyright 2016 Dan Finlay
 
-import type { Seeder } from '../types';
+import type { Seeder } from '../types.js';
 
 import { SHAPE_COUNT } from '../defaults.js';
 import { rect as newRect } from '../svg/rect.js';
