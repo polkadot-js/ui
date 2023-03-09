@@ -15,7 +15,6 @@
       "@polkadot/ui-shared/packageInfo": ["ui-shared/src/packageInfo.ts"],
       "@polkadot/vue-identicon": ["vue-identicon/src/index.ts"],
     },
-    "skipLibCheck": true,
-    "target": "es2020"
+    "skipLibCheck": true
   }
  }
