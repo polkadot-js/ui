@@ -3,9 +3,9 @@
 
 /// <reference types="@polkadot/dev/node/test/node" />
 
-import type { KeyringStruct } from '../types';
+import type { KeyringStruct } from '../types.js';
 
-import { KeyringOption } from '.';
+import { KeyringOption } from './index.js';
 
 const keyringOption = new KeyringOption();
 

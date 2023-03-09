@@ -5,12 +5,12 @@
 
 import type { Options } from '../types';
 
-import { circle } from './shape/circle';
-import { element } from './svg/element';
-import { colors } from './colors';
-import { container as newContainer } from './container';
-import { SHAPE_COUNT } from './defaults';
-import { seeder as newSeeder } from './seeder';
+import { circle } from './shape/circle.js';
+import { element } from './svg/element.js';
+import { colors } from './colors.js';
+import { container as newContainer } from './container.js';
+import { SHAPE_COUNT } from './defaults.js';
+import { seeder as newSeeder } from './seeder.js';
 
 export function beachballIcon (seed: string | Uint8Array, { size = 256 }: Options, className = '', style?: { [index: string]: string }): HTMLElement {
   const seeder = newSeeder(seed);

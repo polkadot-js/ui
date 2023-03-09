@@ -3,10 +3,10 @@
 
 /// <reference types="@polkadot/dev/node/test/node" />
 
-import type { ColorGen } from './types';
+import type { ColorGen } from './types.js';
 
-import { colors as newColors } from './colors';
-import { seeder as newSeeder } from './seeder';
+import { colors as newColors } from './colors.js';
+import { seeder as newSeeder } from './seeder.js';
 
 describe('colors', (): void => {
   let colors: ColorGen;

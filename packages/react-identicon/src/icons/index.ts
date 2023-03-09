@@ -1,8 +1,8 @@
 // Copyright 2017-2023 @polkadot/react-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-export { Beachball } from './Beachball';
-export { Empty } from './Empty';
-export { Ethereum } from './Ethereum';
-export { Jdenticon } from './Jdenticon';
-export { Polkadot } from './Polkadot';
+export { Beachball } from './Beachball.js';
+export { Empty } from './Empty.js';
+export { Ethereum } from './Ethereum.js';
+export { Jdenticon } from './Jdenticon.js';
+export { Polkadot } from './Polkadot.js';

@@ -1,7 +1,7 @@
 // Copyright 2017-2023 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { svg } from './svg';
+import { svg } from './svg.js';
 
 export function circle (r: number, cx: number, cy: number): Element {
   const elem = svg('circle');

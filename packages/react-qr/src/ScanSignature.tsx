@@ -5,7 +5,7 @@ import type { HexString } from '@polkadot/util/types';
 
 import React, { useCallback } from 'react';
 
-import { QrScan } from './Scan';
+import { QrScan } from './Scan.js';
 
 interface ScanType {
   signature: HexString;

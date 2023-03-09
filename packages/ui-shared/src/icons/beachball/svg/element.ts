@@ -3,7 +3,7 @@
 
 // Copyright 2016 Dan Finlay
 
-import { svg } from './svg';
+import { svg } from './svg.js';
 
 export function element (size: number, type = 'svg', x = 0, y = 0): Element {
   const elem = svg(type);

@@ -5,8 +5,8 @@ import type { NetworkSpecsStruct } from '@polkadot/ui-settings/types';
 
 import React, { useMemo } from 'react';
 
-import { QrDisplay } from './Display';
-import { encodeString } from './util';
+import { QrDisplay } from './Display.js';
+import { encodeString } from './util.js';
 
 interface Props {
   className?: string;

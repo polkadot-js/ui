@@ -5,7 +5,7 @@
 
 import xs from 'xmlserializer';
 
-import { circle } from './circle';
+import { circle } from './circle.js';
 
 describe('circle', (): void => {
   it('creates a basic SVG circle element', (): void => {

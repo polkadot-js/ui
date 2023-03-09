@@ -1,7 +1,7 @@
 // Copyright 2017-2023 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Option } from '../types';
+import type { Option } from '../types.js';
 
 import { availableNetworks } from '@polkadot/networks';
 

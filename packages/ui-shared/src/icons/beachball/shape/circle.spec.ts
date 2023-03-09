@@ -5,8 +5,8 @@
 
 import xmlserializer from 'xmlserializer';
 
-import { seeder } from '../seeder';
-import { circle } from './circle';
+import { seeder } from '../seeder.js';
+import { circle } from './circle.js';
 
 describe('circle', (): void => {
   it('creates a circle shape', (): void => {

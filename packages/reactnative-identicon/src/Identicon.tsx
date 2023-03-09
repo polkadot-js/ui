@@ -2,14 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Prefix } from '@polkadot/util-crypto/address/types';
-import type { Props as ComponentProps } from './types';
+import type { Props as ComponentProps } from './types.js';
 
 import React from 'react';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
-import { Empty, Polkadot } from './icons';
+import { Empty, Polkadot } from './icons/index.js';
 
 const Fallback = Polkadot;
 

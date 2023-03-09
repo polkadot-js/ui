@@ -1,7 +1,7 @@
 // Copyright 2017-2023 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { addressKey } from '../defaults';
-import { genericSubject } from './genericSubject';
+import { addressKey } from '../defaults.js';
+import { genericSubject } from './genericSubject.js';
 
 export const addresses = genericSubject(addressKey);

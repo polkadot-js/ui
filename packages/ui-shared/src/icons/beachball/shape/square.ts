@@ -5,8 +5,8 @@
 
 import type { Seeder } from '../types';
 
-import { SHAPE_COUNT } from '../defaults';
-import { rect as newRect } from '../svg/rect';
+import { SHAPE_COUNT } from '../defaults.js';
+import { rect as newRect } from '../svg/rect.js';
 
 export function square (seeder: Seeder, fill: string, diameter: number, count: number): Element {
   const center = diameter / 2;
