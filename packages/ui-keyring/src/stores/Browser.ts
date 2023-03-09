@@ -1,7 +1,7 @@
 // Copyright 2017-2023 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { KeyringJson, KeyringStore } from '../types';
+import type { KeyringJson, KeyringStore } from '../types.js';
 
 import store from 'store';
 

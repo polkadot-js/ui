@@ -3,8 +3,8 @@
 
 import type { KeyringInstance, KeyringPair } from '@polkadot/keyring/types';
 import type { Prefix } from '@polkadot/util-crypto/address/types';
-import type { AddressSubject } from './observable/types';
-import type { KeyringOptions, KeyringStore } from './types';
+import type { AddressSubject } from './observable/types.js';
+import type { KeyringOptions, KeyringStore } from './types.js';
 
 import { createTestKeyring } from '@polkadot/keyring';
 import { isBoolean, isNumber, isString } from '@polkadot/util';

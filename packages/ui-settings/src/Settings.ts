@@ -1,7 +1,7 @@
 // Copyright 2017-2023 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Endpoint, EndpointType, Option, SettingsStruct } from './types';
+import type { Endpoint, EndpointType, Option, SettingsStruct } from './types.js';
 
 import EventEmitter from 'eventemitter3';
 import store from 'store';

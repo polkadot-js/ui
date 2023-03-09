@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { KeypairType } from '@polkadot/util-crypto/types';
-import type { KeyringJson, KeyringStore } from '../types';
-import type { AddressSubject, SingleAddress, SubjectInfo } from './types';
+import type { KeyringJson, KeyringStore } from '../types.js';
+import type { AddressSubject, SingleAddress, SubjectInfo } from './types.js';
 
 import { BehaviorSubject } from 'rxjs';
 

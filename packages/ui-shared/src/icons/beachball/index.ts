@@ -3,7 +3,7 @@
 
 // Copyright 2016 Dan Finlay
 
-import type { Options } from '../types';
+import type { Options } from '../types.js';
 
 import { circle } from './shape/circle.js';
 import { element } from './svg/element.js';

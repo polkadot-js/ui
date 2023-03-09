@@ -17,7 +17,7 @@
 //   - Overall it is now just a static component, expecting an address as an input value
 
 import type { Circle } from '@polkadot/ui-shared/icons/types';
-import type { Props } from '../types';
+import type { Props } from '../types.js';
 
 import React, { useMemo } from 'react';
 
