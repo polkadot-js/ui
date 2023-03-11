@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.0.2 Mar 11, 2023
+
+Changes:
+
+- Use consistent `.js` imports in source files (TS moduleResolution)
+- Bump to `@polkadot/util` 11.0.2
+
+
 ## 3.0.1 Mar 5, 2023
 
 Changes:
