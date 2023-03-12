@@ -1,13 +1,13 @@
 // Copyright 2017-2023 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 
 /**
  * @name Empty
  * @description An empty identicon
  */
-export const Empty = Vue.extend({
+export const Empty = defineComponent({
   props: ['size'],
   template: `
     <svg :height="size" :width="size" viewBox="0 0 64 64">

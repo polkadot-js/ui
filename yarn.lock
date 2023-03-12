@@ -1684,7 +1684,7 @@ __metadata:
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
-    vue: "*"
+    vue: ^2.7
   languageName: unknown
   linkType: soft
 

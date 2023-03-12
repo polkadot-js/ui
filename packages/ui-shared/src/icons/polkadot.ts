@@ -57,7 +57,7 @@ function getRotation (isSixPoint: boolean): { r: number; ro2: number; r3o4: numb
   return { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 };
 }
 
-function getCircleXY (isSixPoint: boolean): [number, number][] {
+function getCircleXY (isSixPoint = false): [number, number][] {
   const { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 } = getRotation(isSixPoint);
 
   return [

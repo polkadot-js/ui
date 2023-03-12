@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Swap `vue-identitycon` to use `defineComponent` (requires vue 2.7+)
+
+
 ## 3.0.2 Mar 11, 2023
 
 Changes:

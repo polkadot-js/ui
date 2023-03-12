@@ -3,7 +3,7 @@
 
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 
-import Vue, { VNode } from 'vue';
+import { defineComponent, VNode } from 'vue';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
@@ -46,7 +46,7 @@ function encodeAccount (value: string | Uint8Array, prefix?: Prefix): Account {
  * <Identicon :size="128" :theme="polkadot" :value="..." />
  * ```
  */
-export const Identicon = Vue.extend({
+export const Identicon = defineComponent({
   components: {
     Beachball,
     Empty,
@@ -81,19 +81,37 @@ export const Identicon = Vue.extend({
   },
   props: ['prefix', 'isAlternative', 'size', 'theme', 'value'],
   render (h): VNode {
-    const { address, iconSize, isAlternativeIcon, publicKey, type } = this.$data as Data;
+    const { address, iconSize, isAlternativeIcon, publicKey, type } = this.$data;
 
     if (type === 'empty') {
-      return h('Empty', { attrs: { key: address, size: iconSize } }, []);
+      return h('Empty', {
+        attrs: {
+          key: address,
+          size: iconSize
+        }
+      }, []);
     } else if (type === 'jdenticon') {
-      return h('Jdenticon', { attrs: { key: address, publicKey, size: iconSize } }, []);
-    } else {
-      // handles: beachball and polkadot
-      // TODO: substrate
-      const cmp = type.charAt(0).toUpperCase() + type.slice(1);
-
-      return h(cmp, { attrs: { address, isAlternative: isAlternativeIcon, key: address, size: iconSize } }, []);
+      return h('Jdenticon', {
+        attrs: {
+          key: address,
+          publicKey,
+          size: iconSize
+        }
+      }, []);
+    } else if (type === 'substrate') {
+      throw new Error('substrate type is not supported');
     }
+
+    const cmp = type.charAt(0).toUpperCase() + type.slice(1);
+
+    return h(cmp, {
+      attrs: {
+        address,
+        isAlternative: isAlternativeIcon,
+        key: address,
+        size: iconSize
+      }
+    }, []);
   },
   watch: {
     value: function (): void {
