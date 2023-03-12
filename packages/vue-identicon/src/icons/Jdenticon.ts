@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import * as jdenticon from 'jdenticon';
-import Vue, { VNode } from 'vue';
+import { defineComponent, VNode } from 'vue';
 
-type propsType = {
+type PropsType = {
   publicKey: string,
   size: number
 }
@@ -13,13 +13,13 @@ type propsType = {
  * @name Jdenticon
  * @description The substrate default via Jdenticon
  */
-export const Jdenticon = Vue.extend({
+export const Jdenticon = defineComponent({
   props: ['publicKey', 'size'],
-  // eslint-disable-next-line quotes
   render (h): VNode {
-    const { publicKey, size } = this.$props as propsType;
-    const cmp = Vue.component('CJdenticon', { template: jdenticon.toSvg(publicKey.substring(2), size) });
+    const { publicKey, size } = this.$props as PropsType;
 
-    return h(cmp);
+    return h(defineComponent({
+      template: jdenticon.toSvg(publicKey.substring(2), size)
+    }));
   }
 });

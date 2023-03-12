@@ -5,7 +5,7 @@ import type { Props } from '../types.js';
 
 import React from 'react';
 import { View } from 'react-native';
-import Svg, { Circle } from 'react-native-svg';
+import { Circle, Svg } from 'react-native-svg';
 
 export default function Empty ({ size }: Props): React.ReactElement<Props> {
   return (

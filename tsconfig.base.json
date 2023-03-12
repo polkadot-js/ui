@@ -2,8 +2,6 @@
   "extends": "@polkadot/dev/config/tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    /* FIXME The default nodenext resolution is problematic with vue2 */
-    "moduleResolution": "node",
     "paths": {
       "@polkadot/react-identicon": ["react-identicon/src/index.ts"],
       "@polkadot/react-qr": ["react-qr/src/index.ts"],

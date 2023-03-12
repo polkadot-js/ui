@@ -9,6 +9,6 @@ export interface Circle {
 }
 
 export interface Options {
-  isAlternative: boolean;
+  isAlternative?: boolean;
   size?: number;
 }

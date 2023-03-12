@@ -1,11 +1,11 @@
 // Copyright 2017-2023 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import Vue, { VNode } from 'vue';
+import { defineComponent, VNode } from 'vue';
 
 import { beachballIcon } from '@polkadot/ui-shared';
 
-type propsType = {
+type PropsType = {
   address: string;
   size: number;
   isAlternative: boolean;
@@ -15,13 +15,17 @@ type propsType = {
  * @name Beachball
  * @description The Beachball identicon
  */
-export const Beachball = Vue.extend({
+export const Beachball = defineComponent({
   props: ['address', 'size', 'isAlternative'],
   // eslint-disable-next-line quotes
   render (h): VNode {
-    const { address, isAlternative, size } = this.$props as propsType;
-    const bb = beachballIcon(address, { isAlternative, size });
+    const { address, isAlternative, size } = this.$props as PropsType;
 
-    return h(Vue.component('VCBeachball', { template: bb.outerHTML }));
+    return h(defineComponent({
+      template: beachballIcon(address, {
+        isAlternative,
+        size
+      }).outerHTML
+    }));
   }
 });
