@@ -21,11 +21,11 @@ export const Beachball = defineComponent({
   render (h): VNode {
     const { address, isAlternative, size } = this.$props as PropsType;
 
-    return h(defineComponent({
+    return h({
       template: beachballIcon(address, {
         isAlternative,
         size
       }).outerHTML
-    }));
+    });
   }
 });

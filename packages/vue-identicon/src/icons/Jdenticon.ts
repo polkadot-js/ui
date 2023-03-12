@@ -18,8 +18,8 @@ export const Jdenticon = defineComponent({
   render (h): VNode {
     const { publicKey, size } = this.$props as PropsType;
 
-    return h(defineComponent({
+    return h({
       template: jdenticon.toSvg(publicKey.substring(2), size)
-    }));
+    });
   }
 });

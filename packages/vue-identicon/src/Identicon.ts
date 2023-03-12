@@ -84,23 +84,34 @@ export const Identicon = defineComponent({
     const { address, iconSize, isAlternativeIcon, publicKey, type } = this.$data;
 
     if (type === 'empty') {
-      return h('Empty', { attrs: { key: address, size: iconSize } }, []);
-    } else if (type === 'jdenticon') {
-      return h('Jdenticon', { attrs: { key: address, publicKey, size: iconSize } }, []);
-    } else {
-      // handles: beachball and polkadot
-      // TODO: substrate
-      const cmp = type.charAt(0).toUpperCase() + type.slice(1);
-
-      return h(cmp, {
+      return h('Empty', {
         attrs: {
-          address,
-          isAlternative: isAlternativeIcon,
           key: address,
           size: iconSize
         }
       }, []);
+    } else if (type === 'jdenticon') {
+      return h('Jdenticon', {
+        attrs: {
+          key: address,
+          publicKey,
+          size: iconSize
+        }
+      }, []);
+    } else if (type === 'substrate') {
+      throw new Error('substrate type is not supported');
     }
+
+    const cmp = type.charAt(0).toUpperCase() + type.slice(1);
+
+    return h(cmp, {
+      attrs: {
+        address,
+        isAlternative: isAlternativeIcon,
+        key: address,
+        size: iconSize
+      }
+    }, []);
   },
   watch: {
     value: function (): void {
