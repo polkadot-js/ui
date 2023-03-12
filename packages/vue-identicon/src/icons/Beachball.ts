@@ -17,7 +17,6 @@ type PropsType = {
  */
 export const Beachball = defineComponent({
   props: ['address', 'size', 'isAlternative'],
-  // eslint-disable-next-line quotes
   render (h): VNode {
     const { address, isAlternative, size } = this.$props as PropsType;
 
