@@ -5,6 +5,7 @@
 Changes:
 
 - Swap `vue-identitycon` to use `defineComponent` (requires vue 2.7+)
+- Swap `BeachballIcon` to use `colord` library (ESM + CJS, smaller)
 
 
 ## 3.0.2 Mar 11, 2023
