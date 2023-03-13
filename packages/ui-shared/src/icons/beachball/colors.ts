@@ -3,9 +3,10 @@
 
 // Copyright 2016 Dan Finlay
 
+import type { Colord } from 'colord';
 import type { ColorGen, Seeder } from './types.js';
 
-import Color from 'color';
+import { colord } from 'colord';
 
 import { COLORS } from './defaults.js';
 
@@ -13,8 +14,8 @@ const WOBBLE = 30;
 
 export function colors (seeder: Seeder): ColorGen {
   const amount = (seeder() * WOBBLE) - (WOBBLE / 2);
-  const all = COLORS.map((hex): Color =>
-    Color(hex).rotate(amount)
+  const all = COLORS.map((hex): Colord =>
+    colord(hex).rotate(amount)
   );
 
   return (alpha = 1): string => {
@@ -22,6 +23,6 @@ export function colors (seeder: Seeder): ColorGen {
 
     return all.splice(index, 1)[0]
       .alpha(alpha)
-      .string();
+      .toHslString();
   };
 }
