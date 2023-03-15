@@ -1,6 +1,9 @@
 {
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "bugs": "https://github.com/polkadot-js/ui/issues",
+  "engines": {
+    "node": ">=14"
+  },
   "homepage": "https://github.com/polkadot-js/ui#readme",
   "license": "Apache-2.0",
   "packageManager": "yarn@3.2.0",
@@ -11,9 +14,9 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "3.0.3-4-x",
+  "version": "3.0.3-5-x",
   "versions": {
-    "git": "3.0.3-4-x",
+    "git": "3.0.3-5-x",
     "npm": "3.0.2"
   },
   "workspaces": [

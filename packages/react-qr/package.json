@@ -1,11 +1,12 @@
 {
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "bugs": "https://github.com/polkadot-js/ui/issues",
-  "contributors": [],
   "description": "Generates and reads QR codes",
+  "engines": {
+    "node": ">=14"
+  },
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/react-qr#readme",
   "license": "Apache-2.0",
-  "maintainers": [],
   "name": "@polkadot/react-qr",
   "repository": {
     "directory": "packages/react-qr",
@@ -17,10 +18,10 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.0.3-4-x",
+  "version": "3.0.3-5-x",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/ui-settings": "3.0.3-4-x",
+    "@polkadot/ui-settings": "3.0.3-5-x",
     "@polkadot/util": "^11.0.2",
     "@polkadot/util-crypto": "^11.0.2",
     "qrcode-generator": "^1.4.4",

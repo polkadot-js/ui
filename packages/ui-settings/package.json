@@ -1,11 +1,12 @@
 {
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "bugs": "https://github.com/polkadot-js/ui/issues",
-  "contributors": [],
   "description": "Manages app settings",
+  "engines": {
+    "node": ">=14"
+  },
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-settings#readme",
   "license": "Apache-2.0",
-  "maintainers": [],
   "name": "@polkadot/ui-settings",
   "repository": {
     "directory": "packages/ui-settings",
@@ -17,7 +18,7 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.0.3-4-x",
+  "version": "3.0.3-5-x",
   "main": "index.js",
   "dependencies": {
     "@polkadot/networks": "^11.0.2",
