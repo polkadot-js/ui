@@ -33,15 +33,15 @@
     "test:one": "polkadot-dev-run-test --env browser"
   },
   "devDependencies": {
-    "@polkadot/dev": "^0.72.1",
+    "@polkadot/dev": "^0.72.9",
     "@polkadot/x-bundle": "^11.0.2",
-    "@types/node": "^18.15.0",
+    "@types/node": "^18.15.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "react-native": "^0.71.4"
   },
   "resolutions": {
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.2"
   }
 }
