@@ -14,7 +14,6 @@
       "@polkadot/ui-shared/icons/*": ["ui-shared/src/icons/*.ts"],
       "@polkadot/ui-shared/packageInfo": ["ui-shared/src/packageInfo.ts"],
       "@polkadot/vue-identicon": ["vue-identicon/src/index.ts"],
-    },
-    "skipLibCheck": true
+    }
   }
  }

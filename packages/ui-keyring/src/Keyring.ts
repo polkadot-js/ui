@@ -289,7 +289,7 @@ export class Keyring extends Base implements KeyringStruct {
               this.loadContract(json, key);
             }
           }
-        } catch (error) {
+        } catch {
           console.warn(`Keyring: Unable to load ${key}:${stringify(json)}`);
         }
       }
@@ -299,7 +299,7 @@ export class Keyring extends Base implements KeyringStruct {
       if (this.allowGenesis(account)) {
         try {
           this.loadInjected(account.address, account.meta, account.type);
-        } catch (error) {
+        } catch {
           console.warn(`Keyring: Unable to inject ${stringify(account)}`);
         }
       }
