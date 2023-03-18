@@ -54,7 +54,7 @@ export default class IdentityIcon extends React.PureComponent<Props, State> {
       return address === prevState.address
         ? null
         : { address, publicKey };
-    } catch (error) {
+    } catch {
       return {
         address: '',
         publicKey: '0x'

@@ -33,7 +33,7 @@ function encodeAccount (value: string | Uint8Array, prefix?: Prefix): Account {
     const publicKey = u8aToHex(decodeAddress(address, false, prefix));
 
     return { address, publicKey };
-  } catch (error) {
+  } catch {
     return { address: '', publicKey: '0x' };
   }
 }

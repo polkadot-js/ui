@@ -74,7 +74,7 @@ class BaseIcon extends React.PureComponent<Props, State> {
           address,
           publicKey
         };
-    } catch (error) {
+    } catch {
       return {
         address: '',
         publicKey: '0x'
