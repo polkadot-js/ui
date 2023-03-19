@@ -1,11 +1,12 @@
 # CHANGELOG
 
-## master
+## 3.1.1 Mar 19, 2023
 
 Changes:
 
 - Swap `vue-identitycon` to use `defineComponent` (requires vue 2.7+)
 - Swap `BeachballIcon` to use `colord` library (ESM + CJS, smaller)
+- Bump to `@polkadot/util` 11.1.1
 
 
 ## 3.0.2 Mar 11, 2023
