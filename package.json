@@ -14,7 +14,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "3.0.3-7-x",
+  "version": "3.1.0",
   "versions": {
     "git": "3.0.3-7-x",
     "npm": "3.0.2"
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@polkadot/dev": "^0.72.15",
-    "@polkadot/x-bundle": "^11.0.2",
+    "@polkadot/x-bundle": "^11.1.1",
     "@types/node": "^18.15.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
