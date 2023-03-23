@@ -22,6 +22,8 @@ export class Base {
 
   #contracts: AddressSubject;
 
+  #isEthereum: boolean;
+
   #keyring?: KeyringInstance;
 
   protected _store: KeyringStore;
@@ -34,6 +36,7 @@ export class Base {
     this.#accounts = accounts;
     this.#addresses = addresses;
     this.#contracts = contracts;
+    this.#isEthereum = false;
     this._store = new BrowserStore();
   }
 
@@ -47,6 +50,10 @@ export class Base {
 
   public get contracts (): AddressSubject {
     return this.#contracts;
+  }
+
+  public get isEthereum (): boolean {
+    return this.#isEthereum;
   }
 
   public get keyring (): KeyringInstance {
@@ -116,6 +123,9 @@ export class Base {
     if (isBoolean(options.isDevelopment)) {
       this.setDevMode(options.isDevelopment);
     }
+
+    // set Ethereum state
+    this.#isEthereum = keyring.type === 'ethereum';
 
     this.#keyring = keyring;
     this._genesisHash = options.genesisHash && (

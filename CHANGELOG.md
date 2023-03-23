@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Cater for Ethereum-compatible multisig addresses
+
+
 ## 3.1.1 Mar 19, 2023
 
 Changes:

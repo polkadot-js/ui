@@ -46,10 +46,20 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   public addMultisig (addresses: (string | Uint8Array)[], threshold: bigint | BN | number, meta: KeyringPair$Meta = {}): CreateResult {
-    const address = createKeyMulti(addresses, threshold);
+    let address = createKeyMulti(addresses, threshold);
+
+    // For Ethereum chains, the first 20 bytes of the hash indicates the actual address
+    // Testcases via creation and on-chain events:
+    // -  input: 0x7a1671a0224c8927b08f978027d586ab6868de0d31bb5bc956b625ced2ab18c4
+    // - output: 0x7a1671a0224c8927b08f978027d586ab6868de0d
+    if (this.isEthereum) {
+      address = address.slice(0, 20);
+    }
 
     // we could use `sortAddresses`, but rather use internal encode/decode so we are 100%
-    const who = u8aSorted(addresses.map((who) => this.decodeAddress(who))).map((who) => this.encodeAddress(who));
+    const who = u8aSorted(
+      addresses.map((who) => this.decodeAddress(who))
+    ).map((who) => this.encodeAddress(who));
 
     return this.addExternal(address, objectSpread<KeyringPair$Meta>({}, meta, { isMultisig: true, threshold: bnToBn(threshold).toNumber(), who }));
   }
