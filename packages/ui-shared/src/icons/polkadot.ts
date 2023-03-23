@@ -13,27 +13,33 @@ import { blake2AsU8a, decodeAddress } from '@polkadot/util-crypto';
 
 interface Scheme {
   freq: number;
-  colors: number[];
+  colors: readonly number[];
 }
-
-const blake2 = (value: Uint8Array): Uint8Array =>
-  blake2AsU8a(value, 512);
 
 const S = 64;
 const C = S / 2;
 const Z = S / 64 * 5;
 
-/* eslint-disable sort-keys */
-const SCHEMA: { [index: string]: Scheme } = {
-  target: { colors: [0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 1], freq: 1 },
-  cube: { colors: [0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 5], freq: 20 },
-  quazar: { colors: [1, 2, 3, 1, 2, 4, 5, 5, 4, 1, 2, 3, 1, 2, 4, 5, 5, 4, 0], freq: 16 },
-  flower: { colors: [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 3], freq: 32 },
-  cyclic: { colors: [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 6], freq: 32 },
-  vmirror: { colors: [0, 1, 2, 3, 4, 5, 3, 4, 2, 0, 1, 6, 7, 8, 9, 7, 8, 6, 10], freq: 128 },
-  hmirror: { colors: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 8, 6, 7, 5, 3, 4, 2, 11], freq: 128 }
-};
-/* eslint-enable sort-keys */
+const SCHEMES: readonly Scheme[] = [
+  // target
+  { colors: [0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 0, 28, 0, 1], freq: 1 },
+  // cube
+  { colors: [0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 0, 1, 3, 2, 4, 3, 5], freq: 20 },
+  // quazar
+  { colors: [1, 2, 3, 1, 2, 4, 5, 5, 4, 1, 2, 3, 1, 2, 4, 5, 5, 4, 0], freq: 16 },
+  // flower
+  { colors: [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 3], freq: 32 },
+  // cyclic
+  { colors: [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 6], freq: 32 },
+  // vmirror
+  { colors: [0, 1, 2, 3, 4, 5, 3, 4, 2, 0, 1, 6, 7, 8, 9, 7, 8, 6, 10], freq: 128 },
+  // hmirror
+  { colors: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 8, 6, 7, 5, 3, 4, 2, 11], freq: 128 }
+];
+
+const SCHEMES_TOTAL = SCHEMES
+  .map((s): number => s.freq)
+  .reduce((a, b): number => a + b);
 
 const OUTER_CIRCLE: Circle = {
   cx: C,
@@ -85,7 +91,7 @@ function getCircleXY (isSixPoint = false): [number, number][] {
 
 function findScheme (d: number): Scheme {
   let cum = 0;
-  const schema = Object.values(SCHEMA).find((schema): boolean => {
+  const schema = SCHEMES.find((schema): boolean => {
     cum += schema.freq;
 
     return d < cum;
@@ -100,16 +106,15 @@ function findScheme (d: number): Scheme {
 
 function addressToId (address: string): Uint8Array {
   if (!zeroHash.length) {
-    zeroHash = blake2(new Uint8Array(32));
+    zeroHash = blake2AsU8a(new Uint8Array(32), 512);
   }
 
-  return blake2(decodeAddress(address)).map((x, i) => (x + 256 - zeroHash[i]) % 256);
+  return blake2AsU8a(decodeAddress(address), 512).map((x, i) => (x + 256 - zeroHash[i]) % 256);
 }
 
 function getColors (address: string): string[] {
-  const total = Object.values(SCHEMA).map((s): number => s.freq).reduce((a, b): number => a + b);
   const id = addressToId(address);
-  const d = Math.floor((id[30] + id[31] * 256) % total);
+  const d = Math.floor((id[30] + id[31] * 256) % SCHEMES_TOTAL);
   const rot = (id[28] % 6) * 3;
   const sat = (Math.floor(id[29] * 70 / 256 + 26) % 80) + 30;
   const scheme = findScheme(d);
@@ -134,7 +139,7 @@ function getColors (address: string): string[] {
 }
 
 /**
- * @description Generate a array of the circles that make up an identicon
+ * @description Generates an array of the circles that make up an identicon
  */
 export function polkadotIcon (address: string, { isAlternative }: Options): Circle[] {
   const xy = getCircleXY(isAlternative);
