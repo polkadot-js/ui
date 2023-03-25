@@ -7,8 +7,6 @@ import type { KeyringOptionInstance, KeyringOptions, KeyringSectionOption, Keyri
 
 import { BehaviorSubject } from 'rxjs';
 
-import { assert } from '@polkadot/util';
-
 import { obervableAll } from '../observable/index.js';
 
 let hasCalledInitOptions = false;
@@ -47,7 +45,9 @@ export class KeyringOption implements KeyringOptionInstance {
   }
 
   public init (keyring: KeyringStruct): void {
-    assert(!hasCalledInitOptions, 'Unable to initialise options more than once');
+    if (hasCalledInitOptions) {
+      throw new Error('Unable to initialise options more than once');
+    }
 
     obervableAll.subscribe((): void => {
       const opts = this.emptyOptions();

@@ -7,8 +7,6 @@ import mkdirp from 'mkdirp';
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { assert } from '@polkadot/util';
-
 // NOTE untested and unused by any known apps, probably broken in various mysterious ways
 export class FileStore implements KeyringStore {
   #path: string;
@@ -35,7 +33,9 @@ export class FileStore implements KeyringStore {
   public get (key: string, fn: (value: KeyringJson) => void): void {
     const value = this._readKey(key);
 
-    assert(value?.address, `Invalid JSON found for ${key}`);
+    if (!value?.address) {
+      throw new Error(`Invalid JSON found for ${key}`);
+    }
 
     fn(value);
   }

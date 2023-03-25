@@ -3,7 +3,6 @@
 
 import React, { useCallback } from 'react';
 
-import { assert } from '@polkadot/util';
 import { decodeAddress } from '@polkadot/util-crypto';
 
 import { ADDRESS_PREFIX, SEED_PREFIX } from './constants.js';
@@ -43,7 +42,9 @@ function ScanAddress ({ className, isEthereum, onError, onScan, size, style }: P
           const expectedPrefix = (isEthereum ? 'ethereum' : ADDRESS_PREFIX);
           const isValidPrefix = (prefix === expectedPrefix) || (prefix === SEED_PREFIX);
 
-          assert(isValidPrefix, `Invalid prefix received, expected '${expectedPrefix} or ${SEED_PREFIX}' , found '${prefix}'`);
+          if (!isValidPrefix) {
+            throw new Error(`Invalid prefix received, expected '${expectedPrefix} or ${SEED_PREFIX}' , found '${prefix}'`);
+          }
 
           const isAddress = prefix === expectedPrefix;
 
