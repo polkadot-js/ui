@@ -7,22 +7,20 @@ import type { KeyringStruct } from '../types.js';
 
 import { KeyringOption } from './index.js';
 
-const keyringOption = new KeyringOption();
-
 describe('KeyringOption', (): void => {
-  afterAll((): void => {
-    keyringOption.clear();
-  });
-
   it('should not allow initOptions to be called more than once', (): void => {
-    const state: Partial<KeyringStruct> = {};
+    const keyringOption = new KeyringOption();
+    const state = {} as KeyringStruct;
 
     // first call
-    keyringOption.init(state as KeyringStruct);
+    keyringOption.init(state);
 
     // second call
     expect(
-      () => keyringOption.init(state as KeyringStruct)
+      () => keyringOption.init(state)
     ).toThrow('Unable to initialise options more than once');
+
+    // cleanup?
+    keyringOption.clear();
   });
 });
