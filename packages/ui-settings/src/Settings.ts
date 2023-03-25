@@ -3,7 +3,7 @@
 
 import type { Endpoint, EndpointType, Option, SettingsStruct } from './types.js';
 
-import EventEmitter from 'eventemitter3';
+import { EventEmitter } from 'eventemitter3';
 import store from 'store';
 
 import { hasProcess, isUndefined } from '@polkadot/util';
