@@ -1,6 +1,7 @@
 // Copyright 2017-2023 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { Subscription } from 'rxjs';
 import type { SingleAddress } from '../observable/types.js';
 import type { KeyringStruct } from '../types.js';
 import type { KeyringOptionInstance, KeyringOptions, KeyringSectionOption, KeyringSectionOptions } from './types.js';
@@ -34,6 +35,8 @@ const sortByCreated = (a: SingleAddress, b: SingleAddress): number => {
 };
 
 export class KeyringOption implements KeyringOptionInstance {
+  #allSub: Subscription | null = null;
+
   public readonly optionsSubject: BehaviorSubject<KeyringOptions> = new BehaviorSubject(this.emptyOptions());
 
   public createOptionHeader (name: string): KeyringSectionOption {
@@ -46,10 +49,14 @@ export class KeyringOption implements KeyringOptionInstance {
 
   public init (keyring: KeyringStruct): void {
     if (hasCalledInitOptions) {
+      if (this.#allSub) {
+        this.#allSub.unsubscribe();
+      }
+
       throw new Error('Unable to initialise options more than once');
     }
 
-    obervableAll.subscribe((): void => {
+    this.#allSub = obervableAll.subscribe((): void => {
       const opts = this.emptyOptions();
 
       this.addAccounts(keyring, opts);
