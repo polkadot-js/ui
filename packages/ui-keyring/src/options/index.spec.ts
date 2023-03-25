@@ -10,6 +10,10 @@ import { KeyringOption } from './index.js';
 const keyringOption = new KeyringOption();
 
 describe('KeyringOption', (): void => {
+  afterAll((): void => {
+    keyringOption.clear();
+  });
+
   it('should not allow initOptions to be called more than once', (): void => {
     const state: Partial<KeyringStruct> = {};
 

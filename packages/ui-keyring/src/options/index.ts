@@ -49,10 +49,6 @@ export class KeyringOption implements KeyringOptionInstance {
 
   public init (keyring: KeyringStruct): void {
     if (hasCalledInitOptions) {
-      if (this.#allSub) {
-        this.#allSub.unsubscribe();
-      }
-
       throw new Error('Unable to initialise options more than once');
     }
 
@@ -73,6 +69,12 @@ export class KeyringOption implements KeyringOptionInstance {
     });
 
     hasCalledInitOptions = true;
+  }
+
+  public clear (): void {
+    if (this.#allSub) {
+      this.#allSub.unsubscribe();
+    }
   }
 
   private linkItems (items: { [index: string]: KeyringSectionOptions }): KeyringSectionOptions {
