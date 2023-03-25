@@ -1,4 +1,4 @@
-     700	Jaco                          	Bump dev (w/ some node:test adjustments) (#743)
+     701	Jaco                          	Add repo dev req. for Node.js (#744)
        7	YJ                            	fix #224: decrease frame size to 1024, set multipart bool (#225)
        4	Antoine Estienne              	Refactor logic to better use prefix (#491)
        4	kwingram25                    	fix ff api url issue (#289)
