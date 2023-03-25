@@ -18,15 +18,15 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.1.2-1-x",
+  "version": "3.1.2",
   "main": "index.js",
   "dependencies": {
     "colord": "^2.9.3",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@polkadot/util": "^11.1.1",
-    "@polkadot/util-crypto": "^11.1.1",
+    "@polkadot/util": "^11.1.2",
+    "@polkadot/util-crypto": "^11.1.2",
     "@types/xmlserializer": "^0.6.3",
     "xmlserializer": "^0.6.1"
   },
