@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 3.1.3 Mar 25, 2023
+
+Changes:
+
+- Align `eventemitter` version with `@polkadot/api`
+
+
 ## 3.1.2 Mar 25, 2023
 
 Changes:
