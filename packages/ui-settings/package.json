@@ -23,7 +23,7 @@
   "dependencies": {
     "@polkadot/networks": "^11.1.2",
     "@polkadot/util": "^11.1.2",
-    "eventemitter3": "^4.0.7",
+    "eventemitter3": "^5.0.0",
     "store": "^2.0.12",
     "tslib": "^2.5.0"
   },
