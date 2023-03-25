@@ -1,10 +1,11 @@
 # CHANGELOG
 
-## master
+## 3.1.2 Mar 25, 2023
 
 Changes:
 
 - Cater for Ethereum-compatible multisig addresses
+- Bump to `@polkadot/util` 11.1.2
 
 
 ## 3.1.1 Mar 19, 2023
