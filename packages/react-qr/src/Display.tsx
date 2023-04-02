@@ -2,23 +2,13 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import styledComponents, { StyledInterface } from 'styled-components';
 
 import { objectSpread } from '@polkadot/util';
 import { xxhashAsHex } from '@polkadot/util-crypto';
 
 import { qrcode } from './qrcode.js';
+import { styled } from './styled.js';
 import { createFrames, createImgSize } from './util.js';
-
-// In styled-components v6, there is a named export which can be used
-// directly, i.e. "import { styled } from ..." with no more magic. Until
-// such time the cjs vs esm import here is problematic, so we hack around
-// the various shapes below
-const styled = (
-  (styledComponents as unknown as { styled: StyledInterface }).styled ||
-  (styledComponents as unknown as { default: StyledInterface }).default ||
-  styledComponents as unknown as StyledInterface
-);
 
 interface Props {
   className?: string;

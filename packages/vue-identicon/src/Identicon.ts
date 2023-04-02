@@ -1,9 +1,10 @@
 // Copyright 2017-2023 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { VNode } from 'vue';
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 
-import { defineComponent, VNode } from 'vue';
+import { defineComponent } from 'vue';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
