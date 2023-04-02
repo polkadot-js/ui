@@ -5,17 +5,8 @@ import type { Props } from '../types.js';
 
 import makeBlockie from 'ethereum-blockies-base64';
 import React, { useMemo } from 'react';
-import styledComponents, { StyledInterface } from 'styled-components';
 
-// In styled-components v6, there is a named export which can be used
-// directly, i.e. "import { styled } from ..." with no more magic. Until
-// such time the cjs vs esm import here is problematic, so we hack around
-// the various shapes below
-const styled = (
-  (styledComponents as unknown as { styled: StyledInterface }).styled ||
-  (styledComponents as unknown as { default: StyledInterface }).default ||
-  styledComponents as unknown as StyledInterface
-);
+import { styled } from '../styled.js';
 
 interface ImgProps {
   size: number;
