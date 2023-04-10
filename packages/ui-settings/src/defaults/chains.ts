@@ -6,8 +6,6 @@ import { objectSpread } from '@polkadot/util';
 
 type ChainDef = string[];
 
-const chains: Record <string, ChainDef> = selectableNetworks
+export const chains: Record <string, ChainDef> = /*#__PURE__*/ selectableNetworks
   .filter((n) => n.genesisHash.length)
   .reduce((chains, { genesisHash, network }) => objectSpread(chains, { [network]: genesisHash }), {});
-
-export { chains };

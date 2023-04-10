@@ -3,15 +3,15 @@
 
 import type { Option } from '../types.js';
 
-import { CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER } from './crypto.js';
-import { ENDPOINT_DEFAULT, ENDPOINTS } from './endpoints.js';
-import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger.js';
-import { PREFIX_DEFAULT, PREFIXES } from './ss58.js';
-import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, NOTIFICATION_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui.js';
+export { CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER } from './crypto.js';
+export { ENDPOINT_DEFAULT, ENDPOINTS } from './endpoints.js';
+export { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger.js';
+export { PREFIX_DEFAULT, PREFIXES } from './ss58.js';
+export { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, NOTIFICATION_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui.js';
 
-const CAMERA_DEFAULT = 'off';
+export const CAMERA_DEFAULT = 'off';
 
-const CAMERA: Option[] = [
+export const CAMERA: Option[] = [
   {
     info: 'on',
     text: 'Allow camera access',
@@ -24,11 +24,11 @@ const CAMERA: Option[] = [
   }
 ];
 
-const LANGUAGE_DEFAULT = 'default';
+export const LANGUAGE_DEFAULT = 'default';
 
-const LOCKING_DEFAULT = 'session';
+export const LOCKING_DEFAULT = 'session';
 
-const LOCKING: Option[] = [
+export const LOCKING: Option[] = [
   {
     info: 'session',
     text: 'Once per session',
@@ -41,9 +41,9 @@ const LOCKING: Option[] = [
   }
 ];
 
-const METADATA_UP_DEFAULT = 'off';
+export const METADATA_UP_DEFAULT = 'off';
 
-const METADATA_UP: Option[] = [
+export const METADATA_UP: Option[] = [
   {
     info: 'off',
     text: 'Do not auto-update extension metadata',
@@ -56,9 +56,9 @@ const METADATA_UP: Option[] = [
   }
 ];
 
-const STORAGE_DEFAULT = 'off';
+export const STORAGE_DEFAULT = 'off';
 
-const STORAGE: Option[] = [
+export const STORAGE: Option[] = [
   {
     info: 'on',
     text: 'Allow local in-browser account storage',
@@ -70,32 +70,3 @@ const STORAGE: Option[] = [
     value: 'off'
   }
 ];
-
-export {
-  CAMERA_DEFAULT,
-  CAMERA,
-  CRYPTOS,
-  CRYPTOS_ETH,
-  CRYPTOS_LEDGER,
-  ENDPOINT_DEFAULT,
-  ENDPOINTS,
-  ICON_DEFAULT,
-  ICON_DEFAULT_HOST,
-  ICONS,
-  LANGUAGE_DEFAULT,
-  LEDGER_CONN_DEFAULT,
-  LEDGER_CONN,
-  LOCKING_DEFAULT,
-  LOCKING,
-  METADATA_UP,
-  METADATA_UP_DEFAULT,
-  NOTIFICATION_DEFAULT,
-  PREFIX_DEFAULT,
-  PREFIXES,
-  STORAGE,
-  STORAGE_DEFAULT,
-  UIMODE_DEFAULT,
-  UIMODES,
-  UITHEME_DEFAULT,
-  UITHEMES
-};
