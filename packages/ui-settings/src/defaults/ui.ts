@@ -5,13 +5,13 @@ import type { Option } from '../types.js';
 
 import { isPolkadot } from './type.js';
 
-const LANGUAGE_DEFAULT = 'default';
+export const LANGUAGE_DEFAULT = 'default';
 
-const UIMODE_DEFAULT = !isPolkadot && typeof window !== 'undefined' && window.location.host.includes('ui-light')
+export const UIMODE_DEFAULT = !isPolkadot && typeof window !== 'undefined' && window.location.host.includes('ui-light')
   ? 'light'
   : 'full';
 
-const UIMODES: Option[] = [
+export const UIMODES: Option[] = [
   {
     info: 'full',
     text: 'Fully featured',
@@ -24,11 +24,11 @@ const UIMODES: Option[] = [
   }
 ];
 
-const UITHEME_DEFAULT = isPolkadot
+export const UITHEME_DEFAULT = isPolkadot
   ? 'polkadot'
   : 'substrate';
 
-const UITHEMES: Option[] = [
+export const UITHEMES: Option[] = [
   {
     info: 'polkadot',
     text: 'Polkadot',
@@ -41,13 +41,13 @@ const UITHEMES: Option[] = [
   }
 ];
 
-const ICON_DEFAULT = 'default';
+export const ICON_DEFAULT = 'default';
 
-const ICON_DEFAULT_HOST = isPolkadot
+export const ICON_DEFAULT_HOST = isPolkadot
   ? 'polkadot'
   : 'substrate';
 
-const ICONS: Option[] = [
+export const ICONS: Option[] = [
   {
     info: 'default',
     text: 'Default for the connected node',
@@ -70,16 +70,4 @@ const ICONS: Option[] = [
   }
 ];
 
-const NOTIFICATION_DEFAULT = 'popup';
-
-export {
-  ICON_DEFAULT,
-  ICON_DEFAULT_HOST,
-  ICONS,
-  LANGUAGE_DEFAULT,
-  NOTIFICATION_DEFAULT,
-  UIMODE_DEFAULT,
-  UIMODES,
-  UITHEME_DEFAULT,
-  UITHEMES
-};
+export const NOTIFICATION_DEFAULT = 'popup';

@@ -15,7 +15,7 @@ interface Result {
   contracts: SubjectInfo;
 }
 
-export const obervableAll = combineLatest([
+export const obervableAll = /*#__PURE__*/ combineLatest([
   accounts.subject,
   addresses.subject,
   contracts.subject

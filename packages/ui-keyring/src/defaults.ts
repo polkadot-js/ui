@@ -15,26 +15,20 @@ function toHex (address: string): string {
   );
 }
 
-const accountKey = (address: string): string =>
-  `${ACCOUNT_PREFIX}${toHex(address)}`;
+export function accountKey (address: string): string {
+  return `${ACCOUNT_PREFIX}${toHex(address)}`;
+}
 
-const addressKey = (address: string): string =>
-  `${ADDRESS_PREFIX}${toHex(address)}`;
+export function addressKey (address: string): string {
+  return `${ADDRESS_PREFIX}${toHex(address)}`;
+}
 
-const contractKey = (address: string): string =>
-  `${CONTRACT_PREFIX}${toHex(address)}`;
+export function contractKey (address: string): string {
+  return `${CONTRACT_PREFIX}${toHex(address)}`;
+}
 
-const accountRegex = new RegExp(`^${ACCOUNT_PREFIX}0x[0-9a-f]*`, '');
+export const accountRegex = new RegExp(`^${ACCOUNT_PREFIX}0x[0-9a-f]*`, '');
 
-const addressRegex = new RegExp(`^${ADDRESS_PREFIX}0x[0-9a-f]*`, '');
+export const addressRegex = new RegExp(`^${ADDRESS_PREFIX}0x[0-9a-f]*`, '');
 
-const contractRegex = new RegExp(`^${CONTRACT_PREFIX}0x[0-9a-f]*`, '');
-
-export {
-  accountKey,
-  accountRegex,
-  addressKey,
-  addressRegex,
-  contractKey,
-  contractRegex
-};
+export const contractRegex = new RegExp(`^${CONTRACT_PREFIX}0x[0-9a-f]*`, '');

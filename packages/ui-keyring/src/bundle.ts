@@ -5,6 +5,6 @@ import { Keyring } from './Keyring.js';
 
 export { packageInfo } from './packageInfo.js';
 
-const keyring = new Keyring();
+export const keyring = new Keyring();
 
-export { Keyring, keyring };
+export { Keyring };
