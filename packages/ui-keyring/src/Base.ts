@@ -28,7 +28,7 @@ export class Base {
 
   protected _store: KeyringStore;
 
-  protected _genesisHash?: string;
+  protected _genesisHash?: string | undefined;
 
   protected _genesisHashAdd: string[] = [];
 

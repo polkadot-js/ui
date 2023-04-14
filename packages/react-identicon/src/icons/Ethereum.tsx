@@ -12,7 +12,7 @@ interface ImgProps {
   size: number;
 }
 
-function Identicon ({ address, className = '', size, style }: Props): React.ReactElement<Props> {
+function Identicon ({ address, className = '', size, style = {} }: Props): React.ReactElement<Props> {
   const imgSrc = useMemo(
     () => makeBlockie(address),
     [address]

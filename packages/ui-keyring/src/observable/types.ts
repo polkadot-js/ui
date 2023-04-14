@@ -9,7 +9,7 @@ import type { KeyringJson, KeyringStore } from '../types.js';
 export interface SingleAddress {
   json: KeyringJson;
   option: KeyringSectionOption;
-  type?: KeypairType;
+  type?: KeypairType | undefined;
 }
 
 export interface SubjectInfo {
