@@ -8,12 +8,12 @@ import { styled } from './styled.js';
 import { createImgSize } from './util.js';
 
 interface Props {
-  className?: string;
+  className?: string | undefined;
   delay?: number;
-  onError?: (error: Error) => void;
+  onError?: undefined | ((error: Error) => void);
   onScan: (data: string) => void;
-  size?: string | number;
-  style?: React.CSSProperties;
+  size?: string | number | undefined;
+  style?: React.CSSProperties | undefined;
 }
 
 const DEFAULT_DELAY = 150;
@@ -22,7 +22,7 @@ const DEFAULT_ERROR = (error: Error): void => {
   console.error('@polkadot/react-qr:Scan', error.message);
 };
 
-function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onScan, size, style }: Props): React.ReactElement<Props> {
+function Scan ({ className = '', delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onScan, size, style = {} }: Props): React.ReactElement<Props> {
   const containerStyle = useMemo(
     () => createImgSize(size),
     [size]

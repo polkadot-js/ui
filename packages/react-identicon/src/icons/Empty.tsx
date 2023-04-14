@@ -5,7 +5,7 @@ import type { Props } from '../types.js';
 
 import React from 'react';
 
-function Identicon ({ className = '', size, style }: Props): React.ReactElement<Props> {
+function Identicon ({ className = '', size, style = {} }: Props): React.ReactElement<Props> {
   return (
     <svg
       className={className}

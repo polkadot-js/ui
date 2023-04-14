@@ -7,7 +7,7 @@ import React, { useCallback } from 'react';
 
 import { beachballIcon } from '@polkadot/ui-shared';
 
-function Identicon ({ address, className = '', size, style }: Props): React.ReactElement<Props> {
+function Identicon ({ address, className = '', size, style = {} }: Props): React.ReactElement<Props> {
   const updateElem = useCallback(
     (node: HTMLDivElement): void => {
       node && node.appendChild(

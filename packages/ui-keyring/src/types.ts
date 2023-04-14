@@ -13,7 +13,7 @@ export interface ContractMeta {
 
 export interface KeyringJson$Meta {
   contract?: ContractMeta;
-  genesisHash?: string | null;
+  genesisHash?: string | null | undefined;
   hardwareType?: 'ledger';
   isHardware?: boolean;
   isInjected?: boolean;
@@ -70,7 +70,7 @@ export interface KeyringStruct {
   readonly addresses: AddressSubject;
   readonly contracts: AddressSubject;
   readonly keyring: BaseKeyringInstance | undefined;
-  readonly genesisHash?: string;
+  readonly genesisHash?: string | undefined;
 
   addExternal: (publicKey: Uint8Array, meta?: KeyringPair$Meta) => CreateResult;
   addPair: (pair: KeyringPair, password: string) => CreateResult;

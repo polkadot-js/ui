@@ -12,7 +12,7 @@ interface ScanType {
   isAddress: boolean;
   content: string;
   genesisHash: string;
-  name?: string;
+  name?: string | undefined;
 }
 
 interface Props {

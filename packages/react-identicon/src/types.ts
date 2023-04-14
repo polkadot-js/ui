@@ -12,7 +12,7 @@ export interface BaseProps {
 
 export interface Props extends BaseProps {
   address: string;
-  isAlternative?: boolean;
+  isAlternative?: boolean | undefined;
   className?: string;
   publicKey: string;
   size: number;

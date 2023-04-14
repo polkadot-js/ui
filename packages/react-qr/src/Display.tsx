@@ -11,11 +11,11 @@ import { styled } from './styled.js';
 import { createFrames, createImgSize } from './util.js';
 
 interface Props {
-  className?: string;
-  size?: string | number;
+  className?: string | undefined;
+  size?: string | number | undefined;
   skipEncoding?: boolean;
-  style?: React.CSSProperties;
-  timerDelay?: number;
+  style?: React.CSSProperties | undefined;
+  timerDelay?: number | undefined;
   value: Uint8Array;
 }
 
@@ -45,7 +45,7 @@ function getDataUrl (value: Uint8Array): string {
   return qr.createDataURL(16, 0);
 }
 
-function Display ({ className, size, skipEncoding, style, timerDelay = DEFAULT_FRAME_DELAY, value }: Props): React.ReactElement<Props> | null {
+function Display ({ className = '', size, skipEncoding, style = {}, timerDelay = DEFAULT_FRAME_DELAY, value }: Props): React.ReactElement<Props> | null {
   const [{ image }, setFrameState] = useState<FrameState>({ frameIdx: 0, frames: [], image: null, valueHash: null });
   const timerRef = useRef<TimerState>({ timerDelay, timerId: null });
 
