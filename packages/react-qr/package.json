@@ -3,7 +3,7 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "description": "Generates and reads QR codes",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/react-qr#readme",
   "license": "Apache-2.0",
@@ -18,10 +18,10 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/ui-settings": "3.2.0",
+    "@polkadot/ui-settings": "3.2.1",
     "@polkadot/util": "^12.0.1",
     "@polkadot/util-crypto": "^12.0.1",
     "qrcode-generator": "^1.4.4",

@@ -3,7 +3,7 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "description": "Shared logic that is usable accross all frameworks-specific areas",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-shared#readme",
   "license": "Apache-2.0",
@@ -18,7 +18,7 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "main": "index.js",
   "dependencies": {
     "colord": "^2.9.3",
