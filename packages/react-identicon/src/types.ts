@@ -1,9 +1,8 @@
 // Copyright 2018-2023 @polkadot/react-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type React from 'react';
 import type { Prefix } from '@polkadot/util-crypto/address/types';
-
-import React from 'react';
 
 export interface BaseProps {
   className?: string;
@@ -13,10 +12,8 @@ export interface BaseProps {
 export interface Props extends BaseProps {
   address: string;
   isAlternative?: boolean | undefined;
-  className?: string;
   publicKey: string;
   size: number;
-  style?: React.CSSProperties;
 }
 
 export interface IdentityProps extends BaseProps {
