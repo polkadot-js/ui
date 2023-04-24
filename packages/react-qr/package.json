@@ -38,7 +38,6 @@
     "@polkadot/util-crypto": "*",
     "react": "*",
     "react-dom": "*",
-    "react-is": "*",
-    "styled-components": "*"
+    "react-is": "*"
   }
 }

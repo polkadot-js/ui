@@ -1560,7 +1560,6 @@ __metadata:
     react: "*"
     react-dom: "*"
     react-is: "*"
-    styled-components: "*"
   languageName: unknown
   linkType: soft
 
@@ -1583,7 +1582,6 @@ __metadata:
     react: "*"
     react-dom: "*"
     react-is: "*"
-    styled-components: "*"
   languageName: unknown
   linkType: soft
 
