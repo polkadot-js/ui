@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## master
+
+Changes:
+
+- Add missing `react-is` peer dependency for `styled-components`
+
+
 ## 3.2.1 Apr 22, 2023
 
 Changes:
