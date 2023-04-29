@@ -13,9 +13,10 @@ export function encodeNumber (value: number): Uint8Array {
 }
 
 export function encodeString (value: string): Uint8Array {
-  const u8a = new Uint8Array(value.length);
+  const count = value.length;
+  const u8a = new Uint8Array(count);
 
-  for (let i = 0; i < value.length; i++) {
+  for (let i = 0; i < count; i++) {
     u8a[i] = value.charCodeAt(i);
   }
 
