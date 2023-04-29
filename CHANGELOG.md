@@ -1,10 +1,12 @@
 # CHANGELOG
 
-## master
+## 3.2.2 Apr 29, 2023
 
 Changes:
 
 - Add missing `react-is` peer dependency for `styled-components`
+- Adjust compilation output for `__internal__` class fields
+- Bump to `@polkadot/util` 12.1.1
 
 
 ## 3.2.1 Apr 22, 2023
