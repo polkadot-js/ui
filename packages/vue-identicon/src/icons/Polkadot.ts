@@ -3,9 +3,11 @@
 
 import type { VNode } from 'vue';
 
-import { defineComponent } from 'vue';
+import { defineComponent, h } from 'vue';
 
 import { polkadotIcon } from '@polkadot/ui-shared';
+
+import { adaptVNodeAttrs } from '../util.js';
 
 type propsType = {
   address: string;
@@ -19,18 +21,18 @@ type propsType = {
  */
 export const Polkadot = defineComponent({
   props: ['address', 'isAlternative', 'size'],
-  render (h): VNode {
+  render (): VNode {
     const { address, isAlternative, size } = this.$props as propsType;
     const circles = polkadotIcon(address, { isAlternative }).map(({ cx, cy, fill, r }) =>
-      h('circle', { attrs: { cx, cy, fill, r } }, [])
+      h('circle', { ...adaptVNodeAttrs({ cx, cy, fill, r }) }, [])
     );
 
     return h('svg', {
-      attrs: {
+      ...adaptVNodeAttrs({
         height: size,
         viewBox: '0 0 64 64',
         width: size
-      }
+      })
     }, circles);
   }
 });

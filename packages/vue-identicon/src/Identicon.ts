@@ -4,12 +4,13 @@
 import type { VNode } from 'vue';
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 
-import { defineComponent } from 'vue';
+import { defineComponent, h } from 'vue';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
 import { Beachball, Empty, Jdenticon, Polkadot } from './icons/index.js';
+import { adaptVNodeAttrs } from './util.js';
 
 interface Account {
   address: string;
@@ -26,7 +27,7 @@ interface Data {
 
 const DEFAULT_SIZE = 64;
 
-function encodeAccount (value: string | Uint8Array, prefix?: Prefix): Account {
+export function encodeAccount (value: string | Uint8Array, prefix?: Prefix): Account {
   try {
     const address = isU8a(value) || isHex(value)
       ? encodeAddress(value as string, prefix)
@@ -81,23 +82,25 @@ export const Identicon = defineComponent({
     }
   },
   props: ['prefix', 'isAlternative', 'size', 'theme', 'value'],
-  render (h): VNode {
+  render (): VNode {
     const { address, iconSize, isAlternativeIcon, publicKey, type } = this.$data;
 
     if (type === 'empty') {
-      return h('Empty', {
-        attrs: {
+      return h(Empty, {
+        ...adaptVNodeAttrs({
           key: address,
           size: iconSize
-        }
+        })
       }, []);
     } else if (type === 'jdenticon') {
-      return h('Jdenticon', {
-        attrs: {
-          key: address,
-          publicKey,
-          size: iconSize
-        }
+      return h(Jdenticon, {
+        ...adaptVNodeAttrs(
+          {
+            key: address,
+            publicKey,
+            size: iconSize
+          }
+        )
       }, []);
     } else if (type === 'substrate') {
       throw new Error('substrate type is not supported');
@@ -105,14 +108,20 @@ export const Identicon = defineComponent({
 
     const cmp = type.charAt(0).toUpperCase() + type.slice(1);
 
-    return h(cmp, {
-      attrs: {
-        address,
-        isAlternative: isAlternativeIcon,
-        key: address,
-        size: iconSize
-      }
-    }, []);
+    if (['Beachball', 'Polkadot'].includes(cmp)) {
+      const component = cmp === 'Beachball' ? Beachball : Polkadot;
+
+      return h(component, {
+        ...adaptVNodeAttrs({
+          address,
+          isAlternative: isAlternativeIcon,
+          key: address,
+          size: iconSize
+        })
+      }, []);
+    } else {
+      return h(cmp, {}, []);
+    }
   },
   watch: {
     value: function (): void {
