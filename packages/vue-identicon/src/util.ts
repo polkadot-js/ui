@@ -3,12 +3,15 @@
 
 import { version } from 'vue';
 
-export function adaptVNodeAttrs (data: Record<string, any>) {
-  if (version.startsWith('3.')) {
-    return data;
-  } else {
-    return {
-      attrs: data
-    };
-  }
+const isV3 = version.startsWith('3.');
+
+/**
+ * @internal
+ *
+ * Adjust attributes to be usable in both Vue 2 and Vue 3 components.
+ */
+export function adaptVNodeAttrs (data: Record<string, unknown>): Record<string, unknown> {
+  return isV3
+    ? data
+    : { attrs: data };
 }

@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## master
+
+Contributed:
+
+- Adjust `vue-identicon` to be Vue 3 compatible (Thanks to https://github.com/Gavin-Gong)
+
+Changes:
+
+- Bump to `@polkadot/util` 12.1.2
+
+
 ## 3.2.2 Apr 29, 2023
 
 Changes:
