@@ -33,4 +33,5 @@
        1	WoeOm                         	add darwinia ss58 (#379)
        1	yuhui1208                     	[Stores] make FileStroe read key safely  (#338)
        1	Yuri                          	Add webpack 5 support (#557)
+       1	Zen                           	feat: adapt Vue 3.x (#755)
        1	菩提                            	fix some bugs  (#260)
