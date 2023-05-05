@@ -109,7 +109,9 @@ export const Identicon = defineComponent({
     const cmp = type.charAt(0).toUpperCase() + type.slice(1);
 
     if (['Beachball', 'Polkadot'].includes(cmp)) {
-      const component = cmp === 'Beachball' ? Beachball : Polkadot;
+      const component = cmp === 'Beachball'
+        ? Beachball
+        : Polkadot;
 
       return h(component, {
         ...adaptVNodeAttrs({
