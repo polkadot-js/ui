@@ -3,7 +3,7 @@
 
 import type { KeyringJson, KeyringStore } from '../types.js';
 
-import mkdirp from 'mkdirp';
+import { mkdirpSync } from 'mkdirp';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -13,7 +13,7 @@ export class FileStore implements KeyringStore {
 
   constructor (path: string) {
     if (!fs.existsSync(path)) {
-      mkdirp.sync(path);
+      mkdirpSync(path);
     }
 
     this.#path = path;

@@ -33,9 +33,9 @@
     "test:one": "polkadot-dev-run-test --env browser"
   },
   "devDependencies": {
-    "@polkadot/dev": "^0.73.11",
+    "@polkadot/dev": "^0.73.16",
     "@polkadot/x-bundle": "^12.1.2",
-    "@types/node": "^20.1.0",
+    "@types/node": "^20.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
