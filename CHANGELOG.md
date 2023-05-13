@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.4.1 May 13, 2023
+
+Changes:
+
+- Add `module` to `package.json` export map (ESM-only)
+- Bump to `@polkadot/util` 12.2.1
+
+
 ## 3.3.1 May 7, 2023
 
 Contributed:
