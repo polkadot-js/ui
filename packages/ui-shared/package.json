@@ -22,7 +22,7 @@
   "main": "index.js",
   "dependencies": {
     "colord": "^2.9.3",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.1"
   },
   "devDependencies": {
     "@polkadot/util": "^12.2.1",

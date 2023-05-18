@@ -5,6 +5,9 @@
     "outDir": "./build",
     "rootDir": "./src"
   },
+  "exclude": [
+    "**/*.spec.ts"
+  ],
   "references": [
     { "path": "../ui-settings/tsconfig.build.json" }
   ]
