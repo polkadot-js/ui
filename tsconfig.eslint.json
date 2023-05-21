@@ -6,8 +6,9 @@
   },
   "include": [
     "packages/**/src/**/*",
-    "packages/**/*.cjs",
-    "packages/**/*.js"
+    ".prettierrc.cjs",
+    "eslint.config.js",
+    "rollup.config.js"
   ],
   "exclude": [
     "**/node_modules/**/*"
