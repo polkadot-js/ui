@@ -27,7 +27,7 @@
     "qrcode-generator": "^1.4.4",
     "react-qr-reader": "^2.2.1",
     "styled-components": "^5.3.10",
-    "tslib": "^2.5.1"
+    "tslib": "^2.5.2"
   },
   "devDependencies": {
     "@types/react-qr-reader": "^2.1.4",
