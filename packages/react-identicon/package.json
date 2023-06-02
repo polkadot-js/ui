@@ -29,7 +29,7 @@
     "ethereum-blockies-base64": "^1.0.2",
     "jdenticon": "3.2.0",
     "react-copy-to-clipboard": "^5.1.0",
-    "styled-components": "^5.3.10",
+    "styled-components": "^5.3.11",
     "tslib": "^2.5.2"
   },
   "devDependencies": {

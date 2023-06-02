@@ -28,7 +28,7 @@
     "tslib": "^2.5.2"
   },
   "devDependencies": {
-    "@types/react-native": "^0.71.7"
+    "@types/react-native": "^0.72.2"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
