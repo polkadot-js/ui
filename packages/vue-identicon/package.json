@@ -18,14 +18,14 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.4.2-3-x",
+  "version": "3.4.2",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/ui-shared": "3.4.2-3-x",
-    "@polkadot/util": "^12.2.1",
-    "@polkadot/util-crypto": "^12.2.1",
+    "@polkadot/ui-shared": "3.4.2",
+    "@polkadot/util": "^12.2.2",
+    "@polkadot/util-crypto": "^12.2.2",
     "jdenticon": "3.2.0",
-    "tslib": "^2.5.2"
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "vue": "^2.7.14"
