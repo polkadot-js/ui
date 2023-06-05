@@ -18,14 +18,14 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.4.2-3-x",
+  "version": "3.4.2",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/ui-shared": "3.4.2-3-x",
-    "@polkadot/util": "^12.2.1",
-    "@polkadot/util-crypto": "^12.2.1",
+    "@polkadot/ui-shared": "3.4.2",
+    "@polkadot/util": "^12.2.2",
+    "@polkadot/util-crypto": "^12.2.2",
     "react-native-svg": "^12.5.1",
-    "tslib": "^2.5.2"
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@types/react-native": "^0.72.2"

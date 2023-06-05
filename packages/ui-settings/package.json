@@ -18,14 +18,14 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.4.2-3-x",
+  "version": "3.4.2",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/networks": "^12.2.1",
-    "@polkadot/util": "^12.2.1",
+    "@polkadot/networks": "^12.2.2",
+    "@polkadot/util": "^12.2.2",
     "eventemitter3": "^5.0.1",
     "store": "^2.0.12",
-    "tslib": "^2.5.2"
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@types/store": "^2.0.2"

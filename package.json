@@ -14,7 +14,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "3.4.2-3-x",
+  "version": "3.4.2",
   "versions": {
     "git": "3.4.2-3-x",
     "npm": "3.4.1"
@@ -33,8 +33,8 @@
     "test:one": "polkadot-dev-run-test --env browser"
   },
   "devDependencies": {
-    "@polkadot/dev": "^0.75.14",
-    "@polkadot/x-bundle": "^12.2.1",
+    "@polkadot/dev": "^0.75.16",
+    "@polkadot/x-bundle": "^12.2.2",
     "@types/node": "^20.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
