@@ -2,29 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { KeyringInstance as BaseKeyringInstance, KeyringOptions as KeyringOptionsBase, KeyringPair, KeyringPair$Json, KeyringPair$Meta } from '@polkadot/keyring/types';
+import type { HexString } from '@polkadot/util/types';
 import type { EncryptedJson } from '@polkadot/util-crypto/json/types';
 import type { KeypairType } from '@polkadot/util-crypto/types';
 import type { AddressSubject, SingleAddress } from './observable/types.js';
 
-export interface ContractMeta {
-  abi: string;
-  genesisHash?: string | null;
-}
+export type ContractMeta = NonNullable<KeyringPair$Meta['contract']>;
 
-export interface KeyringJson$Meta {
-  contract?: ContractMeta;
-  genesisHash?: string | null | undefined;
-  hardwareType?: 'ledger';
-  isHardware?: boolean;
-  isInjected?: boolean;
-  isRecent?: boolean;
-  isTesting?: boolean;
-  name?: string;
-  whenCreated?: number;
-  whenEdited?: number;
-  whenUsed?: number;
-  [index: string]: unknown;
-}
+export type KeyringJson$Meta = KeyringPair$Meta;
 
 export interface KeyringJson {
   address: string;
@@ -44,8 +29,8 @@ export interface KeyringStore {
 
 export interface KeyringOptions extends KeyringOptionsBase {
   filter?: (json: KeyringJson) => boolean;
-  genesisHash?: string | { toHex: () => string };
-  genesisHashAdd?: string[];
+  genesisHash?: HexString | { toHex: () => HexString };
+  genesisHashAdd?: HexString[];
   isDevelopment?: boolean;
   store?: KeyringStore;
 }
