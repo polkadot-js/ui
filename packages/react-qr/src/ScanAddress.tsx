@@ -1,6 +1,8 @@
 // Copyright 2017-2023 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { HexString } from '@polkadot/util/types';
+
 import React, { useCallback } from 'react';
 
 import { decodeAddress } from '@polkadot/util-crypto';
@@ -11,7 +13,7 @@ import { QrScan } from './Scan.js';
 interface ScanType {
   isAddress: boolean;
   content: string;
-  genesisHash: string;
+  genesisHash: HexString | null;
   name?: string | undefined;
 }
 
@@ -29,13 +31,16 @@ function ScanAddress ({ className, isEthereum, onError, onScan, size, style }: P
     (data: string | null): void => {
       if (data) {
         try {
-          let prefix: string, content: string, genesisHash: string, name: string[];
+          let prefix: string;
+          let content: string;
+          let genesisHash: string | null;
+          let name: string[];
 
           if (!isEthereum) {
             [prefix, content, genesisHash, ...name] = data.split(':');
           } else {
             [prefix, content, ...name] = data.split(':');
-            genesisHash = '';
+            genesisHash = null;
             content = content.substring(0, 42);
           }
 
@@ -52,7 +57,7 @@ function ScanAddress ({ className, isEthereum, onError, onScan, size, style }: P
             decodeAddress(content);
           }
 
-          onScan({ content, genesisHash, isAddress, name: name?.length ? name.join(':') : undefined });
+          onScan({ content, genesisHash: genesisHash as HexString, isAddress, name: name?.length ? name.join(':') : undefined });
         } catch (error) {
           onError && onError(error as Error);
 
