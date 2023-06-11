@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@polkadot/dev": "^0.75.19",
-    "@polkadot/x-bundle": "^12.2.2",
+    "@polkadot/x-bundle": "^12.3.1",
     "@types/node": "^20.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
