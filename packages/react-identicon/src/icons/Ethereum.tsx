@@ -28,7 +28,7 @@ function Identicon ({ address, className = '', size, style = {} }: Props): React
   );
 }
 
-const StyledImg = styled.img(({ size }: ImgProps) => `
+const StyledImg = styled.img<ImgProps>(({ size }) => `
   display: block;
   height: ${size}px;
   width: ${size}px;
