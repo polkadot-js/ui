@@ -26,12 +26,11 @@
     "@polkadot/util-crypto": "^12.3.2",
     "qrcode-generator": "^1.4.4",
     "react-qr-reader": "^2.2.1",
-    "styled-components": "^5.3.11",
-    "tslib": "^2.5.3"
+    "styled-components": "^6.0.2",
+    "tslib": "^2.6.0"
   },
   "devDependencies": {
-    "@types/react-qr-reader": "^2.1.4",
-    "@types/styled-components": "^5.1.26"
+    "@types/react-qr-reader": "^2.1.4"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
