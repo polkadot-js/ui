@@ -1,7 +1,7 @@
 // Copyright 2017-2023 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-export type Option = {
+export interface Option {
   disabled?: boolean;
   info: string;
   text: string;

@@ -12,9 +12,7 @@ export interface SingleAddress {
   type?: KeypairType | undefined;
 }
 
-export interface SubjectInfo {
-  [index: string]: SingleAddress;
-}
+export type SubjectInfo = Record<string, SingleAddress>;
 
 export interface AddressSubject {
   add: (store: KeyringStore, address: string, json: KeyringJson, type?: KeypairType) => SingleAddress;

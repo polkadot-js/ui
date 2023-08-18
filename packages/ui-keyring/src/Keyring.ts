@@ -152,8 +152,14 @@ export class Keyring extends Base implements KeyringStruct {
 
     return Object
       .keys(available)
-      .map((address): KeyringAddress => this.getAddress(address, 'account') as KeyringAddress)
-      .filter((account) => env.isDevelopment() || account.meta.isTesting !== true);
+      .map((address) => this.getAddress(address, 'account'))
+      .filter((account): account is KeyringAddress =>
+        !!account &&
+        (
+          env.isDevelopment() ||
+          account.meta.isTesting !== true
+        )
+      );
   }
 
   public getAddress (_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress | undefined {
@@ -180,7 +186,8 @@ export class Keyring extends Base implements KeyringStruct {
 
     return Object
       .keys(available)
-      .map((address): KeyringAddress => this.getAddress(address) as KeyringAddress);
+      .map((address) => this.getAddress(address))
+      .filter((account): account is KeyringAddress => !!account);
   }
 
   public getContract (address: string | Uint8Array): KeyringAddress | undefined {
@@ -195,11 +202,12 @@ export class Keyring extends Base implements KeyringStruct {
       .filter(([, { json: { meta: { contract } } }]): boolean =>
         !!contract && contract.genesisHash === this.genesisHash
       )
-      .map(([address]) => this.getContract(address) as KeyringAddress);
+      .map(([address]) => this.getContract(address))
+      .filter((account): account is KeyringAddress => !!account);
   }
 
   private rewriteKey (json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string): void {
-    if (hexAddr.substring(0, 2) === '0x') {
+    if (hexAddr.startsWith('0x')) {
       return;
     }
 
@@ -252,7 +260,7 @@ export class Keyring extends Base implements KeyringStruct {
     const [, hexAddr] = key.split(':');
 
     // move genesisHash to top-level (TODO Remove from contracts section?)
-    json.meta.genesisHash = json.meta.genesisHash || (json.meta.contract && json.meta.contract.genesisHash);
+    json.meta.genesisHash = json.meta.genesisHash || (json.meta.contract?.genesisHash);
 
     this.contracts.add(this._store, address, json);
     this.rewriteKey(json, key, hexAddr, contractKey);
@@ -269,7 +277,7 @@ export class Keyring extends Base implements KeyringStruct {
   }
 
   private allowGenesis (json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
-    if (json && json.meta && this.genesisHash) {
+    if (json?.meta && this.genesisHash) {
       const hashes: (string | null | undefined)[] = Object.values(chains).find((hashes): boolean =>
         hashes.includes(this.genesisHash || '')
       ) || [this.genesisHash];
@@ -370,7 +378,7 @@ export class Keyring extends Base implements KeyringStruct {
   public saveAddress (address: string, meta: KeyringPair$Meta, type: KeyringAddressType = 'address'): KeyringPair$Json {
     const available = this.addresses.subject.getValue();
 
-    const json = (available[address] && available[address].json) || {
+    const json = available[address]?.json || {
       address,
       meta: {
         isRecent: undefined,

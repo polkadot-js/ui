@@ -10,7 +10,7 @@ import { beachballIcon } from '@polkadot/ui-shared';
 function Identicon ({ address, className = '', size, style = {} }: Props): React.ReactElement<Props> {
   const updateElem = useCallback(
     (node: HTMLDivElement): void => {
-      node && node.appendChild(
+      node?.appendChild(
         beachballIcon(address, { isAlternative: false, size })
       );
     },

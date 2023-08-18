@@ -22,11 +22,11 @@
   "main": "index.js",
   "dependencies": {
     "colord": "^2.9.3",
-    "tslib": "^2.6.0"
+    "tslib": "^2.6.1"
   },
   "devDependencies": {
-    "@polkadot/util": "^12.3.2",
-    "@polkadot/util-crypto": "^12.3.2",
+    "@polkadot/util": "^12.4.1",
+    "@polkadot/util-crypto": "^12.4.1",
     "@types/xmlserializer": "^0.6.3",
     "xmlserializer": "^0.6.1"
   },

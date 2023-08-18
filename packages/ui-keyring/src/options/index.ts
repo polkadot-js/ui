@@ -37,7 +37,7 @@ const sortByCreated = (a: SingleAddress, b: SingleAddress): number => {
 export class KeyringOption implements KeyringOptionInstance {
   #allSub: Subscription | null = null;
 
-  public readonly optionsSubject: BehaviorSubject<KeyringOptions> = new BehaviorSubject(this.emptyOptions());
+  public readonly optionsSubject = new BehaviorSubject<KeyringOptions>(this.emptyOptions());
 
   public createOptionHeader (name: string): KeyringSectionOption {
     return {
@@ -77,7 +77,7 @@ export class KeyringOption implements KeyringOptionInstance {
     }
   }
 
-  private linkItems (items: { [index: string]: KeyringSectionOptions }): KeyringSectionOptions {
+  private linkItems (items: Record<string, KeyringSectionOptions>): KeyringSectionOptions {
     return Object.keys(items).reduce((result, header): KeyringSectionOptions => {
       const options = items[header];
 
