@@ -9,7 +9,7 @@ import { polkadotIcon } from '@polkadot/ui-shared';
 
 import { adaptVNodeAttrs } from '../util.js';
 
-type propsType = {
+interface propsType {
   address: string;
   isAlternative: boolean;
   size: number;

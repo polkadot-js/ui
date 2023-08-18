@@ -12,7 +12,7 @@ import { container as newContainer } from './container.js';
 import { SHAPE_COUNT } from './defaults.js';
 import { seeder as newSeeder } from './seeder.js';
 
-export function beachballIcon (seed: string | Uint8Array, { size = 256 }: Options, className = '', style?: { [index: string]: string }): HTMLElement {
+export function beachballIcon (seed: string | Uint8Array, { size = 256 }: Options, className = '', style?: Record<string, string>): HTMLElement {
   const seeder = newSeeder(seed);
   const colorGen = colors(seeder);
   const outer = newContainer(size, 'white', className, style);

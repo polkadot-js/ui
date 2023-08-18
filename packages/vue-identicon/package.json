@@ -22,10 +22,10 @@
   "main": "index.js",
   "dependencies": {
     "@polkadot/ui-shared": "3.5.2-1-x",
-    "@polkadot/util": "^12.3.2",
-    "@polkadot/util-crypto": "^12.3.2",
+    "@polkadot/util": "^12.4.1",
+    "@polkadot/util-crypto": "^12.4.1",
     "jdenticon": "3.2.0",
-    "tslib": "^2.6.0"
+    "tslib": "^2.6.1"
   },
   "devDependencies": {
     "vue": "^2.7.14"

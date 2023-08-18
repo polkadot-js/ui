@@ -7,7 +7,7 @@ import { defineComponent, h } from 'vue';
 
 import { beachballIcon } from '@polkadot/ui-shared';
 
-type PropsType = {
+interface PropsType {
   address: string;
   size: number;
   isAlternative: boolean;

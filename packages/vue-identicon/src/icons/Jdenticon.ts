@@ -6,7 +6,7 @@ import type { VNode } from 'vue';
 import * as jdenticon from 'jdenticon';
 import { defineComponent, h } from 'vue';
 
-type PropsType = {
+interface PropsType {
   publicKey: string,
   size: number
 }

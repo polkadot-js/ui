@@ -57,7 +57,7 @@ export class Settings implements SettingsStruct {
     this.#emitter = new EventEmitter();
 
     // will become deprecated for supporting substrate connect light clients. apiType structure should be used instead
-    this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || (hasProcess && process.env && process.env['WS_URL']) || (ENDPOINT_DEFAULT.value as string);
+    this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || (hasProcess && process.env?.['WS_URL']) || (ENDPOINT_DEFAULT.value as string);
     this.#apiType = { param: this.#apiUrl, type: 'json-rpc' as EndpointType };
     this.#camera = withDefault(CAMERA, settings.camera, CAMERA_DEFAULT);
     this.#ledgerConn = withDefault(LEDGER_CONN, settings.ledgerConn, LEDGER_CONN_DEFAULT);
