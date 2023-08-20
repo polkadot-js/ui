@@ -25,7 +25,7 @@
     "@polkadot/util": "^12.4.1",
     "@polkadot/util-crypto": "^12.4.1",
     "jdenticon": "3.2.0",
-    "tslib": "^2.6.1"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "vue": "^2.7.14"

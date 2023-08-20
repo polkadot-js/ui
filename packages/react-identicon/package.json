@@ -30,7 +30,7 @@
     "jdenticon": "3.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "styled-components": "^6.0.7",
-    "tslib": "^2.6.1"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@types/react-copy-to-clipboard": "^5.0.4",
