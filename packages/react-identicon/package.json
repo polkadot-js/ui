@@ -18,12 +18,12 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.5.2-2-x",
+  "version": "3.5.2-3-x",
   "main": "index.js",
   "dependencies": {
     "@polkadot/keyring": "^12.4.1",
-    "@polkadot/ui-settings": "3.5.2-2-x",
-    "@polkadot/ui-shared": "3.5.2-2-x",
+    "@polkadot/ui-settings": "3.5.2-3-x",
+    "@polkadot/ui-shared": "3.5.2-3-x",
     "@polkadot/util": "^12.4.1",
     "@polkadot/util-crypto": "^12.4.1",
     "ethereum-blockies-base64": "^1.0.2",
