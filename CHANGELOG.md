@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.6.1 Aug 21, 2023
+
+Changes:
+
+- Update to latest React `styled-components`
+- Bump to `@polkadot/util` 12.4.1
+
+
 ## 3.5.1 Jun 11, 2023
 
 Changes:
