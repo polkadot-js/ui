@@ -21,6 +21,7 @@
        1	Derek Colley                  	Remove redundant `div` wrappers in vue-identicon (#643)
        1	Harry Liu                     	Update README.md (#166)
        1	Jake Naviasky                 	Add Edgeware chain prefix to settings. (#317)
+       1	Jeeyong Um                    	Fix outdated links in README.md (#772)
        1	Logan Saether                 	Propose W3F node (#188)
        1	Lovesh Harchandani            	Allow Ledger support for Dock (#425)
        1	Luke Schoen                   	Fix typo in heading (#114)
