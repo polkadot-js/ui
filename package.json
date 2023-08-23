@@ -14,7 +14,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "3.6.2-0-x",
+  "version": "3.6.2",
   "versions": {
     "git": "3.6.2-0-x",
     "npm": "3.6.1"
@@ -33,9 +33,9 @@
     "test:one": "polkadot-dev-run-test --env browser"
   },
   "devDependencies": {
-    "@polkadot/dev": "^0.76.17",
-    "@polkadot/x-bundle": "^12.4.1",
-    "@types/node": "^20.5.1",
+    "@polkadot/dev": "^0.76.18",
+    "@polkadot/x-bundle": "^12.4.2",
+    "@types/node": "^20.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
