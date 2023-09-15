@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 3.6.3 Sep 15, 2023
+
+Changes:
+
+- Bump to `@polkadot/util` 12.5.1
+
+
 ## 3.6.2 Aug 23, 2023
 
 Changes:
