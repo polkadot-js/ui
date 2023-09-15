@@ -18,15 +18,15 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.6.2",
+  "version": "3.6.3",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/ui-settings": "3.6.2",
-    "@polkadot/util": "^12.4.2",
-    "@polkadot/util-crypto": "^12.4.2",
+    "@polkadot/ui-settings": "3.6.3",
+    "@polkadot/util": "^12.5.1",
+    "@polkadot/util-crypto": "^12.5.1",
     "qrcode-generator": "^1.4.4",
     "react-qr-reader": "^2.2.1",
-    "styled-components": "^6.0.7",
+    "styled-components": "^6.0.8",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
