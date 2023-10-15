@@ -2287,8 +2287,8 @@ __metadata:
   resolution: "@polkadot/react-identicon@workspace:packages/react-identicon"
   dependencies:
     "@polkadot/keyring": ^12.5.1
-    "@polkadot/ui-settings": 3.6.3
-    "@polkadot/ui-shared": 3.6.3
+    "@polkadot/ui-settings": 3.6.4-0-x
+    "@polkadot/ui-shared": 3.6.4-0-x
     "@polkadot/util": ^12.5.1
     "@polkadot/util-crypto": ^12.5.1
     "@types/react-copy-to-clipboard": ^5.0.4
@@ -2313,7 +2313,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/react-qr@workspace:packages/react-qr"
   dependencies:
-    "@polkadot/ui-settings": 3.6.3
+    "@polkadot/ui-settings": 3.6.4-0-x
     "@polkadot/util": ^12.5.1
     "@polkadot/util-crypto": ^12.5.1
     "@types/react-qr-reader": ^2.1.4
@@ -2334,7 +2334,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/reactnative-identicon@workspace:packages/reactnative-identicon"
   dependencies:
-    "@polkadot/ui-shared": 3.6.3
+    "@polkadot/ui-shared": 3.6.4-0-x
     "@polkadot/util": ^12.5.1
     "@polkadot/util-crypto": ^12.5.1
     "@types/react-native": ^0.72.2
@@ -2353,7 +2353,7 @@ __metadata:
   resolution: "@polkadot/ui-keyring@workspace:packages/ui-keyring"
   dependencies:
     "@polkadot/keyring": ^12.5.1
-    "@polkadot/ui-settings": 3.6.3
+    "@polkadot/ui-settings": 3.6.4-0-x
     "@polkadot/util": ^12.5.1
     "@polkadot/util-crypto": ^12.5.1
     "@types/mkdirp": ^2.0.0
@@ -2369,7 +2369,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-settings@3.6.3, @polkadot/ui-settings@workspace:packages/ui-settings":
+"@polkadot/ui-settings@3.6.4-0-x, @polkadot/ui-settings@workspace:packages/ui-settings":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-settings@workspace:packages/ui-settings"
   dependencies:
@@ -2385,7 +2385,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/ui-shared@3.6.3, @polkadot/ui-shared@workspace:packages/ui-shared":
+"@polkadot/ui-shared@3.6.4-0-x, @polkadot/ui-shared@workspace:packages/ui-shared":
   version: 0.0.0-use.local
   resolution: "@polkadot/ui-shared@workspace:packages/ui-shared"
   dependencies:
@@ -2440,7 +2440,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@polkadot/vue-identicon@workspace:packages/vue-identicon"
   dependencies:
-    "@polkadot/ui-shared": 3.6.3
+    "@polkadot/ui-shared": 3.6.4-0-x
     "@polkadot/util": ^12.5.1
     "@polkadot/util-crypto": ^12.5.1
     jdenticon: 3.2.0
