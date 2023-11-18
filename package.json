@@ -14,7 +14,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "3.6.4-0-x",
+  "version": "3.6.4",
   "versions": {
     "git": "3.6.4-0-x",
     "npm": "3.6.3"
@@ -33,13 +33,13 @@
     "test:one": "polkadot-dev-run-test --env browser"
   },
   "devDependencies": {
-    "@polkadot/dev": "^0.76.29",
-    "@polkadot/x-bundle": "^12.5.1",
-    "@types/node": "^20.8.4",
+    "@polkadot/dev": "^0.77.1",
+    "@polkadot/x-bundle": "^12.6.1",
+    "@types/node": "^20.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "react-native": "^0.72.4"
+    "react-native": "^0.72.7"
   },
   "resolutions": {
     "typescript": "^5.2.2"
