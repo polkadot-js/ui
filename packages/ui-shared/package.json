@@ -18,16 +18,16 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.6.4-0-x",
+  "version": "3.6.4",
   "main": "index.js",
   "dependencies": {
     "colord": "^2.9.3",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@polkadot/util": "^12.5.1",
-    "@polkadot/util-crypto": "^12.5.1",
-    "@types/xmlserializer": "^0.6.4",
+    "@polkadot/util": "^12.6.1",
+    "@polkadot/util-crypto": "^12.6.1",
+    "@types/xmlserializer": "^0.6.6",
     "xmlserializer": "^0.6.1"
   },
   "peerDependencies": {

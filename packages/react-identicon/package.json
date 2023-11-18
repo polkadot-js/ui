@@ -18,23 +18,23 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.6.4-0-x",
+  "version": "3.6.4",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/keyring": "^12.5.1",
-    "@polkadot/ui-settings": "3.6.4-0-x",
-    "@polkadot/ui-shared": "3.6.4-0-x",
-    "@polkadot/util": "^12.5.1",
-    "@polkadot/util-crypto": "^12.5.1",
+    "@polkadot/keyring": "^12.6.1",
+    "@polkadot/ui-settings": "3.6.4",
+    "@polkadot/ui-shared": "3.6.4",
+    "@polkadot/util": "^12.6.1",
+    "@polkadot/util-crypto": "^12.6.1",
     "ethereum-blockies-base64": "^1.0.2",
     "jdenticon": "3.2.0",
     "react-copy-to-clipboard": "^5.1.0",
-    "styled-components": "^6.0.8",
+    "styled-components": "^6.1.1",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@types/react-copy-to-clipboard": "^5.0.4",
-    "@types/react-dom": "^18.2.13",
+    "@types/react-copy-to-clipboard": "^5.0.7",
+    "@types/react-dom": "^18.2.15",
     "xmlserializer": "^0.6.1"
   },
   "peerDependencies": {
