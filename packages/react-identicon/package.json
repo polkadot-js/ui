@@ -3,7 +3,7 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "description": "Renders an SVG picture representing an address",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/react-identicon#readme",
   "license": "Apache-2.0",

@@ -3,7 +3,7 @@
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "description": "Generates and reads QR codes",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/react-qr#readme",
   "license": "Apache-2.0",
