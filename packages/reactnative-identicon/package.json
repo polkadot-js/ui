@@ -22,9 +22,9 @@
   "main": "index.js",
   "dependencies": {
     "@polkadot/ui-shared": "3.6.5-0-x",
-    "@polkadot/util": "^12.6.1",
-    "@polkadot/util-crypto": "^12.6.1",
-    "react-native-svg": "^12.5.1",
+    "@polkadot/util": "^12.6.2",
+    "@polkadot/util-crypto": "^12.6.2",
+    "react-native-svg": "^14.1.0",
     "tslib": "^2.6.2"
   },
   "devDependencies": {

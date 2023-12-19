@@ -34,14 +34,14 @@
   },
   "devDependencies": {
     "@polkadot/dev": "^0.78.1",
-    "@polkadot/x-bundle": "^12.6.1",
+    "@polkadot/x-bundle": "^12.6.2",
     "@types/node": "^20.10.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "react-native": "^0.72.7"
+    "react-native": "^0.73.1"
   },
   "resolutions": {
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   }
 }
