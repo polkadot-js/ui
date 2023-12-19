@@ -14,8 +14,8 @@
     "url": "https://github.com/polkadot-js/ui.git"
   },
   "sideEffects": [
-    "./detectPackage.js",
-    "./detectPackage.cjs"
+    "./packageDetect.js",
+    "./packageDetect.cjs"
   ],
   "type": "module",
   "version": "3.6.5-1-x",
