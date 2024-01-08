@@ -1,4 +1,4 @@
-// Copyright 2018-2023 @polkadot/react-identicon authors & contributors
+// Copyright 2018-2024 @polkadot/react-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type React from 'react';
