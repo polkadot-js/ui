@@ -1,4 +1,4 @@
-// Copyright 2017-2023 @polkadot/vue-identicon authors & contributors
+// Copyright 2017-2024 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { VNode } from 'vue';

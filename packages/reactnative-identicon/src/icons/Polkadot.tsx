@@ -1,4 +1,4 @@
-// Copyright 2018-2023 @polkadot/reactnative-identicon authors & contributors
+// Copyright 2018-2024 @polkadot/reactnative-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Circle as CircleType } from '@polkadot/ui-shared/icons/types';
