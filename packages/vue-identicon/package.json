@@ -33,6 +33,6 @@
   "peerDependencies": {
     "@polkadot/util": "*",
     "@polkadot/util-crypto": "*",
-    "vue": "^2.7"
+    "vue": ">= 2.7"
   }
 }
