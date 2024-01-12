@@ -331,7 +331,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.0.0, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.18.4, @babel/parser@npm:^7.20.0, @babel/parser@npm:^7.22.15, @babel/parser@npm:^7.22.6":
+"@babel/parser@npm:^7.0.0, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.20.0, @babel/parser@npm:^7.22.15, @babel/parser@npm:^7.22.6, @babel/parser@npm:^7.23.5":
   version: 7.23.6
   resolution: "@babel/parser@npm:7.23.6"
   bin:
@@ -1784,7 +1784,7 @@ __metadata:
     "@polkadot/util-crypto": "npm:^12.6.2"
     jdenticon: "npm:3.2.0"
     tslib: "npm:^2.6.2"
-    vue: "npm:^2.7.15"
+    vue: "npm:^2.7.16"
   peerDependencies:
     "@polkadot/util": "*"
     "@polkadot/util-crypto": "*"
@@ -3212,14 +3212,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:2.7.15":
-  version: 2.7.15
-  resolution: "@vue/compiler-sfc@npm:2.7.15"
+"@vue/compiler-sfc@npm:2.7.16":
+  version: 2.7.16
+  resolution: "@vue/compiler-sfc@npm:2.7.16"
   dependencies:
-    "@babel/parser": "npm:^7.18.4"
+    "@babel/parser": "npm:^7.23.5"
     postcss: "npm:^8.4.14"
+    prettier: "npm:^1.18.2 || ^2.0.0"
     source-map: "npm:^0.6.1"
-  checksum: 6c01a2a0a41f418f6b5d33a3551d4a6f5f70630bb316317ec8067307508d07b703bfbb660bf2a11140cde8b06b25d676ffff683d8cee3faffc94b87c97f47529
+  dependenciesMeta:
+    prettier:
+      optional: true
+  checksum: fd1128fe1b0ebb1e680aa34909d73716ee5e6f4d3460c1c292b47626976d7af25982cdcbfba7cdbd74e1bee865c39813b82dc71c483731c58184d99ef4043d4d
   languageName: node
   linkType: hard
 
@@ -10185,6 +10189,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^1.18.2 || ^2.0.0":
+  version: 2.8.8
+  resolution: "prettier@npm:2.8.8"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 00cdb6ab0281f98306cd1847425c24cbaaa48a5ff03633945ab4c701901b8e96ad558eb0777364ffc312f437af9b5a07d0f45346266e8245beaf6247b9c62b24
+  languageName: node
+  linkType: hard
+
 "pretty-format@npm:^26.5.2, pretty-format@npm:^26.6.2":
   version: 26.6.2
   resolution: "pretty-format@npm:26.6.2"
@@ -12635,13 +12648,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^2.7.15":
-  version: 2.7.15
-  resolution: "vue@npm:2.7.15"
+"vue@npm:^2.7.16":
+  version: 2.7.16
+  resolution: "vue@npm:2.7.16"
   dependencies:
-    "@vue/compiler-sfc": "npm:2.7.15"
+    "@vue/compiler-sfc": "npm:2.7.16"
     csstype: "npm:^3.1.0"
-  checksum: 928575f5eee51b99652cfcba0dfb0c924e9571ed45bff9a45abdaaaeb7d55c45339094ecc77cfcf884b40e51c6681cc49699b178f7363af0ca7f88618f7f4ec1
+  checksum: 0371f7bfafd9c6f58ffee6f291fc4ca045033f163e090d8afdfb7550fb9ba71770fe673941083038c88b4a45effe45bb8560c235dc3953c1ff8596f0ad4e4d88
   languageName: node
   linkType: hard
 
