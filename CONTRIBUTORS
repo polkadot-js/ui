@@ -1,4 +1,4 @@
-     734	Jaco                          	2024 (#781)
+     735	Jaco                          	Adjust Vue peerDependency, >= 2.7 for defineComponent (#782)
        7	YJ                            	fix #224: decrease frame size to 1024, set multipart bool (#225)
        4	Antoine Estienne              	Refactor logic to better use prefix (#491)
        4	kwingram25                    	fix ff api url issue (#289)
