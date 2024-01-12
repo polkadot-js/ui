@@ -28,11 +28,11 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "vue": "^2.7.15"
+    "vue": "^2.7.16"
   },
   "peerDependencies": {
     "@polkadot/util": "*",
     "@polkadot/util-crypto": "*",
-    "vue": "^2.7"
+    "vue": ">= 2.7"
   }
 }
