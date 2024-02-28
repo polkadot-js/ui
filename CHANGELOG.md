@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 3.6.5 Feb 28, 2024
+
+Changes
+
+- Bump to `@polkadot/util` 12.6.2
+- Bump to `react-native-svg` 14.1.0
+- Adjust `Vue` peerDependency, >= 2.7 for defineComponent
+
+
 ## 3.6.4 Nov 18, 2023
 
 Changes:
