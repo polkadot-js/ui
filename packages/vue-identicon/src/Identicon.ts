@@ -7,7 +7,7 @@ import type { Prefix } from '@polkadot/util-crypto/address/types';
 import { defineComponent, h } from 'vue';
 
 import { isHex, isU8a, u8aToHex } from '@polkadot/util';
-import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
+import { decodeAddress, encodeAddress, isEthereumAddress } from '@polkadot/util-crypto';
 
 import { Beachball, Empty, Jdenticon, Polkadot } from './icons/index.js';
 import { adaptVNodeAttrs } from './util.js';
@@ -27,11 +27,19 @@ interface Data {
 
 const DEFAULT_SIZE = 64;
 
+function resolvePublicKey (value: string | Uint8Array, prefix?: Prefix): string {
+  if (isHex(value) && isEthereumAddress(value)) {
+    return value.padEnd(66, '0');
+  }
+
+  return isU8a(value) || isHex(value)
+  ? encodeAddress(value as string, prefix)
+  : value;
+}
+
 export function encodeAccount (value: string | Uint8Array, prefix?: Prefix): Account {
   try {
-    const address = isU8a(value) || isHex(value)
-      ? encodeAddress(value as string, prefix)
-      : value;
+    const address = resolvePublicKey(value, prefix)
     const publicKey = u8aToHex(decodeAddress(address, false, prefix));
 
     return { address, publicKey };
