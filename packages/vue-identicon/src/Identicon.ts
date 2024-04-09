@@ -27,19 +27,19 @@ interface Data {
 
 const DEFAULT_SIZE = 64;
 
-function resolvePublicKey (value: string | Uint8Array, prefix?: Prefix): string {
+function resolvePublicKey(value: string | Uint8Array, prefix?: Prefix): string {
   if (isHex(value) && isEthereumAddress(value)) {
     return value.padEnd(66, '0');
   }
 
   return isU8a(value) || isHex(value)
-  ? encodeAddress(value as string, prefix)
-  : value;
+    ? encodeAddress(value as string, prefix)
+    : value;
 }
 
 export function encodeAccount (value: string | Uint8Array, prefix?: Prefix): Account {
   try {
-    const address = resolvePublicKey(value, prefix)
+    const address = resolvePublicKey(value, prefix);
     const publicKey = u8aToHex(decodeAddress(address, false, prefix));
 
     return { address, publicKey };
