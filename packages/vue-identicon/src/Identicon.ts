@@ -27,7 +27,7 @@ interface Data {
 
 const DEFAULT_SIZE = 64;
 
-function resolvePublicKey(value: string | Uint8Array, prefix?: Prefix): string {
+function resolvePublicKey (value: string | Uint8Array, prefix?: Prefix): string {
   if (isHex(value) && isEthereumAddress(value)) {
     return value.padEnd(66, '0');
   }
