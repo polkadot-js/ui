@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 3.6.6 Apr 17, 2024
+
+Contributed:
+
+- Add compatibility layer for H160 addresses (Thanks to https://github.com/vikiival)
+
+Changes:
+
+- Update ci checkout and setup_node to v4
+- Bump yarn to 4.1.1
+
+
 ## 3.6.5 Feb 28, 2024
 
 Changes
