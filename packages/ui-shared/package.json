@@ -18,7 +18,7 @@
     "./packageDetect.cjs"
   ],
   "type": "module",
-  "version": "3.6.6-1-x",
+  "version": "3.6.6-2-x",
   "main": "index.js",
   "dependencies": {
     "colord": "^2.9.3",
