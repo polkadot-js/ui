@@ -5,7 +5,7 @@ import type { Option } from '../types.js';
 
 export { CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER } from './crypto.js';
 export { ENDPOINT_DEFAULT, ENDPOINTS } from './endpoints.js';
-export { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger.js';
+export { LEDGER_APP, LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger.js';
 export { PREFIX_DEFAULT, PREFIXES } from './ss58.js';
 export { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, NOTIFICATION_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui.js';
 
