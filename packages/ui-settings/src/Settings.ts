@@ -151,6 +151,10 @@ export class Settings implements SettingsStruct {
     return ICONS;
   }
 
+  public get availableLedgerApp (): Option[] {
+    return LEDGER_APP;
+  }
+
   public get availableLedgerConn (): Option[] {
     return LEDGER_CONN;
   }
