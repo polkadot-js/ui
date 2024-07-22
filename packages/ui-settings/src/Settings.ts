@@ -8,7 +8,7 @@ import store from 'store';
 
 import { hasProcess, isUndefined } from '@polkadot/util';
 
-import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, METADATA_UP, METADATA_UP_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, STORAGE, STORAGE_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults/index.js';
+import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_APP, LEDGER_APP_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, METADATA_UP, METADATA_UP_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, STORAGE, STORAGE_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults/index.js';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';
@@ -35,6 +35,8 @@ export class Settings implements SettingsStruct {
 
   #icon: string;
 
+  #ledgerApp: string;
+
   #ledgerConn: string;
 
   #locking: string;
@@ -60,6 +62,7 @@ export class Settings implements SettingsStruct {
     this.#apiUrl = (typeof settings.apiUrl === 'string' && settings.apiUrl) || (hasProcess && process.env?.['WS_URL']) || (ENDPOINT_DEFAULT.value as string);
     this.#apiType = { param: this.#apiUrl, type: 'json-rpc' as EndpointType };
     this.#camera = withDefault(CAMERA, settings.camera, CAMERA_DEFAULT);
+    this.#ledgerApp = withDefault(LEDGER_APP, settings.ledgerApp, LEDGER_APP_DEFAULT);
     this.#ledgerConn = withDefault(LEDGER_CONN, settings.ledgerConn, LEDGER_CONN_DEFAULT);
     this.#i18nLang = settings.i18nLang || LANGUAGE_DEFAULT;
     this.#icon = settings.icon || ICON_DEFAULT;
@@ -94,6 +97,10 @@ export class Settings implements SettingsStruct {
 
   public get notification (): string {
     return this.#notification;
+  }
+
+  public get ledgerApp (): string {
+    return this.#ledgerApp;
   }
 
   public get ledgerConn (): string {
@@ -183,6 +190,7 @@ export class Settings implements SettingsStruct {
       camera: this.#camera,
       i18nLang: this.#i18nLang,
       icon: this.#icon,
+      ledgerApp: this.#ledgerApp,
       ledgerConn: this.#ledgerConn,
       locking: this.#locking,
       metadataUp: this.#metadataUp,

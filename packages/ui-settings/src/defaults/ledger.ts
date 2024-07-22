@@ -29,6 +29,8 @@ export const LEDGER_CONN: Option[] = [
   }
 ];
 
+export const LEDGER_APP_DEFAULT = 'Generic App';
+
 export const LEDGER_APP: Option[] = [
   {
     info: 'Generic App',
