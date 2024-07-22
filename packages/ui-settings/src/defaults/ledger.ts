@@ -29,21 +29,21 @@ export const LEDGER_CONN: Option[] = [
   }
 ];
 
-export const LEDGER_APP_DEFAULT = 'Generic App';
+export const LEDGER_APP_DEFAULT = 'generic';
 
 export const LEDGER_APP: Option[] = [
   {
-    info: 'Generic App',
+    info: 'generic',
     text: 'Use the Ledger Polkadot Generic App',
     value: 'generic'
   },
   {
-    info: 'Migration App',
+    info: 'migration',
     text: 'Use the Ledger Migration App',
     value: 'migration'
   },
   {
-    info: 'Legacy App',
+    info: 'legacy',
     text: 'Use the Ledger Legacy App',
     value: 'legacy'
   }
