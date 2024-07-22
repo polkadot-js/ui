@@ -14,6 +14,7 @@ export interface SettingsStruct {
   camera: string;
   i18nLang: string;
   icon: string;
+  ledgerApp: string;
   ledgerConn: string;
   locking: string;
   metadataUp: string;
