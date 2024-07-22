@@ -1,11 +1,19 @@
 # CHANGELOG
 
+## 3.8.1 July 22, 2024
+
+Changes:
+
+- Add new ledger app settings
+
+
 ## 3.7.1 July 13, 2024
 
 Changes:
 
 - Upgrade polkadot/common 13.0.2
 - Bump yarn to 4.3.1
+
 
 ## 3.6.6 Apr 17, 2024
 
