@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 3.8.2 July 22, 2024
+
+Changes:
+
+- Fix ledgerApp bug, and remove legacy
+
+
 ## 3.8.1 July 22, 2024
 
 Changes:
