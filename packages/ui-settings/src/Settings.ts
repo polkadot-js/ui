@@ -211,6 +211,7 @@ export class Settings implements SettingsStruct {
     this.#apiUrl = settings.apiUrl || this.#apiUrl;
     this.#camera = settings.camera || this.#camera;
     this.#ledgerConn = settings.ledgerConn || this.#ledgerConn;
+    this.#ledgerApp = settings.ledgerApp || this.#ledgerApp;
     this.#i18nLang = settings.i18nLang || this.#i18nLang;
     this.#icon = settings.icon || this.#icon;
     this.#locking = settings.locking || this.#locking;
