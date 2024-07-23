@@ -41,10 +41,5 @@ export const LEDGER_APP: Option[] = [
     info: 'migration',
     text: 'Use the Ledger Migration App',
     value: 'migration'
-  },
-  {
-    info: 'legacy',
-    text: 'Use the Ledger Legacy App',
-    value: 'legacy'
   }
 ];
