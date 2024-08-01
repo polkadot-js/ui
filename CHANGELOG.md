@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 3.8.3 July 31, 2024
+
+Changes:
+
+- Fix Qr Scanner (Thanks to https://github.com/ryanleecode)
+
+
 ## 3.8.2 July 22, 2024
 
 Changes:
