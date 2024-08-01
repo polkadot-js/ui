@@ -80,8 +80,8 @@ function Scan ({ className = '', delay = DEFAULT_DELAY, onError = DEFAULT_ERROR,
       style={containerStyle}
     >
       <video
-        ref={videoRef}
         className='ui--qr-Scan'
+        ref={videoRef}
         style={style}
       />
     </StyledDiv>
