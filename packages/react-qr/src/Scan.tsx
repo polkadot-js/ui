@@ -1,8 +1,8 @@
 // Copyright 2017-2024 @polkadot/react-qr authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useCallback, useMemo } from 'react';
-import Reader from 'react-qr-reader';
+import { BrowserQRCodeReader, type IScannerControls } from '@zxing/browser';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { styled } from './styled.js';
 import { createImgSize } from './util.js';
@@ -23,6 +23,9 @@ const DEFAULT_ERROR = (error: Error): void => {
 };
 
 function Scan ({ className = '', delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onScan, size, style = {} }: Props): React.ReactElement<Props> {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const controlsRef = useRef<IScannerControls | null>(null);
+
   const containerStyle = useMemo(
     () => createImgSize(size),
     [size]
@@ -33,21 +36,52 @@ function Scan ({ className = '', delay = DEFAULT_DELAY, onError = DEFAULT_ERROR,
     [onError]
   );
 
-  const _onScan = useCallback(
-    (data: string | null) => data && onScan(data),
-    [onScan]
-  );
+  useEffect(() => {
+    const codeReader = new BrowserQRCodeReader();
+
+    const startScanning = async () => {
+      try {
+        const videoInputDevices = await BrowserQRCodeReader.listVideoInputDevices();
+        const selectedDeviceId = videoInputDevices[0].deviceId;
+
+        controlsRef.current = await codeReader.decodeFromVideoDevice(
+          selectedDeviceId,
+          videoRef.current ?? undefined,
+          (result, error) => {
+            if (result) {
+              onScan(result.getText());
+            }
+
+            if (error && !(error instanceof Error)) {
+              _onError(new Error(error));
+            }
+          }
+        );
+      } catch (error) {
+        _onError(error instanceof Error ? error : new Error('Unknown error occurred'));
+      }
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    const timeoutId = setTimeout(startScanning, delay);
+
+    return () => {
+      clearTimeout(timeoutId);
+
+      if (controlsRef.current) {
+        controlsRef.current.stop();
+      }
+    };
+  }, [onScan, _onError, delay]);
 
   return (
     <StyledDiv
       className={className}
       style={containerStyle}
     >
-      <Reader
+      <video
         className='ui--qr-Scan'
-        delay={delay}
-        onError={_onError}
-        onScan={_onScan}
+        ref={videoRef}
         style={style}
       />
     </StyledDiv>
@@ -60,10 +94,6 @@ const StyledDiv = styled.div`
     height: 100%;
     transform: matrix(-1, 0, 0, 1, 0, 0);
     width: 100%;
-
-    video {
-      margin: 0;
-    }
   }
 `;
 
