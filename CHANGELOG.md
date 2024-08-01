@@ -4,7 +4,7 @@
 
 Changes:
 
-- Fix Qr Scanner
+- Fix Qr Scanner (Thanks to https://github.com/ryanleecode)
 
 
 ## 3.8.2 July 22, 2024
