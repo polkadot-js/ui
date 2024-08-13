@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.9.1 Aug 13, 2024
+
+Changes:
+
+- Upgrade @polkadot/dev to 0.79.3 ([#803](https://github.com/polkadot-js/ui/pull/803))
+- Add chainSpecific option for ledger ([#804](https://github.com/polkadot-js/ui/pull/804))
+
+
 ## 3.8.3 July 31, 2024
 
 Changes:
