@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.10.1 Sep 20, 2024
+
+Changes:
+
+- Upgrade polkadot/common to 13.1.1 ([#808](https://github.com/polkadot-js/ui/pull/808))
+- Bump yarn to 4.4.0 ([#806](https://github.com/polkadot-js/ui/pull/806))
+
+
 ## 3.9.1 Aug 13, 2024
 
 Changes:
