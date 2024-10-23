@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 3.11.1 Oct 23, 2024
+
+Changes:
+
+- Upgrade polkadot/common to 13.2.1 ([#811](https://github.com/polkadot-js/ui/pull/811))
+- Bump yarn to 4.5.1 ([#812](https://github.com/polkadot-js/ui/pull/812))
+- Bump dev 0.81.2 ([#810](https://github.com/polkadot-js/ui/pull/810))
+  - Correctly exports CJS and ESM
+
+
 ## 3.10.1 Sep 20, 2024
 
 Changes:
