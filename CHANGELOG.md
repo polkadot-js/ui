@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 3.11.2 Oct 30, 2024
+
+Changes:
+
+- Upgrade polkadot/common to 13.2.2 ([#814](https://github.com/polkadot-js/ui/pull/814))
+
+
 ## 3.11.1 Oct 23, 2024
 
 Changes:
