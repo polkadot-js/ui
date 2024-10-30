@@ -21,8 +21,8 @@
   "version": "3.11.1",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/networks": "^13.2.1",
-    "@polkadot/util": "^13.2.1",
+    "@polkadot/networks": "^13.2.2",
+    "@polkadot/util": "^13.2.2",
     "eventemitter3": "^5.0.1",
     "store": "^2.0.12",
     "tslib": "^2.6.2"
