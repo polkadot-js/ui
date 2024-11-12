@@ -25,7 +25,7 @@
     "@polkadot/util": "^13.2.2",
     "@polkadot/util-crypto": "^13.2.2",
     "react-native-svg": "^14.1.0",
-    "tslib": "^2.6.2"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@types/react-native": "^0.72.8"
