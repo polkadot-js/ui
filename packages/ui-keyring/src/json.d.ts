@@ -1,4 +1,4 @@
-// Copyright 2017-2024 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2025 @polkadot/ui-keyring authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 // Be able to import json in TS
