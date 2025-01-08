@@ -1,5 +1,5 @@
      735	Jaco                          	Adjust Vue peerDependency, >= 2.7 for defineComponent (#782)
-      31	Tarik Gul                     	Bump dev w/ ts (#823)
+      32	Tarik Gul                     	Upgrade common to 13.3.1 (#824)
        7	YJ                            	fix #224: decrease frame size to 1024, set multipart bool (#225)
        4	Antoine Estienne              	Refactor logic to better use prefix (#491)
        4	kwingram25                    	fix ff api url issue (#289)
