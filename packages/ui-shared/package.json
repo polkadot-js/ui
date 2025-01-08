@@ -25,8 +25,8 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@polkadot/util": "^13.2.3",
-    "@polkadot/util-crypto": "^13.2.3",
+    "@polkadot/util": "^13.3.1",
+    "@polkadot/util-crypto": "^13.3.1",
     "@types/xmlserializer": "^0.6.6",
     "xmlserializer": "^0.6.1"
   },
