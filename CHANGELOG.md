@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 3.12.1 Jan 8, 2025
+
+Changes:
+
+- Upgrade common to 13.3.1 ([#824](https://github.com/polkadot-js/ui/pull/824))
+- Bump dev w/ ts ([#823](https://github.com/polkadot-js/ui/pull/823))
+- Update headers to 2025 ([#822](https://github.com/polkadot-js/ui/pull/822))
+
+
 ## 3.11.3 Nov 12, 2024
 
 Changes:
