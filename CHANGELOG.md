@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.12.2 Feb 18, 2025
+
+Changes:
+
+- Bump dev to v0.83.2 ([#827](https://github.com/polkadot-js/ui/pull/827))
+- Bump common to v13.4.3 ([#828](https://github.com/polkadot-js/ui/pull/828))
+
+
 ## 3.12.1 Jan 8, 2025
 
 Changes:
