@@ -32,6 +32,7 @@
        1	omahs                         	Fix: typos (#709)
        1	Ryan Lee                      	fix: qr-code (#801)
        1	Shawn Tabrizi                 	Add a new `notification` setting (#498)
+       1	Valentin Fernandez            	bump common 13.4.3 (#828)
        1	Wei Tang                      	Add Kulupu to the network selection list (#254)
        1	WoeOm                         	add darwinia ss58 (#379)
        1	yuhui1208                     	[Stores] make FileStroe read key safely  (#338)
