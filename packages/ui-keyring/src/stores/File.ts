@@ -19,6 +19,28 @@ export class FileStore implements KeyringStore {
     this.#path = path;
   }
 
+  private validateKey (key: string): boolean {
+    // Make sure the key has a .json extension
+    if (!key.endsWith('.json')) {
+      console.error('Non-JSON file requested: ', key);
+
+      return false;
+    }
+
+    // Remove '.json'
+    const keyWithoutExtension = key.slice(0, -5);
+    // Only allow alphanumeric characters, hyphens, and underscores in the base filename
+    const safeKeyRegex = /^[a-zA-Z0-9_-]+$/;
+
+    if (!safeKeyRegex.test(keyWithoutExtension)) {
+      console.error('Invalid key format detected: ', key);
+
+      return false;
+    }
+
+    return true;
+  }
+
   public all (fn: (key: string, value: KeyringJson) => void): void {
     fs
       .readdirSync(this.#path)
@@ -51,6 +73,10 @@ export class FileStore implements KeyringStore {
   }
 
   private _getPath (key: string): string {
+    if (!this.validateKey(key)) {
+      throw new Error('Invalid key format');
+    }
+
     return path.join(this.#path, key);
   }
 
