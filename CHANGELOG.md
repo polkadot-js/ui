@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.13.1 Apr 16, 2025
+
+Changes:
+
+- Add key validation for FileStore ([#830](https://github.com/polkadot-js/ui/pull/830))
+- Upgraded polkadot deps ([#831](https://github.com/polkadot-js/ui/pull/831))
+
+
 ## 3.12.2 Feb 18, 2025
 
 Changes:
