@@ -18,6 +18,7 @@
        1	Alex Siman                    	Fix typo in README: stiorage -> storage (#69)
        1	Alexander Krupenkin           	Added ECDSA crypto type (#313)
        1	Andrei Eres                   	Fix raising error if process has not defined yet (#548)
+       1	Arjun Porwal                  	chore: upgrade polkadot deps (#831)
        1	Axel Chalon                   	Simplify KeyringAddress interface (#144)
        1	Cameron Franz                 	react-native example app port (#223)
        1	carumusan                     	Add kulupu (#342)
