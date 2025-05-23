@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.14.1 May 23, 2025
+
+Changes:
+
+- Add the type field to external keypair accounts ([#833](https://github.com/polkadot-js/ui/pull/833))
+- Upgrade polkadot-js/common to 13.5.1 ([#834](https://github.com/polkadot-js/ui/pull/834))
+
+
 ## 3.13.1 Apr 16, 2025
 
 Changes:
