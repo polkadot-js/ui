@@ -2,7 +2,7 @@
 
 Basic browser and framework agnostic UI components for creating apps using the polkadot{.js} libraries
 
-## Overview
+## overview
 
 The following UI components are currently available -
 
