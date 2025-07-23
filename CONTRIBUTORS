@@ -31,6 +31,7 @@
        1	Luke Schoen                   	Fix typo in heading (#114)
        1	Nantian                       	fix bigint type (#510)
        1	Nikhil Ranjan                 	Updated to valid javascript (#271)
+       1	Niklas P                      	Update Beachball.tsx to remove duplication in strict mode (#840)
        1	omahs                         	Fix: typos (#709)
        1	Ryan Lee                      	fix: qr-code (#801)
        1	Shawn Tabrizi                 	Add a new `notification` setting (#498)
