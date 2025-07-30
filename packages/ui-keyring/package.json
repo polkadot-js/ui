@@ -20,10 +20,10 @@
   "version": "3.15.3-0-x",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/keyring": "^13.5.3",
+    "@polkadot/keyring": "^13.5.4",
     "@polkadot/ui-settings": "3.15.3-0-x",
-    "@polkadot/util": "^13.5.3",
-    "@polkadot/util-crypto": "^13.5.3",
+    "@polkadot/util": "^13.5.4",
+    "@polkadot/util-crypto": "^13.5.4",
     "mkdirp": "^3.0.1",
     "rxjs": "^7.8.1",
     "store": "^2.0.12",
