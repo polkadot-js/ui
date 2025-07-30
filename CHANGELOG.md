@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.15.3 July 30, 2025
+
+Changes:
+
+- Update Beachball.tsx to remove duplication in strict mode ([#840](https://github.com/polkadot-js/ui/pull/840))
+- Bump polkadot deps ([#841](https://github.com/polkadot-js/ui/pull/841))
+
+
 ## 3.15.2 July 2, 2025
 
 Changes:
