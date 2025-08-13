@@ -1,6 +1,6 @@
      735	Jaco                          	Adjust Vue peerDependency, >= 2.7 for defineComponent (#782)
       38	Tarik Gul                     	3.14.1 (#835)
-       8	Arjun Porwal                  	3.15.3 (#842)
+       9	Arjun Porwal                  	chore: upgrade polkadot dependencies (#843)
        7	YJ                            	fix #224: decrease frame size to 1024, set multipart bool (#225)
        4	Antoine Estienne              	Refactor logic to better use prefix (#491)
        4	kwingram25                    	fix ff api url issue (#289)
