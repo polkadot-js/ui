@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 3.15.5 Aug 27, 2025
+
+Changes:
+
+- Upgraded polkadot deps ([#845](https://github.com/polkadot-js/ui/pull/845))
+
+
 ## 3.15.4 Aug 13, 2025
 
 Changes:
