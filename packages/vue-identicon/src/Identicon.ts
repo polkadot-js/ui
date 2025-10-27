@@ -99,7 +99,7 @@ export const Identicon = defineComponent({
           key: address,
           size: iconSize
         })
-      }, []);
+      }, () => []);
     } else if (type === 'jdenticon') {
       return h(Jdenticon, {
         ...adaptVNodeAttrs(
@@ -109,7 +109,7 @@ export const Identicon = defineComponent({
             size: iconSize
           }
         )
-      }, []);
+      }, () => []);
     } else if (type === 'substrate') {
       throw new Error('substrate type is not supported');
     }
@@ -128,9 +128,9 @@ export const Identicon = defineComponent({
           key: address,
           size: iconSize
         })
-      }, []);
+      }, () => []);
     } else {
-      return h(cmp, {}, []);
+      return h(cmp, {}, () => []);
     }
   },
   watch: {
