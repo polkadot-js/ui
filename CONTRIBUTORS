@@ -1,6 +1,6 @@
      735	Jaco                          	Adjust Vue peerDependency, >= 2.7 for defineComponent (#782)
       38	Tarik Gul                     	3.14.1 (#835)
-      15	Arjun Porwal                  	3.16.2 (#849)
+      16	Arjun Porwal                  	chore: bump deps (#850)
        7	YJ                            	fix #224: decrease frame size to 1024, set multipart bool (#225)
        4	Antoine Estienne              	Refactor logic to better use prefix (#491)
        4	kwingram25                    	fix ff api url issue (#289)
