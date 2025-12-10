@@ -18,10 +18,10 @@
     "./packageDetect.cjs"
   ],
   "type": "module",
-  "version": "3.16.5-0-x",
+  "version": "3.16.5",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/ui-shared": "3.16.5-0-x",
+    "@polkadot/ui-shared": "3.16.5",
     "@polkadot/util": "^14.0.1",
     "@polkadot/util-crypto": "^14.0.1",
     "jdenticon": "3.2.0",
