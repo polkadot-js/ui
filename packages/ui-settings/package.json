@@ -18,7 +18,7 @@
     "./packageDetect.cjs"
   ],
   "type": "module",
-  "version": "3.16.5",
+  "version": "3.16.6",
   "main": "index.js",
   "dependencies": {
     "@polkadot/networks": "^14.0.1",
