@@ -18,10 +18,10 @@
     "./packageDetect.cjs"
   ],
   "type": "module",
-  "version": "3.16.6",
+  "version": "3.16.7",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/ui-settings": "3.16.6",
+    "@polkadot/ui-settings": "3.16.7",
     "@polkadot/util": "^14.0.1",
     "@polkadot/util-crypto": "^14.0.1",
     "@zxing/browser": "^0.1.5",
