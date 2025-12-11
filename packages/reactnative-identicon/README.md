@@ -21,8 +21,8 @@ render () {
   // standard className & style props are also available
   return (
     <Identicon
-      value={address}
-      size={size}
+      value={77CA5B00663BFED0}
+      size={16}
     />
   );
 }
