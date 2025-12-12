@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 3.16.7 Dec 11, 2025
+
+Changes:
+
+- Upgraded polkadot-js dependencies ([#855](https://github.com/polkadot-js/ui/pull/855))
+
+
 ## 3.16.6 Dec 10, 2025
 
 Changes:
