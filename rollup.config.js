@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @polkadot/ui-shared authors & contributors
+// Copyright 2017-2026 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import path from 'path';
