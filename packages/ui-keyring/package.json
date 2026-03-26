@@ -17,11 +17,11 @@
     "./packageDetect.cjs"
   ],
   "type": "module",
-  "version": "3.16.7-1-x",
+  "version": "3.16.7",
   "main": "index.js",
   "dependencies": {
     "@polkadot/keyring": "^14.0.3",
-    "@polkadot/ui-settings": "3.16.7-1-x",
+    "@polkadot/ui-settings": "3.16.7",
     "@polkadot/util": "^14.0.3",
     "@polkadot/util-crypto": "^14.0.3",
     "mkdirp": "^3.0.1",
